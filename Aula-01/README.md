@@ -62,9 +62,8 @@ Maioria dos interpretadores costumam ter um pré-compilador ou compilador embuti
 # Wikipedia
 
 https://en.wikipedia.org/wiki/Compiler  
+https://pt.wikipedia.org/wiki/Compilador#Fases_da_compila%C3%A7%C3%A3o  
 https://en.wikipedia.org/wiki/High-level_programming_language  
 https://en.wikipedia.org/wiki/Low-level_programming_language  
 https://en.wikipedia.org/wiki/Intermediate_representation  
 https://en.wikipedia.org/wiki/Optimizing_compiler  
-
-41:14
