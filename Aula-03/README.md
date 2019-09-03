@@ -166,7 +166,7 @@ Expressão regular: `[a-zA-Z_]*`
 Entrada: "count"  
 
 Essa expressão vai casar várias vezes com essa entrada, pois as seguintes substrings batem com a expressão regular:  
-""
+""  
 "c"  
 "co"  
 "cou"  
