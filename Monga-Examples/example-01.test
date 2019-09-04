@@ -1,6 +1,6 @@
-s char;
-simple_name char;
-long_long_long_long_long_long_name char;
+s : char;
+simple_name : char;
+long_long_long_long_long_long_name : char;
 
 testing : char;
 every : int;
