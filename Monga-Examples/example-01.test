@@ -1,0 +1,10 @@
+s char;
+simple_name char;
+long_long_long_long_long_long_name char;
+
+testing : char;
+every : int;
+single : float;
+type : bool;
+of : [char];
+variable : [char[char]];
