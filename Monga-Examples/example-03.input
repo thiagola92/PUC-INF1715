@@ -3,6 +3,11 @@ every : int;
 single : float;
 type : bool;
 of : [char];
-variable : [char[char]];
+variable : [[char]];
 
-testing = 
+testing = "a";
+every = 10;
+single = 10.4
+type = true;
+of = new char[3];
+variable = new [char][3];
