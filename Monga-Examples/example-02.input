@@ -3,4 +3,4 @@ every : int;
 single : float;
 type : bool;
 of : [char];
-variable : [char[char]];
+variable : [[char]];
