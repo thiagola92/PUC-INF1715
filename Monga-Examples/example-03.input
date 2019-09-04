@@ -1,0 +1,8 @@
+testing : char;
+every : int;
+single : float;
+type : bool;
+of : [char];
+variable : [char[char]];
+
+testing = 
