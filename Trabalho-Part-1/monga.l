@@ -71,7 +71,7 @@ COMMENT		#[^\n]*
 
 {IDENTIFIER}	{ printf("%s\t%s\n", "TOKEN_IDENTIFIER", yytext); }
 
-{COMMENT}	{ printf("%s\t%s\n", "TOKEN_COMMENTARY", yytext); }
+{COMMENT}	{ printf("%s\t%s\n", "TOKEN_COMMENT", yytext); }
 
 .		{ printf("%c\n", yytext[0]); }
 
