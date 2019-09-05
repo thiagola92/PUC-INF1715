@@ -1,0 +1,6 @@
+TOKEN_COMMENT # everything : char;
+TOKEN_COMMENT # is : int;
+TOKEN_COMMENT # commented : float;
+TOKEN_COMMENT # everything = "a";
+TOKEN_COMMENT # is = 10;
+TOKEN_COMMENT # commented = 10.4
