@@ -1,0 +1,7 @@
+# everything : char;
+# is : int;
+# commented : float;
+
+# everything = "a";
+# is = 10;
+# commented = 10.4
