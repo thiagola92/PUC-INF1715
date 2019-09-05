@@ -133,17 +133,34 @@ void hi() {
 
 # yy
 
-### yylex
+### yylex()
 Método para fazer a leitura de um token.  
+Retorna quando encontrar o fim do arquivo ou encontrar um return.  
+Uma chamada seguinte ao método iria continuar a busca pelo próximo token.  
+
+```
+%%
+"a"	{ printf("Don't stop\n"); }
+"b"	{ return 10; }
+.	;
+%%
+```
+O método não iria finalizar ao ler "a" mas iria finalizar ao ler "b".  
+
+### yytext
+Variável que armazena o token encontrado.  
+
+### yyleng
+Variável que armazena o tamanho do token encontrado.  
 
 ### yyin
-Variável que define o arquivo a ser lido.  
+Variável que define o arquivo/entrada a ser lido.  
 
 ```C
 yyin = fopen("filename.txt", "r");
 ```
 
-### yywrap
+### yywrap()
 Método chamado sempre que termina der ler um arquivo.  
 Deve se aproveitar esse método para atualizar o `yyin` se possuir mais arquivos para ler.  
 
