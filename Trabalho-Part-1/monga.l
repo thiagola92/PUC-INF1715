@@ -12,6 +12,8 @@ STRING		\"([^"\\]|\\.)*\"
 
 IDENTIFIER	[a-zA-Z_][a-zA-Z0-9_]*
 
+COMMENT		#[^\n]*
+
 %%
 
 [ \t]		; // ignore
@@ -68,6 +70,8 @@ IDENTIFIER	[a-zA-Z_][a-zA-Z0-9_]*
 {STRING}	{ printf("%s\t\t%s\n", "TOKEN_STRING", yytext); }
 
 {IDENTIFIER}	{ printf("%s\t%s\n", "TOKEN_IDENTIFIER", yytext); }
+
+{COMMENT}	{ printf("%s\t%s\n", "TOKEN_COMMENTARY", yytext); }
 
 .		{ printf("%c\n", yytext[0]); }
 

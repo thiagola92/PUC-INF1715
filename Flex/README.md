@@ -91,7 +91,7 @@ Executar código: `./a.out`
 Observação: `-ll` linka com a biblioteca lex.  
 https://stackoverflow.com/questions/15732155/what-is-ll-gccs-flag  
 
-Toda string após "\n" será mandado como entrada.  
+Toda string após enter será mandado como entrada.  
 
 # Definitions - C code
 Durante a definições é possível incluir código de C.  
@@ -131,3 +131,28 @@ void hi() {
 }
 ```
 
+# yy
+
+### yylex
+Método para fazer a leitura de um token.  
+
+### yyin
+Variável que define o arquivo a ser lido.  
+
+```C
+yyin = fopen("filename.txt", "r");
+```
+
+### yywrap
+Método chamado sempre que termina der ler um arquivo.  
+Deve se aproveitar esse método para atualizar o `yyin` se possuir mais arquivos para ler.  
+
+É necessária uma implementação mínima.  
+```C
+int yywrap() {
+	return 1;
+}
+```
+
+Se retornar 0, continuar a execução do programa.  
+Se retornar um valor diferente de 0, finaliza a execução do programa.  
