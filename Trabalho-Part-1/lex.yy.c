@@ -351,8 +351,8 @@ static void yynoreturn yy_fatal_error ( const char* msg  );
 	(yy_hold_char) = *yy_cp; \
 	*yy_cp = '\0'; \
 	(yy_c_buf_p) = yy_cp;
-#define YY_NUM_RULES 21
-#define YY_END_OF_BUFFER 22
+#define YY_NUM_RULES 42
+#define YY_END_OF_BUFFER 43
 /* This struct is not used in this scanner,
    but its presence is necessary. */
 struct yy_trans_info
@@ -360,11 +360,17 @@ struct yy_trans_info
 	flex_int32_t yy_verify;
 	flex_int32_t yy_nxt;
 	};
-static const flex_int16_t yy_accept[31] =
+static const flex_int16_t yy_accept[91] =
     {   0,
-        0,    0,   22,   20,    1,    1,   17,   20,    3,    4,
-        9,    8,    7,   10,   15,   20,   16,    2,    5,    6,
-       20,   20,   18,   13,   11,   14,    2,   19,   12,    0
+        0,    0,   43,   41,    1,    2,   32,   41,   41,   13,
+       14,   27,   26,   25,   41,   28,   36,   36,   33,   34,
+       30,   29,   31,   40,   15,   16,   40,   40,   40,   40,
+       40,   40,   40,   40,   40,   17,   41,   18,   41,    0,
+       39,    0,   23,   37,   37,   36,    0,    0,   21,   19,
+       22,   40,   11,   40,   40,   40,    8,   40,   40,   40,
+       40,   40,   24,   20,    0,   35,    0,   37,    0,   37,
+       38,   40,   40,   40,    6,    3,   40,   40,   40,    4,
+        9,   40,   40,    7,   40,    5,   40,   10,   12,    0
     } ;
 
 static const YY_CHAR yy_ec[256] =
@@ -372,17 +378,17 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1,    1,    1,    1,    2,    3,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    2,    4,    1,    1,    1,    1,    5,    1,    6,
-        7,    8,    9,    1,   10,    1,   11,   12,   12,   12,
-       12,   12,   12,   12,   12,   12,   12,    1,    1,   13,
-       14,   15,    1,    1,   16,   16,   16,   16,   16,   16,
-       16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
-       16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
-       17,    1,   18,    1,   16,    1,   16,   16,   16,   16,
+        1,    2,    4,    5,    1,    1,    1,    6,    1,    7,
+        8,    9,   10,    1,   11,   12,   13,   14,   15,   15,
+       15,   15,   15,   15,   15,   15,   15,   16,   17,   18,
+       19,   20,    1,    1,   21,   21,   21,   21,   22,   21,
+       23,   23,   23,   23,   23,   23,   23,   23,   23,   23,
+       23,   23,   23,   23,   23,   23,   23,   23,   23,   23,
+       24,   25,   26,    1,   23,    1,   27,   21,   28,   29,
 
-       16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
-       16,   16,   16,   16,   16,   16,   16,   16,   16,   16,
-       16,   16,    1,   19,    1,   20,    1,    1,    1,    1,
+       30,   31,   23,   32,   33,   23,   23,   34,   23,   35,
+       36,   23,   23,   37,   38,   39,   40,   41,   42,   43,
+       23,   23,   44,   45,   46,   47,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
@@ -399,44 +405,91 @@ static const YY_CHAR yy_ec[256] =
         1,    1,    1,    1,    1
     } ;
 
-static const YY_CHAR yy_meta[21] =
+static const YY_CHAR yy_meta[48] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-        1,    1,    1,    1,    1,    1,    1,    1,    1,    1
+        1,    1,    1,    2,    2,    1,    1,    1,    1,    1,
+        2,    2,    3,    1,    1,    1,    2,    2,    2,    2,
+        2,    3,    3,    3,    3,    3,    3,    3,    3,    3,
+        3,    3,    3,    1,    1,    1,    1
     } ;
 
-static const flex_int16_t yy_base[31] =
+static const flex_int16_t yy_base[95] =
     {   0,
-        0,    0,   31,   32,   32,   32,   32,   25,   32,   32,
-       32,   32,   32,   32,   15,   14,   13,    9,   32,   32,
-        5,    9,   32,   32,   32,   32,   10,   32,   32,   32
+        0,    0,  137,  138,  138,  138,  138,   43,  130,  138,
+      138,  138,  138,  138,   35,  138,   39,   43,  138,  138,
+      116,  115,  114,    0,  138,  138,   94,   99,   96,   95,
+       21,   98,   97,   90,   93,  138,   79,  138,  104,   54,
+      138,  119,  138,   48,   61,   72,   78,    0,  138,  138,
+      138,    0,    0,   94,   82,   74,    0,   70,   66,   68,
+       73,   72,  138,  138,   55,  138,  101,   81,   52,   57,
+        0,   64,   70,   72,    0,    0,   58,   68,   56,    0,
+        0,   46,   44,    0,   47,    0,   39,    0,    0,  138,
+      111,  113,  116,   62
+
     } ;
 
-static const flex_int16_t yy_def[31] =
+static const flex_int16_t yy_def[95] =
     {   0,
-       30,    1,   30,   30,   30,   30,   30,   30,   30,   30,
-       30,   30,   30,   30,   30,   30,   30,   30,   30,   30,
-       30,   30,   30,   30,   30,   30,   30,   30,   30,    0
+       90,    1,   90,   90,   90,   90,   90,   91,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   92,   90,   90,   92,   92,   92,   92,
+       92,   92,   92,   92,   92,   90,   90,   90,   90,   93,
+       90,   91,   90,   90,   90,   90,   90,   94,   90,   90,
+       90,   92,   92,   92,   92,   92,   92,   92,   92,   92,
+       92,   92,   90,   90,   93,   90,   93,   90,   90,   90,
+       94,   92,   92,   92,   92,   92,   92,   92,   92,   92,
+       92,   92,   92,   92,   92,   92,   92,   92,   92,    0,
+       90,   90,   90,   90
+
     } ;
 
-static const flex_int16_t yy_nxt[53] =
+static const flex_int16_t yy_nxt[186] =
     {   0,
         4,    5,    6,    7,    8,    9,   10,   11,   12,   13,
-       14,    4,   15,   16,   17,   18,   19,   20,   21,   22,
-       27,   27,   29,   28,   27,   27,   26,   25,   24,   23,
-       30,    3,   30,   30,   30,   30,   30,   30,   30,   30,
-       30,   30,   30,   30,   30,   30,   30,   30,   30,   30,
-       30,   30
+       14,   15,   16,   17,   18,   19,   20,   21,   22,   23,
+       24,   24,   24,   25,    4,   26,   27,   28,   24,   29,
+       30,   24,   31,   24,   32,   24,   33,   24,   24,   24,
+       34,   35,   24,   36,   37,   38,   39,   41,   44,   44,
+       45,   57,   46,   46,   45,   58,   46,   46,   66,   41,
+       47,   44,   44,   71,   47,   70,   70,   42,   47,   47,
+       70,   70,   47,   89,   68,   68,   88,   47,   67,   67,
+       87,   48,   47,   45,   86,   46,   46,   69,   69,   85,
+       47,   70,   70,   47,   68,   68,   84,   83,   82,   81,
+
+       80,   47,   47,   90,   79,   78,   77,   76,   75,   74,
+       47,   40,   40,   40,   52,   52,   65,   65,   65,   73,
+       72,   90,   64,   63,   62,   61,   60,   59,   56,   55,
+       54,   53,   51,   50,   49,   43,   90,    3,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90
     } ;
 
-static const flex_int16_t yy_chk[53] =
+static const flex_int16_t yy_chk[186] =
     {   0,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
         1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
-       18,   27,   22,   21,   18,   27,   17,   16,   15,    8,
-        3,   30,   30,   30,   30,   30,   30,   30,   30,   30,
-       30,   30,   30,   30,   30,   30,   30,   30,   30,   30,
-       30,   30
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    1,    1,    1,
+        1,    1,    1,    1,    1,    1,    1,    8,   15,   15,
+       17,   31,   17,   17,   18,   31,   18,   18,   40,   65,
+       17,   44,   44,   94,   18,   69,   69,    8,   17,   44,
+       70,   70,   18,   87,   45,   45,   85,   44,   40,   65,
+       83,   17,   45,   46,   82,   46,   46,   47,   47,   79,
+       45,   47,   47,   46,   68,   68,   78,   77,   74,   73,
+
+       72,   46,   68,   67,   62,   61,   60,   59,   58,   56,
+       68,   91,   91,   91,   92,   92,   93,   93,   93,   55,
+       54,   42,   39,   37,   35,   34,   33,   32,   30,   29,
+       28,   27,   23,   22,   21,    9,    3,   90,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90,   90,   90,   90,   90,   90,
+       90,   90,   90,   90,   90
     } ;
 
 static yy_state_type yy_last_accepting_state;
@@ -457,10 +510,8 @@ char *yytext;
 #line 2 "monga.l"
 	#include<stdio.h>
 	#include<string.h>
-
-	const char* token_identifier(char* identifier);
-#line 463 "lex.yy.c"
-#line 464 "lex.yy.c"
+#line 514 "lex.yy.c"
+#line 515 "lex.yy.c"
 
 #define INITIAL 0
 
@@ -677,10 +728,10 @@ YY_DECL
 		}
 
 	{
-#line 10 "monga.l"
+#line 15 "monga.l"
 
 
-#line 684 "lex.yy.c"
+#line 735 "lex.yy.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -707,13 +758,13 @@ yy_match:
 			while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 				{
 				yy_current_state = (int) yy_def[yy_current_state];
-				if ( yy_current_state >= 31 )
+				if ( yy_current_state >= 91 )
 					yy_c = yy_meta[yy_c];
 				}
 			yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
 			++yy_cp;
 			}
-		while ( yy_base[yy_current_state] != 32 );
+		while ( yy_base[yy_current_state] != 138 );
 
 yy_find_action:
 		yy_act = yy_accept[yy_current_state];
@@ -738,112 +789,219 @@ do_action:	/* This label is used only to access EOF actions. */
 			goto yy_find_action;
 
 case 1:
-/* rule 1 can match eol */
 YY_RULE_SETUP
-#line 12 "monga.l"
-;
+#line 17 "monga.l"
+; // ignore
 	YY_BREAK
 case 2:
+/* rule 2 can match eol */
 YY_RULE_SETUP
-#line 13 "monga.l"
-{ printf("%s\n", token_identifier(yytext)); }
+#line 19 "monga.l"
+; // count line
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 14 "monga.l"
-{ printf("%s\n", "TOKEN_OPEN_PARENTHESES"); }
+#line 21 "monga.l"
+{ printf("%s\n", "TOKEN_NEW"); }
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 15 "monga.l"
-{ printf("%s\n", "TOKEN_CLOSE_PARENTHESES"); }
+#line 23 "monga.l"
+{ printf("%s\n", "TOKEN_WORD_CHAR"); }
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 16 "monga.l"
-{ printf("%s\n", "TOKEN_OPEN_BRACKETS"); }
+#line 24 "monga.l"
+{ printf("%s\n", "TOKEN_WORD_FLOAT"); }
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 17 "monga.l"
-{ printf("%s\n", "TOKEN_CLOSE_BRACKETS"); }
+#line 25 "monga.l"
+{ printf("%s\n", "TOKEN_WORD_INT"); }
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 18 "monga.l"
-{ printf("%s\n", "TOKEN_MINUS"); }
+#line 26 "monga.l"
+{ printf("%s\n", "TOKEN_WORD_VOID"); }
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 19 "monga.l"
-{ printf("%s\n", "TOKEN_PLUS"); }
+#line 28 "monga.l"
+{ printf("%s\n", "TOKEN_IF"); }
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 20 "monga.l"
-{ printf("%s\n", "TOKEN_MULTIPLY"); }
+#line 29 "monga.l"
+{ printf("%s\n", "TOKEN_ELSE"); }
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 21 "monga.l"
-{ printf("%s\n", "TOKEN_DIVIDE"); }
+#line 31 "monga.l"
+{ printf("%s\n", "TOKEN_WHILE"); }
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 22 "monga.l"
-{ printf("%s\n", "TOKEN_EQUAL"); }
+#line 33 "monga.l"
+{ printf("%s\n", "TOKEN_AS"); }
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 23 "monga.l"
-{ printf("%s\n", "TOKEN_NOT_EQUAL"); }
+#line 35 "monga.l"
+{ printf("%s\n", "TOKEN_RETURN"); }
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 24 "monga.l"
-{ printf("%s\n", "TOKEN_LESS_EQUAL"); }
+#line 37 "monga.l"
+{ printf("%s\n", "TOKEN_OPEN_PARENTHESES"); }
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 25 "monga.l"
-{ printf("%s\n", "TOKEN_GREATER_EQUAL"); }
+#line 38 "monga.l"
+{ printf("%s\n", "TOKEN_CLOSE_PARENTHESES"); }
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 26 "monga.l"
-{ printf("%s\n", "TOKEN_LESS"); }
+#line 39 "monga.l"
+{ printf("%s\n", "TOKEN_OPEN_BRACKETS"); }
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 27 "monga.l"
-{ printf("%s\n", "TOKEN_GREATER"); }
+#line 40 "monga.l"
+{ printf("%s\n", "TOKEN_CLOSE_BRACKETS"); }
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 28 "monga.l"
-{ printf("%s\n", "TOKEN_NOT"); }
+#line 41 "monga.l"
+{ printf("%s\n", "TOKEN_OPEN_BRACES"); }
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 29 "monga.l"
-{ printf("%s\n", "TOKEN_AND"); }
+#line 42 "monga.l"
+{ printf("%s\n", "TOKEN_CLOSE_BRACES"); }
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 30 "monga.l"
-{ printf("%s\n", "TOKEN_OR"); }
+#line 44 "monga.l"
+{ printf("%s\n", "TOKEN_EQUAL"); }
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 31 "monga.l"
-{ printf("%c\n", yytext[0]); }
+#line 45 "monga.l"
+{ printf("%s\n", "TOKEN_NOT_EQUAL"); }
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 33 "monga.l"
+#line 46 "monga.l"
+{ printf("%s\n", "TOKEN_LESS_EQUAL"); }
+	YY_BREAK
+case 22:
+YY_RULE_SETUP
+#line 47 "monga.l"
+{ printf("%s\n", "TOKEN_GREATER_EQUAL"); }
+	YY_BREAK
+case 23:
+YY_RULE_SETUP
+#line 48 "monga.l"
+{ printf("%s\n", "TOKEN_AND"); }
+	YY_BREAK
+case 24:
+YY_RULE_SETUP
+#line 49 "monga.l"
+{ printf("%s\n", "TOKEN_OR"); }
+	YY_BREAK
+case 25:
+YY_RULE_SETUP
+#line 51 "monga.l"
+{ printf("%s\n", "TOKEN_MINUS"); }
+	YY_BREAK
+case 26:
+YY_RULE_SETUP
+#line 52 "monga.l"
+{ printf("%s\n", "TOKEN_PLUS"); }
+	YY_BREAK
+case 27:
+YY_RULE_SETUP
+#line 53 "monga.l"
+{ printf("%s\n", "TOKEN_MULTIPLY"); }
+	YY_BREAK
+case 28:
+YY_RULE_SETUP
+#line 54 "monga.l"
+{ printf("%s\n", "TOKEN_DIVIDE"); }
+	YY_BREAK
+case 29:
+YY_RULE_SETUP
+#line 55 "monga.l"
+{ printf("%s\n", "TOKEN_ASSIGNMENT"); }
+	YY_BREAK
+case 30:
+YY_RULE_SETUP
+#line 56 "monga.l"
+{ printf("%s\n", "TOKEN_LESS"); }
+	YY_BREAK
+case 31:
+YY_RULE_SETUP
+#line 57 "monga.l"
+{ printf("%s\n", "TOKEN_GREATER"); }
+	YY_BREAK
+case 32:
+YY_RULE_SETUP
+#line 58 "monga.l"
+{ printf("%s\n", "TOKEN_NOT"); }
+	YY_BREAK
+case 33:
+YY_RULE_SETUP
+#line 60 "monga.l"
+{ printf("%s\n", "TOKEN_COLON"); }
+	YY_BREAK
+case 34:
+YY_RULE_SETUP
+#line 61 "monga.l"
+{ printf("%s\n", "TOKEN_SEMICOLON"); }
+	YY_BREAK
+case 35:
+/* rule 35 can match eol */
+YY_RULE_SETUP
+#line 63 "monga.l"
+{ printf("%s\t%s\n", "TOKEN_CHAR", yytext); }
+	YY_BREAK
+case 36:
+YY_RULE_SETUP
+#line 64 "monga.l"
+{ printf("%s\t%s\n", "TOKEN_INTEGER", yytext); }
+	YY_BREAK
+case 37:
+YY_RULE_SETUP
+#line 65 "monga.l"
+{ printf("%s\t%s\n", "TOKEN_FLOAT", yytext); }
+	YY_BREAK
+case 38:
+YY_RULE_SETUP
+#line 66 "monga.l"
+{ printf("%s\t%s\n", "TOKEN_HEXADECIMAL", yytext); }
+	YY_BREAK
+case 39:
+/* rule 39 can match eol */
+YY_RULE_SETUP
+#line 68 "monga.l"
+{ printf("%s\t\t%s\n", "TOKEN_STRING", yytext); }
+	YY_BREAK
+case 40:
+YY_RULE_SETUP
+#line 70 "monga.l"
+{ printf("%s\t%s\n", "TOKEN_IDENTIFIER", yytext); }
+	YY_BREAK
+case 41:
+YY_RULE_SETUP
+#line 72 "monga.l"
+{ printf("%c\n", yytext[0]); }
+	YY_BREAK
+case 42:
+YY_RULE_SETUP
+#line 74 "monga.l"
 ECHO;
 	YY_BREAK
-#line 847 "lex.yy.c"
+#line 1005 "lex.yy.c"
 case YY_STATE_EOF(INITIAL):
 	yyterminate();
 
@@ -1140,7 +1298,7 @@ static int yy_get_next_buffer (void)
 		while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 			{
 			yy_current_state = (int) yy_def[yy_current_state];
-			if ( yy_current_state >= 31 )
+			if ( yy_current_state >= 91 )
 				yy_c = yy_meta[yy_c];
 			}
 		yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
@@ -1168,11 +1326,11 @@ static int yy_get_next_buffer (void)
 	while ( yy_chk[yy_base[yy_current_state] + yy_c] != yy_current_state )
 		{
 		yy_current_state = (int) yy_def[yy_current_state];
-		if ( yy_current_state >= 31 )
+		if ( yy_current_state >= 91 )
 			yy_c = yy_meta[yy_c];
 		}
 	yy_current_state = yy_nxt[yy_base[yy_current_state] + yy_c];
-	yy_is_jam = (yy_current_state == 30);
+	yy_is_jam = (yy_current_state == 90);
 
 		return yy_is_jam ? 0 : yy_current_state;
 }
@@ -1848,39 +2006,7 @@ void yyfree (void * ptr )
 
 #define YYTABLES_NAME "yytables"
 
-#line 33 "monga.l"
+#line 74 "monga.l"
 
 
-const char* token_identifier(char* identifier) {
-	char token[] = "TOKEN_IDENTIFIER\t";
-
-	int length = strlen(token) + strlen(identifier) + 1;
-	char* token_and_id = (char*)malloc(length);
-
-	if(strcmp(identifier, "as") == 0)
-		return "TOKEN_IDENTIFIER_AS";
-	else if(strcmp(identifier, "char") == 0)
-		return "TOKEN_IDENTIFIER_CHAR";
-	else if(strcmp(identifier, "else") == 0)
-		return "TOKEN_IDENTIFIER_ELSE";
-	else if(strcmp(identifier, "float") == 0)
-		return "TOKEN_IDENTIFIER_FLOAT";
-	else if(strcmp(identifier, "if") == 0)
-		return "TOKEN_IDENTIFIER_IF";
-	else if(strcmp(identifier, "int") == 0)
-		return "TOKEN_IDENTIFIER_INT";
-	else if(strcmp(identifier, "new") == 0)
-		return "TOKEN_IDENTIFIER_NEW";
-	else if(strcmp(identifier, "return") == 0)
-		return "TOKEN_IDENTIFIER_RETURN";
-	else if(strcmp(identifier, "void") == 0)
-		return "TOKEN_IDENTIFIER_VOID";
-	else if(strcmp(identifier, "while") == 0)
-		return "TOKEN_IDENTIFIER_WHILE";
-
-	strcat(token_and_id, token);
-	strcat(token_and_id, identifier);
-	
-	return token_and_id;
-}
 
