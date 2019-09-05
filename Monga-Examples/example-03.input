@@ -1,6 +1,5 @@
 testing = "a";
 every = 10;
 single = 10.4
-type = true;
-of = new char[3];
-variable = new [char][3];
+variable = new char[3];
+type = new [char][3];
