@@ -1,3 +1,5 @@
+# Testing variables name length
+
 s : char;
-simple_name : char;
+normal_name : char;
 long_long_long_long_long_long_name : char;

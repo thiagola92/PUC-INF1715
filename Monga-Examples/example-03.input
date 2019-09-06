@@ -1,5 +1,6 @@
-testing = "a";
-every = 10;
-single = 10.4
-variable = new char[3];
-type = new [char][3];
+# Testing bool
+
+aaa : bool;
+
+aaa = true;
+aaa = false;

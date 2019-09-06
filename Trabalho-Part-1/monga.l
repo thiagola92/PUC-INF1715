@@ -3,10 +3,10 @@
 	#include<string.h>
 %}
 
-CHAR		\"([^"\\]|\\.)\"
+CHARACTER	\"([^"\\]|\\.)\"
 INTEGER		[0-9]+
 FLOAT		([0-9]+("."[0-9]*)?|"."[0-9]+)([eE][-+]?[0-9]+)?
-HEXADECIMAL	0x[0-9a-fA-F]+
+HEXADECIMAL	0[Xx][0-9a-fA-F]+
 
 STRING		\"([^"\\]|\\.)*\"
 
@@ -22,10 +22,13 @@ COMMENT		#[^\n]*
 
 "new"		{ printf("%s\n", "TOKEN_NEW"); }
 
+"bool"		{ printf("%s\n", "TOKEN_WORD_BOOL"); }
 "char"		{ printf("%s\n", "TOKEN_WORD_CHAR"); }
-"float"		{ printf("%s\n", "TOKEN_WORD_FLOAT"); }
 "int"		{ printf("%s\n", "TOKEN_WORD_INT"); }
-"void"		{ printf("%s\n", "TOKEN_WORD_VOID"); }
+"float"		{ printf("%s\n", "TOKEN_WORD_FLOAT"); }
+
+"true"		{ printf("%s\n", "TOKEN_TRUE"); }
+"false"		{ printf("%s\n", "TOKEN_FALSE"); }
 
 "if"		{ printf("%s\n", "TOKEN_IF"); }
 "else"		{ printf("%s\n", "TOKEN_ELSE"); }
@@ -62,16 +65,16 @@ COMMENT		#[^\n]*
 ":"		{ printf("%s\n", "TOKEN_COLON"); }
 ";"		{ printf("%s\n", "TOKEN_SEMICOLON"); }
 
-{CHAR}		{ printf("%s\t%s\n", "TOKEN_CHAR", yytext); }
-{INTEGER}	{ printf("%s\t%s\n", "TOKEN_INTEGER", yytext); }
-{FLOAT}		{ printf("%s\t%s\n", "TOKEN_FLOAT", yytext); }
+{CHARACTER}	{ printf("%s\t\t%s\n", "TOKEN_CHARACTER", yytext); }
+{INTEGER}	{ printf("%s\t\t%s\n", "TOKEN_INTEGER", yytext); }
+{FLOAT}		{ printf("%s\t\t%s\n", "TOKEN_FLOAT", yytext); }
 {HEXADECIMAL}	{ printf("%s\t%s\n", "TOKEN_HEXADECIMAL", yytext); }
 
 {STRING}	{ printf("%s\t\t%s\n", "TOKEN_STRING", yytext); }
 
 {IDENTIFIER}	{ printf("%s\t%s\n", "TOKEN_IDENTIFIER", yytext); }
 
-{COMMENT}	{ printf("%s\t%s\n", "TOKEN_COMMENT", yytext); }
+{COMMENT}	{ printf("%s\t\t%s\n", "TOKEN_COMMENT", yytext); }
 
 .		{ printf("%c\n", yytext[0]); }
 

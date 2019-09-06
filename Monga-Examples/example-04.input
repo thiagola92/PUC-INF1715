@@ -1,7 +1,13 @@
-# everything : char;
-# is : int;
-# commented : float;
+# Testing char
 
-# everything = "a";
-# is = 10;
-# commented = 10.4
+aaa : char;
+
+aaa = "a";
+aaa = "z";
+aaa = "0";
+aaa = "9";
+
+aaa = "\"";
+aaa = "\n";
+aaa = "\\";
+aaa = " ";

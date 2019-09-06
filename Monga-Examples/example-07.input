@@ -1,0 +1,19 @@
+# Testing hexadecimal
+
+aaa = 0x0;
+aaa = 0x9;
+aaa = 0xA;
+aaa = 0xF;
+aaa = 0x00;
+aaa = 0x99;
+aaa = 0xAA;
+aaa = 0xFF;
+
+aaa = 0X0;
+aaa = 0X9;
+aaa = 0XA;
+aaa = 0XF;
+aaa = 0X00;
+aaa = 0X99;
+aaa = 0XAA;
+aaa = 0XFF;
