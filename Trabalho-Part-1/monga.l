@@ -62,6 +62,7 @@ COMMENT		#[^\n]*
 ">"		{ printf("%s\n", "TOKEN_GREATER"); }
 "!"		{ printf("%s\n", "TOKEN_NOT"); }
 
+"@"		{ printf("%s\n", "TOKEN_AT_SIGN"); }
 ","		{ printf("%s\n", "TOKEN_COMMA"); }
 ":"		{ printf("%s\n", "TOKEN_COLON"); }
 ";"		{ printf("%s\n", "TOKEN_SEMICOLON"); }

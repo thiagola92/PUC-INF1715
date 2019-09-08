@@ -13,8 +13,9 @@ for file_input in Monga-Examples/*\.input; do
 	status=$?
 
 	if [ $status -eq "0" ]; then
-		echo -e $file_name "\xE2\x9C\x93" 
+		echo -e "======= $file_name \xE2\x9C\x93 ======="
 	else
-		echo -e $file_name "\xE2\x9C\x95"
+		echo -e "======= $file_name \xE2\x9C\x95 ======="
+		diff $file_answer $file_output
 	fi
 done
