@@ -1,0 +1,23 @@
+if(1 == 1) {
+	aaa : bool;
+}
+
+if(1 == 2) {
+	aaa : bool;
+} else {
+	aaa : bool;
+}
+
+if(1 == 2) {
+	aaa : bool;
+} else if(2 == 2) {
+	aaa : bool;
+}
+
+if(1 == 2) {
+	aaa : bool;
+} else if(2 == 3) {
+	aaa : bool;
+} else {
+	aaa : bool;
+}

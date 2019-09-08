@@ -62,13 +62,14 @@ COMMENT		#[^\n]*
 ">"		{ printf("%s\n", "TOKEN_GREATER"); }
 "!"		{ printf("%s\n", "TOKEN_NOT"); }
 
+","		{ printf("%s\n", "TOKEN_COMMA"); }
 ":"		{ printf("%s\n", "TOKEN_COLON"); }
 ";"		{ printf("%s\n", "TOKEN_SEMICOLON"); }
 
 {CHARACTER}	{ printf("%s\t\t%s\n", "TOKEN_CHARACTER", yytext); }
 {INTEGER}	{ printf("%s\t\t%s\n", "TOKEN_INTEGER", yytext); }
 {FLOAT}		{ printf("%s\t\t%s\n", "TOKEN_FLOAT", yytext); }
-{HEXADECIMAL}	{ printf("%s\t%s\n", "TOKEN_HEXADECIMAL", yytext); }
+{HEXADECIMAL}	{ printf("%s\t\t%f\n", "TOKEN_FLOAT", strtod(yytext, NULL)); }
 
 {STRING}	{ printf("%s\t\t%s\n", "TOKEN_STRING", yytext); }
 
