@@ -1,5 +1,8 @@
-# Testing variables name length
+# Testing variables name length and characters
 
 s : char;
 normal_name : char;
 long_long_long_long_long_long_name : char;
+s1 : char;
+s_1 : char;
+abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679 : char;

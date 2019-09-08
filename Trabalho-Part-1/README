@@ -1,0 +1,39 @@
+===== FILES =====
+
+* README
+* monga.l
+* monga.h
+* main.c
+* test_lexical.sh
+* /Monga-Examples
+
+===== REQUERIMENTS =====
+
+Flex
+GCC
+BASH
+
+===== RUN =====
+
+flex monga.l
+gcc main.c lex.yy.c -o test
+bash test_lexical
+
+===== TESTS =====
+
+* comentários
+* nomes de variáveis
+* tipos de variáveis
+* variáveis bool
+* variáveis char
+* variáveis int
+* variáveis float
+* variáveis hexadecimal
+* if
+* while
+* functions
+* arrys
+
+===== TO DO =====
+
+
