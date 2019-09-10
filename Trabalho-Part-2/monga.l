@@ -21,7 +21,7 @@ COMMENT		#[^\n]*
 
 [ \t]		; // ignore
 
-\n		; // count line
+\n		{ current_line++; }
 
 "new"		{ printf("%s\n", "TOKEN_NEW"); }
 
@@ -70,16 +70,16 @@ COMMENT		#[^\n]*
 ":"		{ printf("%s\n", "TOKEN_COLON"); }
 ";"		{ printf("%s\n", "TOKEN_SEMICOLON"); }
 
-{CHARACTER}	{ printf("%s\t\t%s\n", "TOKEN_CHARACTER", yytext); }
+{CHARACTER}	{ printf("%s\t\t%s\n", "TOKEN_CHARACTER", yytext); yylval.i = yytext[1]; }
 {INTEGER}	{ printf("%s\t\t%ld\n", "TOKEN_INTEGER", strtol(yytext, NULL, 10)); }
 {FLOAT}		{ printf("%s\t\t%f\n", "TOKEN_FLOAT", strtod(yytext, NULL)); }
 {HEXADECIMAL}	{ printf("%s\t\t%f\n", "TOKEN_FLOAT", strtod(yytext, NULL)); }
 
-{STRING}	{ printf("%s\t\t%s\n", "TOKEN_STRING", yytext); }
+{STRING}	{ printf("%s\t\t%s\n", "TOKEN_STRING", strdup(yytext)); }
 
-{IDENTIFIER}	{ printf("%s\t%s\n", "TOKEN_IDENTIFIER", yytext); }
+{IDENTIFIER}	{ printf("%s\t%s\n", "TOKEN_IDENTIFIER", strdup(yytext)); }
 
-{COMMENT}	{ printf("%s\t\t%s\n", "TOKEN_COMMENT", yytext); }
+{COMMENT}	{ printf("%s\t\t%s\n", "TOKEN_COMMENT", strdup(yytext)); }
 
 .		{ printf("%c\n", yytext[0]); }
 

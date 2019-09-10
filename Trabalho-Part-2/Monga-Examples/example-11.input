@@ -1,0 +1,10 @@
+# Testing array
+
+aaa : [char];
+aaa = new [char][3];
+
+bbb : [[char]];
+bbb = new [[char]][3];
+
+ccc : [[[char]]];
+ccc = new [[[char]]][3];

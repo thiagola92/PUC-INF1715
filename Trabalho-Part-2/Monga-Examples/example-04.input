@@ -1,0 +1,13 @@
+# Testing char
+
+aaa : char;
+
+aaa = "a";
+aaa = "z";
+aaa = "0";
+aaa = "9";
+
+aaa = "\"";
+aaa = "\n";
+aaa = "\\";
+aaa = " ";

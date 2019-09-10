@@ -1,0 +1,8 @@
+# Testing float
+
+aaa : float;
+
+aaa = 0.0;
+aaa = 1.0;
+aaa = -1.0;
+aaa = 1000000000.0;

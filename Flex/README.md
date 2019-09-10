@@ -173,3 +173,46 @@ int yywrap() {
 
 Se retornar 0, continuar a execução do programa.  
 Se retornar um valor diferente de 0, finaliza a execução do programa.  
+
+### yyout
+Variável que define o arquivo/saida onde escrever.
+
+```C
+yyout = fopen("filename.txt", "w");
+```
+
+# Condição de inicialização
+Apenas irá verificar uma regra se estiver naquela condição.  
+Condições são representadas como "<example>" dentro das regras.  
+Condições são criadas antes das regras utilizando "%x" ou "%s" seguida pelas condições.  
+Condições inicializam com a chamada do método "BEGIN()".  
+Condições finalizam com a chamada do método "BEGIN()".  
+
+Essa regra iria deletar tudo que não for aspas.  
+```
+%%
+
+[^"]*		;
+
+%%
+```
+
+Essa regra irá deletar tudo que não for aspas **se** estiver dentro da condição "INSIDE_STRING".  
+```
+%x INSIDE_STRING
+
+%%
+
+<INSIDE_STRING>[^"]* 	;
+"["]"			{ BEGIN(INSIDE_STRING); }
+
+%%
+```
+
+Multiplas condições, se uma delas for verdade a regra será executada.    
+```
+<INSIDE_STRING, INSIDE_WHILE>	;
+```
+
+"BEGIN(0)" reseta para o estado inicial de "nenhuma condição ativa".  
+

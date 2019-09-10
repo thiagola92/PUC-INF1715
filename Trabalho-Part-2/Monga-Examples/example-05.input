@@ -1,0 +1,8 @@
+# Testing int
+
+aaa : int;
+
+aaa = 0;
+aaa = 1;
+aaa = -1;
+aaa = 1000000000;

@@ -1,0 +1,6 @@
+# Testing bool
+
+aaa : bool;
+
+aaa = true;
+aaa = false;
