@@ -13,9 +13,21 @@ int main(int argc, const char* argv[]) {
 	}
 
 	yyin = fopen(argv[1], "r");
-	yylex();
+
+	do {
+		int i = yyparse();
+		printf("%d\n", i);
+
+		if(i == 0)
+			break;
+	} while(1==1);
 }
 
 int yywrap() {
 	return 1;
+}
+
+void yyerror(char* s) {
+	printf("%s in line %d\n", s, CURRENT_LINE);
+	exit(1);
 }

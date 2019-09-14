@@ -83,17 +83,7 @@ Pattern: Soma de dois números de 1 digito.
 Pattern: Subtração de dois números de 1 digito.  
 Pattern: Uma única letra.  
 
-# Compile - Fast
-Compilar código Flex: `flex FILE.l`  
-Compilar código C: `gcc lex.yy.c -ll`  
-Executar código: `./a.out`  
-
-Observação: `-ll` linka com a biblioteca lex.  
-https://stackoverflow.com/questions/15732155/what-is-ll-gccs-flag  
-
-Toda string após enter será mandado como entrada.  
-
-# Definitions - C code
+# Definitions - C code  
 Durante a definições é possível incluir código de C.  
 
 ```
@@ -131,57 +121,7 @@ void hi() {
 }
 ```
 
-# yy
-
-### yylex()
-Método para fazer a leitura de um token.  
-Retorna quando encontrar o fim do arquivo ou encontrar um return.  
-Uma chamada seguinte ao método iria continuar a busca pelo próximo token.  
-
-```
-%%
-"a"	{ printf("Don't stop\n"); }
-"b"	{ return 10; }
-.	;
-%%
-```
-O método não iria finalizar ao ler "a" mas iria finalizar ao ler "b".  
-
-### yytext
-Variável que armazena o token encontrado.  
-
-### yyleng
-Variável que armazena o tamanho do token encontrado.  
-
-### yyin
-Variável que define o arquivo/entrada a ser lido.  
-
-```C
-yyin = fopen("filename.txt", "r");
-```
-
-### yywrap()
-Método chamado sempre que termina der ler um arquivo.  
-Deve se aproveitar esse método para atualizar o `yyin` se possuir mais arquivos para ler.  
-
-É necessária uma implementação mínima.  
-```C
-int yywrap() {
-	return 1;
-}
-```
-
-Se retornar 0, continuar a execução do programa.  
-Se retornar um valor diferente de 0, finaliza a execução do programa.  
-
-### yyout
-Variável que define o arquivo/saida onde escrever.
-
-```C
-yyout = fopen("filename.txt", "w");
-```
-
-# Condição de inicialização
+# Initialization condition
 Apenas irá verificar uma regra se estiver naquela condição.  
 Condições são representadas como "<example>" dentro das regras.  
 Condições são criadas antes das regras utilizando "%x" ou "%s" seguida pelas condições.  
@@ -216,3 +156,17 @@ Multiplas condições, se uma delas for verdade a regra será executada.
 
 "BEGIN(0)" reseta para o estado inicial de "nenhuma condição ativa".  
 
+# Compile (Fast)
+Compilar código Flex: `flex FILE.l`  
+Compilar código C: `gcc lex.yy.c -ll`  
+Executar código: `./a.out`  
+
+Observação: `-ll` linka com a biblioteca lex.  
+https://stackoverflow.com/questions/15732155/what-is-ll-gccs-flag  
+
+Toda string após enter será mandado como entrada.  
+
+# Compile (normal)
+Compilar código Flex: `flex example.l`  
+Compilar código C: `gcc main.c lex.yy.c -o example`  
+Executar código: `./example.out`  

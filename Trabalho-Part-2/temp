@@ -1,0 +1,31 @@
+
+
+program:		define_var		{;}
+       			| define_function	{;}
+
+define_variable:	TOKEN_IDENTIFIER TOKEN_COLON type TOKEN_SEMICOLON
+	  		| TOKEN_IDENTIFIER TOKEN_COLON type TOKEN_SEMICOLON
+	  		| TOKEN_IDENTIFIER TOKEN_COLON type TOKEN_SEMICOLON
+	  		| TOKEN_IDENTIFIER TOKEN_COLON type TOKEN_SEMICOLON
+	  		| TOKEN_IDENTIFIER TOKEN_COLON type TOKEN_SEMICOLON
+
+type:			TOKEN_WORD_BOOL
+    			| TOKEN_WORD_CHAR
+			| TOKEN_WORD_INT
+			| TOKEN_WORD_FLOAT
+			| TOKEN_OPEN_BRACKETS type TOKEN_CLOSE_BRACKETS
+
+define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON type block
+	       		| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block
+
+parameters:		parameter paramater
+	  		| parameter
+			| 			{;}
+
+
+expression:		expression TOKEN_ADD expression
+	  		| expression TOKEN_SUBTRACT expression
+	  		| expression TOKEN_MULTIPLY expression
+	  		| expression TOKEN_DIVIDE expression
+	  		| TOKEN_INTEGER
+	  		| TOKEN_FLOAT

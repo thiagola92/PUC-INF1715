@@ -2,8 +2,9 @@
 	// Nome: Thiago Lages de Alencar
 	// Matricula: 1721629
 
-	#include<stdio.h>
-	#include<string.h>
+	#include"monga.h"
+
+	int CURRENT_LINE = 0;
 %}
 
 CHARACTER	\"([^"\\]|\\.)\"
@@ -21,67 +22,68 @@ COMMENT		#[^\n]*
 
 [ \t]		; // ignore
 
-\n		{ current_line++; }
+\n		{ CURRENT_LINE++; }
 
-"new"		{ printf("%s\n", "TOKEN_NEW"); }
+"new"		{ return TOKEN_NEW; }
 
-"bool"		{ printf("%s\n", "TOKEN_WORD_BOOL"); }
-"char"		{ printf("%s\n", "TOKEN_WORD_CHAR"); }
-"int"		{ printf("%s\n", "TOKEN_WORD_INT"); }
-"float"		{ printf("%s\n", "TOKEN_WORD_FLOAT"); }
+"bool"		{ return TOKEN_WORD_BOOL; }
+"char"		{ return TOKEN_WORD_CHAR; }
+"int"		{ return TOKEN_WORD_INT; }
+"float"		{ return TOKEN_WORD_FLOAT; }
 
-"true"		{ printf("%s\n", "TOKEN_TRUE"); }
-"false"		{ printf("%s\n", "TOKEN_FALSE"); }
+"true"		{ yylval.i = 1; return TOKEN_TRUE; }
+"false"		{ yylval.i = 0; return TOKEN_FALSE; }
 
-"if"		{ printf("%s\n", "TOKEN_IF"); }
-"else"		{ printf("%s\n", "TOKEN_ELSE"); }
+"if"		{ return TOKEN_IF; }
+"else"		{ return TOKEN_ELSE; }
 
-"while"		{ printf("%s\n", "TOKEN_WHILE"); }
+"while"		{ return TOKEN_WHILE; }
 
-"as"		{ printf("%s\n", "TOKEN_AS"); }
+"as"		{ return TOKEN_AS; }
 
-"return"	{ printf("%s\n", "TOKEN_RETURN"); }
+"return"	{ return TOKEN_RETURN; }
 
-"("		{ printf("%s\n", "TOKEN_OPEN_PARENTHESES"); }
-")"		{ printf("%s\n", "TOKEN_CLOSE_PARENTHESES"); }
-"["		{ printf("%s\n", "TOKEN_OPEN_BRACKETS"); }
-"]"		{ printf("%s\n", "TOKEN_CLOSE_BRACKETS"); }
-"{"		{ printf("%s\n", "TOKEN_OPEN_BRACES"); }
-"}"		{ printf("%s\n", "TOKEN_CLOSE_BRACES"); }
+"("		{ return TOKEN_OPEN_PARENTHESES; }
+")"		{ return TOKEN_CLOSE_PARENTHESES; }
+"["		{ return TOKEN_OPEN_BRACKETS; }
+"]"		{ return TOKEN_CLOSE_BRACKETS; }
+"{"		{ return TOKEN_OPEN_BRACES; }
+"}"		{ return TOKEN_CLOSE_BRACES; }
 
-"=="		{ printf("%s\n", "TOKEN_EQUAL"); }
-"~="		{ printf("%s\n", "TOKEN_NOT_EQUAL"); }
-"<="		{ printf("%s\n", "TOKEN_LESS_EQUAL"); }
-">="		{ printf("%s\n", "TOKEN_GREATER_EQUAL"); }
-"&&"		{ printf("%s\n", "TOKEN_AND"); }
-"||"		{ printf("%s\n", "TOKEN_OR"); }
+"=="		{ return TOKEN_EQUAL; }
+"~="		{ return TOKEN_NOT_EQUAL; }
+"<="		{ return TOKEN_LESS_EQUAL; }
+">="		{ return TOKEN_GREATER_EQUAL; }
+"&&"		{ return TOKEN_AND; }
+"||"		{ return TOKEN_OR; }
 
-"-"		{ printf("%s\n", "TOKEN_MINUS"); }
-"+"		{ printf("%s\n", "TOKEN_PLUS"); }
-"*"		{ printf("%s\n", "TOKEN_MULTIPLY"); }
-"/"		{ printf("%s\n", "TOKEN_DIVIDE"); }
-"="		{ printf("%s\n", "TOKEN_ASSIGNMENT"); }
-"<"		{ printf("%s\n", "TOKEN_LESS"); }
-">"		{ printf("%s\n", "TOKEN_GREATER"); }
-"!"		{ printf("%s\n", "TOKEN_NOT"); }
+"-"		{ return TOKEN_SUBTRACT; }
+"+"		{ return TOKEN_ADD; }
+"*"		{ return TOKEN_MULTIPLY; }
+"/"		{ return TOKEN_DIVIDE; }
+"="		{ return TOKEN_ASSIGNMENT; }
+"<"		{ return TOKEN_LESS; }
+">"		{ return TOKEN_GREATER; }
+"!"		{ return TOKEN_NOT; }
 
-"@"		{ printf("%s\n", "TOKEN_AT_SIGN"); }
-","		{ printf("%s\n", "TOKEN_COMMA"); }
-":"		{ printf("%s\n", "TOKEN_COLON"); }
-";"		{ printf("%s\n", "TOKEN_SEMICOLON"); }
+"@"		{ return TOKEN_AT_SIGN; }
+","		{ return TOKEN_COMMA; }
+":"		{ return TOKEN_COLON; }
+";"		{ return TOKEN_SEMICOLON; }
 
-{CHARACTER}	{ printf("%s\t\t%s\n", "TOKEN_CHARACTER", yytext); yylval.i = yytext[1]; }
-{INTEGER}	{ printf("%s\t\t%ld\n", "TOKEN_INTEGER", strtol(yytext, NULL, 10)); }
-{FLOAT}		{ printf("%s\t\t%f\n", "TOKEN_FLOAT", strtod(yytext, NULL)); }
-{HEXADECIMAL}	{ printf("%s\t\t%f\n", "TOKEN_FLOAT", strtod(yytext, NULL)); }
+{CHARACTER}	{ yylval.c = yytext[1]; return TOKEN_CHARACTER; }
+{INTEGER}	{ yylval.i = strtol(yytext, NULL, 10); return TOKEN_INTEGER; }
 
-{STRING}	{ printf("%s\t\t%s\n", "TOKEN_STRING", strdup(yytext)); }
+{FLOAT}		{ yylval.f = strtod(yytext, NULL); return TOKEN_FLOAT; }
+{HEXADECIMAL}	{ yylval.f = strtod(yytext, NULL); return TOKEN_FLOAT; }
 
-{IDENTIFIER}	{ printf("%s\t%s\n", "TOKEN_IDENTIFIER", strdup(yytext)); }
+{STRING}	{ yylval.s = strdup(yytext); return TOKEN_STRING; }
 
-{COMMENT}	{ printf("%s\t\t%s\n", "TOKEN_COMMENT", strdup(yytext)); }
+{IDENTIFIER}	{ yylval.s = strdup(yytext); return TOKEN_IDENTIFIER; }
 
-.		{ printf("%c\n", yytext[0]); }
+{COMMENT}	{ ; }
+
+.		{ return yytext[0]; }
 
 %%
 
