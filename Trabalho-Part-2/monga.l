@@ -4,7 +4,7 @@
 
 	#include"monga.h"
 
-	int CURRENT_LINE = 0;
+	int CURRENT_LINE = 1;
 %}
 
 CHARACTER	\"([^"\\]|\\.)\"

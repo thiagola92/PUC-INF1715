@@ -1,5 +1,0 @@
-# Testing while
-
-while(1 == 1) {
-	aaa : bool;
-}

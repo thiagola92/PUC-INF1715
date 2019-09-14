@@ -1,6 +1,32 @@
-# Testing bool
+# Testing function
 
-aaa : bool;
+first() {
+}
 
-aaa = true;
-aaa = false;
+second() {
+	a : bool;
+}
+
+third() : bool {
+	return true;
+}
+
+fourth(a : bool) {
+	b : bool;
+}
+
+fifth(a : bool) : bool {
+	return a;
+}
+
+sixth(a : bool, b : bool) {
+	c : bool;
+}
+
+seventh(a : bool, b : bool) : bool {
+	return true;
+}
+
+eigth(a : bool, b : bool, c : bool) {
+	d : bool;
+}

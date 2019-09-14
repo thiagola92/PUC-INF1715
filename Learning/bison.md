@@ -47,32 +47,6 @@ Durante as declarações é possível utilizar código de C.
 ```
 
 # Rules
-O lado esquerdo representa uma regra que pode se derivar a qualquer uma das que se encontram no lado direito.  
-
-```
-initial_rule:	expression text
-		| text
-```
-Começando pela regra inicial você pode ir para a regra `expression` seguida pela regra `text` ou você pode ir para a regra que é apenas `text`.  
-
-```
-initial_rule:	expression text	
-		| text			{ printf("End"); }
-```
-Ao detectar que você dentro de uma das regras, é possível executar código C.  
-
-
-```
-initial_rule:	expression print
-		| print
-
-print:		{ printf("End"); }
-
-expression:	TOKEN_INTEGER TOKEN_PLUS TOKEN_INTEGER		{}
-		| TOKEN_INTEGER TOKEN_MINUS TOKEN_INTEGER
-		| TOKEN_INTEGER TOKEN_MULTIPLY TOKEN_INTEGER
-		| TOKEN_INTEGER
-```
 
 # Subroutines
 

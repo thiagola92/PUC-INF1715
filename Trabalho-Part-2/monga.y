@@ -65,22 +65,75 @@
 
 %%
 
-program:	define_variables	{ printf("program\n"); }
+program:				{ ; }
+		| define program	{ ; }
 		;
 
-define_variables:	define_variable				{ printf("define_variable\n"); }
-			| define_variable define_variables 	{ printf("define_variable define_variables\n"); }
-			| 					{ printf("---\n"); }
+define:		define_variable		{ ; }
+		| define_function
+		;
+
+define_variable:	TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON	{ ; }
 			;
 
-define_variable:	TOKEN_IDENTIFIER TOKEN_COLON type TOKEN_SEMICOLON	{ printf("define_variable\n"); }
+variable_type:	TOKEN_WORD_BOOL							{ ; }
+    		| TOKEN_WORD_CHAR						{ ; }
+		| TOKEN_WORD_INT						{ ; }
+		| TOKEN_WORD_FLOAT						{ ; }
+		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ ; }
+		;
+
+define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES return_type block	{ ; }
 			;
 
-type:	TOKEN_WORD_BOOL					{ printf("TOKEN_WORD_BOOL\n"); }
-    	| TOKEN_WORD_CHAR				{ printf("TOKEN_WORD_CHAR\n"); }
-	| TOKEN_WORD_INT				{ printf("TOKEN_WORD_INT\n"); }
-	| TOKEN_WORD_FLOAT				{ printf("TOKEN_WORD_FLOAT\n"); }
-	| TOKEN_OPEN_BRACKETS type TOKEN_CLOSE_BRACKETS	{ printf("ARRAY\n"); }
-	;
+parameters:							{ ; }
+			| parameter TOKEN_COMMA parameters	{ ; }
+			| parameter				{ ; }
+			;
+
+parameter:	TOKEN_IDENTIFIER TOKEN_COLON variable_type	{ ; }
+		;
+
+return_type: 						{ ; }
+			| TOKEN_COLON variable_type	{ ; }
+			;
+
+block:		TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES 	{ ; }
+		| TOKEN_OPEN_BRACES define_variables TOKEN_CLOSE_BRACES 	{ ; }
+		| TOKEN_OPEN_BRACES commands TOKEN_CLOSE_BRACES 		{ ; }
+		| TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES 				{ ; }
+		;
+
+define_variables:	define_variable			{ ; }
+			| define_variable define_variables	{ ; }
+			;
+
+commands:	command			{ ; }
+		| command commands	{ ; }
+		;
+
+command:	 return_command				{ ; }
+		| function_call TOKEN_SEMICOLON		{ ; }
+		;
+
+return_command:		TOKEN_RETURN expression TOKEN_SEMICOLON		{ ; }
+			;
+
+function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES		{ ; }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES			{ ; }
+			;
+
+expression_list:	expression 					{ ; }
+			| expression TOKEN_COMMA expression_list	{ ; }
+			;
+
+expression:		TOKEN_TRUE		{ ; }
+			| TOKEN_FALSE		{ ; }
+			| variable		{ ; }
+			;
+
+variable:	TOKEN_IDENTIFIER							{ ; }
+		| expression TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
+		;
 
 %%

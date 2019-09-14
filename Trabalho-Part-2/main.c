@@ -13,14 +13,9 @@ int main(int argc, const char* argv[]) {
 	}
 
 	yyin = fopen(argv[1], "r");
+	yyparse();
 
-	do {
-		int i = yyparse();
-		printf("%d\n", i);
-
-		if(i == 0)
-			break;
-	} while(1==1);
+	return 0;
 }
 
 int yywrap() {

@@ -51,6 +51,14 @@ Variável que define o arquivo/saida onde escrever.
 yyout = fopen("filename.txt", "w");
 ```
 
+### yyparse
+Função chamada para tentar fazer um parse da gramática que você montou.  
+Não é preciso mais chamar o `yylex()` pois o método chama sempre que necessário para reconhecer a gramática.  
+
+```C
+yyparse();
+```
+
 ### yylval
 Union onde deve ser armazenado os valores associados aos tokens encontrados.  
 

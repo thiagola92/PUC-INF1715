@@ -1,13 +1,23 @@
-# Testing char
+# Testing function
 
-aaa : char;
+first() {
+}
 
-aaa = "a";
-aaa = "z";
-aaa = "0";
-aaa = "9";
+second(a : bool) {
+}
 
-aaa = "\"";
-aaa = "\n";
-aaa = "\\";
-aaa = " ";
+third(a : bool, b : bool) {
+}
+
+third(a : bool, b : bool) {
+}
+
+fourth(a : bool, b : bool, c : bool) {
+}
+
+main() {
+	first();
+	second(a);
+	third(a,b);
+	fourth(a,b,c);
+}
