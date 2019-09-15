@@ -1,8 +1,9 @@
-# Testing function
+# Testing functions returning
 
 first() {
-	a:bool;
-	first();
-	first();
-	first();
+	return true;
+}
+
+seventh(a : bool) : bool {
+	return a;
 }

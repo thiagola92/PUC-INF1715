@@ -65,11 +65,8 @@
 
 %%
 
-program:	defines			{ ; }
-		;
-
-defines:	/*empty*/		{ ; }
-		| define defines	{ ; }
+program:	/*empty*/		{ ; }
+		| define program	{ ; }
 		;
 
 define:		define_variable		{ ; }
@@ -86,7 +83,8 @@ variable_type:	TOKEN_WORD_BOOL							{ ; }
 		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ ; }
 		;
 
-define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES return_type block	{ ; }
+define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ ; }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block	{ ; }
 			;
 
 parameters:		/*empty*/				{ ; }
@@ -96,10 +94,6 @@ parameters:		/*empty*/				{ ; }
 
 parameter:	TOKEN_IDENTIFIER TOKEN_COLON variable_type	{ ; }
 		;
-
-return_type: 		/*empty*/			{ ; }
-			| TOKEN_COLON variable_type	{ ; }
-			;
 
 block:		TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES 	{ ; }
 		| TOKEN_OPEN_BRACES define_variables TOKEN_CLOSE_BRACES 	{ ; }
@@ -115,11 +109,45 @@ commands:	command			{ ; }
 		| commands command	{ ; }
 		;
 
-command:	 return_command				{ ; }
-		| function_call TOKEN_SEMICOLON		{ ; }
+command:	TOKEN_IF expression block					{ ; }
+		| TOKEN_IF expression block TOKEN_ELSE block			{ ; }
+		| TOKEN_WHILE expression block					{ ; }
+		| variable TOKEN_ASSIGNMENT expression TOKEN_SEMICOLON		{ ; }
+		| TOKEN_RETURN expression TOKEN_SEMICOLON			{ ; }
+		| function_call TOKEN_SEMICOLON					{ ; }
+		| TOKEN_AT_SIGN expression TOKEN_SEMICOLON			{ ; }
+		| block								{ ; }
 		;
 
-return_command:		TOKEN_RETURN expression TOKEN_SEMICOLON		{ ; }
+variable:	TOKEN_IDENTIFIER							{ ; }
+		| expression TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
+		;
+
+expression:		TOKEN_TRUE									{ ; }
+			| TOKEN_FALSE									{ ; }
+			| TOKEN_CHARACTER								{ ; }
+			| TOKEN_INTEGER									{ ; }
+			| TOKEN_FLOAT									{ ; }
+			| TOKEN_STRING									{ ; }
+			| variable									{ ; }
+			| TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES			{ ; }
+			| function_call									{ ; }
+			| expression TOKEN_AS variable_type						{ ; }
+			| TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
+			| TOKEN_SUBTRACT expression							{ ; }
+			| expression TOKEN_ADD expression						{ ; }
+			| expression TOKEN_SUBTRACT expression						{ ; }
+			| expression TOKEN_MULTIPLY expression						{ ; }
+			| expression TOKEN_DIVIDE expression						{ ; }
+			| expression TOKEN_EQUAL expression						{ ; }
+			| expression TOKEN_NOT_EQUAL expression						{ ; }
+			| expression TOKEN_LESS_EQUAL expression					{ ; }
+			| expression TOKEN_GREATER_EQUAL expression					{ ; }
+			| expression TOKEN_LESS expression						{ ; }
+			| expression TOKEN_GREATER expression						{ ; }
+			| TOKEN_NOT expression								{ ; }
+			| expression TOKEN_AND expression						{ ; }
+			| expression TOKEN_OR expression						{ ; }
 			;
 
 function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES		{ ; }
@@ -129,14 +157,5 @@ function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CL
 expression_list:	expression 					{ ; }
 			| expression TOKEN_COMMA expression_list	{ ; }
 			;
-
-expression:		TOKEN_TRUE		{ ; }
-			| TOKEN_FALSE		{ ; }
-			| variable		{ ; }
-			;
-
-variable:	TOKEN_IDENTIFIER							{ ; }
-		| expression TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
-		;
 
 %%

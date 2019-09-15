@@ -1,32 +1,13 @@
-# Testing function
+# Testing functions receiving many parameters
 
 first() {
 }
 
-second() {
-	a : bool;
+second(a : bool) {
 }
 
-third() : bool {
-	return true;
+third(a : bool, b : bool) {
 }
 
-fourth(a : bool) {
-	b : bool;
-}
-
-fifth(a : bool) : bool {
-	return a;
-}
-
-sixth(a : bool, b : bool) {
-	c : bool;
-}
-
-seventh(a : bool, b : bool) : bool {
-	return true;
-}
-
-eigth(a : bool, b : bool, c : bool) {
-	d : bool;
+fourth(a : bool, b : bool, c : bool) {
 }

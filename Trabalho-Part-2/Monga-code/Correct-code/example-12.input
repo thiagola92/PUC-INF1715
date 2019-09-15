@@ -1,0 +1,15 @@
+# Testing assignment
+
+main() {
+	a : bool;
+	b : char;
+	c : int;
+	d : float;
+	e : [bool];
+
+	a = true;
+	b = "s";
+	c = 1;
+	d = 1.0;
+	e = new bool[2];
+}
