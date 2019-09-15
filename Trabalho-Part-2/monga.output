@@ -1,0 +1,771 @@
+Terminals unused in grammar
+
+   TOKEN_CHARACTER
+   TOKEN_INTEGER
+   TOKEN_FLOAT
+   TOKEN_STRING
+   TOKEN_NEW
+   TOKEN_IF
+   TOKEN_ELSE
+   TOKEN_WHILE
+   TOKEN_AS
+   TOKEN_EQUAL
+   TOKEN_NOT_EQUAL
+   TOKEN_LESS_EQUAL
+   TOKEN_GREATER_EQUAL
+   TOKEN_AND
+   TOKEN_OR
+   TOKEN_SUBTRACT
+   TOKEN_ADD
+   TOKEN_MULTIPLY
+   TOKEN_DIVIDE
+   TOKEN_ASSIGNMENT
+   TOKEN_LESS
+   TOKEN_GREATER
+   TOKEN_NOT
+   TOKEN_AT_SIGN
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: defines
+
+    2 defines: %empty
+    3        | define defines
+
+    4 define: define_variable
+    5       | define_function
+
+    6 define_variable: TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON
+
+    7 variable_type: TOKEN_WORD_BOOL
+    8              | TOKEN_WORD_CHAR
+    9              | TOKEN_WORD_INT
+   10              | TOKEN_WORD_FLOAT
+   11              | TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS
+
+   12 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES return_type block
+
+   13 parameters: %empty
+   14           | parameter TOKEN_COMMA parameters
+   15           | parameter
+
+   16 parameter: TOKEN_IDENTIFIER TOKEN_COLON variable_type
+
+   17 return_type: %empty
+   18            | TOKEN_COLON variable_type
+
+   19 block: TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES
+   20      | TOKEN_OPEN_BRACES define_variables TOKEN_CLOSE_BRACES
+   21      | TOKEN_OPEN_BRACES commands TOKEN_CLOSE_BRACES
+   22      | TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES
+
+   23 define_variables: define_variable
+   24                 | define_variables define_variable
+
+   25 commands: command
+   26         | commands command
+
+   27 command: return_command
+   28        | function_call TOKEN_SEMICOLON
+
+   29 return_command: TOKEN_RETURN expression TOKEN_SEMICOLON
+
+   30 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES
+   31              | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES
+
+   32 expression_list: expression
+   33                | expression TOKEN_COMMA expression_list
+
+   34 expression: TOKEN_TRUE
+   35           | TOKEN_FALSE
+   36           | variable
+
+   37 variable: TOKEN_IDENTIFIER
+   38         | expression TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+TOKEN_TRUE <i> (258) 34
+TOKEN_FALSE <i> (259) 35
+TOKEN_CHARACTER <c> (260)
+TOKEN_INTEGER <i> (261)
+TOKEN_FLOAT <f> (262)
+TOKEN_STRING <s> (263)
+TOKEN_IDENTIFIER <s> (264) 6 12 16 30 31 37
+TOKEN_NEW (265)
+TOKEN_WORD_BOOL (266) 7
+TOKEN_WORD_CHAR (267) 8
+TOKEN_WORD_INT (268) 9
+TOKEN_WORD_FLOAT (269) 10
+TOKEN_IF (270)
+TOKEN_ELSE (271)
+TOKEN_WHILE (272)
+TOKEN_AS (273)
+TOKEN_RETURN (274) 29
+TOKEN_OPEN_PARENTHESES (275) 12 30 31
+TOKEN_CLOSE_PARENTHESES (276) 12 30 31
+TOKEN_OPEN_BRACKETS (277) 11 38
+TOKEN_CLOSE_BRACKETS (278) 11 38
+TOKEN_OPEN_BRACES (279) 19 20 21 22
+TOKEN_CLOSE_BRACES (280) 19 20 21 22
+TOKEN_EQUAL (281)
+TOKEN_NOT_EQUAL (282)
+TOKEN_LESS_EQUAL (283)
+TOKEN_GREATER_EQUAL (284)
+TOKEN_AND (285)
+TOKEN_OR (286)
+TOKEN_SUBTRACT (287)
+TOKEN_ADD (288)
+TOKEN_MULTIPLY (289)
+TOKEN_DIVIDE (290)
+TOKEN_ASSIGNMENT (291)
+TOKEN_LESS (292)
+TOKEN_GREATER (293)
+TOKEN_NOT (294)
+TOKEN_AT_SIGN (295)
+TOKEN_COMMA (296) 14 33
+TOKEN_COLON (297) 6 16 18
+TOKEN_SEMICOLON (298) 6 28 29
+
+
+Nonterminals, with rules where they appear
+
+$accept (44)
+    on left: 0
+program (45)
+    on left: 1, on right: 0
+defines (46)
+    on left: 2 3, on right: 1 3
+define (47)
+    on left: 4 5, on right: 3
+define_variable (48)
+    on left: 6, on right: 4 23 24
+variable_type (49)
+    on left: 7 8 9 10 11, on right: 6 11 16 18
+define_function (50)
+    on left: 12, on right: 5
+parameters (51)
+    on left: 13 14 15, on right: 12 14
+parameter (52)
+    on left: 16, on right: 14 15
+return_type (53)
+    on left: 17 18, on right: 12
+block (54)
+    on left: 19 20 21 22, on right: 12
+define_variables (55)
+    on left: 23 24, on right: 19 20 24
+commands (56)
+    on left: 25 26, on right: 19 21 26
+command (57)
+    on left: 27 28, on right: 25 26
+return_command (58)
+    on left: 29, on right: 27
+function_call (59)
+    on left: 30 31, on right: 28
+expression_list (60)
+    on left: 32 33, on right: 30 33
+expression (61)
+    on left: 34 35 36, on right: 29 32 33 38
+variable (62)
+    on left: 37 38, on right: 36
+
+
+State 0
+
+    0 $accept: . program $end
+
+    TOKEN_IDENTIFIER  shift, and go to state 1
+
+    $default  reduce using rule 2 (defines)
+
+    program          go to state 2
+    defines          go to state 3
+    define           go to state 4
+    define_variable  go to state 5
+    define_function  go to state 6
+
+
+State 1
+
+    6 define_variable: TOKEN_IDENTIFIER . TOKEN_COLON variable_type TOKEN_SEMICOLON
+   12 define_function: TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES return_type block
+
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 7
+    TOKEN_COLON             shift, and go to state 8
+
+
+State 2
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 9
+
+
+State 3
+
+    1 program: defines .
+
+    $default  reduce using rule 1 (program)
+
+
+State 4
+
+    3 defines: define . defines
+
+    TOKEN_IDENTIFIER  shift, and go to state 1
+
+    $default  reduce using rule 2 (defines)
+
+    defines          go to state 10
+    define           go to state 4
+    define_variable  go to state 5
+    define_function  go to state 6
+
+
+State 5
+
+    4 define: define_variable .
+
+    $default  reduce using rule 4 (define)
+
+
+State 6
+
+    5 define: define_function .
+
+    $default  reduce using rule 5 (define)
+
+
+State 7
+
+   12 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . parameters TOKEN_CLOSE_PARENTHESES return_type block
+
+    TOKEN_IDENTIFIER  shift, and go to state 11
+
+    $default  reduce using rule 13 (parameters)
+
+    parameters  go to state 12
+    parameter   go to state 13
+
+
+State 8
+
+    6 define_variable: TOKEN_IDENTIFIER TOKEN_COLON . variable_type TOKEN_SEMICOLON
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 19
+
+
+State 9
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+State 10
+
+    3 defines: define defines .
+
+    $default  reduce using rule 3 (defines)
+
+
+State 11
+
+   16 parameter: TOKEN_IDENTIFIER . TOKEN_COLON variable_type
+
+    TOKEN_COLON  shift, and go to state 20
+
+
+State 12
+
+   12 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters . TOKEN_CLOSE_PARENTHESES return_type block
+
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 21
+
+
+State 13
+
+   14 parameters: parameter . TOKEN_COMMA parameters
+   15           | parameter .
+
+    TOKEN_COMMA  shift, and go to state 22
+
+    $default  reduce using rule 15 (parameters)
+
+
+State 14
+
+    7 variable_type: TOKEN_WORD_BOOL .
+
+    $default  reduce using rule 7 (variable_type)
+
+
+State 15
+
+    8 variable_type: TOKEN_WORD_CHAR .
+
+    $default  reduce using rule 8 (variable_type)
+
+
+State 16
+
+    9 variable_type: TOKEN_WORD_INT .
+
+    $default  reduce using rule 9 (variable_type)
+
+
+State 17
+
+   10 variable_type: TOKEN_WORD_FLOAT .
+
+    $default  reduce using rule 10 (variable_type)
+
+
+State 18
+
+   11 variable_type: TOKEN_OPEN_BRACKETS . variable_type TOKEN_CLOSE_BRACKETS
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 23
+
+
+State 19
+
+    6 define_variable: TOKEN_IDENTIFIER TOKEN_COLON variable_type . TOKEN_SEMICOLON
+
+    TOKEN_SEMICOLON  shift, and go to state 24
+
+
+State 20
+
+   16 parameter: TOKEN_IDENTIFIER TOKEN_COLON . variable_type
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 25
+
+
+State 21
+
+   12 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES . return_type block
+
+    TOKEN_COLON  shift, and go to state 26
+
+    $default  reduce using rule 17 (return_type)
+
+    return_type  go to state 27
+
+
+State 22
+
+   14 parameters: parameter TOKEN_COMMA . parameters
+
+    TOKEN_IDENTIFIER  shift, and go to state 11
+
+    $default  reduce using rule 13 (parameters)
+
+    parameters  go to state 28
+    parameter   go to state 13
+
+
+State 23
+
+   11 variable_type: TOKEN_OPEN_BRACKETS variable_type . TOKEN_CLOSE_BRACKETS
+
+    TOKEN_CLOSE_BRACKETS  shift, and go to state 29
+
+
+State 24
+
+    6 define_variable: TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON .
+
+    $default  reduce using rule 6 (define_variable)
+
+
+State 25
+
+   16 parameter: TOKEN_IDENTIFIER TOKEN_COLON variable_type .
+
+    $default  reduce using rule 16 (parameter)
+
+
+State 26
+
+   18 return_type: TOKEN_COLON . variable_type
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 30
+
+
+State 27
+
+   12 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES return_type . block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 31
+
+    block  go to state 32
+
+
+State 28
+
+   14 parameters: parameter TOKEN_COMMA parameters .
+
+    $default  reduce using rule 14 (parameters)
+
+
+State 29
+
+   11 variable_type: TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS .
+
+    $default  reduce using rule 11 (variable_type)
+
+
+State 30
+
+   18 return_type: TOKEN_COLON variable_type .
+
+    $default  reduce using rule 18 (return_type)
+
+
+State 31
+
+   19 block: TOKEN_OPEN_BRACES . define_variables commands TOKEN_CLOSE_BRACES
+   20      | TOKEN_OPEN_BRACES . define_variables TOKEN_CLOSE_BRACES
+   21      | TOKEN_OPEN_BRACES . commands TOKEN_CLOSE_BRACES
+   22      | TOKEN_OPEN_BRACES . TOKEN_CLOSE_BRACES
+
+    TOKEN_IDENTIFIER    shift, and go to state 33
+    TOKEN_RETURN        shift, and go to state 34
+    TOKEN_CLOSE_BRACES  shift, and go to state 35
+
+    define_variable   go to state 36
+    define_variables  go to state 37
+    commands          go to state 38
+    command           go to state 39
+    return_command    go to state 40
+    function_call     go to state 41
+
+
+State 32
+
+   12 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES return_type block .
+
+    $default  reduce using rule 12 (define_function)
+
+
+State 33
+
+    6 define_variable: TOKEN_IDENTIFIER . TOKEN_COLON variable_type TOKEN_SEMICOLON
+   30 function_call: TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES
+   31              | TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 42
+    TOKEN_COLON             shift, and go to state 8
+
+
+State 34
+
+   29 return_command: TOKEN_RETURN . expression TOKEN_SEMICOLON
+
+    TOKEN_TRUE        shift, and go to state 43
+    TOKEN_FALSE       shift, and go to state 44
+    TOKEN_IDENTIFIER  shift, and go to state 45
+
+    expression  go to state 46
+    variable    go to state 47
+
+
+State 35
+
+   22 block: TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 22 (block)
+
+
+State 36
+
+   23 define_variables: define_variable .
+
+    $default  reduce using rule 23 (define_variables)
+
+
+State 37
+
+   19 block: TOKEN_OPEN_BRACES define_variables . commands TOKEN_CLOSE_BRACES
+   20      | TOKEN_OPEN_BRACES define_variables . TOKEN_CLOSE_BRACES
+   24 define_variables: define_variables . define_variable
+
+    TOKEN_IDENTIFIER    shift, and go to state 33
+    TOKEN_RETURN        shift, and go to state 34
+    TOKEN_CLOSE_BRACES  shift, and go to state 48
+
+    define_variable  go to state 49
+    commands         go to state 50
+    command          go to state 39
+    return_command   go to state 40
+    function_call    go to state 41
+
+
+State 38
+
+   21 block: TOKEN_OPEN_BRACES commands . TOKEN_CLOSE_BRACES
+   26 commands: commands . command
+
+    TOKEN_IDENTIFIER    shift, and go to state 51
+    TOKEN_RETURN        shift, and go to state 34
+    TOKEN_CLOSE_BRACES  shift, and go to state 52
+
+    command         go to state 53
+    return_command  go to state 40
+    function_call   go to state 41
+
+
+State 39
+
+   25 commands: command .
+
+    $default  reduce using rule 25 (commands)
+
+
+State 40
+
+   27 command: return_command .
+
+    $default  reduce using rule 27 (command)
+
+
+State 41
+
+   28 command: function_call . TOKEN_SEMICOLON
+
+    TOKEN_SEMICOLON  shift, and go to state 54
+
+
+State 42
+
+   30 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . expression_list TOKEN_CLOSE_PARENTHESES
+   31              | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_TRUE               shift, and go to state 43
+    TOKEN_FALSE              shift, and go to state 44
+    TOKEN_IDENTIFIER         shift, and go to state 45
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 55
+
+    expression_list  go to state 56
+    expression       go to state 57
+    variable         go to state 47
+
+
+State 43
+
+   34 expression: TOKEN_TRUE .
+
+    $default  reduce using rule 34 (expression)
+
+
+State 44
+
+   35 expression: TOKEN_FALSE .
+
+    $default  reduce using rule 35 (expression)
+
+
+State 45
+
+   37 variable: TOKEN_IDENTIFIER .
+
+    $default  reduce using rule 37 (variable)
+
+
+State 46
+
+   29 return_command: TOKEN_RETURN expression . TOKEN_SEMICOLON
+   38 variable: expression . TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_OPEN_BRACKETS  shift, and go to state 58
+    TOKEN_SEMICOLON      shift, and go to state 59
+
+
+State 47
+
+   36 expression: variable .
+
+    $default  reduce using rule 36 (expression)
+
+
+State 48
+
+   20 block: TOKEN_OPEN_BRACES define_variables TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 20 (block)
+
+
+State 49
+
+   24 define_variables: define_variables define_variable .
+
+    $default  reduce using rule 24 (define_variables)
+
+
+State 50
+
+   19 block: TOKEN_OPEN_BRACES define_variables commands . TOKEN_CLOSE_BRACES
+   26 commands: commands . command
+
+    TOKEN_IDENTIFIER    shift, and go to state 51
+    TOKEN_RETURN        shift, and go to state 34
+    TOKEN_CLOSE_BRACES  shift, and go to state 60
+
+    command         go to state 53
+    return_command  go to state 40
+    function_call   go to state 41
+
+
+State 51
+
+   30 function_call: TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES
+   31              | TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 42
+
+
+State 52
+
+   21 block: TOKEN_OPEN_BRACES commands TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 21 (block)
+
+
+State 53
+
+   26 commands: commands command .
+
+    $default  reduce using rule 26 (commands)
+
+
+State 54
+
+   28 command: function_call TOKEN_SEMICOLON .
+
+    $default  reduce using rule 28 (command)
+
+
+State 55
+
+   31 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES .
+
+    $default  reduce using rule 31 (function_call)
+
+
+State 56
+
+   30 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list . TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 61
+
+
+State 57
+
+   32 expression_list: expression .
+   33                | expression . TOKEN_COMMA expression_list
+   38 variable: expression . TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_OPEN_BRACKETS  shift, and go to state 58
+    TOKEN_COMMA          shift, and go to state 62
+
+    $default  reduce using rule 32 (expression_list)
+
+
+State 58
+
+   38 variable: expression TOKEN_OPEN_BRACKETS . expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_TRUE        shift, and go to state 43
+    TOKEN_FALSE       shift, and go to state 44
+    TOKEN_IDENTIFIER  shift, and go to state 45
+
+    expression  go to state 63
+    variable    go to state 47
+
+
+State 59
+
+   29 return_command: TOKEN_RETURN expression TOKEN_SEMICOLON .
+
+    $default  reduce using rule 29 (return_command)
+
+
+State 60
+
+   19 block: TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 19 (block)
+
+
+State 61
+
+   30 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES .
+
+    $default  reduce using rule 30 (function_call)
+
+
+State 62
+
+   33 expression_list: expression TOKEN_COMMA . expression_list
+
+    TOKEN_TRUE        shift, and go to state 43
+    TOKEN_FALSE       shift, and go to state 44
+    TOKEN_IDENTIFIER  shift, and go to state 45
+
+    expression_list  go to state 64
+    expression       go to state 57
+    variable         go to state 47
+
+
+State 63
+
+   38 variable: expression . TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+   38         | expression TOKEN_OPEN_BRACKETS expression . TOKEN_CLOSE_BRACKETS
+
+    TOKEN_OPEN_BRACKETS   shift, and go to state 58
+    TOKEN_CLOSE_BRACKETS  shift, and go to state 65
+
+
+State 64
+
+   33 expression_list: expression TOKEN_COMMA expression_list .
+
+    $default  reduce using rule 33 (expression_list)
+
+
+State 65
+
+   38 variable: expression TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS .
+
+    $default  reduce using rule 38 (variable)

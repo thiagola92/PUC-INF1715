@@ -1,0 +1,8 @@
+# Testing function
+
+first() {
+	a:bool;
+	first();
+	first();
+	first();
+}

@@ -1,6 +1,6 @@
 #! usr/bin/bash
 
-bison -d monga.y;
+bison -d -v monga.y;
 flex monga.l;
 gcc main.c lex.yy.c monga.tab.c -o test;
 

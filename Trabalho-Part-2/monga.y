@@ -65,8 +65,11 @@
 
 %%
 
-program:				{ ; }
-		| define program	{ ; }
+program:	defines			{ ; }
+		;
+
+defines:	/*empty*/		{ ; }
+		| define defines	{ ; }
 		;
 
 define:		define_variable		{ ; }
@@ -86,7 +89,7 @@ variable_type:	TOKEN_WORD_BOOL							{ ; }
 define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES return_type block	{ ; }
 			;
 
-parameters:							{ ; }
+parameters:		/*empty*/				{ ; }
 			| parameter TOKEN_COMMA parameters	{ ; }
 			| parameter				{ ; }
 			;
@@ -94,7 +97,7 @@ parameters:							{ ; }
 parameter:	TOKEN_IDENTIFIER TOKEN_COLON variable_type	{ ; }
 		;
 
-return_type: 						{ ; }
+return_type: 		/*empty*/			{ ; }
 			| TOKEN_COLON variable_type	{ ; }
 			;
 
@@ -104,12 +107,12 @@ block:		TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES 	{ ; }
 		| TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES 				{ ; }
 		;
 
-define_variables:	define_variable			{ ; }
-			| define_variable define_variables	{ ; }
+define_variables:	define_variable				{ ; }
+			| define_variables define_variable	{ ; }
 			;
 
 commands:	command			{ ; }
-		| command commands	{ ; }
+		| commands command	{ ; }
 		;
 
 command:	 return_command				{ ; }
