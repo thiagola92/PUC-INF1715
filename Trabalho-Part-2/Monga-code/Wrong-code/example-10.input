@@ -1,0 +1,4 @@
+# Testing functions parameters ending with comma
+
+first(a : bool,) {
+}

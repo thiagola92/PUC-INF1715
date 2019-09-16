@@ -1,0 +1,11 @@
+# Testing declaring variable after commands inside if
+
+first() {
+}
+
+main() {
+	if true {
+		first();
+		a : bool;
+	}
+}

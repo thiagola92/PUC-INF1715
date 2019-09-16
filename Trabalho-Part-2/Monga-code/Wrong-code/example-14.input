@@ -1,0 +1,9 @@
+# Testing if without braces
+
+first() {
+}
+
+main() {
+	if true
+		first();
+}

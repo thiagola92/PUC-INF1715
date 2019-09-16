@@ -1,0 +1,41 @@
+Nome: Thiago Lages de Alencar
+Matricula: 1721629
+
+===== FILES =====
+
+* test_syntax.sh
+* README
+* monga.y
+* monga.l
+* monga.h
+* main.c
+* Monga-code/
+	* Correct-code/
+		* examples from 00 to 15
+	* Wrong-code/
+		* examples from 00 to 20
+
+===== REQUERIMENTS =====
+
+Flex
+Bison
+GCC
+BASH
+
+===== RUNNING TESTS =====
+
+bash test_syntax.sh
+
+===== RUNNING SINGLE FILE =====
+Para rodar o arquivo "example-00.input":
+
+bison -d monga.y
+flex monga.l
+gcc main.c lex.yy.c -Wall -o test
+./test FILE_PATH
+
+===== OUTPUT =====
+
+No terminal será exibido os testes onde a gramática deveria ser aceita e os testes onde a gramática deveria falhar.  
+
+

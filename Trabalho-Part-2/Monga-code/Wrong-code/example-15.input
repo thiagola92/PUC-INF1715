@@ -1,0 +1,10 @@
+# Testing else without the last braces
+
+first() {
+}
+
+main() {
+	if true {
+		first();
+	} else {
+}

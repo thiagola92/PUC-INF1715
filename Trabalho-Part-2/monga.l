@@ -7,7 +7,7 @@
 	int CURRENT_LINE = 1;
 %}
 
-CHARACTER	\"([^"\\]|\\.)\"
+CHARACTER	'([^"\\]|\\.)'
 INTEGER		[0-9]+
 FLOAT		([0-9]+("."[0-9]*)?|"."[0-9]+)([eE][-+]?[0-9]+)?
 HEXADECIMAL	0[Xx][0-9a-fA-F]+

@@ -1,0 +1,5 @@
+# Testing function return without return value
+
+first() {
+	return ;
+}

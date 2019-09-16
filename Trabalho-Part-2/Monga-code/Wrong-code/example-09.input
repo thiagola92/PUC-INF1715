@@ -1,0 +1,4 @@
+# Testing functions name missing parentheses
+
+second a : bool {
+}

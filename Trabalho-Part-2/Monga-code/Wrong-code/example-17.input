@@ -1,0 +1,11 @@
+# Testing commands before declaring variable inside while
+
+first() {
+}
+
+main() {
+	while(true) {
+		first();
+		a: bool;
+	}
+}

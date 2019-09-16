@@ -1,4 +1,7 @@
 %{
+	// Nome: Thiago Lages de Alencar
+	// Matricula: 1721629
+
 	#include"monga.h"
 %}
 
@@ -84,12 +87,13 @@ variable_type:	TOKEN_WORD_BOOL							{ ; }
 		;
 
 define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ ; }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block	{ ; }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block				{ ; }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block		{ ; }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block						{ ; }
 			;
 
-parameters:		/*empty*/				{ ; }
-			| parameter TOKEN_COMMA parameters	{ ; }
-			| parameter				{ ; }
+parameters:		parameter						{ ; }
+			| parameters TOKEN_COMMA parameter			{ ; }
 			;
 
 parameter:	TOKEN_IDENTIFIER TOKEN_COLON variable_type	{ ; }

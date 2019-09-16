@@ -1,0 +1,6 @@
+# Testing string without quotes
+
+main() {
+	h : [char];
+	h = "hello world;
+}
