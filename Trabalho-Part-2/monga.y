@@ -22,50 +22,36 @@
 %token <s> TOKEN_STRING
 %token <s> TOKEN_IDENTIFIER
 
-%right TOKEN_NEW
+%token TOKEN_NEW
 
-%left TOKEN_WORD_BOOL
-%left TOKEN_WORD_CHAR
-%left TOKEN_WORD_INT
-%left TOKEN_WORD_FLOAT
+%token TOKEN_WORD_BOOL
+%token TOKEN_WORD_CHAR
+%token TOKEN_WORD_INT
+%token TOKEN_WORD_FLOAT
 
-%left TOKEN_IF
-%left TOKEN_ELSE
+%token TOKEN_IF
+%token TOKEN_ELSE
 
-%left TOKEN_WHILE
+%token TOKEN_WHILE
 
-%left TOKEN_AS
+%token TOKEN_RETURN
 
-%left TOKEN_RETURN
+%token TOKEN_AT_SIGN
+%token TOKEN_COLON
+%token TOKEN_SEMICOLON
 
-%left TOKEN_OPEN_PARENTHESES
-%left TOKEN_CLOSE_PARENTHESES
-%left TOKEN_OPEN_BRACKETS
-%left TOKEN_CLOSE_BRACKETS
-%left TOKEN_OPEN_BRACES
-%left TOKEN_CLOSE_BRACES
+// Order of operations, from less important to more important
 
-%left TOKEN_EQUAL
-%left TOKEN_NOT_EQUAL
-%left TOKEN_LESS_EQUAL
-%left TOKEN_GREATER_EQUAL
-
-%left TOKEN_AND
-%left TOKEN_OR
-
-%left TOKEN_SUBTRACT
-%left TOKEN_ADD
-%left TOKEN_MULTIPLY
-%left TOKEN_DIVIDE
-%left TOKEN_ASSIGNMENT
-%left TOKEN_LESS
-%left TOKEN_GREATER
-%left TOKEN_NOT
-
-%left TOKEN_AT_SIGN
 %left TOKEN_COMMA
-%left TOKEN_COLON
-%left TOKEN_SEMICOLON
+%right TOKEN_ASSIGNMENT
+%left TOKEN_OR
+%left TOKEN_AND
+%left TOKEN_EQUAL TOKEN_NOT_EQUAL
+%left TOKEN_LESS TOKEN_LESS_EQUAL TOKEN_GREATER  TOKEN_GREATER_EQUAL
+%left TOKEN_ADD TOKEN_SUBTRACT
+%left TOKEN_MULTIPLY TOKEN_DIVIDE
+%right TOKEN_NOT NEGATIVE_NUMBER
+%right TOKEN_AS TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_OPEN_BRACKETS TOKEN_CLOSE_BRACKETS TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES
 
 %%
 
@@ -135,24 +121,49 @@ expression:		TOKEN_TRUE									{ ; }
 			| TOKEN_FLOAT									{ ; }
 			| TOKEN_STRING									{ ; }
 			| variable									{ ; }
-			| TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES 			{ ; }
 			| function_call									{ ; }
-			| expression TOKEN_AS variable_type						{ ; }
+			| priority_1									{ ; }
+			| priority_2									{ ; }
+			| priority_3									{ ; }
+			| priority_4									{ ; }
+			| priority_6									{ ; }
+			| priority_7									{ ; }
+			| priority_11									{ ; }
+			| priority_12									{ ; }
+			;
+
+priority_1:		TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES 			{ ; }
 			| TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
-			| TOKEN_SUBTRACT expression							{ ; }
-			| expression TOKEN_ADD expression						{ ; }
-			| expression TOKEN_SUBTRACT expression						{ ; }
-			| expression TOKEN_MULTIPLY expression						{ ; }
-			| expression TOKEN_DIVIDE expression						{ ; }
-			| expression TOKEN_EQUAL expression						{ ; }
-			| expression TOKEN_NOT_EQUAL expression						{ ; }
-			| expression TOKEN_LESS_EQUAL expression					{ ; }
-			| expression TOKEN_GREATER_EQUAL expression					{ ; }
-			| expression TOKEN_LESS expression						{ ; }
-			| expression TOKEN_GREATER expression						{ ; }
+			;
+
+priority_2:		expression TOKEN_AS variable_type						{ ; }
+			| TOKEN_SUBTRACT expression %prec NEGATIVE_NUMBER				{ ; }
 			| TOKEN_NOT expression								{ ; }
-			| expression TOKEN_AND expression						{ ; }
-			| expression TOKEN_OR expression						{ ; }
+			;
+
+priority_3:		
+			expression TOKEN_MULTIPLY expression						{ ; }
+			| expression TOKEN_DIVIDE expression						{ ; }
+			;
+
+priority_4:		expression TOKEN_ADD expression							{ ; }
+			| expression TOKEN_SUBTRACT expression						{ ; }
+			;
+
+priority_6:		expression TOKEN_LESS expression						{ ; }
+			| expression TOKEN_LESS_EQUAL expression					{ ; }
+			| expression TOKEN_GREATER expression						{ ; }
+			| expression TOKEN_GREATER_EQUAL expression					{ ; }
+			;
+
+priority_7:		expression TOKEN_EQUAL expression						{ ; }
+			| expression TOKEN_NOT_EQUAL expression						{ ; }
+			;
+
+priority_11:		expression TOKEN_AND expression						{ ; }
+			;
+
+priority_12:		expression TOKEN_OR expression						{ ; }
 			;
 
 function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES		{ ; }
