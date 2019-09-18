@@ -127,32 +127,67 @@ variable:	TOKEN_IDENTIFIER							{ ; }
 		| expression TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
 		;
 
-expression:		TOKEN_TRUE									{ ; }
-			| TOKEN_FALSE									{ ; }
-			| TOKEN_CHARACTER								{ ; }
-			| TOKEN_INTEGER									{ ; }
-			| TOKEN_FLOAT									{ ; }
-			| TOKEN_STRING									{ ; }
-			| variable									{ ; }
-			| TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES			{ ; }
-			| function_call									{ ; }
-			| expression TOKEN_AS variable_type						{ ; }
-			| TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
-			| TOKEN_SUBTRACT expression							{ ; }
-			| expression TOKEN_ADD expression						{ ; }
-			| expression TOKEN_SUBTRACT expression						{ ; }
-			| expression TOKEN_MULTIPLY expression						{ ; }
-			| expression TOKEN_DIVIDE expression						{ ; }
-			| expression TOKEN_EQUAL expression						{ ; }
-			| expression TOKEN_NOT_EQUAL expression						{ ; }
-			| expression TOKEN_LESS_EQUAL expression					{ ; }
-			| expression TOKEN_GREATER_EQUAL expression					{ ; }
-			| expression TOKEN_LESS expression						{ ; }
-			| expression TOKEN_GREATER expression						{ ; }
-			| TOKEN_NOT expression								{ ; }
-			| expression TOKEN_AND expression						{ ; }
-			| expression TOKEN_OR expression						{ ; }
+expression:		expression_logical			{ ; }
 			;
+
+expression_logical:	expression_logical TOKEN_AND expression_comparison_booleans	{ ; }
+			| expression_logical TOKEN_OR expression_comparison_booleans	{ ; }
+			| expression_comparison_booleans				{ ; }
+
+expression_comparison_booleans:		expression_comparison_booleans TOKEN_EQUAL expression_comparison_numbers		{ ; }
+					| expression_comparison_booleans TOKEN_NOT_EQUAL expression_comparison_numbers		{ ; }
+					| expression_comparison_numbers								{ ; }
+					;
+
+expression_comparison_numbers:	expression_comparison_numbers TOKEN_LESS_EQUAL expression_add_sub	{ ; }
+				| expression_comparison_numbers TOKEN_GREATER_EQUAL expression_add_sub	{ ; }
+				| expression_comparison_numbers TOKEN_LESS expression_add_sub		{ ; }
+				| expression_comparison_numbers TOKEN_GREATER expression_add_sub		{ ; }
+				| expression_add_sub							{ ; }
+				;
+
+expression_add_sub:	expression_add_sub TOKEN_ADD expression_mult_div		{ ; }
+			| expression_add_sub TOKEN_SUBTRACT expression_mult_div		{ ; }
+			| expression_mult_div						{ ; }
+			;
+
+expression_mult_div:	expression_mult_div TOKEN_MULTIPLY expression_unary	{ ; }
+			| expression TOKEN_DIVIDE expression_unary		{ ; }
+			| expression_unary					{ ; }
+			;
+
+expression_unary:	expression_primitives TOKEN_AS variable_type		{ ; }
+			| TOKEN_SUBTRACT expression_primitives			{ ; }
+			| TOKEN_NOT expression_primitives			{ ; }
+			| expression_primitives					{ ; }
+			;
+
+expression_primitives:		boolean			{ ; }
+				| number		{ ; }
+				| text			{ ; }
+				| array			{ ; }
+				| scope			{ ; }
+				| variable		{ ; }
+				| function_call		{ ; }
+				;
+
+boolean:	TOKEN_TRUE		{ ; }
+		| TOKEN_FALSE		{ ; }
+		;
+
+number:		TOKEN_INTEGER		{ ; }
+		| TOKEN_FLOAT		{ ; }
+		;
+
+text:		TOKEN_CHARACTER		{ ; }
+		| TOKEN_STRING		{ ; }
+		;
+
+array:		TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
+		;
+
+scope:		TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES			{ ; }
+		;
 
 function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES		{ ; }
 			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES			{ ; }
@@ -163,3 +198,4 @@ expression_list:	expression 					{ ; }
 			;
 
 %%
+

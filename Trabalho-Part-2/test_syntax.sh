@@ -19,6 +19,7 @@ for file_input in Monga-code/Correct-code/*\.input; do
 	fi
 done
 
+: '
 echo "======= Testing wrong code ======="
 for file_input in Monga-code/Wrong-code/*\.input; do
 	file_name=$(basename "$file_input")
@@ -33,5 +34,5 @@ for file_input in Monga-code/Wrong-code/*\.input; do
 		echo -e "$file_name \xE2\x9C\x95"
 	fi
 done
-
+'
 rm lex.yy.c monga.tab.c monga.tab.h test;
