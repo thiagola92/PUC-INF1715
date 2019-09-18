@@ -127,39 +127,67 @@ variable:	TOKEN_IDENTIFIER							{ ; }
 		| expression TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
 		;
 
-expression:		expression_logical			{ ; }
+expression:		expression_and			{ ; }
 			;
 
-expression_logical:	expression_logical TOKEN_AND expression_comparison_booleans	{ ; }
-			| expression_logical TOKEN_OR expression_comparison_booleans	{ ; }
-			| expression_comparison_booleans				{ ; }
+expression_and:		expression_and TOKEN_AND expression_or		{ ; }
+			| expression_or					{ ; }
+			;
 
-expression_comparison_booleans:		expression_comparison_booleans TOKEN_EQUAL expression_comparison_numbers		{ ; }
-					| expression_comparison_booleans TOKEN_NOT_EQUAL expression_comparison_numbers		{ ; }
-					| expression_comparison_numbers								{ ; }
-					;
+expression_or:		expression_or TOKEN_OR expression_equal		{ ; }
+			| expression_equal				{ ; }
+			;
 
-expression_comparison_numbers:	expression_comparison_numbers TOKEN_LESS_EQUAL expression_add_sub	{ ; }
-				| expression_comparison_numbers TOKEN_GREATER_EQUAL expression_add_sub	{ ; }
-				| expression_comparison_numbers TOKEN_LESS expression_add_sub		{ ; }
-				| expression_comparison_numbers TOKEN_GREATER expression_add_sub		{ ; }
-				| expression_add_sub							{ ; }
+expression_equal:	expression_equal TOKEN_EQUAL expression_not_equal		{ ; }
+			| expression_not_equal						{ ; }
+			;
+
+expression_not_equal:	expression_not_equal TOKEN_NOT_EQUAL expression_less_equal	{ ; }
+			| expression_less_equal						{ ; }
+			;
+
+expression_less_equal:	expression_less_equal TOKEN_LESS_EQUAL expression_greater_equal		{ ; }
+			| expression_greater_equal							{ ; }
+			;
+
+expression_greater_equal:	expression_greater_equal TOKEN_GREATER_EQUAL expression_less	{ ; }
+				| expression_less						{ ; }
 				;
 
-expression_add_sub:	expression_add_sub TOKEN_ADD expression_mult_div		{ ; }
-			| expression_add_sub TOKEN_SUBTRACT expression_mult_div		{ ; }
-			| expression_mult_div						{ ; }
+expression_less:	expression_less TOKEN_LESS expression_greater		{ ; }
+			| expression_greater					{ ; }
 			;
 
-expression_mult_div:	expression_mult_div TOKEN_MULTIPLY expression_unary	{ ; }
-			| expression TOKEN_DIVIDE expression_unary		{ ; }
-			| expression_unary					{ ; }
+expression_greater:	expression_greater TOKEN_GREATER expression_add 	{ ; }
+			| expression_add 					{ ; }
 			;
 
-expression_unary:	expression_primitives TOKEN_AS variable_type		{ ; }
-			| TOKEN_SUBTRACT expression_primitives			{ ; }
-			| TOKEN_NOT expression_primitives			{ ; }
-			| expression_primitives					{ ; }
+expression_add:		expression_add TOKEN_ADD expression_sub		{ ; }
+			| expression_sub				{ ; }
+			;
+
+expression_sub:		expression_sub TOKEN_SUBTRACT expression_mult		{ ; }
+			| expression_mult					{ ; }
+			;
+
+expression_mult:	expression_mult TOKEN_MULTIPLY expression_div		{ ; }
+			| expression_div					{ ; }
+			;
+
+expression_div:		expression_div TOKEN_DIVIDE expression_negative		{ ; }
+			| expression_negative					{ ; }
+			;
+
+expression_negative:	TOKEN_SUBTRACT expression_negative		{ ; }
+			| expression_not				{ ; }
+			;
+
+expression_not:		TOKEN_NOT expression_not			{ ; }
+			| expression_as					{ ; }
+			;
+
+expression_as:		expression_as TOKEN_AS variable_type		{ ; }
+			| expression_primitives				{ ; }
 			;
 
 expression_primitives:		boolean			{ ; }
