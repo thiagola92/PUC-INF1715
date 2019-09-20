@@ -5,6 +5,8 @@
 	#include"monga.h"
 
 	int CURRENT_LINE = 1;
+
+	char* convert_string(const char* s);
 %}
 
 CHARACTER	'([^"\\]|\\.)'
@@ -77,7 +79,7 @@ COMMENT		#[^\n]*
 {FLOAT}		{ yylval.f = strtod(yytext, NULL); return TOKEN_FLOAT; }
 {HEXADECIMAL}	{ yylval.f = strtod(yytext, NULL); return TOKEN_FLOAT; }
 
-{STRING}	{ yylval.s = strdup(yytext); return TOKEN_STRING; }
+{STRING}	{ yylval.s = convert_string(strdup(yytext)); return TOKEN_STRING; }
 
 {IDENTIFIER}	{ yylval.s = strdup(yytext); return TOKEN_IDENTIFIER; }
 
@@ -86,4 +88,52 @@ COMMENT		#[^\n]*
 .		{ return yytext[0]; }
 
 %%
+
+char* convert_string(const char* input) {
+	int length = strlen(input) - 1; // removing first and last quotation mark
+	char* output = (char*)malloc(sizeof(char) * length);
+
+	int pos_input = 1; // skipping first quotation mark
+	int pos_output = 0;
+	
+	while(input[pos_input] != '"') {
+		if(input[pos_input] != '\\') {
+			output[pos_output] = input[pos_input];
+			pos_input++;
+			pos_output++;
+			continue;
+		}
+
+		if(input[pos_input + 1] == 'a')
+			output[pos_output] = '\a';
+		else if(input[pos_input + 1] == 'b')
+			output[pos_output] = '\b';
+		else if(input[pos_input + 1] == 'f')
+			output[pos_output] = '\f';
+		else if(input[pos_input + 1] == 'n')
+			output[pos_output] = '\n';
+		else if(input[pos_input + 1] == 'r')
+			output[pos_output] = '\r';
+		else if(input[pos_input + 1] == 't')
+			output[pos_output] = '\t';
+		else if(input[pos_input + 1] == 'v')
+			output[pos_output] = '\v';
+		else if(input[pos_input + 1] == '\\')
+			output[pos_output] = '\\';
+		else if(input[pos_input + 1] == '"')
+			output[pos_output] = '"';
+		else {
+			output[pos_output] = input[pos_input];
+			pos_input++;
+			pos_output++;
+			continue;
+		}
+		
+		pos_input += 2;
+		pos_output++;
+	}
+
+	output[pos_input] = '\0';
+	return output;
+}
 
