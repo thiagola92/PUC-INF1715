@@ -3,17 +3,21 @@ Matricula: 1721629
 
 ===== FILES =====
 
-* test_syntax.sh
+* test.sh
+* test.h
+* test.c
 * README
 * monga.y
 * monga.l
 * monga.h
 * main.c
-* Monga-code/
-	* Correct-code/
-		* examples from 00 to 15
-	* Wrong-code/
-		* examples from 00 to 20
+* tests/
+	* lexical
+	* syntax
+		* correct/
+			* examples from 00 to 16
+		* wrong/
+			* examples from 00 to 20
 
 ===== REQUERIMENTS =====
 
@@ -24,15 +28,16 @@ BASH
 
 ===== RUNNING TESTS =====
 
-bash test_syntax.sh
+bash test.sh
 
 ===== RUNNING SINGLE FILE =====
 Para rodar o arquivo "example-00.input":
 
-bison -d monga.y
-flex monga.l
-gcc main.c lex.yy.c -Wall -o test
-./test FILE_PATH
+bison -d monga.y;
+flex monga.l;
+gcc main.c lex.yy.c monga.tab.c test.c -Wall -o test;
+	./test tests/lexical/example-00.input lexical;
+	./test tests/syntax/correct/example-00.input syntax;
 
 ===== OUTPUT =====
 
