@@ -2,7 +2,7 @@
 
 bison -d monga.y;
 flex monga.l;
-gcc main.c lex.yy.c monga.tab.c test.c -Wall -o test;
+gcc main.c lex.yy.c monga.tab.c test.c -o test;
 
 echo "===== Testing lexical ====="
 for file_input in tests/lexical/*\.input; do

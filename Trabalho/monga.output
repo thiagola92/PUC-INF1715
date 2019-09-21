@@ -1,0 +1,2243 @@
+Grammar
+
+    0 $accept: program $end
+
+    1 program: %empty
+    2        | define program
+
+    3 define: define_variable
+    4       | define_function
+
+    5 define_variable: TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON
+
+    6 variable_type: TOKEN_WORD_BOOL
+    7              | TOKEN_WORD_CHAR
+    8              | TOKEN_WORD_INT
+    9              | TOKEN_WORD_FLOAT
+   10              | TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS
+
+   11 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block
+   12                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block
+   13                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block
+   14                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block
+
+   15 parameters: parameter
+   16           | parameters TOKEN_COMMA parameter
+
+   17 parameter: TOKEN_IDENTIFIER TOKEN_COLON variable_type
+
+   18 block: TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES
+   19      | TOKEN_OPEN_BRACES define_variables TOKEN_CLOSE_BRACES
+   20      | TOKEN_OPEN_BRACES commands TOKEN_CLOSE_BRACES
+   21      | TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES
+
+   22 define_variables: define_variable
+   23                 | define_variables define_variable
+
+   24 commands: command
+   25         | commands command
+
+   26 command: TOKEN_IF expression block
+   27        | TOKEN_IF expression block TOKEN_ELSE block
+   28        | TOKEN_WHILE expression block
+   29        | variable TOKEN_ASSIGNMENT expression TOKEN_SEMICOLON
+   30        | TOKEN_RETURN expression TOKEN_SEMICOLON
+   31        | function_call TOKEN_SEMICOLON
+   32        | TOKEN_AT_SIGN expression TOKEN_SEMICOLON
+   33        | block
+
+   34 variable: TOKEN_IDENTIFIER
+   35         | expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+   36 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES
+   37              | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES
+
+   38 new_array: TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+   39 expression_list: expression
+   40                | expression TOKEN_COMMA expression_list
+
+   41 expression: expression_or
+
+   42 expression_or: expression_or TOKEN_OR expression_and
+   43              | expression_and
+
+   44 expression_and: expression_and TOKEN_AND expression_equal
+   45               | expression_equal
+
+   46 expression_equal: expression_equal TOKEN_EQUAL expression_not_equal
+   47                 | expression_not_equal
+
+   48 expression_not_equal: expression_not_equal TOKEN_NOT_EQUAL expression_greater
+   49                     | expression_greater
+
+   50 expression_greater: expression_greater TOKEN_GREATER expression_greater_equal
+   51                   | expression_greater_equal
+
+   52 expression_greater_equal: expression_greater_equal TOKEN_GREATER_EQUAL expression_less
+   53                         | expression_less
+
+   54 expression_less: expression_less TOKEN_LESS expression_less_equal
+   55                | expression_less_equal
+
+   56 expression_less_equal: expression_less_equal TOKEN_LESS_EQUAL expression_sub
+   57                      | expression_sub
+
+   58 expression_sub: expression_sub TOKEN_SUBTRACT expression_add
+   59               | expression_add
+
+   60 expression_add: expression_add TOKEN_ADD expression_div
+   61               | expression_div
+
+   62 expression_div: expression_div TOKEN_DIVIDE expression_mult
+   63               | expression_mult
+
+   64 expression_mult: expression_mult TOKEN_MULTIPLY expression_cast
+   65                | expression_cast
+
+   66 expression_cast: expression_cast TOKEN_AS variable_type
+   67                | expression_negative
+
+   68 expression_negative: TOKEN_SUBTRACT expression_negative
+   69                    | expression_not
+
+   70 expression_not: TOKEN_NOT expression_not
+   71               | expression_reference
+
+   72 expression_reference: variable
+   73                     | function_call
+   74                     | new_array
+   75                     | expression_scope
+
+   76 expression_scope: TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES
+   77                 | expression_data
+
+   78 expression_data: TOKEN_TRUE
+   79                | TOKEN_FALSE
+   80                | TOKEN_CHARACTER
+   81                | TOKEN_INTEGER
+   82                | TOKEN_FLOAT
+   83                | TOKEN_STRING
+
+
+Terminals, with rules where they appear
+
+$end (0) 0
+error (256)
+TOKEN_TRUE <i> (258) 78
+TOKEN_FALSE <i> (259) 79
+TOKEN_CHARACTER <c> (260) 80
+TOKEN_INTEGER <i> (261) 81
+TOKEN_FLOAT <f> (262) 82
+TOKEN_STRING <s> (263) 83
+TOKEN_IDENTIFIER <s> (264) 5 11 12 13 14 17 34 36 37
+TOKEN_NEW (265) 38
+TOKEN_WORD_BOOL (266) 6
+TOKEN_WORD_CHAR (267) 7
+TOKEN_WORD_INT (268) 8
+TOKEN_WORD_FLOAT (269) 9
+TOKEN_IF (270) 26 27
+TOKEN_ELSE (271) 27
+TOKEN_WHILE (272) 28
+TOKEN_AS (273) 66
+TOKEN_RETURN (274) 30
+TOKEN_OPEN_PARENTHESES (275) 11 12 13 14 36 37 76
+TOKEN_CLOSE_PARENTHESES (276) 11 12 13 14 36 37 76
+TOKEN_OPEN_BRACKETS (277) 10 35 38
+TOKEN_CLOSE_BRACKETS (278) 10 35 38
+TOKEN_OPEN_BRACES (279) 18 19 20 21
+TOKEN_CLOSE_BRACES (280) 18 19 20 21
+TOKEN_EQUAL (281) 46
+TOKEN_NOT_EQUAL (282) 48
+TOKEN_LESS_EQUAL (283) 56
+TOKEN_GREATER_EQUAL (284) 52
+TOKEN_AND (285) 44
+TOKEN_OR (286) 42
+TOKEN_SUBTRACT (287) 58 68
+TOKEN_ADD (288) 60
+TOKEN_MULTIPLY (289) 64
+TOKEN_DIVIDE (290) 62
+TOKEN_ASSIGNMENT (291) 29
+TOKEN_LESS (292) 54
+TOKEN_GREATER (293) 50
+TOKEN_NOT (294) 70
+TOKEN_AT_SIGN (295) 32
+TOKEN_COMMA (296) 16 40
+TOKEN_COLON (297) 5 11 13 17
+TOKEN_SEMICOLON (298) 5 29 30 31 32
+
+
+Nonterminals, with rules where they appear
+
+$accept (44)
+    on left: 0
+program (45)
+    on left: 1 2, on right: 0 2
+define (46)
+    on left: 3 4, on right: 2
+define_variable (47)
+    on left: 5, on right: 3 22 23
+variable_type (48)
+    on left: 6 7 8 9 10, on right: 5 10 11 13 17 38 66
+define_function (49)
+    on left: 11 12 13 14, on right: 4
+parameters (50)
+    on left: 15 16, on right: 11 12 16
+parameter (51)
+    on left: 17, on right: 15 16
+block (52)
+    on left: 18 19 20 21, on right: 11 12 13 14 26 27 28 33
+define_variables (53)
+    on left: 22 23, on right: 18 19 23
+commands (54)
+    on left: 24 25, on right: 18 20 25
+command (55)
+    on left: 26 27 28 29 30 31 32 33, on right: 24 25
+variable (56)
+    on left: 34 35, on right: 29 72
+function_call (57)
+    on left: 36 37, on right: 31 73
+new_array (58)
+    on left: 38, on right: 74
+expression_list (59)
+    on left: 39 40, on right: 36 40
+expression (60)
+    on left: 41, on right: 26 27 28 29 30 32 35 38 39 40 76
+expression_or (61)
+    on left: 42 43, on right: 41 42
+expression_and (62)
+    on left: 44 45, on right: 42 43 44
+expression_equal (63)
+    on left: 46 47, on right: 44 45 46
+expression_not_equal (64)
+    on left: 48 49, on right: 46 47 48
+expression_greater (65)
+    on left: 50 51, on right: 48 49 50
+expression_greater_equal (66)
+    on left: 52 53, on right: 50 51 52
+expression_less (67)
+    on left: 54 55, on right: 52 53 54
+expression_less_equal (68)
+    on left: 56 57, on right: 54 55 56
+expression_sub (69)
+    on left: 58 59, on right: 56 57 58
+expression_add (70)
+    on left: 60 61, on right: 58 59 60
+expression_div (71)
+    on left: 62 63, on right: 60 61 62
+expression_mult (72)
+    on left: 64 65, on right: 62 63 64
+expression_cast (73)
+    on left: 66 67, on right: 64 65 66
+expression_negative (74)
+    on left: 68 69, on right: 67 68
+expression_not (75)
+    on left: 70 71, on right: 69 70
+expression_reference (76)
+    on left: 72 73 74 75, on right: 35 71
+expression_scope (77)
+    on left: 76 77, on right: 75
+expression_data (78)
+    on left: 78 79 80 81 82 83, on right: 77
+
+
+State 0
+
+    0 $accept: . program $end
+
+    TOKEN_IDENTIFIER  shift, and go to state 1
+
+    $default  reduce using rule 1 (program)
+
+    program          go to state 2
+    define           go to state 3
+    define_variable  go to state 4
+    define_function  go to state 5
+
+
+State 1
+
+    5 define_variable: TOKEN_IDENTIFIER . TOKEN_COLON variable_type TOKEN_SEMICOLON
+   11 define_function: TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block
+   12                | TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block
+   13                | TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block
+   14                | TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block
+
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 6
+    TOKEN_COLON             shift, and go to state 7
+
+
+State 2
+
+    0 $accept: program . $end
+
+    $end  shift, and go to state 8
+
+
+State 3
+
+    2 program: define . program
+
+    TOKEN_IDENTIFIER  shift, and go to state 1
+
+    $default  reduce using rule 1 (program)
+
+    program          go to state 9
+    define           go to state 3
+    define_variable  go to state 4
+    define_function  go to state 5
+
+
+State 4
+
+    3 define: define_variable .
+
+    $default  reduce using rule 3 (define)
+
+
+State 5
+
+    4 define: define_function .
+
+    $default  reduce using rule 4 (define)
+
+
+State 6
+
+   11 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block
+   12                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . parameters TOKEN_CLOSE_PARENTHESES block
+   13                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block
+   14                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . TOKEN_CLOSE_PARENTHESES block
+
+    TOKEN_IDENTIFIER         shift, and go to state 10
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 11
+
+    parameters  go to state 12
+    parameter   go to state 13
+
+
+State 7
+
+    5 define_variable: TOKEN_IDENTIFIER TOKEN_COLON . variable_type TOKEN_SEMICOLON
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 19
+
+
+State 8
+
+    0 $accept: program $end .
+
+    $default  accept
+
+
+State 9
+
+    2 program: define program .
+
+    $default  reduce using rule 2 (program)
+
+
+State 10
+
+   17 parameter: TOKEN_IDENTIFIER . TOKEN_COLON variable_type
+
+    TOKEN_COLON  shift, and go to state 20
+
+
+State 11
+
+   13 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES . TOKEN_COLON variable_type block
+   14                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES . block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 21
+    TOKEN_COLON        shift, and go to state 22
+
+    block  go to state 23
+
+
+State 12
+
+   11 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters . TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block
+   12                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters . TOKEN_CLOSE_PARENTHESES block
+   16 parameters: parameters . TOKEN_COMMA parameter
+
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 24
+    TOKEN_COMMA              shift, and go to state 25
+
+
+State 13
+
+   15 parameters: parameter .
+
+    $default  reduce using rule 15 (parameters)
+
+
+State 14
+
+    6 variable_type: TOKEN_WORD_BOOL .
+
+    $default  reduce using rule 6 (variable_type)
+
+
+State 15
+
+    7 variable_type: TOKEN_WORD_CHAR .
+
+    $default  reduce using rule 7 (variable_type)
+
+
+State 16
+
+    8 variable_type: TOKEN_WORD_INT .
+
+    $default  reduce using rule 8 (variable_type)
+
+
+State 17
+
+    9 variable_type: TOKEN_WORD_FLOAT .
+
+    $default  reduce using rule 9 (variable_type)
+
+
+State 18
+
+   10 variable_type: TOKEN_OPEN_BRACKETS . variable_type TOKEN_CLOSE_BRACKETS
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 26
+
+
+State 19
+
+    5 define_variable: TOKEN_IDENTIFIER TOKEN_COLON variable_type . TOKEN_SEMICOLON
+
+    TOKEN_SEMICOLON  shift, and go to state 27
+
+
+State 20
+
+   17 parameter: TOKEN_IDENTIFIER TOKEN_COLON . variable_type
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 28
+
+
+State 21
+
+   18 block: TOKEN_OPEN_BRACES . define_variables commands TOKEN_CLOSE_BRACES
+   19      | TOKEN_OPEN_BRACES . define_variables TOKEN_CLOSE_BRACES
+   20      | TOKEN_OPEN_BRACES . commands TOKEN_CLOSE_BRACES
+   21      | TOKEN_OPEN_BRACES . TOKEN_CLOSE_BRACES
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 35
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_IF                shift, and go to state 37
+    TOKEN_WHILE             shift, and go to state 38
+    TOKEN_RETURN            shift, and go to state 39
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_OPEN_BRACES       shift, and go to state 21
+    TOKEN_CLOSE_BRACES      shift, and go to state 41
+    TOKEN_AT_SIGN           shift, and go to state 42
+
+    define_variable       go to state 43
+    block                 go to state 44
+    define_variables      go to state 45
+    commands              go to state 46
+    command               go to state 47
+    variable              go to state 48
+    function_call         go to state 49
+    new_array             go to state 50
+    expression_reference  go to state 51
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 22
+
+   13 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON . variable_type block
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 54
+
+
+State 23
+
+   14 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block .
+
+    $default  reduce using rule 14 (define_function)
+
+
+State 24
+
+   11 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES . TOKEN_COLON variable_type block
+   12                | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES . block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 21
+    TOKEN_COLON        shift, and go to state 55
+
+    block  go to state 56
+
+
+State 25
+
+   16 parameters: parameters TOKEN_COMMA . parameter
+
+    TOKEN_IDENTIFIER  shift, and go to state 10
+
+    parameter  go to state 57
+
+
+State 26
+
+   10 variable_type: TOKEN_OPEN_BRACKETS variable_type . TOKEN_CLOSE_BRACKETS
+
+    TOKEN_CLOSE_BRACKETS  shift, and go to state 58
+
+
+State 27
+
+    5 define_variable: TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON .
+
+    $default  reduce using rule 5 (define_variable)
+
+
+State 28
+
+   17 parameter: TOKEN_IDENTIFIER TOKEN_COLON variable_type .
+
+    $default  reduce using rule 17 (parameter)
+
+
+State 29
+
+   78 expression_data: TOKEN_TRUE .
+
+    $default  reduce using rule 78 (expression_data)
+
+
+State 30
+
+   79 expression_data: TOKEN_FALSE .
+
+    $default  reduce using rule 79 (expression_data)
+
+
+State 31
+
+   80 expression_data: TOKEN_CHARACTER .
+
+    $default  reduce using rule 80 (expression_data)
+
+
+State 32
+
+   81 expression_data: TOKEN_INTEGER .
+
+    $default  reduce using rule 81 (expression_data)
+
+
+State 33
+
+   82 expression_data: TOKEN_FLOAT .
+
+    $default  reduce using rule 82 (expression_data)
+
+
+State 34
+
+   83 expression_data: TOKEN_STRING .
+
+    $default  reduce using rule 83 (expression_data)
+
+
+State 35
+
+    5 define_variable: TOKEN_IDENTIFIER . TOKEN_COLON variable_type TOKEN_SEMICOLON
+   34 variable: TOKEN_IDENTIFIER .
+   36 function_call: TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES
+   37              | TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 59
+    TOKEN_COLON             shift, and go to state 7
+
+    $default  reduce using rule 34 (variable)
+
+
+State 36
+
+   38 new_array: TOKEN_NEW . variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 60
+
+
+State 37
+
+   26 command: TOKEN_IF . expression block
+   27        | TOKEN_IF . expression block TOKEN_ELSE block
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 66
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 38
+
+   28 command: TOKEN_WHILE . expression block
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 83
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 39
+
+   30 command: TOKEN_RETURN . expression TOKEN_SEMICOLON
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 84
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 40
+
+   76 expression_scope: TOKEN_OPEN_PARENTHESES . expression TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 85
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 41
+
+   21 block: TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 21 (block)
+
+
+State 42
+
+   32 command: TOKEN_AT_SIGN . expression TOKEN_SEMICOLON
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 86
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 43
+
+   22 define_variables: define_variable .
+
+    $default  reduce using rule 22 (define_variables)
+
+
+State 44
+
+   33 command: block .
+
+    $default  reduce using rule 33 (command)
+
+
+State 45
+
+   18 block: TOKEN_OPEN_BRACES define_variables . commands TOKEN_CLOSE_BRACES
+   19      | TOKEN_OPEN_BRACES define_variables . TOKEN_CLOSE_BRACES
+   23 define_variables: define_variables . define_variable
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 35
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_IF                shift, and go to state 37
+    TOKEN_WHILE             shift, and go to state 38
+    TOKEN_RETURN            shift, and go to state 39
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_OPEN_BRACES       shift, and go to state 21
+    TOKEN_CLOSE_BRACES      shift, and go to state 87
+    TOKEN_AT_SIGN           shift, and go to state 42
+
+    define_variable       go to state 88
+    block                 go to state 44
+    commands              go to state 89
+    command               go to state 47
+    variable              go to state 48
+    function_call         go to state 49
+    new_array             go to state 50
+    expression_reference  go to state 51
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 46
+
+   20 block: TOKEN_OPEN_BRACES commands . TOKEN_CLOSE_BRACES
+   25 commands: commands . command
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_IF                shift, and go to state 37
+    TOKEN_WHILE             shift, and go to state 38
+    TOKEN_RETURN            shift, and go to state 39
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_OPEN_BRACES       shift, and go to state 21
+    TOKEN_CLOSE_BRACES      shift, and go to state 90
+    TOKEN_AT_SIGN           shift, and go to state 42
+
+    block                 go to state 44
+    command               go to state 91
+    variable              go to state 48
+    function_call         go to state 49
+    new_array             go to state 50
+    expression_reference  go to state 51
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 47
+
+   24 commands: command .
+
+    $default  reduce using rule 24 (commands)
+
+
+State 48
+
+   29 command: variable . TOKEN_ASSIGNMENT expression TOKEN_SEMICOLON
+   72 expression_reference: variable .
+
+    TOKEN_ASSIGNMENT  shift, and go to state 92
+
+    $default  reduce using rule 72 (expression_reference)
+
+
+State 49
+
+   31 command: function_call . TOKEN_SEMICOLON
+   73 expression_reference: function_call .
+
+    TOKEN_SEMICOLON  shift, and go to state 93
+
+    $default  reduce using rule 73 (expression_reference)
+
+
+State 50
+
+   74 expression_reference: new_array .
+
+    $default  reduce using rule 74 (expression_reference)
+
+
+State 51
+
+   35 variable: expression_reference . TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_OPEN_BRACKETS  shift, and go to state 94
+
+
+State 52
+
+   75 expression_reference: expression_scope .
+
+    $default  reduce using rule 75 (expression_reference)
+
+
+State 53
+
+   77 expression_scope: expression_data .
+
+    $default  reduce using rule 77 (expression_scope)
+
+
+State 54
+
+   13 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type . block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 21
+
+    block  go to state 95
+
+
+State 55
+
+   11 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON . variable_type block
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 96
+
+
+State 56
+
+   12 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block .
+
+    $default  reduce using rule 12 (define_function)
+
+
+State 57
+
+   16 parameters: parameters TOKEN_COMMA parameter .
+
+    $default  reduce using rule 16 (parameters)
+
+
+State 58
+
+   10 variable_type: TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS .
+
+    $default  reduce using rule 10 (variable_type)
+
+
+State 59
+
+   36 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . expression_list TOKEN_CLOSE_PARENTHESES
+   37              | TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES . TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_TRUE               shift, and go to state 29
+    TOKEN_FALSE              shift, and go to state 30
+    TOKEN_CHARACTER          shift, and go to state 31
+    TOKEN_INTEGER            shift, and go to state 32
+    TOKEN_FLOAT              shift, and go to state 33
+    TOKEN_STRING             shift, and go to state 34
+    TOKEN_IDENTIFIER         shift, and go to state 61
+    TOKEN_NEW                shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES   shift, and go to state 40
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 97
+    TOKEN_SUBTRACT           shift, and go to state 62
+    TOKEN_NOT                shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression_list           go to state 98
+    expression                go to state 99
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 60
+
+   38 new_array: TOKEN_NEW variable_type . TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_OPEN_BRACKETS  shift, and go to state 100
+
+
+State 61
+
+   34 variable: TOKEN_IDENTIFIER .
+   36 function_call: TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES
+   37              | TOKEN_IDENTIFIER . TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 59
+
+    $default  reduce using rule 34 (variable)
+
+
+State 62
+
+   68 expression_negative: TOKEN_SUBTRACT . expression_negative
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable              go to state 64
+    function_call         go to state 65
+    new_array             go to state 50
+    expression_negative   go to state 101
+    expression_not        go to state 81
+    expression_reference  go to state 82
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 63
+
+   70 expression_not: TOKEN_NOT . expression_not
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_NOT               shift, and go to state 63
+
+    variable              go to state 64
+    function_call         go to state 65
+    new_array             go to state 50
+    expression_not        go to state 102
+    expression_reference  go to state 82
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 64
+
+   72 expression_reference: variable .
+
+    $default  reduce using rule 72 (expression_reference)
+
+
+State 65
+
+   73 expression_reference: function_call .
+
+    $default  reduce using rule 73 (expression_reference)
+
+
+State 66
+
+   26 command: TOKEN_IF expression . block
+   27        | TOKEN_IF expression . block TOKEN_ELSE block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 21
+
+    block  go to state 103
+
+
+State 67
+
+   41 expression: expression_or .
+   42 expression_or: expression_or . TOKEN_OR expression_and
+
+    TOKEN_OR  shift, and go to state 104
+
+    $default  reduce using rule 41 (expression)
+
+
+State 68
+
+   43 expression_or: expression_and .
+   44 expression_and: expression_and . TOKEN_AND expression_equal
+
+    TOKEN_AND  shift, and go to state 105
+
+    $default  reduce using rule 43 (expression_or)
+
+
+State 69
+
+   45 expression_and: expression_equal .
+   46 expression_equal: expression_equal . TOKEN_EQUAL expression_not_equal
+
+    TOKEN_EQUAL  shift, and go to state 106
+
+    $default  reduce using rule 45 (expression_and)
+
+
+State 70
+
+   47 expression_equal: expression_not_equal .
+   48 expression_not_equal: expression_not_equal . TOKEN_NOT_EQUAL expression_greater
+
+    TOKEN_NOT_EQUAL  shift, and go to state 107
+
+    $default  reduce using rule 47 (expression_equal)
+
+
+State 71
+
+   49 expression_not_equal: expression_greater .
+   50 expression_greater: expression_greater . TOKEN_GREATER expression_greater_equal
+
+    TOKEN_GREATER  shift, and go to state 108
+
+    $default  reduce using rule 49 (expression_not_equal)
+
+
+State 72
+
+   51 expression_greater: expression_greater_equal .
+   52 expression_greater_equal: expression_greater_equal . TOKEN_GREATER_EQUAL expression_less
+
+    TOKEN_GREATER_EQUAL  shift, and go to state 109
+
+    $default  reduce using rule 51 (expression_greater)
+
+
+State 73
+
+   53 expression_greater_equal: expression_less .
+   54 expression_less: expression_less . TOKEN_LESS expression_less_equal
+
+    TOKEN_LESS  shift, and go to state 110
+
+    $default  reduce using rule 53 (expression_greater_equal)
+
+
+State 74
+
+   55 expression_less: expression_less_equal .
+   56 expression_less_equal: expression_less_equal . TOKEN_LESS_EQUAL expression_sub
+
+    TOKEN_LESS_EQUAL  shift, and go to state 111
+
+    $default  reduce using rule 55 (expression_less)
+
+
+State 75
+
+   57 expression_less_equal: expression_sub .
+   58 expression_sub: expression_sub . TOKEN_SUBTRACT expression_add
+
+    TOKEN_SUBTRACT  shift, and go to state 112
+
+    $default  reduce using rule 57 (expression_less_equal)
+
+
+State 76
+
+   59 expression_sub: expression_add .
+   60 expression_add: expression_add . TOKEN_ADD expression_div
+
+    TOKEN_ADD  shift, and go to state 113
+
+    $default  reduce using rule 59 (expression_sub)
+
+
+State 77
+
+   61 expression_add: expression_div .
+   62 expression_div: expression_div . TOKEN_DIVIDE expression_mult
+
+    TOKEN_DIVIDE  shift, and go to state 114
+
+    $default  reduce using rule 61 (expression_add)
+
+
+State 78
+
+   63 expression_div: expression_mult .
+   64 expression_mult: expression_mult . TOKEN_MULTIPLY expression_cast
+
+    TOKEN_MULTIPLY  shift, and go to state 115
+
+    $default  reduce using rule 63 (expression_div)
+
+
+State 79
+
+   65 expression_mult: expression_cast .
+   66 expression_cast: expression_cast . TOKEN_AS variable_type
+
+    TOKEN_AS  shift, and go to state 116
+
+    $default  reduce using rule 65 (expression_mult)
+
+
+State 80
+
+   67 expression_cast: expression_negative .
+
+    $default  reduce using rule 67 (expression_cast)
+
+
+State 81
+
+   69 expression_negative: expression_not .
+
+    $default  reduce using rule 69 (expression_negative)
+
+
+State 82
+
+   35 variable: expression_reference . TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS
+   71 expression_not: expression_reference .
+
+    TOKEN_OPEN_BRACKETS  shift, and go to state 94
+
+    $default  reduce using rule 71 (expression_not)
+
+
+State 83
+
+   28 command: TOKEN_WHILE expression . block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 21
+
+    block  go to state 117
+
+
+State 84
+
+   30 command: TOKEN_RETURN expression . TOKEN_SEMICOLON
+
+    TOKEN_SEMICOLON  shift, and go to state 118
+
+
+State 85
+
+   76 expression_scope: TOKEN_OPEN_PARENTHESES expression . TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 119
+
+
+State 86
+
+   32 command: TOKEN_AT_SIGN expression . TOKEN_SEMICOLON
+
+    TOKEN_SEMICOLON  shift, and go to state 120
+
+
+State 87
+
+   19 block: TOKEN_OPEN_BRACES define_variables TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 19 (block)
+
+
+State 88
+
+   23 define_variables: define_variables define_variable .
+
+    $default  reduce using rule 23 (define_variables)
+
+
+State 89
+
+   18 block: TOKEN_OPEN_BRACES define_variables commands . TOKEN_CLOSE_BRACES
+   25 commands: commands . command
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_IF                shift, and go to state 37
+    TOKEN_WHILE             shift, and go to state 38
+    TOKEN_RETURN            shift, and go to state 39
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_OPEN_BRACES       shift, and go to state 21
+    TOKEN_CLOSE_BRACES      shift, and go to state 121
+    TOKEN_AT_SIGN           shift, and go to state 42
+
+    block                 go to state 44
+    command               go to state 91
+    variable              go to state 48
+    function_call         go to state 49
+    new_array             go to state 50
+    expression_reference  go to state 51
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 90
+
+   20 block: TOKEN_OPEN_BRACES commands TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 20 (block)
+
+
+State 91
+
+   25 commands: commands command .
+
+    $default  reduce using rule 25 (commands)
+
+
+State 92
+
+   29 command: variable TOKEN_ASSIGNMENT . expression TOKEN_SEMICOLON
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 122
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 93
+
+   31 command: function_call TOKEN_SEMICOLON .
+
+    $default  reduce using rule 31 (command)
+
+
+State 94
+
+   35 variable: expression_reference TOKEN_OPEN_BRACKETS . expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 123
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 95
+
+   13 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block .
+
+    $default  reduce using rule 13 (define_function)
+
+
+State 96
+
+   11 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type . block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 21
+
+    block  go to state 124
+
+
+State 97
+
+   37 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES .
+
+    $default  reduce using rule 37 (function_call)
+
+
+State 98
+
+   36 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list . TOKEN_CLOSE_PARENTHESES
+
+    TOKEN_CLOSE_PARENTHESES  shift, and go to state 125
+
+
+State 99
+
+   39 expression_list: expression .
+   40                | expression . TOKEN_COMMA expression_list
+
+    TOKEN_COMMA  shift, and go to state 126
+
+    $default  reduce using rule 39 (expression_list)
+
+
+State 100
+
+   38 new_array: TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS . expression TOKEN_CLOSE_BRACKETS
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression                go to state 127
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 101
+
+   68 expression_negative: TOKEN_SUBTRACT expression_negative .
+
+    $default  reduce using rule 68 (expression_negative)
+
+
+State 102
+
+   70 expression_not: TOKEN_NOT expression_not .
+
+    $default  reduce using rule 70 (expression_not)
+
+
+State 103
+
+   26 command: TOKEN_IF expression block .
+   27        | TOKEN_IF expression block . TOKEN_ELSE block
+
+    TOKEN_ELSE  shift, and go to state 128
+
+    $default  reduce using rule 26 (command)
+
+
+State 104
+
+   42 expression_or: expression_or TOKEN_OR . expression_and
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression_and            go to state 129
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 105
+
+   44 expression_and: expression_and TOKEN_AND . expression_equal
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression_equal          go to state 130
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 106
+
+   46 expression_equal: expression_equal TOKEN_EQUAL . expression_not_equal
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression_not_equal      go to state 131
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 107
+
+   48 expression_not_equal: expression_not_equal TOKEN_NOT_EQUAL . expression_greater
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression_greater        go to state 132
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 108
+
+   50 expression_greater: expression_greater TOKEN_GREATER . expression_greater_equal
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression_greater_equal  go to state 133
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 109
+
+   52 expression_greater_equal: expression_greater_equal TOKEN_GREATER_EQUAL . expression_less
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable               go to state 64
+    function_call          go to state 65
+    new_array              go to state 50
+    expression_less        go to state 134
+    expression_less_equal  go to state 74
+    expression_sub         go to state 75
+    expression_add         go to state 76
+    expression_div         go to state 77
+    expression_mult        go to state 78
+    expression_cast        go to state 79
+    expression_negative    go to state 80
+    expression_not         go to state 81
+    expression_reference   go to state 82
+    expression_scope       go to state 52
+    expression_data        go to state 53
+
+
+State 110
+
+   54 expression_less: expression_less TOKEN_LESS . expression_less_equal
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable               go to state 64
+    function_call          go to state 65
+    new_array              go to state 50
+    expression_less_equal  go to state 135
+    expression_sub         go to state 75
+    expression_add         go to state 76
+    expression_div         go to state 77
+    expression_mult        go to state 78
+    expression_cast        go to state 79
+    expression_negative    go to state 80
+    expression_not         go to state 81
+    expression_reference   go to state 82
+    expression_scope       go to state 52
+    expression_data        go to state 53
+
+
+State 111
+
+   56 expression_less_equal: expression_less_equal TOKEN_LESS_EQUAL . expression_sub
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable              go to state 64
+    function_call         go to state 65
+    new_array             go to state 50
+    expression_sub        go to state 136
+    expression_add        go to state 76
+    expression_div        go to state 77
+    expression_mult       go to state 78
+    expression_cast       go to state 79
+    expression_negative   go to state 80
+    expression_not        go to state 81
+    expression_reference  go to state 82
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 112
+
+   58 expression_sub: expression_sub TOKEN_SUBTRACT . expression_add
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable              go to state 64
+    function_call         go to state 65
+    new_array             go to state 50
+    expression_add        go to state 137
+    expression_div        go to state 77
+    expression_mult       go to state 78
+    expression_cast       go to state 79
+    expression_negative   go to state 80
+    expression_not        go to state 81
+    expression_reference  go to state 82
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 113
+
+   60 expression_add: expression_add TOKEN_ADD . expression_div
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable              go to state 64
+    function_call         go to state 65
+    new_array             go to state 50
+    expression_div        go to state 138
+    expression_mult       go to state 78
+    expression_cast       go to state 79
+    expression_negative   go to state 80
+    expression_not        go to state 81
+    expression_reference  go to state 82
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 114
+
+   62 expression_div: expression_div TOKEN_DIVIDE . expression_mult
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable              go to state 64
+    function_call         go to state 65
+    new_array             go to state 50
+    expression_mult       go to state 139
+    expression_cast       go to state 79
+    expression_negative   go to state 80
+    expression_not        go to state 81
+    expression_reference  go to state 82
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 115
+
+   64 expression_mult: expression_mult TOKEN_MULTIPLY . expression_cast
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable              go to state 64
+    function_call         go to state 65
+    new_array             go to state 50
+    expression_cast       go to state 140
+    expression_negative   go to state 80
+    expression_not        go to state 81
+    expression_reference  go to state 82
+    expression_scope      go to state 52
+    expression_data       go to state 53
+
+
+State 116
+
+   66 expression_cast: expression_cast TOKEN_AS . variable_type
+
+    TOKEN_WORD_BOOL      shift, and go to state 14
+    TOKEN_WORD_CHAR      shift, and go to state 15
+    TOKEN_WORD_INT       shift, and go to state 16
+    TOKEN_WORD_FLOAT     shift, and go to state 17
+    TOKEN_OPEN_BRACKETS  shift, and go to state 18
+
+    variable_type  go to state 141
+
+
+State 117
+
+   28 command: TOKEN_WHILE expression block .
+
+    $default  reduce using rule 28 (command)
+
+
+State 118
+
+   30 command: TOKEN_RETURN expression TOKEN_SEMICOLON .
+
+    $default  reduce using rule 30 (command)
+
+
+State 119
+
+   76 expression_scope: TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES .
+
+    $default  reduce using rule 76 (expression_scope)
+
+
+State 120
+
+   32 command: TOKEN_AT_SIGN expression TOKEN_SEMICOLON .
+
+    $default  reduce using rule 32 (command)
+
+
+State 121
+
+   18 block: TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES .
+
+    $default  reduce using rule 18 (block)
+
+
+State 122
+
+   29 command: variable TOKEN_ASSIGNMENT expression . TOKEN_SEMICOLON
+
+    TOKEN_SEMICOLON  shift, and go to state 142
+
+
+State 123
+
+   35 variable: expression_reference TOKEN_OPEN_BRACKETS expression . TOKEN_CLOSE_BRACKETS
+
+    TOKEN_CLOSE_BRACKETS  shift, and go to state 143
+
+
+State 124
+
+   11 define_function: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block .
+
+    $default  reduce using rule 11 (define_function)
+
+
+State 125
+
+   36 function_call: TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES .
+
+    $default  reduce using rule 36 (function_call)
+
+
+State 126
+
+   40 expression_list: expression TOKEN_COMMA . expression_list
+
+    TOKEN_TRUE              shift, and go to state 29
+    TOKEN_FALSE             shift, and go to state 30
+    TOKEN_CHARACTER         shift, and go to state 31
+    TOKEN_INTEGER           shift, and go to state 32
+    TOKEN_FLOAT             shift, and go to state 33
+    TOKEN_STRING            shift, and go to state 34
+    TOKEN_IDENTIFIER        shift, and go to state 61
+    TOKEN_NEW               shift, and go to state 36
+    TOKEN_OPEN_PARENTHESES  shift, and go to state 40
+    TOKEN_SUBTRACT          shift, and go to state 62
+    TOKEN_NOT               shift, and go to state 63
+
+    variable                  go to state 64
+    function_call             go to state 65
+    new_array                 go to state 50
+    expression_list           go to state 144
+    expression                go to state 99
+    expression_or             go to state 67
+    expression_and            go to state 68
+    expression_equal          go to state 69
+    expression_not_equal      go to state 70
+    expression_greater        go to state 71
+    expression_greater_equal  go to state 72
+    expression_less           go to state 73
+    expression_less_equal     go to state 74
+    expression_sub            go to state 75
+    expression_add            go to state 76
+    expression_div            go to state 77
+    expression_mult           go to state 78
+    expression_cast           go to state 79
+    expression_negative       go to state 80
+    expression_not            go to state 81
+    expression_reference      go to state 82
+    expression_scope          go to state 52
+    expression_data           go to state 53
+
+
+State 127
+
+   38 new_array: TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression . TOKEN_CLOSE_BRACKETS
+
+    TOKEN_CLOSE_BRACKETS  shift, and go to state 145
+
+
+State 128
+
+   27 command: TOKEN_IF expression block TOKEN_ELSE . block
+
+    TOKEN_OPEN_BRACES  shift, and go to state 21
+
+    block  go to state 146
+
+
+State 129
+
+   42 expression_or: expression_or TOKEN_OR expression_and .
+   44 expression_and: expression_and . TOKEN_AND expression_equal
+
+    TOKEN_AND  shift, and go to state 105
+
+    $default  reduce using rule 42 (expression_or)
+
+
+State 130
+
+   44 expression_and: expression_and TOKEN_AND expression_equal .
+   46 expression_equal: expression_equal . TOKEN_EQUAL expression_not_equal
+
+    TOKEN_EQUAL  shift, and go to state 106
+
+    $default  reduce using rule 44 (expression_and)
+
+
+State 131
+
+   46 expression_equal: expression_equal TOKEN_EQUAL expression_not_equal .
+   48 expression_not_equal: expression_not_equal . TOKEN_NOT_EQUAL expression_greater
+
+    TOKEN_NOT_EQUAL  shift, and go to state 107
+
+    $default  reduce using rule 46 (expression_equal)
+
+
+State 132
+
+   48 expression_not_equal: expression_not_equal TOKEN_NOT_EQUAL expression_greater .
+   50 expression_greater: expression_greater . TOKEN_GREATER expression_greater_equal
+
+    TOKEN_GREATER  shift, and go to state 108
+
+    $default  reduce using rule 48 (expression_not_equal)
+
+
+State 133
+
+   50 expression_greater: expression_greater TOKEN_GREATER expression_greater_equal .
+   52 expression_greater_equal: expression_greater_equal . TOKEN_GREATER_EQUAL expression_less
+
+    TOKEN_GREATER_EQUAL  shift, and go to state 109
+
+    $default  reduce using rule 50 (expression_greater)
+
+
+State 134
+
+   52 expression_greater_equal: expression_greater_equal TOKEN_GREATER_EQUAL expression_less .
+   54 expression_less: expression_less . TOKEN_LESS expression_less_equal
+
+    TOKEN_LESS  shift, and go to state 110
+
+    $default  reduce using rule 52 (expression_greater_equal)
+
+
+State 135
+
+   54 expression_less: expression_less TOKEN_LESS expression_less_equal .
+   56 expression_less_equal: expression_less_equal . TOKEN_LESS_EQUAL expression_sub
+
+    TOKEN_LESS_EQUAL  shift, and go to state 111
+
+    $default  reduce using rule 54 (expression_less)
+
+
+State 136
+
+   56 expression_less_equal: expression_less_equal TOKEN_LESS_EQUAL expression_sub .
+   58 expression_sub: expression_sub . TOKEN_SUBTRACT expression_add
+
+    TOKEN_SUBTRACT  shift, and go to state 112
+
+    $default  reduce using rule 56 (expression_less_equal)
+
+
+State 137
+
+   58 expression_sub: expression_sub TOKEN_SUBTRACT expression_add .
+   60 expression_add: expression_add . TOKEN_ADD expression_div
+
+    TOKEN_ADD  shift, and go to state 113
+
+    $default  reduce using rule 58 (expression_sub)
+
+
+State 138
+
+   60 expression_add: expression_add TOKEN_ADD expression_div .
+   62 expression_div: expression_div . TOKEN_DIVIDE expression_mult
+
+    TOKEN_DIVIDE  shift, and go to state 114
+
+    $default  reduce using rule 60 (expression_add)
+
+
+State 139
+
+   62 expression_div: expression_div TOKEN_DIVIDE expression_mult .
+   64 expression_mult: expression_mult . TOKEN_MULTIPLY expression_cast
+
+    TOKEN_MULTIPLY  shift, and go to state 115
+
+    $default  reduce using rule 62 (expression_div)
+
+
+State 140
+
+   64 expression_mult: expression_mult TOKEN_MULTIPLY expression_cast .
+   66 expression_cast: expression_cast . TOKEN_AS variable_type
+
+    TOKEN_AS  shift, and go to state 116
+
+    $default  reduce using rule 64 (expression_mult)
+
+
+State 141
+
+   66 expression_cast: expression_cast TOKEN_AS variable_type .
+
+    $default  reduce using rule 66 (expression_cast)
+
+
+State 142
+
+   29 command: variable TOKEN_ASSIGNMENT expression TOKEN_SEMICOLON .
+
+    $default  reduce using rule 29 (command)
+
+
+State 143
+
+   35 variable: expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS .
+
+    $default  reduce using rule 35 (variable)
+
+
+State 144
+
+   40 expression_list: expression TOKEN_COMMA expression_list .
+
+    $default  reduce using rule 40 (expression_list)
+
+
+State 145
+
+   38 new_array: TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS .
+
+    $default  reduce using rule 38 (new_array)
+
+
+State 146
+
+   27 command: TOKEN_IF expression block TOKEN_ELSE block .
+
+    $default  reduce using rule 27 (command)
