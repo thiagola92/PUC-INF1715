@@ -9,6 +9,9 @@
 	char* convert_string(const char* s);
 %}
 
+%option noinput
+%option nounput
+
 CHARACTER	'([^"\\]|\\.)'
 INTEGER		[0-9]+
 FLOAT		([0-9]+("."[0-9]*)?|"."[0-9]+)([eE][-+]?[0-9]+)?

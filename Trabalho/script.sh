@@ -1,8 +1,12 @@
 #! usr/bin/bash
+#Nome: Thiago Lages de Alencar
+#Matricula: 1721629
+
+c_files="main.c test.c lex.yy.c monga.tab.c node.c"
 
 bison -d monga.y;
 flex monga.l;
-gcc main.c lex.yy.c monga.tab.c test.c -o test;
+gcc $c_files -Wall -o test;
 
 echo "===== Testing lexical ====="
 for file_input in tests/lexical/*\.input; do

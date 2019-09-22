@@ -3,9 +3,9 @@ Matricula: 1721629
 
 ===== FILES =====
 
-* test.sh
 * test.h
 * test.c
+* script.sh
 * README
 * monga.y
 * monga.l
@@ -13,6 +13,7 @@ Matricula: 1721629
 * main.c
 * tests/
 	* lexical
+		* examples from 00 to 11
 	* syntax
 		* correct/
 			* examples from 00 to 16
@@ -28,7 +29,7 @@ BASH
 
 ===== RUNNING TESTS =====
 
-bash test.sh
+bash script.sh
 
 ===== RUNNING SINGLE FILE =====
 Para rodar o arquivo "example-00.input":

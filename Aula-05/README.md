@@ -64,7 +64,101 @@ Consegue aceitar quase todos os casos que a LL não conseguia aceitar.
 LL - Mantem na pilha o que falta ler  
 LR - Mantem na pilha o que já foi lido  
 
-46:45
+#### Exemplo LL
+Gramática usada:  
+`S = L$`  
+`L = ε | L1`  
+`L1 = ID | ID ',' L1`  
+`ID = a | b | c | d`  
+
+Entrada: `a,b,c,d`  
+
+No começo do LL a pilha contém o que se deseja ler.  
+
+| Pilha |
+| ----- |
+| d     |
+| ,     |
+| c     |
+| ,     |
+| b     |
+| ,     |
+| a     |
+
+| Pilha |
+| ----- |
+| ID    |
+| ,     |
+| c     |
+| ,     |
+| b     |
+| ,     |
+| a     |
+
+| Pilha |
+| ----- |
+| L1    |
+| ,     |
+| c     |
+| ,     |
+| b     |
+| ,     |
+| a     |
+
+| Pilha |
+| ----- |
+| L1    |
+| ,     |
+| ID    |
+| ,     |
+| b     |
+| ,     |
+| a     |
+
+| Pilha |
+| ----- |
+| L1    |
+| ,     |
+| b     |
+| ,     |
+| a     |
+
+| Pilha |
+| ----- |
+| L1    |
+| ,     |
+| ID    |
+| ,     |
+| a     |
+
+| Pilha |
+| ----- |
+| L1    |
+| ,     |
+| a     |
+
+| Pilha |
+| ----- |
+| L1    |
+| ,     |
+| ID    |
+
+| Pilha |
+| ----- |
+| L1    |
+
+| Pilha |
+| ----- |
+| L     |
+
+#### Exemplo LR
+LR faz a leitura dos estados e cria uma máquina de estados justamente das possibilidade que poderia ir, então ele não tem o problema de ir abrindo e apenas depois descobrir que não consegue fazer pois de um estado ele sabe qual as possibilidades para quais ele pode expandir.  
+
+No começo do LL a pilha contém o que já foi lido.  
+
+| Pilha |
+| ----- |
+|       |
 
 ![LR Exemplo](LRExample.jpg)  
 

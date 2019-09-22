@@ -12,6 +12,8 @@
 	int i;
 	float f;
 	char* s;
+
+	struct Node* n;
 }
 
 %token <i> TOKEN_TRUE
@@ -127,8 +129,8 @@ variable:	TOKEN_IDENTIFIER								{ ; }
 		| expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
 		;
 
-function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES		{ ; }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES			{ ; }
+function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES	{ ; }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES		{ ; }
 			;
 
 new_array:	TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ ; }
