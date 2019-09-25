@@ -13,7 +13,7 @@
 	float f;
 	char* s;
 
-	struct Node* n;
+	Node* n;
 }
 
 %token <i> TOKEN_TRUE
@@ -67,6 +67,8 @@
 %token TOKEN_COMMA
 %token TOKEN_COLON
 %token TOKEN_SEMICOLON
+
+%type<Node*> program define define_variable variable_type define_function parameters parameter block define_variables commands command variable function_call new_array expression_list expression expression_or expression_and expression_equal expression_not_equal expression_greater expression_greater_equal expression_less expression_less_equal expression_sub expression_add expression_div expression_mult expression_cast expression_negative expression_not expression_reference expression_scope expression_data
 
 %%
 

@@ -99,7 +99,7 @@ char* convert_string(const char* input) {
 	int pos_input = 1; // skipping first quotation mark
 	int pos_output = 0;
 	
-	while(input[pos_input] != '"') {
+	while(pos_input < strlen(input) - 1) {
 		if(input[pos_input] != '\\') {
 			output[pos_output] = input[pos_input];
 			pos_input++;
@@ -125,6 +125,8 @@ char* convert_string(const char* input) {
 			output[pos_output] = '\\';
 		else if(input[pos_input + 1] == '"')
 			output[pos_output] = '"';
+		else if(input[pos_input + 1] == '\'')
+			output[pos_output] = '\'';
 		else {
 			output[pos_output] = input[pos_input];
 			pos_input++;

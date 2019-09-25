@@ -13,7 +13,7 @@ Matricula: 1721629
 * main.c
 * tests/
 	* lexical
-		* examples from 00 to 11
+		* examples from 00 to 12
 	* syntax
 		* correct/
 			* examples from 00 to 16
@@ -36,7 +36,7 @@ Para rodar o arquivo "example-00.input":
 
 bison -d monga.y;
 flex monga.l;
-gcc main.c lex.yy.c monga.tab.c test.c -Wall -o test;
+gcc main.c lex.yy.c monga.tab.c node.c test.c -Wall -o test;
 	./test tests/lexical/example-00.input lexical;
 	./test tests/syntax/correct/example-00.input syntax;
 
