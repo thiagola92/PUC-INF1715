@@ -2,8 +2,6 @@
 // Matricula: 1721629
 
 #include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
 
 #include"node.h"
 #include"monga.tab.h"

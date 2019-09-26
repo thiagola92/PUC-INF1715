@@ -1,8 +1,23 @@
+// Nome: Thiago Lages de Alencar
+// Matricula: 1721629
+
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
 #include"node.h"
 
 struct Node {
-	Node* left;
-	Node* right;
+	char* tag;
+
+	union content {
+		char c;
+		int i;
+		float f;
+		char* s;
+	} content;
+
+	Node* childs;
 };
 
 Node* create_node() {

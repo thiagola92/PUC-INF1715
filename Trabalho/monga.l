@@ -6,7 +6,8 @@
 
 	int CURRENT_LINE = 1;
 
-	char* convert_string(const char* s);
+	char* convert_string(const char*);
+	char convert_char(const char*);
 %}
 
 %option noinput
@@ -36,8 +37,8 @@ COMMENT		#[^\n]*
 "int"		{ return TOKEN_WORD_INT; }
 "float"		{ return TOKEN_WORD_FLOAT; }
 
-"true"		{ yylval.i = 1; return TOKEN_TRUE; }
-"false"		{ yylval.i = 0; return TOKEN_FALSE; }
+"true"		{ yylval.b = 1; return TOKEN_TRUE; }
+"false"		{ yylval.b = 0; return TOKEN_FALSE; }
 
 "if"		{ return TOKEN_IF; }
 "else"		{ return TOKEN_ELSE; }
@@ -76,7 +77,7 @@ COMMENT		#[^\n]*
 ":"		{ return TOKEN_COLON; }
 ";"		{ return TOKEN_SEMICOLON; }
 
-{CHARACTER}	{ yylval.c = yytext[1]; return TOKEN_CHARACTER; }
+{CHARACTER}	{ yylval.c = convert_char(yytext); return TOKEN_CHARACTER; }
 {INTEGER}	{ yylval.i = strtol(yytext, NULL, 10); return TOKEN_INTEGER; }
 
 {FLOAT}		{ yylval.f = strtod(yytext, NULL); return TOKEN_FLOAT; }
@@ -91,6 +92,11 @@ COMMENT		#[^\n]*
 .		{ return yytext[0]; }
 
 %%
+
+char convert_char(const char* input) {
+	char* string = convert_string(input);
+	return string[0];
+}
 
 char* convert_string(const char* input) {
 	int length = strlen(input) - 1; // removing first and last quotation mark

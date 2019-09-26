@@ -9,6 +9,7 @@
 
 %union {
 	char c;
+	int b;
 	int i;
 	float f;
 	char* s;
@@ -16,9 +17,9 @@
 	Node* n;
 }
 
-%token <i> TOKEN_TRUE
-%token <i> TOKEN_FALSE
 %token <c> TOKEN_CHARACTER
+%token <b> TOKEN_TRUE
+%token <b> TOKEN_FALSE
 %token <i> TOKEN_INTEGER
 %token <f> TOKEN_FLOAT
 %token <s> TOKEN_STRING
@@ -68,7 +69,7 @@
 %token TOKEN_COLON
 %token TOKEN_SEMICOLON
 
-%type<Node*> program define define_variable variable_type define_function parameters parameter block define_variables commands command variable function_call new_array expression_list expression expression_or expression_and expression_equal expression_not_equal expression_greater expression_greater_equal expression_less expression_less_equal expression_sub expression_add expression_div expression_mult expression_cast expression_negative expression_not expression_reference expression_scope expression_data
+%type<Node> program define define_variable variable_type define_function parameters parameter block define_variables commands command variable function_call new_array expression_list expression expression_or expression_and expression_equal expression_not_equal expression_greater expression_greater_equal expression_less expression_less_equal expression_sub expression_add expression_div expression_mult expression_cast expression_negative expression_not expression_reference expression_scope expression_data
 
 %%
 
@@ -77,7 +78,7 @@ program:	/*empty*/		{ ; }
 		;
 
 define:		define_variable		{ ; }
-		| define_function
+		| define_function	{ ; }
 		;
 
 define_variable:	TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON	{ ; }

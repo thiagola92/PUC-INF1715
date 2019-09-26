@@ -53,4 +53,4 @@ test_syntax "tests/syntax/correct/*"
 echo ">> Wrong code"
 test_syntax "tests/syntax/wrong/*"
 
-rm lex.yy.c monga.tab.c monga.tab.h test;
+#rm lex.yy.c monga.tab.c monga.tab.h test;
