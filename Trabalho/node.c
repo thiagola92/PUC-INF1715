@@ -278,7 +278,7 @@ Node create_node_new_array(Node child0, Node child1) {
 	return node;
 }
 
-Node create_node_function_call_with_parameters(const char*s,Node child) {
+Node create_node_function_call_with_parameters(const char*s, Node child) {
 	Node node;
 
 	node.tag = FUNCTION_CALL;

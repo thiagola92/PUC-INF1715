@@ -1,0 +1,19 @@
+
+DEFINE_LIST - childrens: 2
+    DEFINE - childrens: 1
+        DEFINE_FUNCTION - childrens: 2
+            DATA_STRING - content: first
+            BLOCK - childrens: 1
+                RETURN - childrens: 1
+                    EXPRESSION_REFERENCE - childrens: 1
+                        DATA_BOOLEAN - content: 1
+    DEFINE_FUNCTION - childrens: 4
+        DATA_STRING - content: seventh
+        PARAMETER - childrens: 2
+            DATA_STRING - content: a
+            TYPE_BOOL
+        TYPE_BOOL
+        BLOCK - childrens: 1
+            RETURN - childrens: 1
+                EXPRESSION_REFERENCE - childrens: 1
+                    VARIABLE

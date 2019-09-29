@@ -263,7 +263,7 @@ expression_reference:	variable			{ $$ = create_node_expression_reference($1); }
 			| expression_scope		{ $$ = create_node_expression_reference($1); }
 			;
 
-expression_scope:	TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES	{ create_node_expression_scope($2); }
+expression_scope:	TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES	{ $$ = create_node_expression_scope($2); }
 			| expression_data						{ $$ = $1; }
 			;
 

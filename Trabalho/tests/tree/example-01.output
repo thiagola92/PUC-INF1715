@@ -1,0 +1,25 @@
+
+DEFINE_LIST - childrens: 2
+    DEFINE_LIST - childrens: 2
+        DEFINE_LIST - childrens: 2
+            DEFINE_LIST - childrens: 2
+                DEFINE_LIST - childrens: 2
+                    DEFINE - childrens: 1
+                        DEFINE_VARIABLE - childrens: 2
+                            DATA_STRING - content: s
+                            TYPE_CHAR
+                    DEFINE_VARIABLE - childrens: 2
+                        DATA_STRING - content: normal_name
+                        TYPE_CHAR
+                DEFINE_VARIABLE - childrens: 2
+                    DATA_STRING - content: long_long_long_long_long_long_name
+                    TYPE_CHAR
+            DEFINE_VARIABLE - childrens: 2
+                DATA_STRING - content: s1
+                TYPE_CHAR
+        DEFINE_VARIABLE - childrens: 2
+            DATA_STRING - content: s_1
+            TYPE_CHAR
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
+        TYPE_CHAR

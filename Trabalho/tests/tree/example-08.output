@@ -1,0 +1,55 @@
+
+DEFINE - childrens: 1
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: main
+        BLOCK - childrens: 1
+            COMMAND_LIST - childrens: 2
+                COMMAND_LIST - childrens: 2
+                    COMMAND_LIST - childrens: 2
+                        COMMAND_LIST - childrens: 2
+                            COMMAND_LIST - childrens: 2
+                                IF - childrens: 2
+                                    EXPRESSION_REFERENCE - childrens: 1
+                                        DATA_BOOLEAN - content: 1
+                                    BLOCK
+                                IF - childrens: 3
+                                    EXPRESSION_REFERENCE - childrens: 1
+                                        DATA_BOOLEAN - content: 0
+                                    BLOCK
+                                    BLOCK
+                            IF - childrens: 2
+                                EXPRESSION_REFERENCE - childrens: 1
+                                    DATA_BOOLEAN - content: 1
+                                BLOCK - childrens: 1
+                                    IF - childrens: 2
+                                        EXPRESSION_REFERENCE - childrens: 1
+                                            DATA_BOOLEAN - content: 1
+                                        BLOCK
+                        IF - childrens: 2
+                            EXPRESSION_REFERENCE - childrens: 1
+                                DATA_BOOLEAN - content: 1
+                            BLOCK - childrens: 1
+                                IF - childrens: 3
+                                    EXPRESSION_REFERENCE - childrens: 1
+                                        DATA_BOOLEAN - content: 0
+                                    BLOCK
+                                    BLOCK
+                    IF - childrens: 3
+                        EXPRESSION_REFERENCE - childrens: 1
+                            DATA_BOOLEAN - content: 0
+                        BLOCK
+                        BLOCK - childrens: 1
+                            IF - childrens: 2
+                                EXPRESSION_REFERENCE - childrens: 1
+                                    DATA_BOOLEAN - content: 1
+                                BLOCK
+                IF - childrens: 3
+                    EXPRESSION_REFERENCE - childrens: 1
+                        DATA_BOOLEAN - content: 0
+                    BLOCK
+                    BLOCK - childrens: 1
+                        IF - childrens: 3
+                            EXPRESSION_REFERENCE - childrens: 1
+                                DATA_BOOLEAN - content: 0
+                            BLOCK
+                            BLOCK

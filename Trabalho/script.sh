@@ -15,7 +15,7 @@ for file_input in tests/lexical/*\.input; do
 
 	file_answer=tests/lexical/$file_name\.answer
 	file_output=tests/lexical/$file_name\.output
-	./test $file_input > $file_output lexical
+	./test $file_input lexical > $file_output
 
 	diff $file_answer $file_output > /dev/null
 	status=$?
@@ -26,8 +26,6 @@ for file_input in tests/lexical/*\.input; do
 		echo -e "$file_name \xE2\x9C\x95"
 		diff $file_answer $file_output
 	fi
-
-	rm $file_output
 done
 
 echo "===== Testing syntax ====="
@@ -52,5 +50,21 @@ test_syntax "tests/syntax/correct/*"
 
 echo ">> Wrong code"
 test_syntax "tests/syntax/wrong/*"
+
+echo "===== Testing tree ====="
+for file_input in tests/tree/*\.input; do
+	file_name=$(basename "$file_input")
+	file_name=${file_name%\.input}
+		
+	printf "$file_name: "
+
+	file_output=tests/tree/$file_name\.output
+	./test $file_input tree > $file_output
+	status=$?
+
+	if [ $status -eq "0" ]; then
+		echo -e "no error"
+	fi
+done
 
 rm lex.yy.c monga.tab.c monga.tab.h test;

@@ -1,0 +1,9 @@
+# Testing hexadecimal
+
+main() {
+	x1 : float;
+
+	x1 = 0x106ABF;
+	x1 = 0x000000;
+	x1 = 0xFFFFFF;
+}

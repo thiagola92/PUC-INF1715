@@ -1,0 +1,23 @@
+# Testing calling function
+
+first() {
+}
+
+second(a : bool) {
+}
+
+third(a : bool, b : bool) {
+}
+
+third(a : bool, b : bool) {
+}
+
+fourth(a : bool, b : bool, c : bool) {
+}
+
+main() {
+	first();
+	second(a);
+	third(a,b);
+	fourth(a,b,c);
+}

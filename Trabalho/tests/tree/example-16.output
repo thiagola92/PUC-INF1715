@@ -1,0 +1,181 @@
+
+DEFINE - childrens: 1
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: main
+        BLOCK - childrens: 2
+            DEFINE_VARIABLE - childrens: 2
+                DATA_STRING - content: x1
+                TYPE_INT
+            COMMAND_LIST - childrens: 2
+                COMMAND_LIST - childrens: 2
+                    COMMAND_LIST - childrens: 2
+                        COMMAND_LIST - childrens: 2
+                            COMMAND_LIST - childrens: 2
+                                COMMAND_LIST - childrens: 2
+                                    COMMAND_LIST - childrens: 2
+                                        COMMAND_LIST - childrens: 2
+                                            COMMAND_LIST - childrens: 2
+                                                COMMAND_LIST - childrens: 2
+                                                    COMMAND_LIST - childrens: 2
+                                                        COMMAND_LIST - childrens: 2
+                                                            COMMAND_LIST - childrens: 2
+                                                                ASSIGNMENT - childrens: 2
+                                                                    VARIABLE
+                                                                    EXPRESSION_ADD - childrens: 2
+                                                                        EXPRESSION_ADD - childrens: 2
+                                                                            EXPRESSION_REFERENCE - childrens: 1
+                                                                                DATA_INTEGER - content: 1
+                                                                            EXPRESSION_REFERENCE - childrens: 1
+                                                                                DATA_INTEGER - content: 1
+                                                                        EXPRESSION_REFERENCE - childrens: 1
+                                                                            DATA_INTEGER - content: 1
+                                                                ASSIGNMENT - childrens: 2
+                                                                    VARIABLE
+                                                                    EXPRESSION_SUB - childrens: 2
+                                                                        EXPRESSION_SUB - childrens: 2
+                                                                            EXPRESSION_REFERENCE - childrens: 1
+                                                                                DATA_INTEGER - content: 1
+                                                                            EXPRESSION_REFERENCE - childrens: 1
+                                                                                DATA_INTEGER - content: 1
+                                                                        EXPRESSION_REFERENCE - childrens: 1
+                                                                            DATA_INTEGER - content: 1
+                                                            ASSIGNMENT - childrens: 2
+                                                                VARIABLE
+                                                                EXPRESSION_MULT - childrens: 2
+                                                                    EXPRESSION_MULT - childrens: 2
+                                                                        EXPRESSION_REFERENCE - childrens: 1
+                                                                            DATA_INTEGER - content: 1
+                                                                        EXPRESSION_REFERENCE - childrens: 1
+                                                                            DATA_INTEGER - content: 1
+                                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                                        DATA_INTEGER - content: 1
+                                                        ASSIGNMENT - childrens: 2
+                                                            VARIABLE
+                                                            EXPRESSION_DIV - childrens: 2
+                                                                EXPRESSION_DIV - childrens: 2
+                                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                                        DATA_INTEGER - content: 1
+                                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                                        DATA_INTEGER - content: 1
+                                                                EXPRESSION_REFERENCE - childrens: 1
+                                                                    DATA_INTEGER - content: 1
+                                                    ASSIGNMENT - childrens: 2
+                                                        VARIABLE
+                                                        EXPRESSION_SUB - childrens: 2
+                                                            EXPRESSION_ADD - childrens: 2
+                                                                EXPRESSION_REFERENCE - childrens: 1
+                                                                    DATA_INTEGER - content: 1
+                                                                EXPRESSION_REFERENCE - childrens: 1
+                                                                    DATA_INTEGER - content: 1
+                                                            EXPRESSION_REFERENCE - childrens: 1
+                                                                DATA_INTEGER - content: 1
+                                                ASSIGNMENT - childrens: 2
+                                                    VARIABLE
+                                                    EXPRESSION_ADD - childrens: 2
+                                                        EXPRESSION_REFERENCE - childrens: 1
+                                                            DATA_INTEGER - content: 1
+                                                        EXPRESSION_MULT - childrens: 2
+                                                            EXPRESSION_REFERENCE - childrens: 1
+                                                                DATA_INTEGER - content: 1
+                                                            EXPRESSION_REFERENCE - childrens: 1
+                                                                DATA_INTEGER - content: 1
+                                            ASSIGNMENT - childrens: 2
+                                                VARIABLE
+                                                EXPRESSION_ADD - childrens: 2
+                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                        DATA_INTEGER - content: 1
+                                                    EXPRESSION_DIV - childrens: 2
+                                                        EXPRESSION_REFERENCE - childrens: 1
+                                                            DATA_INTEGER - content: 1
+                                                        EXPRESSION_REFERENCE - childrens: 1
+                                                            DATA_INTEGER - content: 1
+                                        ASSIGNMENT - childrens: 2
+                                            VARIABLE
+                                            EXPRESSION_SUB - childrens: 2
+                                                EXPRESSION_REFERENCE - childrens: 1
+                                                    DATA_INTEGER - content: 1
+                                                EXPRESSION_ADD - childrens: 2
+                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                        DATA_INTEGER - content: 1
+                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                        DATA_INTEGER - content: 1
+                                    ASSIGNMENT - childrens: 2
+                                        VARIABLE
+                                        EXPRESSION_ADD - childrens: 2
+                                            EXPRESSION_MULT - childrens: 2
+                                                EXPRESSION_REFERENCE - childrens: 1
+                                                    DATA_INTEGER - content: 1
+                                                EXPRESSION_REFERENCE - childrens: 1
+                                                    DATA_INTEGER - content: 1
+                                            EXPRESSION_REFERENCE - childrens: 1
+                                                DATA_INTEGER - content: 1
+                                ASSIGNMENT - childrens: 2
+                                    VARIABLE
+                                    EXPRESSION_ADD - childrens: 2
+                                        EXPRESSION_DIV - childrens: 2
+                                            EXPRESSION_REFERENCE - childrens: 1
+                                                DATA_INTEGER - content: 1
+                                            EXPRESSION_REFERENCE - childrens: 1
+                                                DATA_INTEGER - content: 1
+                                        EXPRESSION_REFERENCE - childrens: 1
+                                            DATA_INTEGER - content: 1
+                            ASSIGNMENT - childrens: 2
+                                VARIABLE
+                                EXPRESSION_ADD - childrens: 2
+                                    EXPRESSION_REFERENCE - childrens: 1
+                                        DATA_INTEGER - content: 1
+                                    EXPRESSION_REFERENCE - childrens: 1
+                                        EXPRESSION_SCOPE - childrens: 1
+                                            EXPRESSION_ADD - childrens: 2
+                                                EXPRESSION_ADD - childrens: 2
+                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                        DATA_INTEGER - content: 1
+                                                    EXPRESSION_REFERENCE - childrens: 1
+                                                        DATA_INTEGER - content: 1
+                                                EXPRESSION_REFERENCE - childrens: 1
+                                                    DATA_INTEGER - content: 1
+                        ASSIGNMENT - childrens: 2
+                            VARIABLE
+                            EXPRESSION_SUB - childrens: 2
+                                EXPRESSION_REFERENCE - childrens: 1
+                                    DATA_INTEGER - content: 1
+                                EXPRESSION_REFERENCE - childrens: 1
+                                    EXPRESSION_SCOPE - childrens: 1
+                                        EXPRESSION_ADD - childrens: 2
+                                            EXPRESSION_ADD - childrens: 2
+                                                EXPRESSION_REFERENCE - childrens: 1
+                                                    DATA_INTEGER - content: 1
+                                                EXPRESSION_REFERENCE - childrens: 1
+                                                    DATA_INTEGER - content: 1
+                                            EXPRESSION_REFERENCE - childrens: 1
+                                                DATA_INTEGER - content: 1
+                    ASSIGNMENT - childrens: 2
+                        VARIABLE
+                        EXPRESSION_MULT - childrens: 2
+                            EXPRESSION_REFERENCE - childrens: 1
+                                DATA_INTEGER - content: 1
+                            EXPRESSION_REFERENCE - childrens: 1
+                                EXPRESSION_SCOPE - childrens: 1
+                                    EXPRESSION_ADD - childrens: 2
+                                        EXPRESSION_ADD - childrens: 2
+                                            EXPRESSION_REFERENCE - childrens: 1
+                                                DATA_INTEGER - content: 1
+                                            EXPRESSION_REFERENCE - childrens: 1
+                                                DATA_INTEGER - content: 1
+                                        EXPRESSION_REFERENCE - childrens: 1
+                                            DATA_INTEGER - content: 1
+                ASSIGNMENT - childrens: 2
+                    VARIABLE
+                    EXPRESSION_DIV - childrens: 2
+                        EXPRESSION_REFERENCE - childrens: 1
+                            DATA_INTEGER - content: 1
+                        EXPRESSION_REFERENCE - childrens: 1
+                            EXPRESSION_SCOPE - childrens: 1
+                                EXPRESSION_ADD - childrens: 2
+                                    EXPRESSION_ADD - childrens: 2
+                                        EXPRESSION_REFERENCE - childrens: 1
+                                            DATA_INTEGER - content: 1
+                                        EXPRESSION_REFERENCE - childrens: 1
+                                            DATA_INTEGER - content: 1
+                                    EXPRESSION_REFERENCE - childrens: 1
+                                        DATA_INTEGER - content: 1

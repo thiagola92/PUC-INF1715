@@ -1,0 +1,8 @@
+# Testing creating variable and calling function
+
+first() {
+	a:bool;
+	b:bool;
+	first();
+	first();
+}
