@@ -1,10 +1,8 @@
 // Nome: Thiago Lages de Alencar
 // Matricula: 1721629
 
-#include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
-
 #include"test.h"
 
 int yywrap();
@@ -12,7 +10,7 @@ int yywrap();
 int main(int argc, const char* argv[]) {
 	if(argc != 3) {
 		fprintf(stderr, "Parameters: [file path] [test]\n");
-		fprintf(stderr, "Test options: lexical syntax\n");
+		fprintf(stderr, "Test options: lexical syntax tree\n");
 		return -1;
 	}
 	
@@ -20,6 +18,8 @@ int main(int argc, const char* argv[]) {
 		return test_lexical(argv[1]);
 	else if(strcmp(argv[2],"syntax") == 0)
 		return test_syntax(argv[1]);
+	else if(strcmp(argv[2],"tree") == 0)
+		return test_tree(argv[1]);
 
 	return -1;
 }

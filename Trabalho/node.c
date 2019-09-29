@@ -1,10 +1,7 @@
 // Nome: Thiago Lages de Alencar
 // Matricula: 1721629
 
-#include<stdio.h>
 #include<stdlib.h>
-#include<string.h>
-
 #include"node.h"
 
 Node create_node_bool(const int b) {
@@ -281,22 +278,25 @@ Node create_node_new_array(Node child0, Node child1) {
 	return node;
 }
 
-Node create_node_function_call_with_parameters(Node child) {
+Node create_node_function_call_with_parameters(const char*s,Node child) {
+	Node node;
+
+	node.tag = FUNCTION_CALL;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = create_node_string(s);
+	node.content.n[1] = child;
+
+	return node;
+}
+
+Node create_node_function_call_empty(const char*s) {
 	Node node;
 
 	node.tag = FUNCTION_CALL;
 	node.number_of_childs = 1;
 	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
-	node.content.n[0] = child;
-
-	return node;
-}
-
-Node create_node_function_call_empty() {
-	Node node;
-
-	node.tag = FUNCTION_CALL;
-	node.number_of_childs = 0;
+	node.content.n[0] = create_node_string(s);
 
 	return node;
 }
@@ -591,6 +591,15 @@ Node create_node_define_list(Node child0, Node child1) {
 	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
 	node.content.n[0] = child0;
 	node.content.n[1] = child1;
+
+	return node;
+}
+
+Node create_node_empty() {
+	Node node;
+	
+	node.tag = EMPTY;
+	node.number_of_childs = 0;
 
 	return node;
 }

@@ -39,6 +39,7 @@ flex monga.l;
 gcc main.c lex.yy.c monga.tab.c node.c test.c -Wall -o test;
 	./test tests/lexical/example-00.input lexical;
 	./test tests/syntax/correct/example-00.input syntax;
+	./test tests/syntax/correct/example-00.input tree;
 
 ===== OUTPUT =====
 

@@ -1,11 +1,138 @@
 // Nome: Thiago Lages de Alencar
 // Matricula: 1721629
 
-#include<stdio.h>
-#include<stdlib.h>
-#include<string.h>
-
 #include"test.h"
+
+void print_tree(Node node, int tabs) {
+	printf("\n");
+
+	for(int i = 0; i < tabs; i++)
+		printf("    ");
+
+	if(node.tag == EMPTY)
+		printf("EMPTY");
+	else if(node.tag == DEFINE)
+		printf("DEFINE");
+	else if(node.tag == DEFINE_LIST)
+		printf("DEFINE_LIST");
+	else if(node.tag == DEFINE_VARIABLE)
+		printf("DEFINE_VARIABLE");
+	else if(node.tag == TYPE_BOOL)
+		printf("TYPE_BOOL");
+	else if(node.tag == TYPE_CHAR)
+		printf("TYPE_CHAR");
+	else if(node.tag == TYPE_INT)
+		printf("TYPE_INT");
+	else if(node.tag == TYPE_FLOAT)
+		printf("TYPE_FLOAT");
+	else if(node.tag == TYPE_ARRAY)
+		printf("TYPE_ARRAY");
+	else if(node.tag == DEFINE_FUNCTION)
+		printf("DEFINE_FUNCTION");
+	else if(node.tag == PARAMETER_LIST)
+		printf("PARAMETER_LIST");
+	else if(node.tag == PARAMETER)
+		printf("PARAMETER");
+	else if(node.tag == COMMAND_LIST)
+		printf("COMMAND_LIST");
+	else if(node.tag == VARIABLE_LIST)
+		printf("VARIABLE_LIST");
+	else if(node.tag == BLOCK)
+		printf("BLOCK");
+	else if(node.tag == IF)
+		printf("IF");
+	else if(node.tag == WHILE)
+		printf("WHILE\n");
+	else if(node.tag == ASSIGNMENT)
+		printf("ASSIGNMENT");
+	else if(node.tag == RETURN)
+		printf("RETURN");
+	else if(node.tag == PRINT)
+		printf("PRINT");
+	else if(node.tag == VARIABLE)
+		printf("VARIABLE");
+	else if(node.tag == FUNCTION_CALL)
+		printf("FUNCTION_CALL");
+	else if(node.tag == NEW_ARRAY)
+		printf("NEW_ARRAY");
+	else if(node.tag == EXPRESSION_LIST)
+		printf("EXPRESSION_LIST");
+	else if(node.tag == EXPRESSION_OR)
+		printf("EXPRESSION_OR");
+	else if(node.tag == EXPRESSION_AND)
+		printf("EXPRESSION_AND");
+	else if(node.tag == EXPRESSION_EQUAL)
+		printf("EXPRESSION_EQUAL");
+	else if(node.tag == EXPRESSION_NOT_EQUAL)
+		printf("EXPRESSION_NOT_EQUAL");
+	else if(node.tag == EXPRESSION_GREATER)
+		printf("EXPRESSION_GREATER");
+	else if(node.tag == EXPRESSION_GREATER_EQUAL)
+		printf("EXPRESSION_GREATER_EQUAL");
+	else if(node.tag == EXPRESSION_LESS)
+		printf("EXPRESSION_LESS");
+	else if(node.tag == EXPRESSION_LESS_EQUAL)
+		printf("EXPRESSION_LESS_EQUAL");
+	else if(node.tag == EXPRESSION_SUB)
+		printf("EXPRESSION_SUB");
+	else if(node.tag == EXPRESSION_ADD)
+		printf("EXPRESSION_ADD");
+	else if(node.tag == EXPRESSION_DIV)
+		printf("EXPRESSION_DIV");
+	else if(node.tag == EXPRESSION_MULT)
+		printf("EXPRESSION_MULT");
+	else if(node.tag == EXPRESSION_CAST)
+		printf("EXPRESSION_CAST");
+	else if(node.tag == EXPRESSION_NEGATIVE)
+		printf("EXPRESSION_NEGATIVE");
+	else if(node.tag == EXPRESSION_NOT)
+		printf("EXPRESSION_NOT");
+	else if(node.tag == EXPRESSION_REFERENCE)
+		printf("EXPRESSION_REFERENCE");
+	else if(node.tag == EXPRESSION_SCOPE)
+		printf("EXPRESSION_SCOPE");
+	else if(node.tag == DATA_BOOLEAN)
+		printf("DATA_BOOLEAN");
+	else if(node.tag == DATA_CHARACTER)
+		printf("DATA_CHARACTER");
+	else if(node.tag == DATA_INTEGER)
+		printf("DATA_INTEGER");
+	else if(node.tag == DATA_FLOAT)
+		printf("DATA_FLOAT");
+	else if(node.tag == DATA_STRING)
+		printf("DATA_STRING");
+	else 
+		printf("UNKNOWN");
+
+	if(node.number_of_childs > 0)
+		printf(" - childrens: %d", node.number_of_childs);
+
+	if(node.tag == DATA_BOOLEAN)
+		printf(" - content: %d", node.content.b);
+	else if(node.tag == DATA_CHARACTER)
+		printf(" - content: %c", node.content.c);
+	else if(node.tag == DATA_INTEGER)
+		printf(" - content: %d", node.content.i);
+	else if(node.tag == DATA_FLOAT)
+		printf(" - content: %f", node.content.f);
+	else if(node.tag == DATA_STRING)
+		printf(" - content: %s", node.content.s);
+	else {
+		for(int i = 0; i < node.number_of_childs; i++)
+			print_tree(node.content.n[i], tabs+1);
+	}
+
+}
+
+int test_tree(const char* path) {
+	yyin = fopen(path, "r");
+	yyparse();
+
+	print_tree(__root__, 0);
+	printf("\n");
+
+	return 0;
+}
 
 int test_syntax(const char* path) {
 	yyin = fopen(path, "r");

@@ -3,6 +3,8 @@
 	// Matricula: 1721629
 
 	#include"monga.h"
+	
+	Node __root__;
 %}
 
 %start program
@@ -118,8 +120,8 @@
 
 %%
 
-program:	/*empty*/		{ ; }
-		| define_list		{ $$ = $1; }
+program:	/*empty*/		{ __root__ = create_node_empty(); $$ = __root__; }
+		| define_list		{ __root__ = $1; $$ = __root__; }
 		;
 
 define_list:	define_list define	{ $$ = create_node_define_list($1, $2); }
@@ -140,10 +142,10 @@ variable_type:	TOKEN_WORD_BOOL							{ $$ = create_node_variable_type_bool(); }
 		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ $$ = create_node_variable_type_array($2); }
 		;
 
-define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ create_node_define_function_double($1, $3, $6, $7); }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES block				{ create_node_define_function_single($1, $3, $5); }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block		{ create_node_define_function_single($1, $5, $6); }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block						{ create_node_define_function_empty($1, $4); }
+define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ $$ = create_node_define_function_double($1, $3, $6, $7); }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES block				{ $$ = create_node_define_function_single($1, $3, $5); }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block		{ $$ = create_node_define_function_single($1, $5, $6); }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block						{ $$ = create_node_define_function_empty($1, $4); }
 			;
 
 parameter_list:		parameter_list TOKEN_COMMA parameter			{ $$ = create_node_parameter_list($1, $3); }
@@ -181,8 +183,8 @@ variable:	expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKE
 		| TOKEN_IDENTIFIER								{ $$ = create_node_variable_simple($1); }
 		;
 
-function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES	{ $$ = create_node_function_call_with_parameters($3); }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES		{ $$ = create_node_function_call_empty(); }
+function_call:		TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES	{ $$ = create_node_function_call_with_parameters($1, $3); }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES		{ $$ = create_node_function_call_empty($1); }
 			;
 
 new_array:	TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_new_array($2, $4); }

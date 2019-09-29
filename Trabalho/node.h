@@ -1,7 +1,12 @@
 // Nome: Thiago Lages de Alencar
 // Matricula: 1721629
 
+#ifndef _NODE_
+#define _NODE_
+
 typedef enum TAG {
+	EMPTY,
+
 	DEFINE,
 	DEFINE_LIST,
 
@@ -67,8 +72,8 @@ typedef struct Node {
 	int number_of_childs;
 
 	union content {
-		char c;
 		int b;
+		char c;
 		int i;
 		float f;
 		const char* s;
@@ -107,8 +112,8 @@ Node create_node_expression_or(Node child0, Node child1);
 Node create_node_expression_list(Node child0, Node child1);
 
 Node create_node_new_array(Node child0, Node child1);
-Node create_node_function_call_with_parameters(Node child);
-Node create_node_function_call_empty();
+Node create_node_function_call_with_parameters(const char*s, Node child);
+Node create_node_function_call_empty(const char*s);
 Node create_node_variable_array(Node child0, Node child1);
 Node create_node_variable_simple(const char* s);
 
@@ -143,3 +148,6 @@ Node create_node_define_variable(const char*s, Node child);
 Node create_node_define(Node child);
 Node create_node_define_list(Node child0, Node child1);
 
+Node create_node_empty();
+
+#endif
