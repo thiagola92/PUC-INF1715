@@ -297,7 +297,6 @@ Node create_node_function_call_empty() {
 
 	node.tag = FUNCTION_CALL;
 	node.number_of_childs = 0;
-	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
 
 	return node;
 }
@@ -339,7 +338,7 @@ Node create_node_if(Node child0, Node child1) {
 Node create_node_if_else(Node child0, Node child1, Node child2) {
 	Node node;
 
-	node.tag = IF_ELSE;
+	node.tag = IF;
 	node.number_of_childs = 3;
 	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
 	node.content.n[0] = child0;
@@ -399,6 +398,195 @@ Node create_node_command_list(Node child0, Node child1) {
 	Node node;
 
 	node.tag = COMMAND_LIST;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = child0;
+	node.content.n[1] = child1;
+
+	return node;
+}
+
+Node create_node_variable_list(Node child0, Node child1) {
+	Node node;
+
+	node.tag = VARIABLE_LIST;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = child0;
+	node.content.n[1] = child1;
+
+	return node;
+}
+
+Node create_node_block_double(Node child0, Node child1) {
+	Node node;
+
+	node.tag = BLOCK;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = child0;
+	node.content.n[1] = child1;
+
+	return node;
+}
+
+Node create_node_block_single(Node child) {
+	Node node;
+
+	node.tag = BLOCK;
+	node.number_of_childs = 1;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = child;
+
+	return node;
+}
+
+Node create_node_block_empty() {
+	Node node;
+
+	node.tag = BLOCK;
+	node.number_of_childs = 0;
+
+	return node;
+}
+
+Node create_node_parameter(const char*s, Node child) {
+	Node node;
+
+	node.tag = PARAMETER;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = create_node_string(s);
+	node.content.n[1] = child;
+
+	return node;
+}
+
+Node create_node_parameter_list(Node child0, Node child1) {
+	Node node;
+
+	node.tag = PARAMETER_LIST;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = child0;
+	node.content.n[1] = child1;
+
+	return node;
+}
+
+Node create_node_define_function_double(const char*s, Node child1, Node child2, Node child3) {
+	Node node;
+
+	node.tag = DEFINE_FUNCTION;
+	node.number_of_childs = 4;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = create_node_string(s);
+	node.content.n[1] = child1;
+	node.content.n[2] = child2;
+	node.content.n[3] = child3;
+
+	return node;
+}
+
+Node create_node_define_function_single(const char*s, Node child1, Node child2) {
+	Node node;
+
+	node.tag = DEFINE_FUNCTION;
+	node.number_of_childs = 3;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = create_node_string(s);
+	node.content.n[1] = child1;
+	node.content.n[2] = child2;
+
+	return node;
+}
+
+Node create_node_define_function_empty(const char*s, Node child) {
+	Node node;
+
+	node.tag = DEFINE_FUNCTION;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = create_node_string(s);
+	node.content.n[1] = child;
+
+	return node;
+}
+
+Node create_node_variable_type_bool() {
+	Node node;
+
+	node.tag = TYPE_BOOL;
+	node.number_of_childs = 0;
+
+	return node;
+}
+
+Node create_node_variable_type_char() {
+	Node node;
+
+	node.tag = TYPE_CHAR;
+	node.number_of_childs = 0;
+
+	return node;
+}
+
+Node create_node_variable_type_int() {
+	Node node;
+
+	node.tag = TYPE_INT;
+	node.number_of_childs = 0;
+
+	return node;
+}
+
+Node create_node_variable_type_float() {
+	Node node;
+
+	node.tag = TYPE_FLOAT;
+	node.number_of_childs = 0;
+
+	return node;
+}
+
+Node create_node_variable_type_array(Node child) {
+	Node node;
+
+	node.tag = TYPE_ARRAY;
+	node.number_of_childs = 1;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = child;
+
+	return node;
+}
+
+Node create_node_define_variable(const char*s, Node child) {
+	Node node;
+
+	node.tag = DEFINE_VARIABLE;
+	node.number_of_childs = 2;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = create_node_string(s);
+	node.content.n[1] = child;
+
+	return node;
+}
+
+Node create_node_define(Node child) {
+	Node node;
+
+	node.tag = DEFINE;
+	node.number_of_childs = 1;
+	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
+	node.content.n[0] = child;
+
+	return node;
+}
+
+Node create_node_define_list(Node child0, Node child1) {
+	Node node;
+
+	node.tag = DEFINE_LIST;
 	node.number_of_childs = 2;
 	node.content.n = (Node*)malloc(sizeof(Node) * node.number_of_childs);
 	node.content.n[0] = child0;

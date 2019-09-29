@@ -7,7 +7,7 @@ c_files="main.c test.c lex.yy.c monga.tab.c node.c"
 bison -d monga.y;
 flex monga.l;
 gcc $c_files -Wall -o test;
-: '
+
 echo "===== Testing lexical ====="
 for file_input in tests/lexical/*\.input; do
 	file_name=$(basename "$file_input")
@@ -52,5 +52,5 @@ test_syntax "tests/syntax/correct/*"
 
 echo ">> Wrong code"
 test_syntax "tests/syntax/wrong/*"
-'
+
 rm lex.yy.c monga.tab.c monga.tab.h test;

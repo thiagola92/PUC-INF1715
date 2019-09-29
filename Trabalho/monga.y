@@ -71,19 +71,19 @@
 
 %type<n> program
 
+%type<n> define_list
 %type<n> define
 %type<n> define_variable
 
 %type<n> variable_type
 
 %type<n> define_function
-%type<n> parameters
+%type<n> parameter_list
 %type<n> parameter
 %type<n> block
 
-%type<n> define_variables
-
-%type<n> commands
+%type<n> variable_list
+%type<n> command_list
 %type<n> command
 
 %type<n> variable
@@ -119,47 +119,51 @@
 %%
 
 program:	/*empty*/		{ ; }
-		| define program	{ ; }
+		| define_list		{ $$ = $1; }
 		;
 
-define:		define_variable		{ ; }
-		| define_function	{ ; }
+define_list:	define_list define	{ $$ = create_node_define_list($1, $2); }
+		| define		{ $$ = create_node_define($1); }
 		;
 
-define_variable:	TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON	{ ; }
+define:		define_variable		{ $$ = $1; }
+		| define_function	{ $$ = $1; }
+		;
+
+define_variable:	TOKEN_IDENTIFIER TOKEN_COLON variable_type TOKEN_SEMICOLON	{ $$ = create_node_define_variable($1, $3); }
 			;
 
-variable_type:	TOKEN_WORD_BOOL							{ ; }
-    		| TOKEN_WORD_CHAR						{ ; }
-		| TOKEN_WORD_INT						{ ; }
-		| TOKEN_WORD_FLOAT						{ ; }
-		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ ; }
+variable_type:	TOKEN_WORD_BOOL							{ $$ = create_node_variable_type_bool(); }
+    		| TOKEN_WORD_CHAR						{ $$ = create_node_variable_type_char(); }
+		| TOKEN_WORD_INT						{ $$ = create_node_variable_type_int(); }
+		| TOKEN_WORD_FLOAT						{ $$ = create_node_variable_type_float(); }
+		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ $$ = create_node_variable_type_array($2); }
 		;
 
-define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ ; }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameters TOKEN_CLOSE_PARENTHESES block				{ ; }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block		{ ; }
-			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block						{ ; }
+define_function:	TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ create_node_define_function_double($1, $3, $6, $7); }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES block				{ create_node_define_function_single($1, $3, $5); }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block		{ create_node_define_function_single($1, $5, $6); }
+			| TOKEN_IDENTIFIER TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block						{ create_node_define_function_empty($1, $4); }
 			;
 
-parameters:		parameters TOKEN_COMMA parameter			{ ; }
+parameter_list:		parameter_list TOKEN_COMMA parameter			{ $$ = create_node_parameter_list($1, $3); }
 			| parameter						{ $$ = $1; }
 			;
 
-parameter:	TOKEN_IDENTIFIER TOKEN_COLON variable_type	{ ; }
+parameter:	TOKEN_IDENTIFIER TOKEN_COLON variable_type	{ $$ = create_node_parameter($1, $3); }
 		;
 
-block:		TOKEN_OPEN_BRACES define_variables commands TOKEN_CLOSE_BRACES 	{ ; }
-		| TOKEN_OPEN_BRACES define_variables TOKEN_CLOSE_BRACES 	{ ; }
-		| TOKEN_OPEN_BRACES commands TOKEN_CLOSE_BRACES 		{ ; }
-		| TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES 				{ ; }
+block:		TOKEN_OPEN_BRACES variable_list command_list TOKEN_CLOSE_BRACES 	{ $$ = create_node_block_double($2, $3); }
+		| TOKEN_OPEN_BRACES variable_list TOKEN_CLOSE_BRACES 			{ $$ = create_node_block_single($2); }
+		| TOKEN_OPEN_BRACES command_list TOKEN_CLOSE_BRACES 			{ $$ = create_node_block_single($2); }
+		| TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES 					{ $$ = create_node_block_empty(); }
 		;
 
-define_variables:	define_variables define_variable	{ ; }
+variable_list:		variable_list define_variable		{ $$ = create_node_variable_list($1, $2); }
 			| define_variable			{ $$ = $1; }
 			;
 
-commands:	commands command	{ $$ = create_node_command_list($1, $2); }
+command_list:	command_list command	{ $$ = create_node_command_list($1, $2); }
 		| command		{ $$ = $1; }
 		;
 

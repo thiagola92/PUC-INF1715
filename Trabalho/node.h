@@ -2,10 +2,25 @@
 // Matricula: 1721629
 
 typedef enum TAG {
+	DEFINE,
+	DEFINE_LIST,
+
+	DEFINE_VARIABLE,
+	TYPE_BOOL,
+	TYPE_CHAR,
+	TYPE_INT,
+	TYPE_FLOAT,
+	TYPE_ARRAY,
+
+	DEFINE_FUNCTION,
+	PARAMETER_LIST,
+	PARAMETER,
+
 	COMMAND_LIST,
+	VARIABLE_LIST,
+	BLOCK,
 
 	IF,
-	IF_ELSE,
 	WHILE,
 	ASSIGNMENT,
 	RETURN,
@@ -105,4 +120,26 @@ Node create_node_return(Node child);
 Node create_node_print(Node child);
 
 Node create_node_command_list(Node child0, Node child1);
+Node create_node_variable_list(Node child0, Node child1);
+
+Node create_node_block_double(Node child0, Node child1);
+Node create_node_block_single(Node child);
+Node create_node_block_empty();
+
+Node create_node_parameter(const char*s, Node child);
+Node create_node_parameter_list(Node child0, Node child1);
+
+Node create_node_define_function_double(const char*s, Node child0, Node child1, Node child2);
+Node create_node_define_function_single(const char*s, Node child0, Node child1);
+Node create_node_define_function_empty(const char*s, Node child0);
+
+Node create_node_variable_type_bool();
+Node create_node_variable_type_char();
+Node create_node_variable_type_int();
+Node create_node_variable_type_float();
+Node create_node_variable_type_array(Node child);
+Node create_node_define_variable(const char*s, Node child);
+
+Node create_node_define(Node child);
+Node create_node_define_list(Node child0, Node child1);
 
