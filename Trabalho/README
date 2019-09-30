@@ -2,6 +2,9 @@ Nome: Thiago Lages de Alencar
 Matricula: 1721629
 
 ===== FILES =====
+Arquivos ".input" servem como entrada para testes.
+Arquivos ".output" são as saídas de testes.
+Arquivos ".answer" são gabaritos de testes.
 
 * test.h
 * test.c
@@ -14,14 +17,14 @@ Matricula: 1721629
 * monga.h
 * main.c
 * tests/
-	* lexical
+	* lexical/
 		* examples from 00 to 12
-	* syntax
+	* syntax/
 		* correct/
 			* examples from 00 to 16
 		* wrong/
 			* examples from 00 to 20
-	* tree
+	* tree/
 		* examples from 00 to 16
 
 ===== REQUERIMENTS =====
@@ -41,10 +44,11 @@ Para rodar o arquivo "example-00.input":
 bison -d monga.y;
 flex monga.l;
 gcc main.c lex.yy.c monga.tab.c node.c test.c -Wall -o test;
-	./test tests/lexical/example-00.input lexical;
-	./test tests/syntax/correct/example-00.input syntax;
-	./test tests/syntax/wrong/example-00.input syntax;
-	./test tests/tree/example-00.input tree;
+
+./test tests/lexical/example-00.input lexical;
+./test tests/syntax/correct/example-00.input syntax;
+./test tests/syntax/wrong/example-00.input syntax;
+./test tests/tree/example-00.input tree;
 
 ===== OUTPUT =====
 
