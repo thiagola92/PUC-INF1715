@@ -6,7 +6,7 @@
 
 #include"monga.h"
 
-extern Node __root__;
+extern Node* __root__;
 
 int test_syntax(const char* path);
 int test_lexical(const char* path);

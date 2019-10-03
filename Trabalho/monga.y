@@ -4,7 +4,7 @@
 
 	#include"monga.h"
 	
-	Node __root__;
+	Node* __root__;
 %}
 
 %start program
@@ -16,7 +16,7 @@
 	float f;
 	char* s;
 
-	Node n;
+	Node* n;
 }
 
 %token <c> TOKEN_CHARACTER
