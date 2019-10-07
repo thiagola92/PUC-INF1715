@@ -32,122 +32,156 @@ DEFINE - childrens: 1
                                                                         COMMAND_LIST - childrens: 2
                                                                             COMMAND_LIST - childrens: 2
                                                                                 ASSIGNMENT - childrens: 2
-                                                                                    VARIABLE
+                                                                                    VARIABLE - childrens: 1
+                                                                                        DATA_STRING - content: x1
                                                                                     EXPRESSION_REFERENCE - childrens: 1
                                                                                         DATA_INTEGER - content: 10
                                                                                 ASSIGNMENT - childrens: 2
-                                                                                    VARIABLE
+                                                                                    VARIABLE - childrens: 1
+                                                                                        DATA_STRING - content: x2
                                                                                     EXPRESSION_REFERENCE - childrens: 1
                                                                                         DATA_INTEGER - content: 20
                                                                             ASSIGNMENT - childrens: 2
-                                                                                VARIABLE
+                                                                                VARIABLE - childrens: 1
+                                                                                    DATA_STRING - content: x3
                                                                                 EXPRESSION_ADD - childrens: 2
                                                                                     EXPRESSION_REFERENCE - childrens: 1
-                                                                                        VARIABLE
+                                                                                        VARIABLE - childrens: 1
+                                                                                            DATA_STRING - content: x2
                                                                                     EXPRESSION_REFERENCE - childrens: 1
-                                                                                        VARIABLE
+                                                                                        VARIABLE - childrens: 1
+                                                                                            DATA_STRING - content: x1
                                                                         ASSIGNMENT - childrens: 2
-                                                                            VARIABLE
+                                                                            VARIABLE - childrens: 1
+                                                                                DATA_STRING - content: x3
                                                                             EXPRESSION_ADD - childrens: 2
                                                                                 EXPRESSION_REFERENCE - childrens: 1
                                                                                     DATA_INTEGER - content: 10
                                                                                 EXPRESSION_REFERENCE - childrens: 1
                                                                                     DATA_INTEGER - content: 10
                                                                     ASSIGNMENT - childrens: 2
-                                                                        VARIABLE
+                                                                        VARIABLE - childrens: 1
+                                                                            DATA_STRING - content: x3
                                                                         EXPRESSION_ADD - childrens: 2
                                                                             EXPRESSION_REFERENCE - childrens: 1
                                                                                 DATA_INTEGER - content: 10
                                                                             EXPRESSION_REFERENCE - childrens: 1
-                                                                                VARIABLE
+                                                                                VARIABLE - childrens: 1
+                                                                                    DATA_STRING - content: x1
                                                                 ASSIGNMENT - childrens: 2
-                                                                    VARIABLE
+                                                                    VARIABLE - childrens: 1
+                                                                        DATA_STRING - content: x3
                                                                     EXPRESSION_ADD - childrens: 2
                                                                         EXPRESSION_REFERENCE - childrens: 1
-                                                                            VARIABLE
+                                                                            VARIABLE - childrens: 1
+                                                                                DATA_STRING - content: x1
                                                                         EXPRESSION_REFERENCE - childrens: 1
                                                                             DATA_INTEGER - content: 10
                                                             ASSIGNMENT - childrens: 2
-                                                                VARIABLE
+                                                                VARIABLE - childrens: 1
+                                                                    DATA_STRING - content: x3
                                                                 EXPRESSION_SUB - childrens: 2
                                                                     EXPRESSION_REFERENCE - childrens: 1
-                                                                        VARIABLE
+                                                                        VARIABLE - childrens: 1
+                                                                            DATA_STRING - content: x2
                                                                     EXPRESSION_REFERENCE - childrens: 1
-                                                                        VARIABLE
+                                                                        VARIABLE - childrens: 1
+                                                                            DATA_STRING - content: x1
                                                         ASSIGNMENT - childrens: 2
-                                                            VARIABLE
+                                                            VARIABLE - childrens: 1
+                                                                DATA_STRING - content: x3
                                                             EXPRESSION_SUB - childrens: 2
                                                                 EXPRESSION_REFERENCE - childrens: 1
                                                                     DATA_INTEGER - content: 10
                                                                 EXPRESSION_REFERENCE - childrens: 1
                                                                     DATA_INTEGER - content: 10
                                                     ASSIGNMENT - childrens: 2
-                                                        VARIABLE
+                                                        VARIABLE - childrens: 1
+                                                            DATA_STRING - content: x3
                                                         EXPRESSION_SUB - childrens: 2
                                                             EXPRESSION_REFERENCE - childrens: 1
                                                                 DATA_INTEGER - content: 10
                                                             EXPRESSION_REFERENCE - childrens: 1
-                                                                VARIABLE
+                                                                VARIABLE - childrens: 1
+                                                                    DATA_STRING - content: x1
                                                 ASSIGNMENT - childrens: 2
-                                                    VARIABLE
+                                                    VARIABLE - childrens: 1
+                                                        DATA_STRING - content: x3
                                                     EXPRESSION_SUB - childrens: 2
                                                         EXPRESSION_REFERENCE - childrens: 1
-                                                            VARIABLE
+                                                            VARIABLE - childrens: 1
+                                                                DATA_STRING - content: x1
                                                         EXPRESSION_REFERENCE - childrens: 1
                                                             DATA_INTEGER - content: 10
                                             ASSIGNMENT - childrens: 2
-                                                VARIABLE
+                                                VARIABLE - childrens: 1
+                                                    DATA_STRING - content: x3
                                                 EXPRESSION_MULT - childrens: 2
                                                     EXPRESSION_REFERENCE - childrens: 1
-                                                        VARIABLE
+                                                        VARIABLE - childrens: 1
+                                                            DATA_STRING - content: x2
                                                     EXPRESSION_REFERENCE - childrens: 1
-                                                        VARIABLE
+                                                        VARIABLE - childrens: 1
+                                                            DATA_STRING - content: x1
                                         ASSIGNMENT - childrens: 2
-                                            VARIABLE
+                                            VARIABLE - childrens: 1
+                                                DATA_STRING - content: x3
                                             EXPRESSION_MULT - childrens: 2
                                                 EXPRESSION_REFERENCE - childrens: 1
                                                     DATA_INTEGER - content: 10
                                                 EXPRESSION_REFERENCE - childrens: 1
                                                     DATA_INTEGER - content: 10
                                     ASSIGNMENT - childrens: 2
-                                        VARIABLE
+                                        VARIABLE - childrens: 1
+                                            DATA_STRING - content: x3
                                         EXPRESSION_MULT - childrens: 2
                                             EXPRESSION_REFERENCE - childrens: 1
                                                 DATA_INTEGER - content: 10
                                             EXPRESSION_REFERENCE - childrens: 1
-                                                VARIABLE
+                                                VARIABLE - childrens: 1
+                                                    DATA_STRING - content: x1
                                 ASSIGNMENT - childrens: 2
-                                    VARIABLE
+                                    VARIABLE - childrens: 1
+                                        DATA_STRING - content: x3
                                     EXPRESSION_MULT - childrens: 2
                                         EXPRESSION_REFERENCE - childrens: 1
-                                            VARIABLE
+                                            VARIABLE - childrens: 1
+                                                DATA_STRING - content: x1
                                         EXPRESSION_REFERENCE - childrens: 1
                                             DATA_INTEGER - content: 10
                             ASSIGNMENT - childrens: 2
-                                VARIABLE
+                                VARIABLE - childrens: 1
+                                    DATA_STRING - content: x3
                                 EXPRESSION_DIV - childrens: 2
                                     EXPRESSION_REFERENCE - childrens: 1
-                                        VARIABLE
+                                        VARIABLE - childrens: 1
+                                            DATA_STRING - content: x2
                                     EXPRESSION_REFERENCE - childrens: 1
-                                        VARIABLE
+                                        VARIABLE - childrens: 1
+                                            DATA_STRING - content: x2
                         ASSIGNMENT - childrens: 2
-                            VARIABLE
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: x3
                             EXPRESSION_DIV - childrens: 2
                                 EXPRESSION_REFERENCE - childrens: 1
                                     DATA_INTEGER - content: 10
                                 EXPRESSION_REFERENCE - childrens: 1
                                     DATA_INTEGER - content: 10
                     ASSIGNMENT - childrens: 2
-                        VARIABLE
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: x3
                         EXPRESSION_DIV - childrens: 2
                             EXPRESSION_REFERENCE - childrens: 1
                                 DATA_INTEGER - content: 10
                             EXPRESSION_REFERENCE - childrens: 1
-                                VARIABLE
+                                VARIABLE - childrens: 1
+                                    DATA_STRING - content: x1
                 ASSIGNMENT - childrens: 2
-                    VARIABLE
+                    VARIABLE - childrens: 1
+                        DATA_STRING - content: x3
                     EXPRESSION_DIV - childrens: 2
                         EXPRESSION_REFERENCE - childrens: 1
-                            VARIABLE
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: x1
                         EXPRESSION_REFERENCE - childrens: 1
                             DATA_INTEGER - content: 10

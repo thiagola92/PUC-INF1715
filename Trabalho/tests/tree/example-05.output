@@ -16,4 +16,5 @@ DEFINE_LIST - childrens: 2
         BLOCK - childrens: 1
             RETURN - childrens: 1
                 EXPRESSION_REFERENCE - childrens: 1
-                    VARIABLE
+                    VARIABLE - childrens: 1
+                        DATA_STRING - content: a

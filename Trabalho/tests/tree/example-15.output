@@ -9,14 +9,17 @@ DEFINE - childrens: 1
             COMMAND_LIST - childrens: 2
                 COMMAND_LIST - childrens: 2
                     ASSIGNMENT - childrens: 2
-                        VARIABLE
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: x1
                         EXPRESSION_REFERENCE - childrens: 1
                             DATA_FLOAT - content: 1075903.000000
                     ASSIGNMENT - childrens: 2
-                        VARIABLE
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: x1
                         EXPRESSION_REFERENCE - childrens: 1
                             DATA_FLOAT - content: 0.000000
                 ASSIGNMENT - childrens: 2
-                    VARIABLE
+                    VARIABLE - childrens: 1
+                        DATA_STRING - content: x1
                     EXPRESSION_REFERENCE - childrens: 1
                         DATA_FLOAT - content: 16777215.000000
