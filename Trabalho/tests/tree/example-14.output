@@ -34,154 +34,120 @@ DEFINE - childrens: 1
                                                                                 ASSIGNMENT - childrens: 2
                                                                                     VARIABLE - childrens: 1
                                                                                         DATA_STRING - content: x1
-                                                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                                                        DATA_FLOAT - content: 10.000000
+                                                                                    DATA_FLOAT - content: 10.000000
                                                                                 ASSIGNMENT - childrens: 2
                                                                                     VARIABLE - childrens: 1
                                                                                         DATA_STRING - content: x2
-                                                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                                                        DATA_FLOAT - content: 20.000000
+                                                                                    DATA_FLOAT - content: 20.000000
                                                                             ASSIGNMENT - childrens: 2
                                                                                 VARIABLE - childrens: 1
                                                                                     DATA_STRING - content: x3
                                                                                 EXPRESSION_ADD - childrens: 2
-                                                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                                                        VARIABLE - childrens: 1
-                                                                                            DATA_STRING - content: x2
-                                                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                                                        VARIABLE - childrens: 1
-                                                                                            DATA_STRING - content: x1
+                                                                                    VARIABLE - childrens: 1
+                                                                                        DATA_STRING - content: x2
+                                                                                    VARIABLE - childrens: 1
+                                                                                        DATA_STRING - content: x1
                                                                         ASSIGNMENT - childrens: 2
                                                                             VARIABLE - childrens: 1
                                                                                 DATA_STRING - content: x3
                                                                             EXPRESSION_ADD - childrens: 2
-                                                                                EXPRESSION_REFERENCE - childrens: 1
-                                                                                    DATA_FLOAT - content: 10.000000
-                                                                                EXPRESSION_REFERENCE - childrens: 1
-                                                                                    DATA_FLOAT - content: 10.000000
+                                                                                DATA_FLOAT - content: 10.000000
+                                                                                DATA_FLOAT - content: 10.000000
                                                                     ASSIGNMENT - childrens: 2
                                                                         VARIABLE - childrens: 1
                                                                             DATA_STRING - content: x3
                                                                         EXPRESSION_ADD - childrens: 2
-                                                                            EXPRESSION_REFERENCE - childrens: 1
-                                                                                DATA_FLOAT - content: 10.000000
-                                                                            EXPRESSION_REFERENCE - childrens: 1
-                                                                                VARIABLE - childrens: 1
-                                                                                    DATA_STRING - content: x1
+                                                                            DATA_FLOAT - content: 10.000000
+                                                                            VARIABLE - childrens: 1
+                                                                                DATA_STRING - content: x1
                                                                 ASSIGNMENT - childrens: 2
                                                                     VARIABLE - childrens: 1
                                                                         DATA_STRING - content: x3
                                                                     EXPRESSION_ADD - childrens: 2
-                                                                        EXPRESSION_REFERENCE - childrens: 1
-                                                                            VARIABLE - childrens: 1
-                                                                                DATA_STRING - content: x1
-                                                                        EXPRESSION_REFERENCE - childrens: 1
-                                                                            DATA_FLOAT - content: 10.000000
+                                                                        VARIABLE - childrens: 1
+                                                                            DATA_STRING - content: x1
+                                                                        DATA_FLOAT - content: 10.000000
                                                             ASSIGNMENT - childrens: 2
                                                                 VARIABLE - childrens: 1
                                                                     DATA_STRING - content: x3
                                                                 EXPRESSION_SUB - childrens: 2
-                                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                                        VARIABLE - childrens: 1
-                                                                            DATA_STRING - content: x2
-                                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                                        VARIABLE - childrens: 1
-                                                                            DATA_STRING - content: x1
+                                                                    VARIABLE - childrens: 1
+                                                                        DATA_STRING - content: x2
+                                                                    VARIABLE - childrens: 1
+                                                                        DATA_STRING - content: x1
                                                         ASSIGNMENT - childrens: 2
                                                             VARIABLE - childrens: 1
                                                                 DATA_STRING - content: x3
                                                             EXPRESSION_SUB - childrens: 2
-                                                                EXPRESSION_REFERENCE - childrens: 1
-                                                                    DATA_FLOAT - content: 10.000000
-                                                                EXPRESSION_REFERENCE - childrens: 1
-                                                                    DATA_FLOAT - content: 10.000000
+                                                                DATA_FLOAT - content: 10.000000
+                                                                DATA_FLOAT - content: 10.000000
                                                     ASSIGNMENT - childrens: 2
                                                         VARIABLE - childrens: 1
                                                             DATA_STRING - content: x3
                                                         EXPRESSION_SUB - childrens: 2
-                                                            EXPRESSION_REFERENCE - childrens: 1
-                                                                DATA_FLOAT - content: 10.000000
-                                                            EXPRESSION_REFERENCE - childrens: 1
-                                                                VARIABLE - childrens: 1
-                                                                    DATA_STRING - content: x1
+                                                            DATA_FLOAT - content: 10.000000
+                                                            VARIABLE - childrens: 1
+                                                                DATA_STRING - content: x1
                                                 ASSIGNMENT - childrens: 2
                                                     VARIABLE - childrens: 1
                                                         DATA_STRING - content: x3
                                                     EXPRESSION_SUB - childrens: 2
-                                                        EXPRESSION_REFERENCE - childrens: 1
-                                                            VARIABLE - childrens: 1
-                                                                DATA_STRING - content: x1
-                                                        EXPRESSION_REFERENCE - childrens: 1
-                                                            DATA_FLOAT - content: 10.000000
+                                                        VARIABLE - childrens: 1
+                                                            DATA_STRING - content: x1
+                                                        DATA_FLOAT - content: 10.000000
                                             ASSIGNMENT - childrens: 2
                                                 VARIABLE - childrens: 1
                                                     DATA_STRING - content: x3
                                                 EXPRESSION_MULT - childrens: 2
-                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                        VARIABLE - childrens: 1
-                                                            DATA_STRING - content: x2
-                                                    EXPRESSION_REFERENCE - childrens: 1
-                                                        VARIABLE - childrens: 1
-                                                            DATA_STRING - content: x1
+                                                    VARIABLE - childrens: 1
+                                                        DATA_STRING - content: x2
+                                                    VARIABLE - childrens: 1
+                                                        DATA_STRING - content: x1
                                         ASSIGNMENT - childrens: 2
                                             VARIABLE - childrens: 1
                                                 DATA_STRING - content: x3
                                             EXPRESSION_MULT - childrens: 2
-                                                EXPRESSION_REFERENCE - childrens: 1
-                                                    DATA_FLOAT - content: 10.000000
-                                                EXPRESSION_REFERENCE - childrens: 1
-                                                    DATA_FLOAT - content: 10.000000
+                                                DATA_FLOAT - content: 10.000000
+                                                DATA_FLOAT - content: 10.000000
                                     ASSIGNMENT - childrens: 2
                                         VARIABLE - childrens: 1
                                             DATA_STRING - content: x3
                                         EXPRESSION_MULT - childrens: 2
-                                            EXPRESSION_REFERENCE - childrens: 1
-                                                DATA_FLOAT - content: 10.000000
-                                            EXPRESSION_REFERENCE - childrens: 1
-                                                VARIABLE - childrens: 1
-                                                    DATA_STRING - content: x1
+                                            DATA_FLOAT - content: 10.000000
+                                            VARIABLE - childrens: 1
+                                                DATA_STRING - content: x1
                                 ASSIGNMENT - childrens: 2
                                     VARIABLE - childrens: 1
                                         DATA_STRING - content: x3
                                     EXPRESSION_MULT - childrens: 2
-                                        EXPRESSION_REFERENCE - childrens: 1
-                                            VARIABLE - childrens: 1
-                                                DATA_STRING - content: x1
-                                        EXPRESSION_REFERENCE - childrens: 1
-                                            DATA_FLOAT - content: 10.000000
+                                        VARIABLE - childrens: 1
+                                            DATA_STRING - content: x1
+                                        DATA_FLOAT - content: 10.000000
                             ASSIGNMENT - childrens: 2
                                 VARIABLE - childrens: 1
                                     DATA_STRING - content: x3
                                 EXPRESSION_DIV - childrens: 2
-                                    EXPRESSION_REFERENCE - childrens: 1
-                                        VARIABLE - childrens: 1
-                                            DATA_STRING - content: x2
-                                    EXPRESSION_REFERENCE - childrens: 1
-                                        VARIABLE - childrens: 1
-                                            DATA_STRING - content: x2
+                                    VARIABLE - childrens: 1
+                                        DATA_STRING - content: x2
+                                    VARIABLE - childrens: 1
+                                        DATA_STRING - content: x2
                         ASSIGNMENT - childrens: 2
                             VARIABLE - childrens: 1
                                 DATA_STRING - content: x3
                             EXPRESSION_DIV - childrens: 2
-                                EXPRESSION_REFERENCE - childrens: 1
-                                    DATA_FLOAT - content: 10.000000
-                                EXPRESSION_REFERENCE - childrens: 1
-                                    DATA_FLOAT - content: 10.000000
+                                DATA_FLOAT - content: 10.000000
+                                DATA_FLOAT - content: 10.000000
                     ASSIGNMENT - childrens: 2
                         VARIABLE - childrens: 1
                             DATA_STRING - content: x3
                         EXPRESSION_DIV - childrens: 2
-                            EXPRESSION_REFERENCE - childrens: 1
-                                DATA_FLOAT - content: 10.000000
-                            EXPRESSION_REFERENCE - childrens: 1
-                                VARIABLE - childrens: 1
-                                    DATA_STRING - content: x1
+                            DATA_FLOAT - content: 10.000000
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: x1
                 ASSIGNMENT - childrens: 2
                     VARIABLE - childrens: 1
                         DATA_STRING - content: x3
                     EXPRESSION_DIV - childrens: 2
-                        EXPRESSION_REFERENCE - childrens: 1
-                            VARIABLE - childrens: 1
-                                DATA_STRING - content: x1
-                        EXPRESSION_REFERENCE - childrens: 1
-                            DATA_FLOAT - content: 10.000000
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: x1
+                        DATA_FLOAT - content: 10.000000

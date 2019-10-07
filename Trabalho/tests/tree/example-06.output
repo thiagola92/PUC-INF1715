@@ -58,28 +58,22 @@ DEFINE_LIST - childrens: 2
                             DATA_STRING - content: first
                         FUNCTION_CALL - childrens: 2
                             DATA_STRING - content: second
-                            EXPRESSION_REFERENCE - childrens: 1
-                                VARIABLE - childrens: 1
-                                    DATA_STRING - content: a
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: a
                     FUNCTION_CALL - childrens: 2
                         DATA_STRING - content: third
                         EXPRESSION_LIST - childrens: 2
-                            EXPRESSION_REFERENCE - childrens: 1
-                                VARIABLE - childrens: 1
-                                    DATA_STRING - content: a
-                            EXPRESSION_REFERENCE - childrens: 1
-                                VARIABLE - childrens: 1
-                                    DATA_STRING - content: b
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: a
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: b
                 FUNCTION_CALL - childrens: 2
                     DATA_STRING - content: fourth
                     EXPRESSION_LIST - childrens: 2
-                        EXPRESSION_REFERENCE - childrens: 1
-                            VARIABLE - childrens: 1
-                                DATA_STRING - content: a
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: a
                         EXPRESSION_LIST - childrens: 2
-                            EXPRESSION_REFERENCE - childrens: 1
-                                VARIABLE - childrens: 1
-                                    DATA_STRING - content: b
-                            EXPRESSION_REFERENCE - childrens: 1
-                                VARIABLE - childrens: 1
-                                    DATA_STRING - content: c
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: b
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: c

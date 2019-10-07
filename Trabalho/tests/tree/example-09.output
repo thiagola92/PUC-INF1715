@@ -13,8 +13,7 @@ DEFINE_LIST - childrens: 2
                         COMMAND_LIST - childrens: 2
                             COMMAND_LIST - childrens: 2
                                 IF - childrens: 2
-                                    EXPRESSION_REFERENCE - childrens: 1
-                                        DATA_BOOLEAN - content: 1
+                                    DATA_BOOLEAN - content: 1
                                     BLOCK - childrens: 2
                                         DEFINE_VARIABLE - childrens: 2
                                             DATA_STRING - content: a
@@ -22,8 +21,7 @@ DEFINE_LIST - childrens: 2
                                         FUNCTION_CALL - childrens: 1
                                             DATA_STRING - content: first
                                 IF - childrens: 3
-                                    EXPRESSION_REFERENCE - childrens: 1
-                                        DATA_BOOLEAN - content: 0
+                                    DATA_BOOLEAN - content: 0
                                     BLOCK - childrens: 2
                                         DEFINE_VARIABLE - childrens: 2
                                             DATA_STRING - content: a
@@ -37,16 +35,14 @@ DEFINE_LIST - childrens: 2
                                         FUNCTION_CALL - childrens: 1
                                             DATA_STRING - content: first
                             IF - childrens: 2
-                                EXPRESSION_REFERENCE - childrens: 1
-                                    DATA_BOOLEAN - content: 1
+                                DATA_BOOLEAN - content: 1
                                 BLOCK - childrens: 2
                                     DEFINE_VARIABLE - childrens: 2
                                         DATA_STRING - content: a
                                         TYPE_BOOL
                                     COMMAND_LIST - childrens: 2
                                         IF - childrens: 2
-                                            EXPRESSION_REFERENCE - childrens: 1
-                                                DATA_BOOLEAN - content: 1
+                                            DATA_BOOLEAN - content: 1
                                             BLOCK - childrens: 2
                                                 DEFINE_VARIABLE - childrens: 2
                                                     DATA_STRING - content: a
@@ -56,16 +52,14 @@ DEFINE_LIST - childrens: 2
                                         FUNCTION_CALL - childrens: 1
                                             DATA_STRING - content: first
                         IF - childrens: 2
-                            EXPRESSION_REFERENCE - childrens: 1
-                                DATA_BOOLEAN - content: 1
+                            DATA_BOOLEAN - content: 1
                             BLOCK - childrens: 2
                                 DEFINE_VARIABLE - childrens: 2
                                     DATA_STRING - content: a
                                     TYPE_BOOL
                                 COMMAND_LIST - childrens: 2
                                     IF - childrens: 3
-                                        EXPRESSION_REFERENCE - childrens: 1
-                                            DATA_BOOLEAN - content: 0
+                                        DATA_BOOLEAN - content: 0
                                         BLOCK - childrens: 2
                                             DEFINE_VARIABLE - childrens: 2
                                                 DATA_STRING - content: a
@@ -81,8 +75,7 @@ DEFINE_LIST - childrens: 2
                                     FUNCTION_CALL - childrens: 1
                                         DATA_STRING - content: first
                     IF - childrens: 3
-                        EXPRESSION_REFERENCE - childrens: 1
-                            DATA_BOOLEAN - content: 0
+                        DATA_BOOLEAN - content: 0
                         BLOCK - childrens: 2
                             DEFINE_VARIABLE - childrens: 2
                                 DATA_STRING - content: a
@@ -95,8 +88,7 @@ DEFINE_LIST - childrens: 2
                                 TYPE_BOOL
                             COMMAND_LIST - childrens: 2
                                 IF - childrens: 2
-                                    EXPRESSION_REFERENCE - childrens: 1
-                                        DATA_BOOLEAN - content: 1
+                                    DATA_BOOLEAN - content: 1
                                     BLOCK - childrens: 2
                                         DEFINE_VARIABLE - childrens: 2
                                             DATA_STRING - content: a
@@ -106,8 +98,7 @@ DEFINE_LIST - childrens: 2
                                 FUNCTION_CALL - childrens: 1
                                     DATA_STRING - content: first
                 IF - childrens: 3
-                    EXPRESSION_REFERENCE - childrens: 1
-                        DATA_BOOLEAN - content: 0
+                    DATA_BOOLEAN - content: 0
                     BLOCK - childrens: 2
                         DEFINE_VARIABLE - childrens: 2
                             DATA_STRING - content: a
@@ -120,8 +111,7 @@ DEFINE_LIST - childrens: 2
                             TYPE_BOOL
                         COMMAND_LIST - childrens: 2
                             IF - childrens: 3
-                                EXPRESSION_REFERENCE - childrens: 1
-                                    DATA_BOOLEAN - content: 0
+                                DATA_BOOLEAN - content: 0
                                 BLOCK - childrens: 2
                                     DEFINE_VARIABLE - childrens: 2
                                         DATA_STRING - content: a

@@ -114,8 +114,6 @@
 %type<n> expression_cast
 %type<n> expression_negative
 %type<n> expression_not
-%type<n> expression_reference
-%type<n> expression_scope
 
 %type<n> expression_data
 
@@ -261,13 +259,13 @@ expression_not:		TOKEN_NOT expression_not		{ $$ = create_node_one_child(EXPRESSI
 			| expression_reference			{ $$ = $1; }
 			;
 
-expression_reference:	variable			{ $$ = create_node_one_child(EXPRESSION_REFERENCE, $1); }
-			| function_call			{ $$ = create_node_one_child(EXPRESSION_REFERENCE, $1); }
-			| new_array			{ $$ = create_node_one_child(EXPRESSION_REFERENCE, $1); }
-			| expression_scope		{ $$ = create_node_one_child(EXPRESSION_REFERENCE, $1); }
+expression_reference:	variable			{ $$ = $1; }
+			| function_call			{ $$ = $1; }
+			| new_array			{ $$ = $1; }
+			| expression_scope		{ $$ = $1; }
 			;
 
-expression_scope:	TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES	{ $$ = create_node_one_child(EXPRESSION_SCOPE, $2); }
+expression_scope:	TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES	{ $$ = $2; }
 			| expression_data						{ $$ = $1; }
 			;
 

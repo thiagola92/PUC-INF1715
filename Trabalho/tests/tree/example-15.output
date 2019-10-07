@@ -11,15 +11,12 @@ DEFINE - childrens: 1
                     ASSIGNMENT - childrens: 2
                         VARIABLE - childrens: 1
                             DATA_STRING - content: x1
-                        EXPRESSION_REFERENCE - childrens: 1
-                            DATA_FLOAT - content: 1075903.000000
+                        DATA_FLOAT - content: 1075903.000000
                     ASSIGNMENT - childrens: 2
                         VARIABLE - childrens: 1
                             DATA_STRING - content: x1
-                        EXPRESSION_REFERENCE - childrens: 1
-                            DATA_FLOAT - content: 0.000000
+                        DATA_FLOAT - content: 0.000000
                 ASSIGNMENT - childrens: 2
                     VARIABLE - childrens: 1
                         DATA_STRING - content: x1
-                    EXPRESSION_REFERENCE - childrens: 1
-                        DATA_FLOAT - content: 16777215.000000
+                    DATA_FLOAT - content: 16777215.000000

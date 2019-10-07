@@ -12,36 +12,24 @@ DEFINE_LIST - childrens: 2
                     COMMAND_LIST - childrens: 2
                         WHILE
  - childrens: 2
-                            EXPRESSION_REFERENCE - childrens: 1
-                                EXPRESSION_SCOPE - childrens: 1
-                                    EXPRESSION_REFERENCE - childrens: 1
-                                        DATA_BOOLEAN - content: 1
+                            DATA_BOOLEAN - content: 1
                             BLOCK
                         WHILE
  - childrens: 2
-                            EXPRESSION_REFERENCE - childrens: 1
-                                EXPRESSION_SCOPE - childrens: 1
-                                    EXPRESSION_REFERENCE - childrens: 1
-                                        DATA_BOOLEAN - content: 1
+                            DATA_BOOLEAN - content: 1
                             BLOCK - childrens: 1
                                 DEFINE_VARIABLE - childrens: 2
                                     DATA_STRING - content: a
                                     TYPE_BOOL
                     WHILE
  - childrens: 2
-                        EXPRESSION_REFERENCE - childrens: 1
-                            EXPRESSION_SCOPE - childrens: 1
-                                EXPRESSION_REFERENCE - childrens: 1
-                                    DATA_BOOLEAN - content: 1
+                        DATA_BOOLEAN - content: 1
                         BLOCK - childrens: 1
                             FUNCTION_CALL - childrens: 1
                                 DATA_STRING - content: first
                 WHILE
  - childrens: 2
-                    EXPRESSION_REFERENCE - childrens: 1
-                        EXPRESSION_SCOPE - childrens: 1
-                            EXPRESSION_REFERENCE - childrens: 1
-                                DATA_BOOLEAN - content: 1
+                    DATA_BOOLEAN - content: 1
                     BLOCK - childrens: 2
                         DEFINE_VARIABLE - childrens: 2
                             DATA_STRING - content: a

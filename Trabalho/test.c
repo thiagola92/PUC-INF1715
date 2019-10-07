@@ -87,10 +87,6 @@ void print_tree(Node* node, int tabs) {
 		printf("EXPRESSION_NEGATIVE");
 	else if(node->tag == EXPRESSION_NOT)
 		printf("EXPRESSION_NOT");
-	else if(node->tag == EXPRESSION_REFERENCE)
-		printf("EXPRESSION_REFERENCE");
-	else if(node->tag == EXPRESSION_SCOPE)
-		printf("EXPRESSION_SCOPE");
 	else if(node->tag == DATA_BOOLEAN)
 		printf("DATA_BOOLEAN");
 	else if(node->tag == DATA_CHARACTER)
