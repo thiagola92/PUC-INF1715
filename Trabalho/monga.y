@@ -114,6 +114,8 @@
 %type<n> expression_cast
 %type<n> expression_negative
 %type<n> expression_not
+%type<n> expression_reference
+%type<n> expression_scope
 
 %type<n> expression_data
 
