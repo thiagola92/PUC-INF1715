@@ -1,0 +1,23 @@
+
+DEFINE_LIST - childrens: 6
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: aaa
+        TYPE_BOOL
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: bbb
+        TYPE_CHAR
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: ccc
+        TYPE_INT
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: ddd
+        TYPE_FLOAT
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: eee
+        TYPE_ARRAY - childrens: 1
+            TYPE_CHAR
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: fff
+        TYPE_ARRAY - childrens: 1
+            TYPE_ARRAY - childrens: 1
+                TYPE_CHAR

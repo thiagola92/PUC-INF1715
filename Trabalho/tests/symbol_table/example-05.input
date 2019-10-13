@@ -1,0 +1,9 @@
+# Testing functions returning
+
+first() {
+	return true;
+}
+
+seventh(a : bool) : bool {
+	return a;
+}

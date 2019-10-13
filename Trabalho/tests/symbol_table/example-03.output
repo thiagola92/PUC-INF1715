@@ -1,0 +1,34 @@
+
+DEFINE_LIST - childrens: 4
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: first
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: second
+        PARAMETER - childrens: 2
+            DATA_STRING - content: a
+            TYPE_BOOL
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: third
+        PARAMETER_LIST - childrens: 2
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                TYPE_BOOL
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                TYPE_BOOL
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: fourth
+        PARAMETER_LIST - childrens: 3
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                TYPE_BOOL
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                TYPE_BOOL
+            PARAMETER - childrens: 2
+                DATA_STRING - content: c
+                TYPE_BOOL
+        BLOCK

@@ -1,0 +1,75 @@
+# Testing if else with content
+
+first() {
+}
+
+main() {
+	if true {
+		a : bool;
+		first();
+	}
+
+	if false {
+		a : bool;
+		first();
+	} else {
+		a : bool;
+		first();
+	}
+
+	if true {
+		a : bool;
+
+		if true {
+			a : bool;
+			first();
+		}
+
+		first();
+	}
+
+	if true {
+		a : bool;
+
+		if false {
+			a : bool;
+			first();
+		} else {
+			a : bool;
+			first();
+		}
+
+		first();
+	}
+
+	if false {
+		a : bool;
+		first();
+	} else {
+		a : bool;
+
+		if true {
+			a : bool;
+			first();
+		}
+
+		first();
+	}
+
+	if false {
+		a : bool;
+		first();
+	} else {
+		a : bool;
+
+		if false {
+			a : bool;
+			first();
+		} else {
+			a : bool;
+			first();
+		}
+
+		first();
+	}
+}

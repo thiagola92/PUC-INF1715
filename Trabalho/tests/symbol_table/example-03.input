@@ -1,0 +1,13 @@
+# Testing functions receiving many parameters
+
+first() {
+}
+
+second(a : bool) {
+}
+
+third(a : bool, b : bool) {
+}
+
+fourth(a : bool, b : bool, c : bool) {
+}

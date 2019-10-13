@@ -3,146 +3,107 @@
 
 #include"test.h"
 
+const char* tag_to_string(TAG tag) {
+  switch(tag) {
+		case EMPTY:
+			return "EMPTY";
+		case DEFINE_LIST:
+			return "DEFINE_LIST";
+		case DEFINE_VARIABLE:
+			return "DEFINE_VARIABLE";
+		case TYPE_BOOL:
+			return "TYPE_BOOL";
+		case TYPE_CHAR:
+			return "TYPE_CHAR";
+		case TYPE_INT:
+			return "TYPE_INT";
+		case TYPE_FLOAT:
+			return "TYPE_FLOAT";
+		case TYPE_ARRAY:
+			return "TYPE_ARRAY";
+		case DEFINE_FUNCTION:
+			return "DEFINE_FUNCTION";
+		case PARAMETER_LIST:
+			return "PARAMETER_LIST";
+		case PARAMETER:
+			return "PARAMETER";
+		case COMMAND_LIST:
+			return "COMMAND_LIST";
+		case VARIABLE_LIST:
+			return "VARIABLE_LIST";
+		case BLOCK:
+			return "BLOCK";
+		case IF:
+			return "IF";
+		case WHILE:
+			return "WHILE";
+		case ASSIGNMENT:
+			return "ASSIGNMENT";
+		case RETURN:
+			return "RETURN";
+		case PRINT:
+			return "PRINT";
+		case VARIABLE:
+			return "VARIABLE";
+		case FUNCTION_CALL:
+			return "FUNCTION_CALL";
+		case NEW_ARRAY:
+			return "NEW_ARRAY";
+		case EXPRESSION_LIST:
+			return "EXPRESSION_LIST";
+		case EXPRESSION_OR:
+			return "EXPRESSION_OR";
+		case EXPRESSION_AND:
+			return "EXPRESSION_AND";
+		case EXPRESSION_EQUAL:
+			return "EXPRESSION_EQUAL";
+		case EXPRESSION_NOT_EQUAL:
+			return "EXPRESSION_NOT_EQUAL";
+		case EXPRESSION_GREATER:
+			return "EXPRESSION_GREATER";
+		case EXPRESSION_GREATER_EQUAL:
+			return "EXPRESSION_GREATER_EQUAL";
+		case EXPRESSION_LESS:
+			return "EXPRESSION_LESS";
+		case EXPRESSION_LESS_EQUAL:
+			return "EXPRESSION_LESS_EQUAL";
+		case EXPRESSION_SUB:
+			return "EXPRESSION_SUB";
+		case EXPRESSION_ADD:
+			return "EXPRESSION_ADD";
+		case EXPRESSION_DIV:
+			return "EXPRESSION_DIV";
+		case EXPRESSION_MULT:
+			return "EXPRESSION_MULT";
+		case EXPRESSION_CAST:
+			return "EXPRESSION_CAST";
+		case EXPRESSION_NEGATIVE:
+			return "EXPRESSION_NEGATIVE";
+		case EXPRESSION_NOT:
+			return "EXPRESSION_NOT";
+		case DATA_BOOLEAN:
+			return "DATA_BOOLEAN";
+		case DATA_CHARACTER:
+			return "DATA_CHARACTER";
+		case DATA_INTEGER:
+			return "DATA_INTEGER";
+		case DATA_FLOAT:
+			return "DATA_FLOAT";
+		case DATA_STRING:
+			return "DATA_STRING";
+		default:
+			return "UNKNOWN";
+			break;
+		}
+}
+
 void print_tree(Node* node, int tabs) {
 	printf("\n");
 
 	for(int i = 0; i < tabs; i++)
 		printf("    ");
 
-	switch(node->tag) {
-		case EMPTY:
-			printf("EMPTY");
-			break;
-		case DEFINE_LIST:
-			printf("DEFINE_LIST");
-			break;
-		case DEFINE_VARIABLE:
-			printf("DEFINE_VARIABLE");
-			break;
-		case TYPE_BOOL:
-			printf("TYPE_BOOL");
-			break;
-		case TYPE_CHAR:
-			printf("TYPE_CHAR");
-			break;
-		case TYPE_INT:
-			printf("TYPE_INT");
-			break;
-		case TYPE_FLOAT:
-			printf("TYPE_FLOAT");
-			break;
-		case TYPE_ARRAY:
-			printf("TYPE_ARRAY");
-			break;
-		case DEFINE_FUNCTION:
-			printf("DEFINE_FUNCTION");
-			break;
-		case PARAMETER_LIST:
-			printf("PARAMETER_LIST");
-			break;
-		case PARAMETER:
-			printf("PARAMETER");
-			break;
-		case COMMAND_LIST:
-			printf("COMMAND_LIST");
-			break;
-		case VARIABLE_LIST:
-			printf("VARIABLE_LIST");
-			break;
-		case BLOCK:
-			printf("BLOCK");
-			break;
-		case IF:
-			printf("IF");
-			break;
-		case WHILE:
-			printf("WHILE");
-			break;
-		case ASSIGNMENT:
-			printf("ASSIGNMENT");
-			break;
-		case RETURN:
-			printf("RETURN");
-			break;
-		case PRINT:
-			printf("PRINT");
-			break;
-		case VARIABLE:
-			printf("VARIABLE");
-			break;
-		case FUNCTION_CALL:
-			printf("FUNCTION_CALL");
-			break;
-		case NEW_ARRAY:
-			printf("NEW_ARRAY");
-			break;
-		case EXPRESSION_LIST:
-			printf("EXPRESSION_LIST");
-			break;
-		case EXPRESSION_OR:
-			printf("EXPRESSION_OR");
-			break;
-		case EXPRESSION_AND:
-			printf("EXPRESSION_AND");
-			break;
-		case EXPRESSION_EQUAL:
-			printf("EXPRESSION_EQUAL");
-			break;
-		case EXPRESSION_NOT_EQUAL:
-			printf("EXPRESSION_NOT_EQUAL");
-			break;
-		case EXPRESSION_GREATER:
-			printf("EXPRESSION_GREATER");
-			break;
-		case EXPRESSION_GREATER_EQUAL:
-			printf("EXPRESSION_GREATER_EQUAL");
-			break;
-		case EXPRESSION_LESS:
-			printf("EXPRESSION_LESS");
-			break;
-		case EXPRESSION_LESS_EQUAL:
-			printf("EXPRESSION_LESS_EQUAL");
-			break;
-		case EXPRESSION_SUB:
-			printf("EXPRESSION_SUB");
-			break;
-		case EXPRESSION_ADD:
-			printf("EXPRESSION_ADD");
-			break;
-		case EXPRESSION_DIV:
-			printf("EXPRESSION_DIV");
-			break;
-		case EXPRESSION_MULT:
-			printf("EXPRESSION_MULT");
-			break;
-		case EXPRESSION_CAST:
-			printf("EXPRESSION_CAST");
-			break;
-		case EXPRESSION_NEGATIVE:
-			printf("EXPRESSION_NEGATIVE");
-			break;
-		case EXPRESSION_NOT:
-			printf("EXPRESSION_NOT");
-			break;
-		case DATA_BOOLEAN:
-			printf("DATA_BOOLEAN");
-			break;
-		case DATA_CHARACTER:
-			printf("DATA_CHARACTER");
-			break;
-		case DATA_INTEGER:
-			printf("DATA_INTEGER");
-			break;
-		case DATA_FLOAT:
-			printf("DATA_FLOAT");
-			break;
-		case DATA_STRING:
-			printf("DATA_STRING");
-			break;
-		default:
-			printf("UNKNOWN");
-			break;
-	}
+	printf("%s", tag_to_string(node->tag));
 
 	if(node->number_of_childs > 0)
 		printf(" - childrens: %d", node->number_of_childs);

@@ -1,0 +1,16 @@
+
+DEFINE_FUNCTION - childrens: 2
+    DATA_STRING - content: first
+    BLOCK - childrens: 2
+        VARIABLE_LIST - childrens: 2
+            DEFINE_VARIABLE - childrens: 2
+                DATA_STRING - content: a
+                TYPE_BOOL
+            DEFINE_VARIABLE - childrens: 2
+                DATA_STRING - content: b
+                TYPE_BOOL
+        COMMAND_LIST - childrens: 2
+            FUNCTION_CALL - childrens: 1
+                DATA_STRING - content: first
+            FUNCTION_CALL - childrens: 1
+                DATA_STRING - content: first

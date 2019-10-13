@@ -1,0 +1,71 @@
+
+DEFINE_LIST - childrens: 6
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: first
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: second
+        PARAMETER - childrens: 2
+            DATA_STRING - content: a
+            TYPE_BOOL
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: third
+        PARAMETER_LIST - childrens: 2
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                TYPE_BOOL
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                TYPE_BOOL
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: third
+        PARAMETER_LIST - childrens: 2
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                TYPE_BOOL
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                TYPE_BOOL
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: fourth
+        PARAMETER_LIST - childrens: 3
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                TYPE_BOOL
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                TYPE_BOOL
+            PARAMETER - childrens: 2
+                DATA_STRING - content: c
+                TYPE_BOOL
+        BLOCK
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: main
+        BLOCK - childrens: 1
+            COMMAND_LIST - childrens: 4
+                FUNCTION_CALL - childrens: 1
+                    DATA_STRING - content: first
+                FUNCTION_CALL - childrens: 2
+                    DATA_STRING - content: second
+                    VARIABLE - childrens: 1
+                        DATA_STRING - content: a
+                FUNCTION_CALL - childrens: 2
+                    DATA_STRING - content: third
+                    EXPRESSION_LIST - childrens: 2
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: a
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: b
+                FUNCTION_CALL - childrens: 2
+                    DATA_STRING - content: fourth
+                    EXPRESSION_LIST - childrens: 2
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: a
+                        EXPRESSION_LIST - childrens: 2
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: b
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: c
