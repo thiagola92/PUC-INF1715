@@ -5,74 +5,42 @@ DEFINE_FUNCTION - childrens: 2
         VARIABLE_LIST - childrens: 3
             DEFINE_VARIABLE - childrens: 2
                 DATA_STRING - content: x1
-                TYPE_INT
+                TYPE_BOOL
             DEFINE_VARIABLE - childrens: 2
                 DATA_STRING - content: x2
-                TYPE_INT
+                TYPE_BOOL
             DEFINE_VARIABLE - childrens: 2
                 DATA_STRING - content: x3
-                TYPE_INT
-        COMMAND_LIST - childrens: 14
+                TYPE_BOOL
+        COMMAND_LIST - childrens: 18
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x1
-                EXPRESSION_ADD - childrens: 2
+                EXPRESSION_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
                     EXPRESSION_ADD - childrens: 2
                         DATA_INTEGER - content: 1
                         DATA_INTEGER - content: 1
-                    DATA_INTEGER - content: 1
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x2
-                EXPRESSION_SUB - childrens: 2
+                EXPRESSION_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_ADD - childrens: 2
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 0
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x3
+                EXPRESSION_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
                     EXPRESSION_SUB - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
-                    DATA_INTEGER - content: 1
-            ASSIGNMENT - childrens: 2
-                VARIABLE - childrens: 1
-                    DATA_STRING - content: x3
-                EXPRESSION_MULT - childrens: 2
-                    EXPRESSION_MULT - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
-                    DATA_INTEGER - content: 1
-            ASSIGNMENT - childrens: 2
-                VARIABLE - childrens: 1
-                    DATA_STRING - content: x1
-                EXPRESSION_DIV - childrens: 2
-                    EXPRESSION_DIV - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
-                    DATA_INTEGER - content: 1
-            ASSIGNMENT - childrens: 2
-                VARIABLE - childrens: 1
-                    DATA_STRING - content: x1
-                EXPRESSION_SUB - childrens: 2
-                    EXPRESSION_ADD - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
-                    DATA_INTEGER - content: 1
-            ASSIGNMENT - childrens: 2
-                VARIABLE - childrens: 1
-                    DATA_STRING - content: x2
-                EXPRESSION_ADD - childrens: 2
-                    DATA_INTEGER - content: 1
-                    EXPRESSION_MULT - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
-            ASSIGNMENT - childrens: 2
-                VARIABLE - childrens: 1
-                    DATA_STRING - content: x3
-                EXPRESSION_ADD - childrens: 2
-                    DATA_INTEGER - content: 1
-                    EXPRESSION_DIV - childrens: 2
-                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 2
                         DATA_INTEGER - content: 1
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x1
-                EXPRESSION_SUB - childrens: 2
+                EXPRESSION_NOT_EQUAL - childrens: 2
                     DATA_INTEGER - content: 1
                     EXPRESSION_ADD - childrens: 2
                         DATA_INTEGER - content: 1
@@ -80,56 +48,112 @@ DEFINE_FUNCTION - childrens: 2
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x2
-                EXPRESSION_ADD - childrens: 2
-                    EXPRESSION_MULT - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
+                EXPRESSION_NOT_EQUAL - childrens: 2
                     DATA_INTEGER - content: 1
+                    EXPRESSION_ADD - childrens: 2
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 0
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x3
-                EXPRESSION_ADD - childrens: 2
-                    EXPRESSION_DIV - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
+                EXPRESSION_NOT_EQUAL - childrens: 2
                     DATA_INTEGER - content: 1
+                    EXPRESSION_SUB - childrens: 2
+                        DATA_INTEGER - content: 2
+                        DATA_INTEGER - content: 1
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x1
-                EXPRESSION_ADD - childrens: 2
+                EXPRESSION_LESS - childrens: 2
                     DATA_INTEGER - content: 1
                     EXPRESSION_ADD - childrens: 2
-                        EXPRESSION_ADD - childrens: 2
-                            DATA_INTEGER - content: 1
-                            DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 1
                         DATA_INTEGER - content: 1
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x2
-                EXPRESSION_SUB - childrens: 2
+                EXPRESSION_LESS - childrens: 2
                     DATA_INTEGER - content: 1
                     EXPRESSION_ADD - childrens: 2
-                        EXPRESSION_ADD - childrens: 2
-                            DATA_INTEGER - content: 1
-                            DATA_INTEGER - content: 1
                         DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 0
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x3
-                EXPRESSION_MULT - childrens: 2
+                EXPRESSION_LESS - childrens: 2
                     DATA_INTEGER - content: 1
-                    EXPRESSION_ADD - childrens: 2
-                        EXPRESSION_ADD - childrens: 2
-                            DATA_INTEGER - content: 1
-                            DATA_INTEGER - content: 1
+                    EXPRESSION_SUB - childrens: 2
+                        DATA_INTEGER - content: 2
                         DATA_INTEGER - content: 1
             ASSIGNMENT - childrens: 2
                 VARIABLE - childrens: 1
                     DATA_STRING - content: x1
-                EXPRESSION_DIV - childrens: 2
+                EXPRESSION_GREATER - childrens: 2
                     DATA_INTEGER - content: 1
                     EXPRESSION_ADD - childrens: 2
-                        EXPRESSION_ADD - childrens: 2
-                            DATA_INTEGER - content: 1
-                            DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 1
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x2
+                EXPRESSION_GREATER - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_ADD - childrens: 2
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 0
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x3
+                EXPRESSION_GREATER - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_SUB - childrens: 2
+                        DATA_INTEGER - content: 2
+                        DATA_INTEGER - content: 1
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x1
+                EXPRESSION_LESS_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_ADD - childrens: 2
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 1
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x2
+                EXPRESSION_LESS_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_ADD - childrens: 2
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 0
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x3
+                EXPRESSION_LESS_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_SUB - childrens: 2
+                        DATA_INTEGER - content: 2
+                        DATA_INTEGER - content: 1
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x1
+                EXPRESSION_GREATER_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_ADD - childrens: 2
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 1
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x2
+                EXPRESSION_GREATER_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_ADD - childrens: 2
+                        DATA_INTEGER - content: 1
+                        DATA_INTEGER - content: 0
+            ASSIGNMENT - childrens: 2
+                VARIABLE - childrens: 1
+                    DATA_STRING - content: x3
+                EXPRESSION_GREATER_EQUAL - childrens: 2
+                    DATA_INTEGER - content: 1
+                    EXPRESSION_SUB - childrens: 2
+                        DATA_INTEGER - content: 2
                         DATA_INTEGER - content: 1

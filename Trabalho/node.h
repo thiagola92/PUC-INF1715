@@ -11,7 +11,7 @@
 typedef enum TAG {
 	EMPTY,
 
-	DEFINE,
+	DEFINE_LIST,
 
 	DEFINE_VARIABLE,
 	TYPE_BOOL,
