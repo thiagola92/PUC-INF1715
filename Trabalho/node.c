@@ -65,9 +65,6 @@ Node* create_node_zero_child(TAG tag) {
 Node* create_node_one_child(TAG tag, Node* child) {
 	Node* node = (Node*)safe_malloc(sizeof(Node));
 
-	if(node == NULL)
-		throw_error();
-
 	node->tag = tag;
 	node->number_of_childs = 1;
 	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
@@ -79,9 +76,6 @@ Node* create_node_one_child(TAG tag, Node* child) {
 
 Node* create_node_two_child(TAG tag, Node* child0, Node* child1) {
 	Node* node = (Node*)safe_malloc(sizeof(Node));
-
-	if(node == NULL)
-		throw_error();
 
 	node->tag = tag;
 	node->number_of_childs = 2;
@@ -95,9 +89,6 @@ Node* create_node_two_child(TAG tag, Node* child0, Node* child1) {
 
 Node* create_node_three_child(TAG tag, Node* child0, Node* child1, Node* child2) {
 	Node* node = (Node*)safe_malloc(sizeof(Node));
-
-	if(node == NULL)
-		throw_error();
 
 	node->tag = tag;
 	node->number_of_childs = 3;
@@ -113,9 +104,6 @@ Node* create_node_three_child(TAG tag, Node* child0, Node* child1, Node* child2)
 Node* create_node_four_child(TAG tag, Node* child0, Node* child1, Node* child2, Node* child3) {
 	Node* node = (Node*)safe_malloc(sizeof(Node));
 
-	if(node == NULL)
-		throw_error();
-
 	node->tag = tag;
 	node->number_of_childs = 4;
 	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
@@ -126,4 +114,25 @@ Node* create_node_four_child(TAG tag, Node* child0, Node* child1, Node* child2, 
 	node->content.n[3] = child3;
 
 	return node;
+}
+
+Node* append_node(TAG tag, Node* child0, Node* child1) {
+	Node* node;
+	
+	if(child0->tag != tag)
+	  return create_node_two_child(tag, child0, child1);
+	
+	node = (Node*)safe_malloc(sizeof(Node));
+	
+	node->tag = tag;
+	node->number_of_childs = child0->number_of_childs + 1;
+	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
+  
+  for(int i=0; i < child0->number_of_childs; i++)
+    node->content.n[i] = child0->content.n[i];
+  
+  node->content.n[node->number_of_childs - 1] = child1;
+  free(child0);
+  
+  return node;
 }

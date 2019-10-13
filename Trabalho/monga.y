@@ -125,8 +125,8 @@ program:	/*empty*/		{ __root__ = create_node_zero_child(EMPTY); $$ = __root__; }
 		| define_list		{ __root__ = $1; $$ = __root__; }
 		;
 
-define_list:	define_list define	{ $$ = create_node_two_child(DEFINE_LIST, $1, $2); }
-		| define		{ $$ = create_node_one_child(DEFINE, $1); }
+define_list:	define_list define	{ $$ = append_node(DEFINE_LIST, $1, $2); }
+		| define		{ $$ = $1; }
 		;
 
 define:		define_variable		{ $$ = $1; }
@@ -152,7 +152,7 @@ define_function:	identifier TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PA
 			| identifier TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block						{ $$ = create_node_two_child(DEFINE_FUNCTION, $1, $4); }
 			;
 
-parameter_list:		parameter_list TOKEN_COMMA parameter			{ $$ = create_node_two_child(PARAMETER_LIST, $1, $3); }
+parameter_list:		parameter_list TOKEN_COMMA parameter			{ $$ = append_node(PARAMETER_LIST, $1, $3); }
 			| parameter						{ $$ = $1; }
 			;
 
@@ -165,11 +165,11 @@ block:		TOKEN_OPEN_BRACES variable_list command_list TOKEN_CLOSE_BRACES 	{ $$ = 
 		| TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES 					{ $$ = create_node_zero_child(BLOCK); }
 		;
 
-variable_list:		variable_list define_variable		{ $$ = create_node_two_child(VARIABLE_LIST, $1, $2); }
+variable_list:		variable_list define_variable		{ $$ = append_node(VARIABLE_LIST, $1, $2); }
 			| define_variable			{ $$ = $1; }
 			;
 
-command_list:	command_list command	{ $$ = create_node_two_child(COMMAND_LIST, $1, $2); }
+command_list:	command_list command	{ $$ = append_node(COMMAND_LIST, $1, $2); }
 		| command		{ $$ = $1; }
 		;
 
@@ -194,7 +194,7 @@ function_call:		identifier TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PA
 new_array:	TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(NEW_ARRAY, $2, $4); }
 		;
 
-expression_list:	expression TOKEN_COMMA expression_list	{ $$ = create_node_two_child(EXPRESSION_LIST, $1, $3); }
+expression_list:	expression TOKEN_COMMA expression_list	{ $$ = append_node(EXPRESSION_LIST, $1, $3); }
 			| expression 				{ $$ = $1; }
 			;
 

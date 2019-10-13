@@ -12,7 +12,6 @@ typedef enum TAG {
 	EMPTY,
 
 	DEFINE,
-	DEFINE_LIST,
 
 	DEFINE_VARIABLE,
 	TYPE_BOOL,
@@ -95,5 +94,7 @@ Node* create_node_one_child(TAG tag, Node* child);
 Node* create_node_two_child(TAG tag, Node* child0, Node* child1);
 Node* create_node_three_child(TAG tag, Node* child0, Node* child1, Node* child2);
 Node* create_node_four_child(TAG tag, Node* child0, Node* child1, Node* child2, Node* child3);
+
+Node* append_node(TAG tag, Node* child0, Node* child1);
 
 #endif

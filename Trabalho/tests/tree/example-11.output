@@ -1,29 +1,26 @@
 
 DEFINE_LIST - childrens: 2
-    DEFINE - childrens: 1
-        DEFINE_FUNCTION - childrens: 2
-            DATA_STRING - content: first
-            BLOCK
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: first
+        BLOCK
     DEFINE_FUNCTION - childrens: 2
         DATA_STRING - content: main
         BLOCK - childrens: 1
-            COMMAND_LIST - childrens: 2
-                COMMAND_LIST - childrens: 2
-                    COMMAND_LIST - childrens: 2
-                        WHILE - childrens: 2
-                            DATA_BOOLEAN - content: 1
-                            BLOCK
-                        WHILE - childrens: 2
-                            DATA_BOOLEAN - content: 1
-                            BLOCK - childrens: 1
-                                DEFINE_VARIABLE - childrens: 2
-                                    DATA_STRING - content: a
-                                    TYPE_BOOL
-                    WHILE - childrens: 2
-                        DATA_BOOLEAN - content: 1
-                        BLOCK - childrens: 1
-                            FUNCTION_CALL - childrens: 1
-                                DATA_STRING - content: first
+            COMMAND_LIST - childrens: 4
+                WHILE - childrens: 2
+                    DATA_BOOLEAN - content: 1
+                    BLOCK
+                WHILE - childrens: 2
+                    DATA_BOOLEAN - content: 1
+                    BLOCK - childrens: 1
+                        DEFINE_VARIABLE - childrens: 2
+                            DATA_STRING - content: a
+                            TYPE_BOOL
+                WHILE - childrens: 2
+                    DATA_BOOLEAN - content: 1
+                    BLOCK - childrens: 1
+                        FUNCTION_CALL - childrens: 1
+                            DATA_STRING - content: first
                 WHILE - childrens: 2
                     DATA_BOOLEAN - content: 1
                     BLOCK - childrens: 2

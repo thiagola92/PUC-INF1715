@@ -13,9 +13,6 @@ void print_tree(Node* node, int tabs) {
 		case EMPTY:
 			printf("EMPTY");
 			break;
-		case DEFINE:
-			printf("DEFINE");
-			break;
 		case DEFINE_LIST:
 			printf("DEFINE_LIST");
 			break;
