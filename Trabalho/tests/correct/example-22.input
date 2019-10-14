@@ -1,0 +1,15 @@
+# Testing functions declaring variables
+
+first() {
+	x : int;
+	y : int;
+}
+
+main() {
+  x : int;
+  y : int;
+  
+  x = 1 + 1;
+  
+  first(x);
+}

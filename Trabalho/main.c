@@ -8,20 +8,14 @@
 int yywrap();
 
 int main(int argc, const char* argv[]) {
-	if(argc != 3) {
-		fprintf(stderr, "Parameters: [file path] [test]\n");
-		fprintf(stderr, "Test options: lexical syntax tree\n");
+	if(argc != 2) {
+		fprintf(stderr, "Parameters: [file path]\n");
 		return -1;
 	}
 	
-	if(strcmp(argv[2],"lexical") == 0)
-		return test_lexical(argv[1]);
-	else if(strcmp(argv[2],"syntax") == 0)
-		return test_syntax(argv[1]);
-	else if(strcmp(argv[2],"tree") == 0)
-		return test_tree(argv[1]);
+	test(argv[1]);
 
-	return -1;
+	return 0;
 }
 
 int yywrap() {

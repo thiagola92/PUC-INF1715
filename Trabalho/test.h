@@ -8,8 +8,6 @@
 
 extern Node* __root__;
 
-int test_syntax(const char* path);
-int test_lexical(const char* path);
-int test_tree(const char* path);
+int test(const char* path);
 
 #endif

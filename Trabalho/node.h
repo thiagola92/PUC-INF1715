@@ -14,11 +14,6 @@ typedef enum TAG {
 	DEFINE_LIST,
 
 	DEFINE_VARIABLE,
-	TYPE_BOOL,
-	TYPE_CHAR,
-	TYPE_INT,
-	TYPE_FLOAT,
-	TYPE_ARRAY,
 
 	DEFINE_FUNCTION,
 	PARAMETER_LIST,
@@ -65,6 +60,7 @@ typedef enum TAG {
 	DATA_INTEGER,
 	DATA_FLOAT,
 	DATA_STRING,
+	DATA_ARRAY,
 } TAG;
 
 typedef struct Node {

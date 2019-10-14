@@ -75,9 +75,9 @@
 
 %type<n> define_list
 %type<n> define
+
 %type<n> define_variable
 %type<n> identifier
-
 %type<n> variable_type
 
 %type<n> define_function
@@ -139,11 +139,11 @@ define_variable:	identifier TOKEN_COLON variable_type TOKEN_SEMICOLON	{ $$ = cre
 identifier:	TOKEN_IDENTIFIER	{ $$ = create_node_string($1); }
 		;
 
-variable_type:	TOKEN_WORD_BOOL							{ $$ = create_node_zero_child(TYPE_BOOL); }
-    		| TOKEN_WORD_CHAR						{ $$ = create_node_zero_child(TYPE_CHAR); }
-		| TOKEN_WORD_INT						{ $$ = create_node_zero_child(TYPE_INT); }
-		| TOKEN_WORD_FLOAT						{ $$ = create_node_zero_child(TYPE_FLOAT); }
-		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ $$ = create_node_one_child(TYPE_ARRAY, $2); }
+variable_type:	TOKEN_WORD_BOOL							{ $$ = create_node_bool(0); }
+    | TOKEN_WORD_CHAR						{ $$ = create_node_char(0); }
+		| TOKEN_WORD_INT						{ $$ = create_node_int(0); }
+		| TOKEN_WORD_FLOAT						{ $$ = create_node_float(0.0); }
+		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ $$ = create_node_one_child(DATA_ARRAY, $2); }
 		;
 
 define_function:	identifier TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ $$ = create_node_four_child(DEFINE_FUNCTION, $1, $3, $6, $7); }
