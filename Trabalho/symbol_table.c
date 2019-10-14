@@ -24,6 +24,8 @@ Scope* leave_scope(Scope* scope) {
   free_symbols(scope->symbol);
   free(scope);
   
+  old_scope->next = NULL;
+  
   return old_scope;
 }
 
@@ -50,7 +52,9 @@ Node* get_symbol(Scope* scope, const char* name) {
   Symbol* symbol = scope->symbol;
   
   while(symbol != NULL) {
-    if(strcmp(symbol->node->content.s, name) == 0)
+    const char* symbol_name = symbol->node->content.n[0]->content.s;
+    
+    if(strcmp(symbol_name, name) == 0)
       return symbol->node;
       
     symbol = symbol->next;

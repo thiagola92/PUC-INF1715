@@ -33,6 +33,8 @@ const char* tag_to_string(TAG tag) {
 			return "RETURN";
 		case PRINT:
 			return "PRINT";
+		case ARRAY:
+			return "ARRAY";
 		case VARIABLE:
 			return "VARIABLE";
 		case FUNCTION_CALL:
@@ -117,18 +119,19 @@ void print_tree(Node* node, int tabs) {
 			printf(" - content: %s", node->content.s);
 			break;
 		default:
-			for(int i = 0; i < node->number_of_childs; i++)
-				print_tree(node->content.n[i], tabs+1);
 			break;
 	}
-
+	
+	for(int i = 0; i < node->number_of_childs; i++)
+		print_tree(node->content.n[i], tabs+1);
 }
 
 int test(const char* path) {
 	yyin = fopen(path, "r");
 	yyparse();
 
-	print_tree(__root__, 0);
+  start_binding(__root__);
+	//print_tree(__root__, 0);
 	printf("\n");
 
 	return 0;

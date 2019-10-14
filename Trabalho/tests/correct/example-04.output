@@ -1,66 +1,126 @@
+Scope
+Symbol: first
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: first
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: first
+Symbol: second
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== DEFINE VARIABLE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: fourth
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+=== DEFINE VARIABLE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: fourth
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: fourth
+Symbol: fifth
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: e
+=== DEFINE VARIABLE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: fourth
+Symbol: fifth
+=== LEAVE SCOPE ===
 
-DEFINE_LIST - childrens: 5
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: first
-        BLOCK - childrens: 1
-            DEFINE_VARIABLE - childrens: 2
-                DATA_STRING - content: a
-                DATA_BOOLEAN - content: 0
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: second
-        BLOCK - childrens: 1
-            VARIABLE_LIST - childrens: 2
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: a
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: b
-                    DATA_BOOLEAN - content: 0
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: third
-        BLOCK - childrens: 1
-            VARIABLE_LIST - childrens: 3
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: a
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: b
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: c
-                    DATA_BOOLEAN - content: 0
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: fourth
-        BLOCK - childrens: 1
-            VARIABLE_LIST - childrens: 4
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: a
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: b
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: c
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: d
-                    DATA_BOOLEAN - content: 0
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: fifth
-        BLOCK - childrens: 1
-            VARIABLE_LIST - childrens: 5
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: a
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: b
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: c
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: d
-                    DATA_BOOLEAN - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: e
-                    DATA_BOOLEAN - content: 0

@@ -1,16 +1,24 @@
+Scope
+Symbol: first
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== BIND FUNCTION_CALL ===
+Scope
+Symbol: a
+Symbol: b
+=== BIND FUNCTION_CALL ===
+Scope
+Symbol: first
+=== LEAVE SCOPE ===
 
-DEFINE_FUNCTION - childrens: 2
-    DATA_STRING - content: first
-    BLOCK - childrens: 2
-        VARIABLE_LIST - childrens: 2
-            DEFINE_VARIABLE - childrens: 2
-                DATA_STRING - content: a
-                DATA_BOOLEAN - content: 0
-            DEFINE_VARIABLE - childrens: 2
-                DATA_STRING - content: b
-                DATA_BOOLEAN - content: 0
-        COMMAND_LIST - childrens: 2
-            FUNCTION_CALL - childrens: 1
-                DATA_STRING - content: first
-            FUNCTION_CALL - childrens: 1
-                DATA_STRING - content: first

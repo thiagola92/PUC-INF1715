@@ -1,33 +1,34 @@
+Scope
+Symbol: first
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: y
+=== DEFINE PARAMETER ===
+Scope
+Symbol: first
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: x
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x
+=== BIND VARIABLE ===
+Scope
+Symbol: x
+=== BIND FUNCTION_CALL ===
+Scope
+Symbol: x
+=== BIND VARIABLE ===
+Scope
+Symbol: first
+Symbol: main
+=== LEAVE SCOPE ===
 
-DEFINE_LIST - childrens: 2
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: first
-        BLOCK - childrens: 1
-            VARIABLE_LIST - childrens: 2
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: x
-                    DATA_INTEGER - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: y
-                    DATA_INTEGER - content: 0
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: main
-        BLOCK - childrens: 2
-            VARIABLE_LIST - childrens: 2
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: x
-                    DATA_INTEGER - content: 0
-                DEFINE_VARIABLE - childrens: 2
-                    DATA_STRING - content: y
-                    DATA_INTEGER - content: 0
-            COMMAND_LIST - childrens: 2
-                ASSIGNMENT - childrens: 2
-                    VARIABLE - childrens: 1
-                        DATA_STRING - content: x
-                    EXPRESSION_ADD - childrens: 2
-                        DATA_INTEGER - content: 1
-                        DATA_INTEGER - content: 1
-                FUNCTION_CALL - childrens: 2
-                    DATA_STRING - content: first
-                    VARIABLE - childrens: 1
-                        DATA_STRING - content: x

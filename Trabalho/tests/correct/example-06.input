@@ -16,6 +16,10 @@ fourth(a : bool, b : bool, c : bool) {
 }
 
 main() {
+  a : bool;
+  b : bool;
+  c : bool;
+
 	first();
 	second(a);
 	third(a,b);

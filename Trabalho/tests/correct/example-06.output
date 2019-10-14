@@ -1,71 +1,170 @@
+Scope
+Symbol: first
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: first
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE PARAMETER ===
+Scope
+Symbol: first
+Symbol: second
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE PARAMETER ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE PARAMETER ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: third
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE PARAMETER ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE PARAMETER ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: third
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: third
+Symbol: fourth
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE PARAMETER ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE PARAMETER ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== DEFINE PARAMETER ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: third
+Symbol: fourth
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: third
+Symbol: fourth
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER SCOPE ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND FUNCTION_CALL ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND FUNCTION_CALL ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND FUNCTION_CALL ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND FUNCTION_CALL ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+Symbol: first
+Symbol: second
+Symbol: third
+Symbol: third
+Symbol: fourth
+Symbol: main
+=== LEAVE SCOPE ===
 
-DEFINE_LIST - childrens: 6
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: first
-        BLOCK
-    DEFINE_FUNCTION - childrens: 3
-        DATA_STRING - content: second
-        PARAMETER - childrens: 2
-            DATA_STRING - content: a
-            DATA_BOOLEAN - content: 0
-        BLOCK
-    DEFINE_FUNCTION - childrens: 3
-        DATA_STRING - content: third
-        PARAMETER_LIST - childrens: 2
-            PARAMETER - childrens: 2
-                DATA_STRING - content: a
-                DATA_BOOLEAN - content: 0
-            PARAMETER - childrens: 2
-                DATA_STRING - content: b
-                DATA_BOOLEAN - content: 0
-        BLOCK
-    DEFINE_FUNCTION - childrens: 3
-        DATA_STRING - content: third
-        PARAMETER_LIST - childrens: 2
-            PARAMETER - childrens: 2
-                DATA_STRING - content: a
-                DATA_BOOLEAN - content: 0
-            PARAMETER - childrens: 2
-                DATA_STRING - content: b
-                DATA_BOOLEAN - content: 0
-        BLOCK
-    DEFINE_FUNCTION - childrens: 3
-        DATA_STRING - content: fourth
-        PARAMETER_LIST - childrens: 3
-            PARAMETER - childrens: 2
-                DATA_STRING - content: a
-                DATA_BOOLEAN - content: 0
-            PARAMETER - childrens: 2
-                DATA_STRING - content: b
-                DATA_BOOLEAN - content: 0
-            PARAMETER - childrens: 2
-                DATA_STRING - content: c
-                DATA_BOOLEAN - content: 0
-        BLOCK
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: main
-        BLOCK - childrens: 1
-            COMMAND_LIST - childrens: 4
-                FUNCTION_CALL - childrens: 1
-                    DATA_STRING - content: first
-                FUNCTION_CALL - childrens: 2
-                    DATA_STRING - content: second
-                    VARIABLE - childrens: 1
-                        DATA_STRING - content: a
-                FUNCTION_CALL - childrens: 2
-                    DATA_STRING - content: third
-                    EXPRESSION_LIST - childrens: 2
-                        VARIABLE - childrens: 1
-                            DATA_STRING - content: a
-                        VARIABLE - childrens: 1
-                            DATA_STRING - content: b
-                FUNCTION_CALL - childrens: 2
-                    DATA_STRING - content: fourth
-                    EXPRESSION_LIST - childrens: 2
-                        VARIABLE - childrens: 1
-                            DATA_STRING - content: a
-                        EXPRESSION_LIST - childrens: 2
-                            VARIABLE - childrens: 1
-                                DATA_STRING - content: b
-                            VARIABLE - childrens: 1
-                                DATA_STRING - content: c

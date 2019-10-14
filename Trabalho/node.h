@@ -29,6 +29,7 @@ typedef enum TAG {
 	RETURN,
 	PRINT,
 
+  ARRAY,
 	VARIABLE,
 	FUNCTION_CALL,
 	NEW_ARRAY,
@@ -77,6 +78,8 @@ typedef struct Node {
 
 		struct Node** n;
 	} content;
+	
+	struct Node* definition;
 } Node;
 
 Node* create_node_bool(const int b);

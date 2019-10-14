@@ -1,14 +1,23 @@
 Scope
-Symbol: first
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: main
 === DEFINE FUNCTION ===
 Scope
 === ENTER SCOPE ===
 Scope
-Symbol: first
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: main
 === LEAVE SCOPE ===
 Scope
-Symbol: first
+Symbol: a
 Symbol: main
+Symbol: fn
 === DEFINE FUNCTION ===
 Scope
 === ENTER SCOPE ===
@@ -17,17 +26,7 @@ Symbol: a
 === DEFINE VARIABLE ===
 Scope
 Symbol: a
-=== BIND FUNCTION_CALL ===
-Scope
-Symbol: a
-Symbol: a
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: a
-=== BIND FUNCTION_CALL ===
-Scope
-Symbol: first
 Symbol: main
+Symbol: fn
 === LEAVE SCOPE ===
 

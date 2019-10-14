@@ -140,7 +140,7 @@ identifier:	TOKEN_IDENTIFIER	{ $$ = create_node_string($1); }
 		;
 
 variable_type:	TOKEN_WORD_BOOL							{ $$ = create_node_bool(0); }
-    | TOKEN_WORD_CHAR						{ $$ = create_node_char(0); }
+    | TOKEN_WORD_CHAR						{ $$ = create_node_char(' '); }
 		| TOKEN_WORD_INT						{ $$ = create_node_int(0); }
 		| TOKEN_WORD_FLOAT						{ $$ = create_node_float(0.0); }
 		| TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ $$ = create_node_one_child(DATA_ARRAY, $2); }
@@ -183,7 +183,7 @@ command:	TOKEN_IF expression block					{ $$ = create_node_two_child(IF, $2, $3);
 		| block								{ $$ = $1; }
 		;
 
-variable:	expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(VARIABLE, $1, $3); }
+variable:	expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(ARRAY, $1, $3); }
 		| identifier								{ $$ = create_node_one_child(VARIABLE, $1); }
 		;
 
