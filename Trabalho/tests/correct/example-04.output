@@ -2,10 +2,14 @@ Scope
 Symbol: first
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 === LEAVE SCOPE ===
@@ -14,7 +18,9 @@ Symbol: first
 Symbol: second
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
@@ -22,6 +28,8 @@ Scope
 Symbol: a
 Symbol: b
 === DEFINE VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: second
@@ -32,7 +40,9 @@ Symbol: second
 Symbol: third
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
@@ -46,6 +56,8 @@ Symbol: b
 Symbol: c
 === DEFINE VARIABLE ===
 Scope
+=== LEAVE SCOPE ===
+Scope
 Symbol: first
 Symbol: second
 Symbol: third
@@ -57,7 +69,9 @@ Symbol: third
 Symbol: fourth
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
@@ -77,6 +91,8 @@ Symbol: c
 Symbol: d
 === DEFINE VARIABLE ===
 Scope
+=== LEAVE SCOPE ===
+Scope
 Symbol: first
 Symbol: second
 Symbol: third
@@ -90,7 +106,9 @@ Symbol: fourth
 Symbol: fifth
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
@@ -116,6 +134,8 @@ Symbol: c
 Symbol: d
 Symbol: e
 === DEFINE VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: second

@@ -2,7 +2,9 @@ Scope
 Symbol: main
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: x1
 === DEFINE VARIABLE ===
@@ -105,6 +107,8 @@ Symbol: x1
 Symbol: x2
 Symbol: x3
 === BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: main
 === LEAVE SCOPE ===

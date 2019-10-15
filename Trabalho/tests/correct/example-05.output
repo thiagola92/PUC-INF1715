@@ -2,7 +2,11 @@ Scope
 Symbol: first
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 === LEAVE SCOPE ===
@@ -11,13 +15,17 @@ Symbol: first
 Symbol: seventh
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
 Scope
 Symbol: a
 === DEFINE PARAMETER ===
 Scope
-Symbol: a
+=== ENTER BLOCK ===
+Scope
 === BIND VARIABLE ===
+Scope
+Symbol: a
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: seventh

@@ -2,7 +2,11 @@ Scope
 Symbol: first
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 === LEAVE SCOPE ===
@@ -11,10 +15,15 @@ Symbol: first
 Symbol: second
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
 Scope
 Symbol: a
 === DEFINE PARAMETER ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: second
@@ -25,7 +34,7 @@ Symbol: second
 Symbol: third
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
 Scope
 Symbol: a
 === DEFINE PARAMETER ===
@@ -34,6 +43,12 @@ Symbol: a
 Symbol: b
 === DEFINE PARAMETER ===
 Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+Symbol: b
+=== LEAVE SCOPE ===
+Scope
 Symbol: first
 Symbol: second
 Symbol: third
@@ -45,7 +60,7 @@ Symbol: third
 Symbol: third
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
 Scope
 Symbol: a
 === DEFINE PARAMETER ===
@@ -53,6 +68,12 @@ Scope
 Symbol: a
 Symbol: b
 === DEFINE PARAMETER ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+Symbol: b
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: second
@@ -67,7 +88,7 @@ Symbol: third
 Symbol: fourth
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
 Scope
 Symbol: a
 === DEFINE PARAMETER ===
@@ -80,6 +101,13 @@ Symbol: a
 Symbol: b
 Symbol: c
 === DEFINE PARAMETER ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: second
@@ -96,7 +124,9 @@ Symbol: fourth
 Symbol: main
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
@@ -113,22 +143,12 @@ Scope
 Symbol: a
 Symbol: b
 Symbol: c
-=== BIND FUNCTION_CALL ===
+=== BIND FUNCTION CALL ===
 Scope
 Symbol: a
 Symbol: b
 Symbol: c
-=== BIND FUNCTION_CALL ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-=== BIND FUNCTION_CALL ===
+=== BIND FUNCTION CALL ===
 Scope
 Symbol: a
 Symbol: b
@@ -138,12 +158,7 @@ Scope
 Symbol: a
 Symbol: b
 Symbol: c
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-=== BIND FUNCTION_CALL ===
+=== BIND FUNCTION CALL ===
 Scope
 Symbol: a
 Symbol: b
@@ -158,7 +173,24 @@ Scope
 Symbol: a
 Symbol: b
 Symbol: c
+=== BIND FUNCTION CALL ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
 === BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: second

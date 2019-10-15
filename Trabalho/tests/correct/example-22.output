@@ -2,10 +2,15 @@ Scope
 Symbol: first
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
 Scope
 Symbol: y
 === DEFINE PARAMETER ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: y
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 === LEAVE SCOPE ===
@@ -14,7 +19,9 @@ Symbol: first
 Symbol: main
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: x
 === DEFINE VARIABLE ===
@@ -23,10 +30,12 @@ Symbol: x
 === BIND VARIABLE ===
 Scope
 Symbol: x
-=== BIND FUNCTION_CALL ===
+=== BIND FUNCTION CALL ===
 Scope
 Symbol: x
 === BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: main

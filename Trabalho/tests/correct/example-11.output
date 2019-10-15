@@ -2,7 +2,11 @@ Scope
 Symbol: first
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 === LEAVE SCOPE ===
@@ -11,21 +15,38 @@ Symbol: first
 Symbol: main
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== BIND FUNCTION CALL ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
 Scope
 Symbol: a
-=== BIND FUNCTION_CALL ===
+=== BIND FUNCTION CALL ===
 Scope
-Symbol: a
-Symbol: a
-=== DEFINE VARIABLE ===
+=== LEAVE SCOPE ===
 Scope
-Symbol: a
-Symbol: a
-=== BIND FUNCTION_CALL ===
+=== LEAVE SCOPE ===
 Scope
 Symbol: first
 Symbol: main

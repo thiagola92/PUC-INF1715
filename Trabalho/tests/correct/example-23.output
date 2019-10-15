@@ -6,10 +6,14 @@ Symbol: a
 Symbol: main
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: b
 === DEFINE VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: a
 Symbol: main
@@ -20,10 +24,14 @@ Symbol: main
 Symbol: fn
 === DEFINE FUNCTION ===
 Scope
-=== ENTER SCOPE ===
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
 Scope
 Symbol: a
 === DEFINE VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
 Scope
 Symbol: a
 Symbol: main

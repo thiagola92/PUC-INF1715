@@ -53,8 +53,19 @@ void check_node(Scope* scope, Node* node) {
   switch(node->tag) {
     case DEFINE_VARIABLE:
       insert_symbol(scope, node);
-      
       print_scope_state(scope, "=== DEFINE VARIABLE ===");
+      break;
+    case PARAMETER:
+      insert_symbol(scope, node);
+      print_scope_state(scope, "=== DEFINE PARAMETER ===");
+      break;
+    case VARIABLE:
+      binding(scope, node);
+      print_scope_state(scope, "=== BIND VARIABLE ===");
+      break;
+    case FUNCTION_CALL:
+      binding(scope, node);
+      print_scope_state(scope, "=== BIND FUNCTION CALL ===");
       break;
     case DEFINE_FUNCTION:
       insert_symbol(scope, node);
@@ -62,23 +73,12 @@ void check_node(Scope* scope, Node* node) {
       
       scope = enter_scope(scope);
       leave_scope_at_end = true;
-      
-      print_scope_state(scope, "=== ENTER SCOPE ===");
+      print_scope_state(scope, "=== ENTER FUNCTION ===");
       break;
-    case PARAMETER:
-      insert_symbol(scope, node);
-      
-      print_scope_state(scope, "=== DEFINE PARAMETER ===");
-      break;
-    case VARIABLE:
-      binding(scope, node);
-      
-      print_scope_state(scope, "=== BIND VARIABLE ===");
-      break;
-    case FUNCTION_CALL:
-      binding(scope, node);
-      
-      print_scope_state(scope, "=== BIND FUNCTION_CALL ===");
+    case BLOCK:      
+      scope = enter_scope(scope);
+      leave_scope_at_end = true;
+      print_scope_state(scope, "=== ENTER BLOCK ===");
       break;
     default:
       break;
