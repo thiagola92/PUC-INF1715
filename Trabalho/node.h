@@ -80,6 +80,8 @@ typedef struct Node {
 	} content;
 	
 	struct Node* definition;
+	
+	TYPE type;
 } Node;
 
 Node* create_node_bool(const int b);

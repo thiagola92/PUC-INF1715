@@ -200,3 +200,83 @@ Symbol: fourth
 Symbol: main
 === LEAVE SCOPE ===
 
+DEFINE_LIST - childrens: 6
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: first
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: second
+        PARAMETER - childrens: 2
+            DATA_STRING - content: a
+            DATA_BOOLEAN - content: 0
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: third
+        PARAMETER_LIST - childrens: 2
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                DATA_BOOLEAN - content: 0
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                DATA_BOOLEAN - content: 0
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: third
+        PARAMETER_LIST - childrens: 2
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                DATA_BOOLEAN - content: 0
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                DATA_BOOLEAN - content: 0
+        BLOCK
+    DEFINE_FUNCTION - childrens: 3
+        DATA_STRING - content: fourth
+        PARAMETER_LIST - childrens: 3
+            PARAMETER - childrens: 2
+                DATA_STRING - content: a
+                DATA_BOOLEAN - content: 0
+            PARAMETER - childrens: 2
+                DATA_STRING - content: b
+                DATA_BOOLEAN - content: 0
+            PARAMETER - childrens: 2
+                DATA_STRING - content: c
+                DATA_BOOLEAN - content: 0
+        BLOCK
+    DEFINE_FUNCTION - childrens: 2
+        DATA_STRING - content: main
+        BLOCK - childrens: 2
+            VARIABLE_LIST - childrens: 3
+                DEFINE_VARIABLE - childrens: 2
+                    DATA_STRING - content: a
+                    DATA_BOOLEAN - content: 0
+                DEFINE_VARIABLE - childrens: 2
+                    DATA_STRING - content: b
+                    DATA_BOOLEAN - content: 0
+                DEFINE_VARIABLE - childrens: 2
+                    DATA_STRING - content: c
+                    DATA_BOOLEAN - content: 0
+            COMMAND_LIST - childrens: 4
+                FUNCTION_CALL - childrens: 1
+                    DATA_STRING - content: first
+                FUNCTION_CALL - childrens: 2
+                    DATA_STRING - content: second
+                    VARIABLE - childrens: 1
+                        DATA_STRING - content: a
+                FUNCTION_CALL - childrens: 2
+                    DATA_STRING - content: third
+                    EXPRESSION_LIST - childrens: 2
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: a
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: b
+                FUNCTION_CALL - childrens: 2
+                    DATA_STRING - content: fourth
+                    EXPRESSION_LIST - childrens: 2
+                        VARIABLE - childrens: 1
+                            DATA_STRING - content: a
+                        EXPRESSION_LIST - childrens: 2
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: b
+                            VARIABLE - childrens: 1
+                                DATA_STRING - content: c

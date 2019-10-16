@@ -32,3 +32,25 @@ Symbol: eee
 Symbol: fff
 === DEFINE VARIABLE ===
 
+DEFINE_LIST - childrens: 6
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: aaa
+        DATA_BOOLEAN - content: 0
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: bbb
+        DATA_CHARACTER - content:  
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: ccc
+        DATA_INTEGER - content: 0
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: ddd
+        DATA_FLOAT - content: 0.000000
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: eee
+        DATA_ARRAY - childrens: 1
+            DATA_CHARACTER - content:  
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: fff
+        DATA_ARRAY - childrens: 1
+            DATA_ARRAY - childrens: 1
+                DATA_CHARACTER - content:  

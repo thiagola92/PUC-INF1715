@@ -32,3 +32,22 @@ Symbol: s_1
 Symbol: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
 === DEFINE VARIABLE ===
 
+DEFINE_LIST - childrens: 6
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: s
+        DATA_CHARACTER - content:  
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: normal_name
+        DATA_CHARACTER - content:  
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: long_long_long_long_long_long_name
+        DATA_CHARACTER - content:  
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: s1
+        DATA_CHARACTER - content:  
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: s_1
+        DATA_CHARACTER - content:  
+    DEFINE_VARIABLE - childrens: 2
+        DATA_STRING - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
+        DATA_CHARACTER - content:  

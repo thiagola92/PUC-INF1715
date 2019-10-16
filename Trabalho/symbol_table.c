@@ -30,12 +30,11 @@ Scope* leave_scope(Scope* scope) {
 }
 
 void insert_symbol(Scope* scope, Node* node) {
-  Symbol* symbol = scope->symbol;
   Symbol* new_symbol = (Symbol*)safe_malloc(sizeof(Symbol));
+  Symbol* symbol = scope->symbol;
   
   new_symbol->node = node;
   new_symbol->next = NULL;
-  new_symbol->previous = NULL;
   
   if(scope->symbol == NULL) {
     scope->symbol = new_symbol;

@@ -131,7 +131,7 @@ int test(const char* path) {
 	yyparse();
 
   start_binding(__root__);
-	//print_tree(__root__, 0);
+	print_tree(__root__, 0);
 	printf("\n");
 
 	return 0;

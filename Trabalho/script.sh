@@ -2,7 +2,7 @@
 #Nome: Thiago Lages de Alencar
 #Matricula: 1721629
 
-c_files="main.c test.c util.c lex.yy.c monga.tab.c node.c symbol_table.c binding.c"
+c_files="main.c test.c util.c lex.yy.c monga.tab.c node.c symbol_table.c binding.c type.c"
 
 bison -d monga.y;
 flex monga.l;
