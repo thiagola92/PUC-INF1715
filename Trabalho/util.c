@@ -1,3 +1,6 @@
+// Nome: Thiago Lages de Alencar
+// Matricula: 1721629
+
 #include"util.h"
 
 void throw_malloc_error() {

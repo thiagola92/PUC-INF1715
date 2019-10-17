@@ -1,3 +1,6 @@
+// Nome: Thiago Lages de Alencar
+// Matricula: 1721629
+
 #include"type.h"
 
 void throw_type_error(const char* error) {

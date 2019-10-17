@@ -1,3 +1,6 @@
+// Nome: Thiago Lages de Alencar
+// Matricula: 1721629
+
 #ifndef _TYPE_
 #define _TYPE_
 

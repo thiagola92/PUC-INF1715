@@ -1,58 +1,46 @@
 Nome: Thiago Lages de Alencar
 Matricula: 1721629
 
-===== FILES =====
-Arquivos ".input" servem como entrada para testes.
-Arquivos ".output" são as saídas de testes.
-Arquivos ".answer" são gabaritos de testes.
+===== ARQUIVOS =====
 
-* test.h
-* test.c
-* script.sh
-* README
-* node.h
-* node.c
-* monga.y
-* monga.l
-* monga.h
+* binding.c
+* binding.h
 * main.c
+* monga.h
+* monga.l
+* monga.y
+* node.c
+* node.h
+* README
+* script.sh
+* symbol_table.c
+* symbol_table.h
+* test.c
+* test.h
+* type.c
+* type.h
+* util.c
+* util.h
 * tests/
-	* lexical/
-		* examples from 00 to 12
-	* syntax/
-		* correct/
-			* examples from 00 to 16
-		* wrong/
-			* examples from 00 to 20
-	* tree/
-		* examples from 00 to 16
 
-===== REQUERIMENTS =====
+===== REQUERIMENTOS =====
 
 Flex
 Bison
 GCC
 BASH
 
-===== RUNNING TESTS =====
-
-bash script.sh
-
-===== RUNNING SINGLE FILE =====
-Para rodar o arquivo "example-00.input":
+===== EXECUTANDO =====
 
 bison -d monga.y;
 flex monga.l;
-gcc main.c lex.yy.c monga.tab.c node.c test.c -Wall -o test;
+gcc main.c test.c util.c lex.yy.c monga.tab.c node.c symbol_table.c binding.c type.c -Wall -o test;
+./test tests/correct/example-27.input;
 
-./test tests/lexical/example-00.input lexical;
-./test tests/syntax/correct/example-00.input syntax;
-./test tests/syntax/wrong/example-00.input syntax;
-./test tests/tree/example-00.input tree;
+===== EXECUTANDO ARQUIVOS DA PASTA DE TESTES =====
 
-===== OUTPUT =====
+bash script.sh;
 
-lexical: Exibe tokens separados por linha.  
-syntax: Se falhar aparece na tela a linha do erro e finaliza com exit(1).  
-tree: Exibe a árvore criada.  
+A saida dos arquivos aparecem no arquivo com extensão ".output"
+
 
