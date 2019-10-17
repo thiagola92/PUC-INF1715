@@ -38,19 +38,19 @@ Symbol: main
 Symbol: fn
 === LEAVE SCOPE ===
 
-DEFINE_LIST - childrens: 3
-    DEFINE_VARIABLE - childrens: 2
-        DATA_STRING - content: a
-        DATA_INTEGER - content: 0
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: main
-        BLOCK - childrens: 1
-            DEFINE_VARIABLE - childrens: 2
-                DATA_STRING - content: b
-                DATA_INTEGER - content: 0
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: fn
-        BLOCK - childrens: 1
-            DEFINE_VARIABLE - childrens: 2
-                DATA_STRING - content: a
-                DATA_INTEGER - content: 0
+DEFINE_LIST - TYPE_VOID
+    DEFINE_VARIABLE - TYPE_VOID
+        DATA_STRING - TYPE_STRING - content: a
+        DATA_INTEGER - TYPE_INTEGER - content: 0
+    DEFINE_FUNCTION - TYPE_VOID
+        DATA_STRING - TYPE_STRING - content: main
+        BLOCK - TYPE_VOID
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: b
+                DATA_INTEGER - TYPE_INTEGER - content: 0
+    DEFINE_FUNCTION - TYPE_VOID
+        DATA_STRING - TYPE_STRING - content: fn
+        BLOCK - TYPE_VOID
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: a
+                DATA_INTEGER - TYPE_INTEGER - content: 0

@@ -87,8 +87,26 @@ const char* tag_to_string(TAG tag) {
 			return "DATA_ARRAY";
 		default:
 			return "UNKNOWN";
-			break;
 		}
+}
+
+const char* type_to_string(TYPE type) {
+  switch(type) {
+		case TYPE_BOOLEAN:
+			return "TYPE_BOOLEAN";
+		case TYPE_CHARACTER:
+			return "TYPE_CHARACTER";
+		case TYPE_INTEGER:
+			return "TYPE_INTEGER";
+		case TYPE_FLOAT:
+			return "TYPE_FLOAT";
+		case TYPE_STRING:
+			return "TYPE_STRING";
+		case TYPE_ARRAY:
+			return "TYPE_ARRAY";
+		default:
+			return "TYPE_VOID";
+	}
 }
 
 void print_tree(Node* node, int tabs) {
@@ -98,9 +116,8 @@ void print_tree(Node* node, int tabs) {
 		printf("    ");
 
 	printf("%s", tag_to_string(node->tag));
-
-	if(node->number_of_childs > 0)
-		printf(" - childrens: %d", node->number_of_childs);
+	
+	printf(" - %s", type_to_string(node->type));
 
 	switch(node->tag) {
 		case DATA_BOOLEAN:
@@ -131,6 +148,7 @@ int test(const char* path) {
 	yyparse();
 
   start_binding(__root__);
+  type_node(__root__);
 	print_tree(__root__, 0);
 	printf("\n");
 

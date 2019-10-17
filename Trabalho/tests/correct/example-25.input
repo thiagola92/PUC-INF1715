@@ -1,0 +1,34 @@
+# Testing assignment
+
+main() {
+	a : [bool];
+	b : [char];
+	c : [int];
+	d : [float];
+	
+	f : bool;
+	g : char;
+	h : int;
+	i : float;
+  
+	a = new bool[2];
+	a[0] = true;
+	a[1] = false;
+  
+	b = new char[2];
+	b[0] = 'a';
+	b[1] = 'b';
+  
+	c = new int[2];
+	c[0] = 1;
+	c[1] = 2;
+  
+	d = new float[2];
+	d[0] = 1.0;
+	d[1] = 1.5;
+	
+	f = a[0];
+	g = b[1];
+	h = c[0];
+	i = d[1];
+}

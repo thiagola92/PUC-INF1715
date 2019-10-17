@@ -194,7 +194,7 @@ function_call:		identifier TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PA
 new_array:	TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(NEW_ARRAY, $2, $4); }
 		;
 
-expression_list:	expression TOKEN_COMMA expression_list	{ $$ = append_node(EXPRESSION_LIST, $1, $3); }
+expression_list:	expression_list TOKEN_COMMA expression { $$ = append_node(EXPRESSION_LIST, $1, $3); }
 			| expression 				{ $$ = $1; }
 			;
 

@@ -71,42 +71,42 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - childrens: 2
-    DATA_STRING - content: main
-    BLOCK - childrens: 1
-        COMMAND_LIST - childrens: 6
-            IF - childrens: 2
-                DATA_BOOLEAN - content: 1
-                BLOCK
-            IF - childrens: 3
-                DATA_BOOLEAN - content: 0
-                BLOCK
-                BLOCK
-            IF - childrens: 2
-                DATA_BOOLEAN - content: 1
-                BLOCK - childrens: 1
-                    IF - childrens: 2
-                        DATA_BOOLEAN - content: 1
-                        BLOCK
-            IF - childrens: 2
-                DATA_BOOLEAN - content: 1
-                BLOCK - childrens: 1
-                    IF - childrens: 3
-                        DATA_BOOLEAN - content: 0
-                        BLOCK
-                        BLOCK
-            IF - childrens: 3
-                DATA_BOOLEAN - content: 0
-                BLOCK
-                BLOCK - childrens: 1
-                    IF - childrens: 2
-                        DATA_BOOLEAN - content: 1
-                        BLOCK
-            IF - childrens: 3
-                DATA_BOOLEAN - content: 0
-                BLOCK
-                BLOCK - childrens: 1
-                    IF - childrens: 3
-                        DATA_BOOLEAN - content: 0
-                        BLOCK
-                        BLOCK
+DEFINE_FUNCTION - TYPE_VOID
+    DATA_STRING - TYPE_STRING - content: main
+    BLOCK - TYPE_VOID
+        COMMAND_LIST - TYPE_VOID
+            IF - TYPE_VOID
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK - TYPE_VOID
+            IF - TYPE_VOID
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK - TYPE_VOID
+                BLOCK - TYPE_VOID
+            IF - TYPE_VOID
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK - TYPE_VOID
+                    IF - TYPE_VOID
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                        BLOCK - TYPE_VOID
+            IF - TYPE_VOID
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK - TYPE_VOID
+                    IF - TYPE_VOID
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                        BLOCK - TYPE_VOID
+                        BLOCK - TYPE_VOID
+            IF - TYPE_VOID
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK - TYPE_VOID
+                BLOCK - TYPE_VOID
+                    IF - TYPE_VOID
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                        BLOCK - TYPE_VOID
+            IF - TYPE_VOID
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK - TYPE_VOID
+                BLOCK - TYPE_VOID
+                    IF - TYPE_VOID
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                        BLOCK - TYPE_VOID
+                        BLOCK - TYPE_VOID

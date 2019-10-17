@@ -31,19 +31,19 @@ Symbol: first
 Symbol: seventh
 === LEAVE SCOPE ===
 
-DEFINE_LIST - childrens: 2
-    DEFINE_FUNCTION - childrens: 2
-        DATA_STRING - content: first
-        BLOCK - childrens: 1
-            RETURN - childrens: 1
-                DATA_BOOLEAN - content: 1
-    DEFINE_FUNCTION - childrens: 4
-        DATA_STRING - content: seventh
-        PARAMETER - childrens: 2
-            DATA_STRING - content: a
-            DATA_BOOLEAN - content: 0
-        DATA_BOOLEAN - content: 0
-        BLOCK - childrens: 1
-            RETURN - childrens: 1
-                VARIABLE - childrens: 1
-                    DATA_STRING - content: a
+DEFINE_LIST - TYPE_VOID
+    DEFINE_FUNCTION - TYPE_VOID
+        DATA_STRING - TYPE_STRING - content: first
+        BLOCK - TYPE_VOID
+            RETURN - TYPE_VOID
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+    DEFINE_FUNCTION - TYPE_VOID
+        DATA_STRING - TYPE_STRING - content: seventh
+        PARAMETER - TYPE_VOID
+            DATA_STRING - TYPE_STRING - content: a
+            DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+        BLOCK - TYPE_VOID
+            RETURN - TYPE_VOID
+                VARIABLE - TYPE_BOOLEAN
+                    DATA_STRING - TYPE_STRING - content: a

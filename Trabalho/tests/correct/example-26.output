@@ -1,0 +1,201 @@
+Scope
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: x1
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+=== BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+Symbol: main
+=== LEAVE SCOPE ===
+
+DEFINE_FUNCTION - TYPE_VOID
+    DATA_STRING - TYPE_STRING - content: main
+    BLOCK - TYPE_VOID
+        VARIABLE_LIST - TYPE_VOID
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: x1
+                DATA_INTEGER - TYPE_INTEGER - content: 0
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: x2
+                DATA_INTEGER - TYPE_INTEGER - content: 0
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: x3
+                DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+        COMMAND_LIST - TYPE_VOID
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_INTEGER
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 3
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_FLOAT
+                    EXPRESSION_CAST - TYPE_FLOAT
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+                    DATA_FLOAT - TYPE_FLOAT - content: 3.000000
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_FLOAT
+                    DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                    DATA_FLOAT - TYPE_FLOAT - content: 3.000000
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_FLOAT
+                    DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                    EXPRESSION_CAST - TYPE_FLOAT
+                        DATA_INTEGER - TYPE_INTEGER - content: 3
+                        DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x2
+                DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_FLOAT
+                    DATA_STRING - TYPE_STRING - content: x3
+                DATA_FLOAT - TYPE_FLOAT - content: 2.000000
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
+                        DATA_STRING - TYPE_STRING - content: x2
+                    VARIABLE - TYPE_INTEGER
+                        DATA_STRING - TYPE_STRING - content: x2
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_FLOAT
+                    EXPRESSION_CAST - TYPE_FLOAT
+                        VARIABLE - TYPE_INTEGER
+                            DATA_STRING - TYPE_STRING - content: x2
+                        DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+                    VARIABLE - TYPE_FLOAT
+                        DATA_STRING - TYPE_STRING - content: x3
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
+                        DATA_STRING - TYPE_STRING - content: x3
+                    VARIABLE - TYPE_FLOAT
+                        DATA_STRING - TYPE_STRING - content: x3
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: x1
+                EXPRESSION_ADD - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
+                        DATA_STRING - TYPE_STRING - content: x3
+                    EXPRESSION_CAST - TYPE_FLOAT
+                        VARIABLE - TYPE_INTEGER
+                            DATA_STRING - TYPE_STRING - content: x2
+                        DATA_FLOAT - TYPE_FLOAT - content: 0.000000

@@ -1,0 +1,398 @@
+Scope
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+Symbol: c
+Symbol: d
+Symbol: f
+Symbol: g
+Symbol: h
+Symbol: i
+=== BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+Symbol: main
+=== LEAVE SCOPE ===
+
+DEFINE_FUNCTION - TYPE_VOID
+    DATA_STRING - TYPE_STRING - content: main
+    BLOCK - TYPE_VOID
+        VARIABLE_LIST - TYPE_VOID
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: a
+                DATA_ARRAY - TYPE_ARRAY
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: b
+                DATA_ARRAY - TYPE_ARRAY
+                    DATA_CHARACTER - TYPE_CHARACTER - content:  
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: c
+                DATA_ARRAY - TYPE_ARRAY
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: d
+                DATA_ARRAY - TYPE_ARRAY
+                    DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: f
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: g
+                DATA_CHARACTER - TYPE_CHARACTER - content:  
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: h
+                DATA_INTEGER - TYPE_INTEGER - content: 0
+            DEFINE_VARIABLE - TYPE_VOID
+                DATA_STRING - TYPE_STRING - content: i
+                DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+        COMMAND_LIST - TYPE_VOID
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_ARRAY
+                    DATA_STRING - TYPE_STRING - content: a
+                NEW_ARRAY - TYPE_VOID
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_BOOLEAN
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: a
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_BOOLEAN
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: a
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_ARRAY
+                    DATA_STRING - TYPE_STRING - content: b
+                NEW_ARRAY - TYPE_VOID
+                    DATA_CHARACTER - TYPE_CHARACTER - content:  
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_CHARACTER
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: b
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_CHARACTER - TYPE_CHARACTER - content: a
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_CHARACTER
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: b
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_CHARACTER - TYPE_CHARACTER - content: b
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_ARRAY
+                    DATA_STRING - TYPE_STRING - content: c
+                NEW_ARRAY - TYPE_VOID
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_INTEGER
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: c
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_INTEGER
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: c
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_ARRAY
+                    DATA_STRING - TYPE_STRING - content: d
+                NEW_ARRAY - TYPE_VOID
+                    DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_FLOAT
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: d
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+            ASSIGNMENT - TYPE_VOID
+                ARRAY - TYPE_FLOAT
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: d
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_BOOLEAN
+                    DATA_STRING - TYPE_STRING - content: f
+                ARRAY - TYPE_BOOLEAN
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: a
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_CHARACTER
+                    DATA_STRING - TYPE_STRING - content: g
+                ARRAY - TYPE_CHARACTER
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: b
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_INTEGER
+                    DATA_STRING - TYPE_STRING - content: h
+                ARRAY - TYPE_INTEGER
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: c
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+            ASSIGNMENT - TYPE_VOID
+                VARIABLE - TYPE_FLOAT
+                    DATA_STRING - TYPE_STRING - content: i
+                ARRAY - TYPE_FLOAT
+                    VARIABLE - TYPE_ARRAY
+                        DATA_STRING - TYPE_STRING - content: d
+                    DATA_INTEGER - TYPE_INTEGER - content: 1

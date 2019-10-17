@@ -5,6 +5,8 @@
 #define _TEST_
 
 #include"monga.h"
+#include"binding.h"
+#include"type.h"
 
 extern Node* __root__;
 

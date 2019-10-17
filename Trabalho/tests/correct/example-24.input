@@ -1,0 +1,29 @@
+# Testing calling function
+
+first() : int {
+  return 1;
+}
+
+second(a : bool) : bool {
+  return true;
+}
+
+third(a : bool, b : bool) : char {
+  return 'a';
+}
+
+fourth(a : bool, b : bool) : float {
+  return 1.0;
+}
+
+main() {
+  a : int;
+  b : bool;
+  c : char;
+  d : float;
+
+	a = first();
+	b = second(a);
+	c = third(a,b);
+	d = fourth(a, b);
+}

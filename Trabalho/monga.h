@@ -5,7 +5,6 @@
 #define _MONGA_
 
 #include<stdio.h>
-#include"binding.h"
 #include"node.h"
 #include"monga.tab.h"
 

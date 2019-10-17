@@ -64,6 +64,16 @@ typedef enum TAG {
 	DATA_ARRAY,
 } TAG;
 
+typedef enum TYPE {
+  TYPE_VOID,
+  TYPE_BOOLEAN,
+  TYPE_CHARACTER,
+  TYPE_INTEGER,
+  TYPE_FLOAT,
+  TYPE_STRING,
+  TYPE_ARRAY,
+} TYPE;
+
 typedef struct Node {
 	TAG tag;
 
@@ -83,6 +93,8 @@ typedef struct Node {
 	
 	TYPE type;
 } Node;
+
+Node* malloc_node();
 
 Node* create_node_bool(const int b);
 Node* create_node_char(const char c);
