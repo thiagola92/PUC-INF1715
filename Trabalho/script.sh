@@ -25,4 +25,4 @@ for file_input in tests/correct/*\.input; do
 	fi
 done
 
-#rm lex.yy.c monga.tab.c monga.tab.h test;
+rm lex.yy.c monga.tab.c monga.tab.h test;

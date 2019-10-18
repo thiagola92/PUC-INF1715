@@ -1,6 +1,6 @@
 # Testing functions returning
 
-first() {
+first() : bool {
 	return true;
 }
 

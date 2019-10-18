@@ -28,51 +28,47 @@ void cast_to_float(Node* node) {
   type_node(node->content.n[index]);
 }
 
-TYPE type_from_array(Node* node) {
-  return node->content.n[1]->content.n[0]->type;
+void check_assignment_type(Node* node) {
+  if(node->content.n[0]->type != node->content.n[1]->type)
+    throw_type_error("value must be same as variable type");
 }
 
-TYPE type_from_variable(Node* node) {
-  return node->content.n[1]->type;
+void check_return_type(Node* node) {
+  if(type_from_function_call(node->definition) != node->content.n[0]->type)
+    throw_type_error("value must be same as function return type");
 }
 
-TYPE type_from_function_call(Node* node) {
+void check_logical_type(Node* node) {
+  if(node->content.n[0]->type != TYPE_BOOLEAN || node->content.n[0]->type != TYPE_BOOLEAN)
+    throw_type_error("value must be boolean");
+}
+
+void check_relational_type_1(Node* node) {
+  if(node->content.n[0]->type == node->content.n[1]->type)
+    return;
+    
+  throw_numeric_error(node);
+  
+  cast_to_float(node);
+}
+
+void check_relational_type_2(Node* node) {
+  throw_numeric_error(node);
+    
+  if(node->content.n[0]->type == node->content.n[1]->type)
+    return;
+  
+  cast_to_float(node);
+}
+
+TYPE type_from_function_call(Node* node) {    
   if(node->number_of_childs == 4)
     return node->content.n[2]->type;
     
-  if(node->number_of_childs == 3 && node->content.n[2]->tag != BLOCK)
+  if(node->content.n[1]->tag != PARAMETER || node->content.n[1]->tag != PARAMETER_LIST)
     return node->content.n[1]->type;
     
   return TYPE_VOID;
-}
-
-TYPE type_from_logical(Node* node) {
-  if(node->content.n[0]->type != TYPE_BOOLEAN || node->content.n[0]->type != TYPE_BOOLEAN)
-    throw_type_error("value must be boolean");
-    
-  return TYPE_BOOLEAN;
-}
-
-TYPE type_from_relational_1(Node* node) {
-  if(node->content.n[0]->type == node->content.n[1]->type)
-    return TYPE_BOOLEAN;
-    
-  throw_numeric_error(node);
-  
-  cast_to_float(node);
-  
-  return TYPE_BOOLEAN;
-}
-
-TYPE type_from_relational_2(Node* node) {
-  throw_numeric_error(node);
-    
-  if(node->content.n[0]->type == node->content.n[1]->type)
-    return TYPE_BOOLEAN;
-  
-  cast_to_float(node);
-  
-  return TYPE_BOOLEAN;
 }
 
 TYPE type_from_arithmetic(Node* node) {
@@ -95,40 +91,55 @@ TYPE type_node(Node* node) {
   type_child(node);
   
   switch(node->tag) {
+    case ASSIGNMENT:
+      check_assignment_type(node);
+      break;
     case RETURN:
+      check_return_type(node);
       break;
     case ARRAY:
-      node->type = type_from_array(node->content.n[0]->definition);
+      node->type = node->content.n[0]->definition->content.n[1]->content.n[0]->type;
       break;
     case VARIABLE:
-      node->type = type_from_variable(node->definition);
+      node->type = node->definition->content.n[1]->type;
       break;
     case FUNCTION_CALL:
       node->type = type_from_function_call(node->definition);
       break;
+    case NEW_ARRAY:
+      node->type = TYPE_ARRAY;
+      break;
     case EXPRESSION_OR:
-      node->type = type_from_logical(node);
+      check_logical_type(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_AND:
-      node->type = type_from_logical(node);
+      check_logical_type(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_EQUAL:
-      node->type = type_from_relational_1(node);
+      check_relational_type_1(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_NOT_EQUAL:
-      node->type = type_from_relational_1(node);
+      check_relational_type_1(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_GREATER:
-      node->type = type_from_relational_2(node);
+      check_relational_type_2(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_GREATER_EQUAL:
-      node->type = type_from_relational_2(node);
+      check_relational_type_2(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_LESS:
-      node->type = type_from_relational_2(node);
+      check_relational_type_2(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_LESS_EQUAL:
-      node->type = type_from_relational_2(node);
+      check_relational_type_2(node);
+      node->type = TYPE_BOOLEAN;
       break;
     case EXPRESSION_SUB:
       node->type = type_from_arithmetic(node);
@@ -164,7 +175,7 @@ TYPE type_node(Node* node) {
       node->type = TYPE_FLOAT;
       break;
     case DATA_STRING:
-      node->type = TYPE_STRING;
+      node->type = TYPE_ARRAY;
       break;
     case DATA_ARRAY:
       node->type = TYPE_ARRAY;

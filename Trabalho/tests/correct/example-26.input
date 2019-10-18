@@ -1,4 +1,4 @@
-# Testing expressions
+# Testing cast
 
 main() {
 	x1 : int;

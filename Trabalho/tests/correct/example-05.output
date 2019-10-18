@@ -6,6 +6,8 @@ Scope
 Scope
 === ENTER BLOCK ===
 Scope
+=== BIND RETURN ===
+Scope
 === LEAVE SCOPE ===
 Scope
 Symbol: first
@@ -22,6 +24,8 @@ Symbol: a
 Scope
 === ENTER BLOCK ===
 Scope
+=== BIND RETURN ===
+Scope
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -33,17 +37,18 @@ Symbol: seventh
 
 DEFINE_LIST - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: first
+        DATA_STRING - TYPE_ARRAY - content: first
+        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
             RETURN - TYPE_VOID
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: seventh
+        DATA_STRING - TYPE_ARRAY - content: seventh
         PARAMETER - TYPE_VOID
-            DATA_STRING - TYPE_STRING - content: a
+            DATA_STRING - TYPE_ARRAY - content: a
             DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
             RETURN - TYPE_VOID
                 VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: a
+                    DATA_STRING - TYPE_ARRAY - content: a

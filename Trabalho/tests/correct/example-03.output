@@ -89,34 +89,34 @@ Symbol: fourth
 
 DEFINE_LIST - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: first
+        DATA_STRING - TYPE_ARRAY - content: first
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: second
+        DATA_STRING - TYPE_ARRAY - content: second
         PARAMETER - TYPE_VOID
-            DATA_STRING - TYPE_STRING - content: a
+            DATA_STRING - TYPE_ARRAY - content: a
             DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: third
+        DATA_STRING - TYPE_ARRAY - content: third
         PARAMETER_LIST - TYPE_VOID
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: a
+                DATA_STRING - TYPE_ARRAY - content: a
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: b
+                DATA_STRING - TYPE_ARRAY - content: b
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: fourth
+        DATA_STRING - TYPE_ARRAY - content: fourth
         PARAMETER_LIST - TYPE_VOID
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: a
+                DATA_STRING - TYPE_ARRAY - content: a
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: b
+                DATA_STRING - TYPE_ARRAY - content: b
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: c
+                DATA_STRING - TYPE_ARRAY - content: c
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID

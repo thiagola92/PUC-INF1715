@@ -11,13 +11,13 @@ void throw_numeric_error(Node* node);
 
 void cast_to_float(Node* node);
 
-TYPE type_from_array(Node* node);
-TYPE type_from_variable(Node* node);
-TYPE type_from_function_call(Node* node);
+void check_assignment_type(Node* node);
+void check_return_type(Node* node);
+void check_logical_type(Node* node); // && ||
+void check_relational_type_1(Node* node); // == ~=
+void check_relational_type_2(Node* node); // > >= < <=
 
-TYPE type_from_logical(Node* node);
-TYPE type_from_relational_1(Node* node); // == ~=
-TYPE type_from_relational_2(Node* node); // > >= < <=
+TYPE type_from_function_call(Node* node);
 TYPE type_from_arithmetic(Node* node);
 
 void type_child(Node* node);

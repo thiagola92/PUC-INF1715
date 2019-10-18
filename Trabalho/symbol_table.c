@@ -72,3 +72,19 @@ void free_symbols(Symbol* symbol) {
   free_symbols(symbol->next);
   free(symbol);
 }
+
+Node* get_last_symbol(Scope* scope, TAG tag) {
+  Symbol* symbol = scope->symbol;
+  
+  while(symbol != NULL) {
+    if(symbol->next == NULL && symbol->node->tag == tag)
+      return symbol->node;
+      
+    symbol = symbol->next;
+  }
+  
+  if(scope->previous == NULL)
+    return NULL;
+  
+  return get_last_symbol(scope->previous, tag);
+}

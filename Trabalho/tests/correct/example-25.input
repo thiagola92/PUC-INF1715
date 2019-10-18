@@ -1,4 +1,4 @@
-# Testing assignment
+# Testing array
 
 main() {
 	a : [bool];

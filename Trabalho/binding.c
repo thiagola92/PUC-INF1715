@@ -29,7 +29,7 @@ void print_scope_state(Scope* scope, const char* text) {
 }
 
 void throw_binding_error(const char* name) {
-	printf("Bingind error: No definition for %s\n", name);
+	printf("Binding error: No definition for %s\n", name);
 	exit(2);
 }
 
@@ -49,18 +49,19 @@ void binding(Scope* scope, Node* node) {
   node->definition = definition_node;
 }
 
+void binding_return(Scope* scope, Node* node) {
+  Node* definition_node = get_last_symbol(scope, DEFINE_FUNCTION);
+  
+  if(definition_node == NULL)
+    throw_binding_error("return");
+    
+  node->definition = definition_node;
+}
+
 void check_node(Scope* scope, Node* node) {
   int leave_scope_at_end = false;
 
   switch(node->tag) {
-    case DEFINE_VARIABLE:
-      insert_symbol(scope, node);
-      print_scope_state(scope, "=== DEFINE VARIABLE ===");
-      break;
-    case PARAMETER:
-      insert_symbol(scope, node);
-      print_scope_state(scope, "=== DEFINE PARAMETER ===");
-      break;
     case VARIABLE:
       binding(scope, node);
       print_scope_state(scope, "=== BIND VARIABLE ===");
@@ -68,6 +69,18 @@ void check_node(Scope* scope, Node* node) {
     case FUNCTION_CALL:
       binding(scope, node);
       print_scope_state(scope, "=== BIND FUNCTION CALL ===");
+      break;
+    case RETURN:
+      binding_return(scope, node);
+      print_scope_state(scope, "=== BIND RETURN ===");
+      break;
+    case DEFINE_VARIABLE:
+      insert_symbol(scope, node);
+      print_scope_state(scope, "=== DEFINE VARIABLE ===");
+      break;
+    case PARAMETER:
+      insert_symbol(scope, node);
+      print_scope_state(scope, "=== DEFINE PARAMETER ===");
       break;
     case DEFINE_FUNCTION:
       insert_symbol(scope, node);
