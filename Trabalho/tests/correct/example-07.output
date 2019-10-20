@@ -27,17 +27,17 @@ Symbol: first
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - TYPE_VOID
-    DATA_STRING - TYPE_ARRAY - content: first
+    DATA_STRING - TYPE_STRING - content: first
     BLOCK - TYPE_VOID
         VARIABLE_LIST - TYPE_VOID
             DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: a
+                DATA_STRING - TYPE_STRING - content: a
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: b
+                DATA_STRING - TYPE_STRING - content: b
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         COMMAND_LIST - TYPE_VOID
             FUNCTION_CALL - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: first
+                DATA_STRING - TYPE_STRING - content: first
             FUNCTION_CALL - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: first
+                DATA_STRING - TYPE_STRING - content: first

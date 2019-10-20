@@ -194,136 +194,136 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - TYPE_VOID
-    DATA_STRING - TYPE_ARRAY - content: main
+    DATA_STRING - TYPE_STRING - content: main
     BLOCK - TYPE_VOID
         VARIABLE_LIST - TYPE_VOID
             DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: x1
+                DATA_STRING - TYPE_STRING - content: x1
                 DATA_INTEGER - TYPE_INTEGER - content: 0
             DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: x2
+                DATA_STRING - TYPE_STRING - content: x2
                 DATA_INTEGER - TYPE_INTEGER - content: 0
             DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: x3
+                DATA_STRING - TYPE_STRING - content: x3
                 DATA_INTEGER - TYPE_INTEGER - content: 0
         COMMAND_LIST - TYPE_VOID
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x1
+                    DATA_STRING - TYPE_STRING - content: x1
                 DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x2
+                    DATA_STRING - TYPE_STRING - content: x2
                 DATA_INTEGER - TYPE_INTEGER - content: 20
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_ADD - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x2
+                        DATA_STRING - TYPE_STRING - content: x2
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_ADD - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_ADD - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_ADD - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_SUB - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x2
+                        DATA_STRING - TYPE_STRING - content: x2
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_SUB - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_SUB - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_SUB - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_MULT - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x2
+                        DATA_STRING - TYPE_STRING - content: x2
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_MULT - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_MULT - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_MULT - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_DIV - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x2
+                        DATA_STRING - TYPE_STRING - content: x2
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x2
+                        DATA_STRING - TYPE_STRING - content: x2
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_DIV - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_DIV - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
             ASSIGNMENT - TYPE_VOID
                 VARIABLE - TYPE_INTEGER
-                    DATA_STRING - TYPE_ARRAY - content: x3
+                    DATA_STRING - TYPE_STRING - content: x3
                 EXPRESSION_DIV - TYPE_INTEGER
                     VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_ARRAY - content: x1
+                        DATA_STRING - TYPE_STRING - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10

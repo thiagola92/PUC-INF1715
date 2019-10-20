@@ -40,17 +40,17 @@ Symbol: fn
 
 DEFINE_LIST - TYPE_VOID
     DEFINE_VARIABLE - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: a
+        DATA_STRING - TYPE_STRING - content: a
         DATA_INTEGER - TYPE_INTEGER - content: 0
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: main
+        DATA_STRING - TYPE_STRING - content: main
         BLOCK - TYPE_VOID
             DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: b
+                DATA_STRING - TYPE_STRING - content: b
                 DATA_INTEGER - TYPE_INTEGER - content: 0
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: fn
+        DATA_STRING - TYPE_STRING - content: fn
         BLOCK - TYPE_VOID
             DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: a
+                DATA_STRING - TYPE_STRING - content: a
                 DATA_INTEGER - TYPE_INTEGER - content: 0

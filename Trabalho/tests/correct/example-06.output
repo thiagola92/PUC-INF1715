@@ -202,80 +202,80 @@ Symbol: main
 
 DEFINE_LIST - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: first
+        DATA_STRING - TYPE_STRING - content: first
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: second
+        DATA_STRING - TYPE_STRING - content: second
         PARAMETER - TYPE_VOID
-            DATA_STRING - TYPE_ARRAY - content: a
+            DATA_STRING - TYPE_STRING - content: a
             DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: third
+        DATA_STRING - TYPE_STRING - content: third
         PARAMETER_LIST - TYPE_VOID
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: a
+                DATA_STRING - TYPE_STRING - content: a
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: b
+                DATA_STRING - TYPE_STRING - content: b
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: third
+        DATA_STRING - TYPE_STRING - content: third
         PARAMETER_LIST - TYPE_VOID
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: a
+                DATA_STRING - TYPE_STRING - content: a
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: b
+                DATA_STRING - TYPE_STRING - content: b
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: fourth
+        DATA_STRING - TYPE_STRING - content: fourth
         PARAMETER_LIST - TYPE_VOID
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: a
+                DATA_STRING - TYPE_STRING - content: a
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: b
+                DATA_STRING - TYPE_STRING - content: b
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_ARRAY - content: c
+                DATA_STRING - TYPE_STRING - content: c
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
         BLOCK - TYPE_VOID
     DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_ARRAY - content: main
+        DATA_STRING - TYPE_STRING - content: main
         BLOCK - TYPE_VOID
             VARIABLE_LIST - TYPE_VOID
                 DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_ARRAY - content: a
+                    DATA_STRING - TYPE_STRING - content: a
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                 DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_ARRAY - content: b
+                    DATA_STRING - TYPE_STRING - content: b
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                 DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_ARRAY - content: c
+                    DATA_STRING - TYPE_STRING - content: c
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
             COMMAND_LIST - TYPE_VOID
                 FUNCTION_CALL - TYPE_VOID
-                    DATA_STRING - TYPE_ARRAY - content: first
+                    DATA_STRING - TYPE_STRING - content: first
                 FUNCTION_CALL - TYPE_VOID
-                    DATA_STRING - TYPE_ARRAY - content: second
+                    DATA_STRING - TYPE_STRING - content: second
                     VARIABLE - TYPE_BOOLEAN
-                        DATA_STRING - TYPE_ARRAY - content: a
+                        DATA_STRING - TYPE_STRING - content: a
                 FUNCTION_CALL - TYPE_VOID
-                    DATA_STRING - TYPE_ARRAY - content: third
+                    DATA_STRING - TYPE_STRING - content: third
                     EXPRESSION_LIST - TYPE_VOID
                         VARIABLE - TYPE_BOOLEAN
-                            DATA_STRING - TYPE_ARRAY - content: a
+                            DATA_STRING - TYPE_STRING - content: a
                         VARIABLE - TYPE_BOOLEAN
-                            DATA_STRING - TYPE_ARRAY - content: b
+                            DATA_STRING - TYPE_STRING - content: b
                 FUNCTION_CALL - TYPE_VOID
-                    DATA_STRING - TYPE_ARRAY - content: fourth
+                    DATA_STRING - TYPE_STRING - content: fourth
                     EXPRESSION_LIST - TYPE_VOID
                         VARIABLE - TYPE_BOOLEAN
-                            DATA_STRING - TYPE_ARRAY - content: a
+                            DATA_STRING - TYPE_STRING - content: a
                         VARIABLE - TYPE_BOOLEAN
-                            DATA_STRING - TYPE_ARRAY - content: b
+                            DATA_STRING - TYPE_STRING - content: b
                         VARIABLE - TYPE_BOOLEAN
-                            DATA_STRING - TYPE_ARRAY - content: c
+                            DATA_STRING - TYPE_STRING - content: c

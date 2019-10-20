@@ -16,21 +16,39 @@ void throw_numeric_error(Node* node) {
     throw_type_error("value must be integer or float");
 }
 
-void cast_to_float(Node* node) {
-  int index;
-  
-  if(node->content.n[0]->type == node->content.n[1]->type)
-    return;
-  
-  index = (node->content.n[0]->type == TYPE_INTEGER) ? 0 : 1;
-  
+void cast_to_integer(Node* node, int index) {  
+  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_int(0));
+  type_node(node->content.n[index]);
+}
+
+void cast_to_float(Node* node, int index) {  
   node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_float(0.0));
   type_node(node->content.n[index]);
 }
 
+void cast_to_array(Node* node, int index) {  
+  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_one_child(DATA_ARRAY, create_node_char(' ')));
+  type_node(node->content.n[index]);
+}
+
+void cast_integer_to_float(Node* node) {
+  node->content.n[0]->type == TYPE_INTEGER ? cast_to_float(node, 0) : cast_to_float(node, 1);
+}
+
 void check_assignment_type(Node* node) {
-  if(node->content.n[0]->type != node->content.n[1]->type)
-    throw_type_error("value must be same as variable type");
+  if(node->content.n[0]->type == node->content.n[1]->type)
+    return;
+    
+  if(node->content.n[0]->type == TYPE_FLOAT && node->content.n[1]->type == TYPE_INTEGER)
+    return cast_to_float(node, 1);
+    
+  if(node->content.n[0]->type == TYPE_INTEGER && node->content.n[1]->type == TYPE_FLOAT)
+    return cast_to_integer(node, 1);
+    
+  if(node->content.n[0]->type == TYPE_ARRAY && node->content.n[1]->type == TYPE_STRING)
+    return cast_to_array(node, 1);
+  
+  throw_type_error("value must be same as variable type");
 }
 
 void check_return_type(Node* node) {
@@ -49,7 +67,7 @@ void check_relational_type_1(Node* node) {
     
   throw_numeric_error(node);
   
-  cast_to_float(node);
+  cast_integer_to_float(node);
 }
 
 void check_relational_type_2(Node* node) {
@@ -58,7 +76,7 @@ void check_relational_type_2(Node* node) {
   if(node->content.n[0]->type == node->content.n[1]->type)
     return;
   
-  cast_to_float(node);
+  cast_integer_to_float(node);
 }
 
 TYPE type_from_function_call(Node* node) {    
@@ -77,7 +95,7 @@ TYPE type_from_arithmetic(Node* node) {
   if(node->content.n[0]->type == node->content.n[1]->type)
     return node->content.n[0]->type;
   
-  cast_to_float(node);
+  cast_integer_to_float(node);
   
   return TYPE_FLOAT;
 }
@@ -175,7 +193,7 @@ TYPE type_node(Node* node) {
       node->type = TYPE_FLOAT;
       break;
     case DATA_STRING:
-      node->type = TYPE_ARRAY;
+      node->type = TYPE_STRING;
       break;
     case DATA_ARRAY:
       node->type = TYPE_ARRAY;
