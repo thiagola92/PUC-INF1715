@@ -9,10 +9,10 @@ void throw_type_error(const char* error) {
 }
 
 void throw_numeric_error(Node* node) {
-  if(node->content.n[0]->type != TYPE_INTEGER && node->content.n[0]->type != TYPE_FLOAT)
+  if(node->content.n[0]->type != INTEGER && node->content.n[0]->type != FLOAT)
     throw_type_error("value must be integer or float");
     
-  if(node->content.n[1]->type != TYPE_INTEGER && node->content.n[1]->type != TYPE_FLOAT)
+  if(node->content.n[1]->type != INTEGER && node->content.n[1]->type != FLOAT)
     throw_type_error("value must be integer or float");
 }
 
@@ -32,20 +32,20 @@ void cast_to_array(Node* node, int index) {
 }
 
 void cast_integer_to_float(Node* node) {
-  node->content.n[0]->type == TYPE_INTEGER ? cast_to_float(node, 0) : cast_to_float(node, 1);
+  node->content.n[0]->type == INTEGER ? cast_to_float(node, 0) : cast_to_float(node, 1);
 }
 
 void check_assignment_type(Node* node) {
   if(node->content.n[0]->type == node->content.n[1]->type)
     return;
     
-  if(node->content.n[0]->type == TYPE_FLOAT && node->content.n[1]->type == TYPE_INTEGER)
+  if(node->content.n[0]->type == FLOAT && node->content.n[1]->type == INTEGER)
     return cast_to_float(node, 1);
     
-  if(node->content.n[0]->type == TYPE_INTEGER && node->content.n[1]->type == TYPE_FLOAT)
+  if(node->content.n[0]->type == INTEGER && node->content.n[1]->type == FLOAT)
     return cast_to_integer(node, 1);
     
-  if(node->content.n[0]->type == TYPE_ARRAY && node->content.n[1]->type == TYPE_STRING)
+  if(node->content.n[0]->type == ARRAY && node->content.n[1]->type == STRING)
     return cast_to_array(node, 1);
   
   throw_type_error("value must be same as variable type");
@@ -57,7 +57,7 @@ void check_return_type(Node* node) {
 }
 
 void check_logical_type(Node* node) {
-  if(node->content.n[0]->type != TYPE_BOOLEAN || node->content.n[0]->type != TYPE_BOOLEAN)
+  if(node->content.n[0]->type != BOOLEAN || node->content.n[0]->type != BOOLEAN)
     throw_type_error("value must be boolean");
 }
 
@@ -86,7 +86,7 @@ TYPE type_from_function_call(Node* node) {
   if(node->content.n[1]->tag != PARAMETER || node->content.n[1]->tag != PARAMETER_LIST)
     return node->content.n[1]->type;
     
-  return TYPE_VOID;
+  return VOID;
 }
 
 TYPE type_from_arithmetic(Node* node) {
@@ -97,7 +97,7 @@ TYPE type_from_arithmetic(Node* node) {
   
   cast_integer_to_float(node);
   
-  return TYPE_FLOAT;
+  return FLOAT;
 }
 
 void type_child(Node* node) {
@@ -115,7 +115,7 @@ TYPE type_node(Node* node) {
     case RETURN:
       check_return_type(node);
       break;
-    case ARRAY:
+    case ARRAY_POSITION:
       node->type = node->content.n[0]->definition->content.n[1]->content.n[0]->type;
       break;
     case VARIABLE:
@@ -125,39 +125,39 @@ TYPE type_node(Node* node) {
       node->type = type_from_function_call(node->definition);
       break;
     case NEW_ARRAY:
-      node->type = TYPE_ARRAY;
+      node->type = ARRAY;
       break;
     case EXPRESSION_OR:
       check_logical_type(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_AND:
       check_logical_type(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_EQUAL:
       check_relational_type_1(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_NOT_EQUAL:
       check_relational_type_1(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_GREATER:
       check_relational_type_2(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_GREATER_EQUAL:
       check_relational_type_2(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_LESS:
       check_relational_type_2(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_LESS_EQUAL:
       check_relational_type_2(node);
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case EXPRESSION_SUB:
       node->type = type_from_arithmetic(node);
@@ -181,22 +181,22 @@ TYPE type_node(Node* node) {
       node->type = node->content.n[0]->type;
       break;
     case DATA_BOOLEAN:
-      node->type = TYPE_BOOLEAN;
+      node->type = BOOLEAN;
       break;
     case DATA_CHARACTER:
-      node->type = TYPE_CHARACTER;
+      node->type = CHARACTER;
       break;
     case DATA_INTEGER:
-      node->type = TYPE_INTEGER;
+      node->type = INTEGER;
       break;
     case DATA_FLOAT:
-      node->type = TYPE_FLOAT;
+      node->type = FLOAT;
       break;
     case DATA_STRING:
-      node->type = TYPE_STRING;
+      node->type = STRING;
       break;
     case DATA_ARRAY:
-      node->type = TYPE_ARRAY;
+      node->type = ARRAY;
       break;
     default:
       break;

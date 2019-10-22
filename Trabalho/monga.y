@@ -183,7 +183,7 @@ command:	TOKEN_IF expression block					{ $$ = create_node_two_child(IF, $2, $3);
 		| block								{ $$ = $1; }
 		;
 
-variable:	expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(ARRAY, $1, $3); }
+variable:	expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(ARRAY_POSITION, $1, $3); }
 		| identifier								{ $$ = create_node_one_child(VARIABLE, $1); }
 		;
 

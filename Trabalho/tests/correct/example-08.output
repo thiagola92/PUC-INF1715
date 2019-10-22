@@ -71,42 +71,42 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - TYPE_VOID
-    DATA_STRING - TYPE_STRING - content: main
-    BLOCK - TYPE_VOID
-        COMMAND_LIST - TYPE_VOID
-            IF - TYPE_VOID
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                BLOCK - TYPE_VOID
-            IF - TYPE_VOID
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                BLOCK - TYPE_VOID
-                BLOCK - TYPE_VOID
-            IF - TYPE_VOID
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                BLOCK - TYPE_VOID
-                    IF - TYPE_VOID
-                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                        BLOCK - TYPE_VOID
-            IF - TYPE_VOID
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                BLOCK - TYPE_VOID
-                    IF - TYPE_VOID
-                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                        BLOCK - TYPE_VOID
-                        BLOCK - TYPE_VOID
-            IF - TYPE_VOID
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                BLOCK - TYPE_VOID
-                BLOCK - TYPE_VOID
-                    IF - TYPE_VOID
-                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                        BLOCK - TYPE_VOID
-            IF - TYPE_VOID
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                BLOCK - TYPE_VOID
-                BLOCK - TYPE_VOID
-                    IF - TYPE_VOID
-                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                        BLOCK - TYPE_VOID
-                        BLOCK - TYPE_VOID
+DEFINE_FUNCTION - VOID
+    DATA_STRING - STRING - content: main
+    BLOCK - VOID
+        COMMAND_LIST - VOID
+            IF - VOID
+                DATA_BOOLEAN - BOOLEAN - content: 1
+                BLOCK - VOID
+            IF - VOID
+                DATA_BOOLEAN - BOOLEAN - content: 0
+                BLOCK - VOID
+                BLOCK - VOID
+            IF - VOID
+                DATA_BOOLEAN - BOOLEAN - content: 1
+                BLOCK - VOID
+                    IF - VOID
+                        DATA_BOOLEAN - BOOLEAN - content: 1
+                        BLOCK - VOID
+            IF - VOID
+                DATA_BOOLEAN - BOOLEAN - content: 1
+                BLOCK - VOID
+                    IF - VOID
+                        DATA_BOOLEAN - BOOLEAN - content: 0
+                        BLOCK - VOID
+                        BLOCK - VOID
+            IF - VOID
+                DATA_BOOLEAN - BOOLEAN - content: 0
+                BLOCK - VOID
+                BLOCK - VOID
+                    IF - VOID
+                        DATA_BOOLEAN - BOOLEAN - content: 1
+                        BLOCK - VOID
+            IF - VOID
+                DATA_BOOLEAN - BOOLEAN - content: 0
+                BLOCK - VOID
+                BLOCK - VOID
+                    IF - VOID
+                        DATA_BOOLEAN - BOOLEAN - content: 0
+                        BLOCK - VOID
+                        BLOCK - VOID

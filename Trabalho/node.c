@@ -8,7 +8,7 @@ Node* malloc_node() {
 
 	node->number_of_childs = 0;
 	node->definition = NULL;
-	node->type = TYPE_VOID;
+	node->type = VOID;
 	
 	return node;
 }

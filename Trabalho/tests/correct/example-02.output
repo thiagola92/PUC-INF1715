@@ -32,25 +32,25 @@ Symbol: eee
 Symbol: fff
 === DEFINE VARIABLE ===
 
-DEFINE_LIST - TYPE_VOID
-    DEFINE_VARIABLE - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: aaa
-        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-    DEFINE_VARIABLE - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: bbb
-        DATA_CHARACTER - TYPE_CHARACTER - content:  
-    DEFINE_VARIABLE - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: ccc
-        DATA_INTEGER - TYPE_INTEGER - content: 0
-    DEFINE_VARIABLE - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: ddd
-        DATA_FLOAT - TYPE_FLOAT - content: 0.000000
-    DEFINE_VARIABLE - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: eee
-        DATA_ARRAY - TYPE_ARRAY
-            DATA_CHARACTER - TYPE_CHARACTER - content:  
-    DEFINE_VARIABLE - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: fff
-        DATA_ARRAY - TYPE_ARRAY
-            DATA_ARRAY - TYPE_ARRAY
-                DATA_CHARACTER - TYPE_CHARACTER - content:  
+DEFINE_LIST - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - STRING - content: aaa
+        DATA_BOOLEAN - BOOLEAN - content: 0
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - STRING - content: bbb
+        DATA_CHARACTER - CHARACTER - content:  
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - STRING - content: ccc
+        DATA_INTEGER - INTEGER - content: 0
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - STRING - content: ddd
+        DATA_FLOAT - FLOAT - content: 0.000000
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - STRING - content: eee
+        DATA_ARRAY - ARRAY
+            DATA_CHARACTER - CHARACTER - content:  
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - STRING - content: fff
+        DATA_ARRAY - ARRAY
+            DATA_ARRAY - ARRAY
+                DATA_CHARACTER - CHARACTER - content:  

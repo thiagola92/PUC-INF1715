@@ -26,18 +26,18 @@ Scope
 Symbol: first
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - TYPE_VOID
-    DATA_STRING - TYPE_STRING - content: first
-    BLOCK - TYPE_VOID
-        VARIABLE_LIST - TYPE_VOID
-            DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: a
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-            DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: b
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-        COMMAND_LIST - TYPE_VOID
-            FUNCTION_CALL - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: first
-            FUNCTION_CALL - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: first
+DEFINE_FUNCTION - VOID
+    DATA_STRING - STRING - content: first
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: a
+                DATA_BOOLEAN - BOOLEAN - content: 0
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: b
+                DATA_BOOLEAN - BOOLEAN - content: 0
+        COMMAND_LIST - VOID
+            FUNCTION_CALL - VOID
+                DATA_STRING - STRING - content: first
+            FUNCTION_CALL - VOID
+                DATA_STRING - STRING - content: first

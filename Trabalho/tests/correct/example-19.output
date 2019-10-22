@@ -113,161 +113,161 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - TYPE_VOID
-    DATA_STRING - TYPE_STRING - content: main
-    BLOCK - TYPE_VOID
-        VARIABLE_LIST - TYPE_VOID
-            DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: x1
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-            DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: x2
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-            DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: x3
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-        COMMAND_LIST - TYPE_VOID
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x1
-                EXPRESSION_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x2
-                EXPRESSION_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x3
-                EXPRESSION_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 2
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x1
-                EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x2
-                EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x3
-                EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 2
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x1
-                EXPRESSION_LESS - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x2
-                EXPRESSION_LESS - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x3
-                EXPRESSION_LESS - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 2
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x1
-                EXPRESSION_GREATER - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x2
-                EXPRESSION_GREATER - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x3
-                EXPRESSION_GREATER - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 2
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x1
-                EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x2
-                EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x3
-                EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 2
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x1
-                EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x2
-                EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT - TYPE_VOID
-                VARIABLE - TYPE_BOOLEAN
-                    DATA_STRING - TYPE_STRING - content: x3
-                EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 2
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
+DEFINE_FUNCTION - VOID
+    DATA_STRING - STRING - content: main
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: x1
+                DATA_BOOLEAN - BOOLEAN - content: 0
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: x2
+                DATA_BOOLEAN - BOOLEAN - content: 0
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: x3
+                DATA_BOOLEAN - BOOLEAN - content: 0
+        COMMAND_LIST - VOID
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x2
+                EXPRESSION_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x3
+                EXPRESSION_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_SUB - INTEGER
+                        DATA_INTEGER - INTEGER - content: 2
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_NOT_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x2
+                EXPRESSION_NOT_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x3
+                EXPRESSION_NOT_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_SUB - INTEGER
+                        DATA_INTEGER - INTEGER - content: 2
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_LESS - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x2
+                EXPRESSION_LESS - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x3
+                EXPRESSION_LESS - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_SUB - INTEGER
+                        DATA_INTEGER - INTEGER - content: 2
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_GREATER - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x2
+                EXPRESSION_GREATER - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x3
+                EXPRESSION_GREATER - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_SUB - INTEGER
+                        DATA_INTEGER - INTEGER - content: 2
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_LESS_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x2
+                EXPRESSION_LESS_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x3
+                EXPRESSION_LESS_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_SUB - INTEGER
+                        DATA_INTEGER - INTEGER - content: 2
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_GREATER_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x2
+                EXPRESSION_GREATER_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - BOOLEAN
+                    DATA_STRING - STRING - content: x3
+                EXPRESSION_GREATER_EQUAL - BOOLEAN
+                    DATA_INTEGER - INTEGER - content: 1
+                    EXPRESSION_SUB - INTEGER
+                        DATA_INTEGER - INTEGER - content: 2
+                        DATA_INTEGER - INTEGER - content: 1

@@ -29,8 +29,8 @@ typedef enum TAG {
 	RETURN,
 	PRINT,
 
-  ARRAY,
 	VARIABLE,
+  ARRAY_POSITION,
 	FUNCTION_CALL,
 	NEW_ARRAY,
 
@@ -65,13 +65,13 @@ typedef enum TAG {
 } TAG;
 
 typedef enum TYPE {
-  TYPE_VOID,
-  TYPE_BOOLEAN,
-  TYPE_CHARACTER,
-  TYPE_INTEGER,
-  TYPE_FLOAT,
-  TYPE_STRING,
-  TYPE_ARRAY,
+  VOID,
+  BOOLEAN,
+  CHARACTER,
+  INTEGER,
+  FLOAT,
+  STRING,
+  ARRAY,
 } TYPE;
 
 typedef struct Node {

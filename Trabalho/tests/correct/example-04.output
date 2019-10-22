@@ -144,68 +144,68 @@ Symbol: fourth
 Symbol: fifth
 === LEAVE SCOPE ===
 
-DEFINE_LIST - TYPE_VOID
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: first
-        BLOCK - TYPE_VOID
-            DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: a
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: second
-        BLOCK - TYPE_VOID
-            VARIABLE_LIST - TYPE_VOID
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: a
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: b
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: third
-        BLOCK - TYPE_VOID
-            VARIABLE_LIST - TYPE_VOID
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: a
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: b
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: c
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: fourth
-        BLOCK - TYPE_VOID
-            VARIABLE_LIST - TYPE_VOID
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: a
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: b
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: c
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: d
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: fifth
-        BLOCK - TYPE_VOID
-            VARIABLE_LIST - TYPE_VOID
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: a
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: b
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: c
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: d
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: e
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+DEFINE_LIST - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: first
+        BLOCK - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: a
+                DATA_BOOLEAN - BOOLEAN - content: 0
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: second
+        BLOCK - VOID
+            VARIABLE_LIST - VOID
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: a
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: b
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: third
+        BLOCK - VOID
+            VARIABLE_LIST - VOID
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: a
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: b
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: c
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: fourth
+        BLOCK - VOID
+            VARIABLE_LIST - VOID
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: a
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: b
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: c
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: d
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: fifth
+        BLOCK - VOID
+            VARIABLE_LIST - VOID
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: a
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: b
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: c
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: d
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: e
+                    DATA_BOOLEAN - BOOLEAN - content: 0

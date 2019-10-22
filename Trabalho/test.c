@@ -33,10 +33,10 @@ const char* tag_to_string(TAG tag) {
 			return "RETURN";
 		case PRINT:
 			return "PRINT";
-		case ARRAY:
-			return "ARRAY";
 		case VARIABLE:
 			return "VARIABLE";
+		case ARRAY_POSITION:
+			return "ARRAY_POSITION";
 		case FUNCTION_CALL:
 			return "FUNCTION_CALL";
 		case NEW_ARRAY:
@@ -92,20 +92,20 @@ const char* tag_to_string(TAG tag) {
 
 const char* type_to_string(TYPE type) {
   switch(type) {
-		case TYPE_BOOLEAN:
-			return "TYPE_BOOLEAN";
-		case TYPE_CHARACTER:
-			return "TYPE_CHARACTER";
-		case TYPE_INTEGER:
-			return "TYPE_INTEGER";
-		case TYPE_FLOAT:
-			return "TYPE_FLOAT";
-		case TYPE_STRING:
-			return "TYPE_STRING";
-		case TYPE_ARRAY:
-			return "TYPE_ARRAY";
+		case BOOLEAN:
+			return "BOOLEAN";
+		case CHARACTER:
+			return "CHARACTER";
+		case INTEGER:
+			return "INTEGER";
+		case FLOAT:
+			return "FLOAT";
+		case STRING:
+			return "STRING";
+		case ARRAY:
+			return "ARRAY";
 		default:
-			return "TYPE_VOID";
+			return "VOID";
 	}
 }
 

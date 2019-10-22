@@ -205,94 +205,94 @@ Symbol: fourth
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_LIST - TYPE_VOID
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: first
-        DATA_INTEGER - TYPE_INTEGER - content: 0
-        BLOCK - TYPE_VOID
-            RETURN - TYPE_VOID
-                DATA_INTEGER - TYPE_INTEGER - content: 1
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: second
-        PARAMETER - TYPE_VOID
-            DATA_STRING - TYPE_STRING - content: a
-            DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-        BLOCK - TYPE_VOID
-            RETURN - TYPE_VOID
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: third
-        PARAMETER_LIST - TYPE_VOID
-            PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: a
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-            PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: b
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-        DATA_CHARACTER - TYPE_CHARACTER - content:  
-        BLOCK - TYPE_VOID
-            RETURN - TYPE_VOID
-                DATA_CHARACTER - TYPE_CHARACTER - content: a
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: fourth
-        PARAMETER_LIST - TYPE_VOID
-            PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: a
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-            PARAMETER - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: b
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-        DATA_FLOAT - TYPE_FLOAT - content: 0.000000
-        BLOCK - TYPE_VOID
-            RETURN - TYPE_VOID
-                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: main
-        BLOCK - TYPE_VOID
-            VARIABLE_LIST - TYPE_VOID
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: a
-                    DATA_INTEGER - TYPE_INTEGER - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: b
-                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: c
-                    DATA_CHARACTER - TYPE_CHARACTER - content:  
-                DEFINE_VARIABLE - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: d
-                    DATA_FLOAT - TYPE_FLOAT - content: 0.000000
-            COMMAND_LIST - TYPE_VOID
-                ASSIGNMENT - TYPE_VOID
-                    VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_STRING - content: a
-                    FUNCTION_CALL - TYPE_INTEGER
-                        DATA_STRING - TYPE_STRING - content: first
-                ASSIGNMENT - TYPE_VOID
-                    VARIABLE - TYPE_BOOLEAN
-                        DATA_STRING - TYPE_STRING - content: b
-                    FUNCTION_CALL - TYPE_BOOLEAN
-                        DATA_STRING - TYPE_STRING - content: second
-                        VARIABLE - TYPE_INTEGER
-                            DATA_STRING - TYPE_STRING - content: a
-                ASSIGNMENT - TYPE_VOID
-                    VARIABLE - TYPE_CHARACTER
-                        DATA_STRING - TYPE_STRING - content: c
-                    FUNCTION_CALL - TYPE_CHARACTER
-                        DATA_STRING - TYPE_STRING - content: third
-                        EXPRESSION_LIST - TYPE_VOID
-                            VARIABLE - TYPE_INTEGER
-                                DATA_STRING - TYPE_STRING - content: a
-                            VARIABLE - TYPE_BOOLEAN
-                                DATA_STRING - TYPE_STRING - content: b
-                ASSIGNMENT - TYPE_VOID
-                    VARIABLE - TYPE_FLOAT
-                        DATA_STRING - TYPE_STRING - content: d
-                    FUNCTION_CALL - TYPE_FLOAT
-                        DATA_STRING - TYPE_STRING - content: fourth
-                        EXPRESSION_LIST - TYPE_VOID
-                            VARIABLE - TYPE_INTEGER
-                                DATA_STRING - TYPE_STRING - content: a
-                            VARIABLE - TYPE_BOOLEAN
-                                DATA_STRING - TYPE_STRING - content: b
+DEFINE_LIST - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: first
+        DATA_INTEGER - INTEGER - content: 0
+        BLOCK - VOID
+            RETURN - VOID
+                DATA_INTEGER - INTEGER - content: 1
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: second
+        PARAMETER - VOID
+            DATA_STRING - STRING - content: a
+            DATA_BOOLEAN - BOOLEAN - content: 0
+        DATA_BOOLEAN - BOOLEAN - content: 0
+        BLOCK - VOID
+            RETURN - VOID
+                DATA_BOOLEAN - BOOLEAN - content: 1
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: third
+        PARAMETER_LIST - VOID
+            PARAMETER - VOID
+                DATA_STRING - STRING - content: a
+                DATA_BOOLEAN - BOOLEAN - content: 0
+            PARAMETER - VOID
+                DATA_STRING - STRING - content: b
+                DATA_BOOLEAN - BOOLEAN - content: 0
+        DATA_CHARACTER - CHARACTER - content:  
+        BLOCK - VOID
+            RETURN - VOID
+                DATA_CHARACTER - CHARACTER - content: a
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: fourth
+        PARAMETER_LIST - VOID
+            PARAMETER - VOID
+                DATA_STRING - STRING - content: a
+                DATA_BOOLEAN - BOOLEAN - content: 0
+            PARAMETER - VOID
+                DATA_STRING - STRING - content: b
+                DATA_BOOLEAN - BOOLEAN - content: 0
+        DATA_FLOAT - FLOAT - content: 0.000000
+        BLOCK - VOID
+            RETURN - VOID
+                DATA_FLOAT - FLOAT - content: 1.000000
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: main
+        BLOCK - VOID
+            VARIABLE_LIST - VOID
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: a
+                    DATA_INTEGER - INTEGER - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: b
+                    DATA_BOOLEAN - BOOLEAN - content: 0
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: c
+                    DATA_CHARACTER - CHARACTER - content:  
+                DEFINE_VARIABLE - VOID
+                    DATA_STRING - STRING - content: d
+                    DATA_FLOAT - FLOAT - content: 0.000000
+            COMMAND_LIST - VOID
+                ASSIGNMENT - VOID
+                    VARIABLE - INTEGER
+                        DATA_STRING - STRING - content: a
+                    FUNCTION_CALL - INTEGER
+                        DATA_STRING - STRING - content: first
+                ASSIGNMENT - VOID
+                    VARIABLE - BOOLEAN
+                        DATA_STRING - STRING - content: b
+                    FUNCTION_CALL - BOOLEAN
+                        DATA_STRING - STRING - content: second
+                        VARIABLE - INTEGER
+                            DATA_STRING - STRING - content: a
+                ASSIGNMENT - VOID
+                    VARIABLE - CHARACTER
+                        DATA_STRING - STRING - content: c
+                    FUNCTION_CALL - CHARACTER
+                        DATA_STRING - STRING - content: third
+                        EXPRESSION_LIST - VOID
+                            VARIABLE - INTEGER
+                                DATA_STRING - STRING - content: a
+                            VARIABLE - BOOLEAN
+                                DATA_STRING - STRING - content: b
+                ASSIGNMENT - VOID
+                    VARIABLE - FLOAT
+                        DATA_STRING - STRING - content: d
+                    FUNCTION_CALL - FLOAT
+                        DATA_STRING - STRING - content: fourth
+                        EXPRESSION_LIST - VOID
+                            VARIABLE - INTEGER
+                                DATA_STRING - STRING - content: a
+                            VARIABLE - BOOLEAN
+                                DATA_STRING - STRING - content: b

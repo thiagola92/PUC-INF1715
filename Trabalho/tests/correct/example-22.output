@@ -41,27 +41,27 @@ Symbol: first
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_LIST - TYPE_VOID
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: first
-        PARAMETER - TYPE_VOID
-            DATA_STRING - TYPE_STRING - content: y
-            DATA_INTEGER - TYPE_INTEGER - content: 0
-        BLOCK - TYPE_VOID
-    DEFINE_FUNCTION - TYPE_VOID
-        DATA_STRING - TYPE_STRING - content: main
-        BLOCK - TYPE_VOID
-            DEFINE_VARIABLE - TYPE_VOID
-                DATA_STRING - TYPE_STRING - content: x
-                DATA_INTEGER - TYPE_INTEGER - content: 0
-            COMMAND_LIST - TYPE_VOID
-                ASSIGNMENT - TYPE_VOID
-                    VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_STRING - content: x
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                FUNCTION_CALL - TYPE_VOID
-                    DATA_STRING - TYPE_STRING - content: first
-                    VARIABLE - TYPE_INTEGER
-                        DATA_STRING - TYPE_STRING - content: x
+DEFINE_LIST - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: first
+        PARAMETER - VOID
+            DATA_STRING - STRING - content: y
+            DATA_INTEGER - INTEGER - content: 0
+        BLOCK - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - STRING - content: main
+        BLOCK - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: x
+                DATA_INTEGER - INTEGER - content: 0
+            COMMAND_LIST - VOID
+                ASSIGNMENT - VOID
+                    VARIABLE - INTEGER
+                        DATA_STRING - STRING - content: x
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+                FUNCTION_CALL - VOID
+                    DATA_STRING - STRING - content: first
+                    VARIABLE - INTEGER
+                        DATA_STRING - STRING - content: x
