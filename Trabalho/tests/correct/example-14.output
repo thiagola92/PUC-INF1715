@@ -199,13 +199,13 @@ DEFINE_FUNCTION - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x1
-                DATA_FLOAT - FLOAT - content: 0.000000
+                TYPE_FLOAT - FLOAT
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x2
-                DATA_FLOAT - FLOAT - content: 0.000000
+                TYPE_FLOAT - FLOAT
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x3
-                DATA_FLOAT - FLOAT - content: 0.000000
+                TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT

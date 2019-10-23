@@ -208,7 +208,7 @@ Symbol: main
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: first
-        DATA_INTEGER - INTEGER - content: 0
+        TYPE_INTEGER - INTEGER
         BLOCK - VOID
             RETURN - VOID
                 DATA_INTEGER - INTEGER - content: 1
@@ -216,8 +216,8 @@ DEFINE_LIST - VOID
         DATA_STRING - STRING - content: second
         PARAMETER - VOID
             DATA_STRING - STRING - content: a
-            DATA_BOOLEAN - BOOLEAN - content: 0
-        DATA_BOOLEAN - BOOLEAN - content: 0
+            TYPE_BOOLEAN - BOOLEAN
+        TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
             RETURN - VOID
                 DATA_BOOLEAN - BOOLEAN - content: 1
@@ -226,11 +226,11 @@ DEFINE_LIST - VOID
         PARAMETER_LIST - VOID
             PARAMETER - VOID
                 DATA_STRING - STRING - content: a
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
                 DATA_STRING - STRING - content: b
-                DATA_BOOLEAN - BOOLEAN - content: 0
-        DATA_CHARACTER - CHARACTER - content:  
+                TYPE_BOOLEAN - BOOLEAN
+        TYPE_CHARACTER - CHARACTER
         BLOCK - VOID
             RETURN - VOID
                 DATA_CHARACTER - CHARACTER - content: a
@@ -239,11 +239,11 @@ DEFINE_LIST - VOID
         PARAMETER_LIST - VOID
             PARAMETER - VOID
                 DATA_STRING - STRING - content: a
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
                 DATA_STRING - STRING - content: b
-                DATA_BOOLEAN - BOOLEAN - content: 0
-        DATA_FLOAT - FLOAT - content: 0.000000
+                TYPE_BOOLEAN - BOOLEAN
+        TYPE_FLOAT - FLOAT
         BLOCK - VOID
             RETURN - VOID
                 DATA_FLOAT - FLOAT - content: 1.000000
@@ -253,16 +253,16 @@ DEFINE_LIST - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: a
-                    DATA_INTEGER - INTEGER - content: 0
+                    TYPE_INTEGER - INTEGER
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: b
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: c
-                    DATA_CHARACTER - CHARACTER - content:  
+                    TYPE_CHARACTER - CHARACTER
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: d
-                    DATA_FLOAT - FLOAT - content: 0.000000
+                    TYPE_FLOAT - FLOAT
             COMMAND_LIST - VOID
                 ASSIGNMENT - VOID
                     VARIABLE - INTEGER

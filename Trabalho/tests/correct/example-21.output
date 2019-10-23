@@ -48,10 +48,10 @@ DEFINE_FUNCTION - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x1
-                DATA_INTEGER - INTEGER - content: 0
+                TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x2
-                DATA_INTEGER - INTEGER - content: 0
+                TYPE_INTEGER - INTEGER
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER

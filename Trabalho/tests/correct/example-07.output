@@ -32,10 +32,10 @@ DEFINE_FUNCTION - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: a
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: b
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
         COMMAND_LIST - VOID
             FUNCTION_CALL - VOID
                 DATA_STRING - STRING - content: first

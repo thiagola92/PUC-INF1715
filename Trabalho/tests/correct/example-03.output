@@ -95,28 +95,28 @@ DEFINE_LIST - VOID
         DATA_STRING - STRING - content: second
         PARAMETER - VOID
             DATA_STRING - STRING - content: a
-            DATA_BOOLEAN - BOOLEAN - content: 0
+            TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: third
         PARAMETER_LIST - VOID
             PARAMETER - VOID
                 DATA_STRING - STRING - content: a
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
                 DATA_STRING - STRING - content: b
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: fourth
         PARAMETER_LIST - VOID
             PARAMETER - VOID
                 DATA_STRING - STRING - content: a
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
                 DATA_STRING - STRING - content: b
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
                 DATA_STRING - STRING - content: c
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID

@@ -11,6 +11,16 @@ const char* tag_to_string(TAG tag) {
 			return "DEFINE_LIST";
 		case DEFINE_VARIABLE:
 			return "DEFINE_VARIABLE";
+		case TYPE_BOOLEAN:
+			return "TYPE_BOOLEAN";
+		case TYPE_CHARACTER:
+			return "TYPE_CHARACTER";
+		case TYPE_INTEGER:
+			return "TYPE_INTEGER";
+		case TYPE_FLOAT:
+			return "TYPE_FLOAT";
+		case TYPE_ARRAY:
+			return "TYPE_ARRAY";
 		case DEFINE_FUNCTION:
 			return "DEFINE_FUNCTION";
 		case PARAMETER_LIST:

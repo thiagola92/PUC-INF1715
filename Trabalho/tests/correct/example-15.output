@@ -28,7 +28,7 @@ DEFINE_FUNCTION - VOID
     BLOCK - VOID
         DEFINE_VARIABLE - VOID
             DATA_STRING - STRING - content: x1
-            DATA_FLOAT - FLOAT - content: 0.000000
+            TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT

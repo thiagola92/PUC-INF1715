@@ -26,7 +26,7 @@ void cast_to_float(Node* node, int index) {
   type_node(node->content.n[index]);
 }
 
-void cast_to_array(Node* node, int index) {  
+void cast_to_array(Node* node, int index) {
   node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_one_child(DATA_ARRAY, create_node_char(' ')));
   type_node(node->content.n[index]);
 }
@@ -35,17 +35,45 @@ void cast_integer_to_float(Node* node) {
   node->content.n[0]->type == INTEGER ? cast_to_float(node, 0) : cast_to_float(node, 1);
 }
 
-void check_assignment_type(Node* node) {
+TYPE type_from_array(Node* node) {
+  return node->definition->content.n[1]->content.n[0]->type;
+}
+
+TYPE type_from_function_call(Node* node) {    
+  if(node->number_of_childs == 4)
+    return node->content.n[2]->type;
+    
+  if(node->content.n[1]->tag != PARAMETER || node->content.n[1]->tag != PARAMETER_LIST)
+    return node->content.n[1]->type;
+    
+  return VOID;
+}
+
+TYPE type_from_arithmetic(Node* node) {
+  throw_numeric_error(node);
+    
   if(node->content.n[0]->type == node->content.n[1]->type)
+    return node->content.n[0]->type;
+  
+  cast_integer_to_float(node);
+  
+  return FLOAT;
+}
+
+void check_assignment_type(Node* node) {
+  Node* left_node = node->content.n[0];
+  Node* right_node = node->content.n[1];
+
+  if(left_node->type == right_node->type)
     return;
     
-  if(node->content.n[0]->type == FLOAT && node->content.n[1]->type == INTEGER)
+  if(left_node->type == FLOAT && right_node->type == INTEGER)
     return cast_to_float(node, 1);
     
-  if(node->content.n[0]->type == INTEGER && node->content.n[1]->type == FLOAT)
+  if(left_node->type == INTEGER && right_node->type == FLOAT)
     return cast_to_integer(node, 1);
     
-  if(node->content.n[0]->type == ARRAY && node->content.n[1]->type == STRING)
+  if(left_node->type == ARRAY && type_from_array(left_node) == CHARACTER && right_node->type == STRING)
     return cast_to_array(node, 1);
   
   throw_type_error("value must be same as variable type");
@@ -77,27 +105,6 @@ void check_relational_type_2(Node* node) {
     return;
   
   cast_integer_to_float(node);
-}
-
-TYPE type_from_function_call(Node* node) {    
-  if(node->number_of_childs == 4)
-    return node->content.n[2]->type;
-    
-  if(node->content.n[1]->tag != PARAMETER || node->content.n[1]->tag != PARAMETER_LIST)
-    return node->content.n[1]->type;
-    
-  return VOID;
-}
-
-TYPE type_from_arithmetic(Node* node) {
-  throw_numeric_error(node);
-    
-  if(node->content.n[0]->type == node->content.n[1]->type)
-    return node->content.n[0]->type;
-  
-  cast_integer_to_float(node);
-  
-  return FLOAT;
 }
 
 void type_child(Node* node) {
@@ -179,6 +186,21 @@ TYPE type_node(Node* node) {
       break;
     case EXPRESSION_NOT:
       node->type = node->content.n[0]->type;
+      break;
+    case TYPE_BOOLEAN:
+      node->type = BOOLEAN;
+      break;
+    case TYPE_CHARACTER:
+      node->type = CHARACTER;
+      break;
+    case TYPE_INTEGER:
+      node->type = INTEGER;
+      break;
+    case TYPE_FLOAT:
+      node->type = FLOAT;
+      break;
+    case TYPE_ARRAY:
+      node->type = ARRAY;
       break;
     case DATA_BOOLEAN:
       node->type = BOOLEAN;

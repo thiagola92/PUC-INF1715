@@ -279,30 +279,30 @@ DEFINE_FUNCTION - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: a
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: b
-                DATA_CHARACTER - CHARACTER - content:  
+                TYPE_CHARACTER - CHARACTER
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: c
-                DATA_INTEGER - INTEGER - content: 0
+                TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: d
-                DATA_FLOAT - FLOAT - content: 0.000000
+                TYPE_FLOAT - FLOAT
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: e
-                DATA_ARRAY - ARRAY
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_ARRAY - ARRAY
+                    TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: f
-                DATA_INTEGER - INTEGER - content: 0
+                TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: g
-                DATA_FLOAT - FLOAT - content: 0.000000
+                TYPE_FLOAT - FLOAT
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: h
-                DATA_ARRAY - ARRAY
-                    DATA_CHARACTER - CHARACTER - content:  
+                TYPE_ARRAY - ARRAY
+                    TYPE_CHARACTER - CHARACTER
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
@@ -328,7 +328,7 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - ARRAY
                     DATA_STRING - STRING - content: e
                 NEW_ARRAY - ARRAY
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 ARRAY_POSITION - BOOLEAN

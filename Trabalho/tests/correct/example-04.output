@@ -150,62 +150,62 @@ DEFINE_LIST - VOID
         BLOCK - VOID
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: a
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
     DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: second
         BLOCK - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: a
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: b
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
     DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: third
         BLOCK - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: a
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: b
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: c
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
     DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: fourth
         BLOCK - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: a
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: b
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: c
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: d
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
     DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: fifth
         BLOCK - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: a
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: b
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: c
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: d
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
                     DATA_STRING - STRING - content: e
-                    DATA_BOOLEAN - BOOLEAN - content: 0
+                    TYPE_BOOLEAN - BOOLEAN

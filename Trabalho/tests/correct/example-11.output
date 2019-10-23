@@ -68,7 +68,7 @@ DEFINE_LIST - VOID
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
                             DATA_STRING - STRING - content: a
-                            DATA_BOOLEAN - BOOLEAN - content: 0
+                            TYPE_BOOLEAN - BOOLEAN
                 WHILE - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     BLOCK - VOID
@@ -79,6 +79,6 @@ DEFINE_LIST - VOID
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
                             DATA_STRING - STRING - content: a
-                            DATA_BOOLEAN - BOOLEAN - content: 0
+                            TYPE_BOOLEAN - BOOLEAN
                         FUNCTION_CALL - VOID
                             DATA_STRING - STRING - content: first

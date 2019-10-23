@@ -119,13 +119,13 @@ DEFINE_FUNCTION - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x1
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x2
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: x3
-                DATA_BOOLEAN - BOOLEAN - content: 0
+                TYPE_BOOLEAN - BOOLEAN
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN

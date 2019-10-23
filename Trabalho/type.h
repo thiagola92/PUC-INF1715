@@ -15,14 +15,15 @@ void cast_to_array(Node* node, int index);
 
 void cast_integer_to_float(Node* node);
 
+TYPE type_from_array(Node* node);
+TYPE type_from_function_call(Node* node);
+TYPE type_from_arithmetic(Node* node);
+
 void check_assignment_type(Node* node);
 void check_return_type(Node* node);
 void check_logical_type(Node* node); // && ||
 void check_relational_type_1(Node* node); // == ~=
 void check_relational_type_2(Node* node); // > >= < <=
-
-TYPE type_from_function_call(Node* node);
-TYPE type_from_arithmetic(Node* node);
 
 void type_child(Node* node);
 TYPE type_node(Node* node);
