@@ -21,8 +21,3 @@ int main(int argc, const char* argv[]) {
 int yywrap() {
 	return 1;
 }
-
-void yyerror(char* s) {
-	printf("%s in line %d\n", s, CURRENT_LINE);
-	exit(1);
-}

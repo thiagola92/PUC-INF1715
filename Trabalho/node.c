@@ -120,7 +120,7 @@ Node* create_node_four_child(TAG tag, Node* child0, Node* child1, Node* child2, 
 	return node;
 }
 
-// not efficiency, should i exchange space for speed?
+// not efficiency
 Node* append_node(TAG tag, Node* child0, Node* child1) {
 	Node* node;
 	

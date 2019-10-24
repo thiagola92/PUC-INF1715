@@ -4,7 +4,7 @@
 #include"type.h"
 
 void throw_type_error(const char* error) {
-	printf("Type error: %s\n", error);
+	printf("type error: %s\n", error);
 	exit(3);
 }
 

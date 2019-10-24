@@ -4,7 +4,7 @@
 #include"util.h"
 
 void throw_malloc_error() {
-	printf("Malloc error: No memory space for malloc\n");
+	printf("malloc error: no memory space for malloc\n");
 	exit(2);
 }
 

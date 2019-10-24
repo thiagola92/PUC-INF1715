@@ -10,18 +10,17 @@
 %start program
 
 %union {
-	char c;
-	int b;
 	int i;
 	float f;
 	char* s;
-
+	
+  int l;
 	Node* n;
 }
 
-%token <c> TOKEN_CHARACTER
-%token <b> TOKEN_TRUE
-%token <b> TOKEN_FALSE
+%token <i> TOKEN_CHARACTER
+%token <i> TOKEN_TRUE
+%token <i> TOKEN_FALSE
 %token <i> TOKEN_INTEGER
 %token <f> TOKEN_FLOAT
 %token <s> TOKEN_STRING
@@ -121,162 +120,162 @@
 
 %%
 
-program:	/*empty*/		{ __root__ = create_node_zero_child(EMPTY); $$ = __root__; }
-		      | define_list		{ __root__ = $1; $$ = __root__; }
+program:	/*empty*/ { __root__ = create_node_zero_child(EMPTY); $$ = __root__; }
+		      | define_list	{ __root__ = $1; $$ = __root__; }
 		      ;
 
-define_list:	define_list define	{ $$ = append_node(DEFINE_LIST, $1, $2); }
-		          | define		{ $$ = $1; }
+define_list:	define_list define { $$ = append_node(DEFINE_LIST, $1, $2); }
+		          | define { $$ = $1; }
 		          ;
 
-define:		define_variable		{ $$ = $1; }
+define:		define_variable	{ $$ = $1; }
 		      | define_function	{ $$ = $1; }
 		      ;
 
-define_variable:	identifier TOKEN_COLON variable_type TOKEN_SEMICOLON	{ $$ = create_node_two_child(DEFINE_VARIABLE, $1, $3); }
+define_variable:	identifier TOKEN_COLON variable_type TOKEN_SEMICOLON { $$ = create_node_two_child(DEFINE_VARIABLE, $1, $3); }
 			            ;
 
-identifier:	TOKEN_IDENTIFIER	{ $$ = create_node_string($1); }
+identifier:	TOKEN_IDENTIFIER { $$ = create_node_string($1); }
 		        ;
 
-variable_type:	TOKEN_WORD_BOOL							{ $$ = create_node_zero_child(TYPE_BOOLEAN); }
-                | TOKEN_WORD_CHAR						{ $$ = create_node_zero_child(TYPE_CHARACTER); }
-		            | TOKEN_WORD_INT						{ $$ = create_node_zero_child(TYPE_INTEGER); }
-		            | TOKEN_WORD_FLOAT						{ $$ = create_node_zero_child(TYPE_FLOAT); }
-		            | TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS	{ $$ = create_node_one_child(TYPE_ARRAY, $2); }
+variable_type:	TOKEN_WORD_BOOL	{ $$ = create_node_zero_child(TYPE_BOOLEAN); }
+                | TOKEN_WORD_CHAR	{ $$ = create_node_zero_child(TYPE_CHARACTER); }
+		            | TOKEN_WORD_INT { $$ = create_node_zero_child(TYPE_INTEGER); }
+		            | TOKEN_WORD_FLOAT { $$ = create_node_zero_child(TYPE_FLOAT); }
+		            | TOKEN_OPEN_BRACKETS variable_type TOKEN_CLOSE_BRACKETS { $$ = create_node_one_child(TYPE_ARRAY, $2); }
 		            ;
 
-define_function:	identifier TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ $$ = create_node_four_child(DEFINE_FUNCTION, $1, $3, $6, $7); }
-			            | identifier TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES block				{ $$ = create_node_three_child(DEFINE_FUNCTION, $1, $3, $5); }
-			            | identifier TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block			{ $$ = create_node_three_child(DEFINE_FUNCTION, $1, $5, $6); }
-			            | identifier TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block						{ $$ = create_node_two_child(DEFINE_FUNCTION, $1, $4); }
+define_function:	identifier TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block { $$ = create_node_four_child(DEFINE_FUNCTION, $1, $3, $6, $7); }
+			            | identifier TOKEN_OPEN_PARENTHESES parameter_list TOKEN_CLOSE_PARENTHESES block { $$ = create_node_three_child(DEFINE_FUNCTION, $1, $3, $5); }
+			            | identifier TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES TOKEN_COLON variable_type block	{ $$ = create_node_three_child(DEFINE_FUNCTION, $1, $5, $6); }
+			            | identifier TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES block	{ $$ = create_node_two_child(DEFINE_FUNCTION, $1, $4); }
 			            ;
 
-parameter_list:		parameter_list TOKEN_COMMA parameter			{ $$ = append_node(PARAMETER_LIST, $1, $3); }
-			            | parameter						{ $$ = $1; }
+parameter_list:		parameter_list TOKEN_COMMA parameter { $$ = append_node(PARAMETER_LIST, $1, $3); }
+			            | parameter	{ $$ = $1; }
 			            ;
 
-parameter:	identifier TOKEN_COLON variable_type	{ $$ = create_node_two_child(PARAMETER, $1, $3); }
+parameter:	identifier TOKEN_COLON variable_type { $$ = create_node_two_child(PARAMETER, $1, $3); }
 		        ;
 
-block:		TOKEN_OPEN_BRACES variable_list command_list TOKEN_CLOSE_BRACES 	{ $$ = create_node_two_child(BLOCK, $2, $3); }
-		      | TOKEN_OPEN_BRACES variable_list TOKEN_CLOSE_BRACES 			{ $$ = create_node_one_child(BLOCK, $2); }
-		      | TOKEN_OPEN_BRACES command_list TOKEN_CLOSE_BRACES 			{ $$ = create_node_one_child(BLOCK, $2); }
-		      | TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES 					{ $$ = create_node_zero_child(BLOCK); }
+block:		TOKEN_OPEN_BRACES variable_list command_list TOKEN_CLOSE_BRACES { $$ = create_node_two_child(BLOCK, $2, $3); }
+		      | TOKEN_OPEN_BRACES variable_list TOKEN_CLOSE_BRACES { $$ = create_node_one_child(BLOCK, $2); }
+		      | TOKEN_OPEN_BRACES command_list TOKEN_CLOSE_BRACES { $$ = create_node_one_child(BLOCK, $2); }
+		      | TOKEN_OPEN_BRACES TOKEN_CLOSE_BRACES { $$ = create_node_zero_child(BLOCK); }
 		      ;
 
-variable_list:	variable_list define_variable		{ $$ = append_node(VARIABLE_LIST, $1, $2); }
-			          | define_variable			{ $$ = $1; }
+variable_list:	variable_list define_variable	{ $$ = append_node(VARIABLE_LIST, $1, $2); }
+			          | define_variable { $$ = $1; }
 			          ;
 
 command_list:	command_list command	{ $$ = append_node(COMMAND_LIST, $1, $2); }
 		          | command		{ $$ = $1; }
 		          ;
 
-command:	TOKEN_IF expression block					{ $$ = create_node_two_child(IF, $2, $3); }
-		      | TOKEN_IF expression block TOKEN_ELSE block			{ $$ = create_node_three_child(IF, $2, $3, $5); }
-		      | TOKEN_WHILE expression block					{ $$ = create_node_two_child(WHILE, $2, $3); }
-		      | variable TOKEN_ASSIGNMENT expression TOKEN_SEMICOLON		{ $$ = create_node_two_child(ASSIGNMENT, $1, $3); }
-		      | TOKEN_RETURN expression TOKEN_SEMICOLON			{ $$ = create_node_one_child(RETURN, $2); }
-		      | TOKEN_AT_SIGN expression TOKEN_SEMICOLON			{ $$ = create_node_one_child(PRINT, $2); }
-		      | function_call TOKEN_SEMICOLON					{ $$ = $1; }
-		      | block								{ $$ = $1; }
+command:	TOKEN_IF expression block	 { $$ = create_node_two_child(IF, $2, $3); }
+		      | TOKEN_IF expression block TOKEN_ELSE block { $$ = create_node_three_child(IF, $2, $3, $5); }
+		      | TOKEN_WHILE expression block { $$ = create_node_two_child(WHILE, $2, $3); }
+		      | variable TOKEN_ASSIGNMENT expression TOKEN_SEMICOLON { $$ = create_node_two_child(ASSIGNMENT, $1, $3); }
+		      | TOKEN_RETURN expression TOKEN_SEMICOLON	{ $$ = create_node_one_child(RETURN, $2); }
+		      | TOKEN_AT_SIGN expression TOKEN_SEMICOLON { $$ = create_node_one_child(PRINT, $2); }
+		      | function_call TOKEN_SEMICOLON { $$ = $1; }
+		      | block { $$ = $1; }
 		      ;
 
-variable:	expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(ARRAY_POSITION, $1, $3); }
-		      | identifier								{ $$ = create_node_one_child(VARIABLE, $1); }
+variable:	expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS { $$ = create_node_two_child(ARRAY_POSITION, $1, $3); }
+		      | identifier { $$ = create_node_one_child(VARIABLE, $1); }
 		      ;
 
-function_call:	identifier TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES	{ $$ = create_node_two_child(FUNCTION_CALL, $1, $3); }
-			          | identifier TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES		{ $$ = create_node_one_child(FUNCTION_CALL, $1); }
+function_call:	identifier TOKEN_OPEN_PARENTHESES expression_list TOKEN_CLOSE_PARENTHESES { $$ = create_node_two_child(FUNCTION_CALL, $1, $3); }
+			          | identifier TOKEN_OPEN_PARENTHESES TOKEN_CLOSE_PARENTHESES { $$ = create_node_one_child(FUNCTION_CALL, $1); }
 			          ;
 
 new_array:	TOKEN_NEW variable_type TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS	{ $$ = create_node_two_child(NEW_ARRAY, $2, $4); }
 		        ;
 
 expression_list:	expression_list TOKEN_COMMA expression { $$ = append_node(EXPRESSION_LIST, $1, $3); }
-			            | expression 				{ $$ = $1; }
+			            | expression { $$ = $1; }
 			            ;
 
 expression:		expression_or	{ $$ = $1; }
 			        ;
 
 expression_or:	expression_or TOKEN_OR expression_and	{ $$ = create_node_two_child(EXPRESSION_OR, $1, $3); }
-			          | expression_and			{ $$ = $1; }
+			          | expression_and { $$ = $1; }
 			          ;
 
 expression_and:	expression_and TOKEN_AND expression_equal	{ $$ = create_node_two_child(EXPRESSION_AND, $1, $3); }
-			          | expression_equal				{ $$ = $1; }
+			          | expression_equal { $$ = $1; }
 			          ;
 
 expression_equal:	expression_equal TOKEN_EQUAL expression_not_equal	{ $$ = create_node_two_child(EXPRESSION_EQUAL, $1, $3); }
-			            | expression_not_equal					{ $$ = $1; }
+			            | expression_not_equal { $$ = $1; }
 			            ;
 
-expression_not_equal:	expression_not_equal TOKEN_NOT_EQUAL expression_greater		{ $$ = create_node_two_child(EXPRESSION_NOT_EQUAL, $1, $3); }
-			                | expression_greater						{ $$ = $1; }
+expression_not_equal:	expression_not_equal TOKEN_NOT_EQUAL expression_greater { $$ = create_node_two_child(EXPRESSION_NOT_EQUAL, $1, $3); }
+			                | expression_greater { $$ = $1; }
 			                ;
 
 expression_greater:	expression_greater TOKEN_GREATER expression_greater_equal	{ $$ = create_node_two_child(EXPRESSION_GREATER, $1, $3); }
-			              | expression_greater_equal					{ $$ = $1; }
+			              | expression_greater_equal { $$ = $1; }
 			              ;
 
-expression_greater_equal:	expression_greater_equal TOKEN_GREATER_EQUAL expression_less	{ $$ = create_node_two_child(EXPRESSION_GREATER_EQUAL, $1, $3); }
-				                  | expression_less						{ $$ = $1; }
+expression_greater_equal:	expression_greater_equal TOKEN_GREATER_EQUAL expression_less { $$ = create_node_two_child(EXPRESSION_GREATER_EQUAL, $1, $3); }
+				                  | expression_less { $$ = $1; }
 				                  ;
 
-expression_less: 	expression_less TOKEN_LESS expression_less_equal	{ $$ = create_node_two_child(EXPRESSION_LESS, $1, $3); }
-			            | expression_less_equal					{ $$ = $1; }
+expression_less: 	expression_less TOKEN_LESS expression_less_equal { $$ = create_node_two_child(EXPRESSION_LESS, $1, $3); }
+			            | expression_less_equal { $$ = $1; }
 			            ;
 
-expression_less_equal: 	expression_less_equal TOKEN_LESS_EQUAL expression_sub	{ $$ = create_node_two_child(EXPRESSION_LESS_EQUAL, $1, $3); }
-			                  | expression_sub					{ $$ = $1; }
+expression_less_equal: 	expression_less_equal TOKEN_LESS_EQUAL expression_sub { $$ = create_node_two_child(EXPRESSION_LESS_EQUAL, $1, $3); }
+			                  | expression_sub { $$ = $1; }
 			                  ;
 
-expression_sub:		expression_sub TOKEN_SUBTRACT expression_add	{ $$ = create_node_two_child(EXPRESSION_SUB, $1, $3); }
-			            | expression_add				{ $$ = $1; }
+expression_sub:		expression_sub TOKEN_SUBTRACT expression_add { $$ = create_node_two_child(EXPRESSION_SUB, $1, $3); }
+			            | expression_add { $$ = $1; }
 			            ;
 
-expression_add:		expression_add TOKEN_ADD expression_div		{ $$ = create_node_two_child(EXPRESSION_ADD, $1, $3); }
-			            | expression_div				{ $$ = $1; }
+expression_add:		expression_add TOKEN_ADD expression_div	{ $$ = create_node_two_child(EXPRESSION_ADD, $1, $3); }
+			            | expression_div { $$ = $1; }
 			            ;
 
-expression_div:		expression_div TOKEN_DIVIDE expression_mult		{ $$ = create_node_two_child(EXPRESSION_DIV, $1, $3); }
-			            | expression_mult					{ $$ = $1; }
+expression_div:		expression_div TOKEN_DIVIDE expression_mult	{ $$ = create_node_two_child(EXPRESSION_DIV, $1, $3); }
+			            | expression_mult { $$ = $1; }
 			            ;
 
-expression_mult:	expression_mult TOKEN_MULTIPLY expression_cast		{ $$ = create_node_two_child(EXPRESSION_MULT, $1, $3); }
-			            | expression_cast					{ $$ = $1; }
+expression_mult:	expression_mult TOKEN_MULTIPLY expression_cast { $$ = create_node_two_child(EXPRESSION_MULT, $1, $3); }
+			            | expression_cast { $$ = $1; }
 			            ;
 
-expression_cast:	expression_cast TOKEN_AS variable_type	{ $$ = create_node_two_child(EXPRESSION_CAST, $1, $3); }
-			            | expression_negative			{ $$ = $1; }
+expression_cast:	expression_cast TOKEN_AS variable_type { $$ = create_node_two_child(EXPRESSION_CAST, $1, $3); }
+			            | expression_negative	{ $$ = $1; }
 			            ;
 
-expression_negative:	TOKEN_SUBTRACT expression_negative	{ $$ = create_node_one_child(EXPRESSION_NEGATIVE, $2); }
-			                | expression_not			{ $$ = $1; }
+expression_negative:	TOKEN_SUBTRACT expression_negative { $$ = create_node_one_child(EXPRESSION_NEGATIVE, $2); }
+			                | expression_not { $$ = $1; }
 			                ;
 
-expression_not:		TOKEN_NOT expression_not		{ $$ = create_node_one_child(EXPRESSION_NOT, $2); }
-			            | expression_reference			{ $$ = $1; }
+expression_not:		TOKEN_NOT expression_not { $$ = create_node_one_child(EXPRESSION_NOT, $2); }
+			            | expression_reference { $$ = $1; }
 			            ;
 
-expression_reference:	variable			{ $$ = $1; }
-			                | function_call			{ $$ = $1; }
-			                | new_array			{ $$ = $1; }
-			                | expression_scope		{ $$ = $1; }
+expression_reference:	variable { $$ = $1; }
+			                | function_call { $$ = $1; }
+			                | new_array { $$ = $1; }
+			                | expression_scope { $$ = $1; }
 			                ;
 
 expression_scope:	TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES	{ $$ = $2; }
-			            | expression_data						{ $$ = $1; }
+			            | expression_data { $$ = $1; }
 			            ;
 
-expression_data: 	TOKEN_TRUE			{ $$ = create_node_bool(1); }
-			            | TOKEN_FALSE			{ $$ = create_node_bool(0); }
-			            | TOKEN_CHARACTER		{ $$ = create_node_char($1); }
-			            | TOKEN_INTEGER			{ $$ = create_node_int($1); }
-			            | TOKEN_FLOAT			{ $$ = create_node_float($1); }
-			            | TOKEN_STRING			{ $$ = create_node_string($1); }
+expression_data: 	TOKEN_TRUE { $$ = create_node_bool(1); }
+			            | TOKEN_FALSE { $$ = create_node_bool(0); }
+			            | TOKEN_CHARACTER { $$ = create_node_char($1); }
+			            | TOKEN_INTEGER { $$ = create_node_int($1); }
+			            | TOKEN_FLOAT { $$ = create_node_float($1); }
+			            | TOKEN_STRING { $$ = create_node_string($1); }
 			            ;
 
 %%

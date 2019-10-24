@@ -8,6 +8,8 @@ bison -d monga.y;
 flex monga.l;
 gcc $c_files -Wall -o test;
 
+echo "=============CORRECT CODE============="
+
 for file_input in tests/correct/*\.input; do
 	file_name=$(basename "$file_input")
 	file_name=${file_name%\.input}
@@ -15,6 +17,25 @@ for file_input in tests/correct/*\.input; do
 	printf "$file_name: "
 
 	file_output=tests/correct/$file_name\.output
+	./test $file_input > $file_output
+	status=$?
+
+	if [ $status -eq "0" ]; then
+		echo -e "no error"
+	else
+	  echo -e "error, log in the output file"
+	fi
+done
+
+echo "=============WRONG CODE============="
+
+for file_input in tests/wrong/*\.input; do
+	file_name=$(basename "$file_input")
+	file_name=${file_name%\.input}
+		
+	printf "$file_name: "
+
+	file_output=tests/wrong/$file_name\.output
 	./test $file_input > $file_output
 	status=$?
 

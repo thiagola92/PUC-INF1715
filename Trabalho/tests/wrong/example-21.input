@@ -1,0 +1,7 @@
+# Testing hexadeciaml with G
+
+main( {
+	x1 : ª;
+
+	x1  0x01ABG;
+}
