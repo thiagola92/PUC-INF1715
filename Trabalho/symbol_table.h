@@ -13,6 +13,8 @@ typedef struct symbol {
 typedef struct scope {
   struct symbol* symbol;
   
+  struct symbol* last_symbol;
+  
   struct scope* previous;
   struct scope* next;
 } Scope;

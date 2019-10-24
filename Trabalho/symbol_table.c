@@ -7,6 +7,7 @@ Scope* enter_scope(Scope* scope) {
   Scope* new_scope = (Scope*)safe_malloc(sizeof(Scope));
   
   new_scope->symbol = NULL;
+  new_scope->last_symbol = NULL;
   new_scope->next = NULL;
   new_scope->previous = NULL;
   
@@ -31,20 +32,19 @@ Scope* leave_scope(Scope* scope) {
 
 void insert_symbol(Scope* scope, Node* node) {
   Symbol* new_symbol = (Symbol*)safe_malloc(sizeof(Symbol));
-  Symbol* symbol = scope->symbol;
+  Symbol* old_last_symbol = scope->last_symbol;
+  
+  scope->last_symbol = new_symbol;
   
   new_symbol->node = node;
   new_symbol->next = NULL;
   
-  if(scope->symbol == NULL) {
+  if(old_last_symbol == NULL) {
     scope->symbol = new_symbol;
     return;
   }
   
-  while(symbol->next != NULL)
-    symbol = symbol->next;
-  
-  symbol->next = new_symbol;
+  old_last_symbol->next = new_symbol;
 }
 
 Node* get_symbol(Scope* scope, const char* name) {
@@ -74,17 +74,15 @@ void free_symbols(Symbol* symbol) {
 }
 
 Node* get_last_symbol(Scope* scope, TAG tag) {
-  Symbol* symbol = scope->symbol;
+  Symbol* last_symbol = scope->last_symbol;
   
-  while(symbol != NULL) {
-    if(symbol->next == NULL && symbol->node->tag == tag)
-      return symbol->node;
-      
-    symbol = symbol->next;
-  }
+  // last symbol exist and is the symbol wanted
+  if(last_symbol != NULL && last_symbol->node->tag == tag)
+    return last_symbol->node;
   
-  if(scope->previous == NULL)
+  // no symbol and no more scopes to search for
+  if(last_symbol == NULL && scope->previous == NULL)
     return NULL;
-  
+    
   return get_last_symbol(scope->previous, tag);
 }
