@@ -367,7 +367,7 @@ DEFINE_FUNCTION - VOID
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: d
                     DATA_INTEGER - VOID - content: 1
-                DATA_FLOAT - VOID - content: 1.000000
+                DATA_FLOAT - VOID - content: 1.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: f
@@ -500,7 +500,7 @@ DEFINE_FUNCTION - VOID
                     VARIABLE - ARRAY
                         DATA_STRING - ARRAY - content: d
                     DATA_INTEGER - INTEGER - content: 1
-                DATA_FLOAT - FLOAT - content: 1.000000
+                DATA_FLOAT - FLOAT - content: 1.500000
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
                     DATA_STRING - ARRAY - content: f

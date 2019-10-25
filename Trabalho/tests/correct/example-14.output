@@ -210,11 +210,11 @@ DEFINE_FUNCTION - VOID
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x1
-                DATA_FLOAT - VOID - content: 10.000000
+                DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x2
-                DATA_FLOAT - VOID - content: 20.000000
+                DATA_FLOAT - VOID - content: 20.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
@@ -227,13 +227,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_ADD - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
+                    DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_ADD - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
             ASSIGNMENT - VOID
@@ -242,7 +242,7 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_ADD - VOID
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
@@ -255,13 +255,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_SUB - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
+                    DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_SUB - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
             ASSIGNMENT - VOID
@@ -270,7 +270,7 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_SUB - VOID
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
@@ -283,13 +283,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_MULT - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
+                    DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_MULT - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
             ASSIGNMENT - VOID
@@ -298,7 +298,7 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_MULT - VOID
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
@@ -311,13 +311,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_DIV - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
+                    DATA_FLOAT - VOID - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: x3
                 EXPRESSION_DIV - VOID
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
             ASSIGNMENT - VOID
@@ -326,7 +326,7 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_DIV - VOID
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x1
-                    DATA_FLOAT - VOID - content: 10.000000
+                    DATA_FLOAT - VOID - content: 10.500000
 DEFINE_FUNCTION - VOID
     DATA_STRING - ARRAY - content: main
     BLOCK - VOID
@@ -344,11 +344,11 @@ DEFINE_FUNCTION - VOID
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x1
-                DATA_FLOAT - FLOAT - content: 10.000000
+                DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x2
-                DATA_FLOAT - FLOAT - content: 20.000000
+                DATA_FLOAT - FLOAT - content: 20.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
@@ -361,13 +361,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
+                    DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
             ASSIGNMENT - VOID
@@ -376,7 +376,7 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_ADD - FLOAT
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
@@ -389,13 +389,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_SUB - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
+                    DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_SUB - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
             ASSIGNMENT - VOID
@@ -404,7 +404,7 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_SUB - FLOAT
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
@@ -417,13 +417,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_MULT - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
+                    DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_MULT - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
             ASSIGNMENT - VOID
@@ -432,7 +432,7 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_MULT - FLOAT
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
@@ -445,13 +445,13 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_DIV - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
+                    DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: x3
                 EXPRESSION_DIV - FLOAT
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
             ASSIGNMENT - VOID
@@ -460,4 +460,4 @@ DEFINE_FUNCTION - VOID
                 EXPRESSION_DIV - FLOAT
                     VARIABLE - FLOAT
                         DATA_STRING - ARRAY - content: x1
-                    DATA_FLOAT - FLOAT - content: 10.000000
+                    DATA_FLOAT - FLOAT - content: 10.500000

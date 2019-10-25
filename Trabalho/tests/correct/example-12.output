@@ -309,14 +309,14 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: d
                 EXPRESSION_ADD - VOID
-                    DATA_FLOAT - VOID - content: 1.000000
-                    DATA_FLOAT - VOID - content: 1.000000
+                    DATA_FLOAT - VOID - content: 1.500000
+                    DATA_FLOAT - VOID - content: 1.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: d
                 EXPRESSION_ADD - VOID
                     DATA_FLOAT - VOID - content: 1.000000
-                    DATA_FLOAT - VOID - content: 0.000000
+                    DATA_FLOAT - VOID - content: 0.500000
             ASSIGNMENT - VOID
                 VARIABLE - VOID
                     DATA_STRING - VOID - content: d
@@ -447,14 +447,14 @@ DEFINE_FUNCTION - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: d
                 EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 1.000000
-                    DATA_FLOAT - FLOAT - content: 1.000000
+                    DATA_FLOAT - FLOAT - content: 1.500000
+                    DATA_FLOAT - FLOAT - content: 1.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: d
                 EXPRESSION_ADD - FLOAT
                     DATA_FLOAT - FLOAT - content: 1.000000
-                    DATA_FLOAT - FLOAT - content: 0.000000
+                    DATA_FLOAT - FLOAT - content: 0.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - ARRAY - content: d

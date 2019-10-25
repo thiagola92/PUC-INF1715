@@ -101,10 +101,7 @@ typedef struct Node {
 Node* malloc_node();
 
 Node* create_node(TAG tag, int number_of_childs, ...);
-
-Node* create_node_int(TAG tag, const int i);
-Node* create_node_float(const int f);
-Node* create_node_string(const char* s);
+Node* create_data_node(TAG tag, ...);
 
 Node* append_node(TAG tag, Node* child0, Node* child1);
 
