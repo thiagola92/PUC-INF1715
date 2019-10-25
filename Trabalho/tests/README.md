@@ -31,7 +31,7 @@
 28: Parênteses não atrapalharem o cast final  
 29: Utilizando array nas operações  
 30: Chamar return sem nada  
-30: Utilizando operações not dentro de if e else  
+31: Utilizando operações not dentro de if e else  
 
 # Wrongs Tests
 

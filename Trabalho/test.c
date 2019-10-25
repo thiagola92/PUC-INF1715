@@ -131,10 +131,10 @@ void print_tree(Node* node, int tabs) {
 
 	switch(node->tag) {
 		case DATA_BOOLEAN:
-			printf(" - content: %d", node->content.b);
+			printf(" - content: %d", node->content.i);
 			break;
 		case DATA_CHARACTER:
-			printf(" - content: %c", node->content.c);
+			printf(" - content: %c", node->content.i);
 			break;
 		case DATA_INTEGER:
 			printf(" - content: %d", node->content.i);

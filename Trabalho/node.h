@@ -10,65 +10,65 @@
 #include"util.h"
 
 typedef enum TAG {
-	EMPTY,
+  EMPTY,
 
-	DEFINE_LIST,
+  DEFINE_LIST,
 
-	DEFINE_VARIABLE,
+  DEFINE_VARIABLE,
 	
-	TYPE_BOOLEAN,
-	TYPE_CHARACTER,
-	TYPE_INTEGER,
-	TYPE_FLOAT,
-	TYPE_ARRAY,
+  TYPE_BOOLEAN,
+  TYPE_CHARACTER,
+  TYPE_INTEGER,
+  TYPE_FLOAT,
+  TYPE_ARRAY,
 
-	DEFINE_FUNCTION,
-	PARAMETER_LIST,
-	PARAMETER,
+  DEFINE_FUNCTION,
+  PARAMETER_LIST,
+  PARAMETER,
 
-	COMMAND_LIST,
-	VARIABLE_LIST,
-	BLOCK,
+  COMMAND_LIST,
+  VARIABLE_LIST,
+  BLOCK,
 
-	IF,
-	WHILE,
-	ASSIGNMENT,
-	RETURN,
-	PRINT,
+  IF,
+  WHILE,
+  ASSIGNMENT,
+  RETURN,
+  PRINT,
 
-	VARIABLE,
+  VARIABLE,
   ARRAY_POSITION,
-	FUNCTION_CALL,
-	NEW_ARRAY,
+  FUNCTION_CALL,
+  NEW_ARRAY,
 
-	EXPRESSION_LIST,
+  EXPRESSION_LIST,
 
-	EXPRESSION_OR,
-	EXPRESSION_AND,
+  EXPRESSION_OR,
+  EXPRESSION_AND,
 
-	EXPRESSION_EQUAL,
-	EXPRESSION_NOT_EQUAL,
+  EXPRESSION_EQUAL,
+  EXPRESSION_NOT_EQUAL,
 
-	EXPRESSION_GREATER,
-	EXPRESSION_GREATER_EQUAL,
-	EXPRESSION_LESS,
-	EXPRESSION_LESS_EQUAL,
+  EXPRESSION_GREATER,
+  EXPRESSION_GREATER_EQUAL,
+  EXPRESSION_LESS,
+  EXPRESSION_LESS_EQUAL,
 
-	EXPRESSION_SUB,
-	EXPRESSION_ADD,
-	EXPRESSION_DIV,
-	EXPRESSION_MULT,
+  EXPRESSION_SUB,
+  EXPRESSION_ADD,
+  EXPRESSION_DIV,
+  EXPRESSION_MULT,
 
-	EXPRESSION_CAST,
-	EXPRESSION_NEGATIVE,
-	EXPRESSION_NOT,
+  EXPRESSION_CAST,
+  EXPRESSION_NEGATIVE,
+  EXPRESSION_NOT,
 
-	DATA_BOOLEAN,
-	DATA_CHARACTER,
-	DATA_INTEGER,
-	DATA_FLOAT,
-	DATA_STRING,
-	DATA_ARRAY,
+  DATA_BOOLEAN,
+  DATA_CHARACTER,
+  DATA_INTEGER,
+  DATA_FLOAT,
+  DATA_STRING,
+  DATA_ARRAY,
 } TAG;
 
 typedef enum TYPE {
@@ -82,32 +82,28 @@ typedef enum TYPE {
 } TYPE;
 
 typedef struct Node {
-	TAG tag;
+  TAG tag;
 
-	int number_of_childs;
+  int number_of_childs;
 
 	union content {
-		int b;
-		char c;
-		int i;
-		float f;
-		const char* s;
+    int i;
+    float f;
+    const char* s;
 
-		struct Node** n;
+    struct Node** n;
 	} content;
 	
-	struct Node* definition;
+  struct Node* definition;
 	
-	TYPE type;
+  TYPE type;
 } Node;
 
 Node* malloc_node();
 
 Node* create_node(TAG tag, int number_of_childs, ...);
 
-Node* create_node_bool(const int b);
-Node* create_node_char(const char c);
-Node* create_node_int(const int i);
+Node* create_node_int(TAG tag, const int i);
 Node* create_node_float(const int f);
 Node* create_node_string(const char* s);
 

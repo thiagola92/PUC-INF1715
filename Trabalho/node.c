@@ -32,24 +32,8 @@ Node* create_node(TAG tag, int number_of_childs, ...) {
 	return node;
 }
 
-Node* create_node_bool(const int b) {
-	Node* node = malloc_node(DATA_BOOLEAN);
-
-	node->content.b = b;
-
-	return node;
-}
-
-Node* create_node_char(const char c) {
-	Node* node = malloc_node(DATA_CHARACTER);
-
-	node->content.c = c;
-
-	return node;
-}
-
-Node* create_node_int(const int i) {
-	Node* node = malloc_node(DATA_INTEGER);
+Node* create_node_int(TAG tag, const int i) {
+	Node* node = malloc_node(tag);
 
 	node->content.i = i;
 

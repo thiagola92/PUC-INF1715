@@ -14,7 +14,6 @@
 	float f;
 	char* s;
 	
-  int l;
 	Node* n;
 }
 
@@ -271,10 +270,10 @@ expression_scope:	TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES	{ $$
 			            | expression_data { $$ = $1; }
 			            ;
 
-expression_data: 	TOKEN_TRUE { $$ = create_node_bool(1); }
-			            | TOKEN_FALSE { $$ = create_node_bool(0); }
-			            | TOKEN_CHARACTER { $$ = create_node_char($1); }
-			            | TOKEN_INTEGER { $$ = create_node_int($1); }
+expression_data: 	TOKEN_TRUE { $$ = create_node_int(DATA_BOOLEAN, 1); }
+			            | TOKEN_FALSE { $$ = create_node_int(DATA_BOOLEAN, 0); }
+			            | TOKEN_CHARACTER { $$ = create_node_int(DATA_CHARACTER, $1); }
+			            | TOKEN_INTEGER { $$ = create_node_int(DATA_INTEGER, $1); }
 			            | TOKEN_FLOAT { $$ = create_node_float($1); }
 			            | TOKEN_STRING { $$ = create_node_string($1); }
 			            ;
