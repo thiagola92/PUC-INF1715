@@ -1,34 +1,35 @@
-# Testing assignment
-
 main() {
 	a : bool;
 	b : char;
 	c : int;
 	d : float;
 	e : [bool];
-	f : int;
-	g : float;
-	h : [char];
+	f : [char];
 
 	a = true;
 	a = false;
+	
 	b = 's';
+	
 	c = 1;
+	c = 1 + 1;
+	c = 1 + 99999;
+	c = 0 + 1;
+	c = 0 + 0;
+	
 	d = 1.0;
+	d = 1.0 + 1.0;
+	d = 1.0 + 99999.0;
+	d = 0.0 + 1.0;
+	d = 0.0 + 0.0;
+	d = 1.5 + 1.5;
+	d = 1.0 + 0.5;
+	d = 0.00000001 + 1.0;
+	
 	e = new bool[2];
 	e[0] = true;
 	e[1] = false;
-	f = 1 + 1;
-	f = 1 + 99999;
-	f = 0 + 1;
-	f = 0 + 0;
-	g = 1.0 + 1.0;
-	g = 1.0 + 99999.0;
-	g = 0.0 + 1.0;
-	g = 0.0 + 0.0;
-	g = 1.5 + 1.5;
-	g = 1.0 + 0.5;
-	g = 0.00000001 + 1;
-	h = "hello world";
-	h = "\"hello\nworld\"";
+	
+	f = "hello world";
+	f = "\"hello\nworld\"";
 }

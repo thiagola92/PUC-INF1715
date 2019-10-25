@@ -1,4 +1,5 @@
-# Testing parameters end with comma
+fourth(a, b, c) {
+}
 
 main() {
 	fourth(a,b,c,);

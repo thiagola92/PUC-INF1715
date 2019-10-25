@@ -89,6 +89,39 @@ Symbol: fourth
 
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: first
+        BLOCK - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: second
+        PARAMETER - VOID
+            DATA_STRING - VOID - content: a
+            TYPE_BOOLEAN - VOID
+        BLOCK - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: third
+        PARAMETER_LIST - VOID
+            PARAMETER - VOID
+                DATA_STRING - VOID - content: a
+                TYPE_BOOLEAN - VOID
+            PARAMETER - VOID
+                DATA_STRING - VOID - content: b
+                TYPE_BOOLEAN - VOID
+        BLOCK - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: fourth
+        PARAMETER_LIST - VOID
+            PARAMETER - VOID
+                DATA_STRING - VOID - content: a
+                TYPE_BOOLEAN - VOID
+            PARAMETER - VOID
+                DATA_STRING - VOID - content: b
+                TYPE_BOOLEAN - VOID
+            PARAMETER - VOID
+                DATA_STRING - VOID - content: c
+                TYPE_BOOLEAN - VOID
+        BLOCK - VOID
+DEFINE_LIST - VOID
+    DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: first
         BLOCK - VOID
     DEFINE_FUNCTION - VOID

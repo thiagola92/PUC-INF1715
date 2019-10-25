@@ -158,6 +158,7 @@ int test(const char* path) {
 	yyparse();
 
   start_binding(__root__);
+	print_tree(__root__, 0);
   type_node(__root__);
 	print_tree(__root__, 0);
 	printf("\n");

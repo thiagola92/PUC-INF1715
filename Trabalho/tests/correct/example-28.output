@@ -21,11 +21,48 @@ Symbol: x1
 Symbol: x2
 === BIND VARIABLE ===
 Scope
+Symbol: x1
+Symbol: x2
+=== BIND VARIABLE ===
+Scope
 === LEAVE SCOPE ===
 Scope
 Symbol: main
 === LEAVE SCOPE ===
 
+DEFINE_FUNCTION - VOID
+    DATA_STRING - VOID - content: main
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x1
+                TYPE_INTEGER - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x2
+                TYPE_FLOAT - VOID
+        COMMAND_LIST - VOID
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 1.000000
+                    DATA_FLOAT - VOID - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x2
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_ADD - VOID
+                    EXPRESSION_ADD - VOID
+                        DATA_FLOAT - VOID - content: 1.000000
+                        EXPRESSION_ADD - VOID
+                            DATA_FLOAT - VOID - content: 1.000000
+                            DATA_FLOAT - VOID - content: 1.000000
+                    DATA_FLOAT - VOID - content: 1.000000
 DEFINE_FUNCTION - VOID
     DATA_STRING - STRING - content: main
     BLOCK - VOID
@@ -53,3 +90,15 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
                         DATA_INTEGER - INTEGER - content: 1
                     TYPE_FLOAT - FLOAT
+            ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_CAST - INTEGER
+                    EXPRESSION_ADD - FLOAT
+                        EXPRESSION_ADD - FLOAT
+                            DATA_FLOAT - FLOAT - content: 1.000000
+                            EXPRESSION_ADD - FLOAT
+                                DATA_FLOAT - FLOAT - content: 1.000000
+                                DATA_FLOAT - FLOAT - content: 1.000000
+                        DATA_FLOAT - FLOAT - content: 1.000000
+                    TYPE_INTEGER - INTEGER

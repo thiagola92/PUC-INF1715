@@ -80,6 +80,9 @@ void check_assignment_type(Node* node) {
 }
 
 void check_return_type(Node* node) {
+  if(node->number_of_childs == 0)
+    return;
+
   if(type_from_function_call(node->definition) != node->content.n[0]->type)
     throw_type_error("value must be same as function return type");
 }

@@ -27,6 +27,21 @@ Symbol: first
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
+    DATA_STRING - VOID - content: first
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: a
+                TYPE_BOOLEAN - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: b
+                TYPE_BOOLEAN - VOID
+        COMMAND_LIST - VOID
+            FUNCTION_CALL - VOID
+                DATA_STRING - VOID - content: first
+            FUNCTION_CALL - VOID
+                DATA_STRING - VOID - content: first
+DEFINE_FUNCTION - VOID
     DATA_STRING - STRING - content: first
     BLOCK - VOID
         VARIABLE_LIST - VOID

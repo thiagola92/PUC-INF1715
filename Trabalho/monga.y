@@ -177,6 +177,7 @@ command:	TOKEN_IF expression block	 { $$ = create_node_two_child(IF, $2, $3); }
 		      | TOKEN_WHILE expression block { $$ = create_node_two_child(WHILE, $2, $3); }
 		      | variable TOKEN_ASSIGNMENT expression TOKEN_SEMICOLON { $$ = create_node_two_child(ASSIGNMENT, $1, $3); }
 		      | TOKEN_RETURN expression TOKEN_SEMICOLON	{ $$ = create_node_one_child(RETURN, $2); }
+		      | TOKEN_RETURN TOKEN_SEMICOLON { $$ = create_node_zero_child(RETURN); }
 		      | TOKEN_AT_SIGN expression TOKEN_SEMICOLON { $$ = create_node_one_child(PRINT, $2); }
 		      | function_call TOKEN_SEMICOLON { $$ = $1; }
 		      | block { $$ = $1; }

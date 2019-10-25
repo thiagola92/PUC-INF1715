@@ -1,6 +1,7 @@
-# Testing declaring after commands
-
 first() {
+}
+
+main() {
 	first();
 	a:bool;
 }

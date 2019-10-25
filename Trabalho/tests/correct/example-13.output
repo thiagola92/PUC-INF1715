@@ -194,6 +194,140 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
+    DATA_STRING - VOID - content: main
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x1
+                TYPE_INTEGER - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x2
+                TYPE_INTEGER - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x3
+                TYPE_INTEGER - VOID
+        COMMAND_LIST - VOID
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x2
+                DATA_INTEGER - VOID - content: 20
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_ADD - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x2
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_ADD - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+                    DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_SUB - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x2
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_SUB - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_SUB - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_SUB - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+                    DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_MULT - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x2
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_MULT - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_MULT - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_MULT - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+                    DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_DIV - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x2
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x2
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_DIV - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    DATA_INTEGER - VOID - content: 10
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_DIV - VOID
+                    DATA_INTEGER - VOID - content: 10
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_DIV - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x1
+                    DATA_INTEGER - VOID - content: 10
+DEFINE_FUNCTION - VOID
     DATA_STRING - STRING - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID

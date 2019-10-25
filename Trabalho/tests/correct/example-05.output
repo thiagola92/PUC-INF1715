@@ -37,6 +37,23 @@ Symbol: seventh
 
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: first
+        TYPE_BOOLEAN - VOID
+        BLOCK - VOID
+            RETURN - VOID
+                DATA_BOOLEAN - VOID - content: 1
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: seventh
+        PARAMETER - VOID
+            DATA_STRING - VOID - content: a
+            TYPE_BOOLEAN - VOID
+        TYPE_BOOLEAN - VOID
+        BLOCK - VOID
+            RETURN - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: a
+DEFINE_LIST - VOID
+    DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: first
         TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID

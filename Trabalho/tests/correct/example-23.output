@@ -40,6 +40,22 @@ Symbol: fn
 
 DEFINE_LIST - VOID
     DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: a
+        TYPE_INTEGER - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: main
+        BLOCK - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: b
+                TYPE_INTEGER - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: fn
+        BLOCK - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: a
+                TYPE_INTEGER - VOID
+DEFINE_LIST - VOID
+    DEFINE_VARIABLE - VOID
         DATA_STRING - STRING - content: a
         TYPE_INTEGER - INTEGER
     DEFINE_FUNCTION - VOID

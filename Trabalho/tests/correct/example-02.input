@@ -1,5 +1,3 @@
-# Testing every variable type
-
 aaa : bool;
 bbb : char;
 ccc : int;

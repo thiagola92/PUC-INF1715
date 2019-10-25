@@ -34,6 +34,25 @@ Symbol: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
 
 DEFINE_LIST - VOID
     DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: s
+        TYPE_CHARACTER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: normal_name
+        TYPE_CHARACTER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: long_long_long_long_long_long_name
+        TYPE_CHARACTER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: s1
+        TYPE_CHARACTER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: s_1
+        TYPE_CHARACTER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
+        TYPE_CHARACTER - VOID
+DEFINE_LIST - VOID
+    DEFINE_VARIABLE - VOID
         DATA_STRING - STRING - content: s
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID

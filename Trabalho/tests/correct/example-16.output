@@ -94,6 +94,140 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
+    DATA_STRING - VOID - content: main
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x1
+                TYPE_INTEGER - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x2
+                TYPE_INTEGER - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x3
+                TYPE_INTEGER - VOID
+        COMMAND_LIST - VOID
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_ADD - VOID
+                    EXPRESSION_ADD - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x2
+                EXPRESSION_SUB - VOID
+                    EXPRESSION_SUB - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_MULT - VOID
+                    EXPRESSION_MULT - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_DIV - VOID
+                    EXPRESSION_DIV - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_SUB - VOID
+                    EXPRESSION_ADD - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x2
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    EXPRESSION_MULT - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    EXPRESSION_DIV - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_SUB - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    EXPRESSION_ADD - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x2
+                EXPRESSION_ADD - VOID
+                    EXPRESSION_MULT - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_ADD - VOID
+                    EXPRESSION_DIV - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    EXPRESSION_ADD - VOID
+                        EXPRESSION_ADD - VOID
+                            DATA_INTEGER - VOID - content: 1
+                            DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x2
+                EXPRESSION_SUB - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    EXPRESSION_ADD - VOID
+                        EXPRESSION_ADD - VOID
+                            DATA_INTEGER - VOID - content: 1
+                            DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x3
+                EXPRESSION_MULT - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    EXPRESSION_ADD - VOID
+                        EXPRESSION_ADD - VOID
+                            DATA_INTEGER - VOID - content: 1
+                            DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: x1
+                EXPRESSION_DIV - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    EXPRESSION_ADD - VOID
+                        EXPRESSION_ADD - VOID
+                            DATA_INTEGER - VOID - content: 1
+                            DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+DEFINE_FUNCTION - VOID
     DATA_STRING - STRING - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID

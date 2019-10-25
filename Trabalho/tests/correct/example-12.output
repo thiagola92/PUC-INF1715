@@ -45,27 +45,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-Symbol: e
-Symbol: f
-Symbol: g
-Symbol: h
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-Symbol: e
-Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -74,8 +53,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -84,8 +61,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -94,8 +69,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -104,8 +77,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -114,8 +85,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -124,8 +93,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -134,8 +101,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -144,8 +109,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -154,8 +117,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -164,8 +125,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -174,8 +133,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -184,8 +141,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -194,8 +149,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -204,8 +157,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -214,8 +165,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -224,8 +173,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -234,8 +181,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -244,8 +189,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -254,8 +197,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 Symbol: a
@@ -264,8 +205,6 @@ Symbol: c
 Symbol: d
 Symbol: e
 Symbol: f
-Symbol: g
-Symbol: h
 === BIND VARIABLE ===
 Scope
 === LEAVE SCOPE ===
@@ -273,6 +212,144 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
+DEFINE_FUNCTION - VOID
+    DATA_STRING - VOID - content: main
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: a
+                TYPE_BOOLEAN - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: b
+                TYPE_CHARACTER - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: c
+                TYPE_INTEGER - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: d
+                TYPE_FLOAT - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: e
+                TYPE_ARRAY - VOID
+                    TYPE_BOOLEAN - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: f
+                TYPE_ARRAY - VOID
+                    TYPE_CHARACTER - VOID
+        COMMAND_LIST - VOID
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: a
+                DATA_BOOLEAN - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: a
+                DATA_BOOLEAN - VOID - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: b
+                DATA_CHARACTER - VOID - content: s
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: c
+                DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: c
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: c
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 1
+                    DATA_INTEGER - VOID - content: 99999
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: c
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 0
+                    DATA_INTEGER - VOID - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: c
+                EXPRESSION_ADD - VOID
+                    DATA_INTEGER - VOID - content: 0
+                    DATA_INTEGER - VOID - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                DATA_FLOAT - VOID - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 1.000000
+                    DATA_FLOAT - VOID - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 1.000000
+                    DATA_FLOAT - VOID - content: 99999.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 0.000000
+                    DATA_FLOAT - VOID - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 0.000000
+                    DATA_FLOAT - VOID - content: 0.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 1.000000
+                    DATA_FLOAT - VOID - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 1.000000
+                    DATA_FLOAT - VOID - content: 0.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: d
+                EXPRESSION_ADD - VOID
+                    DATA_FLOAT - VOID - content: 0.000000
+                    DATA_FLOAT - VOID - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: e
+                NEW_ARRAY - VOID
+                    TYPE_BOOLEAN - VOID
+                    DATA_INTEGER - VOID - content: 2
+            ASSIGNMENT - VOID
+                ARRAY_POSITION - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: e
+                    DATA_INTEGER - VOID - content: 0
+                DATA_BOOLEAN - VOID - content: 1
+            ASSIGNMENT - VOID
+                ARRAY_POSITION - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: e
+                    DATA_INTEGER - VOID - content: 1
+                DATA_BOOLEAN - VOID - content: 0
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: f
+                DATA_STRING - VOID - content: hello world
+            ASSIGNMENT - VOID
+                VARIABLE - VOID
+                    DATA_STRING - VOID - content: f
+                DATA_STRING - VOID - content: "hello
+world"
 DEFINE_FUNCTION - VOID
     DATA_STRING - STRING - content: main
     BLOCK - VOID
@@ -295,12 +372,6 @@ DEFINE_FUNCTION - VOID
                     TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
                 DATA_STRING - STRING - content: f
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: g
-                TYPE_FLOAT - FLOAT
-            DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: h
                 TYPE_ARRAY - ARRAY
                     TYPE_CHARACTER - CHARACTER
         COMMAND_LIST - VOID
@@ -321,9 +392,75 @@ DEFINE_FUNCTION - VOID
                     DATA_STRING - STRING - content: c
                 DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - STRING - content: c
+                EXPRESSION_ADD - INTEGER
+                    DATA_INTEGER - INTEGER - content: 1
+                    DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - STRING - content: c
+                EXPRESSION_ADD - INTEGER
+                    DATA_INTEGER - INTEGER - content: 1
+                    DATA_INTEGER - INTEGER - content: 99999
+            ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - STRING - content: c
+                EXPRESSION_ADD - INTEGER
+                    DATA_INTEGER - INTEGER - content: 0
+                    DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - STRING - content: c
+                EXPRESSION_ADD - INTEGER
+                    DATA_INTEGER - INTEGER - content: 0
+                    DATA_INTEGER - INTEGER - content: 0
+            ASSIGNMENT - VOID
                 VARIABLE - FLOAT
                     DATA_STRING - STRING - content: d
                 DATA_FLOAT - FLOAT - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: d
+                EXPRESSION_ADD - FLOAT
+                    DATA_FLOAT - FLOAT - content: 1.000000
+                    DATA_FLOAT - FLOAT - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: d
+                EXPRESSION_ADD - FLOAT
+                    DATA_FLOAT - FLOAT - content: 1.000000
+                    DATA_FLOAT - FLOAT - content: 99999.000000
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: d
+                EXPRESSION_ADD - FLOAT
+                    DATA_FLOAT - FLOAT - content: 0.000000
+                    DATA_FLOAT - FLOAT - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: d
+                EXPRESSION_ADD - FLOAT
+                    DATA_FLOAT - FLOAT - content: 0.000000
+                    DATA_FLOAT - FLOAT - content: 0.000000
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: d
+                EXPRESSION_ADD - FLOAT
+                    DATA_FLOAT - FLOAT - content: 1.000000
+                    DATA_FLOAT - FLOAT - content: 1.000000
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: d
+                EXPRESSION_ADD - FLOAT
+                    DATA_FLOAT - FLOAT - content: 1.000000
+                    DATA_FLOAT - FLOAT - content: 0.000000
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: d
+                EXPRESSION_ADD - FLOAT
+                    DATA_FLOAT - FLOAT - content: 0.000000
+                    DATA_FLOAT - FLOAT - content: 1.000000
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
                     DATA_STRING - STRING - content: e
@@ -343,83 +480,15 @@ DEFINE_FUNCTION - VOID
                     DATA_INTEGER - INTEGER - content: 1
                 DATA_BOOLEAN - BOOLEAN - content: 0
             ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: f
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: f
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 99999
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: f
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 0
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: f
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 0
-                    DATA_INTEGER - INTEGER - content: 0
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: g
-                EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 1.000000
-                    DATA_FLOAT - FLOAT - content: 1.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: g
-                EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 1.000000
-                    DATA_FLOAT - FLOAT - content: 99999.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: g
-                EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 0.000000
-                    DATA_FLOAT - FLOAT - content: 1.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: g
-                EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 0.000000
-                    DATA_FLOAT - FLOAT - content: 0.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: g
-                EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 1.000000
-                    DATA_FLOAT - FLOAT - content: 1.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: g
-                EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 1.000000
-                    DATA_FLOAT - FLOAT - content: 0.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: g
-                EXPRESSION_ADD - FLOAT
-                    DATA_FLOAT - FLOAT - content: 0.000000
-                    EXPRESSION_CAST - FLOAT
-                        DATA_INTEGER - INTEGER - content: 1
-                        TYPE_FLOAT - FLOAT
-            ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - STRING - content: h
+                    DATA_STRING - STRING - content: f
                 EXPRESSION_CAST - ARRAY
                     DATA_STRING - STRING - content: hello world
                     DATA_ARRAY - ARRAY
                         DATA_CHARACTER - CHARACTER - content:  
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - STRING - content: h
+                    DATA_STRING - STRING - content: f
                 EXPRESSION_CAST - ARRAY
                     DATA_STRING - STRING - content: "hello
 world"

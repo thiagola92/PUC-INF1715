@@ -1,0 +1,23 @@
+Scope
+Symbol: first
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== BIND RETURN ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+Symbol: first
+=== LEAVE SCOPE ===
+
+DEFINE_FUNCTION - VOID
+    DATA_STRING - VOID - content: first
+    BLOCK - VOID
+        RETURN - VOID
+DEFINE_FUNCTION - VOID
+    DATA_STRING - STRING - content: first
+    BLOCK - VOID
+        RETURN - VOID

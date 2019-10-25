@@ -43,6 +43,30 @@ Symbol: main
 
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: first
+        PARAMETER - VOID
+            DATA_STRING - VOID - content: y
+            TYPE_INTEGER - VOID
+        BLOCK - VOID
+    DEFINE_FUNCTION - VOID
+        DATA_STRING - VOID - content: main
+        BLOCK - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - VOID - content: x
+                TYPE_INTEGER - VOID
+            COMMAND_LIST - VOID
+                ASSIGNMENT - VOID
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x
+                    EXPRESSION_ADD - VOID
+                        DATA_INTEGER - VOID - content: 1
+                        DATA_INTEGER - VOID - content: 1
+                FUNCTION_CALL - VOID
+                    DATA_STRING - VOID - content: first
+                    VARIABLE - VOID
+                        DATA_STRING - VOID - content: x
+DEFINE_LIST - VOID
+    DEFINE_FUNCTION - VOID
         DATA_STRING - STRING - content: first
         PARAMETER - VOID
             DATA_STRING - STRING - content: y

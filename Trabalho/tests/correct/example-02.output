@@ -34,6 +34,28 @@ Symbol: fff
 
 DEFINE_LIST - VOID
     DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: aaa
+        TYPE_BOOLEAN - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: bbb
+        TYPE_CHARACTER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: ccc
+        TYPE_INTEGER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: ddd
+        TYPE_FLOAT - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: eee
+        TYPE_ARRAY - VOID
+            TYPE_CHARACTER - VOID
+    DEFINE_VARIABLE - VOID
+        DATA_STRING - VOID - content: fff
+        TYPE_ARRAY - VOID
+            TYPE_ARRAY - VOID
+                TYPE_CHARACTER - VOID
+DEFINE_LIST - VOID
+    DEFINE_VARIABLE - VOID
         DATA_STRING - STRING - content: aaa
         TYPE_BOOLEAN - BOOLEAN
     DEFINE_VARIABLE - VOID
