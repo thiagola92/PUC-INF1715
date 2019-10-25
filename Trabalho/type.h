@@ -9,6 +9,8 @@
 void throw_type_error(const char* name);
 void throw_numeric_error(Node* node);
 
+Node* cast_to(Node* node, TAG tag);
+
 void cast_to_integer(Node* node, int index);
 void cast_to_float(Node* node, int index);
 void cast_to_array(Node* node, int index);

@@ -30,7 +30,8 @@
 27: Priorizar resolver cast do que matemática  
 28: Parênteses não atrapalharem o cast final  
 29: Utilizando array nas operações  
-30: Chamar return sem nada
+30: Chamar return sem nada  
+30: Utilizando operações not dentro de if e else  
 
 # Wrongs Tests
 

@@ -482,15 +482,13 @@ DEFINE_FUNCTION - VOID
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
                     DATA_STRING - STRING - content: f
-                EXPRESSION_CAST - ARRAY
+                EXPRESSION_CAST - CHARACTER
                     DATA_STRING - STRING - content: hello world
-                    DATA_ARRAY - ARRAY
-                        DATA_CHARACTER - CHARACTER - content:  
+                    TYPE_CHARACTER - CHARACTER
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
                     DATA_STRING - STRING - content: f
-                EXPRESSION_CAST - ARRAY
+                EXPRESSION_CAST - CHARACTER
                     DATA_STRING - STRING - content: "hello
 world"
-                    DATA_ARRAY - ARRAY
-                        DATA_CHARACTER - CHARACTER - content:  
+                    TYPE_CHARACTER - CHARACTER

@@ -3,9 +3,10 @@
 
 #include"node.h"
 
-Node* malloc_node() {
+Node* malloc_node(TAG tag) {
 	Node* node = (Node*)safe_malloc(sizeof(Node));
 
+  node->tag = tag;
 	node->number_of_childs = 0;
 	node->definition = NULL;
 	node->type = VOID;
@@ -13,109 +14,60 @@ Node* malloc_node() {
 	return node;
 }
 
-Node* create_node_bool(const int b) {
-	Node* node = malloc_node();
+Node* create_node(TAG tag, int number_of_childs, ...) {
+  Node* node = malloc_node(tag);
+  va_list childs_list;
 
-	node->tag = DATA_BOOLEAN;
+  va_start(childs_list, number_of_childs);
+
+  node->tag = tag;
+	node->number_of_childs = number_of_childs;
+	node->content.n = (Node**)safe_malloc(sizeof(Node*) * number_of_childs);
+	
+	for(int i = 0; i < number_of_childs; i++)
+	  node->content.n[i] = (Node*)va_arg(childs_list, void*);
+	  
+	va_end(childs_list);
+	
+	return node;
+}
+
+Node* create_node_bool(const int b) {
+	Node* node = malloc_node(DATA_BOOLEAN);
+
 	node->content.b = b;
 
 	return node;
 }
 
 Node* create_node_char(const char c) {
-	Node* node = malloc_node();
+	Node* node = malloc_node(DATA_CHARACTER);
 
-	node->tag = DATA_CHARACTER;
 	node->content.c = c;
 
 	return node;
 }
 
 Node* create_node_int(const int i) {
-	Node* node = malloc_node();
+	Node* node = malloc_node(DATA_INTEGER);
 
-	node->tag = DATA_INTEGER;
 	node->content.i = i;
 
 	return node;
 }
 
 Node* create_node_float(const int f) {
-	Node* node = malloc_node();
+	Node* node = malloc_node(DATA_FLOAT);
 
-	node->tag = DATA_FLOAT;
 	node->content.f = f;
 
 	return node;
 }
 
 Node* create_node_string(const char* s) {
-	Node* node = malloc_node();
+	Node* node = malloc_node(DATA_STRING);
 
-	node->tag = DATA_STRING;
 	node->content.s = s;
-
-	return node;
-}
-
-Node* create_node_zero_child(TAG tag) {
-	Node* node = malloc_node();
-
-	node->tag = tag;
-
-	return node;
-}
-
-Node* create_node_one_child(TAG tag, Node* child) {
-	Node* node = malloc_node();
-
-	node->tag = tag;
-	node->number_of_childs = 1;
-	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
-
-	node->content.n[0] = child;
-
-	return node;
-}
-
-Node* create_node_two_child(TAG tag, Node* child0, Node* child1) {
-	Node* node = malloc_node();
-
-	node->tag = tag;
-	node->number_of_childs = 2;
-	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
-
-	node->content.n[0] = child0;
-	node->content.n[1] = child1;
-
-	return node;
-}
-
-Node* create_node_three_child(TAG tag, Node* child0, Node* child1, Node* child2) {
-	Node* node = malloc_node();
-
-	node->tag = tag;
-	node->number_of_childs = 3;
-	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
-
-	node->content.n[0] = child0;
-	node->content.n[1] = child1;
-	node->content.n[2] = child2;
-
-	return node;
-}
-
-Node* create_node_four_child(TAG tag, Node* child0, Node* child1, Node* child2, Node* child3) {
-	Node* node = malloc_node();
-
-	node->tag = tag;
-	node->number_of_childs = 4;
-	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
-
-	node->content.n[0] = child0;
-	node->content.n[1] = child1;
-	node->content.n[2] = child2;
-	node->content.n[3] = child3;
 
 	return node;
 }
@@ -125,11 +77,10 @@ Node* append_node(TAG tag, Node* child0, Node* child1) {
 	Node* node;
 	
 	if(child0->tag != tag)
-	  return create_node_two_child(tag, child0, child1);
+	  return create_node(tag, 2, child0, child1);
 	
-	node = malloc_node();
+	node = malloc_node(tag);
 	
-	node->tag = tag;
 	node->number_of_childs = child0->number_of_childs + 1;
 	node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
   

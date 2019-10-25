@@ -16,18 +16,22 @@ void throw_numeric_error(Node* node) {
     throw_type_error("value must be integer or float");
 }
 
-void cast_to_integer(Node* node, int index) {  
-  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_zero_child(TYPE_INTEGER));
+Node* cast_to(Node* node, TAG tag) {
+  return create_node(EXPRESSION_CAST, 2, node, create_node(tag, 0));
+}
+
+void cast_to_integer(Node* node, int index) {
+  node->content.n[index] = cast_to(node->content.n[index], TYPE_INTEGER);
   type_node(node->content.n[index]);
 }
 
 void cast_to_float(Node* node, int index) {  
-  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_zero_child(TYPE_FLOAT));
+  node->content.n[index] = cast_to(node->content.n[index], TYPE_FLOAT);
   type_node(node->content.n[index]);
 }
 
 void cast_to_array(Node* node, int index) {
-  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_one_child(DATA_ARRAY, create_node_char(' ')));
+  node->content.n[index] = cast_to(node->content.n[index], TYPE_CHARACTER);
   type_node(node->content.n[index]);
 }
 

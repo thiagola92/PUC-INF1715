@@ -6,6 +6,7 @@
 
 #include<stdio.h>
 #include<stdlib.h>
+#include<stdarg.h>
 #include"util.h"
 
 typedef enum TAG {
@@ -102,17 +103,13 @@ typedef struct Node {
 
 Node* malloc_node();
 
+Node* create_node(TAG tag, int number_of_childs, ...);
+
 Node* create_node_bool(const int b);
 Node* create_node_char(const char c);
 Node* create_node_int(const int i);
 Node* create_node_float(const int f);
 Node* create_node_string(const char* s);
-
-Node* create_node_zero_child(TAG tag);
-Node* create_node_one_child(TAG tag, Node* child);
-Node* create_node_two_child(TAG tag, Node* child0, Node* child1);
-Node* create_node_three_child(TAG tag, Node* child0, Node* child1, Node* child2);
-Node* create_node_four_child(TAG tag, Node* child0, Node* child1, Node* child2, Node* child3);
 
 Node* append_node(TAG tag, Node* child0, Node* child1);
 
