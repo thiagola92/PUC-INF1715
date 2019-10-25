@@ -90,22 +90,22 @@ DEFINE_FUNCTION - VOID
                         DATA_BOOLEAN - VOID - content: 0
                     DATA_BOOLEAN - VOID - content: 1
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x1
+                DATA_STRING - ARRAY - content: x1
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x2
+                DATA_STRING - ARRAY - content: x2
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x3
+                DATA_STRING - ARRAY - content: x3
                 TYPE_BOOLEAN - BOOLEAN
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_OR - BOOLEAN
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     EXPRESSION_AND - BOOLEAN
@@ -113,7 +113,7 @@ DEFINE_FUNCTION - VOID
                         DATA_BOOLEAN - BOOLEAN - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_OR - BOOLEAN
                     EXPRESSION_AND - BOOLEAN
                         DATA_BOOLEAN - BOOLEAN - content: 1
@@ -121,7 +121,7 @@ DEFINE_FUNCTION - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_OR - BOOLEAN
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     EXPRESSION_AND - BOOLEAN
@@ -129,7 +129,7 @@ DEFINE_FUNCTION - VOID
                         DATA_BOOLEAN - BOOLEAN - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_OR - BOOLEAN
                     EXPRESSION_AND - BOOLEAN
                         DATA_BOOLEAN - BOOLEAN - content: 1

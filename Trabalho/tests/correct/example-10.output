@@ -305,123 +305,123 @@ DEFINE_LIST - VOID
                                 DATA_STRING - VOID - content: first
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: first
+        DATA_STRING - ARRAY - content: first
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: main
+        DATA_STRING - ARRAY - content: main
         BLOCK - VOID
             COMMAND_LIST - VOID
                 IF - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         FUNCTION_CALL - VOID
-                            DATA_STRING - STRING - content: first
+                            DATA_STRING - ARRAY - content: first
                 IF - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 0
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         FUNCTION_CALL - VOID
-                            DATA_STRING - STRING - content: first
+                            DATA_STRING - ARRAY - content: first
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         FUNCTION_CALL - VOID
-                            DATA_STRING - STRING - content: first
+                            DATA_STRING - ARRAY - content: first
                 IF - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         COMMAND_LIST - VOID
                             IF - VOID
                                 DATA_BOOLEAN - BOOLEAN - content: 1
                                 BLOCK - VOID
                                     DEFINE_VARIABLE - VOID
-                                        DATA_STRING - STRING - content: a
+                                        DATA_STRING - ARRAY - content: a
                                         TYPE_BOOLEAN - BOOLEAN
                                     FUNCTION_CALL - VOID
-                                        DATA_STRING - STRING - content: first
+                                        DATA_STRING - ARRAY - content: first
                             FUNCTION_CALL - VOID
-                                DATA_STRING - STRING - content: first
+                                DATA_STRING - ARRAY - content: first
                 IF - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         COMMAND_LIST - VOID
                             IF - VOID
                                 DATA_BOOLEAN - BOOLEAN - content: 0
                                 BLOCK - VOID
                                     DEFINE_VARIABLE - VOID
-                                        DATA_STRING - STRING - content: a
+                                        DATA_STRING - ARRAY - content: a
                                         TYPE_BOOLEAN - BOOLEAN
                                     FUNCTION_CALL - VOID
-                                        DATA_STRING - STRING - content: first
+                                        DATA_STRING - ARRAY - content: first
                                 BLOCK - VOID
                                     DEFINE_VARIABLE - VOID
-                                        DATA_STRING - STRING - content: a
+                                        DATA_STRING - ARRAY - content: a
                                         TYPE_BOOLEAN - BOOLEAN
                                     FUNCTION_CALL - VOID
-                                        DATA_STRING - STRING - content: first
+                                        DATA_STRING - ARRAY - content: first
                             FUNCTION_CALL - VOID
-                                DATA_STRING - STRING - content: first
+                                DATA_STRING - ARRAY - content: first
                 IF - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 0
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         FUNCTION_CALL - VOID
-                            DATA_STRING - STRING - content: first
+                            DATA_STRING - ARRAY - content: first
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         COMMAND_LIST - VOID
                             IF - VOID
                                 DATA_BOOLEAN - BOOLEAN - content: 1
                                 BLOCK - VOID
                                     DEFINE_VARIABLE - VOID
-                                        DATA_STRING - STRING - content: a
+                                        DATA_STRING - ARRAY - content: a
                                         TYPE_BOOLEAN - BOOLEAN
                                     FUNCTION_CALL - VOID
-                                        DATA_STRING - STRING - content: first
+                                        DATA_STRING - ARRAY - content: first
                             FUNCTION_CALL - VOID
-                                DATA_STRING - STRING - content: first
+                                DATA_STRING - ARRAY - content: first
                 IF - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 0
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         FUNCTION_CALL - VOID
-                            DATA_STRING - STRING - content: first
+                            DATA_STRING - ARRAY - content: first
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         COMMAND_LIST - VOID
                             IF - VOID
                                 DATA_BOOLEAN - BOOLEAN - content: 0
                                 BLOCK - VOID
                                     DEFINE_VARIABLE - VOID
-                                        DATA_STRING - STRING - content: a
+                                        DATA_STRING - ARRAY - content: a
                                         TYPE_BOOLEAN - BOOLEAN
                                     FUNCTION_CALL - VOID
-                                        DATA_STRING - STRING - content: first
+                                        DATA_STRING - ARRAY - content: first
                                 BLOCK - VOID
                                     DEFINE_VARIABLE - VOID
-                                        DATA_STRING - STRING - content: a
+                                        DATA_STRING - ARRAY - content: a
                                         TYPE_BOOLEAN - BOOLEAN
                                     FUNCTION_CALL - VOID
-                                        DATA_STRING - STRING - content: first
+                                        DATA_STRING - ARRAY - content: first
                             FUNCTION_CALL - VOID
-                                DATA_STRING - STRING - content: first
+                                DATA_STRING - ARRAY - content: first

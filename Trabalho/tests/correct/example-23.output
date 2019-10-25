@@ -56,17 +56,17 @@ DEFINE_LIST - VOID
                 TYPE_INTEGER - VOID
 DEFINE_LIST - VOID
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: a
+        DATA_STRING - ARRAY - content: a
         TYPE_INTEGER - INTEGER
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: main
+        DATA_STRING - ARRAY - content: main
         BLOCK - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_INTEGER - INTEGER
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: fn
+        DATA_STRING - ARRAY - content: fn
         BLOCK - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_INTEGER - INTEGER

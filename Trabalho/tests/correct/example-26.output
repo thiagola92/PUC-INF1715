@@ -192,28 +192,28 @@ DEFINE_FUNCTION - VOID
                     VARIABLE - VOID
                         DATA_STRING - VOID - content: x2
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x1
+                DATA_STRING - ARRAY - content: x1
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x2
+                DATA_STRING - ARRAY - content: x2
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x3
+                DATA_STRING - ARRAY - content: x3
                 TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 3
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_CAST - INTEGER
                     EXPRESSION_ADD - FLOAT
                         EXPRESSION_CAST - FLOAT
@@ -223,7 +223,7 @@ DEFINE_FUNCTION - VOID
                     TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_CAST - INTEGER
                     EXPRESSION_ADD - FLOAT
                         DATA_FLOAT - FLOAT - content: 1.000000
@@ -231,7 +231,7 @@ DEFINE_FUNCTION - VOID
                     TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_CAST - INTEGER
                     EXPRESSION_ADD - FLOAT
                         DATA_FLOAT - FLOAT - content: 1.000000
@@ -241,51 +241,51 @@ DEFINE_FUNCTION - VOID
                     TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: x3
+                    DATA_STRING - ARRAY - content: x3
                 DATA_FLOAT - FLOAT - content: 2.000000
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_ADD - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - STRING - content: x2
+                        DATA_STRING - ARRAY - content: x2
                     VARIABLE - INTEGER
-                        DATA_STRING - STRING - content: x2
+                        DATA_STRING - ARRAY - content: x2
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_CAST - INTEGER
                     EXPRESSION_ADD - FLOAT
                         EXPRESSION_CAST - FLOAT
                             VARIABLE - INTEGER
-                                DATA_STRING - STRING - content: x2
+                                DATA_STRING - ARRAY - content: x2
                             TYPE_FLOAT - FLOAT
                         VARIABLE - FLOAT
-                            DATA_STRING - STRING - content: x3
+                            DATA_STRING - ARRAY - content: x3
                     TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_CAST - INTEGER
                     EXPRESSION_ADD - FLOAT
                         VARIABLE - FLOAT
-                            DATA_STRING - STRING - content: x3
+                            DATA_STRING - ARRAY - content: x3
                         VARIABLE - FLOAT
-                            DATA_STRING - STRING - content: x3
+                            DATA_STRING - ARRAY - content: x3
                     TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_CAST - INTEGER
                     EXPRESSION_ADD - FLOAT
                         VARIABLE - FLOAT
-                            DATA_STRING - STRING - content: x3
+                            DATA_STRING - ARRAY - content: x3
                         EXPRESSION_CAST - FLOAT
                             VARIABLE - INTEGER
-                                DATA_STRING - STRING - content: x2
+                                DATA_STRING - ARRAY - content: x2
                             TYPE_FLOAT - FLOAT
                     TYPE_INTEGER - INTEGER

@@ -397,135 +397,135 @@ DEFINE_FUNCTION - VOID
                         DATA_STRING - VOID - content: d
                     DATA_INTEGER - VOID - content: 1
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_ARRAY - ARRAY
                     TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_ARRAY - ARRAY
                     TYPE_CHARACTER - CHARACTER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: c
+                DATA_STRING - ARRAY - content: c
                 TYPE_ARRAY - ARRAY
                     TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: d
+                DATA_STRING - ARRAY - content: d
                 TYPE_ARRAY - ARRAY
                     TYPE_FLOAT - FLOAT
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: f
+                DATA_STRING - ARRAY - content: f
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: g
+                DATA_STRING - ARRAY - content: g
                 TYPE_CHARACTER - CHARACTER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: h
+                DATA_STRING - ARRAY - content: h
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: i
+                DATA_STRING - ARRAY - content: i
                 TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - STRING - content: a
+                    DATA_STRING - ARRAY - content: a
                 NEW_ARRAY - ARRAY
                     TYPE_BOOLEAN - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 ARRAY_POSITION - BOOLEAN
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: a
+                        DATA_STRING - ARRAY - content: a
                     DATA_INTEGER - INTEGER - content: 0
                 DATA_BOOLEAN - BOOLEAN - content: 1
             ASSIGNMENT - VOID
                 ARRAY_POSITION - BOOLEAN
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: a
+                        DATA_STRING - ARRAY - content: a
                     DATA_INTEGER - INTEGER - content: 1
                 DATA_BOOLEAN - BOOLEAN - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - STRING - content: b
+                    DATA_STRING - ARRAY - content: b
                 NEW_ARRAY - ARRAY
                     TYPE_CHARACTER - CHARACTER
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 ARRAY_POSITION - CHARACTER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: b
+                        DATA_STRING - ARRAY - content: b
                     DATA_INTEGER - INTEGER - content: 0
                 DATA_CHARACTER - CHARACTER - content: a
             ASSIGNMENT - VOID
                 ARRAY_POSITION - CHARACTER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: b
+                        DATA_STRING - ARRAY - content: b
                     DATA_INTEGER - INTEGER - content: 1
                 DATA_CHARACTER - CHARACTER - content: b
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - STRING - content: c
+                    DATA_STRING - ARRAY - content: c
                 NEW_ARRAY - ARRAY
                     TYPE_INTEGER - INTEGER
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: c
+                        DATA_STRING - ARRAY - content: c
                     DATA_INTEGER - INTEGER - content: 0
                 DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: c
+                        DATA_STRING - ARRAY - content: c
                     DATA_INTEGER - INTEGER - content: 1
                 DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - STRING - content: d
+                    DATA_STRING - ARRAY - content: d
                 NEW_ARRAY - ARRAY
                     TYPE_FLOAT - FLOAT
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 ARRAY_POSITION - FLOAT
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: d
+                        DATA_STRING - ARRAY - content: d
                     DATA_INTEGER - INTEGER - content: 0
                 DATA_FLOAT - FLOAT - content: 1.000000
             ASSIGNMENT - VOID
                 ARRAY_POSITION - FLOAT
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: d
+                        DATA_STRING - ARRAY - content: d
                     DATA_INTEGER - INTEGER - content: 1
                 DATA_FLOAT - FLOAT - content: 1.000000
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: f
+                    DATA_STRING - ARRAY - content: f
                 ARRAY_POSITION - BOOLEAN
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: a
+                        DATA_STRING - ARRAY - content: a
                     DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - CHARACTER
-                    DATA_STRING - STRING - content: g
+                    DATA_STRING - ARRAY - content: g
                 ARRAY_POSITION - CHARACTER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: b
+                        DATA_STRING - ARRAY - content: b
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: h
+                    DATA_STRING - ARRAY - content: h
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: c
+                        DATA_STRING - ARRAY - content: c
                     DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: i
+                    DATA_STRING - ARRAY - content: i
                 ARRAY_POSITION - FLOAT
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: d
+                        DATA_STRING - ARRAY - content: d
                     DATA_INTEGER - INTEGER - content: 1

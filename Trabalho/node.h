@@ -77,7 +77,6 @@ typedef enum TYPE {
   CHARACTER,
   INTEGER,
   FLOAT,
-  STRING,
   ARRAY,
 } TYPE;
 

@@ -53,20 +53,20 @@ DEFINE_LIST - VOID
         TYPE_CHARACTER - VOID
 DEFINE_LIST - VOID
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: s
+        DATA_STRING - ARRAY - content: s
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: normal_name
+        DATA_STRING - ARRAY - content: normal_name
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: long_long_long_long_long_long_name
+        DATA_STRING - ARRAY - content: long_long_long_long_long_long_name
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: s1
+        DATA_STRING - ARRAY - content: s1
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: s_1
+        DATA_STRING - ARRAY - content: s_1
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
+        DATA_STRING - ARRAY - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
         TYPE_CHARACTER - CHARACTER

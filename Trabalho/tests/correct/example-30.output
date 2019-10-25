@@ -18,6 +18,6 @@ DEFINE_FUNCTION - VOID
     BLOCK - VOID
         RETURN - VOID
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: first
+    DATA_STRING - ARRAY - content: first
     BLOCK - VOID
         RETURN - VOID

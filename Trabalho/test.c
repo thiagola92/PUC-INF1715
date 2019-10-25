@@ -110,8 +110,6 @@ const char* type_to_string(TYPE type) {
 			return "INTEGER";
 		case FLOAT:
 			return "FLOAT";
-		case STRING:
-			return "STRING";
 		case ARRAY:
 			return "ARRAY";
 		default:

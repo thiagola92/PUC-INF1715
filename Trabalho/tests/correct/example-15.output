@@ -43,21 +43,21 @@ DEFINE_FUNCTION - VOID
                     DATA_STRING - VOID - content: x1
                 DATA_FLOAT - VOID - content: 16777215.000000
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         DEFINE_VARIABLE - VOID
-            DATA_STRING - STRING - content: x1
+            DATA_STRING - ARRAY - content: x1
             TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 DATA_FLOAT - FLOAT - content: 1075903.000000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 DATA_FLOAT - FLOAT - content: 0.000000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 DATA_FLOAT - FLOAT - content: 16777215.000000

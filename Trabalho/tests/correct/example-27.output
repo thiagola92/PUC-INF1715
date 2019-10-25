@@ -54,19 +54,19 @@ DEFINE_FUNCTION - VOID
                         TYPE_FLOAT - VOID
                     DATA_FLOAT - VOID - content: 3.000000
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x1
+                DATA_STRING - ARRAY - content: x1
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x2
+                DATA_STRING - ARRAY - content: x2
                 TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_CAST - INTEGER
@@ -74,7 +74,7 @@ DEFINE_FUNCTION - VOID
                         TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_ADD - FLOAT
                     EXPRESSION_CAST - FLOAT
                         DATA_INTEGER - INTEGER - content: 1

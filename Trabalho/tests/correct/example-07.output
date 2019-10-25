@@ -42,17 +42,17 @@ DEFINE_FUNCTION - VOID
             FUNCTION_CALL - VOID
                 DATA_STRING - VOID - content: first
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: first
+    DATA_STRING - ARRAY - content: first
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_BOOLEAN - BOOLEAN
         COMMAND_LIST - VOID
             FUNCTION_CALL - VOID
-                DATA_STRING - STRING - content: first
+                DATA_STRING - ARRAY - content: first
             FUNCTION_CALL - VOID
-                DATA_STRING - STRING - content: first
+                DATA_STRING - ARRAY - content: first

@@ -281,80 +281,80 @@ DEFINE_LIST - VOID
                             DATA_STRING - VOID - content: c
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: first
+        DATA_STRING - ARRAY - content: first
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: second
+        DATA_STRING - ARRAY - content: second
         PARAMETER - VOID
-            DATA_STRING - STRING - content: a
+            DATA_STRING - ARRAY - content: a
             TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: third
+        DATA_STRING - ARRAY - content: third
         PARAMETER_LIST - VOID
             PARAMETER - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: third
+        DATA_STRING - ARRAY - content: third
         PARAMETER_LIST - VOID
             PARAMETER - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: fourth
+        DATA_STRING - ARRAY - content: fourth
         PARAMETER_LIST - VOID
             PARAMETER - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - STRING - content: c
+                DATA_STRING - ARRAY - content: c
                 TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: main
+        DATA_STRING - ARRAY - content: main
         BLOCK - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - STRING - content: a
+                    DATA_STRING - ARRAY - content: a
                     TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - STRING - content: b
+                    DATA_STRING - ARRAY - content: b
                     TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - STRING - content: c
+                    DATA_STRING - ARRAY - content: c
                     TYPE_BOOLEAN - BOOLEAN
             COMMAND_LIST - VOID
                 FUNCTION_CALL - VOID
-                    DATA_STRING - STRING - content: first
+                    DATA_STRING - ARRAY - content: first
                 FUNCTION_CALL - VOID
-                    DATA_STRING - STRING - content: second
+                    DATA_STRING - ARRAY - content: second
                     VARIABLE - BOOLEAN
-                        DATA_STRING - STRING - content: a
+                        DATA_STRING - ARRAY - content: a
                 FUNCTION_CALL - VOID
-                    DATA_STRING - STRING - content: third
+                    DATA_STRING - ARRAY - content: third
                     EXPRESSION_LIST - VOID
                         VARIABLE - BOOLEAN
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                         VARIABLE - BOOLEAN
-                            DATA_STRING - STRING - content: b
+                            DATA_STRING - ARRAY - content: b
                 FUNCTION_CALL - VOID
-                    DATA_STRING - STRING - content: fourth
+                    DATA_STRING - ARRAY - content: fourth
                     EXPRESSION_LIST - VOID
                         VARIABLE - BOOLEAN
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                         VARIABLE - BOOLEAN
-                            DATA_STRING - STRING - content: b
+                            DATA_STRING - ARRAY - content: b
                         VARIABLE - BOOLEAN
-                            DATA_STRING - STRING - content: c
+                            DATA_STRING - ARRAY - content: c

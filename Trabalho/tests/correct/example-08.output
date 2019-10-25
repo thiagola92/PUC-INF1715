@@ -111,7 +111,7 @@ DEFINE_FUNCTION - VOID
                         BLOCK - VOID
                         BLOCK - VOID
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         COMMAND_LIST - VOID
             IF - VOID

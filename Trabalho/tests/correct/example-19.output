@@ -272,22 +272,22 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - VOID - content: 2
                         DATA_INTEGER - VOID - content: 1
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x1
+                DATA_STRING - ARRAY - content: x1
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x2
+                DATA_STRING - ARRAY - content: x2
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - STRING - content: x3
+                DATA_STRING - ARRAY - content: x3
                 TYPE_BOOLEAN - BOOLEAN
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -295,7 +295,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -303,7 +303,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x3
+                    DATA_STRING - ARRAY - content: x3
                 EXPRESSION_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_SUB - INTEGER
@@ -311,7 +311,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_NOT_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -319,7 +319,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_NOT_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -327,7 +327,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x3
+                    DATA_STRING - ARRAY - content: x3
                 EXPRESSION_NOT_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_SUB - INTEGER
@@ -335,7 +335,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_LESS - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -343,7 +343,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_LESS - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -351,7 +351,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x3
+                    DATA_STRING - ARRAY - content: x3
                 EXPRESSION_LESS - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_SUB - INTEGER
@@ -359,7 +359,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_GREATER - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -367,7 +367,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_GREATER - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -375,7 +375,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x3
+                    DATA_STRING - ARRAY - content: x3
                 EXPRESSION_GREATER - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_SUB - INTEGER
@@ -383,7 +383,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_LESS_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -391,7 +391,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_LESS_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -399,7 +399,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x3
+                    DATA_STRING - ARRAY - content: x3
                 EXPRESSION_LESS_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_SUB - INTEGER
@@ -407,7 +407,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 EXPRESSION_GREATER_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -415,7 +415,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x2
+                    DATA_STRING - ARRAY - content: x2
                 EXPRESSION_GREATER_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -423,7 +423,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: x3
+                    DATA_STRING - ARRAY - content: x3
                 EXPRESSION_GREATER_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_SUB - INTEGER

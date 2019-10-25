@@ -298,92 +298,92 @@ DEFINE_LIST - VOID
                                 DATA_STRING - VOID - content: b
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: first
+        DATA_STRING - ARRAY - content: first
         TYPE_INTEGER - INTEGER
         BLOCK - VOID
             RETURN - VOID
                 DATA_INTEGER - INTEGER - content: 1
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: second
+        DATA_STRING - ARRAY - content: second
         PARAMETER - VOID
-            DATA_STRING - STRING - content: a
+            DATA_STRING - ARRAY - content: a
             TYPE_BOOLEAN - BOOLEAN
         TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
             RETURN - VOID
                 DATA_BOOLEAN - BOOLEAN - content: 1
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: third
+        DATA_STRING - ARRAY - content: third
         PARAMETER_LIST - VOID
             PARAMETER - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_BOOLEAN - BOOLEAN
         TYPE_CHARACTER - CHARACTER
         BLOCK - VOID
             RETURN - VOID
                 DATA_CHARACTER - CHARACTER - content: a
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: fourth
+        DATA_STRING - ARRAY - content: fourth
         PARAMETER_LIST - VOID
             PARAMETER - VOID
-                DATA_STRING - STRING - content: a
+                DATA_STRING - ARRAY - content: a
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - STRING - content: b
+                DATA_STRING - ARRAY - content: b
                 TYPE_BOOLEAN - BOOLEAN
         TYPE_FLOAT - FLOAT
         BLOCK - VOID
             RETURN - VOID
                 DATA_FLOAT - FLOAT - content: 1.000000
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: main
+        DATA_STRING - ARRAY - content: main
         BLOCK - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - STRING - content: a
+                    DATA_STRING - ARRAY - content: a
                     TYPE_INTEGER - INTEGER
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - STRING - content: b
+                    DATA_STRING - ARRAY - content: b
                     TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - STRING - content: c
+                    DATA_STRING - ARRAY - content: c
                     TYPE_CHARACTER - CHARACTER
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - STRING - content: d
+                    DATA_STRING - ARRAY - content: d
                     TYPE_FLOAT - FLOAT
             COMMAND_LIST - VOID
                 ASSIGNMENT - VOID
                     VARIABLE - INTEGER
-                        DATA_STRING - STRING - content: a
+                        DATA_STRING - ARRAY - content: a
                     FUNCTION_CALL - INTEGER
-                        DATA_STRING - STRING - content: first
+                        DATA_STRING - ARRAY - content: first
                 ASSIGNMENT - VOID
                     VARIABLE - BOOLEAN
-                        DATA_STRING - STRING - content: b
+                        DATA_STRING - ARRAY - content: b
                     FUNCTION_CALL - BOOLEAN
-                        DATA_STRING - STRING - content: second
+                        DATA_STRING - ARRAY - content: second
                         VARIABLE - INTEGER
-                            DATA_STRING - STRING - content: a
+                            DATA_STRING - ARRAY - content: a
                 ASSIGNMENT - VOID
                     VARIABLE - CHARACTER
-                        DATA_STRING - STRING - content: c
+                        DATA_STRING - ARRAY - content: c
                     FUNCTION_CALL - CHARACTER
-                        DATA_STRING - STRING - content: third
+                        DATA_STRING - ARRAY - content: third
                         EXPRESSION_LIST - VOID
                             VARIABLE - INTEGER
-                                DATA_STRING - STRING - content: a
+                                DATA_STRING - ARRAY - content: a
                             VARIABLE - BOOLEAN
-                                DATA_STRING - STRING - content: b
+                                DATA_STRING - ARRAY - content: b
                 ASSIGNMENT - VOID
                     VARIABLE - FLOAT
-                        DATA_STRING - STRING - content: d
+                        DATA_STRING - ARRAY - content: d
                     FUNCTION_CALL - FLOAT
-                        DATA_STRING - STRING - content: fourth
+                        DATA_STRING - ARRAY - content: fourth
                         EXPRESSION_LIST - VOID
                             VARIABLE - INTEGER
-                                DATA_STRING - STRING - content: a
+                                DATA_STRING - ARRAY - content: a
                             VARIABLE - BOOLEAN
-                                DATA_STRING - STRING - content: b
+                                DATA_STRING - ARRAY - content: b

@@ -76,9 +76,6 @@ void check_assignment_type(Node* node) {
     
   if(left_node->type == INTEGER && right_node->type == FLOAT)
     return cast_to_integer(node, 1);
-    
-  if(left_node->type == ARRAY && type_from_array(left_node) == CHARACTER && right_node->type == STRING)
-    return cast_to_array(node, 1);
   
   throw_type_error("value must be same as variable type");
 }
@@ -228,7 +225,7 @@ TYPE type_node(Node* node) {
       node->type = FLOAT;
       break;
     case DATA_STRING:
-      node->type = STRING;
+      node->type = ARRAY;
       break;
     case DATA_ARRAY:
       node->type = ARRAY;

@@ -70,39 +70,39 @@ DEFINE_FUNCTION - VOID
                             DATA_INTEGER - VOID - content: 0
                         DATA_INTEGER - VOID - content: 1
 DEFINE_FUNCTION - VOID
-    DATA_STRING - STRING - content: main
+    DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         DEFINE_VARIABLE - VOID
-            DATA_STRING - STRING - content: x1
+            DATA_STRING - ARRAY - content: x1
             TYPE_ARRAY - ARRAY
                 TYPE_INTEGER - INTEGER
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - STRING - content: x1
+                    DATA_STRING - ARRAY - content: x1
                 NEW_ARRAY - ARRAY
                     TYPE_INTEGER - INTEGER
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: x1
+                        DATA_STRING - ARRAY - content: x1
                     DATA_INTEGER - INTEGER - content: 0
                 DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: x1
+                        DATA_STRING - ARRAY - content: x1
                     ARRAY_POSITION - INTEGER
                         VARIABLE - ARRAY
-                            DATA_STRING - STRING - content: x1
+                            DATA_STRING - ARRAY - content: x1
                         DATA_INTEGER - INTEGER - content: 0
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - STRING - content: x1
+                        DATA_STRING - ARRAY - content: x1
                     EXPRESSION_SUB - INTEGER
                         ARRAY_POSITION - INTEGER
                             VARIABLE - ARRAY
-                                DATA_STRING - STRING - content: x1
+                                DATA_STRING - ARRAY - content: x1
                             DATA_INTEGER - INTEGER - content: 0
                         DATA_INTEGER - INTEGER - content: 1

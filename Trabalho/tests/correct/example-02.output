@@ -56,23 +56,23 @@ DEFINE_LIST - VOID
                 TYPE_CHARACTER - VOID
 DEFINE_LIST - VOID
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: aaa
+        DATA_STRING - ARRAY - content: aaa
         TYPE_BOOLEAN - BOOLEAN
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: bbb
+        DATA_STRING - ARRAY - content: bbb
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: ccc
+        DATA_STRING - ARRAY - content: ccc
         TYPE_INTEGER - INTEGER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: ddd
+        DATA_STRING - ARRAY - content: ddd
         TYPE_FLOAT - FLOAT
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: eee
+        DATA_STRING - ARRAY - content: eee
         TYPE_ARRAY - ARRAY
             TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - STRING - content: fff
+        DATA_STRING - ARRAY - content: fff
         TYPE_ARRAY - ARRAY
             TYPE_ARRAY - ARRAY
                 TYPE_CHARACTER - CHARACTER

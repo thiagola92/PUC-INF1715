@@ -54,18 +54,18 @@ DEFINE_LIST - VOID
                     DATA_STRING - VOID - content: a
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: first
+        DATA_STRING - ARRAY - content: first
         TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
             RETURN - VOID
                 DATA_BOOLEAN - BOOLEAN - content: 1
     DEFINE_FUNCTION - VOID
-        DATA_STRING - STRING - content: seventh
+        DATA_STRING - ARRAY - content: seventh
         PARAMETER - VOID
-            DATA_STRING - STRING - content: a
+            DATA_STRING - ARRAY - content: a
             TYPE_BOOLEAN - BOOLEAN
         TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
             RETURN - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - STRING - content: a
+                    DATA_STRING - ARRAY - content: a
