@@ -17,12 +17,12 @@ void throw_numeric_error(Node* node) {
 }
 
 void cast_to_integer(Node* node, int index) {  
-  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_int(0));
+  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_zero_child(TYPE_INTEGER));
   type_node(node->content.n[index]);
 }
 
 void cast_to_float(Node* node, int index) {  
-  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_float(0.0));
+  node->content.n[index] = create_node_two_child(EXPRESSION_CAST, node->content.n[index], create_node_zero_child(TYPE_FLOAT));
   type_node(node->content.n[index]);
 }
 
@@ -84,6 +84,11 @@ void check_return_type(Node* node) {
     throw_type_error("value must be same as function return type");
 }
 
+void check_array_position(Node* node) {
+  if(node->content.n[1]->type != INTEGER)
+    throw_type_error("position in array must be integer");
+}
+
 void check_logical_type(Node* node) {
   if(node->content.n[0]->type != BOOLEAN || node->content.n[0]->type != BOOLEAN)
     throw_type_error("value must be boolean");
@@ -123,6 +128,7 @@ TYPE type_node(Node* node) {
       check_return_type(node);
       break;
     case ARRAY_POSITION:
+      check_array_position(node);
       node->type = node->content.n[0]->definition->content.n[1]->content.n[0]->type;
       break;
     case VARIABLE:

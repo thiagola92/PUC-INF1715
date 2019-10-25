@@ -409,7 +409,7 @@ DEFINE_FUNCTION - VOID
                     DATA_FLOAT - FLOAT - content: 0.000000
                     EXPRESSION_CAST - FLOAT
                         DATA_INTEGER - INTEGER - content: 1
-                        DATA_FLOAT - FLOAT - content: 0.000000
+                        TYPE_FLOAT - FLOAT
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
                     DATA_STRING - STRING - content: h

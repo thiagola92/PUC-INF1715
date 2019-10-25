@@ -1,0 +1,55 @@
+Scope
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: x1
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+=== BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+Symbol: main
+=== LEAVE SCOPE ===
+
+DEFINE_FUNCTION - VOID
+    DATA_STRING - STRING - content: main
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: x1
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - STRING - content: x2
+                TYPE_FLOAT - FLOAT
+        COMMAND_LIST - VOID
+            ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - STRING - content: x1
+                EXPRESSION_CAST - INTEGER
+                    EXPRESSION_ADD - FLOAT
+                        DATA_FLOAT - FLOAT - content: 1.000000
+                        DATA_FLOAT - FLOAT - content: 1.000000
+                    TYPE_INTEGER - INTEGER
+            ASSIGNMENT - VOID
+                VARIABLE - FLOAT
+                    DATA_STRING - STRING - content: x2
+                EXPRESSION_CAST - FLOAT
+                    EXPRESSION_ADD - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+                    TYPE_FLOAT - FLOAT

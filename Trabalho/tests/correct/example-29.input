@@ -1,0 +1,10 @@
+# Testing cast
+
+main() {
+	x1 : [int];
+	
+	x1 = new int[2];
+	
+	x1[0] = 1;
+	x1[x1[0]] = x1[x1[0] - 1];
+}

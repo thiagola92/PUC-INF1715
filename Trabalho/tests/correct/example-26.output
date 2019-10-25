@@ -140,9 +140,9 @@ DEFINE_FUNCTION - VOID
                     EXPRESSION_ADD - FLOAT
                         EXPRESSION_CAST - FLOAT
                             DATA_INTEGER - INTEGER - content: 1
-                            DATA_FLOAT - FLOAT - content: 0.000000
+                            TYPE_FLOAT - FLOAT
                         DATA_FLOAT - FLOAT - content: 3.000000
-                    DATA_INTEGER - INTEGER - content: 0
+                    TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
                     DATA_STRING - STRING - content: x1
@@ -150,7 +150,7 @@ DEFINE_FUNCTION - VOID
                     EXPRESSION_ADD - FLOAT
                         DATA_FLOAT - FLOAT - content: 1.000000
                         DATA_FLOAT - FLOAT - content: 3.000000
-                    DATA_INTEGER - INTEGER - content: 0
+                    TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
                     DATA_STRING - STRING - content: x1
@@ -159,8 +159,8 @@ DEFINE_FUNCTION - VOID
                         DATA_FLOAT - FLOAT - content: 1.000000
                         EXPRESSION_CAST - FLOAT
                             DATA_INTEGER - INTEGER - content: 3
-                            DATA_FLOAT - FLOAT - content: 0.000000
-                    DATA_INTEGER - INTEGER - content: 0
+                            TYPE_FLOAT - FLOAT
+                    TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
                     DATA_STRING - STRING - content: x2
@@ -185,10 +185,10 @@ DEFINE_FUNCTION - VOID
                         EXPRESSION_CAST - FLOAT
                             VARIABLE - INTEGER
                                 DATA_STRING - STRING - content: x2
-                            DATA_FLOAT - FLOAT - content: 0.000000
+                            TYPE_FLOAT - FLOAT
                         VARIABLE - FLOAT
                             DATA_STRING - STRING - content: x3
-                    DATA_INTEGER - INTEGER - content: 0
+                    TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
                     DATA_STRING - STRING - content: x1
@@ -198,7 +198,7 @@ DEFINE_FUNCTION - VOID
                             DATA_STRING - STRING - content: x3
                         VARIABLE - FLOAT
                             DATA_STRING - STRING - content: x3
-                    DATA_INTEGER - INTEGER - content: 0
+                    TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
                     DATA_STRING - STRING - content: x1
@@ -209,5 +209,5 @@ DEFINE_FUNCTION - VOID
                         EXPRESSION_CAST - FLOAT
                             VARIABLE - INTEGER
                                 DATA_STRING - STRING - content: x2
-                            DATA_FLOAT - FLOAT - content: 0.000000
-                    DATA_INTEGER - INTEGER - content: 0
+                            TYPE_FLOAT - FLOAT
+                    TYPE_INTEGER - INTEGER
