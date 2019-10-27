@@ -24,25 +24,6 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - VOID - content: main
-    BLOCK - VOID
-        DEFINE_VARIABLE - VOID
-            DATA_STRING - VOID - content: x1
-            TYPE_FLOAT - VOID
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - VOID
-                    DATA_STRING - VOID - content: x1
-                DATA_FLOAT - VOID - content: 1075903.000000
-            ASSIGNMENT - VOID
-                VARIABLE - VOID
-                    DATA_STRING - VOID - content: x1
-                DATA_FLOAT - VOID - content: 0.000000
-            ASSIGNMENT - VOID
-                VARIABLE - VOID
-                    DATA_STRING - VOID - content: x1
-                DATA_FLOAT - VOID - content: 16777215.000000
-DEFINE_FUNCTION - VOID
     DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         DEFINE_VARIABLE - VOID

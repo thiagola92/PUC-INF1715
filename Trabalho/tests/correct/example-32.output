@@ -1,0 +1,70 @@
+Scope
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== BIND VARIABLE ===
+Scope
+Symbol: a
+Symbol: b
+=== BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+Symbol: main
+=== LEAVE SCOPE ===
+
+DEFINE_FUNCTION - VOID
+    DATA_STRING - ARRAY - content: main
+    BLOCK - VOID
+        VARIABLE_LIST - VOID
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: a
+                TYPE_ARRAY - ARRAY
+                    TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: b
+                TYPE_ARRAY - ARRAY
+                    TYPE_ARRAY - ARRAY
+                        TYPE_INTEGER - INTEGER
+        COMMAND_LIST - VOID
+            ASSIGNMENT - VOID
+                VARIABLE - ARRAY
+                    DATA_STRING - ARRAY - content: a
+                NEW_ARRAY - ARRAY
+                    TYPE_INTEGER - INTEGER
+                    DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - ARRAY
+                    DATA_STRING - ARRAY - content: b
+                NEW_ARRAY - ARRAY
+                    TYPE_ARRAY - ARRAY
+                        TYPE_INTEGER - INTEGER
+                    DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                ARRAY_POSITION - ARRAY
+                    VARIABLE - ARRAY
+                        DATA_STRING - ARRAY - content: b
+                    DATA_INTEGER - INTEGER - content: 0
+                VARIABLE - ARRAY
+                    DATA_STRING - ARRAY - content: a

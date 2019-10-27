@@ -32,6 +32,8 @@
 29: Utilizando array nas operações  
 30: Chamar return sem nada  
 31: Utilizando operações not dentro de if e else  
+32: Criar array de arrays e armazena-lo  
+33: Array de array de int receber um valor array de array de int  
 
 # Wrongs Tests
 
@@ -58,3 +60,12 @@
 20: Hexadecimal com letras inválidas  
 21: Character desconhecido  
 22: Valor entre os colchetes do array deve ser do tipo inteiro  
+23: Array de array de int receber um valor int  
+24: Array de array de int receber um valor array de int  
+25: Array de array de int receber um valor array de int  
+26: Array de array de int receber um valor array de char  
+27: Igualdade entre tipos diferentes e que não é possível converter  
+28: Desigualdade entre tipos diferentes e que não é possível converter  
+29: Aritimética entre tipos diferentes e que não é possível converter  
+30: Condição do if não sendo boolean  
+31: Conidção do while não sendo boolean  

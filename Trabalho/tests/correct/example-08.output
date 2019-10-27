@@ -72,45 +72,6 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - VOID - content: main
-    BLOCK - VOID
-        COMMAND_LIST - VOID
-            IF - VOID
-                DATA_BOOLEAN - VOID - content: 1
-                BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - VOID - content: 0
-                BLOCK - VOID
-                BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - VOID - content: 1
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - VOID - content: 1
-                        BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - VOID - content: 1
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - VOID - content: 0
-                        BLOCK - VOID
-                        BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - VOID - content: 0
-                BLOCK - VOID
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - VOID - content: 1
-                        BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - VOID - content: 0
-                BLOCK - VOID
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - VOID - content: 0
-                        BLOCK - VOID
-                        BLOCK - VOID
-DEFINE_FUNCTION - VOID
     DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         COMMAND_LIST - VOID

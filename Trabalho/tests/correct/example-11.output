@@ -54,36 +54,6 @@ Symbol: main
 
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - VOID - content: first
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        DATA_STRING - VOID - content: main
-        BLOCK - VOID
-            COMMAND_LIST - VOID
-                WHILE - VOID
-                    DATA_BOOLEAN - VOID - content: 1
-                    BLOCK - VOID
-                WHILE - VOID
-                    DATA_BOOLEAN - VOID - content: 1
-                    BLOCK - VOID
-                        DEFINE_VARIABLE - VOID
-                            DATA_STRING - VOID - content: a
-                            TYPE_BOOLEAN - VOID
-                WHILE - VOID
-                    DATA_BOOLEAN - VOID - content: 1
-                    BLOCK - VOID
-                        FUNCTION_CALL - VOID
-                            DATA_STRING - VOID - content: first
-                WHILE - VOID
-                    DATA_BOOLEAN - VOID - content: 1
-                    BLOCK - VOID
-                        DEFINE_VARIABLE - VOID
-                            DATA_STRING - VOID - content: a
-                            TYPE_BOOLEAN - VOID
-                        FUNCTION_CALL - VOID
-                            DATA_STRING - VOID - content: first
-DEFINE_LIST - VOID
-    DEFINE_FUNCTION - VOID
         DATA_STRING - ARRAY - content: first
         BLOCK - VOID
     DEFINE_FUNCTION - VOID

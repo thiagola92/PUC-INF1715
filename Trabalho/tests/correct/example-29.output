@@ -33,43 +33,6 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - VOID - content: main
-    BLOCK - VOID
-        DEFINE_VARIABLE - VOID
-            DATA_STRING - VOID - content: x1
-            TYPE_ARRAY - VOID
-                TYPE_INTEGER - VOID
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - VOID
-                    DATA_STRING - VOID - content: x1
-                NEW_ARRAY - VOID
-                    TYPE_INTEGER - VOID
-                    DATA_INTEGER - VOID - content: 2
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - VOID
-                    VARIABLE - VOID
-                        DATA_STRING - VOID - content: x1
-                    DATA_INTEGER - VOID - content: 0
-                DATA_INTEGER - VOID - content: 1
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - VOID
-                    VARIABLE - VOID
-                        DATA_STRING - VOID - content: x1
-                    ARRAY_POSITION - VOID
-                        VARIABLE - VOID
-                            DATA_STRING - VOID - content: x1
-                        DATA_INTEGER - VOID - content: 0
-                ARRAY_POSITION - VOID
-                    VARIABLE - VOID
-                        DATA_STRING - VOID - content: x1
-                    EXPRESSION_SUB - VOID
-                        ARRAY_POSITION - VOID
-                            VARIABLE - VOID
-                                DATA_STRING - VOID - content: x1
-                            DATA_INTEGER - VOID - content: 0
-                        DATA_INTEGER - VOID - content: 1
-DEFINE_FUNCTION - VOID
     DATA_STRING - ARRAY - content: main
     BLOCK - VOID
         DEFINE_VARIABLE - VOID

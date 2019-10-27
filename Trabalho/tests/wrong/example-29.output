@@ -1,0 +1,17 @@
+Scope
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== ENTER BLOCK ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+Symbol: main
+=== LEAVE SCOPE ===
+type error: arithmetic receiving not integer/float

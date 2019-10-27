@@ -7,27 +7,27 @@
 #include"node.h"
 
 void throw_type_error(const char* name);
-void throw_numeric_error(Node* node);
+void throw_numeric_error(Node* node, const char* error);
 
 Node* cast_to(Node* node, TAG tag);
-
 void cast_to_integer(Node* node, int index);
 void cast_to_float(Node* node, int index);
-void cast_to_array(Node* node, int index);
-
 void cast_integer_to_float(Node* node);
 
-TYPE type_from_array(Node* node);
 TYPE type_from_function_call(Node* node);
 TYPE type_from_arithmetic(Node* node);
 
+Node* next_node_type_from_array(Node* node);
+
+void check_boolean_expression(Node* node);
+void check_char_type(Node* next_left_node);
+void check_array_type(Node* left_node, Node* right_node);
 void check_assignment_type(Node* node);
 void check_return_type(Node* node);
-void check_logical_type(Node* node); // && ||
-void check_relational_type_1(Node* node); // == ~=
-void check_relational_type_2(Node* node); // > >= < <=
+void check_logical_type(Node* node);
+void check_equality_type(Node* node); // == ~=
+void check_inequality_type(Node* node); // > >= < <=
 
-void type_child(Node* node);
-TYPE type_node(Node* node);
+void type_node(Node* node);
 
 #endif
