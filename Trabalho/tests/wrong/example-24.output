@@ -25,4 +25,4 @@ Scope
 Scope
 Symbol: main
 === LEAVE SCOPE ===
-type error: value must be same as variable type
+type error: arrays from different type

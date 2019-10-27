@@ -34,6 +34,9 @@
 31: Utilizando operações not dentro de if e else  
 32: Criar array de arrays e armazena-lo  
 33: Array de array de int receber um valor array de array de int  
+34: Atribuir um char a um int  
+35: Atribuir um int a um char  
+36: Aritmética entre int e char  
 
 # Wrongs Tests
 

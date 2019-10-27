@@ -1,0 +1,31 @@
+Scope
+Symbol: main
+=== DEFINE FUNCTION ===
+Scope
+=== ENTER FUNCTION ===
+Scope
+=== ENTER BLOCK ===
+Scope
+Symbol: a
+=== DEFINE VARIABLE ===
+Scope
+Symbol: a
+=== BIND VARIABLE ===
+Scope
+=== LEAVE SCOPE ===
+Scope
+Symbol: main
+=== LEAVE SCOPE ===
+
+DEFINE_FUNCTION - VOID
+    DATA_STRING - ARRAY - content: main
+    BLOCK - VOID
+        DEFINE_VARIABLE - VOID
+            DATA_STRING - ARRAY - content: a
+            TYPE_INTEGER - INTEGER
+        ASSIGNMENT - VOID
+            VARIABLE - INTEGER
+                DATA_STRING - ARRAY - content: a
+            EXPRESSION_CAST - INTEGER
+                DATA_CHARACTER - CHARACTER - content: a
+                TYPE_INTEGER - INTEGER

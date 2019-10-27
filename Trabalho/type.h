@@ -10,9 +10,7 @@ void throw_type_error(const char* name);
 void throw_numeric_error(Node* node, const char* error);
 
 Node* cast_to(Node* node, TAG tag);
-void cast_to_integer(Node* node, int index);
-void cast_to_float(Node* node, int index);
-void cast_integer_to_float(Node* node);
+void cast_type_to(Node* node, TYPE type, TAG tag);
 
 TYPE type_from_function_call(Node* node);
 TYPE type_from_arithmetic(Node* node);

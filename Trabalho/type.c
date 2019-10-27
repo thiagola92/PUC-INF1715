@@ -17,21 +17,18 @@ void throw_numeric_error(Node* node, const char* error) {
 }
 
 Node* cast_to(Node* node, TAG tag) {
-  return create_node(EXPRESSION_CAST, 2, node, create_node(tag, 0));
+  Node* type = create_node(tag, 0);
+  Node* cast = create_node(EXPRESSION_CAST, 2, node, type);
+  type_node(cast);
+  
+  return cast;
 }
 
-void cast_to_integer(Node* node, int index) {
-  node->content.n[index] = cast_to(node->content.n[index], TYPE_INTEGER);
-  type_node(node->content.n[index]);
-}
-
-void cast_to_float(Node* node, int index) {  
-  node->content.n[index] = cast_to(node->content.n[index], TYPE_FLOAT);
-  type_node(node->content.n[index]);
-}
-
-void cast_integer_to_float(Node* node) {
-  node->content.n[0]->type == INTEGER ? cast_to_float(node, 0) : cast_to_float(node, 1);
+void cast_type_to(Node* node, TYPE type, TAG tag) {
+  for(int i=0; i < node->number_of_childs; i++)
+    if(node->content.n[i]->type == type) {
+      node->content.n[i] = cast_to(node->content.n[i], tag);
+    }
 }
 
 TYPE type_from_function_call(Node* node) {    
@@ -45,12 +42,14 @@ TYPE type_from_function_call(Node* node) {
 }
 
 TYPE type_from_arithmetic(Node* node) {
+  cast_type_to(node, CHARACTER, TYPE_INTEGER);
+  
   throw_numeric_error(node, "arithmetic receiving not integer/float");
     
   if(node->content.n[0]->type == node->content.n[1]->type)
     return node->content.n[0]->type;
   
-  cast_integer_to_float(node);
+  cast_type_to(node, INTEGER, TYPE_FLOAT);
   
   return FLOAT;
 }
@@ -79,10 +78,10 @@ void check_boolean_expression(Node* node) {
 
 void check_char_type(Node* node) {
   if(node == NULL)
-    throw_type_error("value must be same as variable type");
+    throw_type_error("arrays from different type");
   
   if(node->type != CHARACTER)
-    throw_type_error("value must be same as variable type");
+    throw_type_error("arrays from different type");
 }
 
 void check_array_type(Node* left_node, Node* right_node) {
@@ -93,10 +92,10 @@ void check_array_type(Node* left_node, Node* right_node) {
     return;
 
   if(left_node == NULL || right_node == NULL)
-    throw_type_error("value must be same as variable type");
+    throw_type_error("arrays from different type");
   
   if(left_node->type != right_node->type)
-    throw_type_error("value must be same as variable type");
+    throw_type_error("arrays from different type");
     
   next_left_node = next_node_type_from_array(left_node);
   next_right_node = next_node_type_from_array(right_node);
@@ -115,15 +114,21 @@ void check_assignment_type(Node* node) {
     return check_array_type(left_node, right_node);
     
   if(left_node->type == FLOAT && right_node->type == INTEGER)
-    return cast_to_float(node, 1);
+    return cast_type_to(node, INTEGER, TYPE_FLOAT);
     
   if(left_node->type == INTEGER && right_node->type == FLOAT)
-    return cast_to_integer(node, 1);
+    return cast_type_to(node, FLOAT, TYPE_INTEGER);
+    
+  if(left_node->type == CHARACTER && right_node->type == INTEGER)
+    return cast_type_to(node, INTEGER, TYPE_CHARACTER);
+    
+  if(left_node->type == INTEGER && right_node->type == CHARACTER)
+    return cast_type_to(node, CHARACTER, TYPE_INTEGER);
 
   if(left_node->type == right_node->type)
     return;
   
-  throw_type_error("assignment between different types");
+  throw_type_error("assignment between different types and can't cast");
 }
 
 void check_return_type(Node* node) {
@@ -145,21 +150,25 @@ void check_logical_type(Node* node) {
 }
 
 void check_equality_type(Node* node) {
+  cast_type_to(node, CHARACTER, TYPE_INTEGER);
+  
   if(node->content.n[0]->type == node->content.n[1]->type)
     return;
     
   throw_numeric_error(node, "equality can't compare types");
   
-  cast_integer_to_float(node);
+  cast_type_to(node, INTEGER, TYPE_FLOAT);
 }
 
 void check_inequality_type(Node* node) {
+  cast_type_to(node, CHARACTER, TYPE_INTEGER);
+  
   throw_numeric_error(node, "inequality can't compare types");
     
   if(node->content.n[0]->type == node->content.n[1]->type)
     return;
   
-  cast_integer_to_float(node);
+  cast_type_to(node, INTEGER, TYPE_FLOAT);
 }
 
 void type_node(Node* node) {

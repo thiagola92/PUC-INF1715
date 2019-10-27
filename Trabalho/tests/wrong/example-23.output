@@ -37,4 +37,4 @@ Scope
 Scope
 Symbol: main
 === LEAVE SCOPE ===
-type error: assignment between different types
+type error: assignment between different types and can't cast
