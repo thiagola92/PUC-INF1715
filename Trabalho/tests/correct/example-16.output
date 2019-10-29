@@ -21,71 +21,445 @@ Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
+=== DEFINE VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 Symbol: x1
 Symbol: x2
 Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
+=== BIND VARIABLE ===
+Scope
+Symbol: x1
+Symbol: x2
+Symbol: x3
+Symbol: x4
+Symbol: x5
+Symbol: x6
+Symbol: x7
+Symbol: x8
+Symbol: x9
+Symbol: x10
+Symbol: x11
+Symbol: x12
+Symbol: x13
+Symbol: x14
+Symbol: x15
+Symbol: x16
 === BIND VARIABLE ===
 Scope
 === LEAVE SCOPE ===
@@ -105,6 +479,45 @@ DEFINE_FUNCTION - VOID
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
                 DATA_STRING - ARRAY - content: x3
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x4
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x5
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x6
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x7
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x8
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x9
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x10
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x11
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x12
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x13
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x14
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x15
+                TYPE_INTEGER - INTEGER
+            DEFINE_VARIABLE - VOID
+                DATA_STRING - ARRAY - content: x16
                 TYPE_INTEGER - INTEGER
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
@@ -133,7 +546,7 @@ DEFINE_FUNCTION - VOID
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x1
+                    DATA_STRING - ARRAY - content: x4
                 EXPRESSION_DIV - INTEGER
                     EXPRESSION_DIV - INTEGER
                         DATA_INTEGER - INTEGER - content: 1
@@ -141,7 +554,7 @@ DEFINE_FUNCTION - VOID
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x1
+                    DATA_STRING - ARRAY - content: x5
                 EXPRESSION_SUB - INTEGER
                     EXPRESSION_ADD - INTEGER
                         DATA_INTEGER - INTEGER - content: 1
@@ -149,7 +562,7 @@ DEFINE_FUNCTION - VOID
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x2
+                    DATA_STRING - ARRAY - content: x6
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_MULT - INTEGER
@@ -157,7 +570,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    DATA_STRING - ARRAY - content: x7
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_DIV - INTEGER
@@ -165,15 +578,15 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x1
-                EXPRESSION_SUB - INTEGER
+                    DATA_STRING - ARRAY - content: x8
+                EXPRESSION_ADD - INTEGER
+                    EXPRESSION_SUB - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_ADD - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x2
+                    DATA_STRING - ARRAY - content: x9
                 EXPRESSION_ADD - INTEGER
                     EXPRESSION_MULT - INTEGER
                         DATA_INTEGER - INTEGER - content: 1
@@ -181,7 +594,7 @@ DEFINE_FUNCTION - VOID
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    DATA_STRING - ARRAY - content: x10
                 EXPRESSION_ADD - INTEGER
                     EXPRESSION_DIV - INTEGER
                         DATA_INTEGER - INTEGER - content: 1
@@ -189,7 +602,7 @@ DEFINE_FUNCTION - VOID
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x1
+                    DATA_STRING - ARRAY - content: x11
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -199,7 +612,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x2
+                    DATA_STRING - ARRAY - content: x12
                 EXPRESSION_SUB - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -209,7 +622,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    DATA_STRING - ARRAY - content: x13
                 EXPRESSION_MULT - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -219,7 +632,7 @@ DEFINE_FUNCTION - VOID
                         DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x1
+                    DATA_STRING - ARRAY - content: x14
                 EXPRESSION_DIV - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_ADD - INTEGER
@@ -227,3 +640,19 @@ DEFINE_FUNCTION - VOID
                             DATA_INTEGER - INTEGER - content: 1
                             DATA_INTEGER - INTEGER - content: 1
                         DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - ARRAY - content: x15
+                EXPRESSION_MULT - INTEGER
+                    EXPRESSION_DIV - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+                    DATA_INTEGER - INTEGER - content: 1
+            ASSIGNMENT - VOID
+                VARIABLE - INTEGER
+                    DATA_STRING - ARRAY - content: x16
+                EXPRESSION_DIV - INTEGER
+                    EXPRESSION_MULT - INTEGER
+                        DATA_INTEGER - INTEGER - content: 1
+                        DATA_INTEGER - INTEGER - content: 1
+                    DATA_INTEGER - INTEGER - content: 1

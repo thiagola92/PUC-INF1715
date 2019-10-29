@@ -31,6 +31,13 @@ void cast_type_to(Node* node, TYPE type, TAG tag) {
     }
 }
 
+TYPE type_from_array_position(Node* node) {
+  if(node->content.n[0]->tag == NEW_ARRAY)
+    return node->content.n[0]->content.n[0]->type;
+  
+  return node->content.n[0]->definition->content.n[1]->content.n[0]->type;
+}
+
 TYPE type_from_function_call(Node* node) {    
   if(node->number_of_childs == 4)
     return node->content.n[2]->type;
@@ -140,6 +147,9 @@ void check_return_type(Node* node) {
 }
 
 void check_array_position(Node* node) {
+  if(node->content.n[0]->type != ARRAY)
+    throw_type_error("can't access a position from basic types");
+
   if(node->content.n[1]->type != INTEGER)
     throw_type_error("position in array is not an integer");
 }
@@ -188,7 +198,7 @@ void type_node(Node* node) {
       break;
     case ARRAY_POSITION:
       check_array_position(node);
-      node->type = node->content.n[0]->definition->content.n[1]->content.n[0]->type;
+      node->type = type_from_array_position(node);
       break;
     case VARIABLE:
       node->type = node->definition->content.n[1]->type;

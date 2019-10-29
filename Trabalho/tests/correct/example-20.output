@@ -60,11 +60,11 @@ DEFINE_FUNCTION - VOID
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
                     DATA_STRING - ARRAY - content: x1
-                EXPRESSION_OR - BOOLEAN
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                    EXPRESSION_AND - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 0
+                EXPRESSION_AND - BOOLEAN
+                    EXPRESSION_OR - BOOLEAN
                         DATA_BOOLEAN - BOOLEAN - content: 1
+                        DATA_BOOLEAN - BOOLEAN - content: 0
+                    DATA_BOOLEAN - BOOLEAN - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
                     DATA_STRING - ARRAY - content: x2
