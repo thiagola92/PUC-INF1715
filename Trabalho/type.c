@@ -271,9 +271,6 @@ void type_node(Node* node) {
     case DATA_STRING:
       node->type = ARRAY;
       break;
-    case DATA_ARRAY:
-      node->type = ARRAY;
-      break;
     default:
       break;
   }

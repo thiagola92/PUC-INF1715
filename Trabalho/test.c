@@ -93,8 +93,6 @@ const char* tag_to_string(TAG tag) {
       return "DATA_FLOAT";
     case DATA_STRING:
       return "DATA_STRING";
-    case DATA_ARRAY:
-      return "DATA_ARRAY";
     default:
       return "UNKNOWN";
     }

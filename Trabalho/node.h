@@ -68,7 +68,6 @@ typedef enum TAG {
   DATA_INTEGER,
   DATA_FLOAT,
   DATA_STRING,
-  DATA_ARRAY,
 } TAG;
 
 typedef enum TYPE {
