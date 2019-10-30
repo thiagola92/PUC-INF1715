@@ -18,14 +18,14 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         DEFINE_VARIABLE - VOID
-            DATA_STRING - ARRAY - content: b
+            IDENTIFIER - VOID - content: b
             TYPE_INTEGER - INTEGER
         ASSIGNMENT - VOID
             VARIABLE - INTEGER
-                DATA_STRING - ARRAY - content: b
+                IDENTIFIER - VOID - content: b
             ARRAY_POSITION - INTEGER
                 NEW_ARRAY - ARRAY
                     TYPE_INTEGER - INTEGER

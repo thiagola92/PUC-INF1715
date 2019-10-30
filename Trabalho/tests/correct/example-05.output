@@ -37,18 +37,18 @@ Symbol: seventh
 
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: first
+        IDENTIFIER - VOID - content: first
         TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
             RETURN - VOID
                 DATA_BOOLEAN - BOOLEAN - content: 1
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: seventh
+        IDENTIFIER - VOID - content: seventh
         PARAMETER - VOID
-            DATA_STRING - ARRAY - content: a
+            IDENTIFIER - VOID - content: a
             TYPE_BOOLEAN - BOOLEAN
         TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
             RETURN - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: a
+                    IDENTIFIER - VOID - content: a

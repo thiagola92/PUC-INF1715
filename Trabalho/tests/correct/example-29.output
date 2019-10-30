@@ -33,39 +33,39 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         DEFINE_VARIABLE - VOID
-            DATA_STRING - ARRAY - content: x1
+            IDENTIFIER - VOID - content: x1
             TYPE_ARRAY - ARRAY
                 TYPE_INTEGER - INTEGER
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 NEW_ARRAY - ARRAY
                     TYPE_INTEGER - INTEGER
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_INTEGER - INTEGER - content: 0
                 DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     ARRAY_POSITION - INTEGER
                         VARIABLE - ARRAY
-                            DATA_STRING - ARRAY - content: x1
+                            IDENTIFIER - VOID - content: x1
                         DATA_INTEGER - INTEGER - content: 0
                 ARRAY_POSITION - INTEGER
                     VARIABLE - ARRAY
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     EXPRESSION_SUB - INTEGER
                         ARRAY_POSITION - INTEGER
                             VARIABLE - ARRAY
-                                DATA_STRING - ARRAY - content: x1
+                                IDENTIFIER - VOID - content: x1
                             DATA_INTEGER - INTEGER - content: 0
                         DATA_INTEGER - INTEGER - content: 1

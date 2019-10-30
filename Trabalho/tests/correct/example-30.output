@@ -14,6 +14,6 @@ Symbol: first
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: first
+    IDENTIFIER - VOID - content: first
     BLOCK - VOID
         RETURN - VOID

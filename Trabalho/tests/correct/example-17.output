@@ -104,112 +104,112 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x1
+                IDENTIFIER - VOID - content: x1
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x2
+                IDENTIFIER - VOID - content: x2
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x3
+                IDENTIFIER - VOID - content: x3
                 TYPE_BOOLEAN - BOOLEAN
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 EXPRESSION_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 EXPRESSION_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_NOT_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 EXPRESSION_NOT_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 EXPRESSION_LESS - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 EXPRESSION_LESS - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_LESS - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 EXPRESSION_GREATER - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 EXPRESSION_GREATER - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_GREATER - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 EXPRESSION_LESS_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 EXPRESSION_LESS_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_LESS_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 0
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 EXPRESSION_GREATER_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 EXPRESSION_GREATER_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 2
             ASSIGNMENT - VOID
                 VARIABLE - BOOLEAN
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_GREATER_EQUAL - BOOLEAN
                     DATA_INTEGER - INTEGER - content: 1
                     DATA_INTEGER - INTEGER - content: 0

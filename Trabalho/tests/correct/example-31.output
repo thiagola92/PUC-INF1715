@@ -32,7 +32,7 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         COMMAND_LIST - VOID
             IF - VOID

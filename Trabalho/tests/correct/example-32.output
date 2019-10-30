@@ -35,28 +35,28 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: a
+                IDENTIFIER - VOID - content: a
                 TYPE_ARRAY - ARRAY
                     TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: b
+                IDENTIFIER - VOID - content: b
                 TYPE_ARRAY - ARRAY
                     TYPE_ARRAY - ARRAY
                         TYPE_INTEGER - INTEGER
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - ARRAY - content: a
+                    IDENTIFIER - VOID - content: a
                 NEW_ARRAY - ARRAY
                     TYPE_INTEGER - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
             ASSIGNMENT - VOID
                 VARIABLE - ARRAY
-                    DATA_STRING - ARRAY - content: b
+                    IDENTIFIER - VOID - content: b
                 NEW_ARRAY - ARRAY
                     TYPE_ARRAY - ARRAY
                         TYPE_INTEGER - INTEGER
@@ -64,7 +64,7 @@ DEFINE_FUNCTION - VOID
             ASSIGNMENT - VOID
                 ARRAY_POSITION - ARRAY
                     VARIABLE - ARRAY
-                        DATA_STRING - ARRAY - content: b
+                        IDENTIFIER - VOID - content: b
                     DATA_INTEGER - INTEGER - content: 0
                 VARIABLE - ARRAY
-                    DATA_STRING - ARRAY - content: a
+                    IDENTIFIER - VOID - content: a

@@ -27,19 +27,19 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x1
+                IDENTIFIER - VOID - content: x1
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x2
+                IDENTIFIER - VOID - content: x2
                 TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 1
                     EXPRESSION_CAST - INTEGER
@@ -47,7 +47,7 @@ DEFINE_FUNCTION - VOID
                         TYPE_INTEGER - INTEGER
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 EXPRESSION_ADD - FLOAT
                     EXPRESSION_CAST - FLOAT
                         DATA_INTEGER - INTEGER - content: 1

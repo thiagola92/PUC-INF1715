@@ -194,136 +194,136 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x1
+                IDENTIFIER - VOID - content: x1
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x2
+                IDENTIFIER - VOID - content: x2
                 TYPE_INTEGER - INTEGER
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x3
+                IDENTIFIER - VOID - content: x3
                 TYPE_INTEGER - INTEGER
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 DATA_INTEGER - INTEGER - content: 20
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     DATA_INTEGER - INTEGER - content: 10
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - INTEGER
                     DATA_INTEGER - INTEGER - content: 10
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - INTEGER
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - INTEGER
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_INTEGER - INTEGER - content: 10

@@ -11,6 +11,8 @@ const char* tag_to_string(TAG tag) {
       return "DEFINE_LIST";
     case DEFINE_VARIABLE:
       return "DEFINE_VARIABLE";
+    case IDENTIFIER:
+      return "IDENTIFIER";
     case TYPE_BOOLEAN:
       return "TYPE_BOOLEAN";
     case TYPE_CHARACTER:
@@ -138,6 +140,7 @@ void print_tree(Node* node, int tabs) {
     case DATA_FLOAT:
       printf(" - content: %f", node->content.f);
       break;
+    case IDENTIFIER:
     case DATA_STRING:
       printf(" - content: %s", node->content.s);
       break;

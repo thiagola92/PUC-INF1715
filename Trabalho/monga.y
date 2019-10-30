@@ -126,7 +126,7 @@ define: define_variable  { $$ = $1; }
 define_variable: identifier TOKEN_COLON variable_type TOKEN_SEMICOLON { $$ = create_node(DEFINE_VARIABLE, 2, $1, $3); }
                  ;
 
-identifier: TOKEN_IDENTIFIER { $$ = create_data_node(DATA_STRING, $1); }
+identifier: TOKEN_IDENTIFIER { $$ = create_data_node(IDENTIFIER, $1); }
             ;
 
 variable_type: TOKEN_WORD_BOOL  { $$ = create_node(TYPE_BOOLEAN, 0); }

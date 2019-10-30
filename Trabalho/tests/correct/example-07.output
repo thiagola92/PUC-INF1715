@@ -27,17 +27,17 @@ Symbol: first
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: first
+    IDENTIFIER - VOID - content: first
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: a
+                IDENTIFIER - VOID - content: a
                 TYPE_BOOLEAN - BOOLEAN
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: b
+                IDENTIFIER - VOID - content: b
                 TYPE_BOOLEAN - BOOLEAN
         COMMAND_LIST - VOID
             FUNCTION_CALL - VOID
-                DATA_STRING - ARRAY - content: first
+                IDENTIFIER - VOID - content: first
             FUNCTION_CALL - VOID
-                DATA_STRING - ARRAY - content: first
+                IDENTIFIER - VOID - content: first

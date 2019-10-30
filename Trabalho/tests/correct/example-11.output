@@ -54,10 +54,10 @@ Symbol: main
 
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: first
+        IDENTIFIER - VOID - content: first
         BLOCK - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: main
+        IDENTIFIER - VOID - content: main
         BLOCK - VOID
             COMMAND_LIST - VOID
                 WHILE - VOID
@@ -67,18 +67,18 @@ DEFINE_LIST - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - ARRAY - content: a
+                            IDENTIFIER - VOID - content: a
                             TYPE_BOOLEAN - BOOLEAN
                 WHILE - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     BLOCK - VOID
                         FUNCTION_CALL - VOID
-                            DATA_STRING - ARRAY - content: first
+                            IDENTIFIER - VOID - content: first
                 WHILE - VOID
                     DATA_BOOLEAN - BOOLEAN - content: 1
                     BLOCK - VOID
                         DEFINE_VARIABLE - VOID
-                            DATA_STRING - ARRAY - content: a
+                            IDENTIFIER - VOID - content: a
                             TYPE_BOOLEAN - BOOLEAN
                         FUNCTION_CALL - VOID
-                            DATA_STRING - ARRAY - content: first
+                            IDENTIFIER - VOID - content: first

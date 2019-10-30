@@ -207,92 +207,92 @@ Symbol: main
 
 DEFINE_LIST - VOID
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: first
+        IDENTIFIER - VOID - content: first
         TYPE_INTEGER - INTEGER
         BLOCK - VOID
             RETURN - VOID
                 DATA_INTEGER - INTEGER - content: 1
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: second
+        IDENTIFIER - VOID - content: second
         PARAMETER - VOID
-            DATA_STRING - ARRAY - content: a
+            IDENTIFIER - VOID - content: a
             TYPE_BOOLEAN - BOOLEAN
         TYPE_BOOLEAN - BOOLEAN
         BLOCK - VOID
             RETURN - VOID
                 DATA_BOOLEAN - BOOLEAN - content: 1
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: third
+        IDENTIFIER - VOID - content: third
         PARAMETER_LIST - VOID
             PARAMETER - VOID
-                DATA_STRING - ARRAY - content: a
+                IDENTIFIER - VOID - content: a
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - ARRAY - content: b
+                IDENTIFIER - VOID - content: b
                 TYPE_BOOLEAN - BOOLEAN
         TYPE_CHARACTER - CHARACTER
         BLOCK - VOID
             RETURN - VOID
                 DATA_CHARACTER - CHARACTER - content: a
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: fourth
+        IDENTIFIER - VOID - content: fourth
         PARAMETER_LIST - VOID
             PARAMETER - VOID
-                DATA_STRING - ARRAY - content: a
+                IDENTIFIER - VOID - content: a
                 TYPE_BOOLEAN - BOOLEAN
             PARAMETER - VOID
-                DATA_STRING - ARRAY - content: b
+                IDENTIFIER - VOID - content: b
                 TYPE_BOOLEAN - BOOLEAN
         TYPE_FLOAT - FLOAT
         BLOCK - VOID
             RETURN - VOID
                 DATA_FLOAT - FLOAT - content: 1.000000
     DEFINE_FUNCTION - VOID
-        DATA_STRING - ARRAY - content: main
+        IDENTIFIER - VOID - content: main
         BLOCK - VOID
             VARIABLE_LIST - VOID
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - ARRAY - content: a
+                    IDENTIFIER - VOID - content: a
                     TYPE_INTEGER - INTEGER
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - ARRAY - content: b
+                    IDENTIFIER - VOID - content: b
                     TYPE_BOOLEAN - BOOLEAN
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - ARRAY - content: c
+                    IDENTIFIER - VOID - content: c
                     TYPE_CHARACTER - CHARACTER
                 DEFINE_VARIABLE - VOID
-                    DATA_STRING - ARRAY - content: d
+                    IDENTIFIER - VOID - content: d
                     TYPE_FLOAT - FLOAT
             COMMAND_LIST - VOID
                 ASSIGNMENT - VOID
                     VARIABLE - INTEGER
-                        DATA_STRING - ARRAY - content: a
+                        IDENTIFIER - VOID - content: a
                     FUNCTION_CALL - INTEGER
-                        DATA_STRING - ARRAY - content: first
+                        IDENTIFIER - VOID - content: first
                 ASSIGNMENT - VOID
                     VARIABLE - BOOLEAN
-                        DATA_STRING - ARRAY - content: b
+                        IDENTIFIER - VOID - content: b
                     FUNCTION_CALL - BOOLEAN
-                        DATA_STRING - ARRAY - content: second
+                        IDENTIFIER - VOID - content: second
                         VARIABLE - INTEGER
-                            DATA_STRING - ARRAY - content: a
+                            IDENTIFIER - VOID - content: a
                 ASSIGNMENT - VOID
                     VARIABLE - CHARACTER
-                        DATA_STRING - ARRAY - content: c
+                        IDENTIFIER - VOID - content: c
                     FUNCTION_CALL - CHARACTER
-                        DATA_STRING - ARRAY - content: third
+                        IDENTIFIER - VOID - content: third
                         EXPRESSION_LIST - VOID
                             VARIABLE - INTEGER
-                                DATA_STRING - ARRAY - content: a
+                                IDENTIFIER - VOID - content: a
                             VARIABLE - BOOLEAN
-                                DATA_STRING - ARRAY - content: b
+                                IDENTIFIER - VOID - content: b
                 ASSIGNMENT - VOID
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: d
+                        IDENTIFIER - VOID - content: d
                     FUNCTION_CALL - FLOAT
-                        DATA_STRING - ARRAY - content: fourth
+                        IDENTIFIER - VOID - content: fourth
                         EXPRESSION_LIST - VOID
                             VARIABLE - INTEGER
-                                DATA_STRING - ARRAY - content: a
+                                IDENTIFIER - VOID - content: a
                             VARIABLE - BOOLEAN
-                                DATA_STRING - ARRAY - content: b
+                                IDENTIFIER - VOID - content: b

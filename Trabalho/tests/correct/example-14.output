@@ -194,136 +194,136 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         VARIABLE_LIST - VOID
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x1
+                IDENTIFIER - VOID - content: x1
                 TYPE_FLOAT - FLOAT
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x2
+                IDENTIFIER - VOID - content: x2
                 TYPE_FLOAT - FLOAT
             DEFINE_VARIABLE - VOID
-                DATA_STRING - ARRAY - content: x3
+                IDENTIFIER - VOID - content: x3
                 TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x2
+                    IDENTIFIER - VOID - content: x2
                 DATA_FLOAT - FLOAT - content: 20.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_ADD - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_SUB - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_MULT - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x2
+                        IDENTIFIER - VOID - content: x2
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     DATA_FLOAT - FLOAT - content: 10.500000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - FLOAT
                     DATA_FLOAT - FLOAT - content: 10.500000
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x3
+                    IDENTIFIER - VOID - content: x3
                 EXPRESSION_DIV - FLOAT
                     VARIABLE - FLOAT
-                        DATA_STRING - ARRAY - content: x1
+                        IDENTIFIER - VOID - content: x1
                     DATA_FLOAT - FLOAT - content: 10.500000

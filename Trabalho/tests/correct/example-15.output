@@ -24,21 +24,21 @@ Symbol: main
 === LEAVE SCOPE ===
 
 DEFINE_FUNCTION - VOID
-    DATA_STRING - ARRAY - content: main
+    IDENTIFIER - VOID - content: main
     BLOCK - VOID
         DEFINE_VARIABLE - VOID
-            DATA_STRING - ARRAY - content: x1
+            IDENTIFIER - VOID - content: x1
             TYPE_FLOAT - FLOAT
         COMMAND_LIST - VOID
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 DATA_FLOAT - FLOAT - content: 1075903.000000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 DATA_FLOAT - FLOAT - content: 0.000000
             ASSIGNMENT - VOID
                 VARIABLE - FLOAT
-                    DATA_STRING - ARRAY - content: x1
+                    IDENTIFIER - VOID - content: x1
                 DATA_FLOAT - FLOAT - content: 16777215.000000

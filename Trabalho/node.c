@@ -47,6 +47,7 @@ Node* create_data_node(TAG tag, ...) {
     case DATA_FLOAT:
       node->content.f = va_arg(list, double);
       break;
+    case IDENTIFIER:
     case DATA_STRING:
       node->content.s = va_arg(list, char*);
       break;

@@ -34,20 +34,20 @@ Symbol: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
 
 DEFINE_LIST - VOID
     DEFINE_VARIABLE - VOID
-        DATA_STRING - ARRAY - content: s
+        IDENTIFIER - VOID - content: s
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - ARRAY - content: normal_name
+        IDENTIFIER - VOID - content: normal_name
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - ARRAY - content: long_long_long_long_long_long_name
+        IDENTIFIER - VOID - content: long_long_long_long_long_long_name
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - ARRAY - content: s1
+        IDENTIFIER - VOID - content: s1
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - ARRAY - content: s_1
+        IDENTIFIER - VOID - content: s_1
         TYPE_CHARACTER - CHARACTER
     DEFINE_VARIABLE - VOID
-        DATA_STRING - ARRAY - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
+        IDENTIFIER - VOID - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
         TYPE_CHARACTER - CHARACTER
