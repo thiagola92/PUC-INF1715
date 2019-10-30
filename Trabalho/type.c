@@ -4,8 +4,8 @@
 #include"type.h"
 
 void throw_type_error(const char* error) {
-	printf("type error: %s\n", error);
-	exit(3);
+  printf("type error: %s\n", error);
+  exit(3);
 }
 
 void throw_numeric_error(Node* node, const char* error) {

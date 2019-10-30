@@ -29,8 +29,8 @@ void print_scope_state(Scope* scope, const char* text) {
 }
 
 void throw_binding_error(const char* name) {
-	printf("binding error: no definition for %s\n", name);
-	exit(2);
+  printf("binding error: no definition for %s\n", name);
+  exit(2);
 }
 
 void start_binding(Node* node) {

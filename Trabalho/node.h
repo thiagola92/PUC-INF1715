@@ -15,7 +15,7 @@ typedef enum TAG {
   DEFINE_LIST,
 
   DEFINE_VARIABLE,
-	
+  
   TYPE_BOOLEAN,
   TYPE_CHARACTER,
   TYPE_INTEGER,
@@ -85,16 +85,16 @@ typedef struct Node {
 
   int number_of_childs;
 
-	union content {
+  union content {
     int i;
     float f;
     const char* s;
 
     struct Node** n;
-	} content;
-	
+  } content;
+  
   struct Node* definition;
-	
+  
   TYPE type;
 } Node;
 
