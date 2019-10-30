@@ -9,5 +9,6 @@
 
 void throw_malloc_error();
 void* safe_malloc(size_t size);
+void* safe_realloc(void* pointer, size_t size);
 
 #endif

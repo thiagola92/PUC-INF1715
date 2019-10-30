@@ -17,3 +17,13 @@ void* safe_malloc(size_t size) {
   throw_malloc_error();
   return NULL;
 }
+
+void* safe_realloc(void* pointer, size_t size) {
+  void* p = realloc(pointer, size);
+  
+  if(p != NULL)
+    return p;
+  
+  throw_malloc_error();
+  return NULL;
+}

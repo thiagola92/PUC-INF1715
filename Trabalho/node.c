@@ -62,22 +62,13 @@ Node* create_data_node(TAG tag, ...) {
 }
 
 // not efficiency
-Node* append_node(TAG tag, Node* child0, Node* child1) {
-  Node* node;
-  
+Node* append_node(TAG tag, Node* child0, Node* child1) {  
   if(child0->tag != tag)
     return create_node(tag, 2, child0, child1);
   
-  node = malloc_node(tag);
+  child0->number_of_childs += 1;
+  child0->content.n = (Node**)safe_realloc(child0->content.n, sizeof(Node*) * child0->number_of_childs);
+  child0->content.n[child0->number_of_childs - 1] = child1;
   
-  node->number_of_childs = child0->number_of_childs + 1;
-  node->content.n = (Node**)safe_malloc(sizeof(Node*) * node->number_of_childs);
-  
-  for(int i=0; i < child0->number_of_childs; i++)
-    node->content.n[i] = child0->content.n[i];
-  
-  node->content.n[node->number_of_childs - 1] = child1;
-  free(child0);
-  
-  return node;
+  return child0;
 }
