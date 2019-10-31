@@ -24,6 +24,8 @@ Scope* leave_scope(Scope* scope);
 
 void insert_symbol(Scope* scope, Node* node);
 Node* get_symbol(Scope* scope, const char* name);
+
 void free_symbols(Symbol* symbol);
+void free_scope(Scope* scope);
 
 Node* get_last_symbol(Scope* scope, TAG tag);
