@@ -1,53 +1,15 @@
-Scope
-Symbol: a
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: main
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: b
-=== DEFINE VARIABLE ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: a
-Symbol: main
-=== LEAVE SCOPE ===
-Scope
-Symbol: a
-Symbol: main
-Symbol: fn
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: a
-=== DEFINE VARIABLE ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: a
-Symbol: main
-Symbol: fn
-=== LEAVE SCOPE ===
 
 DEFINE_LIST
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-        TYPE_INTEGER
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-        BLOCK
-            DEFINE_VARIABLE
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_INTEGER
+    DEFINE_LIST
+        DEFINE_VARIABLE
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            TYPE_INTEGER
+        DEFINE_FUNCTION
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+            BLOCK
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_INTEGER
     DEFINE_FUNCTION
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
         BLOCK

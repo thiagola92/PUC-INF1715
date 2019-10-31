@@ -1,53 +1,24 @@
-Scope
-Symbol: s
-=== DEFINE VARIABLE ===
-Scope
-Symbol: s
-Symbol: normal_name
-=== DEFINE VARIABLE ===
-Scope
-Symbol: s
-Symbol: normal_name
-Symbol: long_long_long_long_long_long_name
-=== DEFINE VARIABLE ===
-Scope
-Symbol: s
-Symbol: normal_name
-Symbol: long_long_long_long_long_long_name
-Symbol: s1
-=== DEFINE VARIABLE ===
-Scope
-Symbol: s
-Symbol: normal_name
-Symbol: long_long_long_long_long_long_name
-Symbol: s1
-Symbol: s_1
-=== DEFINE VARIABLE ===
-Scope
-Symbol: s
-Symbol: normal_name
-Symbol: long_long_long_long_long_long_name
-Symbol: s1
-Symbol: s_1
-Symbol: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
-=== DEFINE VARIABLE ===
 
 DEFINE_LIST
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s
-        TYPE_CHARACTER
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: normal_name
-        TYPE_CHARACTER
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: long_long_long_long_long_long_name
-        TYPE_CHARACTER
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s1
-        TYPE_CHARACTER
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s_1
-        TYPE_CHARACTER
+    DEFINE_LIST
+        DEFINE_LIST
+            DEFINE_LIST
+                DEFINE_LIST
+                    DEFINE_VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s
+                        TYPE_CHARACTER
+                    DEFINE_VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: normal_name
+                        TYPE_CHARACTER
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: long_long_long_long_long_long_name
+                    TYPE_CHARACTER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s1
+                TYPE_CHARACTER
+        DEFINE_VARIABLE
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s_1
+            TYPE_CHARACTER
     DEFINE_VARIABLE
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
         TYPE_CHARACTER

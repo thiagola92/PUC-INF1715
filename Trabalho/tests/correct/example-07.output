@@ -1,30 +1,3 @@
-Scope
-Symbol: first
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: a
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-=== BIND FUNCTION CALL ===
-Scope
-Symbol: a
-Symbol: b
-=== BIND FUNCTION CALL ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-=== LEAVE SCOPE ===
 
 DEFINE_FUNCTION
     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first

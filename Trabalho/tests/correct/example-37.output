@@ -1,21 +1,3 @@
-Scope
-Symbol: main
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: b
-=== DEFINE VARIABLE ===
-Scope
-Symbol: b
-=== BIND VARIABLE ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: main
-=== LEAVE SCOPE ===
 
 DEFINE_FUNCTION
     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main

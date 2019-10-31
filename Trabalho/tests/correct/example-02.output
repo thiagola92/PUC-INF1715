@@ -1,54 +1,25 @@
-Scope
-Symbol: aaa
-=== DEFINE VARIABLE ===
-Scope
-Symbol: aaa
-Symbol: bbb
-=== DEFINE VARIABLE ===
-Scope
-Symbol: aaa
-Symbol: bbb
-Symbol: ccc
-=== DEFINE VARIABLE ===
-Scope
-Symbol: aaa
-Symbol: bbb
-Symbol: ccc
-Symbol: ddd
-=== DEFINE VARIABLE ===
-Scope
-Symbol: aaa
-Symbol: bbb
-Symbol: ccc
-Symbol: ddd
-Symbol: eee
-=== DEFINE VARIABLE ===
-Scope
-Symbol: aaa
-Symbol: bbb
-Symbol: ccc
-Symbol: ddd
-Symbol: eee
-Symbol: fff
-=== DEFINE VARIABLE ===
 
 DEFINE_LIST
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: aaa
-        TYPE_BOOLEAN
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: bbb
-        TYPE_CHARACTER
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: ccc
-        TYPE_INTEGER
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: ddd
-        TYPE_FLOAT
-    DEFINE_VARIABLE
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: eee
-        TYPE_ARRAY
-            TYPE_CHARACTER
+    DEFINE_LIST
+        DEFINE_LIST
+            DEFINE_LIST
+                DEFINE_LIST
+                    DEFINE_VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: aaa
+                        TYPE_BOOLEAN
+                    DEFINE_VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: bbb
+                        TYPE_CHARACTER
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: ccc
+                    TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: ddd
+                TYPE_FLOAT
+        DEFINE_VARIABLE
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: eee
+            TYPE_ARRAY
+                TYPE_CHARACTER
     DEFINE_VARIABLE
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fff
         TYPE_ARRAY

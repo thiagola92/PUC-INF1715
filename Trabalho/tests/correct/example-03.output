@@ -1,112 +1,26 @@
-Scope
-Symbol: first
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-Symbol: a
-=== DEFINE PARAMETER ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: a
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-Symbol: a
-=== DEFINE PARAMETER ===
-Scope
-Symbol: a
-Symbol: b
-=== DEFINE PARAMETER ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: a
-Symbol: b
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-Symbol: fourth
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-Symbol: a
-=== DEFINE PARAMETER ===
-Scope
-Symbol: a
-Symbol: b
-=== DEFINE PARAMETER ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-=== DEFINE PARAMETER ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-Symbol: fourth
-=== LEAVE SCOPE ===
 
 DEFINE_LIST
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-        PARAMETER
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_BOOLEAN
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-        PARAMETER_LIST
-            PARAMETER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN
-            PARAMETER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_BOOLEAN
-        BLOCK
+    DEFINE_LIST
+        DEFINE_LIST
+            DEFINE_FUNCTION
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+                BLOCK
+            DEFINE_FUNCTION
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+                PARAMETER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                BLOCK
+        DEFINE_FUNCTION
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+            PARAMETER_LIST
+                PARAMETER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                PARAMETER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+            BLOCK
     DEFINE_FUNCTION
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
         PARAMETER_LIST

@@ -1,19 +1,1 @@
-Scope
-Symbol: main
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: b
-=== DEFINE VARIABLE ===
-Scope
-Symbol: b
-=== BIND VARIABLE ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: main
-=== LEAVE SCOPE ===
 type error: arrays from different type

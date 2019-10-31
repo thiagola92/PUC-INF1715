@@ -1,39 +1,3 @@
-Scope
-Symbol: first
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-=== BIND RETURN ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: seventh
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-Symbol: a
-=== DEFINE PARAMETER ===
-Scope
-=== ENTER BLOCK ===
-Scope
-=== BIND RETURN ===
-Scope
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: seventh
-=== LEAVE SCOPE ===
 
 DEFINE_LIST
     DEFINE_FUNCTION

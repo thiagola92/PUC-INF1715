@@ -115,7 +115,7 @@ program: /*empty*/ { __root__ = create_node(EMPTY, 0); $$ = __root__; }
          | define_list  { __root__ = $1; $$ = __root__; }
          ;
 
-define_list: define_list define { $$ = append_node(DEFINE_LIST, $1, $2); }
+define_list: define_list define { $$ = create_node(DEFINE_LIST, 2, $1, $2); }
              | define { $$ = $1; }
              ;
 

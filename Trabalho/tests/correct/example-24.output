@@ -1,252 +1,49 @@
-Scope
-Symbol: first
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-=== BIND RETURN ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-Symbol: a
-=== DEFINE PARAMETER ===
-Scope
-=== ENTER BLOCK ===
-Scope
-=== BIND RETURN ===
-Scope
-Symbol: a
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-Symbol: a
-=== DEFINE PARAMETER ===
-Scope
-Symbol: a
-Symbol: b
-=== DEFINE PARAMETER ===
-Scope
-=== ENTER BLOCK ===
-Scope
-=== BIND RETURN ===
-Scope
-Symbol: a
-Symbol: b
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-Symbol: fourth
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-Symbol: a
-=== DEFINE PARAMETER ===
-Scope
-Symbol: a
-Symbol: b
-=== DEFINE PARAMETER ===
-Scope
-=== ENTER BLOCK ===
-Scope
-=== BIND RETURN ===
-Scope
-Symbol: a
-Symbol: b
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-Symbol: fourth
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-Symbol: fourth
-Symbol: main
-=== DEFINE FUNCTION ===
-Scope
-=== ENTER FUNCTION ===
-Scope
-=== ENTER BLOCK ===
-Scope
-Symbol: a
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== DEFINE VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND FUNCTION CALL ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND FUNCTION CALL ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND FUNCTION CALL ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND FUNCTION CALL ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-Symbol: a
-Symbol: b
-Symbol: c
-Symbol: d
-=== BIND VARIABLE ===
-Scope
-=== LEAVE SCOPE ===
-Scope
-Symbol: first
-Symbol: second
-Symbol: third
-Symbol: fourth
-Symbol: main
-=== LEAVE SCOPE ===
 
 DEFINE_LIST
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-        TYPE_INTEGER
-        BLOCK
-            RETURN
-                DATA_INTEGER - TYPE_INTEGER - content: 1
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-        PARAMETER
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_BOOLEAN
-        TYPE_BOOLEAN
-        BLOCK
-            RETURN
-                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-        PARAMETER_LIST
-            PARAMETER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN
-            PARAMETER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_BOOLEAN
-        TYPE_CHARACTER
-        BLOCK
-            RETURN
-                DATA_CHARACTER - TYPE_CHARACTER - content: a
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
-        PARAMETER_LIST
-            PARAMETER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN
-            PARAMETER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_BOOLEAN
-        TYPE_FLOAT
-        BLOCK
-            RETURN
-                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+    DEFINE_LIST
+        DEFINE_LIST
+            DEFINE_LIST
+                DEFINE_FUNCTION
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+                    TYPE_INTEGER
+                    BLOCK
+                        RETURN
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                DEFINE_FUNCTION
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+                    PARAMETER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                        TYPE_BOOLEAN
+                    TYPE_BOOLEAN
+                    BLOCK
+                        RETURN
+                            DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+            DEFINE_FUNCTION
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+                PARAMETER_LIST
+                    PARAMETER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                        TYPE_BOOLEAN
+                    PARAMETER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                        TYPE_BOOLEAN
+                TYPE_CHARACTER
+                BLOCK
+                    RETURN
+                        DATA_CHARACTER - TYPE_CHARACTER - content: a
+        DEFINE_FUNCTION
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+            PARAMETER_LIST
+                PARAMETER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                PARAMETER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+            TYPE_FLOAT
+            BLOCK
+                RETURN
+                    DATA_FLOAT - TYPE_FLOAT - content: 1.000000
     DEFINE_FUNCTION
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
         BLOCK
