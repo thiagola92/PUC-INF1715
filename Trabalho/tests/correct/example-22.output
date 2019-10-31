@@ -41,27 +41,27 @@ Symbol: first
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_LIST - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: first
-        PARAMETER - VOID
-            IDENTIFIER - VOID - content: y
-            TYPE_INTEGER - INTEGER
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: main
-        BLOCK - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x
-                TYPE_INTEGER - INTEGER
-            COMMAND_LIST - VOID
-                ASSIGNMENT - VOID
-                    VARIABLE - INTEGER
-                        IDENTIFIER - VOID - content: x
-                    EXPRESSION_ADD - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                FUNCTION_CALL - VOID
-                    IDENTIFIER - VOID - content: first
-                    VARIABLE - INTEGER
-                        IDENTIFIER - VOID - content: x
+DEFINE_LIST
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        PARAMETER
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: y
+            TYPE_INTEGER
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+        BLOCK
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
+                TYPE_INTEGER
+            COMMAND_LIST
+                ASSIGNMENT
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
+                    EXPRESSION_ADD
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                FUNCTION_CALL
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x

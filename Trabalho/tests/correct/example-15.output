@@ -23,22 +23,22 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        DEFINE_VARIABLE - VOID
-            IDENTIFIER - VOID - content: x1
-            TYPE_FLOAT - FLOAT
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    IDENTIFIER - VOID - content: x1
-                DATA_FLOAT - FLOAT - content: 1075903.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    IDENTIFIER - VOID - content: x1
-                DATA_FLOAT - FLOAT - content: 0.000000
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    IDENTIFIER - VOID - content: x1
-                DATA_FLOAT - FLOAT - content: 16777215.000000
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        DEFINE_VARIABLE
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+            TYPE_FLOAT
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                DATA_FLOAT - TYPE_FLOAT - content: 1075903.000000
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                DATA_FLOAT - TYPE_FLOAT - content: 0.000000
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                DATA_FLOAT - TYPE_FLOAT - content: 16777215.000000

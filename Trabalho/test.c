@@ -3,130 +3,179 @@
 
 #include"test.h"
 
-const char* tag_to_string(TAG tag) {
-  switch(tag) {
+void print_tag(Node* node) {
+  if(node == NULL)
+    return;
+
+  switch(node->tag) {
     case EMPTY:
-      return "EMPTY";
+      printf("EMPTY");
+      break;
     case DEFINE_LIST:
-      return "DEFINE_LIST";
+      printf("DEFINE_LIST");
+      break;
     case DEFINE_VARIABLE:
-      return "DEFINE_VARIABLE";
+      printf("DEFINE_VARIABLE");
+      break;
     case IDENTIFIER:
-      return "IDENTIFIER";
+      printf("IDENTIFIER");
+      break;
     case TYPE_BOOLEAN:
-      return "TYPE_BOOLEAN";
+      printf("TYPE_BOOLEAN");
+      break;
     case TYPE_CHARACTER:
-      return "TYPE_CHARACTER";
+      printf("TYPE_CHARACTER");
+      break;
     case TYPE_INTEGER:
-      return "TYPE_INTEGER";
+      printf("TYPE_INTEGER");
+      break;
     case TYPE_FLOAT:
-      return "TYPE_FLOAT";
+      printf("TYPE_FLOAT");
+      break;
     case TYPE_ARRAY:
-      return "TYPE_ARRAY";
+      printf("TYPE_ARRAY");
+      break;
     case DEFINE_FUNCTION:
-      return "DEFINE_FUNCTION";
+      printf("DEFINE_FUNCTION");
+      break;
     case PARAMETER_LIST:
-      return "PARAMETER_LIST";
+      printf("PARAMETER_LIST");
+      break;
     case PARAMETER:
-      return "PARAMETER";
+      printf("PARAMETER");
+      break;
     case COMMAND_LIST:
-      return "COMMAND_LIST";
+      printf("COMMAND_LIST");
+      break;
     case VARIABLE_LIST:
-      return "VARIABLE_LIST";
+      printf("VARIABLE_LIST");
+      break;
     case BLOCK:
-      return "BLOCK";
+      printf("BLOCK");
+      break;
     case IF:
-      return "IF";
+      printf("IF");
+      break;
     case WHILE:
-      return "WHILE";
+      printf("WHILE");
+      break;
     case ASSIGNMENT:
-      return "ASSIGNMENT";
+      printf("ASSIGNMENT");
+      break;
     case RETURN:
-      return "RETURN";
+      printf("RETURN");
+      break;
     case PRINT:
-      return "PRINT";
+      printf("PRINT");
+      break;
     case VARIABLE:
-      return "VARIABLE";
+      printf("VARIABLE");
+      break;
     case ARRAY_POSITION:
-      return "ARRAY_POSITION";
+      printf("ARRAY_POSITION");
+      break;
     case FUNCTION_CALL:
-      return "FUNCTION_CALL";
+      printf("FUNCTION_CALL");
+      break;
     case NEW_ARRAY:
-      return "NEW_ARRAY";
+      printf("NEW_ARRAY");
+      break;
     case EXPRESSION_LIST:
-      return "EXPRESSION_LIST";
+      printf("EXPRESSION_LIST");
+      break;
     case EXPRESSION_OR:
-      return "EXPRESSION_OR";
+      printf("EXPRESSION_OR");
+      break;
     case EXPRESSION_AND:
-      return "EXPRESSION_AND";
+      printf("EXPRESSION_AND");
+      break;
     case EXPRESSION_EQUAL:
-      return "EXPRESSION_EQUAL";
+      printf("EXPRESSION_EQUAL");
+      break;
     case EXPRESSION_NOT_EQUAL:
-      return "EXPRESSION_NOT_EQUAL";
+      printf("EXPRESSION_NOT_EQUAL");
+      break;
     case EXPRESSION_GREATER:
-      return "EXPRESSION_GREATER";
+      printf("EXPRESSION_GREATER");
+      break;
     case EXPRESSION_GREATER_EQUAL:
-      return "EXPRESSION_GREATER_EQUAL";
+      printf("EXPRESSION_GREATER_EQUAL");
+      break;
     case EXPRESSION_LESS:
-      return "EXPRESSION_LESS";
+      printf("EXPRESSION_LESS");
+      break;
     case EXPRESSION_LESS_EQUAL:
-      return "EXPRESSION_LESS_EQUAL";
+      printf("EXPRESSION_LESS_EQUAL");
+      break;
     case EXPRESSION_SUB:
-      return "EXPRESSION_SUB";
+      printf("EXPRESSION_SUB");
+      break;
     case EXPRESSION_ADD:
-      return "EXPRESSION_ADD";
+      printf("EXPRESSION_ADD");
+      break;
     case EXPRESSION_DIV:
-      return "EXPRESSION_DIV";
+      printf("EXPRESSION_DIV");
+      break;
     case EXPRESSION_MULT:
-      return "EXPRESSION_MULT";
+      printf("EXPRESSION_MULT");
+      break;
     case EXPRESSION_CAST:
-      return "EXPRESSION_CAST";
+      printf("EXPRESSION_CAST");
+      break;
     case EXPRESSION_NEGATIVE:
-      return "EXPRESSION_NEGATIVE";
+      printf("EXPRESSION_NEGATIVE");
+      break;
     case EXPRESSION_NOT:
-      return "EXPRESSION_NOT";
+      printf("EXPRESSION_NOT");
+      break;
     case DATA_BOOLEAN:
-      return "DATA_BOOLEAN";
+      printf("DATA_BOOLEAN");
+      break;
     case DATA_CHARACTER:
-      return "DATA_CHARACTER";
+      printf("DATA_CHARACTER");
+      break;
     case DATA_INTEGER:
-      return "DATA_INTEGER";
+      printf("DATA_INTEGER");
+      break;
     case DATA_FLOAT:
-      return "DATA_FLOAT";
+      printf("DATA_FLOAT");
+      break;
     case DATA_STRING:
-      return "DATA_STRING";
+      printf("DATA_STRING");
+      break;
     default:
-      return "UNKNOWN";
+      printf("UNKNOW");
+      break;
     }
 }
 
-const char* type_to_string(TYPE type) {
-  switch(type) {
-    case BOOLEAN:
-      return "BOOLEAN";
-    case CHARACTER:
-      return "CHARACTER";
-    case INTEGER:
-      return "INTEGER";
-    case FLOAT:
-      return "FLOAT";
-    case ARRAY:
-      return "ARRAY";
+void print_type(Node* node) {
+  if(node == NULL)
+    return;
+    
+  switch(node->tag) {
+    case TYPE_BOOLEAN:
+      printf(" - TYPE_BOOLEAN");
+      break;
+    case TYPE_CHARACTER:
+      printf(" - TYPE_CHARACTER");
+      break;
+    case TYPE_INTEGER:
+      printf(" - TYPE_INTEGER");
+      break;
+    case TYPE_FLOAT:
+      printf(" - TYPE_FLOAT");
+      break;
+    case TYPE_ARRAY:
+      printf(" - TYPE_ARRAY");
+      print_type(node->type_node);
+      break;
     default:
-      return "VOID";
+      break;
   }
 }
 
-void print_tree(Node* node, int tabs) {
-  printf("\n");
-
-  for(int i = 0; i < tabs; i++)
-    printf("    ");
-
-  printf("%s", tag_to_string(node->tag));
-  
-  printf(" - %s", type_to_string(node->type));
-
+void print_content(Node* node) {
   switch(node->tag) {
     case DATA_BOOLEAN:
       printf(" - content: %d", node->content.i);
@@ -147,6 +196,17 @@ void print_tree(Node* node, int tabs) {
     default:
       break;
   }
+}
+
+void print_tree(Node* node, int tabs) {
+  printf("\n");
+
+  for(int i = 0; i < tabs; i++)
+    printf("    ");
+
+  print_tag(node);
+  print_type(node->type_node);
+  print_content(node);
   
   for(int i = 0; i < node->number_of_childs; i++)
     print_tree(node->content.n[i], tabs+1);

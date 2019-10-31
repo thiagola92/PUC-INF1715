@@ -200,82 +200,82 @@ Symbol: fourth
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_LIST - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: first
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: second
-        PARAMETER - VOID
-            IDENTIFIER - VOID - content: a
-            TYPE_BOOLEAN - BOOLEAN
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: third
-        PARAMETER_LIST - VOID
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_BOOLEAN - BOOLEAN
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: b
-                TYPE_BOOLEAN - BOOLEAN
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: third
-        PARAMETER_LIST - VOID
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_BOOLEAN - BOOLEAN
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: b
-                TYPE_BOOLEAN - BOOLEAN
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: fourth
-        PARAMETER_LIST - VOID
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_BOOLEAN - BOOLEAN
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: b
-                TYPE_BOOLEAN - BOOLEAN
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: c
-                TYPE_BOOLEAN - BOOLEAN
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: main
-        BLOCK - VOID
-            VARIABLE_LIST - VOID
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: a
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: b
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: c
-                    TYPE_BOOLEAN - BOOLEAN
-            COMMAND_LIST - VOID
-                FUNCTION_CALL - VOID
-                    IDENTIFIER - VOID - content: first
-                FUNCTION_CALL - VOID
-                    IDENTIFIER - VOID - content: second
-                    VARIABLE - BOOLEAN
-                        IDENTIFIER - VOID - content: a
-                FUNCTION_CALL - VOID
-                    IDENTIFIER - VOID - content: third
-                    EXPRESSION_LIST - VOID
-                        VARIABLE - BOOLEAN
-                            IDENTIFIER - VOID - content: a
-                        VARIABLE - BOOLEAN
-                            IDENTIFIER - VOID - content: b
-                FUNCTION_CALL - VOID
-                    IDENTIFIER - VOID - content: fourth
-                    EXPRESSION_LIST - VOID
-                        VARIABLE - BOOLEAN
-                            IDENTIFIER - VOID - content: a
-                        VARIABLE - BOOLEAN
-                            IDENTIFIER - VOID - content: b
-                        VARIABLE - BOOLEAN
-                            IDENTIFIER - VOID - content: c
+DEFINE_LIST
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+        PARAMETER
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            TYPE_BOOLEAN
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+        PARAMETER_LIST
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+        PARAMETER_LIST
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+        PARAMETER_LIST
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                TYPE_BOOLEAN
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_BOOLEAN
+            COMMAND_LIST
+                FUNCTION_CALL
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+                FUNCTION_CALL
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                FUNCTION_CALL
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+                    EXPRESSION_LIST
+                        VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                        VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                FUNCTION_CALL
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+                    EXPRESSION_LIST
+                        VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                        VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                        VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c

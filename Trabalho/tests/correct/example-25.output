@@ -263,136 +263,136 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        VARIABLE_LIST - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_ARRAY - ARRAY
-                    TYPE_BOOLEAN - BOOLEAN
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: b
-                TYPE_ARRAY - ARRAY
-                    TYPE_CHARACTER - CHARACTER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: c
-                TYPE_ARRAY - ARRAY
-                    TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: d
-                TYPE_ARRAY - ARRAY
-                    TYPE_FLOAT - FLOAT
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: f
-                TYPE_BOOLEAN - BOOLEAN
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: g
-                TYPE_CHARACTER - CHARACTER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: h
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: i
-                TYPE_FLOAT - FLOAT
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - ARRAY
-                    IDENTIFIER - VOID - content: a
-                NEW_ARRAY - ARRAY
-                    TYPE_BOOLEAN - BOOLEAN
-                    DATA_INTEGER - INTEGER - content: 2
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - BOOLEAN
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: a
-                    DATA_INTEGER - INTEGER - content: 0
-                DATA_BOOLEAN - BOOLEAN - content: 1
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - BOOLEAN
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: a
-                    DATA_INTEGER - INTEGER - content: 1
-                DATA_BOOLEAN - BOOLEAN - content: 0
-            ASSIGNMENT - VOID
-                VARIABLE - ARRAY
-                    IDENTIFIER - VOID - content: b
-                NEW_ARRAY - ARRAY
-                    TYPE_CHARACTER - CHARACTER
-                    DATA_INTEGER - INTEGER - content: 2
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - CHARACTER
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: b
-                    DATA_INTEGER - INTEGER - content: 0
-                DATA_CHARACTER - CHARACTER - content: a
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - CHARACTER
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: b
-                    DATA_INTEGER - INTEGER - content: 1
-                DATA_CHARACTER - CHARACTER - content: b
-            ASSIGNMENT - VOID
-                VARIABLE - ARRAY
-                    IDENTIFIER - VOID - content: c
-                NEW_ARRAY - ARRAY
-                    TYPE_INTEGER - INTEGER
-                    DATA_INTEGER - INTEGER - content: 2
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - INTEGER
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: c
-                    DATA_INTEGER - INTEGER - content: 0
-                DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - INTEGER
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: c
-                    DATA_INTEGER - INTEGER - content: 1
-                DATA_INTEGER - INTEGER - content: 2
-            ASSIGNMENT - VOID
-                VARIABLE - ARRAY
-                    IDENTIFIER - VOID - content: d
-                NEW_ARRAY - ARRAY
-                    TYPE_FLOAT - FLOAT
-                    DATA_INTEGER - INTEGER - content: 2
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - FLOAT
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: d
-                    DATA_INTEGER - INTEGER - content: 0
-                DATA_FLOAT - FLOAT - content: 1.000000
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - FLOAT
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: d
-                    DATA_INTEGER - INTEGER - content: 1
-                DATA_FLOAT - FLOAT - content: 1.500000
-            ASSIGNMENT - VOID
-                VARIABLE - BOOLEAN
-                    IDENTIFIER - VOID - content: f
-                ARRAY_POSITION - BOOLEAN
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: a
-                    DATA_INTEGER - INTEGER - content: 0
-            ASSIGNMENT - VOID
-                VARIABLE - CHARACTER
-                    IDENTIFIER - VOID - content: g
-                ARRAY_POSITION - CHARACTER
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: b
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: h
-                ARRAY_POSITION - INTEGER
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: c
-                    DATA_INTEGER - INTEGER - content: 0
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    IDENTIFIER - VOID - content: i
-                ARRAY_POSITION - FLOAT
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: d
-                    DATA_INTEGER - INTEGER - content: 1
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        VARIABLE_LIST
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_ARRAY
+                    TYPE_BOOLEAN
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_ARRAY
+                    TYPE_CHARACTER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                TYPE_ARRAY
+                    TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                TYPE_ARRAY
+                    TYPE_FLOAT
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: f
+                TYPE_BOOLEAN
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: g
+                TYPE_CHARACTER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: h
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
+                TYPE_FLOAT
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                NEW_ARRAY
+                    TYPE_BOOLEAN
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                NEW_ARRAY
+                    TYPE_CHARACTER
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_CHARACTER - TYPE_CHARACTER - content: a
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_CHARACTER - TYPE_CHARACTER - content: b
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                NEW_ARRAY
+                    TYPE_INTEGER
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                NEW_ARRAY
+                    TYPE_FLOAT
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_FLOAT - TYPE_FLOAT - content: 1.500000
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: f
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: g
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: h
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    DATA_INTEGER - TYPE_INTEGER - content: 1

@@ -95,6 +95,7 @@ typedef struct Node {
   } content;
   
   struct Node* definition;
+  struct Node* type_node;
   
   TYPE type;
 } Node;
@@ -102,7 +103,12 @@ typedef struct Node {
 Node* malloc_node();
 
 Node* create_node(TAG tag, int number_of_childs, ...);
-Node* create_data_node(TAG tag, ...);
+
+Node* create_node_boolean(int b);
+Node* create_node_character(int c);
+Node* create_node_integer(int i);
+Node* create_node_float(float f);
+Node* create_node_string(TAG tag, const char* s);
 
 Node* append_node(TAG tag, Node* child0, Node* child1);
 

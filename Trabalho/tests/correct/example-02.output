@@ -32,25 +32,25 @@ Symbol: eee
 Symbol: fff
 === DEFINE VARIABLE ===
 
-DEFINE_LIST - VOID
-    DEFINE_VARIABLE - VOID
-        IDENTIFIER - VOID - content: aaa
-        TYPE_BOOLEAN - BOOLEAN
-    DEFINE_VARIABLE - VOID
-        IDENTIFIER - VOID - content: bbb
-        TYPE_CHARACTER - CHARACTER
-    DEFINE_VARIABLE - VOID
-        IDENTIFIER - VOID - content: ccc
-        TYPE_INTEGER - INTEGER
-    DEFINE_VARIABLE - VOID
-        IDENTIFIER - VOID - content: ddd
-        TYPE_FLOAT - FLOAT
-    DEFINE_VARIABLE - VOID
-        IDENTIFIER - VOID - content: eee
-        TYPE_ARRAY - ARRAY
-            TYPE_CHARACTER - CHARACTER
-    DEFINE_VARIABLE - VOID
-        IDENTIFIER - VOID - content: fff
-        TYPE_ARRAY - ARRAY
-            TYPE_ARRAY - ARRAY
-                TYPE_CHARACTER - CHARACTER
+DEFINE_LIST
+    DEFINE_VARIABLE
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: aaa
+        TYPE_BOOLEAN
+    DEFINE_VARIABLE
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: bbb
+        TYPE_CHARACTER
+    DEFINE_VARIABLE
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: ccc
+        TYPE_INTEGER
+    DEFINE_VARIABLE
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: ddd
+        TYPE_FLOAT
+    DEFINE_VARIABLE
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: eee
+        TYPE_ARRAY
+            TYPE_CHARACTER
+    DEFINE_VARIABLE
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fff
+        TYPE_ARRAY
+            TYPE_ARRAY
+                TYPE_CHARACTER

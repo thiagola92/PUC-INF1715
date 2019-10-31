@@ -17,17 +17,17 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        DEFINE_VARIABLE - VOID
-            IDENTIFIER - VOID - content: b
-            TYPE_INTEGER - INTEGER
-        ASSIGNMENT - VOID
-            VARIABLE - INTEGER
-                IDENTIFIER - VOID - content: b
-            ARRAY_POSITION - INTEGER
-                NEW_ARRAY - ARRAY
-                    TYPE_INTEGER - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                DATA_INTEGER - INTEGER - content: 0
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        DEFINE_VARIABLE
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+            TYPE_INTEGER
+        ASSIGNMENT
+            VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+            ARRAY_POSITION
+                NEW_ARRAY
+                    TYPE_INTEGER
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                DATA_INTEGER - TYPE_INTEGER - content: 0

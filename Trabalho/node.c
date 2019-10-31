@@ -9,6 +9,7 @@ Node* malloc_node(TAG tag) {
   node->tag = tag;
   node->number_of_childs = 0;
   node->definition = NULL;
+  node->type_node = NULL;
   node->type = VOID;
   
   return node;
@@ -32,33 +33,56 @@ Node* create_node(TAG tag, int number_of_childs, ...) {
   return node;
 }
 
-Node* create_data_node(TAG tag, ...) {
-  Node* node = malloc_node(tag);
+Node* create_node_boolean(int b) {
+  Node* node_boolean = malloc_node(DATA_BOOLEAN);
+  Node* type_boolean = malloc_node(TYPE_BOOLEAN);
   
-  va_list list;
-  va_start(list, tag);
+  node_boolean->content.i = b;
+  node_boolean->type_node = type_boolean;
   
-  switch(tag) {
-    case DATA_BOOLEAN:
-    case DATA_CHARACTER:
-    case DATA_INTEGER:
-      node->content.i = va_arg(list, int);
-      break;
-    case DATA_FLOAT:
-      node->content.f = va_arg(list, double);
-      break;
-    case IDENTIFIER:
-    case DATA_STRING:
-      node->content.s = va_arg(list, char*);
-      break;
-    default:
-      va_end(list);
-      return NULL;
-  }
-    
-  va_end(list);
+  return node_boolean;
+}
+
+Node* create_node_character(int c) {
+  Node* node_character = malloc_node(DATA_CHARACTER);
+  Node* type_character = malloc_node(TYPE_CHARACTER);
   
-  return node;
+  node_character->content.i = c;
+  node_character->type_node = type_character;
+  
+  return node_character;
+}
+
+Node* create_node_integer(int i) {
+  Node* node_integer = malloc_node(DATA_INTEGER);
+  Node* type_integer = malloc_node(TYPE_INTEGER);
+  
+  node_integer->content.i = i;
+  node_integer->type_node = type_integer;
+  
+  return node_integer;
+}
+
+Node* create_node_float(float f) {
+  Node* node_float = malloc_node(DATA_FLOAT);
+  Node* type_float = malloc_node(TYPE_FLOAT);
+  
+  node_float->content.f = f;
+  node_float->type_node = type_float;
+  
+  return node_float;
+}
+
+Node* create_node_string(TAG tag, const char* s) {
+  Node* node_string = malloc_node(tag);
+  Node* type_array = malloc_node(TYPE_ARRAY);
+  Node* type_character = malloc_node(TYPE_CHARACTER);
+  
+  node_string->content.s = s;
+  node_string->type_node = type_array;
+  type_array->type_node = type_character;
+  
+  return node_string;
 }
 
 // not efficiency

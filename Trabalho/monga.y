@@ -126,7 +126,7 @@ define: define_variable  { $$ = $1; }
 define_variable: identifier TOKEN_COLON variable_type TOKEN_SEMICOLON { $$ = create_node(DEFINE_VARIABLE, 2, $1, $3); }
                  ;
 
-identifier: TOKEN_IDENTIFIER { $$ = create_data_node(IDENTIFIER, $1); }
+identifier: TOKEN_IDENTIFIER { $$ = create_node_string(IDENTIFIER, $1); }
             ;
 
 variable_type: TOKEN_WORD_BOOL  { $$ = create_node(TYPE_BOOLEAN, 0); }
@@ -241,12 +241,12 @@ expression_scope:  TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES  { 
                   | expression_data { $$ = $1; }
                   ;
 
-expression_data:   TOKEN_TRUE { $$ = create_data_node(DATA_BOOLEAN, 1); }
-                  | TOKEN_FALSE { $$ = create_data_node(DATA_BOOLEAN, 0); }
-                  | TOKEN_CHARACTER { $$ = create_data_node(DATA_CHARACTER, $1); }
-                  | TOKEN_INTEGER { $$ = create_data_node(DATA_INTEGER, $1); }
-                  | TOKEN_FLOAT { $$ = create_data_node(DATA_FLOAT, $1); }
-                  | TOKEN_STRING { $$ = create_data_node(DATA_STRING, $1); }
+expression_data:   TOKEN_TRUE { $$ = create_node_boolean(1); }
+                  | TOKEN_FALSE { $$ = create_node_boolean(0); }
+                  | TOKEN_CHARACTER { $$ = create_node_character($1); }
+                  | TOKEN_INTEGER { $$ = create_node_integer($1); }
+                  | TOKEN_FLOAT { $$ = create_node_float($1); }
+                  | TOKEN_STRING { $$ = create_node_string(DATA_STRING, $1); }
                   ;
 
 %%

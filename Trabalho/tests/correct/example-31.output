@@ -31,34 +31,34 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        COMMAND_LIST - VOID
-            IF - VOID
-                EXPRESSION_NOT - BOOLEAN
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                BLOCK - VOID
-            IF - VOID
-                EXPRESSION_NOT - BOOLEAN
-                    DATA_BOOLEAN - BOOLEAN - content: 0
-                BLOCK - VOID
-            IF - VOID
-                EXPRESSION_EQUAL - BOOLEAN
-                    EXPRESSION_NOT - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                BLOCK - VOID
-            IF - VOID
-                EXPRESSION_EQUAL - BOOLEAN
-                    EXPRESSION_NOT - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-                    DATA_BOOLEAN - BOOLEAN - content: 0
-                BLOCK - VOID
-            IF - VOID
-                EXPRESSION_EQUAL - BOOLEAN
-                    EXPRESSION_NOT - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-                    EXPRESSION_NOT - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                BLOCK - VOID
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        COMMAND_LIST
+            IF
+                EXPRESSION_NOT
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK
+            IF
+                EXPRESSION_NOT
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK
+            IF
+                EXPRESSION_EQUAL
+                    EXPRESSION_NOT
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK
+            IF
+                EXPRESSION_EQUAL
+                    EXPRESSION_NOT
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK
+            IF
+                EXPRESSION_EQUAL
+                    EXPRESSION_NOT
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                    EXPRESSION_NOT
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK

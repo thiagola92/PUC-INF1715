@@ -42,70 +42,70 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        VARIABLE_LIST - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x1
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x2
-                TYPE_INTEGER - INTEGER
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_MULT - INTEGER
-                        DATA_INTEGER - INTEGER - content: 2
-                        DATA_INTEGER - INTEGER - content: 3
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x2
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_MULT - INTEGER
-                        DATA_INTEGER - INTEGER - content: 2
-                        DATA_INTEGER - INTEGER - content: 3
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_ADD - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        EXPRESSION_MULT - INTEGER
-                            DATA_INTEGER - INTEGER - content: 2
-                            DATA_INTEGER - INTEGER - content: 3
-                    DATA_INTEGER - INTEGER - content: 4
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x2
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_ADD - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 4
-                    EXPRESSION_MULT - INTEGER
-                        DATA_INTEGER - INTEGER - content: 2
-                        DATA_INTEGER - INTEGER - content: 3
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_ADD - INTEGER
-                        EXPRESSION_MULT - INTEGER
-                            DATA_INTEGER - INTEGER - content: 2
-                            DATA_INTEGER - INTEGER - content: 3
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 4
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x2
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_MULT - INTEGER
-                        EXPRESSION_MULT - INTEGER
-                            DATA_INTEGER - INTEGER - content: 4
-                            DATA_INTEGER - INTEGER - content: 2
-                        DATA_INTEGER - INTEGER - content: 3
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        VARIABLE_LIST
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                TYPE_INTEGER
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_ADD
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_MULT
+                        DATA_INTEGER - TYPE_INTEGER - content: 2
+                        DATA_INTEGER - TYPE_INTEGER - content: 3
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                EXPRESSION_ADD
+                    EXPRESSION_MULT
+                        DATA_INTEGER - TYPE_INTEGER - content: 2
+                        DATA_INTEGER - TYPE_INTEGER - content: 3
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_ADD
+                    EXPRESSION_ADD
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        EXPRESSION_MULT
+                            DATA_INTEGER - TYPE_INTEGER - content: 2
+                            DATA_INTEGER - TYPE_INTEGER - content: 3
+                    DATA_INTEGER - TYPE_INTEGER - content: 4
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                EXPRESSION_ADD
+                    EXPRESSION_ADD
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 4
+                    EXPRESSION_MULT
+                        DATA_INTEGER - TYPE_INTEGER - content: 2
+                        DATA_INTEGER - TYPE_INTEGER - content: 3
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_ADD
+                    EXPRESSION_ADD
+                        EXPRESSION_MULT
+                            DATA_INTEGER - TYPE_INTEGER - content: 2
+                            DATA_INTEGER - TYPE_INTEGER - content: 3
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 4
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                EXPRESSION_ADD
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_MULT
+                        EXPRESSION_MULT
+                            DATA_INTEGER - TYPE_INTEGER - content: 4
+                            DATA_INTEGER - TYPE_INTEGER - content: 2
+                        DATA_INTEGER - TYPE_INTEGER - content: 3

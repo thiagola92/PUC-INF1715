@@ -34,37 +34,37 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        VARIABLE_LIST - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_ARRAY - ARRAY
-                    TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: b
-                TYPE_ARRAY - ARRAY
-                    TYPE_ARRAY - ARRAY
-                        TYPE_INTEGER - INTEGER
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - ARRAY
-                    IDENTIFIER - VOID - content: a
-                NEW_ARRAY - ARRAY
-                    TYPE_INTEGER - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - ARRAY
-                    IDENTIFIER - VOID - content: b
-                NEW_ARRAY - ARRAY
-                    TYPE_ARRAY - ARRAY
-                        TYPE_INTEGER - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                ARRAY_POSITION - ARRAY
-                    VARIABLE - ARRAY
-                        IDENTIFIER - VOID - content: b
-                    DATA_INTEGER - INTEGER - content: 0
-                VARIABLE - ARRAY
-                    IDENTIFIER - VOID - content: a
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        VARIABLE_LIST
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_ARRAY
+                    TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_ARRAY
+                    TYPE_ARRAY
+                        TYPE_INTEGER
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                NEW_ARRAY
+                    TYPE_INTEGER
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                NEW_ARRAY
+                    TYPE_ARRAY
+                        TYPE_INTEGER
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a

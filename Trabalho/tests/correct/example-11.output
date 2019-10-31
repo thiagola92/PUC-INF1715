@@ -52,33 +52,33 @@ Symbol: first
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_LIST - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: first
-        BLOCK - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: main
-        BLOCK - VOID
-            COMMAND_LIST - VOID
-                WHILE - VOID
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                    BLOCK - VOID
-                WHILE - VOID
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                    BLOCK - VOID
-                        DEFINE_VARIABLE - VOID
-                            IDENTIFIER - VOID - content: a
-                            TYPE_BOOLEAN - BOOLEAN
-                WHILE - VOID
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                    BLOCK - VOID
-                        FUNCTION_CALL - VOID
-                            IDENTIFIER - VOID - content: first
-                WHILE - VOID
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                    BLOCK - VOID
-                        DEFINE_VARIABLE - VOID
-                            IDENTIFIER - VOID - content: a
-                            TYPE_BOOLEAN - BOOLEAN
-                        FUNCTION_CALL - VOID
-                            IDENTIFIER - VOID - content: first
+DEFINE_LIST
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+        BLOCK
+            COMMAND_LIST
+                WHILE
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                    BLOCK
+                WHILE
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                    BLOCK
+                        DEFINE_VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                            TYPE_BOOLEAN
+                WHILE
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                    BLOCK
+                        FUNCTION_CALL
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+                WHILE
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                    BLOCK
+                        DEFINE_VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                            TYPE_BOOLEAN
+                        FUNCTION_CALL
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first

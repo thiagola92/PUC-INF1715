@@ -35,20 +35,20 @@ Symbol: first
 Symbol: seventh
 === LEAVE SCOPE ===
 
-DEFINE_LIST - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: first
-        TYPE_BOOLEAN - BOOLEAN
-        BLOCK - VOID
-            RETURN - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 1
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: seventh
-        PARAMETER - VOID
-            IDENTIFIER - VOID - content: a
-            TYPE_BOOLEAN - BOOLEAN
-        TYPE_BOOLEAN - BOOLEAN
-        BLOCK - VOID
-            RETURN - VOID
-                VARIABLE - BOOLEAN
-                    IDENTIFIER - VOID - content: a
+DEFINE_LIST
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        TYPE_BOOLEAN
+        BLOCK
+            RETURN
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: seventh
+        PARAMETER
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            TYPE_BOOLEAN
+        TYPE_BOOLEAN
+        BLOCK
+            RETURN
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a

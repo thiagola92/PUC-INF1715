@@ -43,49 +43,49 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        VARIABLE_LIST - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x1
-                TYPE_BOOLEAN - BOOLEAN
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x2
-                TYPE_BOOLEAN - BOOLEAN
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x3
-                TYPE_BOOLEAN - BOOLEAN
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - BOOLEAN
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_AND - BOOLEAN
-                    EXPRESSION_OR - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - BOOLEAN
-                    IDENTIFIER - VOID - content: x2
-                EXPRESSION_OR - BOOLEAN
-                    EXPRESSION_AND - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - BOOLEAN
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_OR - BOOLEAN
-                    DATA_BOOLEAN - BOOLEAN - content: 1
-                    EXPRESSION_AND - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - BOOLEAN
-                    IDENTIFIER - VOID - content: x2
-                EXPRESSION_OR - BOOLEAN
-                    EXPRESSION_AND - BOOLEAN
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                    DATA_BOOLEAN - BOOLEAN - content: 1
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        VARIABLE_LIST
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                TYPE_BOOLEAN
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                TYPE_BOOLEAN
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                TYPE_BOOLEAN
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_AND
+                    EXPRESSION_OR
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                EXPRESSION_OR
+                    EXPRESSION_AND
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_OR
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                    EXPRESSION_AND
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                EXPRESSION_OR
+                    EXPRESSION_AND
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                    DATA_BOOLEAN - TYPE_BOOLEAN - content: 1

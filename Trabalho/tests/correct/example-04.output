@@ -144,68 +144,68 @@ Symbol: fourth
 Symbol: fifth
 === LEAVE SCOPE ===
 
-DEFINE_LIST - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: first
-        BLOCK - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_BOOLEAN - BOOLEAN
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: second
-        BLOCK - VOID
-            VARIABLE_LIST - VOID
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: a
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: b
-                    TYPE_BOOLEAN - BOOLEAN
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: third
-        BLOCK - VOID
-            VARIABLE_LIST - VOID
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: a
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: b
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: c
-                    TYPE_BOOLEAN - BOOLEAN
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: fourth
-        BLOCK - VOID
-            VARIABLE_LIST - VOID
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: a
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: b
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: c
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: d
-                    TYPE_BOOLEAN - BOOLEAN
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: fifth
-        BLOCK - VOID
-            VARIABLE_LIST - VOID
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: a
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: b
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: c
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: d
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: e
-                    TYPE_BOOLEAN - BOOLEAN
+DEFINE_LIST
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        BLOCK
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fifth
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: e
+                    TYPE_BOOLEAN

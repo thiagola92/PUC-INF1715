@@ -467,192 +467,192 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        VARIABLE_LIST - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x1
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x2
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x3
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x4
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x5
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x6
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x7
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x8
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x9
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x10
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x11
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x12
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x13
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x14
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x15
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x16
-                TYPE_INTEGER - INTEGER
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_ADD - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x2
-                EXPRESSION_SUB - INTEGER
-                    EXPRESSION_SUB - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x3
-                EXPRESSION_MULT - INTEGER
-                    EXPRESSION_MULT - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x4
-                EXPRESSION_DIV - INTEGER
-                    EXPRESSION_DIV - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x5
-                EXPRESSION_SUB - INTEGER
-                    EXPRESSION_ADD - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x6
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_MULT - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x7
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_DIV - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x8
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_SUB - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x9
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_MULT - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x10
-                EXPRESSION_ADD - INTEGER
-                    EXPRESSION_DIV - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x11
-                EXPRESSION_ADD - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_ADD - INTEGER
-                        EXPRESSION_ADD - INTEGER
-                            DATA_INTEGER - INTEGER - content: 1
-                            DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x12
-                EXPRESSION_SUB - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_ADD - INTEGER
-                        EXPRESSION_ADD - INTEGER
-                            DATA_INTEGER - INTEGER - content: 1
-                            DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x13
-                EXPRESSION_MULT - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_ADD - INTEGER
-                        EXPRESSION_ADD - INTEGER
-                            DATA_INTEGER - INTEGER - content: 1
-                            DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x14
-                EXPRESSION_DIV - INTEGER
-                    DATA_INTEGER - INTEGER - content: 1
-                    EXPRESSION_ADD - INTEGER
-                        EXPRESSION_ADD - INTEGER
-                            DATA_INTEGER - INTEGER - content: 1
-                            DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x15
-                EXPRESSION_MULT - INTEGER
-                    EXPRESSION_DIV - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x16
-                EXPRESSION_DIV - INTEGER
-                    EXPRESSION_MULT - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    DATA_INTEGER - INTEGER - content: 1
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        VARIABLE_LIST
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x4
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x5
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x6
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x7
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x8
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x9
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x10
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x11
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x12
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x13
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x14
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x15
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
+                TYPE_INTEGER
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_ADD
+                    EXPRESSION_ADD
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                EXPRESSION_SUB
+                    EXPRESSION_SUB
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                EXPRESSION_MULT
+                    EXPRESSION_MULT
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x4
+                EXPRESSION_DIV
+                    EXPRESSION_DIV
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x5
+                EXPRESSION_SUB
+                    EXPRESSION_ADD
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x6
+                EXPRESSION_ADD
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_MULT
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x7
+                EXPRESSION_ADD
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_DIV
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x8
+                EXPRESSION_ADD
+                    EXPRESSION_SUB
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x9
+                EXPRESSION_ADD
+                    EXPRESSION_MULT
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x10
+                EXPRESSION_ADD
+                    EXPRESSION_DIV
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x11
+                EXPRESSION_ADD
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_ADD
+                        EXPRESSION_ADD
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x12
+                EXPRESSION_SUB
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_ADD
+                        EXPRESSION_ADD
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x13
+                EXPRESSION_MULT
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_ADD
+                        EXPRESSION_ADD
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x14
+                EXPRESSION_DIV
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    EXPRESSION_ADD
+                        EXPRESSION_ADD
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x15
+                EXPRESSION_MULT
+                    EXPRESSION_DIV
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
+                EXPRESSION_DIV
+                    EXPRESSION_MULT
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_INTEGER - TYPE_INTEGER - content: 1

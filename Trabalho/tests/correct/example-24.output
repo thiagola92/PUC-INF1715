@@ -205,94 +205,94 @@ Symbol: fourth
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_LIST - VOID
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: first
-        TYPE_INTEGER - INTEGER
-        BLOCK - VOID
-            RETURN - VOID
-                DATA_INTEGER - INTEGER - content: 1
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: second
-        PARAMETER - VOID
-            IDENTIFIER - VOID - content: a
-            TYPE_BOOLEAN - BOOLEAN
-        TYPE_BOOLEAN - BOOLEAN
-        BLOCK - VOID
-            RETURN - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 1
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: third
-        PARAMETER_LIST - VOID
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_BOOLEAN - BOOLEAN
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: b
-                TYPE_BOOLEAN - BOOLEAN
-        TYPE_CHARACTER - CHARACTER
-        BLOCK - VOID
-            RETURN - VOID
-                DATA_CHARACTER - CHARACTER - content: a
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: fourth
-        PARAMETER_LIST - VOID
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: a
-                TYPE_BOOLEAN - BOOLEAN
-            PARAMETER - VOID
-                IDENTIFIER - VOID - content: b
-                TYPE_BOOLEAN - BOOLEAN
-        TYPE_FLOAT - FLOAT
-        BLOCK - VOID
-            RETURN - VOID
-                DATA_FLOAT - FLOAT - content: 1.000000
-    DEFINE_FUNCTION - VOID
-        IDENTIFIER - VOID - content: main
-        BLOCK - VOID
-            VARIABLE_LIST - VOID
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: a
-                    TYPE_INTEGER - INTEGER
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: b
-                    TYPE_BOOLEAN - BOOLEAN
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: c
-                    TYPE_CHARACTER - CHARACTER
-                DEFINE_VARIABLE - VOID
-                    IDENTIFIER - VOID - content: d
-                    TYPE_FLOAT - FLOAT
-            COMMAND_LIST - VOID
-                ASSIGNMENT - VOID
-                    VARIABLE - INTEGER
-                        IDENTIFIER - VOID - content: a
-                    FUNCTION_CALL - INTEGER
-                        IDENTIFIER - VOID - content: first
-                ASSIGNMENT - VOID
-                    VARIABLE - BOOLEAN
-                        IDENTIFIER - VOID - content: b
-                    FUNCTION_CALL - BOOLEAN
-                        IDENTIFIER - VOID - content: second
-                        VARIABLE - INTEGER
-                            IDENTIFIER - VOID - content: a
-                ASSIGNMENT - VOID
-                    VARIABLE - CHARACTER
-                        IDENTIFIER - VOID - content: c
-                    FUNCTION_CALL - CHARACTER
-                        IDENTIFIER - VOID - content: third
-                        EXPRESSION_LIST - VOID
-                            VARIABLE - INTEGER
-                                IDENTIFIER - VOID - content: a
-                            VARIABLE - BOOLEAN
-                                IDENTIFIER - VOID - content: b
-                ASSIGNMENT - VOID
-                    VARIABLE - FLOAT
-                        IDENTIFIER - VOID - content: d
-                    FUNCTION_CALL - FLOAT
-                        IDENTIFIER - VOID - content: fourth
-                        EXPRESSION_LIST - VOID
-                            VARIABLE - INTEGER
-                                IDENTIFIER - VOID - content: a
-                            VARIABLE - BOOLEAN
-                                IDENTIFIER - VOID - content: b
+DEFINE_LIST
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        TYPE_INTEGER
+        BLOCK
+            RETURN
+                DATA_INTEGER - TYPE_INTEGER - content: 1
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+        PARAMETER
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            TYPE_BOOLEAN
+        TYPE_BOOLEAN
+        BLOCK
+            RETURN
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+        PARAMETER_LIST
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN
+        TYPE_CHARACTER
+        BLOCK
+            RETURN
+                DATA_CHARACTER - TYPE_CHARACTER - content: a
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+        PARAMETER_LIST
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN
+            PARAMETER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN
+        TYPE_FLOAT
+        BLOCK
+            RETURN
+                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_INTEGER
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_CHARACTER
+                DEFINE_VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    TYPE_FLOAT
+            COMMAND_LIST
+                ASSIGNMENT
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    FUNCTION_CALL
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+                ASSIGNMENT
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    FUNCTION_CALL
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+                        VARIABLE
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                ASSIGNMENT
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    FUNCTION_CALL
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+                        EXPRESSION_LIST
+                            VARIABLE
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                            VARIABLE
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                ASSIGNMENT
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    FUNCTION_CALL
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+                        EXPRESSION_LIST
+                            VARIABLE
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                            VARIABLE
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b

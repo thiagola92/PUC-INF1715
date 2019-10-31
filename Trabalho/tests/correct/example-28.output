@@ -30,42 +30,42 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        VARIABLE_LIST - VOID
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x1
-                TYPE_INTEGER - INTEGER
-            DEFINE_VARIABLE - VOID
-                IDENTIFIER - VOID - content: x2
-                TYPE_FLOAT - FLOAT
-        COMMAND_LIST - VOID
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_CAST - INTEGER
-                    EXPRESSION_ADD - FLOAT
-                        DATA_FLOAT - FLOAT - content: 1.000000
-                        DATA_FLOAT - FLOAT - content: 1.000000
-                    TYPE_INTEGER - INTEGER
-            ASSIGNMENT - VOID
-                VARIABLE - FLOAT
-                    IDENTIFIER - VOID - content: x2
-                EXPRESSION_CAST - FLOAT
-                    EXPRESSION_ADD - INTEGER
-                        DATA_INTEGER - INTEGER - content: 1
-                        DATA_INTEGER - INTEGER - content: 1
-                    TYPE_FLOAT - FLOAT
-            ASSIGNMENT - VOID
-                VARIABLE - INTEGER
-                    IDENTIFIER - VOID - content: x1
-                EXPRESSION_CAST - INTEGER
-                    EXPRESSION_ADD - FLOAT
-                        EXPRESSION_ADD - FLOAT
-                            DATA_FLOAT - FLOAT - content: 1.000000
-                            EXPRESSION_ADD - FLOAT
-                                DATA_FLOAT - FLOAT - content: 1.000000
-                                DATA_FLOAT - FLOAT - content: 1.000000
-                        DATA_FLOAT - FLOAT - content: 1.000000
-                    TYPE_INTEGER - INTEGER
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        VARIABLE_LIST
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                TYPE_INTEGER
+            DEFINE_VARIABLE
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                TYPE_FLOAT
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_CAST
+                    EXPRESSION_ADD
+                        DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                        DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                    TYPE_INTEGER
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                EXPRESSION_CAST
+                    EXPRESSION_ADD
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                        DATA_INTEGER - TYPE_INTEGER - content: 1
+                    TYPE_FLOAT
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                EXPRESSION_CAST
+                    EXPRESSION_ADD
+                        EXPRESSION_ADD
+                            DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                            EXPRESSION_ADD
+                                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                        DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                    TYPE_INTEGER

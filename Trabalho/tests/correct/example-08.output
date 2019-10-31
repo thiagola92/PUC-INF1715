@@ -71,42 +71,42 @@ Scope
 Symbol: main
 === LEAVE SCOPE ===
 
-DEFINE_FUNCTION - VOID
-    IDENTIFIER - VOID - content: main
-    BLOCK - VOID
-        COMMAND_LIST - VOID
-            IF - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 1
-                BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 0
-                BLOCK - VOID
-                BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 1
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-                        BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 1
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                        BLOCK - VOID
-                        BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 0
-                BLOCK - VOID
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - BOOLEAN - content: 1
-                        BLOCK - VOID
-            IF - VOID
-                DATA_BOOLEAN - BOOLEAN - content: 0
-                BLOCK - VOID
-                BLOCK - VOID
-                    IF - VOID
-                        DATA_BOOLEAN - BOOLEAN - content: 0
-                        BLOCK - VOID
-                        BLOCK - VOID
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        COMMAND_LIST
+            IF
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK
+            IF
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK
+                BLOCK
+            IF
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK
+                    IF
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                        BLOCK
+            IF
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                BLOCK
+                    IF
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                        BLOCK
+                        BLOCK
+            IF
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK
+                BLOCK
+                    IF
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+                        BLOCK
+            IF
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                BLOCK
+                BLOCK
+                    IF
+                        DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
+                        BLOCK
+                        BLOCK
