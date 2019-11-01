@@ -9,8 +9,7 @@ Node* malloc_node(TAG tag) {
   node->tag = tag;
   node->number_of_childs = 0;
   node->definition = NULL;
-  node->type_node = NULL;
-  node->type = VOID;
+  node->type = NULL;
   
   return node;
 }
@@ -38,7 +37,7 @@ Node* create_node_boolean(int b) {
   Node* type_boolean = malloc_node(TYPE_BOOLEAN);
   
   node_boolean->content.i = b;
-  node_boolean->type_node = type_boolean;
+  node_boolean->type = type_boolean;
   
   return node_boolean;
 }
@@ -48,7 +47,7 @@ Node* create_node_character(int c) {
   Node* type_character = malloc_node(TYPE_CHARACTER);
   
   node_character->content.i = c;
-  node_character->type_node = type_character;
+  node_character->type = type_character;
   
   return node_character;
 }
@@ -58,7 +57,7 @@ Node* create_node_integer(int i) {
   Node* type_integer = malloc_node(TYPE_INTEGER);
   
   node_integer->content.i = i;
-  node_integer->type_node = type_integer;
+  node_integer->type = type_integer;
   
   return node_integer;
 }
@@ -68,7 +67,7 @@ Node* create_node_float(float f) {
   Node* type_float = malloc_node(TYPE_FLOAT);
   
   node_float->content.f = f;
-  node_float->type_node = type_float;
+  node_float->type = type_float;
   
   return node_float;
 }
@@ -79,8 +78,8 @@ Node* create_node_string(TAG tag, const char* s) {
   Node* type_character = malloc_node(TYPE_CHARACTER);
   
   node_string->content.s = s;
-  node_string->type_node = type_array;
-  type_array->type_node = type_character;
+  node_string->type = type_array;
+  type_array->type = type_character;
   
   return node_string;
 }

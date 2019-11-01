@@ -1,18 +1,17 @@
 
 DEFINE_LIST
-    DEFINE_LIST
-        DEFINE_VARIABLE
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_INTEGER
-        DEFINE_FUNCTION
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-            BLOCK
-                DEFINE_VARIABLE
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_INTEGER
+    DEFINE_VARIABLE - TYPE_INTEGER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+        TYPE_INTEGER - TYPE_INTEGER
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+        BLOCK
+            DEFINE_VARIABLE - TYPE_INTEGER
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_INTEGER - TYPE_INTEGER
     DEFINE_FUNCTION
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
         BLOCK
-            DEFINE_VARIABLE
+            DEFINE_VARIABLE - TYPE_INTEGER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_INTEGER
+                TYPE_INTEGER - TYPE_INTEGER

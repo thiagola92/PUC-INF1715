@@ -1,69 +1,66 @@
 
 DEFINE_LIST
-    DEFINE_LIST
-        DEFINE_LIST
-            DEFINE_LIST
-                DEFINE_FUNCTION
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-                    BLOCK
-                        DEFINE_VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                            TYPE_BOOLEAN
-                DEFINE_FUNCTION
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-                    BLOCK
-                        VARIABLE_LIST
-                            DEFINE_VARIABLE
-                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                                TYPE_BOOLEAN
-                            DEFINE_VARIABLE
-                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                                TYPE_BOOLEAN
-            DEFINE_FUNCTION
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-                BLOCK
-                    VARIABLE_LIST
-                        DEFINE_VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                            TYPE_BOOLEAN
-                        DEFINE_VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                            TYPE_BOOLEAN
-                        DEFINE_VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                            TYPE_BOOLEAN
-        DEFINE_FUNCTION
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
-            BLOCK
-                VARIABLE_LIST
-                    DEFINE_VARIABLE
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                        TYPE_BOOLEAN
-                    DEFINE_VARIABLE
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                        TYPE_BOOLEAN
-                    DEFINE_VARIABLE
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                        TYPE_BOOLEAN
-                    DEFINE_VARIABLE
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
-                        TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        BLOCK
+            DEFINE_VARIABLE - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
     DEFINE_FUNCTION
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fifth
         BLOCK
             VARIABLE_LIST
-                DEFINE_VARIABLE
+                DEFINE_VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN
-                DEFINE_VARIABLE
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_BOOLEAN
-                DEFINE_VARIABLE
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                    TYPE_BOOLEAN
-                DEFINE_VARIABLE
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
-                    TYPE_BOOLEAN
-                DEFINE_VARIABLE
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: e
-                    TYPE_BOOLEAN
+                    TYPE_BOOLEAN - TYPE_BOOLEAN

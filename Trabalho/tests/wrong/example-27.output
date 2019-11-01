@@ -1,1 +1,1 @@
-type error: equality can't compare types
+type error: invalid equality expression

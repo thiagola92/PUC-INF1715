@@ -2,12 +2,10 @@
 DEFINE_FUNCTION
     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
     BLOCK
-        DEFINE_VARIABLE
+        DEFINE_VARIABLE - TYPE_CHARACTER
             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_CHARACTER
+            TYPE_CHARACTER - TYPE_CHARACTER
         ASSIGNMENT
             VARIABLE
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            EXPRESSION_CAST
-                DATA_INTEGER - TYPE_INTEGER - content: 32
-                TYPE_CHARACTER
+            DATA_INTEGER - TYPE_INTEGER - content: 32

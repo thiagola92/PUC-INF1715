@@ -6,8 +6,8 @@
 
 #include"node.h"
 
-void check_condition_expression(Node* node);
+void throw_type_error(const char* error);
 
-void type_node(Node* node);
+void start_typing(Node* program);
 
 #endif

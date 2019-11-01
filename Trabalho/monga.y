@@ -94,7 +94,8 @@
 %type<n> expression_list
 %type<n> expression
 
-%type<n> expression_and_or
+%type<n> expression_or
+%type<n> expression_and
 
 %type<n> expression_equal_not_equal
 %type<n> expression_greater_less_equal
@@ -115,7 +116,7 @@ program: /*empty*/ { __root__ = create_node(EMPTY, 0); $$ = __root__; }
          | define_list  { __root__ = $1; $$ = __root__; }
          ;
 
-define_list: define_list define { $$ = create_node(DEFINE_LIST, 2, $1, $2); }
+define_list: define_list define { $$ = append_node(DEFINE_LIST, $1, $2); }
              | define { $$ = $1; }
              ;
 
@@ -189,13 +190,16 @@ expression_list: expression_list TOKEN_COMMA expression { $$ = append_node(EXPRE
                  | expression { $$ = $1; }
                  ;
 
-expression: expression_and_or  { $$ = $1; }
+expression: expression_or  { $$ = $1; }
             ;
 
-expression_and_or: expression_and_or TOKEN_OR expression_equal_not_equal  { $$ = create_node(EXPRESSION_OR, 2, $1, $3); }
-                   | expression_and_or TOKEN_AND   expression_equal_not_equal  { $$ = create_node(EXPRESSION_AND, 2, $1, $3); }
-                   | expression_equal_not_equal { $$ = $1; }
-                   ;
+expression_or: expression_or TOKEN_OR expression_and  { $$ = create_node(EXPRESSION_OR, 2, $1, $3); }
+               | expression_and { $$ = $1; }
+               ;
+
+expression_and: expression_and TOKEN_AND expression_equal_not_equal  { $$ = create_node(EXPRESSION_AND, 2, $1, $3); }
+                | expression_equal_not_equal { $$ = $1; }
+                ;
 
 expression_equal_not_equal: expression_equal_not_equal TOKEN_EQUAL expression_greater_less_equal  { $$ = create_node(EXPRESSION_EQUAL, 2, $1, $3); }
                             | expression_equal_not_equal TOKEN_NOT_EQUAL expression_greater_less_equal { $$ = create_node(EXPRESSION_NOT_EQUAL, 2, $1, $3); }

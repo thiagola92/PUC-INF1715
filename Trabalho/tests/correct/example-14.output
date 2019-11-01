@@ -3,15 +3,15 @@ DEFINE_FUNCTION
     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
     BLOCK
         VARIABLE_LIST
-            DEFINE_VARIABLE
+            DEFINE_VARIABLE - TYPE_FLOAT
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                TYPE_FLOAT
-            DEFINE_VARIABLE
+                TYPE_FLOAT - TYPE_FLOAT
+            DEFINE_VARIABLE - TYPE_FLOAT
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                TYPE_FLOAT
-            DEFINE_VARIABLE
+                TYPE_FLOAT - TYPE_FLOAT
+            DEFINE_VARIABLE - TYPE_FLOAT
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                TYPE_FLOAT
+                TYPE_FLOAT - TYPE_FLOAT
         COMMAND_LIST
             ASSIGNMENT
                 VARIABLE

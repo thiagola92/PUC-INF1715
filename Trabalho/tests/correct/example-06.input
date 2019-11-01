@@ -20,6 +20,6 @@ main() {
 
 	first();
 	second(a);
-	third(a,b);
-	fourth(a,b,c);
+	#third(a,b);
+	#fourth(a,b,c);
 }

@@ -3,15 +3,15 @@ DEFINE_FUNCTION
     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
     BLOCK
         VARIABLE_LIST
-            DEFINE_VARIABLE
+            DEFINE_VARIABLE - TYPE_INTEGER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                TYPE_INTEGER
-            DEFINE_VARIABLE
+                TYPE_INTEGER - TYPE_INTEGER
+            DEFINE_VARIABLE - TYPE_INTEGER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                TYPE_INTEGER
-            DEFINE_VARIABLE
+                TYPE_INTEGER - TYPE_INTEGER
+            DEFINE_VARIABLE - TYPE_FLOAT
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                TYPE_FLOAT
+                TYPE_FLOAT - TYPE_FLOAT
         COMMAND_LIST
             ASSIGNMENT
                 VARIABLE
@@ -22,31 +22,21 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_CAST
-                    EXPRESSION_ADD
-                        EXPRESSION_CAST
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                            TYPE_FLOAT
-                        DATA_FLOAT - TYPE_FLOAT - content: 3.000000
-                    TYPE_INTEGER
+                EXPRESSION_ADD
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                    DATA_FLOAT - TYPE_FLOAT - content: 3.000000
             ASSIGNMENT
                 VARIABLE
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_CAST
-                    EXPRESSION_ADD
-                        DATA_FLOAT - TYPE_FLOAT - content: 1.000000
-                        DATA_FLOAT - TYPE_FLOAT - content: 3.000000
-                    TYPE_INTEGER
+                EXPRESSION_ADD
+                    DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                    DATA_FLOAT - TYPE_FLOAT - content: 3.000000
             ASSIGNMENT
                 VARIABLE
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_CAST
-                    EXPRESSION_ADD
-                        DATA_FLOAT - TYPE_FLOAT - content: 1.000000
-                        EXPRESSION_CAST
-                            DATA_INTEGER - TYPE_INTEGER - content: 3
-                            TYPE_FLOAT
-                    TYPE_INTEGER
+                EXPRESSION_ADD
+                    DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                    DATA_INTEGER - TYPE_INTEGER - content: 3
             ASSIGNMENT
                 VARIABLE
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
@@ -66,34 +56,24 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_CAST
-                    EXPRESSION_ADD
-                        EXPRESSION_CAST
-                            VARIABLE
-                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                            TYPE_FLOAT
-                        VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                    TYPE_INTEGER
+                EXPRESSION_ADD
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
             ASSIGNMENT
                 VARIABLE
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_CAST
-                    EXPRESSION_ADD
-                        VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                        VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                    TYPE_INTEGER
+                EXPRESSION_ADD
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
             ASSIGNMENT
                 VARIABLE
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_CAST
-                    EXPRESSION_ADD
-                        VARIABLE
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                        EXPRESSION_CAST
-                            VARIABLE
-                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                            TYPE_FLOAT
-                    TYPE_INTEGER
+                EXPRESSION_ADD
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2

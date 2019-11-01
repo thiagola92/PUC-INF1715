@@ -2,9 +2,9 @@
 DEFINE_FUNCTION
     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
     BLOCK
-        DEFINE_VARIABLE
+        DEFINE_VARIABLE - TYPE_INTEGER
             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-            TYPE_INTEGER
+            TYPE_INTEGER - TYPE_INTEGER
         ASSIGNMENT
             VARIABLE
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b

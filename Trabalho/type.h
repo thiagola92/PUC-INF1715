@@ -6,26 +6,42 @@
 
 #include"node.h"
 
-void throw_type_error(const char* name);
-void throw_numeric_error(Node* node, const char* error);
+void throw_type_error(const char* error);
+void throw_type_error_if_not(Node* node, TAG tag, const char* error);
 
-Node* cast_to(Node* node, TAG tag);
-void cast_type_to(Node* node, TYPE type, TAG tag);
+void start_typing(Node* program);
 
-TYPE type_from_function_call(Node* node);
-TYPE type_from_arithmetic(Node* node);
+void type_define_list(Node* define_list);
+void type_define_variable(Node* define_variable);
 
-Node* next_node_type_from_array(Node* node);
+void type_variable_type(Node* variable_type);
 
-void check_boolean_expression(Node* node);
-void check_char_type(Node* next_left_node);
-void check_array_type(Node* left_node, Node* right_node);
-void check_assignment_type(Node* node);
-void check_return_type(Node* node);
-void check_logical_type(Node* node);
-void check_equality_type(Node* node); // == ~=
-void check_inequality_type(Node* node); // > >= < <=
+void type_define_function(Node* define_function);
+void type_define_function_three_childs(Node* define_function);
 
-void type_node(Node* node);
+void type_parameters(Node* parameters);
+void type_parameter_list(Node* parameter_list);
+void type_parameter(Node* parameter);
+
+void type_block(Node* block);
+
+void type_variable_list(Node* variable_list);
+
+void type_command(Node* command);
+void type_command_list(Node* command_list);
+
+void type_if(Node* command_if);
+
+void type_expression(Node* expression);
+
+void type_equality_expression(Node* expression);
+void type_inequality_expression(Node* expression);
+void type_arithmetic_expression(Node* expression);
+
+void type_not_expression(Node* expression);
+void type_variable_expression(Node* expression);
+
+int is_type_equal(Node* e1, Node* e2);
+int is_type_numeric(Node* e1, Node* e2);
 
 #endif

@@ -168,7 +168,7 @@ void print_type(Node* node) {
       break;
     case TYPE_ARRAY:
       printf(" - TYPE_ARRAY");
-      print_type(node->type_node);
+      print_type(node->type);
       break;
     default:
       break;
@@ -205,7 +205,7 @@ void print_tree(Node* node, int tabs) {
     printf("    ");
 
   print_tag(node);
-  print_type(node->type_node);
+  print_type(node->type);
   print_content(node);
   
   for(int i = 0; i < node->number_of_childs; i++)
@@ -217,9 +217,9 @@ int test(const char* path) {
   yyparse();
 
   start_binding(__root__);
-  type_node(__root__);
+  start_typing(__root__);
   print_tree(__root__, 0);
+  
   printf("\n");
-
   return 0;
 }

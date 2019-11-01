@@ -1,24 +1,20 @@
 
 DEFINE_LIST
-    DEFINE_LIST
-        DEFINE_LIST
-            DEFINE_LIST
-                DEFINE_LIST
-                    DEFINE_VARIABLE
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s
-                        TYPE_CHARACTER
-                    DEFINE_VARIABLE
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: normal_name
-                        TYPE_CHARACTER
-                DEFINE_VARIABLE
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: long_long_long_long_long_long_name
-                    TYPE_CHARACTER
-            DEFINE_VARIABLE
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s1
-                TYPE_CHARACTER
-        DEFINE_VARIABLE
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s_1
-            TYPE_CHARACTER
-    DEFINE_VARIABLE
+    DEFINE_VARIABLE - TYPE_CHARACTER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s
+        TYPE_CHARACTER - TYPE_CHARACTER
+    DEFINE_VARIABLE - TYPE_CHARACTER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: normal_name
+        TYPE_CHARACTER - TYPE_CHARACTER
+    DEFINE_VARIABLE - TYPE_CHARACTER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: long_long_long_long_long_long_name
+        TYPE_CHARACTER - TYPE_CHARACTER
+    DEFINE_VARIABLE - TYPE_CHARACTER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s1
+        TYPE_CHARACTER - TYPE_CHARACTER
+    DEFINE_VARIABLE - TYPE_CHARACTER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: s_1
+        TYPE_CHARACTER - TYPE_CHARACTER
+    DEFINE_VARIABLE - TYPE_CHARACTER
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ_012345679
-        TYPE_CHARACTER
+        TYPE_CHARACTER - TYPE_CHARACTER

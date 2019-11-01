@@ -17,7 +17,7 @@
 14: Matemática básica de float com +, -, * e /  
 15: Declarando hexadecimal float  
 16: Expressões matemática com 3 de inteiros (com e sem parênteses)  
-17: ==, ~=, <, >, <= e >= entre 2 booleans  
+17: ==, ~=, <, >, <= e >= entre 2 inteiros  
 18: Ordem de priorização entre && e ==, ~=, <, >, <= e >=  
 19: Ordem de priorização entre calculos matemáticos e comparações  
 20: Ordem de priorização entre && e ||  
@@ -37,6 +37,9 @@
 34: Atribuir um char a um int  
 35: Atribuir um int a um char  
 36: Aritmética entre int e char  
+37: Acessando posição de um (new [int]) sem botar numa variável  
+38: Condição boolean dentro de if  
+39: Cast automatico de character para integer  
 
 # Wrongs Tests
 

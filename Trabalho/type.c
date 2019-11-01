@@ -3,275 +3,345 @@
 
 #include"type.h"
 
+# define true 1
+# define false 0
+
 void throw_type_error(const char* error) {
   printf("type error: %s\n", error);
   exit(3);
 }
 
-void throw_numeric_error(Node* node, const char* error) {
-  if(node->content.n[0]->type != INTEGER && node->content.n[0]->type != FLOAT)
+void throw_type_error_if_not(Node* node, TAG tag, const char* error) {
+  if(node == NULL)
     throw_type_error(error);
     
-  if(node->content.n[1]->type != INTEGER && node->content.n[1]->type != FLOAT)
+  if(node->tag != tag)
     throw_type_error(error);
 }
 
-Node* cast_to(Node* node, TAG tag) {
-  Node* type = create_node(tag, 0);
-  Node* cast = create_node(EXPRESSION_CAST, 2, node, type);
-  type_node(cast);
-  
-  return cast;
-}
-
-void cast_type_to(Node* node, TYPE type, TAG tag) {
-  for(int i=0; i < node->number_of_childs; i++)
-    if(node->content.n[i]->type == type) {
-      node->content.n[i] = cast_to(node->content.n[i], tag);
-    }
-}
-
-TYPE type_from_array_position(Node* node) {
-  if(node->content.n[0]->tag == NEW_ARRAY)
-    return node->content.n[0]->content.n[0]->type;
-  
-  return node->content.n[0]->definition->content.n[1]->content.n[0]->type;
-}
-
-TYPE type_from_function_call(Node* node) {    
-  if(node->number_of_childs == 4)
-    return node->content.n[2]->type;
-    
-  if(node->content.n[1]->tag != PARAMETER || node->content.n[1]->tag != PARAMETER_LIST)
-    return node->content.n[1]->type;
-    
-  return VOID;
-}
-
-TYPE type_from_arithmetic(Node* node) {
-  cast_type_to(node, CHARACTER, TYPE_INTEGER);
-  
-  throw_numeric_error(node, "arithmetic receiving not integer/float");
-    
-  if(node->content.n[0]->type == node->content.n[1]->type)
-    return node->content.n[0]->type;
-  
-  cast_type_to(node, INTEGER, TYPE_FLOAT);
-  
-  return FLOAT;
-}
-
-Node* next_node_type_from_array(Node* node) {
-  switch(node->tag) {
-    case VARIABLE:
-      return node->definition->content.n[1]->content.n[0];
+void start_typing(Node* program) {
+  switch(program->tag) {
+    case EMPTY:
       break;
-    case NEW_ARRAY:
-    case TYPE_ARRAY:
-      return node->content.n[0];
+    case DEFINE_LIST:
+      type_define_list(program);
       break;
-    case ARRAY_POSITION:
-      return next_node_type_from_array(next_node_type_from_array(node->content.n[0]));
+    case DEFINE_VARIABLE:
+      type_define_variable(program);
+      break;
+    case DEFINE_FUNCTION:
+      type_define_function(program);
       break;
     default:
-      return NULL;
+      throw_type_error("invalid start");
   }
 }
 
-void check_boolean_expression(Node* node) {
-  if(node->content.n[0]->type != BOOLEAN)
-    throw_type_error("condition must be boolean");
+void type_define_list(Node* define_list) {
+  for(int i = 0; i < define_list->number_of_childs; i++) {
+    Node* define = define_list->content.n[i];
+    
+    switch(define->tag) {
+      case DEFINE_VARIABLE:
+        type_define_variable(define);
+        break;
+      case DEFINE_FUNCTION:
+        type_define_function(define);
+        break;
+      default:
+        throw_type_error("invalid definition");
+    }
+  }
 }
 
-void check_char_type(Node* node) {
-  if(node == NULL)
-    throw_type_error("arrays from different type");
-  
-  if(node->type != CHARACTER)
-    throw_type_error("arrays from different type");
+void type_define_variable(Node* define_variable) {
+  type_variable_type(define_variable->content.n[1]);
+  define_variable->type = define_variable->content.n[1];
 }
 
-void check_array_type(Node* left_node, Node* right_node) {
-  Node* next_left_node = NULL;
-  Node* next_right_node = NULL;
-
-  if(left_node == NULL && right_node == NULL)
-    return;
-
-  if(left_node == NULL || right_node == NULL)
-    throw_type_error("arrays from different type");
-  
-  if(left_node->type != right_node->type)
-    throw_type_error("arrays from different type");
-    
-  next_left_node = next_node_type_from_array(left_node);
-  next_right_node = next_node_type_from_array(right_node);
-    
-  if(right_node->tag == DATA_STRING)
-    return check_char_type(next_left_node);
-  
-  check_array_type(next_left_node, next_right_node);
+void type_variable_type(Node* variable_type) {
+  switch(variable_type->tag) {
+    case TYPE_ARRAY:
+      type_variable_type(variable_type->content.n[0]);
+      variable_type->type = variable_type->content.n[0];
+      break;
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+    case TYPE_FLOAT:
+      variable_type->type = variable_type;
+      break;
+    default:
+      throw_type_error("invalid variable type");
+  }
 }
 
-void check_assignment_type(Node* node) {
-  Node* left_node = node->content.n[0];
-  Node* right_node = node->content.n[1];
-    
-  if(left_node->type == ARRAY && right_node->type == ARRAY)
-    return check_array_type(left_node, right_node);
-    
-  if(left_node->type == FLOAT && right_node->type == INTEGER)
-    return cast_type_to(node, INTEGER, TYPE_FLOAT);
-    
-  if(left_node->type == INTEGER && right_node->type == FLOAT)
-    return cast_type_to(node, FLOAT, TYPE_INTEGER);
-    
-  if(left_node->type == CHARACTER && right_node->type == INTEGER)
-    return cast_type_to(node, INTEGER, TYPE_CHARACTER);
-    
-  if(left_node->type == INTEGER && right_node->type == CHARACTER)
-    return cast_type_to(node, CHARACTER, TYPE_INTEGER);
-
-  if(left_node->type == right_node->type)
-    return;
+void type_define_function(Node* define_function) {
+  int number_of_childs = define_function->number_of_childs;
   
-  throw_type_error("assignment between different types and can't cast");
+  Node* block = define_function->content.n[number_of_childs - 1];
+  
+  switch(number_of_childs) {
+    case 4:
+      type_parameters(define_function->content.n[1]);
+      type_variable_type(define_function->content.n[2]);
+      define_function->type = define_function->content.n[2]->type;
+      break;
+    case 3:
+      type_define_function_three_childs(define_function);
+    case 2:
+      break;
+    default:
+      throw_type_error("invalid number of childs from function definition");
+  }
+  
+  type_block(block);
 }
 
-void check_return_type(Node* node) {
-  if(node->number_of_childs == 0)
-    return;
-
-  if(type_from_function_call(node->definition) != node->content.n[0]->type)
-    throw_type_error("wrong return type");
+void type_define_function_three_childs(Node* define_function) {
+  switch(define_function->content.n[1]->tag) {
+    case PARAMETER_LIST:
+    case PARAMETER:
+      type_parameters(define_function->content.n[1]);
+      break;
+    case TYPE_ARRAY:
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+    case TYPE_FLOAT:
+      type_variable_type(define_function->content.n[1]);
+      define_function->type = define_function->content.n[1]->type;
+      break;
+    default:
+      throw_type_error("invalid child from function definition");
+  }
 }
 
-void check_array_position(Node* node) {
-  if(node->content.n[0]->type != ARRAY)
-    throw_type_error("can't access a position from basic types");
-
-  if(node->content.n[1]->type != INTEGER)
-    throw_type_error("position in array is not an integer");
+void type_parameters(Node* parameters) {
+  switch(parameters->tag) {
+    case PARAMETER_LIST:
+      type_parameter_list(parameters);
+      break;
+    case PARAMETER:
+      type_parameter(parameters);
+      break;
+    default:
+      throw_type_error("invalid parameters");
+  }
 }
 
-void check_logical_type(Node* node) {
-  if(node->content.n[0]->type != BOOLEAN || node->content.n[0]->type != BOOLEAN)
-    throw_type_error("logical expression receiving not booleans");
+void type_parameter_list(Node* parameter_list) {
+  for(int i = 0; i < parameter_list->number_of_childs; i++)
+    type_parameter(parameter_list->content.n[i]);
 }
 
-void check_equality_type(Node* node) {
-  cast_type_to(node, CHARACTER, TYPE_INTEGER);
-  
-  if(node->content.n[0]->type == node->content.n[1]->type)
-    return;
-    
-  throw_numeric_error(node, "equality can't compare types");
-  
-  cast_type_to(node, INTEGER, TYPE_FLOAT);
+void type_parameter(Node* parameter) {
+  type_variable_type(parameter->content.n[1]);
+  parameter->type = parameter->content.n[1];
 }
 
-void check_inequality_type(Node* node) {
-  cast_type_to(node, CHARACTER, TYPE_INTEGER);
-  
-  throw_numeric_error(node, "inequality can't compare types");
-    
-  if(node->content.n[0]->type == node->content.n[1]->type)
-    return;
-  
-  cast_type_to(node, INTEGER, TYPE_FLOAT);
+void type_block(Node* block) {
+  for(int i = 0; i < block->number_of_childs; i++) {
+    switch(block->content.n[i]->tag) {
+      case VARIABLE_LIST:
+        type_variable_list(block->content.n[i]);
+        break;
+      case DEFINE_VARIABLE:
+        type_define_variable(block->content.n[i]);
+        break;
+      case COMMAND_LIST:
+        type_command_list(block->content.n[i]);
+        break;
+      case IF:
+      case WHILE:
+      case ASSIGNMENT:
+      case RETURN:
+      case PRINT:
+      case FUNCTION_CALL:
+        type_command(block->content.n[i]);
+        break;
+      default:
+        throw_type_error("invalid block");
+    }
+  }
 }
 
-void type_node(Node* node) {
-  for(int i = 0; i < node->number_of_childs; i++)
-    type_node(node->content.n[i]);
-  
-  switch(node->tag) {
+void type_variable_list(Node* variable_list) {
+  for(int i = 0; i < variable_list->number_of_childs; i++)
+    type_define_variable(variable_list->content.n[i]);
+}
+
+void type_command_list(Node* command_list) {
+  for(int i = 0; i < command_list->number_of_childs; i++)
+    type_command(command_list->content.n[i]);
+}
+
+void type_command(Node* command) {
+  switch(command->tag) {
     case IF:
+      type_if(command);
+      break;
     case WHILE:
-      check_boolean_expression(node);
       break;
     case ASSIGNMENT:
-      check_assignment_type(node);
       break;
     case RETURN:
-      check_return_type(node);
       break;
-    case ARRAY_POSITION:
-      check_array_position(node);
-      node->type = type_from_array_position(node);
-      break;
-    case VARIABLE:
-      node->type = node->definition->content.n[1]->type;
+    case PRINT:
       break;
     case FUNCTION_CALL:
-      node->type = type_from_function_call(node->definition);
       break;
-    case NEW_ARRAY:
-      node->type = ARRAY;
+    default:
+      throw_type_error("invalid command");
+  }
+}
+
+void type_if(Node* command_if) {
+  switch(command_if->number_of_childs) {
+    case 2:
+      type_expression(command_if->content.n[0]);
+      type_block(command_if->content.n[1]);    
       break;
+    case 3:
+      type_expression(command_if->content.n[0]);
+      type_block(command_if->content.n[1]);
+      type_block(command_if->content.n[2]);
+      break;
+    default:
+        throw_type_error("invalid number of childs from command if");
+  }
+  
+  throw_type_error_if_not(command_if->content.n[0]->type, TYPE_BOOLEAN, "invalid condition not boolean from command if");
+}
+
+void type_expression(Node* expression) {
+  switch(expression->tag) {
     case EXPRESSION_OR:
     case EXPRESSION_AND:
-      check_logical_type(node);
-      node->type = BOOLEAN;
       break;
     case EXPRESSION_EQUAL:
     case EXPRESSION_NOT_EQUAL:
-      check_equality_type(node);
-      node->type = BOOLEAN;
+      type_equality_expression(expression);
       break;
     case EXPRESSION_GREATER:
     case EXPRESSION_GREATER_EQUAL:
     case EXPRESSION_LESS:
     case EXPRESSION_LESS_EQUAL:
-      check_inequality_type(node);
-      node->type = BOOLEAN;
+      type_inequality_expression(expression);
       break;
     case EXPRESSION_SUB:
     case EXPRESSION_ADD:
     case EXPRESSION_DIV:
     case EXPRESSION_MULT:
-      node->type = type_from_arithmetic(node);
+      type_arithmetic_expression(expression);
       break;
     case EXPRESSION_CAST:
-      node->type = node->content.n[1]->type;
-      break;
     case EXPRESSION_NEGATIVE:
-      node->type = node->content.n[0]->type;
-      break;
     case EXPRESSION_NOT:
-      node->type = node->content.n[0]->type;
+      type_not_expression(expression);
       break;
-    case TYPE_BOOLEAN:
-      node->type = BOOLEAN;
+    case ARRAY_POSITION:
+    case VARIABLE:
+      type_variable_expression(expression);
       break;
-    case TYPE_CHARACTER:
-      node->type = CHARACTER;
-      break;
-    case TYPE_INTEGER:
-      node->type = INTEGER;
-      break;
-    case TYPE_FLOAT:
-      node->type = FLOAT;
-      break;
+    case FUNCTION_CALL:
+    case NEW_ARRAY:
     case TYPE_ARRAY:
-      node->type = ARRAY;
-      break;
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+    case TYPE_FLOAT:
     case DATA_BOOLEAN:
-      node->type = BOOLEAN;
       break;
     case DATA_CHARACTER:
-      node->type = CHARACTER;
+      expression->tag = DATA_INTEGER;
+      expression->type->tag = TYPE_INTEGER;
       break;
     case DATA_INTEGER:
-      node->type = INTEGER;
-      break;
     case DATA_FLOAT:
-      node->type = FLOAT;
-      break;
     case DATA_STRING:
-      node->type = ARRAY;
       break;
     default:
-      break;
+      throw_type_error("invalid expression");
   }
+}
+
+void type_equality_expression(Node* expression) {
+  Node* e1 = expression->content.n[0];
+  Node* e2 = expression->content.n[1];
+  
+  type_expression(e1);
+  type_expression(e2);
+  
+  if(is_type_equal(e1, e2) == false)
+    throw_type_error("invalid equality expression");
+  
+  expression->type = malloc_node(TYPE_BOOLEAN);
+}
+
+void type_inequality_expression(Node* expression) {
+  Node* e1 = expression->content.n[0];
+  Node* e2 = expression->content.n[1];
+  
+  type_expression(e1);
+  type_expression(e2);
+  
+  expression->type = malloc_node(TYPE_BOOLEAN);
+}
+
+void type_arithmetic_expression(Node* expression) {
+  Node* e1 = expression->content.n[0];
+  Node* e2 = expression->content.n[1];
+  
+  type_expression(e1);
+  type_expression(e2);
+  
+  if(is_type_numeric(e1, e2) == false)
+    throw_type_error("invalid arithmetic expression");
+    
+  expression->type = e1->type;
+}
+
+void type_not_expression(Node* expression) {
+  Node* e1 = expression->content.n[0];
+  
+  throw_type_error_if_not(e1->type, TYPE_BOOLEAN, "invalid 'not' expression");
+  
+  expression->type = e1->type;
+}
+
+void type_variable_expression(Node* expression) {  
+  expression->type = expression->definition->type;
+  
+  if(expression->type->tag == TYPE_CHARACTER)
+    expression->type->tag = TYPE_INTEGER;
+}
+
+int is_type_equal(Node* e1, Node* e2) {
+  if(e1->type == NULL && e2->type == NULL)
+    return true;
+    
+  if(e1->type == NULL || e2->type == NULL)
+    return false;
+
+  if(e1->type->tag != e2->type->tag)
+    return false;
+    
+  if(e1->type->tag == TYPE_ARRAY)
+    return is_type_equal(e1->type, e2->type);
+  
+  return true;
+}
+
+int is_type_numeric(Node* e1, Node* e2) {
+  if(e1->type == NULL || e2->type == NULL)
+    return false;
+    
+  if(e1->type->tag == TYPE_ARRAY || e2->type->tag == TYPE_ARRAY)
+    return false;
+    
+  if(e1->type->tag == TYPE_BOOLEAN || e2->type->tag == TYPE_BOOLEAN)
+    return false;
+    
+  return true;
 }

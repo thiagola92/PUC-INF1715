@@ -10,7 +10,7 @@
 #include"util.h"
 
 typedef enum TAG {
-  EMPTY,
+  EMPTY = 0,
 
   DEFINE_LIST,
 
@@ -25,7 +25,7 @@ typedef enum TAG {
   TYPE_ARRAY,
 
   DEFINE_FUNCTION,
-  PARAMETER_LIST,
+  PARAMETER_LIST, // 10
   PARAMETER,
 
   COMMAND_LIST,
@@ -38,7 +38,7 @@ typedef enum TAG {
   RETURN,
   PRINT,
 
-  VARIABLE,
+  VARIABLE, // 20
   ARRAY_POSITION,
   FUNCTION_CALL,
   NEW_ARRAY,
@@ -52,7 +52,7 @@ typedef enum TAG {
   EXPRESSION_NOT_EQUAL,
 
   EXPRESSION_GREATER,
-  EXPRESSION_GREATER_EQUAL,
+  EXPRESSION_GREATER_EQUAL, // 30
   EXPRESSION_LESS,
   EXPRESSION_LESS_EQUAL,
 
@@ -65,21 +65,12 @@ typedef enum TAG {
   EXPRESSION_NEGATIVE,
   EXPRESSION_NOT,
 
-  DATA_BOOLEAN,
+  DATA_BOOLEAN, // 40
   DATA_CHARACTER,
   DATA_INTEGER,
   DATA_FLOAT,
   DATA_STRING,
 } TAG;
-
-typedef enum TYPE {
-  VOID,
-  BOOLEAN,
-  CHARACTER,
-  INTEGER,
-  FLOAT,
-  ARRAY,
-} TYPE;
 
 typedef struct Node {
   TAG tag;
@@ -95,9 +86,7 @@ typedef struct Node {
   } content;
   
   struct Node* definition;
-  struct Node* type_node;
-  
-  TYPE type;
+  struct Node* type;
 } Node;
 
 Node* malloc_node();

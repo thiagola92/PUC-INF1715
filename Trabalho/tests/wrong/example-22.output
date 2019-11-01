@@ -1,1 +1,36 @@
-type error: position in array is not an integer
+
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        DEFINE_VARIABLE - TYPE_ARRAY - TYPE_INTEGER
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+            TYPE_ARRAY - TYPE_INTEGER
+                TYPE_INTEGER - TYPE_INTEGER
+        COMMAND_LIST
+            ASSIGNMENT
+                VARIABLE
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                NEW_ARRAY
+                    TYPE_INTEGER
+                    DATA_INTEGER - TYPE_INTEGER - content: 2
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                    DATA_INTEGER - TYPE_INTEGER - content: 0
+                DATA_INTEGER - TYPE_INTEGER - content: 1
+            ASSIGNMENT
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                ARRAY_POSITION
+                    VARIABLE
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                    EXPRESSION_SUB
+                        ARRAY_POSITION
+                            VARIABLE
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
+                            DATA_INTEGER - TYPE_INTEGER - content: 0
+                        DATA_INTEGER - TYPE_INTEGER - content: 1

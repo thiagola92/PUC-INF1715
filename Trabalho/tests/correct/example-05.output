@@ -1,17 +1,17 @@
 
 DEFINE_LIST
-    DEFINE_FUNCTION
+    DEFINE_FUNCTION - TYPE_BOOLEAN
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-        TYPE_BOOLEAN
+        TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK
             RETURN
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-    DEFINE_FUNCTION
+    DEFINE_FUNCTION - TYPE_BOOLEAN
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: seventh
-        PARAMETER
+        PARAMETER - TYPE_BOOLEAN
             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_BOOLEAN
-        TYPE_BOOLEAN
+            TYPE_BOOLEAN - TYPE_BOOLEAN
+        TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK
             RETURN
                 VARIABLE

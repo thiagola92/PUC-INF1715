@@ -1,36 +1,34 @@
 
 DEFINE_LIST
-    DEFINE_LIST
-        DEFINE_LIST
-            DEFINE_FUNCTION
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-                BLOCK
-            DEFINE_FUNCTION
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-                PARAMETER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN
-                BLOCK
-        DEFINE_FUNCTION
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-            PARAMETER_LIST
-                PARAMETER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN
-                PARAMETER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_BOOLEAN
-            BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+        PARAMETER - TYPE_BOOLEAN
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            TYPE_BOOLEAN - TYPE_BOOLEAN
+        BLOCK
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+        PARAMETER_LIST
+            PARAMETER - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+            PARAMETER - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+        BLOCK
     DEFINE_FUNCTION
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
         PARAMETER_LIST
-            PARAMETER
+            PARAMETER - TYPE_BOOLEAN
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN
-            PARAMETER
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+            PARAMETER - TYPE_BOOLEAN
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_BOOLEAN
-            PARAMETER
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+            PARAMETER - TYPE_BOOLEAN
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                TYPE_BOOLEAN
+                TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK

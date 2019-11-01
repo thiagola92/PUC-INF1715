@@ -4,29 +4,29 @@ DEFINE_FUNCTION
     BLOCK
         COMMAND_LIST
             IF
-                EXPRESSION_NOT
+                EXPRESSION_NOT - TYPE_BOOLEAN
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                 BLOCK
             IF
-                EXPRESSION_NOT
+                EXPRESSION_NOT - TYPE_BOOLEAN
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                 BLOCK
             IF
-                EXPRESSION_EQUAL
-                    EXPRESSION_NOT
+                EXPRESSION_EQUAL - TYPE_BOOLEAN
+                    EXPRESSION_NOT - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                 BLOCK
             IF
-                EXPRESSION_EQUAL
-                    EXPRESSION_NOT
+                EXPRESSION_EQUAL - TYPE_BOOLEAN
+                    EXPRESSION_NOT - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                 BLOCK
             IF
-                EXPRESSION_EQUAL
-                    EXPRESSION_NOT
+                EXPRESSION_EQUAL - TYPE_BOOLEAN
+                    EXPRESSION_NOT - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                    EXPRESSION_NOT
+                    EXPRESSION_NOT - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                 BLOCK
