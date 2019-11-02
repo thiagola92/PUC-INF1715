@@ -7,9 +7,9 @@ DEFINE_FUNCTION
             TYPE_INTEGER - TYPE_INTEGER
         COMMAND_LIST
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
-                DATA_CHARACTER - TYPE_CHARACTER - content: a
+                DATA_INTEGER - TYPE_INTEGER - content: 97
             IF
                 EXPRESSION_EQUAL - TYPE_BOOLEAN
                     VARIABLE - TYPE_INTEGER

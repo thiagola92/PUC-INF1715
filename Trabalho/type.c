@@ -11,6 +11,14 @@ void throw_type_error(const char* error) {
   exit(3);
 }
 
+void throw_type_error_if(Node* node, TAG tag, const char* error) {
+  if(node == NULL)
+    throw_type_error(error);
+    
+  if(node->tag == tag)
+    throw_type_error(error);
+}
+
 void throw_type_error_if_not(Node* node, TAG tag, const char* error) {
   if(node == NULL)
     throw_type_error(error);
@@ -182,8 +190,10 @@ void type_command(Node* command) {
       type_if(command);
       break;
     case WHILE:
+      type_while(command);
       break;
     case ASSIGNMENT:
+      type_assignment(command);
       break;
     case RETURN:
       break;
@@ -197,21 +207,47 @@ void type_command(Node* command) {
 }
 
 void type_if(Node* command_if) {
-  switch(command_if->number_of_childs) {
-    case 2:
-      type_expression(command_if->content.n[0]);
-      type_block(command_if->content.n[1]);    
-      break;
-    case 3:
-      type_expression(command_if->content.n[0]);
-      type_block(command_if->content.n[1]);
-      type_block(command_if->content.n[2]);
-      break;
-    default:
-        throw_type_error("invalid number of childs from command if");
+  Node* condition = command_if->content.n[0];
+  Node* then = command_if->content.n[1];
+  Node* command_else = NULL;
+
+  type_expression(condition);
+  type_block(then);
+
+  if(command_if->number_of_childs == 3) {
+    command_else = command_if->content.n[2];
+    type_block(command_else);
   }
   
   throw_type_error_if_not(command_if->content.n[0]->type, TYPE_BOOLEAN, "invalid condition not boolean from command if");
+}
+
+void type_while(Node* command_while) {
+  Node* condition = command_while->content.n[0];
+  Node* loop = command_while->content.n[1];
+
+  type_expression(condition);
+  type_block(loop);
+  
+  throw_type_error_if_not(condition->type, TYPE_BOOLEAN, "invalid condition not boolean from command if");
+}
+
+void type_assignment(Node* assignment) {
+  Node* variable_or_array_position = assignment->content.n[0];
+  Node* expression = assignment->content.n[1];
+
+  switch(variable_or_array_position->tag) {
+    case VARIABLE:
+      type_variable(variable_or_array_position);
+      break;
+    case ARRAY_POSITION:
+      type_array_position(variable_or_array_position);
+      break;
+    default:
+      throw_type_error("invalid left side of assignment");
+  }
+  
+  type_expression(expression);
 }
 
 void type_expression(Node* expression) {
@@ -236,16 +272,24 @@ void type_expression(Node* expression) {
       type_arithmetic_expression(expression);
       break;
     case EXPRESSION_CAST:
+      type_cast(expression);
+      break;
     case EXPRESSION_NEGATIVE:
+      type_negative_expression(expression);
+      break;
     case EXPRESSION_NOT:
       type_not_expression(expression);
       break;
     case ARRAY_POSITION:
+      type_array_position(expression);
+      break;
     case VARIABLE:
-      type_variable_expression(expression);
+      type_variable(expression);
       break;
     case FUNCTION_CALL:
+      break;
     case NEW_ARRAY:
+      break;
     case TYPE_ARRAY:
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
@@ -273,6 +317,9 @@ void type_equality_expression(Node* expression) {
   type_expression(e1);
   type_expression(e2);
   
+  if(is_cast_needed(e1, e2))
+    cast_childs_to_float(expression);
+  
   if(is_type_equal(e1, e2) == false)
     throw_type_error("invalid equality expression");
   
@@ -285,6 +332,15 @@ void type_inequality_expression(Node* expression) {
   
   type_expression(e1);
   type_expression(e2);
+
+  throw_type_error_if(e1->type, TYPE_ARRAY, "invalid inequality expression between arrays");
+  throw_type_error_if(e2->type, TYPE_ARRAY, "invalid inequality expression between arrays");
+
+  throw_type_error_if(e1->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
+  throw_type_error_if(e2->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
+  
+  if(is_cast_needed(e1, e2))
+    cast_childs_to_float(expression);
   
   expression->type = malloc_node(TYPE_BOOLEAN);
 }
@@ -298,23 +354,72 @@ void type_arithmetic_expression(Node* expression) {
   
   if(is_type_numeric(e1, e2) == false)
     throw_type_error("invalid arithmetic expression");
-    
+  
+  if(is_cast_needed(e1, e2))
+    cast_childs_to_float(expression);
+
   expression->type = e1->type;
+}
+
+void type_negative_expression(Node* expression) {
+  Node* e1 = expression->content.n[0];
+
+  type_expression(e1);
+
+  throw_type_error_if(e1->type, TYPE_BOOLEAN, "invalid negative expression for boolean");
+  throw_type_error_if(e1->type, TYPE_ARRAY, "invalid negative expression for array");
+
+  expression->type = expression->content.n[0]->type;
 }
 
 void type_not_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
-  
+
+  type_expression(e1);
+
   throw_type_error_if_not(e1->type, TYPE_BOOLEAN, "invalid 'not' expression");
   
   expression->type = e1->type;
 }
 
-void type_variable_expression(Node* expression) {  
-  expression->type = expression->definition->type;
+void type_variable(Node* variable) {  
+  variable->type = variable->definition->type;
   
-  if(expression->type->tag == TYPE_CHARACTER)
-    expression->type->tag = TYPE_INTEGER;
+  if(variable->type->tag == TYPE_CHARACTER)
+    variable->type->tag = TYPE_INTEGER;
+}
+
+void type_array_position(Node* array_position) {
+  Node* variable = array_position->content.n[0];
+  Node* expression = array_position->content.n[1];
+
+  type_variable(variable);
+  type_expression(expression);
+
+  throw_type_error_if_not(expression->type, TYPE_INTEGER, "invalid position from array");
+
+  array_position->type = variable->type->type;
+}
+
+void type_cast(Node* cast) {
+  type_expression(cast->content.n[0]);
+  type_variable_type(cast->content.n[1]);
+
+  cast->type = cast->content.n[1]->type;
+}
+
+void cast_childs_to_float(Node* expression) {
+  for(int i = 0; i < expression->number_of_childs; i++) {
+    Node* e = expression->content.n[i];
+    if(e->type->tag == TYPE_INTEGER) {
+      Node* variable_type = create_node(TYPE_FLOAT, 0);
+      Node* cast = create_node(EXPRESSION_CAST, 2, e, variable_type);
+
+      type_cast(cast);
+
+      expression->content.n[i] = cast;
+    }
+  }
 }
 
 int is_type_equal(Node* e1, Node* e2) {
@@ -344,4 +449,14 @@ int is_type_numeric(Node* e1, Node* e2) {
     return false;
     
   return true;
+}
+
+int is_cast_needed(Node* e1, Node* e2) {
+  if(e1->type->tag == TYPE_INTEGER && e2->type->tag == TYPE_FLOAT)
+    return true;
+  
+  if(e1->type->tag == TYPE_FLOAT && e2->type->tag == TYPE_INTEGER)
+    return true;
+  
+  return false;
 }

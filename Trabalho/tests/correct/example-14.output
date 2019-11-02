@@ -14,122 +14,122 @@ DEFINE_FUNCTION
                 TYPE_FLOAT - TYPE_FLOAT
         COMMAND_LIST
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 DATA_FLOAT - TYPE_FLOAT - content: 20.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
-                    VARIABLE
+                EXPRESSION_ADD - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
+                EXPRESSION_ADD - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
+                EXPRESSION_ADD - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
-                    VARIABLE
+                EXPRESSION_ADD - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
-                    VARIABLE
+                EXPRESSION_SUB - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
+                EXPRESSION_SUB - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
+                EXPRESSION_SUB - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
-                    VARIABLE
+                EXPRESSION_SUB - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
-                    VARIABLE
+                EXPRESSION_MULT - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
+                EXPRESSION_MULT - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
+                EXPRESSION_MULT - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
-                    VARIABLE
+                EXPRESSION_MULT - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
-                    VARIABLE
+                EXPRESSION_DIV - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
+                EXPRESSION_DIV - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
+                EXPRESSION_DIV - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
-                    VARIABLE
+                EXPRESSION_DIV - TYPE_FLOAT
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000

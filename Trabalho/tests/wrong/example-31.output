@@ -1,9 +1,1 @@
-
-DEFINE_FUNCTION
-    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-    BLOCK
-        WHILE
-            EXPRESSION_ADD
-                DATA_INTEGER - TYPE_INTEGER - content: 1
-                DATA_INTEGER - TYPE_INTEGER - content: 1
-            BLOCK
+type error: invalid condition not boolean from command if

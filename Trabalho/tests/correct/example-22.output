@@ -14,9 +14,9 @@ DEFINE_LIST
                 TYPE_INTEGER - TYPE_INTEGER
             COMMAND_LIST
                 ASSIGNMENT
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
-                    EXPRESSION_ADD
+                    EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                 FUNCTION_CALL

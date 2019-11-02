@@ -13,7 +13,7 @@ DEFINE_FUNCTION
                     TYPE_ARRAY - TYPE_INTEGER
                         TYPE_INTEGER - TYPE_INTEGER
         ASSIGNMENT
-            VARIABLE
+            VARIABLE - TYPE_ARRAY - TYPE_ARRAY - TYPE_INTEGER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-            VARIABLE
+            VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a

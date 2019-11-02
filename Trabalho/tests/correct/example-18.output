@@ -53,7 +53,7 @@ DEFINE_FUNCTION
                 TYPE_BOOLEAN - TYPE_BOOLEAN
         COMMAND_LIST
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_AND
                     EXPRESSION_EQUAL
@@ -63,7 +63,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_AND
                     EXPRESSION_EQUAL
@@ -73,7 +73,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_AND
                     EXPRESSION_NOT_EQUAL
@@ -83,7 +83,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x4
                 EXPRESSION_AND
                     EXPRESSION_NOT_EQUAL
@@ -93,7 +93,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x5
                 EXPRESSION_AND
                     EXPRESSION_LESS
@@ -103,7 +103,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x6
                 EXPRESSION_AND
                     EXPRESSION_LESS
@@ -113,7 +113,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x7
                 EXPRESSION_AND
                     EXPRESSION_LESS
@@ -123,7 +123,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x8
                 EXPRESSION_AND
                     EXPRESSION_GREATER
@@ -133,7 +133,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x9
                 EXPRESSION_AND
                     EXPRESSION_GREATER
@@ -143,7 +143,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x10
                 EXPRESSION_AND
                     EXPRESSION_GREATER
@@ -153,7 +153,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x11
                 EXPRESSION_AND
                     EXPRESSION_LESS_EQUAL
@@ -163,7 +163,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x12
                 EXPRESSION_AND
                     EXPRESSION_LESS_EQUAL
@@ -173,7 +173,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x13
                 EXPRESSION_AND
                     EXPRESSION_LESS_EQUAL
@@ -183,7 +183,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x14
                 EXPRESSION_AND
                     EXPRESSION_GREATER_EQUAL
@@ -193,7 +193,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x15
                 EXPRESSION_AND
                     EXPRESSION_GREATER_EQUAL
@@ -203,7 +203,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
                 EXPRESSION_AND
                     EXPRESSION_GREATER_EQUAL

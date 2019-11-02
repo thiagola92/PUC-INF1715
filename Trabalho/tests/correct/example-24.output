@@ -51,27 +51,27 @@ DEFINE_LIST
                 DEFINE_VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_CHARACTER
+                DEFINE_VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                    TYPE_CHARACTER - TYPE_CHARACTER
+                    TYPE_INTEGER - TYPE_INTEGER
                 DEFINE_VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
                     TYPE_FLOAT - TYPE_FLOAT
             COMMAND_LIST
                 ASSIGNMENT
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                     FUNCTION_CALL
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
                 ASSIGNMENT
-                    VARIABLE
+                    VARIABLE - TYPE_BOOLEAN
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     FUNCTION_CALL
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
                         VARIABLE
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                 ASSIGNMENT
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                     FUNCTION_CALL
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
@@ -81,7 +81,7 @@ DEFINE_LIST
                             VARIABLE
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                 ASSIGNMENT
-                    VARIABLE
+                    VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
                     FUNCTION_CALL
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth

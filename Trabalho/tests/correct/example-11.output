@@ -13,9 +13,9 @@ DEFINE_LIST
                 WHILE
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                     BLOCK
-                        DEFINE_VARIABLE
+                        DEFINE_VARIABLE - TYPE_BOOLEAN
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                            TYPE_BOOLEAN
+                            TYPE_BOOLEAN - TYPE_BOOLEAN
                 WHILE
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                     BLOCK
@@ -24,8 +24,8 @@ DEFINE_LIST
                 WHILE
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                     BLOCK
-                        DEFINE_VARIABLE
+                        DEFINE_VARIABLE - TYPE_BOOLEAN
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                            TYPE_BOOLEAN
+                            TYPE_BOOLEAN - TYPE_BOOLEAN
                         FUNCTION_CALL
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first

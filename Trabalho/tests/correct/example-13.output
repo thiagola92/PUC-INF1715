@@ -14,122 +14,122 @@ DEFINE_FUNCTION
                 TYPE_INTEGER - TYPE_INTEGER
         COMMAND_LIST
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 DATA_INTEGER - TYPE_INTEGER - content: 20
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
-                    VARIABLE
+                EXPRESSION_ADD - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
+                EXPRESSION_ADD - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
+                EXPRESSION_ADD - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_ADD
-                    VARIABLE
+                EXPRESSION_ADD - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
-                    VARIABLE
+                EXPRESSION_SUB - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
+                EXPRESSION_SUB - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
+                EXPRESSION_SUB - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_SUB
-                    VARIABLE
+                EXPRESSION_SUB - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
-                    VARIABLE
+                EXPRESSION_MULT - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
+                EXPRESSION_MULT - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
+                EXPRESSION_MULT - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT
-                    VARIABLE
+                EXPRESSION_MULT - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
-                    VARIABLE
+                EXPRESSION_DIV - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
+                EXPRESSION_DIV - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
                     DATA_INTEGER - TYPE_INTEGER - content: 10
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
+                EXPRESSION_DIV - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 10
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_DIV
-                    VARIABLE
+                EXPRESSION_DIV - TYPE_INTEGER
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10

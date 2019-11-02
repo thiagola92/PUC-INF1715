@@ -8,31 +8,31 @@ DEFINE_FUNCTION
                 TYPE_INTEGER - TYPE_INTEGER
         COMMAND_LIST
             ASSIGNMENT
-                VARIABLE
+                VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 NEW_ARRAY
                     TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
-                ARRAY_POSITION
-                    VARIABLE
+                ARRAY_POSITION - TYPE_INTEGER
+                    VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 0
                 DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
-                ARRAY_POSITION
-                    VARIABLE
+                ARRAY_POSITION - TYPE_INTEGER
+                    VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                    ARRAY_POSITION
-                        VARIABLE
+                    ARRAY_POSITION - TYPE_INTEGER
+                        VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-                ARRAY_POSITION
-                    VARIABLE
+                ARRAY_POSITION - TYPE_INTEGER
+                    VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                    EXPRESSION_SUB
-                        ARRAY_POSITION
-                            VARIABLE
+                    EXPRESSION_SUB - TYPE_INTEGER
+                        ARRAY_POSITION - TYPE_INTEGER
+                            VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                             DATA_INTEGER - TYPE_INTEGER - content: 0
                         DATA_INTEGER - TYPE_INTEGER - content: 1
