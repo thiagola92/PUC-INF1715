@@ -30,17 +30,21 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_ADD - TYPE_FLOAT
-                    DATA_FLOAT - TYPE_FLOAT - content: 1.000000
-                    DATA_FLOAT - TYPE_FLOAT - content: 3.000000
+                EXPRESSION_CAST - TYPE_INTEGER
+                    EXPRESSION_ADD - TYPE_FLOAT
+                        DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                        DATA_FLOAT - TYPE_FLOAT - content: 3.000000
+                    TYPE_INTEGER - TYPE_INTEGER
             ASSIGNMENT
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_ADD - TYPE_FLOAT
-                    DATA_FLOAT - TYPE_FLOAT - content: 1.000000
-                    EXPRESSION_CAST - TYPE_FLOAT
-                        DATA_INTEGER - TYPE_INTEGER - content: 3
-                        TYPE_FLOAT - TYPE_FLOAT
+                EXPRESSION_CAST - TYPE_INTEGER
+                    EXPRESSION_ADD - TYPE_FLOAT
+                        DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+                        EXPRESSION_CAST - TYPE_FLOAT
+                            DATA_INTEGER - TYPE_INTEGER - content: 3
+                            TYPE_FLOAT - TYPE_FLOAT
+                    TYPE_INTEGER - TYPE_INTEGER
             ASSIGNMENT
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
@@ -70,18 +74,22 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_ADD - TYPE_FLOAT
-                    VARIABLE - TYPE_FLOAT
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                    VARIABLE - TYPE_FLOAT
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                EXPRESSION_CAST - TYPE_INTEGER
+                    EXPRESSION_ADD - TYPE_FLOAT
+                        VARIABLE - TYPE_FLOAT
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                        VARIABLE - TYPE_FLOAT
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                    TYPE_INTEGER - TYPE_INTEGER
             ASSIGNMENT
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_ADD - TYPE_FLOAT
-                    VARIABLE - TYPE_FLOAT
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                    EXPRESSION_CAST - TYPE_FLOAT
-                        VARIABLE - TYPE_INTEGER
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                        TYPE_FLOAT - TYPE_FLOAT
+                EXPRESSION_CAST - TYPE_INTEGER
+                    EXPRESSION_ADD - TYPE_FLOAT
+                        VARIABLE - TYPE_FLOAT
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                        EXPRESSION_CAST - TYPE_FLOAT
+                            VARIABLE - TYPE_INTEGER
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                            TYPE_FLOAT - TYPE_FLOAT
+                    TYPE_INTEGER - TYPE_INTEGER

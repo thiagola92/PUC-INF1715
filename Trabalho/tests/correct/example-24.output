@@ -1,1 +1,94 @@
-type error: invalid return type
+
+DEFINE_LIST
+    DEFINE_FUNCTION - TYPE_INTEGER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+        TYPE_INTEGER - TYPE_INTEGER
+        BLOCK
+            RETURN
+                DATA_INTEGER - TYPE_INTEGER - content: 1
+    DEFINE_FUNCTION - TYPE_BOOLEAN
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+        PARAMETER - TYPE_BOOLEAN
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            TYPE_BOOLEAN - TYPE_BOOLEAN
+        TYPE_BOOLEAN - TYPE_BOOLEAN
+        BLOCK
+            RETURN
+                DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+    DEFINE_FUNCTION - TYPE_CHARACTER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+        PARAMETER_LIST
+            PARAMETER - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+            PARAMETER - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+        TYPE_CHARACTER - TYPE_CHARACTER
+        BLOCK
+            RETURN
+                EXPRESSION_CAST - TYPE_CHARACTER
+                    DATA_INTEGER - TYPE_INTEGER - content: 97
+                    TYPE_CHARACTER - TYPE_CHARACTER
+    DEFINE_FUNCTION - TYPE_FLOAT
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+        PARAMETER_LIST
+            PARAMETER - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+            PARAMETER - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                TYPE_BOOLEAN - TYPE_BOOLEAN
+        TYPE_FLOAT - TYPE_FLOAT
+        BLOCK
+            RETURN
+                DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE - TYPE_INTEGER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_INTEGER - TYPE_INTEGER
+                DEFINE_VARIABLE - TYPE_BOOLEAN
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
+                DEFINE_VARIABLE - TYPE_CHARACTER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    TYPE_CHARACTER - TYPE_CHARACTER
+                DEFINE_VARIABLE - TYPE_FLOAT
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    TYPE_FLOAT - TYPE_FLOAT
+            COMMAND_LIST
+                ASSIGNMENT
+                    VARIABLE - TYPE_INTEGER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    FUNCTION_CALL - TYPE_INTEGER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+                ASSIGNMENT
+                    VARIABLE - TYPE_BOOLEAN
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    FUNCTION_CALL - TYPE_BOOLEAN
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
+                        VARIABLE - TYPE_INTEGER
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                ASSIGNMENT
+                    VARIABLE - TYPE_CHARACTER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+                    FUNCTION_CALL - TYPE_CHARACTER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+                        EXPRESSION_LIST
+                            VARIABLE - TYPE_INTEGER
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                            VARIABLE - TYPE_BOOLEAN
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                ASSIGNMENT
+                    VARIABLE - TYPE_FLOAT
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
+                    FUNCTION_CALL - TYPE_FLOAT
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+                        EXPRESSION_LIST
+                            VARIABLE - TYPE_INTEGER
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                            VARIABLE - TYPE_BOOLEAN
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b

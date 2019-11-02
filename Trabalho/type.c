@@ -199,6 +199,7 @@ void type_command(Node* command) {
       type_return(command);
       break;
     case PRINT:
+      // TODO
       break;
     case FUNCTION_CALL:
       type_function_call(command);
@@ -240,7 +241,7 @@ void type_assignment(Node* assignment) {
 
   switch(variable_or_array_position->tag) {
     case VARIABLE:
-      type_variable(variable_or_array_position);
+      variable_or_array_position->type = variable_or_array_position->definition->type;
       break;
     case ARRAY_POSITION:
       type_array_position(variable_or_array_position);
@@ -250,23 +251,44 @@ void type_assignment(Node* assignment) {
   }
   
   type_expression(expression);
+
+  if(variable_or_array_position->type->tag == TYPE_CHARACTER && expression->type->tag == TYPE_INTEGER)
+    return;
+
+  if(variable_or_array_position->type->tag == TYPE_INTEGER && expression->type->tag == TYPE_FLOAT) {
+    cast_floats_to_integers(assignment);
+    return;
+  }
+
+  if(variable_or_array_position->type->tag == TYPE_FLOAT && expression->type->tag == TYPE_INTEGER) {
+    cast_integers_to_float(assignment);
+    return;
+  }
+
+  if(is_type_equal(variable_or_array_position, expression) == false)
+    throw_type_error("invalid assignment from different types");
 }
 
 void type_return(Node* command_return) {
   Node* expression = NULL;
-  Node* definition_type = command_return->definition->type;
+  Node* definition = command_return->definition;
 
-  if(command_return->number_of_childs == 0 && definition_type == NULL)
+  if(command_return->number_of_childs == 0 && definition->type == NULL)
     return;
 
-  if(command_return->number_of_childs == 0 && definition_type != NULL)
-    throw_type_error("invalid return value is missing");
+  if(command_return->number_of_childs == 0 && definition->type != NULL)
+    throw_type_error("invalid because return value is missing");
   
   expression = command_return->content.n[0];
 
   type_expression(expression);
 
-  throw_type_error_if_not(definition_type, expression->type->tag, "invalid return type");
+  if(is_cast_integer_to_character_needed(definition, expression)) {
+    cast_integers_to_character(command_return);
+    expression = command_return->content.n[0];
+  }
+
+  throw_type_error_if_not(definition->type, expression->type->tag, "invalid return type");
 }
 
 void type_expression(Node* expression) {
@@ -304,7 +326,7 @@ void type_expression(Node* expression) {
       type_array_position(expression);
       break;
     case VARIABLE:
-      type_variable(expression);
+      type_variable_expression(expression);
       break;
     case FUNCTION_CALL:
       type_function_call(expression);
@@ -352,7 +374,7 @@ void type_equality_expression(Node* expression) {
   type_expression(e1);
   type_expression(e2);
   
-  if(is_cast_needed(e1, e2))
+  if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
   
   if(is_type_equal(e1, e2) == false)
@@ -374,7 +396,7 @@ void type_inequality_expression(Node* expression) {
   throw_type_error_if(e1->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
   throw_type_error_if(e2->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
   
-  if(is_cast_needed(e1, e2))
+  if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
   
   expression->type = malloc_node(TYPE_BOOLEAN);
@@ -390,7 +412,7 @@ void type_arithmetic_expression(Node* expression) {
   if(is_type_numeric(e1, e2) == false)
     throw_type_error("invalid arithmetic expression");
   
-  if(is_cast_needed(e1, e2))
+  if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
 
   expression->type = e1->type;
@@ -424,13 +446,13 @@ void type_array_position(Node* array_position) {
   type_expression(e1);
   type_expression(e2);
 
-  throw_type_error_if_not(e2->type, TYPE_INTEGER, "invalid position from array");
   throw_type_error_if_not(e1->type, TYPE_ARRAY, "invalid array position");
+  throw_type_error_if_not(e2->type, TYPE_INTEGER, "invalid position from array");
 
   array_position->type = e1->type->type;
 }
 
-void type_variable(Node* variable) {  
+void type_variable_expression(Node* variable) {  
   variable->type = variable->definition->type;
   
   if(variable->type->tag == TYPE_CHARACTER)
@@ -439,9 +461,6 @@ void type_variable(Node* variable) {
 
 void type_function_call(Node* function_call) {
   function_call->type = function_call->definition->type;
-
-  if(function_call->type != NULL && function_call->type-> == TYPE_CHARACTER)
-    function_call->type = create_node(TYPE_INTEGER, 0); // better do a cast, is easy to know when to free after everything
 
   if(function_call->number_of_childs == 2)
     type_expressions(function_call->content.n[1]);
@@ -480,18 +499,30 @@ void type_cast(Node* cast) {
   cast->type = cast->content.n[1]->type;
 }
 
-void cast_integers_to_float(Node* expression) {
-  for(int i = 0; i < expression->number_of_childs; i++) {
-    Node* e = expression->content.n[i];
-    if(e->type->tag == TYPE_INTEGER) {
-      Node* variable_type = create_node(TYPE_FLOAT, 0);
-      Node* cast = create_node(EXPRESSION_CAST, 2, e, variable_type);
+void cast_all_x_types_to_y_type(Node* node, TAG old_type, TAG new_type) {
+  for(int i = 0; i < node->number_of_childs; i++) {
+    Node* child = node->content.n[i];
+    if(child->type->tag == old_type) {
+      Node* variable_type = create_node(new_type, 0);
+      Node* cast = create_node(EXPRESSION_CAST, 2, child, variable_type);
 
       type_cast(cast);
 
-      expression->content.n[i] = cast;
+      node->content.n[i] = cast;
     }
   }
+}
+
+void cast_integers_to_character(Node* node) {
+  cast_all_x_types_to_y_type(node, TYPE_INTEGER, TYPE_CHARACTER);
+}
+
+void cast_integers_to_float(Node* node) {
+  cast_all_x_types_to_y_type(node, TYPE_INTEGER, TYPE_FLOAT);
+}
+
+void cast_floats_to_integers(Node* node) {
+  cast_all_x_types_to_y_type(node, TYPE_FLOAT, TYPE_INTEGER);
 }
 
 int is_type_equal(Node* e1, Node* e2) {
@@ -523,12 +554,20 @@ int is_type_numeric(Node* e1, Node* e2) {
   return true;
 }
 
-int is_cast_needed(Node* e1, Node* e2) {
-  if(e1->type->tag == TYPE_INTEGER && e2->type->tag == TYPE_FLOAT)
+int is_cast_x_to_y_needed(Node* e1, Node* e2, TAG t1, TAG t2) {
+  if(e1->type->tag == t1 && e2->type->tag == t2)
     return true;
   
-  if(e1->type->tag == TYPE_FLOAT && e2->type->tag == TYPE_INTEGER)
+  if(e1->type->tag == t2 && e2->type->tag == t1)
     return true;
   
   return false;
+}
+
+int is_cast_integer_to_float_needed(Node* e1, Node* e2) {
+  return is_cast_x_to_y_needed(e1, e2, TYPE_INTEGER, TYPE_FLOAT);
+}
+
+int is_cast_integer_to_character_needed(Node* e1, Node* e2) {
+  return is_cast_x_to_y_needed(e1, e2, TYPE_CHARACTER, TYPE_INTEGER);
 }
