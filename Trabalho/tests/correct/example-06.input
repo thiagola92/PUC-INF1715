@@ -14,12 +14,12 @@ fourth(a : bool, b : bool, c : bool) {
 }
 
 main() {
-  a : bool;
-  b : bool;
-  c : bool;
+	a : bool;
+	b : bool;
+	c : bool;
 
 	first();
 	second(a);
-	#third(a,b);
-	#fourth(a,b,c);
+	third(a,b);
+	fourth(a,b,c);
 }

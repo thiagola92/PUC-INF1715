@@ -85,11 +85,11 @@ void type_variable_type(Node* variable_type) {
 }
 
 void type_define_function(Node* define_function) {
-  int number_of_childs = define_function->number_of_childs;
+  int childs = define_function->number_of_childs;
   
-  Node* block = define_function->content.n[number_of_childs - 1];
+  Node* block = define_function->content.n[childs - 1];
   
-  switch(number_of_childs) {
+  switch(childs) {
     case 4:
       type_parameters(define_function->content.n[1]);
       type_variable_type(define_function->content.n[2]);
@@ -196,10 +196,12 @@ void type_command(Node* command) {
       type_assignment(command);
       break;
     case RETURN:
+      type_return(command);
       break;
     case PRINT:
       break;
     case FUNCTION_CALL:
+      type_function_call(command);
       break;
     default:
       throw_type_error("invalid command");
@@ -250,10 +252,28 @@ void type_assignment(Node* assignment) {
   type_expression(expression);
 }
 
+void type_return(Node* command_return) {
+  Node* expression = NULL;
+  Node* definition_type = command_return->definition->type;
+
+  if(command_return->number_of_childs == 0 && definition_type == NULL)
+    return;
+
+  if(command_return->number_of_childs == 0 && definition_type != NULL)
+    throw_type_error("invalid return value is missing");
+  
+  expression = command_return->content.n[0];
+
+  type_expression(expression);
+
+  throw_type_error_if_not(definition_type, expression->type->tag, "invalid return type");
+}
+
 void type_expression(Node* expression) {
   switch(expression->tag) {
     case EXPRESSION_OR:
     case EXPRESSION_AND:
+      type_boolean_expression(expression);
       break;
     case EXPRESSION_EQUAL:
     case EXPRESSION_NOT_EQUAL:
@@ -287,8 +307,10 @@ void type_expression(Node* expression) {
       type_variable(expression);
       break;
     case FUNCTION_CALL:
+      type_function_call(expression);
       break;
     case NEW_ARRAY:
+      type_new_array(expression);
       break;
     case TYPE_ARRAY:
     case TYPE_BOOLEAN:
@@ -310,6 +332,19 @@ void type_expression(Node* expression) {
   }
 }
 
+void type_boolean_expression(Node* expression) {
+  Node* e1 = expression->content.n[0];
+  Node* e2 = expression->content.n[1];
+
+  type_expression(e1);
+  type_expression(e2);
+
+  throw_type_error_if_not(e1->type, TYPE_BOOLEAN, "invalid boolean expression");
+  throw_type_error_if_not(e2->type, TYPE_BOOLEAN, "invalid boolean expression");
+
+  expression->type = malloc_node(TYPE_BOOLEAN);
+}
+
 void type_equality_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
   Node* e2 = expression->content.n[1];
@@ -318,7 +353,7 @@ void type_equality_expression(Node* expression) {
   type_expression(e2);
   
   if(is_cast_needed(e1, e2))
-    cast_childs_to_float(expression);
+    cast_integers_to_float(expression);
   
   if(is_type_equal(e1, e2) == false)
     throw_type_error("invalid equality expression");
@@ -340,7 +375,7 @@ void type_inequality_expression(Node* expression) {
   throw_type_error_if(e2->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
   
   if(is_cast_needed(e1, e2))
-    cast_childs_to_float(expression);
+    cast_integers_to_float(expression);
   
   expression->type = malloc_node(TYPE_BOOLEAN);
 }
@@ -356,7 +391,7 @@ void type_arithmetic_expression(Node* expression) {
     throw_type_error("invalid arithmetic expression");
   
   if(is_cast_needed(e1, e2))
-    cast_childs_to_float(expression);
+    cast_integers_to_float(expression);
 
   expression->type = e1->type;
 }
@@ -382,6 +417,19 @@ void type_not_expression(Node* expression) {
   expression->type = e1->type;
 }
 
+void type_array_position(Node* array_position) {
+  Node* e1 = array_position->content.n[0];
+  Node* e2 = array_position->content.n[1];
+
+  type_expression(e1);
+  type_expression(e2);
+
+  throw_type_error_if_not(e2->type, TYPE_INTEGER, "invalid position from array");
+  throw_type_error_if_not(e1->type, TYPE_ARRAY, "invalid array position");
+
+  array_position->type = e1->type->type;
+}
+
 void type_variable(Node* variable) {  
   variable->type = variable->definition->type;
   
@@ -389,16 +437,40 @@ void type_variable(Node* variable) {
     variable->type->tag = TYPE_INTEGER;
 }
 
-void type_array_position(Node* array_position) {
-  Node* variable = array_position->content.n[0];
-  Node* expression = array_position->content.n[1];
+void type_function_call(Node* function_call) {
+  function_call->type = function_call->definition->type;
 
-  type_variable(variable);
+  if(function_call->type != NULL && function_call->type-> == TYPE_CHARACTER)
+    function_call->type = create_node(TYPE_INTEGER, 0); // better do a cast, is easy to know when to free after everything
+
+  if(function_call->number_of_childs == 2)
+    type_expressions(function_call->content.n[1]);
+}
+
+void type_expressions(Node* expressions) {
+  if(expressions->tag == EXPRESSION_LIST)
+    type_expression_list(expressions);
+  else
+    type_expression(expressions);
+}
+
+void type_expression_list(Node* expression_list) {
+  for(int i = 0; i < expression_list->number_of_childs; i++)
+    type_expression(expression_list->content.n[i]);
+}
+
+void type_new_array(Node* new_array) {
+  Node* variable_type = new_array->content.n[0];
+  Node* expression = new_array->content.n[1];
+  Node* type_array = create_node(TYPE_ARRAY, 1, variable_type);
+
+  type_variable_type(variable_type);
   type_expression(expression);
 
-  throw_type_error_if_not(expression->type, TYPE_INTEGER, "invalid position from array");
+  throw_type_error_if_not(expression->type, TYPE_INTEGER, "invalid size from new array");
 
-  array_position->type = variable->type->type;
+  type_array->type = variable_type;
+  new_array->type = type_array;
 }
 
 void type_cast(Node* cast) {
@@ -408,7 +480,7 @@ void type_cast(Node* cast) {
   cast->type = cast->content.n[1]->type;
 }
 
-void cast_childs_to_float(Node* expression) {
+void cast_integers_to_float(Node* expression) {
   for(int i = 0; i < expression->number_of_childs; i++) {
     Node* e = expression->content.n[i];
     if(e->type->tag == TYPE_INTEGER) {

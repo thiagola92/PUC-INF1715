@@ -113,8 +113,8 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: e
-                NEW_ARRAY
-                    TYPE_BOOLEAN
+                NEW_ARRAY - TYPE_ARRAY - TYPE_BOOLEAN
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
                     DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 ARRAY_POSITION - TYPE_BOOLEAN

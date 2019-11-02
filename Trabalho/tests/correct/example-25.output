@@ -35,8 +35,8 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                NEW_ARRAY
-                    TYPE_BOOLEAN
+                NEW_ARRAY - TYPE_ARRAY - TYPE_BOOLEAN
+                    TYPE_BOOLEAN - TYPE_BOOLEAN
                     DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 ARRAY_POSITION - TYPE_BOOLEAN
@@ -53,8 +53,8 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_CHARACTER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                NEW_ARRAY
-                    TYPE_CHARACTER
+                NEW_ARRAY - TYPE_ARRAY - TYPE_CHARACTER
+                    TYPE_CHARACTER - TYPE_CHARACTER
                     DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 ARRAY_POSITION - TYPE_CHARACTER
@@ -71,8 +71,8 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                NEW_ARRAY
-                    TYPE_INTEGER
+                NEW_ARRAY - TYPE_ARRAY - TYPE_INTEGER
+                    TYPE_INTEGER - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 ARRAY_POSITION - TYPE_INTEGER
@@ -89,8 +89,8 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
-                NEW_ARRAY
-                    TYPE_FLOAT
+                NEW_ARRAY - TYPE_ARRAY - TYPE_FLOAT
+                    TYPE_FLOAT - TYPE_FLOAT
                     DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 ARRAY_POSITION - TYPE_FLOAT

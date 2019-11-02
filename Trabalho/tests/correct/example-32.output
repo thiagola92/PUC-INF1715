@@ -16,15 +16,15 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                NEW_ARRAY
-                    TYPE_INTEGER
+                NEW_ARRAY - TYPE_ARRAY - TYPE_INTEGER
+                    TYPE_INTEGER - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_ARRAY - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                NEW_ARRAY
-                    TYPE_ARRAY
-                        TYPE_INTEGER
+                NEW_ARRAY - TYPE_ARRAY - TYPE_ARRAY - TYPE_INTEGER
+                    TYPE_ARRAY - TYPE_INTEGER
+                        TYPE_INTEGER - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 ARRAY_POSITION - TYPE_ARRAY - TYPE_INTEGER

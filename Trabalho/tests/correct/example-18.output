@@ -55,160 +55,160 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_AND
-                    EXPRESSION_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_EQUAL
+                    EXPRESSION_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                EXPRESSION_AND
-                    EXPRESSION_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
-                    EXPRESSION_EQUAL
+                    EXPRESSION_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_AND
-                    EXPRESSION_NOT_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_EQUAL
+                    EXPRESSION_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x4
-                EXPRESSION_AND
-                    EXPRESSION_NOT_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
-                    EXPRESSION_EQUAL
+                    EXPRESSION_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x5
-                EXPRESSION_AND
-                    EXPRESSION_LESS
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_LESS - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_GREATER
+                    EXPRESSION_GREATER - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x6
-                EXPRESSION_AND
-                    EXPRESSION_LESS
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_LESS - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
-                    EXPRESSION_GREATER
+                    EXPRESSION_GREATER - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x7
-                EXPRESSION_AND
-                    EXPRESSION_LESS
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_LESS - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-                    EXPRESSION_GREATER
+                    EXPRESSION_GREATER - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x8
-                EXPRESSION_AND
-                    EXPRESSION_GREATER
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_GREATER - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_LESS
+                    EXPRESSION_LESS - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x9
-                EXPRESSION_AND
-                    EXPRESSION_GREATER
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_GREATER - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
-                    EXPRESSION_LESS
+                    EXPRESSION_LESS - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x10
-                EXPRESSION_AND
-                    EXPRESSION_GREATER
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_GREATER - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-                    EXPRESSION_LESS
+                    EXPRESSION_LESS - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x11
-                EXPRESSION_AND
-                    EXPRESSION_LESS_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_GREATER_EQUAL
+                    EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x12
-                EXPRESSION_AND
-                    EXPRESSION_LESS_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
-                    EXPRESSION_GREATER_EQUAL
+                    EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x13
-                EXPRESSION_AND
-                    EXPRESSION_LESS_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-                    EXPRESSION_GREATER_EQUAL
+                    EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x14
-                EXPRESSION_AND
-                    EXPRESSION_GREATER_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_LESS_EQUAL
+                    EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x15
-                EXPRESSION_AND
-                    EXPRESSION_GREATER_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
-                    EXPRESSION_LESS_EQUAL
+                    EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 2
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
-                EXPRESSION_AND
-                    EXPRESSION_GREATER_EQUAL
+                EXPRESSION_AND - TYPE_BOOLEAN
+                    EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-                    EXPRESSION_LESS_EQUAL
+                    EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0

@@ -60,5 +60,21 @@ DEFINE_LIST
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
                 FUNCTION_CALL
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-                    VARIABLE
+                    VARIABLE - TYPE_BOOLEAN
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                FUNCTION_CALL
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
+                    EXPRESSION_LIST
+                        VARIABLE - TYPE_BOOLEAN
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                        VARIABLE - TYPE_BOOLEAN
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                FUNCTION_CALL
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
+                    EXPRESSION_LIST
+                        VARIABLE - TYPE_BOOLEAN
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                        VARIABLE - TYPE_BOOLEAN
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                        VARIABLE - TYPE_BOOLEAN
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c

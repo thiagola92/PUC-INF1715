@@ -14,5 +14,5 @@ DEFINE_LIST
         TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK
             RETURN
-                VARIABLE
+                VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a

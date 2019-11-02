@@ -22,6 +22,6 @@ main() {
 
 	a = first();
 	b = second(a);
-	c = third(a,b);
+	c = third(a, b);
 	d = fourth(a, b);
 }

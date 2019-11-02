@@ -16,32 +16,32 @@ DEFINE_FUNCTION
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_OR
+                EXPRESSION_OR - TYPE_BOOLEAN
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                    EXPRESSION_AND
+                    EXPRESSION_AND - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                EXPRESSION_OR
-                    EXPRESSION_AND
+                EXPRESSION_OR - TYPE_BOOLEAN
+                    EXPRESSION_AND - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_OR
+                EXPRESSION_OR - TYPE_BOOLEAN
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-                    EXPRESSION_AND
+                    EXPRESSION_AND - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
             ASSIGNMENT
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                EXPRESSION_OR
-                    EXPRESSION_AND
+                EXPRESSION_OR - TYPE_BOOLEAN
+                    EXPRESSION_AND - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1

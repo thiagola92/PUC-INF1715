@@ -34,9 +34,11 @@ void type_command_list(Node* command_list);
 void type_if(Node* command_if);
 void type_while(Node* command_while);
 void type_assignment(Node* assignment);
+void type_return(Node* command_return);
 
 void type_expression(Node* expression);
 
+void type_boolean_expression(Node* expression);
 void type_equality_expression(Node* expression);
 void type_inequality_expression(Node* expression);
 void type_arithmetic_expression(Node* expression);
@@ -44,11 +46,15 @@ void type_arithmetic_expression(Node* expression);
 void type_negative_expression(Node* expression);
 void type_not_expression(Node* expression);
 
-void type_variable(Node* expression);
 void type_array_position(Node* array_position);
+void type_variable(Node* expression);
+void type_function_call(Node* function_call);
+void type_expressions(Node* expressions);
+void type_expression_list(Node* expression_list);
+void type_new_array(Node* new_array);
 void type_cast(Node* cast);
 
-void cast_childs_to_float(Node* expression);
+void cast_integers_to_float(Node* expression);
 
 int is_type_equal(Node* e1, Node* e2);
 int is_type_numeric(Node* e1, Node* e2);

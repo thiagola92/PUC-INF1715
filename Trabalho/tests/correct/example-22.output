@@ -21,5 +21,5 @@ DEFINE_LIST
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                 FUNCTION_CALL
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-                    VARIABLE
+                    VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
