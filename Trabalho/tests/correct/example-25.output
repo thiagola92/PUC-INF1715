@@ -32,104 +32,100 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
                 TYPE_FLOAT - TYPE_FLOAT
         COMMAND_LIST
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_ARRAY - TYPE_BOOLEAN
                 VARIABLE - TYPE_ARRAY - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                 NEW_ARRAY - TYPE_ARRAY - TYPE_BOOLEAN
                     TYPE_BOOLEAN - TYPE_BOOLEAN
                     DATA_INTEGER - TYPE_INTEGER - content: 2
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 ARRAY_POSITION - TYPE_BOOLEAN
                     VARIABLE - TYPE_ARRAY - TYPE_BOOLEAN
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                     DATA_INTEGER - TYPE_INTEGER - content: 0
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 ARRAY_POSITION - TYPE_BOOLEAN
                     VARIABLE - TYPE_ARRAY - TYPE_BOOLEAN
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                     DATA_INTEGER - TYPE_INTEGER - content: 1
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_ARRAY - TYPE_CHARACTER
                 VARIABLE - TYPE_ARRAY - TYPE_CHARACTER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                 NEW_ARRAY - TYPE_ARRAY - TYPE_CHARACTER
                     TYPE_CHARACTER - TYPE_CHARACTER
                     DATA_INTEGER - TYPE_INTEGER - content: 2
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_CHARACTER
                 ARRAY_POSITION - TYPE_CHARACTER
                     VARIABLE - TYPE_ARRAY - TYPE_CHARACTER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     DATA_INTEGER - TYPE_INTEGER - content: 0
-                EXPRESSION_CAST - TYPE_CHARACTER
-                    DATA_INTEGER - TYPE_INTEGER - content: 97
-                    TYPE_CHARACTER - TYPE_CHARACTER
-            ASSIGNMENT
+                DATA_CHARACTER - TYPE_CHARACTER - content: a
+            ASSIGNMENT - TYPE_CHARACTER
                 ARRAY_POSITION - TYPE_CHARACTER
                     VARIABLE - TYPE_ARRAY - TYPE_CHARACTER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-                EXPRESSION_CAST - TYPE_CHARACTER
-                    DATA_INTEGER - TYPE_INTEGER - content: 98
-                    TYPE_CHARACTER - TYPE_CHARACTER
-            ASSIGNMENT
+                DATA_CHARACTER - TYPE_CHARACTER - content: b
+            ASSIGNMENT - TYPE_ARRAY - TYPE_INTEGER
                 VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                 NEW_ARRAY - TYPE_ARRAY - TYPE_INTEGER
                     TYPE_INTEGER - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 2
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 ARRAY_POSITION - TYPE_INTEGER
                     VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                     DATA_INTEGER - TYPE_INTEGER - content: 0
                 DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 ARRAY_POSITION - TYPE_INTEGER
                     VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                     DATA_INTEGER - TYPE_INTEGER - content: 1
                 DATA_INTEGER - TYPE_INTEGER - content: 2
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_ARRAY - TYPE_FLOAT
                 VARIABLE - TYPE_ARRAY - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
                 NEW_ARRAY - TYPE_ARRAY - TYPE_FLOAT
                     TYPE_FLOAT - TYPE_FLOAT
                     DATA_INTEGER - TYPE_INTEGER - content: 2
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_FLOAT
                 ARRAY_POSITION - TYPE_FLOAT
                     VARIABLE - TYPE_ARRAY - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
                     DATA_INTEGER - TYPE_INTEGER - content: 0
                 DATA_FLOAT - TYPE_FLOAT - content: 1.000000
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_FLOAT
                 ARRAY_POSITION - TYPE_FLOAT
                     VARIABLE - TYPE_ARRAY - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
                     DATA_INTEGER - TYPE_INTEGER - content: 1
                 DATA_FLOAT - TYPE_FLOAT - content: 1.500000
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: f
                 ARRAY_POSITION - TYPE_BOOLEAN
                     VARIABLE - TYPE_ARRAY - TYPE_BOOLEAN
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                     DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_CHARACTER
                 VARIABLE - TYPE_CHARACTER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: g
                 ARRAY_POSITION - TYPE_CHARACTER
                     VARIABLE - TYPE_ARRAY - TYPE_CHARACTER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: h
                 ARRAY_POSITION - TYPE_INTEGER
                     VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                     DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_FLOAT
                 VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
                 ARRAY_POSITION - TYPE_FLOAT

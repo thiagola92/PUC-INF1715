@@ -1,0 +1,8 @@
+main() {
+   a : [float];
+
+   a = new int[1];
+
+   if(a[0] as float == 'a') {
+   }
+}

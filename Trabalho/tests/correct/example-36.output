@@ -5,11 +5,9 @@ DEFINE_FUNCTION
         DEFINE_VARIABLE - TYPE_CHARACTER
             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
             TYPE_CHARACTER - TYPE_CHARACTER
-        ASSIGNMENT
+        ASSIGNMENT - TYPE_CHARACTER
             VARIABLE - TYPE_CHARACTER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            EXPRESSION_CAST - TYPE_CHARACTER
-                EXPRESSION_ADD - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 97
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                TYPE_CHARACTER - TYPE_CHARACTER
+            EXPRESSION_ADD - TYPE_CHARACTER
+                DATA_CHARACTER - TYPE_CHARACTER - content: a
+                DATA_INTEGER - TYPE_INTEGER - content: 1

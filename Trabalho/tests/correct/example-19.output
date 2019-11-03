@@ -13,7 +13,7 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 TYPE_BOOLEAN - TYPE_BOOLEAN
         COMMAND_LIST
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_EQUAL - TYPE_BOOLEAN
@@ -21,7 +21,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_EQUAL - TYPE_BOOLEAN
@@ -29,7 +29,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_EQUAL - TYPE_BOOLEAN
@@ -37,7 +37,7 @@ DEFINE_FUNCTION
                     EXPRESSION_SUB - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
@@ -45,7 +45,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
@@ -53,7 +53,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_NOT_EQUAL - TYPE_BOOLEAN
@@ -61,7 +61,7 @@ DEFINE_FUNCTION
                     EXPRESSION_SUB - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_LESS - TYPE_BOOLEAN
@@ -69,7 +69,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_LESS - TYPE_BOOLEAN
@@ -77,7 +77,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_LESS - TYPE_BOOLEAN
@@ -85,7 +85,7 @@ DEFINE_FUNCTION
                     EXPRESSION_SUB - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_GREATER - TYPE_BOOLEAN
@@ -93,7 +93,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_GREATER - TYPE_BOOLEAN
@@ -101,7 +101,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_GREATER - TYPE_BOOLEAN
@@ -109,7 +109,7 @@ DEFINE_FUNCTION
                     EXPRESSION_SUB - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
@@ -117,7 +117,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
@@ -125,7 +125,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
@@ -133,7 +133,7 @@ DEFINE_FUNCTION
                     EXPRESSION_SUB - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 2
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
@@ -141,7 +141,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
@@ -149,7 +149,7 @@ DEFINE_FUNCTION
                     EXPRESSION_ADD - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN

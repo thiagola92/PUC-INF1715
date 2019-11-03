@@ -58,15 +58,15 @@ void cast_assigmnent(Node* assignment);
 
 void cast_all_x_types_to_y_type(Node* node, TAG old_type, TAG new_type);
 
-void cast_characters_to_integer(Node* node);
-void cast_integers_to_character(Node* expression);
 void cast_integers_to_float(Node* expression);
 void cast_floats_to_integers(Node* node);
 
 int is_type_equal(Node* e1, Node* e2);
 int is_type_numeric(Node* e1, Node* e2);
 
-int is_cast_x_to_y_needed(Node* e1, Node* e2, TAG t1, TAG t2);
 int is_cast_integer_to_float_needed(Node* e1, Node* e2);
+
+void if_chararacter_change_to_integer(Node* node);
+void if_need_character_and_is_integer(Node* n1, Node* n2);
 
 #endif

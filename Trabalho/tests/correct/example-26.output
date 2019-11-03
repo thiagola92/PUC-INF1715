@@ -13,21 +13,23 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 TYPE_FLOAT - TYPE_FLOAT
         COMMAND_LIST
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_ADD - TYPE_INTEGER
                     DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 3
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_ADD - TYPE_INTEGER
-                    EXPRESSION_CAST - TYPE_FLOAT
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        TYPE_FLOAT - TYPE_FLOAT
-                    DATA_FLOAT - TYPE_FLOAT - content: 3.000000
-            ASSIGNMENT
+                EXPRESSION_CAST - TYPE_INTEGER
+                    EXPRESSION_ADD - TYPE_FLOAT
+                        EXPRESSION_CAST - TYPE_FLOAT
+                            DATA_INTEGER - TYPE_INTEGER - content: 1
+                            TYPE_FLOAT - TYPE_FLOAT
+                        DATA_FLOAT - TYPE_FLOAT - content: 3.000000
+                    TYPE_INTEGER - TYPE_INTEGER
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_CAST - TYPE_INTEGER
@@ -35,7 +37,7 @@ DEFINE_FUNCTION
                         DATA_FLOAT - TYPE_FLOAT - content: 1.000000
                         DATA_FLOAT - TYPE_FLOAT - content: 3.000000
                     TYPE_INTEGER - TYPE_INTEGER
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_CAST - TYPE_INTEGER
@@ -45,15 +47,15 @@ DEFINE_FUNCTION
                             DATA_INTEGER - TYPE_INTEGER - content: 3
                             TYPE_FLOAT - TYPE_FLOAT
                     TYPE_INTEGER - TYPE_INTEGER
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 DATA_INTEGER - TYPE_INTEGER - content: 2
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_FLOAT
                 VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 DATA_FLOAT - TYPE_FLOAT - content: 2.000000
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -61,17 +63,19 @@ DEFINE_FUNCTION
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                     VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_ADD - TYPE_INTEGER
-                    EXPRESSION_CAST - TYPE_FLOAT
-                        VARIABLE - TYPE_INTEGER
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                        TYPE_FLOAT - TYPE_FLOAT
-                    VARIABLE - TYPE_FLOAT
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-            ASSIGNMENT
+                EXPRESSION_CAST - TYPE_INTEGER
+                    EXPRESSION_ADD - TYPE_FLOAT
+                        EXPRESSION_CAST - TYPE_FLOAT
+                            VARIABLE - TYPE_INTEGER
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
+                            TYPE_FLOAT - TYPE_FLOAT
+                        VARIABLE - TYPE_FLOAT
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
+                    TYPE_INTEGER - TYPE_INTEGER
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_CAST - TYPE_INTEGER
@@ -81,7 +85,7 @@ DEFINE_FUNCTION
                         VARIABLE - TYPE_FLOAT
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                     TYPE_INTEGER - TYPE_INTEGER
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_CAST - TYPE_INTEGER

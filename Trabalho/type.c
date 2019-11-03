@@ -259,6 +259,8 @@ void type_assignment(Node* assignment) {
 
   if(is_type_equal(variable_or_array_position, expression) == false)
     throw_type_error("invalid assignment from different types");
+  
+  assignment->type = variable_or_array_position->type;
 }
 
 void type_return(Node* command_return) {
@@ -278,12 +280,11 @@ void type_return(Node* command_return) {
 
   type_expression(expression);
 
-  if(definition->type->tag == TYPE_CHARACTER && expression->type->tag == TYPE_INTEGER) {
-    cast_integers_to_character(command_return);
-    expression = command_return->content.n[0];
-  }
+  if_need_character_and_is_integer(definition, expression);
 
   throw_type_error_if_not(definition->type, expression->type->tag, "invalid return type");
+
+  command_return->type = definition->type;
 }
 
 void type_expression(Node* expression) {
@@ -337,7 +338,6 @@ void type_expression(Node* expression) {
     case DATA_BOOLEAN:
       break;
     case DATA_CHARACTER:
-      expression->tag = DATA_INTEGER;
       expression->type->tag = TYPE_INTEGER;
       break;
     case DATA_INTEGER:
@@ -368,11 +368,15 @@ void type_equality_expression(Node* expression) {
   
   type_expression(e1);
   type_expression(e2);
-  
+
+  if_chararacter_change_to_integer(e1);
+  if_chararacter_change_to_integer(e2);
+
   if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
   
-  if(is_type_equal(e1, e2) == false)
+  // doesn't use e1/e2 because nodes may have change after cast_integers_to_float()
+  if(is_type_equal(expression->content.n[0], expression->content.n[1]) == false)
     throw_type_error("invalid equality expression");
   
   expression->type = malloc_node(TYPE_BOOLEAN);
@@ -385,12 +389,15 @@ void type_inequality_expression(Node* expression) {
   type_expression(e1);
   type_expression(e2);
 
+  if_chararacter_change_to_integer(e1);
+  if_chararacter_change_to_integer(e2);
+
   throw_type_error_if(e1->type, TYPE_ARRAY, "invalid inequality expression between arrays");
   throw_type_error_if(e2->type, TYPE_ARRAY, "invalid inequality expression between arrays");
 
   throw_type_error_if(e1->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
   throw_type_error_if(e2->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
-  
+
   if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
   
@@ -403,14 +410,18 @@ void type_arithmetic_expression(Node* expression) {
   
   type_expression(e1);
   type_expression(e2);
+
+  if_chararacter_change_to_integer(e1);
+  if_chararacter_change_to_integer(e2);
   
   if(is_type_numeric(e1, e2) == false)
     throw_type_error("invalid arithmetic expression");
-    
+
   if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
 
-  expression->type = e1->type;
+  // doesn't use e1 because node may have change after cast_integers_to_float()
+  expression->type = expression->content.n[0]->type;
 }
 
 void type_negative_expression(Node* expression) {
@@ -418,9 +429,12 @@ void type_negative_expression(Node* expression) {
 
   type_expression(e1);
 
+  if_chararacter_change_to_integer(e1);
+
   throw_type_error_if(e1->type, TYPE_BOOLEAN, "invalid negative expression for boolean");
   throw_type_error_if(e1->type, TYPE_ARRAY, "invalid negative expression for array");
 
+  // doesn't use e1 because node may have change after cast_integers_to_float()
   expression->type = expression->content.n[0]->type;
 }
 
@@ -449,9 +463,8 @@ void type_array_position(Node* array_position) {
 
 void type_variable_expression(Node* variable) {  
   variable->type = variable->definition->type;
-  
-  if(variable->type->tag == TYPE_CHARACTER)
-    variable->type->tag = TYPE_INTEGER;
+
+  if_chararacter_change_to_integer(variable);
 }
 
 void type_function_call(Node* function_call) {
@@ -512,19 +525,13 @@ void cast_assigmnent(Node* assignment) {
   Node* left = assignment->content.n[0];
   Node* right = assignment->content.n[1];
 
-  if(left->type->tag == TYPE_CHARACTER && right->type->tag == TYPE_INTEGER)
-    cast_integers_to_character(assignment);
+  if_need_character_and_is_integer(left,right);
 
   if(left->type->tag == TYPE_INTEGER && right->type->tag == TYPE_FLOAT)
     cast_floats_to_integers(assignment);
 
   if(left->type->tag == TYPE_FLOAT && right->type->tag == TYPE_INTEGER)
     cast_integers_to_float(assignment);
-}
-
-// used in assignment and return
-void cast_integers_to_character(Node* node) {
-  cast_all_x_types_to_y_type(node, TYPE_INTEGER, TYPE_CHARACTER);
 }
 
 // used in expressions and assignment
@@ -566,16 +573,22 @@ int is_type_numeric(Node* e1, Node* e2) {
   return true;
 }
 
-int is_cast_x_to_y_needed(Node* e1, Node* e2, TAG t1, TAG t2) {
-  if(e1->type->tag == t1 && e2->type->tag == t2)
+int is_cast_integer_to_float_needed(Node* e1, Node* e2) {
+  if(e1->type->tag == TYPE_INTEGER && e2->type->tag == TYPE_FLOAT)
     return true;
   
-  if(e1->type->tag == t2 && e2->type->tag == t1)
+  if(e1->type->tag == TYPE_FLOAT && e2->type->tag == TYPE_INTEGER)
     return true;
   
   return false;
 }
 
-int is_cast_integer_to_float_needed(Node* e1, Node* e2) {
-  return is_cast_x_to_y_needed(e1, e2, TYPE_INTEGER, TYPE_FLOAT);
+void if_chararacter_change_to_integer(Node* node) {
+  if(node->type->tag == TYPE_CHARACTER)
+    node->type->tag = TYPE_INTEGER;
+}
+
+void if_need_character_and_is_integer(Node* n1, Node* n2) {
+  if(n1->type->tag == TYPE_CHARACTER && n2->type->tag == TYPE_INTEGER)
+    n2->type->tag = TYPE_CHARACTER;
 }

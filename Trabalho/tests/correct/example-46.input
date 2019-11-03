@@ -1,0 +1,7 @@
+main() {
+   a : [char];
+   a = new char[1];
+
+   if(a[0] == 'a') {
+   }
+}

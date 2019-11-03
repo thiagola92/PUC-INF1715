@@ -13,7 +13,7 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 TYPE_BOOLEAN - TYPE_BOOLEAN
         COMMAND_LIST
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_OR - TYPE_BOOLEAN
@@ -21,7 +21,7 @@ DEFINE_FUNCTION
                     EXPRESSION_AND - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_OR - TYPE_BOOLEAN
@@ -29,7 +29,7 @@ DEFINE_FUNCTION
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_OR - TYPE_BOOLEAN
@@ -37,7 +37,7 @@ DEFINE_FUNCTION
                     EXPRESSION_AND - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_OR - TYPE_BOOLEAN

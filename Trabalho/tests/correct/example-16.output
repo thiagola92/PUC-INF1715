@@ -52,7 +52,7 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
                 TYPE_INTEGER - TYPE_INTEGER
         COMMAND_LIST
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -60,7 +60,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_SUB - TYPE_INTEGER
@@ -68,7 +68,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
                 EXPRESSION_MULT - TYPE_INTEGER
@@ -76,7 +76,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x4
                 EXPRESSION_DIV - TYPE_INTEGER
@@ -84,7 +84,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x5
                 EXPRESSION_SUB - TYPE_INTEGER
@@ -92,7 +92,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x6
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -100,7 +100,7 @@ DEFINE_FUNCTION
                     EXPRESSION_MULT - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x7
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -108,7 +108,7 @@ DEFINE_FUNCTION
                     EXPRESSION_DIV - TYPE_INTEGER
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x8
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -116,7 +116,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x9
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -124,7 +124,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x10
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -132,7 +132,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x11
                 EXPRESSION_ADD - TYPE_INTEGER
@@ -142,7 +142,7 @@ DEFINE_FUNCTION
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x12
                 EXPRESSION_SUB - TYPE_INTEGER
@@ -152,7 +152,7 @@ DEFINE_FUNCTION
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x13
                 EXPRESSION_MULT - TYPE_INTEGER
@@ -162,7 +162,7 @@ DEFINE_FUNCTION
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x14
                 EXPRESSION_DIV - TYPE_INTEGER
@@ -172,7 +172,7 @@ DEFINE_FUNCTION
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                             DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x15
                 EXPRESSION_MULT - TYPE_INTEGER
@@ -180,7 +180,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
                 EXPRESSION_DIV - TYPE_INTEGER

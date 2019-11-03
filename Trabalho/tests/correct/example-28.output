@@ -10,7 +10,7 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 TYPE_FLOAT - TYPE_FLOAT
         COMMAND_LIST
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_CAST - TYPE_INTEGER
@@ -18,7 +18,7 @@ DEFINE_FUNCTION
                         DATA_FLOAT - TYPE_FLOAT - content: 1.000000
                         DATA_FLOAT - TYPE_FLOAT - content: 1.000000
                     TYPE_INTEGER - TYPE_INTEGER
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_FLOAT
                 VARIABLE - TYPE_FLOAT
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
                 EXPRESSION_CAST - TYPE_FLOAT
@@ -26,7 +26,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                     TYPE_FLOAT - TYPE_FLOAT
-            ASSIGNMENT
+            ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                 EXPRESSION_CAST - TYPE_INTEGER

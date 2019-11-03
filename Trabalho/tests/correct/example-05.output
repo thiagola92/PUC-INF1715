@@ -4,7 +4,7 @@ DEFINE_LIST
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
         TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK
-            RETURN
+            RETURN - TYPE_BOOLEAN
                 DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
     DEFINE_FUNCTION - TYPE_BOOLEAN
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: seventh
@@ -13,6 +13,6 @@ DEFINE_LIST
             TYPE_BOOLEAN - TYPE_BOOLEAN
         TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK
-            RETURN
+            RETURN - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
