@@ -1,0 +1,37 @@
+
+DEFINE_LIST
+    DEFINE_FUNCTION - TYPE_CHARACTER
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
+        TYPE_CHARACTER - TYPE_CHARACTER
+        BLOCK
+            RETURN
+                EXPRESSION_CAST - TYPE_CHARACTER
+                    DATA_INTEGER - TYPE_INTEGER - content: 99
+                    TYPE_CHARACTER - TYPE_CHARACTER
+    DEFINE_FUNCTION
+        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+        BLOCK
+            VARIABLE_LIST
+                DEFINE_VARIABLE - TYPE_INTEGER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    TYPE_INTEGER - TYPE_INTEGER
+                DEFINE_VARIABLE - TYPE_INTEGER
+                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    TYPE_INTEGER - TYPE_INTEGER
+            COMMAND_LIST
+                ASSIGNMENT
+                    VARIABLE - TYPE_INTEGER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                    EXPRESSION_CAST - TYPE_CHARACTER
+                        DATA_INTEGER - TYPE_INTEGER - content: 98
+                        TYPE_CHARACTER - TYPE_CHARACTER
+                ASSIGNMENT
+                    VARIABLE - TYPE_INTEGER
+                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+                    EXPRESSION_ADD - TYPE_INTEGER
+                        EXPRESSION_ADD - TYPE_INTEGER
+                            DATA_INTEGER - TYPE_INTEGER - content: 97
+                            VARIABLE - TYPE_INTEGER
+                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+                        FUNCTION_CALL - TYPE_CHARACTER
+                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn

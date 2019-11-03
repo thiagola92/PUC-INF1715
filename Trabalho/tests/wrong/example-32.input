@@ -1,0 +1,9 @@
+fn() {
+  return 1;
+}
+
+main() {
+  a : int;
+
+  a = fn();
+}

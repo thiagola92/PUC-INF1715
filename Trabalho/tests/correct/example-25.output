@@ -61,13 +61,17 @@ DEFINE_FUNCTION
                     VARIABLE - TYPE_ARRAY - TYPE_CHARACTER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     DATA_INTEGER - TYPE_INTEGER - content: 0
-                DATA_INTEGER - TYPE_INTEGER - content: 97
+                EXPRESSION_CAST - TYPE_CHARACTER
+                    DATA_INTEGER - TYPE_INTEGER - content: 97
+                    TYPE_CHARACTER - TYPE_CHARACTER
             ASSIGNMENT
                 ARRAY_POSITION - TYPE_CHARACTER
                     VARIABLE - TYPE_ARRAY - TYPE_CHARACTER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     DATA_INTEGER - TYPE_INTEGER - content: 1
-                DATA_INTEGER - TYPE_INTEGER - content: 98
+                EXPRESSION_CAST - TYPE_CHARACTER
+                    DATA_INTEGER - TYPE_INTEGER - content: 98
+                    TYPE_CHARACTER - TYPE_CHARACTER
             ASSIGNMENT
                 VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c

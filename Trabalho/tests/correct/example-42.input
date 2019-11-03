@@ -1,0 +1,11 @@
+fn() : char {
+    return 'c';
+}
+
+main() {
+    a : char;
+    b : int;
+
+    a = 'b';
+    b = 'a' + a + fn();
+}

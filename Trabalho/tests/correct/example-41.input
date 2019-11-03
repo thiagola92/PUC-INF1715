@@ -1,0 +1,9 @@
+c : char;
+
+fn() : char {
+    return 'a';
+}
+
+main() {
+    c = 'b' + fn();
+}

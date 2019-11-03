@@ -8,6 +8,8 @@ DEFINE_FUNCTION
         ASSIGNMENT
             VARIABLE - TYPE_CHARACTER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            EXPRESSION_ADD - TYPE_INTEGER
-                DATA_INTEGER - TYPE_INTEGER - content: 97
-                DATA_INTEGER - TYPE_INTEGER - content: 1
+            EXPRESSION_CAST - TYPE_CHARACTER
+                EXPRESSION_ADD - TYPE_INTEGER
+                    DATA_INTEGER - TYPE_INTEGER - content: 97
+                    DATA_INTEGER - TYPE_INTEGER - content: 1
+                TYPE_CHARACTER - TYPE_CHARACTER

@@ -252,18 +252,10 @@ void type_assignment(Node* assignment) {
   
   type_expression(expression);
 
-  if(variable_or_array_position->type->tag == TYPE_CHARACTER && expression->type->tag == TYPE_INTEGER)
-    return;
+  cast_assigmnent(assignment);
 
-  if(variable_or_array_position->type->tag == TYPE_INTEGER && expression->type->tag == TYPE_FLOAT) {
-    cast_floats_to_integers(assignment);
-    return;
-  }
-
-  if(variable_or_array_position->type->tag == TYPE_FLOAT && expression->type->tag == TYPE_INTEGER) {
-    cast_integers_to_float(assignment);
-    return;
-  }
+  variable_or_array_position = assignment->content.n[0];
+  expression = assignment->content.n[1];
 
   if(is_type_equal(variable_or_array_position, expression) == false)
     throw_type_error("invalid assignment from different types");
@@ -276,6 +268,9 @@ void type_return(Node* command_return) {
   if(command_return->number_of_childs == 0 && definition->type == NULL)
     return;
 
+  if(command_return->number_of_childs == 1 && definition->type == NULL)
+    throw_type_error("invalid because shouldn't have return");
+
   if(command_return->number_of_childs == 0 && definition->type != NULL)
     throw_type_error("invalid because return value is missing");
   
@@ -283,7 +278,7 @@ void type_return(Node* command_return) {
 
   type_expression(expression);
 
-  if(is_cast_integer_to_character_needed(definition, expression)) {
+  if(definition->type->tag == TYPE_CHARACTER && expression->type->tag == TYPE_INTEGER) {
     cast_integers_to_character(command_return);
     expression = command_return->content.n[0];
   }
@@ -411,7 +406,7 @@ void type_arithmetic_expression(Node* expression) {
   
   if(is_type_numeric(e1, e2) == false)
     throw_type_error("invalid arithmetic expression");
-  
+    
   if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
 
@@ -513,14 +508,31 @@ void cast_all_x_types_to_y_type(Node* node, TAG old_type, TAG new_type) {
   }
 }
 
+void cast_assigmnent(Node* assignment) {
+  Node* left = assignment->content.n[0];
+  Node* right = assignment->content.n[1];
+
+  if(left->type->tag == TYPE_CHARACTER && right->type->tag == TYPE_INTEGER)
+    cast_integers_to_character(assignment);
+
+  if(left->type->tag == TYPE_INTEGER && right->type->tag == TYPE_FLOAT)
+    cast_floats_to_integers(assignment);
+
+  if(left->type->tag == TYPE_FLOAT && right->type->tag == TYPE_INTEGER)
+    cast_integers_to_float(assignment);
+}
+
+// used in assignment and return
 void cast_integers_to_character(Node* node) {
   cast_all_x_types_to_y_type(node, TYPE_INTEGER, TYPE_CHARACTER);
 }
 
+// used in expressions and assignment
 void cast_integers_to_float(Node* node) {
   cast_all_x_types_to_y_type(node, TYPE_INTEGER, TYPE_FLOAT);
 }
 
+// used in assignment
 void cast_floats_to_integers(Node* node) {
   cast_all_x_types_to_y_type(node, TYPE_FLOAT, TYPE_INTEGER);
 }
@@ -566,8 +578,4 @@ int is_cast_x_to_y_needed(Node* e1, Node* e2, TAG t1, TAG t2) {
 
 int is_cast_integer_to_float_needed(Node* e1, Node* e2) {
   return is_cast_x_to_y_needed(e1, e2, TYPE_INTEGER, TYPE_FLOAT);
-}
-
-int is_cast_integer_to_character_needed(Node* e1, Node* e2) {
-  return is_cast_x_to_y_needed(e1, e2, TYPE_CHARACTER, TYPE_INTEGER);
 }
