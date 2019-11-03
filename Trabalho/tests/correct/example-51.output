@@ -1,0 +1,13 @@
+
+DEFINE_FUNCTION
+    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
+    BLOCK
+        DEFINE_VARIABLE - TYPE_BOOLEAN
+            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            TYPE_BOOLEAN - TYPE_BOOLEAN
+        ASSIGNMENT - TYPE_BOOLEAN
+            VARIABLE - TYPE_BOOLEAN
+                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+            EXPRESSION_LESS - TYPE_BOOLEAN
+                DATA_CHARACTER - TYPE_INTEGER - content: a
+                DATA_CHARACTER - TYPE_INTEGER - content: b

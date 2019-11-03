@@ -87,8 +87,6 @@ void type_variable_type(Node* variable_type) {
 void type_define_function(Node* define_function) {
   int childs = define_function->number_of_childs;
   
-  Node* block = define_function->content.n[childs - 1];
-  
   switch(childs) {
     case 4:
       type_parameters(define_function->content.n[1]);
@@ -103,7 +101,7 @@ void type_define_function(Node* define_function) {
       throw_type_error("invalid number of childs from function definition");
   }
   
-  type_block(block);
+  type_block(define_function->content.n[childs - 1]);
 }
 
 void type_define_function_three_childs(Node* define_function) {
@@ -210,78 +208,67 @@ void type_command(Node* command) {
 }
 
 void type_if(Node* command_if) {
-  Node* condition = command_if->content.n[0];
-  Node* then = command_if->content.n[1];
-  Node* command_else = NULL;
+  type_expression(command_if->content.n[0]);
+  type_block(command_if->content.n[1]);
 
-  type_expression(condition);
-  type_block(then);
-
-  if(command_if->number_of_childs == 3) {
-    command_else = command_if->content.n[2];
-    type_block(command_else);
-  }
+  if(command_if->number_of_childs == 3)
+    type_block(command_if->content.n[2]);
   
   throw_type_error_if_not(command_if->content.n[0]->type, TYPE_BOOLEAN, "invalid condition not boolean from command if");
 }
 
 void type_while(Node* command_while) {
-  Node* condition = command_while->content.n[0];
-  Node* loop = command_while->content.n[1];
-
-  type_expression(condition);
-  type_block(loop);
+  type_expression(command_while->content.n[0]);
+  type_block(command_while->content.n[1]);
   
-  throw_type_error_if_not(condition->type, TYPE_BOOLEAN, "invalid condition not boolean from command if");
+  throw_type_error_if_not(command_while->content.n[0]->type, TYPE_BOOLEAN, "invalid condition not boolean from command if");
 }
 
 void type_assignment(Node* assignment) {
-  Node* variable_or_array_position = assignment->content.n[0];
+  Node* storage = assignment->content.n[0];
   Node* expression = assignment->content.n[1];
 
-  switch(variable_or_array_position->tag) {
+  switch(storage->tag) {
     case VARIABLE:
-      variable_or_array_position->type = variable_or_array_position->definition->type;
+      storage->type = storage->definition->type;
       break;
     case ARRAY_POSITION:
-      type_array_position(variable_or_array_position);
+      type_array_position(storage);
       break;
     default:
-      throw_type_error("invalid left side of assignment");
+      throw_type_error("invalid storage side of assignment");
   }
   
   type_expression(expression);
 
   cast_assigmnent(assignment);
 
-  variable_or_array_position = assignment->content.n[0];
+  storage = assignment->content.n[0];
   expression = assignment->content.n[1];
 
-  if(is_type_equal(variable_or_array_position, expression) == false)
+  if(is_type_equal(storage, expression) == false)
     throw_type_error("invalid assignment from different types");
   
-  assignment->type = variable_or_array_position->type;
+  assignment->type = storage->type;
 }
 
 void type_return(Node* command_return) {
-  Node* expression = NULL;
   Node* definition = command_return->definition;
+  Node* expression = NULL;
 
-  if(command_return->number_of_childs == 0 && definition->type == NULL)
-    return;
-
-  if(command_return->number_of_childs == 1 && definition->type == NULL)
-    throw_type_error("invalid because shouldn't have return");
-
-  if(command_return->number_of_childs == 0 && definition->type != NULL)
+  if(command_return->number_of_childs == 0) {
+    if(definition->type == NULL)
+      return;
     throw_type_error("invalid because return value is missing");
+  }
+
+  if(definition->type == NULL)
+    throw_type_error("invalid returning in a void function");
   
   expression = command_return->content.n[0];
 
   type_expression(expression);
-
   if_need_character_and_is_integer(definition, expression);
-
   throw_type_error_if_not(definition->type, expression->type->tag, "invalid return type");
 
   command_return->type = definition->type;
@@ -391,12 +378,9 @@ void type_inequality_expression(Node* expression) {
 
   if_chararacter_change_to_integer(e1);
   if_chararacter_change_to_integer(e2);
-
-  throw_type_error_if(e1->type, TYPE_ARRAY, "invalid inequality expression between arrays");
-  throw_type_error_if(e2->type, TYPE_ARRAY, "invalid inequality expression between arrays");
-
-  throw_type_error_if(e1->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
-  throw_type_error_if(e2->type, TYPE_BOOLEAN, "invalid inequality expression between booleans");
+  
+  if(is_type_numeric(e1, e2) == false)
+    throw_type_error("invalid inequality expression between not numbers");
 
   if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
@@ -415,7 +399,7 @@ void type_arithmetic_expression(Node* expression) {
   if_chararacter_change_to_integer(e2);
   
   if(is_type_numeric(e1, e2) == false)
-    throw_type_error("invalid arithmetic expression");
+    throw_type_error("invalid arithmetic expression between not numbers");
 
   if(is_cast_integer_to_float_needed(e1, e2))
     cast_integers_to_float(expression);
@@ -561,13 +545,10 @@ int is_type_equal(Node* e1, Node* e2) {
 }
 
 int is_type_numeric(Node* e1, Node* e2) {
-  if(e1->type == NULL || e2->type == NULL)
+  if(e1->type->tag != TYPE_INTEGER && e1->type->tag != TYPE_FLOAT)
     return false;
-    
-  if(e1->type->tag == TYPE_ARRAY || e2->type->tag == TYPE_ARRAY)
-    return false;
-    
-  if(e1->type->tag == TYPE_BOOLEAN || e2->type->tag == TYPE_BOOLEAN)
+
+  if(e2->type->tag != TYPE_INTEGER && e2->type->tag != TYPE_FLOAT)
     return false;
     
   return true;
