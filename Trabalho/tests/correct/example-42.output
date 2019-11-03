@@ -31,3 +31,4 @@ DEFINE_LIST
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                         FUNCTION_CALL - TYPE_INTEGER
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
+

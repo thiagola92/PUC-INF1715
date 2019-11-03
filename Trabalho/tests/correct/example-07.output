@@ -14,3 +14,4 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
             FUNCTION_CALL
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+

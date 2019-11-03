@@ -7,6 +7,7 @@
 #include"monga.h"
 #include"binding.h"
 #include"type.h"
+#include"code.h"
 
 extern Node* __root__;
 

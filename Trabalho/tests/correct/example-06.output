@@ -78,3 +78,4 @@ DEFINE_LIST
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                         VARIABLE - TYPE_BOOLEAN
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
+

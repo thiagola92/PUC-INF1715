@@ -133,3 +133,4 @@ DEFINE_FUNCTION
                     VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_INTEGER - TYPE_INTEGER - content: 10
+

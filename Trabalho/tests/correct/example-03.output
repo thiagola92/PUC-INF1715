@@ -32,3 +32,4 @@ DEFINE_LIST
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                 TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK
+

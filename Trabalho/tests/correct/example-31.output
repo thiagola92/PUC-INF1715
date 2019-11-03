@@ -30,3 +30,4 @@ DEFINE_FUNCTION
                     EXPRESSION_NOT - TYPE_BOOLEAN
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                 BLOCK
+

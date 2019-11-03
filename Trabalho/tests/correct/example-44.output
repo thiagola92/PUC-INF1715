@@ -25,3 +25,4 @@ DEFINE_FUNCTION
                         DATA_CHARACTER - TYPE_INTEGER - content: a
                         TYPE_FLOAT - TYPE_FLOAT
                 BLOCK
+

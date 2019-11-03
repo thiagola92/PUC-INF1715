@@ -12,3 +12,4 @@ DEFINE_FUNCTION
                 EXPRESSION_NEGATIVE - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 1.000000
                 TYPE_INTEGER - TYPE_INTEGER
+

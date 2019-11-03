@@ -19,3 +19,5 @@ DEFINE_LIST
                     DATA_CHARACTER - TYPE_CHARACTER - content: b
                     FUNCTION_CALL - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
+@c = global i8 0
+

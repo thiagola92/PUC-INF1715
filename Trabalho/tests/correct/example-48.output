@@ -10,3 +10,4 @@ DEFINE_FUNCTION
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
             EXPRESSION_NEGATIVE - TYPE_INTEGER
                 DATA_CHARACTER - TYPE_INTEGER - content: a
+

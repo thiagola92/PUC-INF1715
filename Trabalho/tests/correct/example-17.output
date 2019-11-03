@@ -109,3 +109,4 @@ DEFINE_FUNCTION
                 EXPRESSION_GREATER_EQUAL - TYPE_BOOLEAN
                     DATA_INTEGER - TYPE_INTEGER - content: 1
                     DATA_INTEGER - TYPE_INTEGER - content: 0
+

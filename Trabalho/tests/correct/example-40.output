@@ -10,3 +10,5 @@ DEFINE_LIST
                 VARIABLE - TYPE_CHARACTER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                 DATA_INTEGER - TYPE_CHARACTER - content: 1
+@c = global i8 0
+

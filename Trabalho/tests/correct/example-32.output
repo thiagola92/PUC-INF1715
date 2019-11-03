@@ -33,3 +33,4 @@ DEFINE_FUNCTION
                     DATA_INTEGER - TYPE_INTEGER - content: 0
                 VARIABLE - TYPE_ARRAY - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+

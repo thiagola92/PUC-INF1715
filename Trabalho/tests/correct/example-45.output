@@ -9,3 +9,4 @@ DEFINE_FUNCTION
                     TYPE_INTEGER - TYPE_INTEGER
                 DATA_CHARACTER - TYPE_INTEGER - content: a
             BLOCK
+

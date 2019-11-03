@@ -27,3 +27,16 @@ void* safe_realloc(void* pointer, size_t size) {
   throw_malloc_error();
   return NULL;
 }
+
+void print_with_indentation(int indentation, const char* template, ...) {
+  va_list list;
+  va_start(list, template);
+
+  for (int i = 0; i < indentation; i++)
+    printf("  ");
+
+  vprintf(template, list);
+  puts("");
+
+  va_end(list);
+}
