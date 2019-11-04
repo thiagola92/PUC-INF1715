@@ -28,4 +28,7 @@ DEFINE_FUNCTION
                     VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
                 BLOCK
+define void @main() {
+}
+
 

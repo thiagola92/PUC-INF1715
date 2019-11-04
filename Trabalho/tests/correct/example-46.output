@@ -21,4 +21,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 0
                     DATA_CHARACTER - TYPE_INTEGER - content: a
                 BLOCK
+define void @main() {
+}
+
 

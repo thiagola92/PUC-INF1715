@@ -132,4 +132,7 @@ DEFINE_FUNCTION
                     VARIABLE - TYPE_ARRAY - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
                     DATA_INTEGER - TYPE_INTEGER - content: 1
+define void @main() {
+}
+
 

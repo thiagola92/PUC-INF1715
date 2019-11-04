@@ -45,4 +45,7 @@ DEFINE_FUNCTION
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
                         DATA_BOOLEAN - TYPE_BOOLEAN - content: 0
                     DATA_BOOLEAN - TYPE_BOOLEAN - content: 1
+define void @main() {
+}
+
 

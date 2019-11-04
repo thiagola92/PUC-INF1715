@@ -133,4 +133,7 @@ DEFINE_FUNCTION
                     VARIABLE - TYPE_FLOAT
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                     DATA_FLOAT - TYPE_FLOAT - content: 10.500000
+define void @main() {
+}
+
 

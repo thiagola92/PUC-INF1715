@@ -32,4 +32,22 @@ DEFINE_LIST
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
                 TYPE_BOOLEAN - TYPE_BOOLEAN
         BLOCK
+define void @first() {
+}
+
+define void @second(i1) {
+  %2 = alloca i1
+}
+
+define void @third(i1, i1) {
+  %3 = alloca i1
+  %4 = alloca i1
+}
+
+define void @fourth(i1, i1, i1) {
+  %4 = alloca i1
+  %5 = alloca i1
+  %6 = alloca i1
+}
+
 

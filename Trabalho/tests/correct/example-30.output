@@ -3,4 +3,7 @@ DEFINE_FUNCTION
     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
     BLOCK
         RETURN
+define void @first() {
+}
+
 

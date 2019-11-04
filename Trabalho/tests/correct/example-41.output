@@ -20,4 +20,10 @@ DEFINE_LIST
                     FUNCTION_CALL - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
 @c = global i8 0
+define i32 @fn() {
+}
+
+define void @main() {
+}
+
 

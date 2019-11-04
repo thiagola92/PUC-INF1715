@@ -35,4 +35,7 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                 BLOCK
+define void @main() {
+}
+
 

@@ -29,4 +29,10 @@ DEFINE_LIST
                             TYPE_BOOLEAN - TYPE_BOOLEAN
                         FUNCTION_CALL
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+define void @first() {
+}
+
+define void @main() {
+}
+
 

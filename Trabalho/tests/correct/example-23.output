@@ -16,4 +16,10 @@ DEFINE_LIST
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                 TYPE_INTEGER - TYPE_INTEGER
 @a = global i32 0
+define void @main() {
+}
+
+define void @fn() {
+}
+
 

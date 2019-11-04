@@ -14,4 +14,7 @@ DEFINE_FUNCTION
                 TYPE_ARRAY - TYPE_INTEGER
                     TYPE_INTEGER - TYPE_INTEGER
                 DATA_INTEGER - TYPE_INTEGER - content: 2
+define void @main() {
+}
+
 

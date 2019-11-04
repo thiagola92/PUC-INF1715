@@ -9,4 +9,7 @@ DEFINE_FUNCTION
             VARIABLE - TYPE_INTEGER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
             DATA_CHARACTER - TYPE_INTEGER - content: a
+define void @main() {
+}
+
 

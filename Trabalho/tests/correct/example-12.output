@@ -137,4 +137,7 @@ DEFINE_FUNCTION
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: f
                 DATA_STRING - TYPE_ARRAY - TYPE_CHARACTER - content: "hello
 world"
+define void @main() {
+}
+
 

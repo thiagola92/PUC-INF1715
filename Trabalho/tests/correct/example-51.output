@@ -11,4 +11,7 @@ DEFINE_FUNCTION
             EXPRESSION_LESS - TYPE_BOOLEAN
                 DATA_CHARACTER - TYPE_INTEGER - content: a
                 DATA_CHARACTER - TYPE_INTEGER - content: b
+define void @main() {
+}
+
 

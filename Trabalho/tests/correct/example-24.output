@@ -90,4 +90,24 @@ DEFINE_LIST
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                             VARIABLE - TYPE_BOOLEAN
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
+define i32 @first() {
+}
+
+define i1 @second(i1) {
+  %2 = alloca i1
+}
+
+define i8 @third(i1, i1) {
+  %3 = alloca i1
+  %4 = alloca i1
+}
+
+define float* @fourth(i1, i1) {
+  %3 = alloca i1
+  %4 = alloca i1
+}
+
+define void @main() {
+}
+
 

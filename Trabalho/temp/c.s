@@ -6,9 +6,96 @@
 nome7:                                  # @nome7
 	.cfi_startproc
 # %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
 	retq
 .Lfunc_end0:
 	.size	nome7, .Lfunc_end0-nome7
+	.cfi_endproc
+                                        # -- End function
+	.globl	nome8                   # -- Begin function nome8
+	.p2align	4, 0x90
+	.type	nome8,@function
+nome8:                                  # @nome8
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movl	$1, %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end1:
+	.size	nome8, .Lfunc_end1-nome8
+	.cfi_endproc
+                                        # -- End function
+	.globl	nome9                   # -- Begin function nome9
+	.p2align	4, 0x90
+	.type	nome9,@function
+nome9:                                  # @nome9
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movl	%edi, -4(%rbp)
+	movl	$1, %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end2:
+	.size	nome9, .Lfunc_end2-nome9
+	.cfi_endproc
+                                        # -- End function
+	.globl	nome10                  # -- Begin function nome10
+	.p2align	4, 0x90
+	.type	nome10,@function
+nome10:                                 # @nome10
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movl	%edi, -4(%rbp)
+	movl	-4(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end3:
+	.size	nome10, .Lfunc_end3-nome10
+	.cfi_endproc
+                                        # -- End function
+	.globl	nome11                  # -- Begin function nome11
+	.p2align	4, 0x90
+	.type	nome11,@function
+nome11:                                 # @nome11
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movl	%edi, -4(%rbp)
+	movss	%xmm0, -8(%rbp)
+	movl	-4(%rbp), %eax
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end4:
+	.size	nome11, .Lfunc_end4-nome11
 	.cfi_endproc
                                         # -- End function
 	.type	nome0,@object           # @nome0

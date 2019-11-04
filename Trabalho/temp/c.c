@@ -9,5 +9,20 @@ int nome5[] = {1,2,3};
 int** nome6 = NULL;
 
 void nome7() {
-  
+}
+
+int nome8() {
+  return 1;
+}
+
+int nome9() {
+  return nome0;
+}
+
+int nome10(int a) {
+  return nome0;
+}
+
+int nome11(int a, float b) {
+  return nome0;
 }
