@@ -1,7 +1,7 @@
-define i32 fn() {
+define i32 @fn() {
 }
 
-define void main() {
+define void @main() {
   %1 = alloca i32
   %2 = alloca i32
 }

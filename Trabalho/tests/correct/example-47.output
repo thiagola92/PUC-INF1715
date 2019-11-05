@@ -1,4 +1,4 @@
-define void main() {
+define void @main() {
 }
 
 

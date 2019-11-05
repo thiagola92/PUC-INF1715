@@ -1,8 +1,8 @@
 @c = global i8 0
-define i32 fn() {
+define i32 @fn() {
 }
 
-define void main() {
+define void @main() {
 }
 
 

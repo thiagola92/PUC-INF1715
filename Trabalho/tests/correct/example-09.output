@@ -1,7 +1,7 @@
-define void first() {
+define void @first() {
 }
 
-define void main() {
+define void @main() {
 }
 
 

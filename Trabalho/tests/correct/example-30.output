@@ -1,4 +1,4 @@
-define void first() {
+define void @first() {
 }
 
 

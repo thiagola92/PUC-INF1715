@@ -1,8 +1,8 @@
 @a = global i32 0
-define void main() {
+define void @main() {
 }
 
-define void fn() {
+define void @fn() {
 }
 
 

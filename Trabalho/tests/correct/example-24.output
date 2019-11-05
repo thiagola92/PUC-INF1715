@@ -1,21 +1,21 @@
-define i32 first() {
+define i32 @first() {
 }
 
-define i1 second(i1) {
+define i1 @second(i1) {
   %2 = alloca i1
 }
 
-define i8 third(i1, i1) {
+define i8 @third(i1, i1) {
   %3 = alloca i1
   %4 = alloca i1
 }
 
-define float* fourth(i1, i1) {
+define float* @fourth(i1, i1) {
   %3 = alloca i1
   %4 = alloca i1
 }
 
-define void main() {
+define void @main() {
   %1 = alloca i32
   %2 = alloca i1
   %3 = alloca i8

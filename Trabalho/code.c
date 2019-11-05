@@ -68,18 +68,21 @@ void code_define_function(Node* define_function) {
   switch(childs) {
     case 4:
       params = code_parameters(id, define_function->content.n[1]);
+      define_function->content.n[childs - 1]->id = id_string(id);
       type = code_variable_type(define_function->content.n[2]);
       params_declarations = code_parameters_declarations(id, define_function->content.n[1]);
       break;
     case 3:
       if(define_function->content.n[1]->tag == PARAMETER || define_function->content.n[1]->tag == PARAMETER_LIST) {
         params = code_parameters(id, define_function->content.n[1]);
+        define_function->content.n[childs - 1]->id = id_string(id);
         params_declarations = code_parameters_declarations(id, define_function->content.n[1]);
       } else {
         type = code_variable_type(define_function->content.n[1]);
       }
       break;
     case 2:
+      define_function->content.n[childs - 1]->id = id_string(id);
       break;
     default:
       throw_code_error("invalid function definition");
@@ -87,7 +90,7 @@ void code_define_function(Node* define_function) {
 
   block = code_block(id, define_function->content.n[childs - 1]);
 
-  print_with_indentation(0, "define %s %s(%s) {\n%s%s}\n", type, name, params, params_declarations, block);
+  print_with_indentation(0, "define %s @%s(%s) {\n%s%s}\n", type, name, params, params_declarations, block);
 }
 
 char* code_identifier(Node* identifier) {
@@ -271,7 +274,7 @@ char* code_define_variable_block(int* id, Node* define_variable) {
 
 int* initialize_id() {
   int* id = (int*)safe_malloc(sizeof(int));
-  *id = 1;
+  *id = 0;
 
   return id;
 }

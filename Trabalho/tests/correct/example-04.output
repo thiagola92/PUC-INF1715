@@ -1,25 +1,25 @@
-define void first() {
+define void @first() {
 }
 
-define void second() {
+define void @second() {
   %1 = alloca i1
   %2 = alloca i1
 }
 
-define void third() {
+define void @third() {
   %1 = alloca i1
   %2 = alloca i1
   %3 = alloca i1
 }
 
-define void fourth() {
+define void @fourth() {
   %1 = alloca i1
   %2 = alloca i1
   %3 = alloca i1
   %4 = alloca i1
 }
 
-define void fifth() {
+define void @fifth() {
   %1 = alloca i1
   %2 = alloca i1
   %3 = alloca i1
