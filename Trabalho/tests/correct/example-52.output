@@ -13,7 +13,11 @@ DEFINE_FUNCTION
                     DATA_CHARACTER - TYPE_INTEGER - content: a
                     TYPE_FLOAT - TYPE_FLOAT
                 DATA_FLOAT - TYPE_FLOAT - content: 1.000000
+
+
+0
 define void @main() {
 }
+
 
 

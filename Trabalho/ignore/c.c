@@ -26,3 +26,18 @@ int nome10(int a) {
 int nome11(int a, float b) {
   return nome0;
 }
+
+int nome12() {
+  return nome9();
+}
+
+int nome13() {
+  return nome13();
+}
+
+void nome14() {
+  int a;
+  {
+    int a;
+  }
+}

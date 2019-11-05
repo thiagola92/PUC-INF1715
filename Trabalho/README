@@ -1,10 +1,16 @@
 Nome: Thiago Lages de Alencar
 Matricula: 1721629
 
+===== OBSERVAÇÕES =====
+
+Trabalho incompleto  
+
 ===== ARQUIVOS =====
 
 * binding.c
 * binding.h
+* code.c
+* code.h
 * main.c
 * monga.h
 * monga.l
@@ -34,8 +40,8 @@ BASH
 
 bison -d monga.y;
 flex monga.l;
-gcc main.c test.c util.c lex.yy.c monga.tab.c node.c symbol_table.c binding.c type.c -Wall -o test;
-./test tests/correct/example-27.input;
+gcc main.c test.c util.c lex.yy.c monga.tab.c node.c symbol_table.c binding.c type.c code.c -Wall -o executavel;
+./executavel tests/correct/example-01.input;
 
 ===== EXECUTANDO ARQUIVOS DA PASTA DE TESTES =====
 

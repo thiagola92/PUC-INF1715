@@ -26,7 +26,11 @@ DEFINE_FUNCTION
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         TYPE_FLOAT - TYPE_FLOAT
                     DATA_FLOAT - TYPE_FLOAT - content: 3.000000
+
+
+0
 define void @main() {
 }
+
 
 

@@ -4,7 +4,7 @@ DEFINE_FUNCTION
     BLOCK
         DEFINE_VARIABLE - TYPE_INTEGER
             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
-            TYPE_INTEGER - TYPE_INTEGER
+            TYPE_INTEGER
         COMMAND_LIST
             ASSIGNMENT - TYPE_INTEGER
                 VARIABLE - TYPE_INTEGER
@@ -28,7 +28,11 @@ DEFINE_FUNCTION
                     VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
                 BLOCK
+
+
+0
 define void @main() {
 }
+
 
 

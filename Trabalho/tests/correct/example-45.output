@@ -6,10 +6,14 @@ DEFINE_FUNCTION
             EXPRESSION_EQUAL - TYPE_BOOLEAN
                 EXPRESSION_CAST - TYPE_INTEGER
                     DATA_CHARACTER - TYPE_INTEGER - content: a
-                    TYPE_INTEGER - TYPE_INTEGER
+                    TYPE_INTEGER
                 DATA_CHARACTER - TYPE_INTEGER - content: a
             BLOCK
+
+
+0
 define void @main() {
 }
+
 
 

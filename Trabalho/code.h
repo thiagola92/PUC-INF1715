@@ -20,17 +20,18 @@ char* code_identifier(Node* identifier);
 char* code_variable_type(Node* variable_type);
 char* code_initial_value(Node* variable_type);
 
-char* code_parameters(Node* parameters);
-char* code_parameter_list(Node* parameter_list);
-char* code_parameter(Node* parameter);
+char* code_parameters(int* id, Node* parameters);
+char* code_parameter_list(int* id, Node* parameter_list);
+char* code_parameter(int* id, Node* parameter);
 
-char * code_parameters_declarations(Node* parameters);
-char* code_parameter_declaration_list(Node* parameter_list);
-char* code_parameter_declaration(int id, Node* parameter);
+char * code_parameters_declarations(int* id, Node* parameters);
+char* code_parameter_declaration_list(int* id, Node* parameter_list);
+char* code_parameter_declaration(int* id, Node* parameter);
 
-char* code_block(Node* block);
+char* code_block(int* id, Node* block);
 
-char* id_string(int id);
+int* initialize_id();
+char* id_string(int* id);
 
 char* concat_strings(char* string_1, char* string_2);
 

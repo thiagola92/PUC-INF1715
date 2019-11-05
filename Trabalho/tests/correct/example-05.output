@@ -16,11 +16,21 @@ DEFINE_LIST
             RETURN - TYPE_BOOLEAN
                 VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
+
+
+0
 define i1 @first() {
 }
 
+
+0
+
+1
+
+2
 define i1 @seventh(i1) {
   %2 = alloca i1
 }
+
 
 

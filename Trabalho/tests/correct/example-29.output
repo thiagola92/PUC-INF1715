@@ -36,7 +36,11 @@ DEFINE_FUNCTION
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
                             DATA_INTEGER - TYPE_INTEGER - content: 0
                         DATA_INTEGER - TYPE_INTEGER - content: 1
+
+
+0
 define void @main() {
 }
+
 
 

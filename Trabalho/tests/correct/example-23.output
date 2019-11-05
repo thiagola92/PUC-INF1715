@@ -15,11 +15,17 @@ DEFINE_LIST
             DEFINE_VARIABLE - TYPE_INTEGER
                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                 TYPE_INTEGER - TYPE_INTEGER
+
 @a = global i32 0
+
+0
 define void @main() {
 }
 
+
+0
 define void @fn() {
 }
+
 
 

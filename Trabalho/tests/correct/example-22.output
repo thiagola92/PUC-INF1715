@@ -23,11 +23,21 @@ DEFINE_LIST
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
                     VARIABLE - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
+
+
+0
+
+1
+
+2
 define void @first(i32) {
   %2 = alloca i32
 }
 
+
+0
 define void @main() {
 }
+
 
 

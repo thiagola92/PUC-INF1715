@@ -5,7 +5,7 @@ DEFINE_LIST
         TYPE_CHARACTER - TYPE_CHARACTER
     DEFINE_FUNCTION - TYPE_INTEGER
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
-        TYPE_INTEGER - TYPE_INTEGER
+        TYPE_INTEGER
         BLOCK
             RETURN - TYPE_INTEGER
                 DATA_CHARACTER - TYPE_CHARACTER - content: a
@@ -19,11 +19,17 @@ DEFINE_LIST
                     DATA_CHARACTER - TYPE_CHARACTER - content: b
                     FUNCTION_CALL - TYPE_INTEGER
                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
+
 @c = global i8 0
+
+0
 define i32 @fn() {
 }
 
+
+0
 define void @main() {
 }
+
 
 

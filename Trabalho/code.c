@@ -1,3 +1,6 @@
+// Nome: Thiago Lages de Alencar
+// Matricula: 1721629
+
 #include"code.h"
 
 void throw_code_error(const char* error) {
@@ -45,6 +48,8 @@ void code_define_variable(Node* define_variable) {
   char* type = code_variable_type(define_variable->content.n[1]);
   char* initial_value = code_initial_value(define_variable->content.n[1]);
 
+  define_variable->id = concat_strings("@", name);
+
   print_with_indentation(0, "@%s = global %s %s", name, type, initial_value);
 }
 
@@ -56,17 +61,20 @@ void code_define_function(Node* define_function) {
   char* type = "void";
   char* block = "";
   char* params_declarations = "";
+  int* id = initialize_id();
+
+  define_function->id = id_string(id);
   
   switch(childs) {
     case 4:
-      params = code_parameters(define_function->content.n[1]);
+      params = code_parameters(id, define_function->content.n[1]);
       type = code_variable_type(define_function->content.n[2]);
-      params_declarations = code_parameters_declarations(define_function->content.n[1]);
+      params_declarations = code_parameters_declarations(id, define_function->content.n[1]);
       break;
     case 3:
       if(define_function->content.n[1]->tag == PARAMETER || define_function->content.n[1]->tag == PARAMETER_LIST) {
-        params = code_parameters(define_function->content.n[1]);
-        params_declarations = code_parameters_declarations(define_function->content.n[1]);
+        params = code_parameters(id, define_function->content.n[1]);
+        params_declarations = code_parameters_declarations(id, define_function->content.n[1]);
       } else {
         type = code_variable_type(define_function->content.n[1]);
       }
@@ -77,7 +85,7 @@ void code_define_function(Node* define_function) {
       throw_code_error("invalid function definition");
   }
 
-  block = code_block(define_function->content.n[childs - 1]);
+  block = code_block(id, define_function->content.n[childs - 1]);
 
   print_with_indentation(0, "define %s @%s(%s) {\n%s%s}\n", type, name, params, params_declarations, block);
 }
@@ -135,13 +143,13 @@ char* code_initial_value(Node* variable_type) {
   }
 }
 
-char* code_parameters(Node* parameters) {
+char* code_parameters(int* id, Node* parameters) {
   switch(parameters->tag) {
     case PARAMETER_LIST:
-      return code_parameter_list(parameters);
+      return code_parameter_list(id, parameters);
       break;
     case PARAMETER:
-      return code_parameter(parameters);
+      return code_parameter(id, parameters);
       break;
     default:
       throw_code_error("invalid parameters");
@@ -149,11 +157,11 @@ char* code_parameters(Node* parameters) {
   }
 }
 
-char* code_parameter_list(Node* parameter_list) {
+char* code_parameter_list(int* id, Node* parameter_list) {
   char* param_list = "";
 
   for(int i = 0; i < parameter_list->number_of_childs; i++) {
-    char* type = code_parameter(parameter_list->content.n[i]);
+    char* type = code_parameter(id, parameter_list->content.n[i]);
     param_list = concat_strings(param_list, type);
 
     if(i+1 < parameter_list->number_of_childs)
@@ -163,17 +171,18 @@ char* code_parameter_list(Node* parameter_list) {
   return param_list;
 }
 
-char* code_parameter(Node* parameter) {
+char* code_parameter(int* id, Node* parameter) {
+  parameter->id = id_string(id);
   return code_variable_type(parameter->content.n[1]);
 }
 
-char * code_parameters_declarations(Node* parameters) {
+char * code_parameters_declarations(int* id, Node* parameters) {
   switch(parameters->tag) {
     case PARAMETER_LIST:
-      return code_parameter_declaration_list(parameters);
+      return code_parameter_declaration_list(id, parameters);
       break;
     case PARAMETER:
-      return code_parameter_declaration(2, parameters);
+      return code_parameter_declaration(id, parameters);
       break;
     default:
       throw_code_error("invalid parameters");
@@ -181,19 +190,18 @@ char * code_parameters_declarations(Node* parameters) {
   }
 }
 
-char* code_parameter_declaration_list(Node* parameter_list) {
+char* code_parameter_declaration_list(int* id, Node* parameter_list) {
   char* param_list = "";
-  int counter = parameter_list->number_of_childs + 1;
 
   for(int i = 0; i < parameter_list->number_of_childs; i++) {
-    char* type = code_parameter_declaration(counter++, parameter_list->content.n[i]);
+    char* type = code_parameter_declaration(id, parameter_list->content.n[i]);
     param_list = concat_strings(param_list, type);
   }
 
   return param_list;
 }
 
-char* code_parameter_declaration(int id, Node* parameter) {
+char* code_parameter_declaration(int* id, Node* parameter) {
   char* type = code_variable_type(parameter->content.n[1]);
   char* declaration = concat_strings("  %", id_string(id));
   declaration = concat_strings(declaration, " = alloca ");
@@ -202,16 +210,25 @@ char* code_parameter_declaration(int id, Node* parameter) {
   return declaration;
 }
 
-char* code_block(Node* block) {
+char* code_block(int* id, Node* block) {
   return "";
 }
 
-char* id_string(int id) {
-  char* storage = (char*)safe_malloc(sizeof(char) * 64);
+int* initialize_id() {
+  int* id = (int*)safe_malloc(sizeof(int));
+  *id = 0;
 
-  sprintf(storage, "%d", id);
+  return id;
+}
 
-  return storage;
+char* id_string(int* id) {
+  char* str = (char*)safe_malloc(sizeof(char) * 64);
+
+  printf("\n%d\n", *id);
+  sprintf(str, "%d", *id);
+  (*id)++;
+
+  return str;
 }
 
 char* concat_strings(char* string_1, char* string_2) {

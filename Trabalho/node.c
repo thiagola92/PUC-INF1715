@@ -10,6 +10,7 @@ Node* malloc_node(TAG tag) {
   node->number_of_childs = 0;
   node->definition = NULL;
   node->type = NULL;
+  node->id = NULL;
   
   return node;
 }

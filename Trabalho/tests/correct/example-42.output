@@ -2,7 +2,7 @@
 DEFINE_LIST
     DEFINE_FUNCTION - TYPE_INTEGER
         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
-        TYPE_INTEGER - TYPE_INTEGER
+        TYPE_INTEGER
         BLOCK
             RETURN - TYPE_INTEGER
                 DATA_CHARACTER - TYPE_CHARACTER - content: c
@@ -12,7 +12,7 @@ DEFINE_LIST
             VARIABLE_LIST
                 DEFINE_VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_INTEGER - TYPE_INTEGER
+                    TYPE_INTEGER
                 DEFINE_VARIABLE - TYPE_INTEGER
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
                     TYPE_INTEGER - TYPE_INTEGER
@@ -31,10 +31,16 @@ DEFINE_LIST
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
                         FUNCTION_CALL - TYPE_INTEGER
                             IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
+
+
+0
 define i32 @fn() {
 }
 
+
+0
 define void @main() {
 }
+
 
 

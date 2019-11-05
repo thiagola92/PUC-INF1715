@@ -6,7 +6,7 @@ c_files="main.c test.c util.c lex.yy.c monga.tab.c node.c symbol_table.c binding
 
 bison -d monga.y;
 flex monga.l;
-gcc $c_files -Wall -o test;
+gcc $c_files -Wall -o compiler;
 
 echo "=============CORRECT CODE============="
 
@@ -17,7 +17,7 @@ for file_input in tests/correct/*\.input; do
   printf "$file_name: "
 
   file_output=tests/correct/$file_name\.output
-  ./test $file_input > $file_output
+  ./compiler $file_input > $file_output
   status=$?
 
   if [ $status -eq "0" ]; then
@@ -36,7 +36,7 @@ for file_input in tests/wrong/*\.input; do
   printf "$file_name: "
 
   file_output=tests/wrong/$file_name\.output
-  ./test $file_input > $file_output
+  ./compiler $file_input > $file_output
   status=$?
 
   if [ $status -eq "0" ]; then
@@ -46,4 +46,4 @@ for file_input in tests/wrong/*\.input; do
   fi
 done
 
-rm lex.yy.c monga.tab.c monga.tab.h test;
+rm lex.yy.c monga.tab.c monga.tab.h compiler;

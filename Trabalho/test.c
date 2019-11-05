@@ -220,10 +220,10 @@ int test(const char* path) {
   start_typing(__root__);
 
   print_tree(__root__, 0);
-  printf("\n");
+  printf("\n\n");
   
   start_coding(__root__);
-  printf("\n");
+  printf("\n\n");
   
   return 0;
 }

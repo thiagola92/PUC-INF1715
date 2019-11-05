@@ -64,19 +64,31 @@ DEFINE_LIST
                 DEFINE_VARIABLE - TYPE_BOOLEAN
                     IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: e
                     TYPE_BOOLEAN - TYPE_BOOLEAN
+
+
+0
 define void @first() {
 }
 
+
+0
 define void @second() {
 }
 
+
+0
 define void @third() {
 }
 
+
+0
 define void @fourth() {
 }
 
+
+0
 define void @fifth() {
 }
+
 
 

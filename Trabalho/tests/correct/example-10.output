@@ -121,10 +121,16 @@ DEFINE_LIST
                                         IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
                             FUNCTION_CALL
                                 IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
+
+
+0
 define void @first() {
 }
 
+
+0
 define void @main() {
 }
+
 
 

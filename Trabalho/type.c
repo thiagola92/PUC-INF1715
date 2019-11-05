@@ -325,7 +325,8 @@ void type_expression(Node* expression) {
     case DATA_BOOLEAN:
       break;
     case DATA_CHARACTER:
-      expression->type->tag = TYPE_INTEGER;
+      free(expression->type);
+      expression->type = malloc_node(TYPE_INTEGER);
       break;
     case DATA_INTEGER:
     case DATA_FLOAT:
@@ -565,11 +566,15 @@ int is_cast_integer_to_float_needed(Node* e1, Node* e2) {
 }
 
 void if_chararacter_change_to_integer(Node* node) {
-  if(node->type->tag == TYPE_CHARACTER)
-    node->type->tag = TYPE_INTEGER;
+  if(node->type->tag == TYPE_CHARACTER) {
+    free(node->type);
+    node->type = malloc_node(TYPE_INTEGER);
+  }
 }
 
 void if_need_character_and_is_integer(Node* n1, Node* n2) {
-  if(n1->type->tag == TYPE_CHARACTER && n2->type->tag == TYPE_INTEGER)
-    n2->type->tag = TYPE_CHARACTER;
+  if(n1->type->tag == TYPE_CHARACTER && n2->type->tag == TYPE_INTEGER) {
+    free(n2->type);
+    n2->type = malloc_node(TYPE_CHARACTER);
+  }
 }

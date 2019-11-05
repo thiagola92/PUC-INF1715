@@ -212,7 +212,11 @@ DEFINE_FUNCTION
                     EXPRESSION_LESS_EQUAL - TYPE_BOOLEAN
                         DATA_INTEGER - TYPE_INTEGER - content: 1
                         DATA_INTEGER - TYPE_INTEGER - content: 0
+
+
+0
 define void @main() {
 }
+
 
 
