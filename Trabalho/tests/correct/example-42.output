@@ -1,45 +1,9 @@
-
-DEFINE_LIST
-    DEFINE_FUNCTION - TYPE_INTEGER
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
-        TYPE_INTEGER
-        BLOCK
-            RETURN - TYPE_INTEGER
-                DATA_CHARACTER - TYPE_CHARACTER - content: c
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-        BLOCK
-            VARIABLE_LIST
-                DEFINE_VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_INTEGER
-                DEFINE_VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_INTEGER - TYPE_INTEGER
-            COMMAND_LIST
-                ASSIGNMENT - TYPE_INTEGER
-                    VARIABLE - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    DATA_CHARACTER - TYPE_CHARACTER - content: b
-                ASSIGNMENT - TYPE_INTEGER
-                    VARIABLE - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        EXPRESSION_ADD - TYPE_INTEGER
-                            DATA_CHARACTER - TYPE_INTEGER - content: a
-                            VARIABLE - TYPE_INTEGER
-                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                        FUNCTION_CALL - TYPE_INTEGER
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
-
-
-0
-define i32 @fn() {
+define i32 fn() {
 }
 
-
-0
-define void @main() {
+define void main() {
+  %1 = alloca i32
+  %2 = alloca i32
 }
 
 

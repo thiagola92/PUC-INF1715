@@ -1,45 +1,4 @@
-
-DEFINE_FUNCTION
-    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-    BLOCK
-        DEFINE_VARIABLE - TYPE_ARRAY - TYPE_INTEGER
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-            TYPE_ARRAY - TYPE_INTEGER
-                TYPE_INTEGER - TYPE_INTEGER
-        COMMAND_LIST
-            ASSIGNMENT - TYPE_ARRAY - TYPE_INTEGER
-                VARIABLE - TYPE_ARRAY - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                NEW_ARRAY - TYPE_ARRAY - TYPE_INTEGER
-                    TYPE_INTEGER - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 2
-            ASSIGNMENT - TYPE_INTEGER
-                ARRAY_POSITION - TYPE_INTEGER
-                    VARIABLE - TYPE_ARRAY - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                    DATA_INTEGER - TYPE_INTEGER - content: 0
-                DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                ARRAY_POSITION - TYPE_INTEGER
-                    VARIABLE - TYPE_ARRAY - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                    ARRAY_POSITION - TYPE_INTEGER
-                        VARIABLE - TYPE_ARRAY - TYPE_INTEGER
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                        DATA_INTEGER - TYPE_INTEGER - content: 0
-                ARRAY_POSITION - TYPE_INTEGER
-                    VARIABLE - TYPE_ARRAY - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        ARRAY_POSITION - TYPE_INTEGER
-                            VARIABLE - TYPE_ARRAY - TYPE_INTEGER
-                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                            DATA_INTEGER - TYPE_INTEGER - content: 0
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-
-
-0
-define void @main() {
+define void main() {
 }
 
 

@@ -1,37 +1,4 @@
-
-DEFINE_FUNCTION
-    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-    BLOCK
-        DEFINE_VARIABLE - TYPE_INTEGER
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
-            TYPE_INTEGER
-        COMMAND_LIST
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
-                DATA_CHARACTER - TYPE_CHARACTER - content: a
-            IF
-                EXPRESSION_EQUAL - TYPE_BOOLEAN
-                    VARIABLE - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
-                    VARIABLE - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
-                BLOCK
-            IF
-                EXPRESSION_EQUAL - TYPE_BOOLEAN
-                    DATA_CHARACTER - TYPE_INTEGER - content: a
-                    DATA_CHARACTER - TYPE_INTEGER - content: a
-                BLOCK
-            IF
-                EXPRESSION_EQUAL - TYPE_BOOLEAN
-                    DATA_CHARACTER - TYPE_INTEGER - content: a
-                    VARIABLE - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: i
-                BLOCK
-
-
-0
-define void @main() {
+define void main() {
 }
 
 

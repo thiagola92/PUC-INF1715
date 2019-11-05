@@ -63,7 +63,7 @@ void code_define_function(Node* define_function) {
   char* params_declarations = "";
   int* id = initialize_id();
 
-  define_function->id = id_string(id);
+  define_function->id = concat_strings("@", name);
   
   switch(childs) {
     case 4:
@@ -87,7 +87,7 @@ void code_define_function(Node* define_function) {
 
   block = code_block(id, define_function->content.n[childs - 1]);
 
-  print_with_indentation(0, "define %s @%s(%s) {\n%s%s}\n", type, name, params, params_declarations, block);
+  print_with_indentation(0, "define %s %s(%s) {\n%s%s}\n", type, name, params, params_declarations, block);
 }
 
 char* code_identifier(Node* identifier) {
@@ -194,37 +194,95 @@ char* code_parameter_declaration_list(int* id, Node* parameter_list) {
   char* param_list = "";
 
   for(int i = 0; i < parameter_list->number_of_childs; i++) {
-    char* type = code_parameter_declaration(id, parameter_list->content.n[i]);
-    param_list = concat_strings(param_list, type);
+    char* param = code_parameter_declaration(id, parameter_list->content.n[i]);
+    param_list = concat_strings(param_list, param);
   }
 
   return param_list;
 }
 
 char* code_parameter_declaration(int* id, Node* parameter) {
+  char* _id_ = id_local(id);
   char* type = code_variable_type(parameter->content.n[1]);
-  char* declaration = concat_strings("  %", id_string(id));
+  char* declaration = concat_strings("  ", _id_);
   declaration = concat_strings(declaration, " = alloca ");
   declaration = concat_strings(declaration, type);
   declaration = concat_strings(declaration, "\n");
+
+  parameter->id = concat_strings("  %", _id_);
+
   return declaration;
 }
 
 char* code_block(int* id, Node* block) {
-  return "";
+  char* block_content = "";
+
+  for(int i = 0; i < block->number_of_childs; i++) {
+    switch(block->content.n[i]->tag) {
+      case VARIABLE_LIST:
+        block_content = code_variable_list_block(id, block->content.n[i]);
+        break;
+      case DEFINE_VARIABLE:
+        // code_variable(block->content.n[i]);
+        break;
+      case COMMAND_LIST:
+        // code_command_list(block->content.n[i]);
+        break;
+      case IF:
+      case WHILE:
+      case ASSIGNMENT:
+      case RETURN:
+      case PRINT:
+      case FUNCTION_CALL:
+        // code_command(block->content.n[i]);
+        break;
+      default:
+        throw_code_error("invalid block");
+        return NULL;
+    }
+  }
+
+  return block_content;
+}
+
+char* code_variable_list_block(int* id, Node* variable_list) {
+  char* var_list = "";
+
+  for(int i = 0; i < variable_list->number_of_childs; i++) {
+    char* var = code_define_variable_block(id, variable_list->content.n[i]);
+    var_list = concat_strings(var_list, var);
+  }
+
+  return var_list;
+}
+
+char* code_define_variable_block(int* id, Node* define_variable) {
+  char* _id_ = id_local(id);
+  char* type = code_variable_type(define_variable->content.n[1]);
+  char* var = concat_strings("  ", _id_);
+  var = concat_strings(var, " = alloca ");
+  var = concat_strings(var, type);
+  var = concat_strings(var, "\n");
+
+  define_variable->id = _id_;
+
+  return var;
 }
 
 int* initialize_id() {
   int* id = (int*)safe_malloc(sizeof(int));
-  *id = 0;
+  *id = 1;
 
   return id;
+}
+
+char* id_local(int* id) {
+  return concat_strings("%", id_string(id));
 }
 
 char* id_string(int* id) {
   char* str = (char*)safe_malloc(sizeof(char) * 64);
 
-  printf("\n%d\n", *id);
   sprintf(str, "%d", *id);
   (*id)++;
 

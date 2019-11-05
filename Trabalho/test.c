@@ -219,8 +219,8 @@ int test(const char* path) {
   start_binding(__root__);
   start_typing(__root__);
 
-  print_tree(__root__, 0);
-  printf("\n\n");
+  // print_tree(__root__, 0);
+  // printf("\n\n");
   
   start_coding(__root__);
   printf("\n\n");

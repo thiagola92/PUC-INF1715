@@ -1,152 +1,30 @@
-
-DEFINE_LIST
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-        PARAMETER - TYPE_BOOLEAN
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_BOOLEAN - TYPE_BOOLEAN
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-        PARAMETER_LIST
-            PARAMETER - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-            PARAMETER - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-        PARAMETER_LIST
-            PARAMETER - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-            PARAMETER - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
-        PARAMETER_LIST
-            PARAMETER - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-            PARAMETER - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-            PARAMETER - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-        BLOCK
-            VARIABLE_LIST
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-            COMMAND_LIST
-                FUNCTION_CALL
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-                FUNCTION_CALL
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-                    VARIABLE - TYPE_BOOLEAN
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                FUNCTION_CALL
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-                    EXPRESSION_LIST
-                        VARIABLE - TYPE_BOOLEAN
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                        VARIABLE - TYPE_BOOLEAN
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                FUNCTION_CALL
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
-                    EXPRESSION_LIST
-                        VARIABLE - TYPE_BOOLEAN
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                        VARIABLE - TYPE_BOOLEAN
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                        VARIABLE - TYPE_BOOLEAN
-                            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-
-
-0
-define void @first() {
+define void first() {
 }
 
-
-0
-
-1
-
-2
-define void @second(i1) {
+define void second(i1) {
   %2 = alloca i1
 }
 
-
-0
-
-1
-
-2
-
-3
-
-4
-define void @third(i1, i1) {
+define void third(i1, i1) {
   %3 = alloca i1
   %4 = alloca i1
 }
 
-
-0
-
-1
-
-2
-
-3
-
-4
-define void @third(i1, i1) {
+define void third(i1, i1) {
   %3 = alloca i1
   %4 = alloca i1
 }
 
-
-0
-
-1
-
-2
-
-3
-
-4
-
-5
-
-6
-define void @fourth(i1, i1, i1) {
+define void fourth(i1, i1, i1) {
   %4 = alloca i1
   %5 = alloca i1
   %6 = alloca i1
 }
 
-
-0
-define void @main() {
+define void main() {
+  %1 = alloca i1
+  %2 = alloca i1
+  %3 = alloca i1
 }
 
 

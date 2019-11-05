@@ -1,34 +1,4 @@
-
-DEFINE_FUNCTION
-    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-    BLOCK
-        DEFINE_VARIABLE - TYPE_ARRAY - TYPE_FLOAT
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_ARRAY - TYPE_FLOAT
-                TYPE_FLOAT - TYPE_FLOAT
-        COMMAND_LIST
-            ASSIGNMENT - TYPE_ARRAY - TYPE_FLOAT
-                VARIABLE - TYPE_ARRAY - TYPE_FLOAT
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                NEW_ARRAY - TYPE_ARRAY - TYPE_FLOAT
-                    TYPE_FLOAT - TYPE_FLOAT
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            IF
-                EXPRESSION_EQUAL - TYPE_BOOLEAN
-                    EXPRESSION_CAST - TYPE_FLOAT
-                        ARRAY_POSITION - TYPE_FLOAT
-                            VARIABLE - TYPE_ARRAY - TYPE_FLOAT
-                                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                            DATA_INTEGER - TYPE_INTEGER - content: 0
-                        TYPE_FLOAT - TYPE_FLOAT
-                    EXPRESSION_CAST - TYPE_FLOAT
-                        DATA_CHARACTER - TYPE_INTEGER - content: a
-                        TYPE_FLOAT - TYPE_FLOAT
-                BLOCK
-
-
-0
-define void @main() {
+define void main() {
 }
 
 

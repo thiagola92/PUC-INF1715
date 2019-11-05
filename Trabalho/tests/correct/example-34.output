@@ -1,18 +1,4 @@
-
-DEFINE_FUNCTION
-    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-    BLOCK
-        DEFINE_VARIABLE - TYPE_INTEGER
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            TYPE_INTEGER - TYPE_INTEGER
-        ASSIGNMENT - TYPE_INTEGER
-            VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-            DATA_CHARACTER - TYPE_INTEGER - content: a
-
-
-0
-define void @main() {
+define void main() {
 }
 
 

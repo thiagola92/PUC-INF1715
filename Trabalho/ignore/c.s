@@ -135,6 +135,43 @@ nome13:                                 # @nome13
 	.size	nome13, .Lfunc_end6-nome13
 	.cfi_endproc
                                         # -- End function
+	.globl	nome14                  # -- Begin function nome14
+	.p2align	4, 0x90
+	.type	nome14,@function
+nome14:                                 # @nome14
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end7:
+	.size	nome14, .Lfunc_end7-nome14
+	.cfi_endproc
+                                        # -- End function
+	.globl	nome15                  # -- Begin function nome15
+	.p2align	4, 0x90
+	.type	nome15,@function
+nome15:                                 # @nome15
+	.cfi_startproc
+# %bb.0:
+	pushq	%rbp
+	.cfi_def_cfa_offset 16
+	.cfi_offset %rbp, -16
+	movq	%rsp, %rbp
+	.cfi_def_cfa_register %rbp
+	movl	%edi, -4(%rbp)
+	popq	%rbp
+	.cfi_def_cfa %rsp, 8
+	retq
+.Lfunc_end8:
+	.size	nome15, .Lfunc_end8-nome15
+	.cfi_endproc
+                                        # -- End function
 	.type	nome0,@object           # @nome0
 	.data
 	.globl	nome0

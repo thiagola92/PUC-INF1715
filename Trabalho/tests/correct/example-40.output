@@ -1,20 +1,5 @@
-
-DEFINE_LIST
-    DEFINE_VARIABLE - TYPE_CHARACTER
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-        TYPE_CHARACTER - TYPE_CHARACTER
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-        BLOCK
-            ASSIGNMENT - TYPE_CHARACTER
-                VARIABLE - TYPE_CHARACTER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                DATA_INTEGER - TYPE_CHARACTER - content: 1
-
 @c = global i8 0
-
-0
-define void @main() {
+define void main() {
 }
 
 

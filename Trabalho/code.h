@@ -30,8 +30,12 @@ char* code_parameter_declaration(int* id, Node* parameter);
 
 char* code_block(int* id, Node* block);
 
+char* code_variable_list_block(int* id, Node* variable_list);
+char* code_define_variable_block(int* id, Node* define_variable);
+
 int* initialize_id();
 char* id_string(int* id);
+char* id_local(int* id);
 
 char* concat_strings(char* string_1, char* string_2);
 

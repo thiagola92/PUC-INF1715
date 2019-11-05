@@ -1,93 +1,30 @@
-
-DEFINE_LIST
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-        BLOCK
-            DEFINE_VARIABLE - TYPE_BOOLEAN
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                TYPE_BOOLEAN - TYPE_BOOLEAN
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: second
-        BLOCK
-            VARIABLE_LIST
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: third
-        BLOCK
-            VARIABLE_LIST
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fourth
-        BLOCK
-            VARIABLE_LIST
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fifth
-        BLOCK
-            VARIABLE_LIST
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: a
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: b
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: d
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-                DEFINE_VARIABLE - TYPE_BOOLEAN
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: e
-                    TYPE_BOOLEAN - TYPE_BOOLEAN
-
-
-0
-define void @first() {
+define void first() {
 }
 
-
-0
-define void @second() {
+define void second() {
+  %1 = alloca i1
+  %2 = alloca i1
 }
 
-
-0
-define void @third() {
+define void third() {
+  %1 = alloca i1
+  %2 = alloca i1
+  %3 = alloca i1
 }
 
-
-0
-define void @fourth() {
+define void fourth() {
+  %1 = alloca i1
+  %2 = alloca i1
+  %3 = alloca i1
+  %4 = alloca i1
 }
 
-
-0
-define void @fifth() {
+define void fifth() {
+  %1 = alloca i1
+  %2 = alloca i1
+  %3 = alloca i1
+  %4 = alloca i1
+  %5 = alloca i1
 }
 
 

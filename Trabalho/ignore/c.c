@@ -41,3 +41,19 @@ void nome14() {
     int a;
   }
 }
+
+void nome15(int a) {
+
+}
+
+void nome16() {
+  int a = 16;
+}
+
+void nome17(int a) {
+  int b;
+}
+
+void nome18(int a) {
+  int b = 1;
+}

@@ -1,42 +1,8 @@
-
-DEFINE_LIST
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-        PARAMETER - TYPE_INTEGER
-            IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: y
-            TYPE_INTEGER - TYPE_INTEGER
-        BLOCK
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-        BLOCK
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
-                TYPE_INTEGER - TYPE_INTEGER
-            COMMAND_LIST
-                ASSIGNMENT - TYPE_INTEGER
-                    VARIABLE - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                FUNCTION_CALL
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: first
-                    VARIABLE - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x
-
-
-0
-
-1
-
-2
-define void @first(i32) {
+define void first(i32) {
   %2 = alloca i32
 }
 
-
-0
-define void @main() {
+define void main() {
 }
 
 

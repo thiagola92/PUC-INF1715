@@ -1,198 +1,21 @@
-
-DEFINE_FUNCTION
-    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-    BLOCK
-        VARIABLE_LIST
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x4
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x5
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x6
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x7
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x8
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x9
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x10
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x11
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x12
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x13
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x14
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x15
-                TYPE_INTEGER - TYPE_INTEGER
-            DEFINE_VARIABLE - TYPE_INTEGER
-                IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
-                TYPE_INTEGER - TYPE_INTEGER
-        COMMAND_LIST
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x1
-                EXPRESSION_ADD - TYPE_INTEGER
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x2
-                EXPRESSION_SUB - TYPE_INTEGER
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x3
-                EXPRESSION_MULT - TYPE_INTEGER
-                    EXPRESSION_MULT - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x4
-                EXPRESSION_DIV - TYPE_INTEGER
-                    EXPRESSION_DIV - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x5
-                EXPRESSION_SUB - TYPE_INTEGER
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x6
-                EXPRESSION_ADD - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_MULT - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x7
-                EXPRESSION_ADD - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_DIV - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x8
-                EXPRESSION_ADD - TYPE_INTEGER
-                    EXPRESSION_SUB - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x9
-                EXPRESSION_ADD - TYPE_INTEGER
-                    EXPRESSION_MULT - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x10
-                EXPRESSION_ADD - TYPE_INTEGER
-                    EXPRESSION_DIV - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x11
-                EXPRESSION_ADD - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        EXPRESSION_ADD - TYPE_INTEGER
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x12
-                EXPRESSION_SUB - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        EXPRESSION_ADD - TYPE_INTEGER
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x13
-                EXPRESSION_MULT - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        EXPRESSION_ADD - TYPE_INTEGER
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x14
-                EXPRESSION_DIV - TYPE_INTEGER
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-                    EXPRESSION_ADD - TYPE_INTEGER
-                        EXPRESSION_ADD - TYPE_INTEGER
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                            DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x15
-                EXPRESSION_MULT - TYPE_INTEGER
-                    EXPRESSION_DIV - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-            ASSIGNMENT - TYPE_INTEGER
-                VARIABLE - TYPE_INTEGER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: x16
-                EXPRESSION_DIV - TYPE_INTEGER
-                    EXPRESSION_MULT - TYPE_INTEGER
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                        DATA_INTEGER - TYPE_INTEGER - content: 1
-                    DATA_INTEGER - TYPE_INTEGER - content: 1
-
-
-0
-define void @main() {
-}
+define void main() {
+  %1 = alloca i32
+  %2 = alloca i32
+  %3 = alloca i32
+  %4 = alloca i32
+Q  %5 = alloca i32
+  %6 = alloca i32
+  %7 = alloca i32
+  %8 = alloca i32
+  %9 = alloca i32
+  %10 = alloca i32
+  %11 = alloca i32
+  %12 = alloca i32
+  %13 = alloca i32
+  %14 = alloca i32
+  %15 = alloca i32
+  %16 = alloca i32
+}
 
 
 

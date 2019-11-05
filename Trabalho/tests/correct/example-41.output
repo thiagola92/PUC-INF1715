@@ -1,34 +1,8 @@
-
-DEFINE_LIST
-    DEFINE_VARIABLE - TYPE_CHARACTER
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-        TYPE_CHARACTER - TYPE_CHARACTER
-    DEFINE_FUNCTION - TYPE_INTEGER
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
-        TYPE_INTEGER
-        BLOCK
-            RETURN - TYPE_INTEGER
-                DATA_CHARACTER - TYPE_CHARACTER - content: a
-    DEFINE_FUNCTION
-        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: main
-        BLOCK
-            ASSIGNMENT - TYPE_CHARACTER
-                VARIABLE - TYPE_CHARACTER
-                    IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: c
-                EXPRESSION_ADD - TYPE_CHARACTER
-                    DATA_CHARACTER - TYPE_CHARACTER - content: b
-                    FUNCTION_CALL - TYPE_INTEGER
-                        IDENTIFIER - TYPE_ARRAY - TYPE_CHARACTER - content: fn
-
 @c = global i8 0
-
-0
-define i32 @fn() {
+define i32 fn() {
 }
 
-
-0
-define void @main() {
+define void main() {
 }
 
 
