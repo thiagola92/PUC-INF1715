@@ -3,7 +3,7 @@ define void @main() {
   %2 = alloca i32
   %3 = alloca i32
   %4 = alloca i32
-Q  %5 = alloca i32
+  %5 = alloca i32
   %6 = alloca i32
   %7 = alloca i32
   %8 = alloca i32
@@ -15,7 +15,7 @@ Q  %5 = alloca i32
   %14 = alloca i32
   %15 = alloca i32
   %16 = alloca i32
-}
+}
 
 
 

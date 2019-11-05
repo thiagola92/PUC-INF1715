@@ -7,7 +7,7 @@ define void @main() {
   %6 = alloca i1
   %7 = alloca i1
   %8 = alloca i1
-Q  %9 = alloca i1
+  %9 = alloca i1
   %10 = alloca i1
   %11 = alloca i1
   %12 = alloca i1
@@ -15,7 +15,7 @@ Q  %9 = alloca i1
   %14 = alloca i1
   %15 = alloca i1
   %16 = alloca i1
-}
+}
 
 
 

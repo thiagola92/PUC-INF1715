@@ -1,4 +1,5 @@
 define void @first() {
+  %1 = alloca i1
 }
 
 define void @second() {
