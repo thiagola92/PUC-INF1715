@@ -1,22 +1,59 @@
 	.text
 	.file	"c.c"
-	.globl	nome                    # -- Begin function nome
+	.globl	first                   # -- Begin function first
 	.p2align	4, 0x90
-	.type	nome,@function
-nome:                                   # @nome
+	.type	first,@function
+first:                                  # @first
 	.cfi_startproc
 # %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	movl	%edi, -8(%rbp)
-	movl	%esi, -4(%rbp)
-	popq	%rbp
 	retq
 .Lfunc_end0:
-	.size	nome, .Lfunc_end0-nome
+	.size	first, .Lfunc_end0-first
+	.cfi_endproc
+                                        # -- End function
+	.globl	second                  # -- Begin function second
+	.p2align	4, 0x90
+	.type	second,@function
+second:                                 # @second
+	.cfi_startproc
+# %bb.0:
+	andl	$1, %edi
+	movb	%dil, -1(%rsp)
+	retq
+.Lfunc_end1:
+	.size	second, .Lfunc_end1-second
+	.cfi_endproc
+                                        # -- End function
+	.globl	third                   # -- Begin function third
+	.p2align	4, 0x90
+	.type	third,@function
+third:                                  # @third
+	.cfi_startproc
+# %bb.0:
+	andl	$1, %edi
+	movb	%dil, -1(%rsp)
+	andl	$1, %esi
+	movb	%sil, -2(%rsp)
+	retq
+.Lfunc_end2:
+	.size	third, .Lfunc_end2-third
+	.cfi_endproc
+                                        # -- End function
+	.globl	fourth                  # -- Begin function fourth
+	.p2align	4, 0x90
+	.type	fourth,@function
+fourth:                                 # @fourth
+	.cfi_startproc
+# %bb.0:
+	andl	$1, %edi
+	movb	%dil, -1(%rsp)
+	andl	$1, %esi
+	movb	%sil, -2(%rsp)
+	andl	$1, %edx
+	movb	%dl, -3(%rsp)
+	retq
+.Lfunc_end3:
+	.size	fourth, .Lfunc_end3-fourth
 	.cfi_endproc
                                         # -- End function
 

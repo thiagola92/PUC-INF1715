@@ -28,15 +28,36 @@ void* safe_realloc(void* pointer, size_t size) {
   return NULL;
 }
 
-void print_with_indentation(int indentation, const char* template, ...) {
-  va_list list;
-  va_start(list, template);
+void safe_free(void* pointer) {
+  if(pointer != NULL)
+    free(pointer);
+}
 
-  for (int i = 0; i < indentation; i++)
-    printf("  ");
+/*
+Returns the string formated so you can print in the future.
+Use only the size needed to hold the string.
 
-  vprintf(template, list);
-  puts("");
+Example:
+char* str = format_string("%s = alloca %s\n", id, type);
+char* str = format_string("store %s %s, %s* %s\n", type, id, type, id);
+*/
+char* format_string(char* format, ...) {
+  int size;
+  char* str;
 
-  va_end(list);
+  va_list arguments;
+  va_list backup_arguments;
+
+  va_start(arguments, format);
+  va_copy(backup_arguments, arguments);
+
+  size = vsnprintf(NULL, 0, format, arguments);
+  size = size + 1;
+
+  str = (char*)malloc(sizeof(char) * size);
+  vsnprintf(str, size, format, backup_arguments);
+
+  va_end(arguments);
+
+  return str;
 }

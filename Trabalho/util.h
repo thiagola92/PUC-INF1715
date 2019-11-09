@@ -12,7 +12,8 @@ void throw_malloc_error();
 
 void* safe_malloc(size_t size);
 void* safe_realloc(void* pointer, size_t size);
+void safe_free(void* pointer);
 
-void print_with_indentation(int indentation, const char* template, ...);
+char* format_string(char* format, ...);
 
 #endif
