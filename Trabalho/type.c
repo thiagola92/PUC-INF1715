@@ -116,7 +116,7 @@ void type_define_function_three_childs(Node* define_function) {
     case TYPE_INTEGER:
     case TYPE_FLOAT:
       type_variable_type(define_function->content.n[1]);
-      define_function->type = define_function->content.n[1]->type;
+      define_function->type = define_function->content.n[1];
       break;
     default:
       throw_type_error("invalid child from function definition");
@@ -269,7 +269,8 @@ void type_return(Node* command_return) {
 
   type_expression(expression);
   if_need_character_and_is_integer(definition, expression);
-  throw_type_error_if_not(definition->type, expression->type->tag, "invalid return type");
+  if(is_type_equal(definition, expression) == false)
+    throw_type_error("invalid return type");
 
   command_return->type = definition->type;
 }

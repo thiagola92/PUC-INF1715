@@ -1,0 +1,4 @@
+nome() : [char] {
+	a : [char];
+	return a;
+}

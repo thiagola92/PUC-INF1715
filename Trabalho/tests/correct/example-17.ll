@@ -1,8 +1,9 @@
 define void @main() {
-  %1 = alloca i1
-  %2 = alloca i1
-  %3 = alloca i1
+  %1 = alloca i32
+  %2 = alloca i32
+  %3 = alloca i32
   ret void
 }
+
 
 

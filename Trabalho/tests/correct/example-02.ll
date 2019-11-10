@@ -1,8 +1,8 @@
-@aaa = global i1 false
-@bbb = global i8 0
+@aaa = global i32 0
+@bbb = global i32 0
 @ccc = global i32 0
 @ddd = global float 0.000000e+00
-@eee = global i8* null
-@fff = global i8** null
+@eee = global i32* null
+@fff = global i32** null
 
 
