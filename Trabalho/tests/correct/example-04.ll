@@ -1,19 +1,16 @@
 define void @first() {
   %1 = alloca i1
-
   ret void
 }
 define void @second() {
   %1 = alloca i1
   %2 = alloca i1
-
   ret void
 }
 define void @third() {
   %1 = alloca i1
   %2 = alloca i1
   %3 = alloca i1
-
   ret void
 }
 define void @fourth() {
@@ -21,7 +18,6 @@ define void @fourth() {
   %2 = alloca i1
   %3 = alloca i1
   %4 = alloca i1
-
   ret void
 }
 define void @fifth() {
@@ -30,7 +26,6 @@ define void @fifth() {
   %3 = alloca i1
   %4 = alloca i1
   %5 = alloca i1
-
   ret void
 }
 

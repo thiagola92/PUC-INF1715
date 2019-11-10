@@ -11,8 +11,8 @@ nome:                                   # @nome
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	movl	%edi, -8(%rbp)
-	movl	%esi, -4(%rbp)
+	movl	%edi, -4(%rbp)
+	movl	-4(%rbp), %eax
 	popq	%rbp
 	retq
 .Lfunc_end0:

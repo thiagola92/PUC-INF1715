@@ -5,7 +5,6 @@ define void @main() {
   %4 = alloca float
   %5 = alloca i1*
   %6 = alloca i8*
-
   ret void
 }
 

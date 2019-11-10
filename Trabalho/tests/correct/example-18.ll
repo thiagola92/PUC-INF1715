@@ -15,7 +15,6 @@ define void @main() {
   %14 = alloca i1
   %15 = alloca i1
   %16 = alloca i1
-
   ret void
 }
 

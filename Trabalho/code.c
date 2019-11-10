@@ -143,7 +143,8 @@ void code_define_global_function_4(Node* define_function) {
 
   define_function->content.n[3]->id = block_id;
 
-  printf("define %s %s(%s) {\n%s%s}\n", type, identifier, parameter_list, parameter_declarations, block);  
+  // every %s should finish with '\n', there is no need to put between them
+  printf("define %s %s(%s) {\n%s%s\n}\n", type, identifier, parameter_list, parameter_declarations, block);
 }
 
 void code_define_global_function_3(Node* define_function) {
@@ -171,7 +172,8 @@ void code_define_global_function_3_with_parameters(Node* define_function) {
 
   define_function->content.n[2]->id = block_id;
 
-  printf("define void %s(%s) {\n%s%s\n  ret void\n}\n", identifier, parameter_list, parameter_declarations, block);
+  // every %s should finish with '\n', there is no need to put between them
+  printf("define void %s(%s) {\n%s%s%s}\n", identifier, parameter_list, parameter_declarations, block, "  ret void\n");
 }
 
 void code_define_global_function_3_with_type(Node* define_function) {
@@ -190,7 +192,7 @@ void code_define_global_function_3_with_type(Node* define_function) {
 
   define_function->content.n[2]->id = block_id;
 
-  printf("define %s %s() {\n%s}\n", type, identifier, block);
+  printf("define %s %s() {\n%s\n}\n\n", type, identifier, block);
 }
 
 void code_define_global_function_2(Node* define_function) {
@@ -208,7 +210,8 @@ void code_define_global_function_2(Node* define_function) {
 
   define_function->content.n[1]->id = block_id;
 
-  printf("define void %s() {\n%s\n  ret void\n}\n", identifier, block);
+  // every %s should finish with '\n', there is no need to put between them
+  printf("define void %s() {\n%s%s}\n", identifier, block, "  ret void\n");
 }
 
 char* code_parameters(int* id, Node* parameters) {
@@ -404,19 +407,129 @@ char* code_command_list(int* id, Node* command_list) {
 char* code_command(int* id, Node* command) {
   switch(command->tag) {
     case IF:
+      return code_if(id, command);
       break;
     case WHILE:
+      return code_while(id, command);
       break;
     case ASSIGNMENT:
+      return code_assignment(id, command);
       break;
     case RETURN:
+      return code_return(id, command);
       break;
     case PRINT:
+      return code_print(id, command);
       break;
     case FUNCTION_CALL:
+      return code_function_call(id, command);
       break;
     default:
       throw_code_error("invalid command");
+      return NULL;
+  }
+}
+
+char* code_if(int* id, Node* if_command) {
+  return format_string("");
+}
+
+char* code_while(int* id, Node* while_command) {
+  return format_string("");
+}
+
+char* code_assignment(int* id, Node* assignment) {
+  return format_string("");
+}
+
+char* code_return(int* id, Node* return_command) {
+  if(return_command->number_of_childs == 0)
+    return format_string("  ret void\n");
+  return code_return_value(id, return_command);
+}
+
+char* code_return_value(int* id, Node* return_command) {
+  char* type = code_variable_type(return_command->definition->type);
+  char* expression = code_expression(id, return_command->content.n[0]);
+  char* return_code = format_string("  ret %s %s", type, expression);
+
+  safe_free(type);
+  safe_free(expression);
+
+  return return_code;
+}
+
+char* code_print(int* id, Node* print) {
+  return format_string("");
+}
+
+char* code_function_call(int* id, Node* function_call) {
+  return format_string("");
+}
+
+char* code_expression(int* id, Node* expression) {
+  switch(expression->tag) {
+    case EXPRESSION_OR:
+      break;
+    case EXPRESSION_AND:
+      break;
+    case EXPRESSION_EQUAL:
+      break;
+    case EXPRESSION_NOT_EQUAL:
+      break;
+    case EXPRESSION_GREATER:
+      break;
+    case EXPRESSION_GREATER_EQUAL:
+      break;
+    case EXPRESSION_LESS:
+      break;
+    case EXPRESSION_LESS_EQUAL:
+      break;
+    case EXPRESSION_SUB:
+      break;
+    case EXPRESSION_ADD:
+      break;
+    case EXPRESSION_DIV:
+      break;
+    case EXPRESSION_MULT:
+      break;
+    case EXPRESSION_CAST:
+      break;
+    case EXPRESSION_NEGATIVE:
+      break;
+    case EXPRESSION_NOT:
+      break;
+    case ARRAY_POSITION:
+      break;
+    case VARIABLE:
+      return format_string("%s", expression->definition->id);
+      break;
+    case FUNCTION_CALL:
+      break;
+    case NEW_ARRAY:
+      break;
+    case TYPE_ARRAY:
+      break;
+    case TYPE_BOOLEAN:
+      break;
+    case TYPE_CHARACTER:
+      break;
+    case TYPE_INTEGER:
+      break;
+    case TYPE_FLOAT:
+      break;
+    case DATA_BOOLEAN:
+    case DATA_CHARACTER:
+    case DATA_INTEGER:
+      return format_string("%d", expression->content.i);
+      break;
+    case DATA_FLOAT:
+      return format_string("%f", expression->content.f);
+      break;
+    case DATA_STRING:
+      break;
+    default:
+      throw_code_error("invalid expression");
       return NULL;
   }
   return format_string("");

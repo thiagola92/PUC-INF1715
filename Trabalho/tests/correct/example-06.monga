@@ -7,9 +7,6 @@ second(a : bool) {
 third(a : bool, b : bool) {
 }
 
-third(a : bool, b : bool) {
-}
-
 fourth(a : bool, b : bool, c : bool) {
 }
 

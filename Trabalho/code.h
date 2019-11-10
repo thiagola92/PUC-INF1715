@@ -42,6 +42,21 @@ char* code_commands(int* id, Node* commands);
 char* code_command_list(int* id, Node* command_list);
 char* code_command(int* id, Node* command);
 
+char* code_if(int* id, Node* if_command);
+
+char* code_while(int* id, Node* while_command);
+
+char* code_assignment(int* id, Node* assignment);
+
+char* code_return(int* id, Node* return_command);
+char* code_return_value(int* id, Node* return_command);
+
+char* code_print(int* id, Node* print);
+
+char* code_function_call(int* id, Node* function_call);
+
+char* code_expression(int* id, Node* expression);
+
 // UTILITY
 
 char* get_node_name(Node* node);

@@ -1,0 +1,6 @@
+nome(a : int) : int {
+	b : int;
+	b = a;
+
+	return b;
+}

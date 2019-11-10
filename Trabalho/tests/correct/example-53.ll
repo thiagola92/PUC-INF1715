@@ -21,7 +21,6 @@ define void @nome(i32, i32, i32) {
   %20 = alloca i32
   %21 = alloca i32
   %22 = alloca i32
-
   ret void
 }
 
