@@ -70,7 +70,7 @@ char* code_variable_type(Node* variable_type) {
       return format_string("%s", "i32");
       break;
     case TYPE_FLOAT:
-      return format_string("%s", "float*");
+      return format_string("%s", "float");
       break;
     case TYPE_ARRAY:
       type = code_variable_type(variable_type->type);
@@ -94,7 +94,7 @@ char* code_initial_value(Node* variable_type) {
       return "0";
       break;
     case TYPE_FLOAT:
-      return "0.0";
+      return "0.000000e+00";
       break;
     case TYPE_ARRAY:
       return "null";

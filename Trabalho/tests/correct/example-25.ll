@@ -2,11 +2,11 @@ define void @main() {
   %1 = alloca i1*
   %2 = alloca i8*
   %3 = alloca i32*
-  %4 = alloca float**
+  %4 = alloca float*
   %5 = alloca i1
   %6 = alloca i8
   %7 = alloca i32
-  %8 = alloca float*
+  %8 = alloca float
 
   ret void
 }

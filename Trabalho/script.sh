@@ -10,39 +10,41 @@ gcc $c_files -Wall -o compiler;
 
 echo "=============CORRECT CODE============="
 
-for file_input in tests/correct/*\.input; do
+for file_input in tests/correct/*\.monga; do
   file_name=$(basename "$file_input")
-  file_name=${file_name%\.input}
+  file_name=${file_name%\.monga}
     
   printf "$file_name: "
 
-  file_output=tests/correct/$file_name\.output
+  file_output=tests/correct/$file_name\.ll
   ./compiler $file_input > $file_output
   status=$?
 
   if [ $status -eq "0" ]; then
-    echo -e "no error"
+    echo "no compiling error, executing llc-6.0"
+    llc-6.0 $file_output
   else
-    echo -e "error, log in the output file"
+    echo "error, log in the output file"
   fi
 done
 
 echo "=============WRONG CODE============="
 
-for file_input in tests/wrong/*\.input; do
+for file_input in tests/wrong/*\.monga; do
   file_name=$(basename "$file_input")
-  file_name=${file_name%\.input}
+  file_name=${file_name%\.monga}
     
   printf "$file_name: "
 
-  file_output=tests/wrong/$file_name\.output
+  file_output=tests/wrong/$file_name\.ll
   ./compiler $file_input > $file_output
   status=$?
 
   if [ $status -eq "0" ]; then
-    echo -e "no error"
+    echo "no compiling error, executing llc-6.0"
+    llc-6.0 $file_output
   else
-    echo -e "error, log in the output file"
+    echo "error, log in the output file"
   fi
 done
 

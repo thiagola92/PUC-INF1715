@@ -3,33 +3,18 @@ source_filename = "c.c"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu"
 
+@e = global float 0.000000e+00, align 4
+@f = global float 1.000000e+00, align 4
+@d = common global float 0.000000e+00, align 4
+
 ; Function Attrs: noinline nounwind optnone uwtable
-define void @first() {
-
-  ret void
-}
-define void @second(i1) {
-  %2 = alloca i1
-  store i1 %0, i1* %2
-
-  ret void
-}
-define void @third(i1, i1) {
-  %3 = alloca i1
-  store i1 %0, i1* %3
-  %4 = alloca i1
-  store i1 %1, i1* %4
-
-  ret void
-}
-define void @fourth(i1, i1, i1) {
-  %4 = alloca i1
-  store i1 %0, i1* %4
-  %5 = alloca i1
-  store i1 %1, i1* %5
-  %6 = alloca i1
-  store i1 %2, i1* %6
-
+define void @nome(i32, i32) #0 {
+  %3 = alloca i32, align 4
+  %4 = alloca i32, align 4
+  %5 = alloca i32, align 4
+  %6 = alloca float, align 4
+  store i32 %0, i32* %3, align 4
+  store i32 %1, i32* %4, align 4
   ret void
 }
 
