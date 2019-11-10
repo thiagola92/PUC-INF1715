@@ -1,6 +1,6 @@
 @c = global i8 0
 define i32 @fn() {
-  ret i32 97
+  ret 97 i32
 }
 
 define void @main() {

@@ -6,6 +6,11 @@
 
 #include"node.h"
 
+typedef struct TO_DO {
+  char* before;
+  char* now;
+} to_do;
+
 void throw_code_error(const char* error);
 
 void start_coding(Node* program);
@@ -56,6 +61,10 @@ char* code_print(int* id, Node* print);
 char* code_function_call(int* id, Node* function_call);
 
 char* code_expression(int* id, Node* expression);
+
+char* code_expression_variable(int* id, Node* variable);
+
+char* code_expression_integer(int* id, Node* integer);
 
 // UTILITY
 

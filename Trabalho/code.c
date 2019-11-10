@@ -451,7 +451,7 @@ char* code_return(int* id, Node* return_command) {
 char* code_return_value(int* id, Node* return_command) {
   char* type = code_variable_type(return_command->definition->type);
   char* expression = code_expression(id, return_command->content.n[0]);
-  char* return_code = format_string("  ret %s %s", type, expression);
+  char* return_code = format_string("  ret %s %s", expression, type, expression);
 
   safe_free(type);
   safe_free(expression);
@@ -502,7 +502,7 @@ char* code_expression(int* id, Node* expression) {
     case ARRAY_POSITION:
       break;
     case VARIABLE:
-      return format_string("%s", expression->definition->id);
+      return code_expression_variable(id, expression);
       break;
     case FUNCTION_CALL:
       break;
@@ -533,6 +533,17 @@ char* code_expression(int* id, Node* expression) {
       return NULL;
   }
   return format_string("");
+}
+
+char* code_expression_variable(int* id, Node* variable) {
+  char* identifier = format_string("%%%d", next_id(id));
+  char* type = code_variable_type(variable->definition->content.n[1]);
+  char* load = format_string("  %s = load %s, %s* %s\n", identifier, type, type, variable->definition->id);
+
+  safe_free(identifier);
+  safe_free(type);
+
+  return load;
 }
 
 /************************* UTILITY *************************/

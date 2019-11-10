@@ -1,5 +1,5 @@
 define i32 @fn() {
-  ret i32 99
+  ret 99 i32
 }
 
 define void @main() {
