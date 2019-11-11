@@ -54,7 +54,7 @@ char* format_string(char* format, ...) {
   size = vsnprintf(NULL, 0, format, arguments);
   size = size + 1;
 
-  str = (char*)malloc(sizeof(char) * size);
+  str = (char*)safe_malloc(sizeof(char) * size);
   vsnprintf(str, size, format, backup_arguments);
 
   va_end(arguments);

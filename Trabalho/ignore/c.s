@@ -11,11 +11,18 @@ nome:                                   # @nome
 	.cfi_offset %rbp, -16
 	movq	%rsp, %rbp
 	.cfi_def_cfa_register %rbp
-	leaq	-16(%rbp), %rax
-	movl	$99, -16(%rbp)
-	movl	$111, -12(%rbp)
-	movl	$101, -8(%rbp)
-	movl	$0, -4(%rbp)
+	movl	%edi, -12(%rbp)
+	movl	%esi, -8(%rbp)
+	movl	-12(%rbp), %eax
+	cmpl	-8(%rbp), %eax
+	jge	.LBB0_2
+# %bb.1:
+	movl	$1, -4(%rbp)
+	jmp	.LBB0_3
+.LBB0_2:
+	movl	$2, -4(%rbp)
+.LBB0_3:
+	movl	-4(%rbp), %eax
 	popq	%rbp
 	retq
 .Lfunc_end0:

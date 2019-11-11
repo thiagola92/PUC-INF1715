@@ -1,46 +1,50 @@
 define i32 @first() {
-  %1 = alloca i32
-  store i32 1, i32* %1
-  %2 = load i32, i32* %1
-  ret i32 %2
+  %label1 = alloca i32
+  store i32 1, i32* %label1
+  %label2 = load i32, i32* %label1
+  ret i32 %label2
 }
 
 define i32 @second(i32) {
-  %2 = alloca i32
-  store i32 %0, i32* %2
-  %3 = alloca i32
-  store i32 1, i32* %3
-  %4 = load i32, i32* %3
-  ret i32 %4
+  %label2 = alloca i32
+  store i32 %0, i32* %label2
+  %label3 = alloca i32
+  store i32 1, i32* %label3
+  %label4 = load i32, i32* %label3
+  ret i32 %label4
 }
 
 define i32 @third(i32, i32) {
-  %3 = alloca i32
-  store i32 %0, i32* %3
-  %4 = alloca i32
-  store i32 %1, i32* %4
-  %5 = alloca i32
-  store i32 97, i32* %5
-  %6 = load i32, i32* %5
-  ret i32 %6
+  %label3 = alloca i32
+  store i32 %0, i32* %label3
+  %label4 = alloca i32
+  store i32 %1, i32* %label4
+  %label5 = alloca i32
+  store i32 97, i32* %label5
+  %label6 = load i32, i32* %label5
+  ret i32 %label6
 }
 
 define float @fourth(i32, i32) {
-  %3 = alloca i32
-  store i32 %0, i32* %3
-  %4 = alloca i32
-  store i32 %1, i32* %4
-  %5 = alloca float
-  store float 1.000000, float* %5
-  %6 = load float, float* %5
-  ret float %6
+  %label3 = alloca i32
+  store i32 %0, i32* %label3
+  %label4 = alloca i32
+  store i32 %1, i32* %label4
+  %label5 = alloca float
+  store float 1.000000, float* %label5
+  %label6 = load float, float* %label5
+  ret float %label6
 }
 
 define void @main() {
-  %1 = alloca i32
-  %2 = alloca i32
-  %3 = alloca i32
-  %4 = alloca float
+  %label1 = alloca i32
+  %label2 = alloca i32
+  %label3 = alloca i32
+  %label4 = alloca float
+  store i32 (null), i32* %label1
+  store i32 (null), i32* %label2
+  store i32 (null), i32* %label3
+  store float (null), float* %label4
   ret void
 }
 

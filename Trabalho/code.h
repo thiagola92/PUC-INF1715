@@ -44,6 +44,10 @@ void code_command_list(int* id, Node* command_list);
 void code_command(int* id, Node* command);
 
 void code_if(int* id, Node* if_command);
+void code_if_no_else(int* id, Node* if_command);
+void code_if_else(int* id, Node* if_else);
+
+void code_condition_compare(Node* condition, char* condition_identifier);
 
 void code_while(int* id, Node* while_command);
 
@@ -58,6 +62,12 @@ void code_function_call(int* id, Node* function_call);
 
 void code_expression(int* id, Node* expression);
 
+void code_expression_compare(int* id, Node* compare, char* operator);
+void code_expression_compare_values(int* id, Node* compare, char* type, char* operator);
+
+void code_expression_calcule(int* id, Node* calcule, char* operator);
+void code_expression_calcule_values(int* id, Node* calcule, char* operator);
+
 void code_expression_variable(int* id, Node* variable);
 
 void code_expression_integer(int* id, Node* integer);
@@ -69,5 +79,6 @@ void code_expression_string(int* id, Node* string);
 char* get_node_name(Node* node);
 int* initialize_id();
 int next_id(int* id);
+char* label_name(char* label);
 
 #endif
