@@ -361,7 +361,6 @@ void code_if_no_else(int* id, Node* if_command) {
   code_expression(id, if_command->content.n[0]);
 
   condition_identifier = format_string("%%label%d", next_id(id));
-
   code_condition_compare(if_command->content.n[0], condition_identifier);
 
   if_true_label = format_string("%%label%d", next_id(id));
@@ -384,7 +383,6 @@ void code_if_else(int* id, Node* if_else) {
   code_expression(id, if_else->content.n[0]);
 
   condition_identifier = format_string("%%label%d", next_id(id));
-
   code_condition_compare(if_else->content.n[0], condition_identifier);
 
   if_true_label = format_string("%%label%d", next_id(id));
@@ -411,7 +409,29 @@ void code_condition_compare(Node* condition, char* condition_identifier) {
 }
 
 void code_while(int* id, Node* while_command) {
+  char* condition_identifier;
+  char* while_start_label;
+  char* while_true_label;
+  char* while_end_label;
 
+  while_start_label = format_string("%%label%d", next_id(id));
+  printf("  br label %s\n\n", while_start_label);
+  printf("  %s:\n", label_name(while_start_label));
+
+  code_expression(id, while_command->content.n[0]);
+
+  condition_identifier = format_string("%%label%d", next_id(id));
+  code_condition_compare(while_command->content.n[0], condition_identifier);
+
+  while_true_label = format_string("%%label%d", next_id(id));
+  while_end_label = format_string("%%label%d", next_id(id));
+
+  printf("  br i1 %s, label %s, label %s\n\n", condition_identifier, while_true_label, while_end_label);
+  printf("  %s:\n", label_name(while_true_label));
+  code_block(id, while_command->content.n[1]);
+  printf("  br label %s\n\n", while_start_label);
+
+  printf("  %s:\n", label_name(while_end_label));
 }
 
 void code_assignment(int* id, Node* assignment) {

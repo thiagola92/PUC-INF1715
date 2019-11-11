@@ -2,7 +2,11 @@
 #include<stdio.h>
 
 int nome(int a, int b) {
-  if(a)
-    return 1;
-  return 2;
+  while(a) {
+    a = b;
+  }
+  while(b) {
+    b = a;
+  }
+  return a;
 }
