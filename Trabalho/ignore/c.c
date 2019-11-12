@@ -1,12 +1,16 @@
 #include<stdlib.h>
 #include<stdio.h>
 
-int nome(int a, int b) {
-  while(a) {
-    a = b;
-  }
-  while(b) {
-    b = a;
-  }
-  return a;
+void nome2(int a, int b) {
+  int c = a;
+}
+
+void nome1(int a) {
+  nome2(a, 2);
+}
+
+void nome() {
+  int a;
+  a = 97;
+  a = 97;
 }

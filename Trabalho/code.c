@@ -531,10 +531,10 @@ void code_expression(int* id, Node* expression) {
     case DATA_BOOLEAN:
     case DATA_CHARACTER:
     case DATA_INTEGER:
-      code_expression_integer(id, expression);
+      expression->id = format_string("%d", expression->content.i);
       break;
     case DATA_FLOAT:
-      code_expression_float(id, expression);
+      expression->id = format_string("%d", expression->content.f);
       break;
     case DATA_STRING:
       code_expression_string(id, expression);
@@ -616,28 +616,6 @@ void code_expression_variable(int* id, Node* variable) {
   printf("* %s\n", variable->definition->id);
 
   variable->id = identifier;
-}
-
-void code_expression_integer(int* id, Node* integer) {
-  char* alloca_id = format_string("%%label%d", next_id(id));
-  char* store_id = format_string("%%label%d", next_id(id));
-
-  printf("  %s = alloca i32\n", alloca_id);
-  printf("  store i32 %d, i32* %s\n", integer->content.i, alloca_id);
-  printf("  %s = load i32, i32* %s\n", store_id, alloca_id);
-
-  integer->id = store_id;
-}
-
-void code_expression_float(int* id, Node* float_exp) {
-  char* alloca_id = format_string("%%label%d", next_id(id));
-  char* store_id = format_string("%%label%d", next_id(id));
-
-  printf("  %s = alloca float\n", alloca_id);
-  printf("  store float %f, float* %s\n", float_exp->content.f, alloca_id);
-  printf("  %s = load float, float* %s\n", store_id, alloca_id);
-
-  float_exp->id = store_id;
 }
 
 void code_expression_string(int* id, Node* string) {

@@ -70,8 +70,6 @@ void code_expression_calcule_values(int* id, Node* calcule, char* operator);
 
 void code_expression_variable(int* id, Node* variable);
 
-void code_expression_integer(int* id, Node* integer);
-void code_expression_float(int* id, Node* float_expression);
 void code_expression_string(int* id, Node* string);
 
 // UTILITY

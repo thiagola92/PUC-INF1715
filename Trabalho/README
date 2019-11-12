@@ -3,7 +3,16 @@ Matricula: 1721629
 
 ===== OBSERVAÇÕES =====
 
-Trabalho incompleto  
+Faltando:
+  print
+  function call
+  and (x && y)
+  or (x || y)
+  cast (x as y)
+  negative (-x)
+  not (!x)
+  array position (x[i])
+  new array (new int[x])
 
 ===== ARQUIVOS =====
 
@@ -41,12 +50,12 @@ BASH
 bison -d monga.y;
 flex monga.l;
 gcc main.c test.c util.c lex.yy.c monga.tab.c node.c symbol_table.c binding.c type.c code.c -Wall -o executavel;
-./executavel tests/correct/example-01.input;
+./executavel tests/correct/example-01.monga;
 
 ===== EXECUTANDO ARQUIVOS DA PASTA DE TESTES =====
 
 bash script.sh;
 
-A saida dos arquivos aparecem no arquivo com extensão ".output"
+A saida dos arquivos aparecem no arquivo com extensão ".ll"
 
 

@@ -13,39 +13,33 @@ define void @main() {
   br label %label6
 
   label6:
-  %label7 = alloca i32
-  store i32 1, i32* %label7
-  %label8 = load i32, i32* %label7
-  %label9 = icmp eq i32 (null), %label8
-  %label10 = zext i1 %label9 to i32
-  %label11 = icmp eq i32 %label10, 1
-  br i1 %label11, label %label12, label %label13
+  %label7 = icmp eq i32 (null), 1
+  %label8 = zext i1 %label7 to i32
+  %label9 = icmp eq i32 %label8, 1
+  br i1 %label9, label %label10, label %label11
 
-  label12:
-  br label %label13
+  label10:
+  br label %label11
 
-  label13:
-  %label14 = alloca i32
-  store i32 0, i32* %label14
-  %label15 = load i32, i32* %label14
-  %label16 = icmp eq i32 (null), %label15
-  %label17 = zext i1 %label16 to i32
-  %label18 = icmp eq i32 %label17, 1
-  br i1 %label18, label %label19, label %label20
+  label11:
+  %label12 = icmp eq i32 (null), 0
+  %label13 = zext i1 %label12 to i32
+  %label14 = icmp eq i32 %label13, 1
+  br i1 %label14, label %label15, label %label16
 
-  label19:
-  br label %label20
+  label15:
+  br label %label16
+
+  label16:
+  %label17 = icmp eq i32 (null), (null)
+  %label18 = zext i1 %label17 to i32
+  %label19 = icmp eq i32 %label18, 1
+  br i1 %label19, label %label20, label %label21
 
   label20:
-  %label21 = icmp eq i32 (null), (null)
-  %label22 = zext i1 %label21 to i32
-  %label23 = icmp eq i32 %label22, 1
-  br i1 %label23, label %label24, label %label25
+  br label %label21
 
-  label24:
-  br label %label25
-
-  label25:
+  label21:
   ret void
 }
 
