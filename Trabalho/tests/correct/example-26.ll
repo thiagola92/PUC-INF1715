@@ -8,11 +8,12 @@ define void @main() {
   store i32 (null), i32* %label1
   store i32 (null), i32* %label1
   store i32 2, i32* %label2
-  store float 2.000000, float* %label3
-  %label5 = load i32, i32* %label2
+  %label5 = fptrunc double 2.000000 to float
+  store float %label5, float* %label3
   %label6 = load i32, i32* %label2
-  %label7 = add i32 %label5, %label6
-  store i32 %label7, i32* %label1
+  %label7 = load i32, i32* %label2
+  %label8 = add i32 %label6, %label7
+  store i32 %label8, i32* %label1
   store i32 (null), i32* %label1
   store i32 (null), i32* %label1
   store i32 (null), i32* %label1

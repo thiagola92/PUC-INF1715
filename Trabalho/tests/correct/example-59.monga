@@ -1,5 +1,4 @@
 nome() {
-	a : int;
-	a = 97;
-	a = 97;
+	a : float;
+	a = 0.1;
 }

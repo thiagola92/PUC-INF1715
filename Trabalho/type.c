@@ -268,7 +268,9 @@ void type_return(Node* command_return) {
   expression = command_return->content.n[0];
 
   type_expression(expression);
+  
   if_need_character_and_is_integer(definition, expression);
+
   if(is_type_equal(definition, expression) == false)
     throw_type_error("invalid return type");
 
@@ -326,7 +328,7 @@ void type_expression(Node* expression) {
     case DATA_BOOLEAN:
       break;
     case DATA_CHARACTER:
-      free(expression->type);
+      safe_free(expression->type);
       expression->type = malloc_node(TYPE_INTEGER);
       break;
     case DATA_INTEGER:
@@ -511,7 +513,7 @@ void cast_assigmnent(Node* assignment) {
   Node* left = assignment->content.n[0];
   Node* right = assignment->content.n[1];
 
-  if_need_character_and_is_integer(left,right);
+  if_need_character_and_is_integer(left, right);
 
   if(left->type->tag == TYPE_INTEGER && right->type->tag == TYPE_FLOAT)
     cast_floats_to_integers(assignment);
@@ -567,15 +569,11 @@ int is_cast_integer_to_float_needed(Node* e1, Node* e2) {
 }
 
 void if_chararacter_change_to_integer(Node* node) {
-  if(node->type->tag == TYPE_CHARACTER) {
-    free(node->type);
+  if(node->type->tag == TYPE_CHARACTER)
     node->type = malloc_node(TYPE_INTEGER);
-  }
 }
 
 void if_need_character_and_is_integer(Node* n1, Node* n2) {
-  if(n1->type->tag == TYPE_CHARACTER && n2->type->tag == TYPE_INTEGER) {
-    free(n2->type);
+  if(n1->type->tag == TYPE_CHARACTER && n2->type->tag == TYPE_INTEGER)
     n2->type = malloc_node(TYPE_CHARACTER);
-  }
 }

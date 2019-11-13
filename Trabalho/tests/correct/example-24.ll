@@ -21,7 +21,8 @@ define float @fourth(i32, i32) {
   store i32 %0, i32* %label3
   %label4 = alloca i32
   store i32 %1, i32* %label4
-  ret float 1.000000
+  %label5 = fptrunc double 1.000000 to float
+  ret float %label5
 }
 
 define void @main() {

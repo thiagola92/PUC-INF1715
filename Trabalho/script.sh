@@ -22,8 +22,8 @@ for file_input in tests/correct/*\.monga; do
 
   if [ $status -eq "0" ]; then
     echo "no compiling error, executing llc-6.0"
-    llc-6.0 $file_output
-    rm tests/correct/$file_name\.s
+    # llc-6.0 $file_output
+    # rm tests/correct/$file_name\.s
   else
     echo "error, log in the output file"
   fi
@@ -43,8 +43,8 @@ for file_input in tests/wrong/*\.monga; do
 
   if [ $status -eq "0" ]; then
     echo "no compiling error, executing llc-6.0"
-    llc-6.0 $file_output
-    rm tests/correct/$file_name\.s
+    # llc-6.0 $file_output
+    # rm tests/correct/$file_name\.s
   else
     echo "error, log in the output file"
   fi

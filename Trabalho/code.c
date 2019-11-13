@@ -608,7 +608,7 @@ void code_expression(int* id, Node* expression) {
       expression->id = format_string("%d", expression->content.i);
       break;
     case DATA_FLOAT:
-      expression->id = format_string("%f", expression->content.f);
+      code_expression_float(id, expression);
       break;
     case DATA_STRING:
       code_expression_string(id, expression);
@@ -681,15 +681,19 @@ void code_expression_calcule_values(int* id, Node* calcule, char* operator) {
 }
 
 void code_expression_variable(int* id, Node* variable) {
-  char* identifier = format_string("%%label%d", next_id(id));
+  variable->id = format_string("%%label%d", next_id(id));
 
-  printf("  %s = load ", identifier);
+  printf("  %s = load ", variable->id);
   code_variable_type(variable->definition->content.n[1]);
   printf(", ");
   code_variable_type(variable->definition->content.n[1]);
   printf("* %s\n", variable->definition->id);
+}
 
-  variable->id = identifier;
+void code_expression_float(int* id, Node* float_expression) {
+  float_expression->id = format_string("%%label%d", next_id(id));
+
+  printf("  %s = fptrunc double %f to float\n", float_expression->id, float_expression->content.f);
 }
 
 void code_expression_string(int* id, Node* string) {

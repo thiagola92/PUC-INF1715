@@ -1,7 +1,7 @@
 define void @nome() {
-  %label1 = alloca i32
-  store i32 97, i32* %label1
-  store i32 97, i32* %label1
+  %label1 = alloca float
+  %label2 = fptrunc double 0.100000 to float
+  store float %label2, float* %label1
   ret void
 }
 

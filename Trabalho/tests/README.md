@@ -40,6 +40,9 @@
 37: Acessando posição de um (new [int]) sem botar numa variável  
 38: Condição boolean dentro de if  
 39: Cast automatico de character para integer  
+40: Referenciar global  
+41: Dentro da expressão 'a' é convertido para int, em um assignment é convertido para char
+42: 
 
 # Wrongs Tests
 
