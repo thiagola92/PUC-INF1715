@@ -41,8 +41,25 @@
 38: Condição boolean dentro de if  
 39: Cast automatico de character para integer  
 40: Referenciar global  
-41: Dentro da expressão 'a' é convertido para int, em um assignment é convertido para char
-42: 
+41: Dentro da expressão 'a' é convertido para int e em um assignment é convertido para char  
+42: Não precisa converter de int para char se lado esquerdo já for char  
+43: cast em uma posição do array  
+44: cast para o mesmo tipo em uma posição do array  
+45: char é transformado para int automaticamente e transformado para char após o cast mas é aceito durante comparação int com char  
+46: Comparando posição do array com char  
+47: Sinal de negativo em int  
+48: Sinal de negativo em char (pois é convertido para int)  
+49: Sinal de negativo em float  
+50: Sinal de negativo em uma expressão cast  
+51: Operação de < com char  
+52: Operação de < com char e float  
+53: Olhar a geração de código para vários parametros e variáveis  
+54: Olhar a geração de código para parametros, retorno e store  
+55: Olhar a geração de código para strings  
+56: Olhar a geração de código para string definindo char por char (como array faria)  
+57: Olhar a geração de código para retorno de array  
+58: Olhar a geração de código para retorno de string  
+59: Olhar a geração de código para armazenar float  
 
 # Wrongs Tests
 
@@ -78,3 +95,7 @@
 29: Aritimética entre tipos diferentes e que não é possível converter  
 30: Condição do if não sendo boolean  
 31: Conidção do while não sendo boolean  
+32: Função void retornando valor e assignment esperando valor  
+33: array de float armazenando array de int  
+34: Comparando com < int com um new array  
+35: Comparando com < int com boolean  
