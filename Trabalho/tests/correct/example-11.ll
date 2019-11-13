@@ -31,6 +31,7 @@ define void @main() {
   br i1 %label11, label %label12, label %label13
 
   label12:
+  call void @first()
   br label %label10
 
   label13:
@@ -42,6 +43,7 @@ define void @main() {
 
   label16:
   %label18 = alloca i32
+  call void @first()
   br label %label14
 
   label17:

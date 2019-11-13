@@ -8,7 +8,7 @@ define void @main() {
   store i32 (null), i32* %label1
   store i32 (null), i32* %label1
   store i32 2, i32* %label2
-  store float 179484320, float* %label3
+  store float 2.000000, float* %label3
   %label5 = load i32, i32* %label2
   %label6 = load i32, i32* %label2
   %label7 = add i32 %label5, %label6

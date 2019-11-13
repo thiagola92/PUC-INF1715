@@ -45,11 +45,10 @@ void code_define_global_list(Node* define_list) {
 
 void code_define_global_variable(Node* define_variable) {
   char* name = get_node_name(define_variable->content.n[0]);
-  char* identifier = format_string("@%s", name);
 
-  define_variable->id = identifier;
+  define_variable->id = format_string("@%s", name);
 
-  printf("%s = global ", identifier);
+  printf("%s = global ", define_variable->id);
   code_variable_type(define_variable->content.n[1]);
   printf(" ");
   code_initial_value(define_variable->content.n[1]);
@@ -93,10 +92,8 @@ void code_initial_value(Node* variable_type) {
   }
 }
 
-void code_define_global_function(Node* define_function) {
-  int childs = define_function->number_of_childs;
-  
-  switch(childs) {
+void code_define_global_function(Node* define_function) {  
+  switch(define_function->number_of_childs) {
     case 4:
       code_define_global_function_4(define_function);
       break;
@@ -113,19 +110,20 @@ void code_define_global_function(Node* define_function) {
 
 void code_define_global_function_4(Node* define_function) {
   char* name = get_node_name(define_function->content.n[0]);
-  char* identifier = format_string("@%s", name);
   int* id = initialize_id();
 
-  define_function->id = identifier;
+  define_function->id = format_string("@%s", name);
 
   printf("define ");
   code_variable_type(define_function->content.n[2]);
-  printf(" %s(", identifier);
+  printf(" %s(", define_function->id);
   code_parameters(id, define_function->content.n[1]);
   printf(") {\n");
+
   define_function->content.n[3]->id = format_string("%%%d", next_id(id));
   code_parameters_declarations(id, define_function->content.n[1]);
   code_block(id, define_function->content.n[3]);
+
   printf("}\n\n");
 }
 
@@ -138,47 +136,50 @@ void code_define_global_function_3(Node* define_function) {
 
 void code_define_global_function_3_with_parameters(Node* define_function) {
   char* name = get_node_name(define_function->content.n[0]);
-  char* identifier = format_string("@%s", name);
   int* id = initialize_id();
 
-  define_function->id = identifier;
+  define_function->id = format_string("@%s", name);
 
-  printf("define void %s(", identifier);
+  printf("define void %s(", define_function->id);
   code_parameters(id, define_function->content.n[1]);
   printf(") {\n");
+
   define_function->content.n[2]->id = format_string("%%%d", next_id(id));
   code_parameters_declarations(id, define_function->content.n[1]);
   code_block(id, define_function->content.n[2]);
   printf("  ret void\n");
+
   printf("}\n\n");
 }
 
 void code_define_global_function_3_with_type(Node* define_function) {
   char* name = get_node_name(define_function->content.n[0]);
-  char* identifier = format_string("@%s", name);
   int* id = initialize_id();
 
-  define_function->id = identifier;
+  define_function->id = format_string("@%s", name);
 
   printf("define ");
   code_variable_type(define_function->content.n[1]);
-  printf(" %s() {\n", identifier);
+  printf(" %s() {\n", define_function->id);
+
   define_function->content.n[2]->id = format_string("%%%d", next_id(id));
   code_block(id, define_function->content.n[2]);
+
   printf("}\n\n");
 }
 
 void code_define_global_function_2(Node* define_function) {
   char* name = get_node_name(define_function->content.n[0]);
-  char* identifier = format_string("@%s", name);
   int* id = initialize_id();
 
-  define_function->id = format_string("@%s", name);;
+  define_function->id = format_string("@%s", name);
 
-  printf("define void %s() {\n", identifier);
+  printf("define void %s() {\n", define_function->id);
+
   define_function->content.n[1]->id = format_string("%%%d", next_id(id));
   code_block(id, define_function->content.n[1]);
   printf("  ret void\n");
+
   printf("}\n\n");
 }
 
@@ -228,9 +229,9 @@ void code_parameter_declaration_list(int* id, Node* parameter_list) {
 }
 
 void code_parameter_declaration(int* id, Node* parameter) {
-  char* identifier = format_string("%%label%d", next_id(id));
+  char* new_identifier = format_string("%%label%d", next_id(id));
 
-  printf("  %s = alloca ", identifier);
+  printf("  %s = alloca ", new_identifier);
   code_variable_type(parameter->content.n[1]);
   printf("\n");
 
@@ -238,9 +239,9 @@ void code_parameter_declaration(int* id, Node* parameter) {
   code_variable_type(parameter->content.n[1]);
   printf(" %s, ", parameter->id);
   code_variable_type(parameter->content.n[1]);
-  printf("* %s\n", identifier);
+  printf("* %s\n", new_identifier);
 
-  parameter->id = identifier;
+  parameter->id = new_identifier;
 }
 
 void code_block(int* id, Node* block) {
@@ -289,13 +290,11 @@ void code_local_variable_list(int* id, Node* variable_list) {
 }
 
 void code_local_variable(int* id, Node* variable) {
-  char* identifier = format_string("%%label%d", next_id(id));
+  variable->id = format_string("%%label%d", next_id(id));
 
-  printf("  %s = alloca ", identifier);
+  printf("  %s = alloca ", variable->id);
   code_variable_type(variable->content.n[1]);
   printf("\n");
-
-  variable->id = identifier;
 }
 
 void code_commands(int* id, Node* commands) {
@@ -347,10 +346,16 @@ void code_command(int* id, Node* command) {
 }
 
 void code_if(int* id, Node* if_command) {
-  if(if_command->number_of_childs == 2)
-    code_if_no_else(id, if_command);
-  else
-    code_if_else(id, if_command);
+  switch(if_command->number_of_childs) {
+    case 2:
+      code_if_no_else(id, if_command);
+      break;
+    case 3:
+      code_if_else(id, if_command);
+      break;
+    default:
+      throw_code_error("invalid if");
+  }
 }
 
 void code_if_no_else(int* id, Node* if_command) {
@@ -402,10 +407,19 @@ void code_if_else(int* id, Node* if_else) {
 }
 
 void code_condition_compare(Node* condition, char* condition_identifier) {
-  if(condition->type->tag == TYPE_FLOAT)
-    printf("  %s = fcmp eq float %s, 1\n", condition_identifier, condition->id);
-  else
-    printf("  %s = icmp eq i32 %s, 1\n", condition_identifier, condition->id);
+  switch(condition->type->tag) {
+    case TYPE_FLOAT:
+      printf("  %s = fcmp eq float %s, 1\n", condition_identifier, condition->id);
+      break;
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+    case TYPE_ARRAY:
+      printf("  %s = icmp eq i32 %s, 1\n", condition_identifier, condition->id);
+      break;
+    default:
+      throw_code_error("invalid condition compare");
+  }
 }
 
 void code_while(int* id, Node* while_command) {
@@ -445,10 +459,16 @@ void code_assignment(int* id, Node* assignment) {
 }
 
 void code_return(int* id, Node* return_command) {
-  if(return_command->number_of_childs == 0)
-    printf("  ret void\n");
-  else
-    code_return_value(id, return_command);
+  switch(return_command->number_of_childs) {
+    case 0:
+      printf("  ret void\n");
+      break;
+    case 1:
+      code_return_value(id, return_command);
+      break;
+    default:
+      throw_code_error("invalid return");
+  }
 }
 
 void code_return_value(int* id, Node* return_command) {
@@ -464,7 +484,61 @@ void code_print(int* id, Node* print) {
 }
 
 void code_function_call(int* id, Node* function_call) {
-  printf("");
+  if(function_call->number_of_childs == 2)
+    code_expressions(id, function_call->content.n[1]);
+  
+  code_function_call_return(id, function_call);
+
+  if(function_call->number_of_childs == 2)
+    code_function_call_parameters(id, function_call->content.n[1]);
+  
+  printf(")\n");
+}
+
+void code_function_call_return(int* id, Node* function_call) {
+  if(function_call->definition->type == NULL) {
+    printf("  call void %s(", function_call->definition->id);
+    return;
+  }
+
+  function_call->id = format_string("%%label%d", next_id(id));
+  
+  printf("  %s = call ", function_call->id);
+  code_variable_type(function_call->type);
+  printf(" %s(", function_call->definition->id);
+}
+
+void code_expressions(int* id, Node* expressions) {
+  if(expressions->tag == EXPRESSION_LIST)
+    code_expression_list(id, expressions);
+  else
+    code_expression(id, expressions);
+}
+
+void code_expression_list(int* id, Node* expression_list) {
+  for(int i = 0; i < expression_list->number_of_childs; i++)
+    code_expression(id, expression_list->content.n[i]);
+}
+
+void code_function_call_parameters(int* id, Node* parameters) {
+  if(parameters->tag == EXPRESSION_LIST)
+    code_function_call_parameter_list(id, parameters);
+  else
+    code_function_call_parameter(id, parameters);
+}
+
+void code_function_call_parameter_list(int* id, Node* parameter_list) {
+  for(int i = 0; i < parameter_list->number_of_childs; i++) {
+    code_function_call_parameter(id, parameter_list->content.n[i]);
+
+    if(i+1 < parameter_list->number_of_childs)
+      printf(", ");
+  }
+}
+
+void code_function_call_parameter(int* id, Node* parameter) {
+  code_variable_type(parameter->type);
+  printf(" %s", parameter->id);
 }
 
 void code_expression(int* id, Node* expression) {
@@ -534,7 +608,7 @@ void code_expression(int* id, Node* expression) {
       expression->id = format_string("%d", expression->content.i);
       break;
     case DATA_FLOAT:
-      expression->id = format_string("%d", expression->content.f);
+      expression->id = format_string("%f", expression->content.f);
       break;
     case DATA_STRING:
       code_expression_string(id, expression);

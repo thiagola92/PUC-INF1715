@@ -30,6 +30,16 @@ define void @main() {
   %label1 = alloca i32
   %label2 = alloca i32
   %label3 = alloca i32
+  call void @first()
+  %label4 = load i32, i32* %label1
+  call void @second(i32 %label4)
+  %label5 = load i32, i32* %label1
+  %label6 = load i32, i32* %label2
+  call void @third(i32 %label5, i32 %label6)
+  %label7 = load i32, i32* %label1
+  %label8 = load i32, i32* %label2
+  %label9 = load i32, i32* %label3
+  call void @fourth(i32 %label7, i32 %label8, i32 %label9)
   ret void
 }
 

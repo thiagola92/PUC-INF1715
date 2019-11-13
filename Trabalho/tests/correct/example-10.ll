@@ -8,6 +8,7 @@ define void @main() {
 
   label2:
   %label4 = alloca i32
+  call void @first()
   br label %label3
 
   label3:
@@ -16,10 +17,12 @@ define void @main() {
 
   label6:
   %label9 = alloca i32
+  call void @first()
   br label %label8
 
   label7:
   %label10 = alloca i32
+  call void @first()
   br label %label8
 
   label8:
@@ -33,9 +36,11 @@ define void @main() {
 
   label16:
   %label18 = alloca i32
+  call void @first()
   br label %label17
 
   label17:
+  call void @first()
   br label %label13
 
   label13:
@@ -49,13 +54,16 @@ define void @main() {
 
   label24:
   %label27 = alloca i32
+  call void @first()
   br label %label26
 
   label25:
   %label28 = alloca i32
+  call void @first()
   br label %label26
 
   label26:
+  call void @first()
   br label %label21
 
   label21:
@@ -64,6 +72,7 @@ define void @main() {
 
   label30:
   %label33 = alloca i32
+  call void @first()
   br label %label32
 
   label31:
@@ -73,9 +82,11 @@ define void @main() {
 
   label36:
   %label38 = alloca i32
+  call void @first()
   br label %label37
 
   label37:
+  call void @first()
   br label %label32
 
   label32:
@@ -84,6 +95,7 @@ define void @main() {
 
   label40:
   %label43 = alloca i32
+  call void @first()
   br label %label42
 
   label41:
@@ -93,13 +105,16 @@ define void @main() {
 
   label46:
   %label49 = alloca i32
+  call void @first()
   br label %label48
 
   label47:
   %label50 = alloca i32
+  call void @first()
   br label %label48
 
   label48:
+  call void @first()
   br label %label42
 
   label42:

@@ -59,6 +59,14 @@ void code_return_value(int* id, Node* return_command);
 void code_print(int* id, Node* print);
 
 void code_function_call(int* id, Node* function_call);
+void code_function_call_return(int* id, Node* function_call);
+
+void code_expressions(int* id, Node* expressions);
+void code_expression_list(int* id, Node* expression_list);
+
+void code_function_call_parameters(int* id, Node* parameters);
+void code_function_call_parameter_list(int* id, Node* parameter_list);
+void code_function_call_parameter(int* id, Node* parameter);
 
 void code_expression(int* id, Node* expression);
 
