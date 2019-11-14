@@ -1,8 +1,8 @@
 #include<stdio.h>
 
-void nome1() {
-  double a;
-  float b;
-  a = 1.3;
-  b = a;
+int nome1(int a, int b) {
+  return a && b;
+  // int b = x || 2;
+  // int c = x || 1.0;
+  // int d = x || 1.5;
 }

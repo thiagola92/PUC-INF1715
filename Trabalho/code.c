@@ -544,8 +544,10 @@ void code_function_call_parameter(int* id, Node* parameter) {
 void code_expression(int* id, Node* expression) {
   switch(expression->tag) {
     case EXPRESSION_OR:
+      code_expression_or(id, expression);
       break;
     case EXPRESSION_AND:
+      code_expression_and(id, expression);
       break;
     case EXPRESSION_EQUAL:
       code_expression_compare(id, expression, "eq");
@@ -616,6 +618,92 @@ void code_expression(int* id, Node* expression) {
     default:
       throw_code_error("invalid expression");
   }
+}
+
+void code_expression_or(int* id, Node* or) {
+  char* load_identifier;
+  char* comparison_identifier;
+  char* phi_identifier;
+
+  char* start_label;
+  char* second_expression_label;
+  char* end_label;
+
+  code_expression(id, or->content.n[0]);
+  code_expression(id, or->content.n[1]);
+
+  load_identifier = format_string("%%label%d", next_id(id));
+  comparison_identifier = format_string("%%label%d", next_id(id));
+
+  start_label = format_string("%%label%d", next_id(id));
+  second_expression_label = format_string("%%label%d", next_id(id));
+  end_label = format_string("%%label%d", next_id(id));
+
+  printf("  %s:", label_name(start_label));
+
+  // true != 0 >> true
+  // false != 0 >> false
+  printf("  %s = load i32, i32* %s\n", load_identifier, or->content.n[0]->id);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, end_label, second_expression_label);
+
+  load_identifier = format_string("%%label%d", next_id(id));
+  comparison_identifier = format_string("%%label%d", next_id(id));
+
+  printf("  %s:\n", label_name(second_expression_label));
+  printf("  %s = load i32, i32* %s\n", load_identifier, or->content.n[1]->id);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
+  printf("  br label %s\n\n", label_name(end_label));
+
+  phi_identifier = format_string("%%label%d", next_id(id));
+  or->id = format_string("%%label%d", next_id(id));
+
+  printf("  %s:\n", label_name(end_label));
+  printf("  %s = phi i1 [ false, %s ], [ %s, %s ]\n", phi_identifier, start_label, comparison_identifier, second_expression_label);
+  printf("  %s = zext i1 %s to i32\n", or->id, phi_identifier);
+}
+
+void code_expression_and(int* id, Node* and) {
+  char* load_identifier;
+  char* comparison_identifier;
+  char* phi_identifier;
+
+  char* start_label;
+  char* second_expression_label;
+  char* end_label;
+
+  code_expression(id, and->content.n[0]);
+  code_expression(id, and->content.n[1]);
+
+  load_identifier = format_string("%%label%d", next_id(id));
+  comparison_identifier = format_string("%%label%d", next_id(id));
+
+  start_label = format_string("%%label%d", next_id(id));
+  second_expression_label = format_string("%%label%d", next_id(id));
+  end_label = format_string("%%label%d", next_id(id));
+
+  printf("  %s:", label_name(start_label));
+
+  // true != 0 >> true
+  // false != 0 >> false
+  printf("  %s = load i32, i32* %s\n", load_identifier, and->content.n[0]->id);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, second_expression_label, end_label);
+
+  load_identifier = format_string("%%label%d", next_id(id));
+  comparison_identifier = format_string("%%label%d", next_id(id));
+
+  printf("  %s:\n", label_name(second_expression_label));
+  printf("  %s = load i32, i32* %s\n", load_identifier, and->content.n[1]->id);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
+  printf("  br label %s\n\n", label_name(end_label));
+
+  phi_identifier = format_string("%%label%d", next_id(id));
+  and->id = format_string("%%label%d", next_id(id));
+
+  printf("  %s:\n", label_name(end_label));
+  printf("  %s = phi i1 [ false, %s ], [ %s, %s ]\n", phi_identifier, start_label, comparison_identifier, second_expression_label);
+  printf("  %s = zext i1 %s to i32\n", and->id, phi_identifier);
 }
 
 void code_expression_compare(int* id, Node* compare, char* operator) {

@@ -70,6 +70,9 @@ void code_function_call_parameter(int* id, Node* parameter);
 
 void code_expression(int* id, Node* expression);
 
+void code_expression_or(int* id, Node* or);
+void code_expression_and(int* id, Node* and);
+
 void code_expression_compare(int* id, Node* compare, char* operator);
 void code_expression_compare_values(int* id, Node* compare, char* type, char* operator);
 
@@ -78,6 +81,7 @@ void code_expression_calcule_values(int* id, Node* calcule, char* operator);
 
 void code_expression_variable(int* id, Node* variable);
 
+void code_expression_float(int* id, Node* float_expression);
 void code_expression_string(int* id, Node* string);
 
 // UTILITY
