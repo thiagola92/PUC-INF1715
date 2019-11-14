@@ -11,7 +11,7 @@ define i32 @nome1(i32, i32) #0 {
   store i32 %1, i32* %4, align 4
   %5 = load i32, i32* %3, align 4
   %6 = icmp ne i32 %5, 0
-  br i1 %6, label %7, label %10
+  br i1 %6, label %10, label %7
 
 ; <label>:7:                                      ; preds = %2
   %8 = load i32, i32* %4, align 4
@@ -19,7 +19,7 @@ define i32 @nome1(i32, i32) #0 {
   br label %10
 
 ; <label>:10:                                     ; preds = %7, %2
-  %11 = phi i1 [ false, %2 ], [ %9, %7 ]
+  %11 = phi i1 [ true, %2 ], [ %9, %7 ]
   %12 = zext i1 %11 to i32
   ret i32 %12
 }
