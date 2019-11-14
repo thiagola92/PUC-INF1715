@@ -1,0 +1,5 @@
+nome(a : bool, b : bool) {
+	c : bool;
+	c = a || b;
+	c = a && b;
+}

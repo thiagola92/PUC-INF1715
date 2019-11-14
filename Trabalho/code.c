@@ -621,7 +621,6 @@ void code_expression(int* id, Node* expression) {
 }
 
 void code_expression_or(int* id, Node* or) {
-  char* load_identifier;
   char* comparison_identifier;
   char* phi_identifier;
 
@@ -629,33 +628,24 @@ void code_expression_or(int* id, Node* or) {
   char* second_expression_label;
   char* end_label;
 
-  code_expression(id, or->content.n[0]);
-  code_expression(id, or->content.n[1]);
 
   start_label = format_string("%%label%d", next_id(id));
-
-  load_identifier = format_string("%%label%d", next_id(id));
-  comparison_identifier = format_string("%%label%d", next_id(id));
+  printf("  br label %s\n\n", start_label);
 
   second_expression_label = format_string("%%label%d", next_id(id));
   end_label = format_string("%%label%d", next_id(id));
 
-  printf("  br label %s\n\n", start_label);
   printf("  %s:\n", label_name(start_label));
-
-  // true != 0 >> true
-  // false != 0 >> false
-  printf("  %s = load i32, i32* %s\n", load_identifier, or->content.n[0]->id);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
+  code_expression(id, or->content.n[0]);
+  comparison_identifier = format_string("%%label%d", next_id(id));
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[0]->id); // true leva a true, false leva a false
   printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, end_label, second_expression_label);
 
-  load_identifier = format_string("%%label%d", next_id(id));
-  comparison_identifier = format_string("%%label%d", next_id(id));
-
   printf("  %s:\n", label_name(second_expression_label));
-  printf("  %s = load i32, i32* %s\n", load_identifier, or->content.n[1]->id);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
-  printf("  br label %s\n\n", label_name(end_label));
+  code_expression(id, or->content.n[1]);
+  comparison_identifier = format_string("%%label%d", next_id(id));
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[1]->id);
+  printf("  br label %s\n\n", end_label);
 
   phi_identifier = format_string("%%label%d", next_id(id));
   or->id = format_string("%%label%d", next_id(id));
@@ -666,7 +656,6 @@ void code_expression_or(int* id, Node* or) {
 }
 
 void code_expression_and(int* id, Node* and) {
-  char* load_identifier;
   char* comparison_identifier;
   char* phi_identifier;
 
@@ -674,33 +663,23 @@ void code_expression_and(int* id, Node* and) {
   char* second_expression_label;
   char* end_label;
 
-  code_expression(id, and->content.n[0]);
-  code_expression(id, and->content.n[1]);
-
   start_label = format_string("%%label%d", next_id(id));
-
-  load_identifier = format_string("%%label%d", next_id(id));
-  comparison_identifier = format_string("%%label%d", next_id(id));
+  printf("  br label %s\n\n", start_label);
 
   second_expression_label = format_string("%%label%d", next_id(id));
   end_label = format_string("%%label%d", next_id(id));
 
-  printf("  br label %s\n\n", start_label);
   printf("  %s:\n", label_name(start_label));
-
-  // true != 0 >> true
-  // false != 0 >> false
-  printf("  %s = load i32, i32* %s\n", load_identifier, and->content.n[0]->id);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
+  code_expression(id, and->content.n[0]);
+  comparison_identifier = format_string("%%label%d", next_id(id));
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, and->content.n[0]->id); // true leva a true, false leva a false
   printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, second_expression_label, end_label);
 
-  load_identifier = format_string("%%label%d", next_id(id));
-  comparison_identifier = format_string("%%label%d", next_id(id));
-
   printf("  %s:\n", label_name(second_expression_label));
-  printf("  %s = load i32, i32* %s\n", load_identifier, and->content.n[1]->id);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, load_identifier);
-  printf("  br label %s\n\n", label_name(end_label));
+  code_expression(id, and->content.n[1]);
+  comparison_identifier = format_string("%%label%d", next_id(id));
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, and->content.n[1]->id);
+  printf("  br label %s\n\n", end_label);
 
   phi_identifier = format_string("%%label%d", next_id(id));
   and->id = format_string("%%label%d", next_id(id));
