@@ -591,6 +591,7 @@ void code_expression(int* id, Node* expression) {
       code_expression_variable(id, expression);
       break;
     case FUNCTION_CALL:
+      // code_function_call?
       break;
     case NEW_ARRAY:
       break;
