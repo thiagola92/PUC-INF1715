@@ -5,109 +5,109 @@ define void @main() {
   br label %label4
 
   label4:
-  %label7 = icmp ne i32 1, 0
-  br i1 %label7, label %label6, label %label5
+  %label7 = icmp ne i32 0, 0
+  br i1 %label7, label %label5, label %label6
 
   label5:
-  br label %label8
-
-  label8:
-  %label11 = icmp ne i32 0, 0
-  br i1 %label11, label %label9, label %label10
-
-  label9:
-  %label12 = icmp ne i32 1, 0
-  br label %label10
-
-  label10:
-  %label13 = phi i1 [ false, %label8 ], [ %label12, %label9 ]
-  %label14 = zext i1 %label13 to i32
-  %label15 = icmp ne i32 %label14, 0
+  %label8 = icmp ne i32 1, 0
   br label %label6
 
   label6:
-  %label16 = phi i1 [ true, %label4 ], [ %label15, %label5 ]
+  %label9 = phi i1 [ false, %label4 ], [ %label8, %label5 ]
+  %label10 = zext i1 %label9 to i32
+  br label %label11
+
+  label11:
+  %label14 = icmp ne i32 1, 0
+  br i1 %label14, label %label13, label %label12
+
+  label12:
+  %label15 = icmp ne i32 %label10, 0
+  br label %label13
+
+  label13:
+  %label16 = phi i1 [ true, %label11 ], [ %label15, %label12 ]
   %label17 = zext i1 %label16 to i32
   store i32 %label17, i32* %label1
   br label %label18
 
   label18:
-  br label %label21
-
-  label21:
-  %label24 = icmp ne i32 1, 0
-  br i1 %label24, label %label22, label %label23
-
-  label22:
-  %label25 = icmp ne i32 0, 0
-  br label %label23
-
-  label23:
-  %label26 = phi i1 [ false, %label21 ], [ %label25, %label22 ]
-  %label27 = zext i1 %label26 to i32
-  %label28 = icmp ne i32 %label27, 0
-  br i1 %label28, label %label20, label %label19
+  %label21 = icmp ne i32 1, 0
+  br i1 %label21, label %label19, label %label20
 
   label19:
-  %label29 = icmp ne i32 1, 0
+  %label22 = icmp ne i32 0, 0
   br label %label20
 
   label20:
-  %label30 = phi i1 [ true, %label18 ], [ %label29, %label19 ]
+  %label23 = phi i1 [ false, %label18 ], [ %label22, %label19 ]
+  %label24 = zext i1 %label23 to i32
+  br label %label25
+
+  label25:
+  %label28 = icmp ne i32 %label24, 0
+  br i1 %label28, label %label27, label %label26
+
+  label26:
+  %label29 = icmp ne i32 1, 0
+  br label %label27
+
+  label27:
+  %label30 = phi i1 [ true, %label25 ], [ %label29, %label26 ]
   %label31 = zext i1 %label30 to i32
   store i32 %label31, i32* %label2
   br label %label32
 
   label32:
-  %label35 = icmp ne i32 1, 0
-  br i1 %label35, label %label34, label %label33
+  %label35 = icmp ne i32 0, 0
+  br i1 %label35, label %label33, label %label34
 
   label33:
-  br label %label36
-
-  label36:
-  %label39 = icmp ne i32 0, 0
-  br i1 %label39, label %label37, label %label38
-
-  label37:
-  %label40 = icmp ne i32 1, 0
-  br label %label38
-
-  label38:
-  %label41 = phi i1 [ false, %label36 ], [ %label40, %label37 ]
-  %label42 = zext i1 %label41 to i32
-  %label43 = icmp ne i32 %label42, 0
+  %label36 = icmp ne i32 1, 0
   br label %label34
 
   label34:
-  %label44 = phi i1 [ true, %label32 ], [ %label43, %label33 ]
+  %label37 = phi i1 [ false, %label32 ], [ %label36, %label33 ]
+  %label38 = zext i1 %label37 to i32
+  br label %label39
+
+  label39:
+  %label42 = icmp ne i32 1, 0
+  br i1 %label42, label %label41, label %label40
+
+  label40:
+  %label43 = icmp ne i32 %label38, 0
+  br label %label41
+
+  label41:
+  %label44 = phi i1 [ true, %label39 ], [ %label43, %label40 ]
   %label45 = zext i1 %label44 to i32
   store i32 %label45, i32* %label1
   br label %label46
 
   label46:
-  br label %label49
-
-  label49:
-  %label52 = icmp ne i32 1, 0
-  br i1 %label52, label %label50, label %label51
-
-  label50:
-  %label53 = icmp ne i32 0, 0
-  br label %label51
-
-  label51:
-  %label54 = phi i1 [ false, %label49 ], [ %label53, %label50 ]
-  %label55 = zext i1 %label54 to i32
-  %label56 = icmp ne i32 %label55, 0
-  br i1 %label56, label %label48, label %label47
+  %label49 = icmp ne i32 1, 0
+  br i1 %label49, label %label47, label %label48
 
   label47:
-  %label57 = icmp ne i32 1, 0
+  %label50 = icmp ne i32 0, 0
   br label %label48
 
   label48:
-  %label58 = phi i1 [ true, %label46 ], [ %label57, %label47 ]
+  %label51 = phi i1 [ false, %label46 ], [ %label50, %label47 ]
+  %label52 = zext i1 %label51 to i32
+  br label %label53
+
+  label53:
+  %label56 = icmp ne i32 %label52, 0
+  br i1 %label56, label %label55, label %label54
+
+  label54:
+  %label57 = icmp ne i32 1, 0
+  br label %label55
+
+  label55:
+  %label58 = phi i1 [ true, %label53 ], [ %label57, %label54 ]
   %label59 = zext i1 %label58 to i32
   store i32 %label59, i32* %label2
   ret void

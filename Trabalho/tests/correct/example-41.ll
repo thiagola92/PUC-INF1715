@@ -4,8 +4,9 @@ define i32 @fn() {
 }
 
 define void @main() {
-  %label1 = add i32 98, (null)
-  store i32 %label1, i32* @c
+  %label1 = call i32 @fn()
+  %label2 = add i32 98, %label1
+  store i32 %label2, i32* @c
   ret void
 }
 

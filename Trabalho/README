@@ -5,7 +5,6 @@ Matricula: 1721629
 
 Faltando:
   print
-  function call
   cast (x as y)
   negative (-x)
   not (!x)

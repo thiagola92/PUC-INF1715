@@ -79,6 +79,9 @@ void code_expression_compare_values(int* id, Node* compare, char* type, char* op
 void code_expression_calcule(int* id, Node* calcule, char* operator);
 void code_expression_calcule_values(int* id, Node* calcule, char* operator);
 
+void code_expression_negative(int* id, Node* negative);
+void code_expression_negative_type(int* id, Node* negative, char* type, char* operator);
+
 void code_expression_variable(int* id, Node* variable);
 
 void code_expression_float(int* id, Node* float_expression);

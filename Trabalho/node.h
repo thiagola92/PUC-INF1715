@@ -87,7 +87,7 @@ typedef struct Node {
   
   struct Node* definition;  // binding
   struct Node* type;        // typing
-  char* id;            // coding
+  char* id;                 // coding
 } Node;
 
 Node* malloc_node();

@@ -582,6 +582,7 @@ void code_expression(int* id, Node* expression) {
     case EXPRESSION_CAST:
       break;
     case EXPRESSION_NEGATIVE:
+      // code_expression_negative(id, expression);
       break;
     case EXPRESSION_NOT:
       break;
@@ -591,7 +592,7 @@ void code_expression(int* id, Node* expression) {
       code_expression_variable(id, expression);
       break;
     case FUNCTION_CALL:
-      // code_function_call?
+      code_function_call(id, expression);
       break;
     case NEW_ARRAY:
       break;
@@ -629,22 +630,23 @@ void code_expression_or(int* id, Node* or) {
   char* second_expression_label;
   char* end_label;
 
+  code_expression(id, or->content.n[0]);
+  code_expression(id, or->content.n[1]);
 
   start_label = format_string("%%label%d", next_id(id));
-  printf("  br label %s\n\n", start_label);
-
   second_expression_label = format_string("%%label%d", next_id(id));
   end_label = format_string("%%label%d", next_id(id));
+  comparison_identifier = format_string("%%label%d", next_id(id));
+
+  printf("  br label %s\n\n", start_label);
 
   printf("  %s:\n", label_name(start_label));
-  code_expression(id, or->content.n[0]);
-  comparison_identifier = format_string("%%label%d", next_id(id));
   printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[0]->id); // true leva a true, false leva a false
   printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, end_label, second_expression_label);
 
-  printf("  %s:\n", label_name(second_expression_label));
-  code_expression(id, or->content.n[1]);
   comparison_identifier = format_string("%%label%d", next_id(id));
+
+  printf("  %s:\n", label_name(second_expression_label));
   printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[1]->id);
   printf("  br label %s\n\n", end_label);
 
@@ -664,21 +666,23 @@ void code_expression_and(int* id, Node* and) {
   char* second_expression_label;
   char* end_label;
 
-  start_label = format_string("%%label%d", next_id(id));
-  printf("  br label %s\n\n", start_label);
+  code_expression(id, and->content.n[0]);
+  code_expression(id, and->content.n[1]);
 
+  start_label = format_string("%%label%d", next_id(id));
   second_expression_label = format_string("%%label%d", next_id(id));
   end_label = format_string("%%label%d", next_id(id));
+  comparison_identifier = format_string("%%label%d", next_id(id));
+
+  printf("  br label %s\n\n", start_label);
 
   printf("  %s:\n", label_name(start_label));
-  code_expression(id, and->content.n[0]);
-  comparison_identifier = format_string("%%label%d", next_id(id));
   printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, and->content.n[0]->id); // true leva a true, false leva a false
   printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, second_expression_label, end_label);
 
-  printf("  %s:\n", label_name(second_expression_label));
-  code_expression(id, and->content.n[1]);
   comparison_identifier = format_string("%%label%d", next_id(id));
+
+  printf("  %s:\n", label_name(second_expression_label));
   printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, and->content.n[1]->id);
   printf("  br label %s\n\n", end_label);
 
@@ -707,6 +711,7 @@ void code_expression_compare(int* id, Node* compare, char* operator) {
       code_expression_compare_values(id, compare, "fcmp", operator);
       break;
     default:
+      throw_code_error("invalid expression compare");
       break;
   }
 }
@@ -742,6 +747,7 @@ void code_expression_calcule(int* id, Node* calcule, char* operator) {
       code_expression_calcule_values(id, calcule, operator);
       break;
     default:
+      throw_code_error("invalid expression calcule");
       break;
   }
 }
@@ -750,6 +756,31 @@ void code_expression_calcule_values(int* id, Node* calcule, char* operator) {
   printf("  %s = %s ", calcule->id, operator);
   code_variable_type(calcule->content.n[0]->type);
   printf(" %s, %s\n", calcule->content.n[0]->id, calcule->content.n[1]->id);
+}
+
+void code_expression_negative(int* id, Node* negative) {
+  code_expression(id, negative->content.n[0]);
+
+  switch(negative->type->tag) {
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+    case TYPE_ARRAY:
+      code_expression_negative_type(id, negative, "i32", "sub nsw");
+      break;
+    case TYPE_FLOAT:
+      code_expression_negative_type(id, negative, "float", "fsub");
+      break;
+    default:
+      throw_code_error("invalid expression negative");
+      break;
+  }
+}
+
+void code_expression_negative_type(int* id, Node* negative, char* type, char* operator) {
+  negative->id = format_string("%%label%d", next_id(id));
+
+  printf("  %s = %s %s 0, %s\n", negative->id, operator, type, negative->content.n[0]->id);
 }
 
 void code_expression_variable(int* id, Node* variable) {

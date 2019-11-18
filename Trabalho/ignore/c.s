@@ -1,30 +1,22 @@
 	.text
-	.file	"c.c"
-	.section	.rodata.cst8,"aM",@progbits,8
-	.p2align	3               # -- Begin function nome1
-.LCPI0_0:
-	.quad	4608533498688228557     # double 1.3
-	.text
-	.globl	nome1
+	.file	"c.ll"
+	.globl	main                    # -- Begin function main
 	.p2align	4, 0x90
-	.type	nome1,@function
-nome1:                                  # @nome1
+	.type	main,@function
+main:                                   # @main
 	.cfi_startproc
-# %bb.0:
-	pushq	%rbp
-	.cfi_def_cfa_offset 16
-	.cfi_offset %rbp, -16
-	movq	%rsp, %rbp
-	.cfi_def_cfa_register %rbp
-	movsd	.LCPI0_0(%rip), %xmm0   # xmm0 = mem[0],zero
-	cvtsd2ss	%xmm0, %xmm0
-	movss	%xmm0, -4(%rbp)
-	popq	%rbp
+# %bb.0:                                # %label7
+	xorl	%eax, %eax
+	testb	%al, %al
+	movb	$1, %al
+	xorl	%ecx, %ecx
+	testb	%cl, %cl
+	movzbl	%al, %eax
+	movl	%eax, -12(%rsp)
 	retq
 .Lfunc_end0:
-	.size	nome1, .Lfunc_end0-nome1
+	.size	main, .Lfunc_end0-main
 	.cfi_endproc
                                         # -- End function
 
-	.ident	"clang version 6.0.1-11 (tags/RELEASE_601/final)"
 	.section	".note.GNU-stack","",@progbits
