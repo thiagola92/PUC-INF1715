@@ -582,7 +582,7 @@ void code_expression(int* id, Node* expression) {
     case EXPRESSION_CAST:
       break;
     case EXPRESSION_NEGATIVE:
-      // code_expression_negative(id, expression);
+      code_expression_negative(id, expression);
       break;
     case EXPRESSION_NOT:
       break;
