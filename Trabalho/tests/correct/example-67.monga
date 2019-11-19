@@ -1,0 +1,10 @@
+main() {
+	@true;
+	@'\n';
+	@!true;
+	@'\n';
+	@false;
+	@'\n';
+	@!false;
+	@'\n';
+}

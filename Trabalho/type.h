@@ -69,5 +69,6 @@ int is_cast_integer_to_float_needed(Node* e1, Node* e2);
 
 void if_chararacter_change_to_integer(Node* node);
 void if_need_character_and_is_integer(Node* n1, Node* n2);
+void if_need_integer_and_is_character(Node* n1, Node* n2);
 
 #endif

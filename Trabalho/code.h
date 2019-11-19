@@ -83,6 +83,8 @@ void code_expression_calcule_values(int* id, Node* calcule, char* operator);
 void code_expression_negative(int* id, Node* negative);
 void code_expression_negative_type(int* id, Node* negative, char* type, char* operator);
 
+void code_expression_not(int* id, Node* not);
+
 void code_expression_variable(int* id, Node* variable);
 
 void code_expression_float(int* id, Node* float_expression);

@@ -330,11 +330,7 @@ void type_expression(Node* expression) {
     case TYPE_INTEGER:
     case TYPE_FLOAT:
     case DATA_BOOLEAN:
-      break;
     case DATA_CHARACTER:
-      // safe_free(expression->type);
-      // expression->type = malloc_node(TYPE_INTEGER);
-      break;
     case DATA_INTEGER:
     case DATA_FLOAT:
     case DATA_STRING:
@@ -518,6 +514,7 @@ void cast_assigmnent(Node* assignment) {
   Node* right = assignment->content.n[1];
 
   if_need_character_and_is_integer(left, right);
+  if_need_integer_and_is_character(left, right);
 
   if(left->type->tag == TYPE_INTEGER && right->type->tag == TYPE_FLOAT)
     cast_floats_to_integers(assignment);
@@ -526,12 +523,12 @@ void cast_assigmnent(Node* assignment) {
     cast_integers_to_float(assignment);
 }
 
-// used in expressions and assignment
+// used in expressions and cast_assignment
 void cast_integers_to_float(Node* node) {
   cast_all_x_types_to_y_type(node, TYPE_INTEGER, TYPE_FLOAT);
 }
 
-// used in assignment
+// used in cast_assignment
 void cast_floats_to_integers(Node* node) {
   cast_all_x_types_to_y_type(node, TYPE_FLOAT, TYPE_INTEGER);
 }
@@ -580,4 +577,9 @@ void if_chararacter_change_to_integer(Node* node) {
 void if_need_character_and_is_integer(Node* n1, Node* n2) {
   if(n1->type->tag == TYPE_CHARACTER && n2->type->tag == TYPE_INTEGER)
     n2->type = malloc_node(TYPE_CHARACTER);
+}
+
+void if_need_integer_and_is_character(Node* n1, Node* n2) {
+  if(n1->type->tag == TYPE_INTEGER && n2->type->tag == TYPE_CHARACTER)
+    n2->type = malloc_node(TYPE_INTEGER);
 }

@@ -1,0 +1,34 @@
+main() {
+	a : bool;
+	b : bool;
+
+	a = true;
+	b = false;
+
+	@(a==true);
+	@'\n';
+	@(a==false);
+	@'\n';
+	@(b==true);
+	@'\n';
+	@(b==false);
+	@'\n';
+
+	@!(a==true);
+	@'\n';
+	@!(a==false);
+	@'\n';
+	@!(b==true);
+	@'\n';
+	@!(b==false);
+	@'\n';
+
+	@!a==true;
+	@'\n';
+	@!a==false;
+	@'\n';
+	@!b==true;
+	@'\n';
+	@!b==false;
+	@'\n';
+}

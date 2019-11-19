@@ -500,13 +500,14 @@ void code_print(int* id, Node* print) {
     case TYPE_INTEGER:
       code_print_value("@.print.int", "i32", print->content.n[0]->id);
       break;
-    case TYPE_ARRAY:
-      code_print_value("@.print.int", "i32", print->content.n[0]->id);
-      break;
     case TYPE_FLOAT:
       identifier = format_string("%%label%d", next_id(id));
       printf("  %s = fpext float %s to double\n", identifier, print->content.n[0]->id);
       code_print_value("@.print.float", "double", identifier);
+      break;
+    case TYPE_ARRAY:
+      // if(print->content.n[0]->type->type->tag == TYPE_CHARACTER)
+      //   code_print_value("@.print.int", "i8*", print->content.n[0]->id);
       break;
     default:
       throw_code_error("invalid print");
@@ -619,6 +620,7 @@ void code_expression(int* id, Node* expression) {
       code_expression_negative(id, expression);
       break;
     case EXPRESSION_NOT:
+      code_expression_not(id, expression);
       break;
     case ARRAY_POSITION:
       break;
@@ -799,16 +801,32 @@ void code_expression_negative(int* id, Node* negative) {
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
     case TYPE_INTEGER:
-    case TYPE_ARRAY:
       code_expression_negative_type(id, negative, "i32", "sub nsw");
       break;
     case TYPE_FLOAT:
       code_expression_negative_type(id, negative, "float", "fsub");
       break;
+    case TYPE_ARRAY:
+      throw_code_error("invalid expression negative array");
     default:
       throw_code_error("invalid expression negative");
       break;
   }
+}
+
+void code_expression_not(int* id, Node* not) {
+  char* compare_id;
+  char* xor_id;
+
+  code_expression(id, not->content.n[0]);
+
+  compare_id = format_string("%%label%d", next_id(id));
+  xor_id = format_string("%%label%d", next_id(id));
+  not->id = format_string("%%label%d", next_id(id));
+
+  printf("  %s = icmp ne i32 %s, 0\n", compare_id, not->content.n[0]->id);
+  printf("  %s = xor i1 %s, true\n", xor_id, compare_id);
+  printf("  %s = zext i1 %s to i32\n", not->id, xor_id);
 }
 
 void code_expression_negative_type(int* id, Node* negative, char* type, char* operator) {
