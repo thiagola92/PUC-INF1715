@@ -9,6 +9,11 @@ void throw_code_error(const char* error) {
 }
 
 void start_coding(Node* program) {
+  printf("declare i32 @printf(i8*, ...)\n\n");
+  
+  printf("@.print.int = constant [3 x i8] c\"%%d\\00\"\n");
+  printf("@.print.float = constant [3 x i8] c\"%%f\\00\"\n\n");
+
   switch(program->tag) {
     case EMPTY:
       break;
@@ -480,7 +485,32 @@ void code_return_value(int* id, Node* return_command) {
 }
 
 void code_print(int* id, Node* print) {
-  printf("");
+  code_expression(id, print->content.n[0]);
+
+  switch(print->content.n[0]->type->tag) {
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+    case TYPE_ARRAY:
+      code_print_integer(id, print);
+      break;
+    case TYPE_FLOAT:
+      code_print_float(id, print);
+      break;
+    default:
+      throw_code_error("invalid print");
+  }
+}
+
+void code_print_integer(int* id, Node* print) {
+  printf("  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %s)\n", print->content.n[0]->id);
+}
+
+void code_print_float(int* id, Node* print) {
+  char* identifier = format_string("%%label%d", next_id(id));
+
+  printf("  %s = fpext float %s to double\n", identifier, print->content.n[0]->id);
+  printf("  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), i32 %s)\n", identifier);
 }
 
 void code_function_call(int* id, Node* function_call) {

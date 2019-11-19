@@ -6,7 +6,6 @@ Matricula: 1721629
 Faltando:
   print
   cast (x as y)
-  negative (-x)
   not (!x)
   array position (x[i])
   new array (new int[x])

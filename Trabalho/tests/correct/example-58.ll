@@ -1,3 +1,8 @@
+declare i32 @printf(i8*, ...)
+
+@.print.int = constant [3 x i8] c"%d\00"
+@.print.float = constant [3 x i8] c"%f\00"
+
 define i32* @nome() {
   %label1 = alloca [4 x i32]
   %label2 = getelementptr inbounds [4 x i32], [4 x i32]* %label1, i64 0, i64 0

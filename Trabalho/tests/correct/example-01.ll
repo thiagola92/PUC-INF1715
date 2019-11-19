@@ -1,3 +1,8 @@
+declare i32 @printf(i8*, ...)
+
+@.print.int = constant [3 x i8] c"%d\00"
+@.print.float = constant [3 x i8] c"%f\00"
+
 @s = global i32 0
 @normal_name = global i32 0
 @long_long_long_long_long_long_name = global i32 0

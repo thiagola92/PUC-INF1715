@@ -1,3 +1,8 @@
+declare i32 @printf(i8*, ...)
+
+@.print.int = constant [3 x i8] c"%d\00"
+@.print.float = constant [3 x i8] c"%f\00"
+
 define void @nome(i32, i32) {
   %label3 = alloca i32
   store i32 %0, i32* %label3

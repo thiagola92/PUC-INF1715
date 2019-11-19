@@ -16,14 +16,17 @@ for file_input in tests/correct/*\.monga; do
     
   printf "$file_name: "
 
-  file_output=tests/correct/$file_name\.ll
-  ./compiler $file_input > $file_output
+  file_ll=tests/correct/$file_name\.ll
+  file_bc=tests/correct/$file_name\.bc
+
+  ./compiler $file_input > $file_ll
   status=$?
 
   if [ $status -eq "0" ]; then
     echo "no compiling error, executing llc-6.0"
-    llc-6.0 $file_output
-    rm tests/correct/$file_name\.s
+    # llc-6.0 $file_ll
+    llvm-as $file_ll
+    # lli-6.0 $file_bc
   else
     echo "error, log in the output file"
   fi
@@ -37,14 +40,17 @@ for file_input in tests/wrong/*\.monga; do
     
   printf "$file_name: "
 
-  file_output=tests/wrong/$file_name\.ll
-  ./compiler $file_input > $file_output
+  file_ll=tests/wrong/$file_name\.ll
+  file_bc=tests/wrong/$file_name\.bc
+
+  ./compiler $file_input > $file_ll
   status=$?
 
   if [ $status -eq "0" ]; then
     echo "no compiling error, executing llc-6.0"
-    llc-6.0 $file_output
-    rm tests/correct/$file_name\.s
+    llc-6.0 $file_ll
+    # llvm-as $file_ll
+    # lli-6.0 $file_bc
   else
     echo "error, log in the output file"
   fi
