@@ -269,7 +269,7 @@ void type_return(Node* command_return) {
 
   type_expression(expression);
   
-  if_need_character_and_is_integer(definition, expression);
+  if_need_integer_and_is_character(definition, expression);
 
   if(is_type_equal(definition, expression) == false)
     throw_type_error("invalid return type");
@@ -340,6 +340,7 @@ void type_expression(Node* expression) {
   }
 }
 
+// && ||
 void type_boolean_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
   Node* e2 = expression->content.n[1];
@@ -353,6 +354,7 @@ void type_boolean_expression(Node* expression) {
   expression->type = malloc_node(TYPE_BOOLEAN);
 }
 
+// == ~=
 void type_equality_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
   Node* e2 = expression->content.n[1];
@@ -373,6 +375,7 @@ void type_equality_expression(Node* expression) {
   expression->type = malloc_node(TYPE_BOOLEAN);
 }
 
+// < > <= >=
 void type_inequality_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
   Node* e2 = expression->content.n[1];
@@ -392,6 +395,7 @@ void type_inequality_expression(Node* expression) {
   expression->type = malloc_node(TYPE_BOOLEAN);
 }
 
+// + - * /
 void type_arithmetic_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
   Node* e2 = expression->content.n[1];
@@ -412,6 +416,7 @@ void type_arithmetic_expression(Node* expression) {
   expression->type = expression->content.n[0]->type;
 }
 
+// -
 void type_negative_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
 
@@ -426,6 +431,7 @@ void type_negative_expression(Node* expression) {
   expression->type = expression->content.n[0]->type;
 }
 
+// !
 void type_not_expression(Node* expression) {
   Node* e1 = expression->content.n[0];
 
@@ -436,6 +442,7 @@ void type_not_expression(Node* expression) {
   expression->type = e1->type;
 }
 
+// a[0]
 void type_array_position(Node* array_position) {
   Node* e1 = array_position->content.n[0];
   Node* e2 = array_position->content.n[1];
@@ -449,12 +456,11 @@ void type_array_position(Node* array_position) {
   array_position->type = e1->type->type;
 }
 
-void type_variable_expression(Node* variable) {  
+void type_variable_expression(Node* variable) {
   variable->type = variable->definition->type;
-
-  if_chararacter_change_to_integer(variable);
 }
 
+// f()
 void type_function_call(Node* function_call) {
   function_call->type = function_call->definition->type;
 

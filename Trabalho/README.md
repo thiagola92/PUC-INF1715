@@ -95,12 +95,66 @@ $ bash script.sh;
 
 ## Tipagem
 
-| | |
-| :---: | :---: |
-| `if(x)` | `x` precisa ser boolean |
-| `while(x)` | `x` precisa ser boolean |
-| `a = x` | se necessário           |
-|         | converte int para float |
-|         | converte float para int |
-|         | converte int para char  |
-|         | converte char para int  |
+`if(x)`  
+**x** precisa ser **boolean**  
+
+`while(x)`  
+**x** precisa ser **boolean**  
+
+`y = x`  
+**y** e **x** precisam ser **iguais**  
+se necessário  
+converte **char** para **int**  
+converte **int** para **char**  
+converte **int** para **float**  
+converte **float** para **int**  
+
+`return x`  
+**x** precisa ser igual a **declaração**  
+se necessário  
+converte **char** para **int**  
+
+`x && y`  
+`x || y`  
+**x** e **y** precisam ser **booleans**  
+
+`x == y`  
+`x ~= y`  
+**x** e **y** precisam ser **iguais**  
+se necessário  
+converte **char** para **int**  
+converte **int** para **float**  
+
+`x > y`  
+`x >= y`  
+`x < y`  
+`x <= y`  
+**x** e **y** precisam ser **números**  
+se necessário  
+converte **char** para **int**  
+converte **int** para **float**  
+
+`x + y`  
+`x - y`  
+`x * y`  
+`x / y`  
+**x** e **y** precisam ser **números**  
+se necessário  
+converte **char** para **int**  
+converte **int** para **float**  
+
+`-x`  
+**x** precisa ser **número**  
+se necessário  
+converte **char** para **int**  
+
+`!x`  
+**x** precisa ser **boolean**  
+
+`x[y]`  
+**x** precisa ser **array**  
+**y** precisa ser **int**  
+
+`new int[x]`  
+**x** precisa ser **int**  
+

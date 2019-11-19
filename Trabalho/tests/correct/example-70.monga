@@ -1,0 +1,7 @@
+nome() : int {
+	return 'a';
+}
+
+main() {
+	nome();
+}
