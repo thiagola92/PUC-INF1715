@@ -2,6 +2,6 @@ first() : bool {
 	return true;
 }
 
-seventh(a : bool) : bool {
+second(a : bool) : bool {
 	return a;
 }

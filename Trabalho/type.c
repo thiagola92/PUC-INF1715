@@ -197,7 +197,7 @@ void type_command(Node* command) {
       type_return(command);
       break;
     case PRINT:
-      // TODO
+      type_print(command);
       break;
     case FUNCTION_CALL:
       type_function_call(command);
@@ -277,6 +277,10 @@ void type_return(Node* command_return) {
   command_return->type = definition->type;
 }
 
+void type_print(Node* command_print) {
+  type_expression(command_print->content.n[0]);
+}
+
 void type_expression(Node* expression) {
   switch(expression->tag) {
     case EXPRESSION_OR:
@@ -328,8 +332,8 @@ void type_expression(Node* expression) {
     case DATA_BOOLEAN:
       break;
     case DATA_CHARACTER:
-      safe_free(expression->type);
-      expression->type = malloc_node(TYPE_INTEGER);
+      // safe_free(expression->type);
+      // expression->type = malloc_node(TYPE_INTEGER);
       break;
     case DATA_INTEGER:
     case DATA_FLOAT:

@@ -35,6 +35,7 @@ void type_if(Node* command_if);
 void type_while(Node* command_while);
 void type_assignment(Node* assignment);
 void type_return(Node* command_return);
+void type_print(Node* command_print);
 
 void type_expression(Node* expression);
 

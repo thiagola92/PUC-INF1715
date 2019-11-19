@@ -57,8 +57,7 @@ void code_return(int* id, Node* return_command);
 void code_return_value(int* id, Node* return_command);
 
 void code_print(int* id, Node* print);
-void code_print_integer(int* id, Node* print);
-void code_print_float(int* id, Node* print);
+void code_print_value(char* template, char* type, char* id);
 
 void code_function_call(int* id, Node* function_call);
 void code_function_call_return(int* id, Node* function_call);
