@@ -1,0 +1,7 @@
+nome() : char {
+	return 97;
+}
+
+main() {
+	nome();
+}

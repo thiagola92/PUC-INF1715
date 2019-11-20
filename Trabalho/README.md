@@ -5,7 +5,6 @@ Matricula: 1721629
 
 * Faltando:
   * cast (x as y)
-  * not (!x)
   * array position (x[i])
   * new array (new int[x])
 
@@ -91,7 +90,7 @@ $ bash script.sh;
 | greater, greater equal, less, less equal  | `>`, `>=`, `<`, `<=` |
 | equal, not equal                          | `==`, `~=` |
 | and                                       | `&&` |
-| or                                        | `||` |
+| or                                        | <code>&#124;&#124;</code> |
 
 ## Tipagem
 
@@ -113,6 +112,7 @@ converte **float** para **int**
 **x** precisa ser igual a **declaração**  
 se necessário  
 converte **char** para **int**  
+converte **int** para **char**  
 
 `x && y`  
 `x || y`  

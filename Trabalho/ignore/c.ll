@@ -9,10 +9,8 @@ define void @nome(float) #0 {
   %3 = alloca i32, align 4
   store float %0, float* %2, align 4
   %4 = load float, float* %2, align 4
-  %5 = fcmp une float %4, 0.000000e+00
-  %6 = xor i1 %5, true
-  %7 = zext i1 %6 to i32
-  store i32 %7, i32* %3, align 4
+  %5 = fptosi float %4 to i32
+  store i32 %5, i32* %3, align 4
   ret void
 }
 

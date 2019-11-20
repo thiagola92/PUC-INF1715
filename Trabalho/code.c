@@ -591,16 +591,16 @@ void code_expression(int* id, Node* expression) {
       code_expression_compare(id, expression, "ne");
       break;
     case EXPRESSION_GREATER:
-      code_expression_compare(id, expression, "sgt");
+      code_expression_compare(id, expression, "gt");
       break;
     case EXPRESSION_GREATER_EQUAL:
-      code_expression_compare(id, expression, "sge");
+      code_expression_compare(id, expression, "ge");
       break;
     case EXPRESSION_LESS:
-      code_expression_compare(id, expression, "slt");
+      code_expression_compare(id, expression, "lt");
       break;
     case EXPRESSION_LESS_EQUAL:
-      code_expression_compare(id, expression, "sle");
+      code_expression_compare(id, expression, "le");
       break;
     case EXPRESSION_SUB:
       code_expression_calcule(id, expression, "sub");
@@ -615,6 +615,7 @@ void code_expression(int* id, Node* expression) {
       code_expression_calcule(id, expression, "mul");
       break;
     case EXPRESSION_CAST:
+      code_expression_cast(id, expression);
       break;
     case EXPRESSION_NEGATIVE:
       code_expression_negative(id, expression);
@@ -736,7 +737,7 @@ void code_expression_compare(int* id, Node* compare, char* operator) {
 
   compare->id = format_string("%%label%d", next_id(id));
 
-  switch(compare->type->tag) {
+  switch(compare->content.n[0]->type->tag) {
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
     case TYPE_INTEGER:
@@ -752,16 +753,57 @@ void code_expression_compare(int* id, Node* compare, char* operator) {
   }
 }
 
-void code_expression_compare_values(int* id, Node* compare, char* type, char* operator) {
+void code_expression_compare_values(int* id, Node* compare, char* compare_operator, char* operator) {
   char* result_identifier = format_string("%%label%d", next_id(id));
 
-  printf("  %s = %s %s ", compare->id, type, operator);
+  printf("  %s = ", compare->id);
+  code_expression_compare_type(compare->content.n[0]->type);
+  code_expression_compare_operator(compare, operator);
   code_variable_type(compare->content.n[0]->type);
   printf(" %s, %s\n", compare->content.n[0]->id, compare->content.n[1]->id);
 
   printf("  %s = zext i1 %s to i32\n", result_identifier, compare->id);
 
   compare->id = result_identifier;
+}
+
+void code_expression_compare_type(Node* type) {
+  switch(type->tag) {
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+    case TYPE_ARRAY:
+      printf("icmp ");
+      break;
+    case TYPE_FLOAT:
+      printf("fcmp ");
+      break;
+    default:
+      throw_code_error("invalid expression compare type");
+      break;
+  }
+}
+
+void code_expression_compare_operator(Node* compare, char* operator) {
+  if(compare->content.n[0]->type->tag == TYPE_FLOAT) {
+    printf("o%s ", operator);
+    return;
+  }
+
+  switch(compare->tag) {
+    case EXPRESSION_EQUAL:
+    case EXPRESSION_NOT_EQUAL:
+      printf("%s ", operator);
+      break;
+    case EXPRESSION_GREATER:
+    case EXPRESSION_GREATER_EQUAL:
+    case EXPRESSION_LESS:
+    case EXPRESSION_LESS_EQUAL:
+      printf("s%s ", operator);
+      break;
+    default:
+      throw_code_error("invalid expression compare operator");
+  }
 }
 
 void code_expression_calcule(int* id, Node* calcule, char* operator) {
@@ -784,7 +826,6 @@ void code_expression_calcule(int* id, Node* calcule, char* operator) {
       break;
     default:
       throw_code_error("invalid expression calcule");
-      break;
   }
 }
 
@@ -794,6 +835,69 @@ void code_expression_calcule_values(int* id, Node* calcule, char* operator) {
   printf(" %s, %s\n", calcule->content.n[0]->id, calcule->content.n[1]->id);
 }
 
+void code_expression_cast(int* id, Node* cast) {
+  Node* expression = cast->content.n[0];
+  Node* new_type = cast->content.n[1];
+
+  TAG from_type;
+  TAG to_type;
+
+  code_expression(id, expression);
+
+  if(expression->type->tag == new_type->type->tag) {
+    cast->id = expression->id;
+    return;
+  }
+
+  switch(expression->type->tag) {
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+      from_type = TYPE_INTEGER;
+      break;
+    case TYPE_FLOAT:
+      from_type = TYPE_FLOAT;
+      break;
+    default:
+      throw_code_error("invalid expression cast from");
+  }
+
+  switch(new_type->type->tag) {
+    case TYPE_BOOLEAN:
+    case TYPE_CHARACTER:
+    case TYPE_INTEGER:
+      to_type = TYPE_INTEGER;
+      break;
+    case TYPE_FLOAT:
+      to_type = TYPE_FLOAT;
+      break;
+    default:
+      throw_code_error("invalid expression cast to");
+  }
+
+  code_expression_cast_from_to(id, cast, from_type, to_type);
+}
+
+void code_expression_cast_from_to(int* id, Node* cast, TAG from_type, TAG to_type) {
+  if(from_type == to_type) {
+    cast->id = cast->content.n[0]->id;
+    return;
+  }
+
+  switch(from_type) {
+    case TYPE_INTEGER:
+      cast->id = format_string("%%label%d", next_id(id));
+      printf("  %s = sitofp i32 %s to float\n", cast->id, cast->content.n[0]->id);
+      break;
+    case TYPE_FLOAT:
+      cast->id = format_string("%%label%d", next_id(id));
+      printf("  %s = fptosi float %s to i32\n", cast->id, cast->content.n[0]->id);
+      break;
+    default:
+      throw_code_error("invalid expression cast from to");
+  }
+}
+
 void code_expression_negative(int* id, Node* negative) {
   code_expression(id, negative->content.n[0]);
 
@@ -801,10 +905,10 @@ void code_expression_negative(int* id, Node* negative) {
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
     case TYPE_INTEGER:
-      code_expression_negative_type(id, negative, "i32", "sub nsw");
+      code_expression_negative_type(id, negative, "sub nsw i32 0");
       break;
     case TYPE_FLOAT:
-      code_expression_negative_type(id, negative, "float", "fsub");
+      code_expression_negative_type(id, negative, "fsub float 0.000000e+00");
       break;
     case TYPE_ARRAY:
       throw_code_error("invalid expression negative array");
@@ -812,6 +916,12 @@ void code_expression_negative(int* id, Node* negative) {
       throw_code_error("invalid expression negative");
       break;
   }
+}
+
+void code_expression_negative_type(int* id, Node* negative, char* operation) {
+  negative->id = format_string("%%label%d", next_id(id));
+
+  printf("  %s = %s, %s\n", negative->id, operation, negative->content.n[0]->id);
 }
 
 void code_expression_not(int* id, Node* not) {
@@ -827,12 +937,6 @@ void code_expression_not(int* id, Node* not) {
   printf("  %s = icmp ne i32 %s, 0\n", compare_id, not->content.n[0]->id);
   printf("  %s = xor i1 %s, true\n", xor_id, compare_id);
   printf("  %s = zext i1 %s to i32\n", not->id, xor_id);
-}
-
-void code_expression_negative_type(int* id, Node* negative, char* type, char* operator) {
-  negative->id = format_string("%%label%d", next_id(id));
-
-  printf("  %s = %s %s 0, %s\n", negative->id, operator, type, negative->content.n[0]->id);
 }
 
 void code_expression_variable(int* id, Node* variable) {

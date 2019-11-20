@@ -5,7 +5,7 @@ declare i32 @printf(i8*, ...)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = icmp eq i32 (null), 97
+  %label1 = icmp eq i32 97, 97
   %label2 = zext i1 %label1 to i32
   %label3 = icmp eq i32 %label2, 1
   br i1 %label3, label %label4, label %label5

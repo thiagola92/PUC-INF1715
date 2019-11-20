@@ -7,15 +7,17 @@ declare i32 @printf(i8*, ...)
 define void @main() {
   %label1 = alloca i32*
   store i32* (null), i32** %label1
-  %label2 = icmp eq float (null), (null)
-  %label3 = zext i1 %label2 to i32
-  %label4 = icmp eq i32 %label3, 1
-  br i1 %label4, label %label5, label %label6
+  %label2 = sitofp i32 (null) to float
+  %label3 = sitofp i32 97 to float
+  %label4 = fcmp oeq float %label2, %label3
+  %label5 = zext i1 %label4 to i32
+  %label6 = icmp eq i32 %label5, 1
+  br i1 %label6, label %label7, label %label8
 
-  label5:
-  br label %label6
+  label7:
+  br label %label8
 
-  label6:
+  label8:
   ret void
 }
 

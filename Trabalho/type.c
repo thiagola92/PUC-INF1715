@@ -269,6 +269,7 @@ void type_return(Node* command_return) {
 
   type_expression(expression);
   
+  if_need_character_and_is_integer(definition, expression);
   if_need_integer_and_is_character(definition, expression);
 
   if(is_type_equal(definition, expression) == false)
