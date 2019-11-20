@@ -25,7 +25,7 @@ for file_input in tests/correct/*\.monga; do
   if [ $status -eq "0" ]; then
     echo "no compiling error, executing llc-6.0"
     # llc-6.0 $file_ll
-    llvm-as $file_ll
+    llvm-as-6.0 $file_ll
     # lli-6.0 $file_bc
   else
     echo "error, log in the output file"

@@ -40,15 +40,15 @@ Matricula: 1721629
 * bash
 * clang-6.0
 * llvm-6.0
-  * llvm-as
+  * llvm-as-6.0
   * lli-6.0
 
 ## Instalando (ubuntu)
 
 Flex: `sudo apt install flex`  
 Bison: `sudo apt install bison`  
-GCC: Já vem incluso no Ubuntu  
-Bash: Já vem incluso no Ubuntu  
+GCC: Incluso no Ubuntu  
+Bash: Incluso no Ubuntu  
 Clang: `sudo apt install clang-6.0`  
 LLVM: `sudo apt install llvm-6.0`  
 
