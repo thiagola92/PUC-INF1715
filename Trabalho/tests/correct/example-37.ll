@@ -10,12 +10,13 @@ define void @main() {
 
   ; assignment
 
-  ; array_position
+  ; expression_array_position
   %label2 = mul i64 4, 1
   %label3 = call i8* @malloc(i64 %label2)
   %label4 = bitcast i8* %label3 to i32*
-  %label5 = getelementptr inbounds i32, i32* %label4, i64 0
-  store i32 %label5, i32* %label1
+  %label5 = getelementptr inbounds i32, i32* %label4, i32 0
+  %label6 = load i32, i32* %label5
+  store i32 %label6, i32* %label1
   ret void
 }
 

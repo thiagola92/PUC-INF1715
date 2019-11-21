@@ -90,6 +90,7 @@ void code_expression_negative_type(int* id, Node* negative, char* operation);
 
 void code_expression_not(int* id, Node* not);
 
+void code_array_position(int* id, Node* array_position);
 void code_expression_array_position(int* id, Node* array_position);
 
 void code_expression_variable(int* id, Node* variable);

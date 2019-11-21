@@ -6,19 +6,35 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
+
+  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 1)
+
+  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+
+  ; pritn
   %label1 = icmp ne i32 1, 0
   %label2 = xor i1 %label1, true
   %label3 = zext i1 %label2 to i32
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label3)
+
+  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+
+  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 0)
+
+  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+
+  ; pritn
   %label4 = icmp ne i32 0, 0
   %label5 = xor i1 %label4, true
   %label6 = zext i1 %label5 to i32
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label6)
+
+  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
   ret void
 }

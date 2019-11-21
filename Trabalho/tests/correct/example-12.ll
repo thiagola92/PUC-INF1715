@@ -97,14 +97,14 @@ define void @main() {
 
   ; array_position
   %label36 = load i32*, i32** %label5
-  %label37 = getelementptr inbounds i32, i32* %label36, i64 0
+  %label37 = getelementptr inbounds i32, i32* %label36, i32 0
   store i32 1, i32* %label37
 
   ; assignment
 
   ; array_position
   %label38 = load i32*, i32** %label5
-  %label39 = getelementptr inbounds i32, i32* %label38, i64 1
+  %label39 = getelementptr inbounds i32, i32* %label38, i32 1
   store i32 0, i32* %label39
 
   ; assignment

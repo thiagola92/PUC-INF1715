@@ -14,20 +14,21 @@ define void @main() {
   %label4 = bitcast i8* %label3 to i32*
   store i32* %label4, i32** %label1
 
-  ; array_position
+  ; expression_array_position
   %label5 = load i32*, i32** %label1
-  %label6 = getelementptr inbounds i32, i32* %label5, i64 0
-  %label7 = sitofp i32 %label6 to float
-  %label8 = sitofp i32 97 to float
-  %label9 = fcmp oeq float %label7, %label8
-  %label10 = zext i1 %label9 to i32
-  %label11 = icmp eq i32 %label10, 1
-  br i1 %label11, label %label12, label %label13
-
-  label12:
-  br label %label13
+  %label6 = getelementptr inbounds i32, i32* %label5, i32 0
+  %label7 = load i32, i32* %label6
+  %label8 = sitofp i32 %label7 to float
+  %label9 = sitofp i32 97 to float
+  %label10 = fcmp oeq float %label8, %label9
+  %label11 = zext i1 %label10 to i32
+  %label12 = icmp eq i32 %label11, 1
+  br i1 %label12, label %label13, label %label14
 
   label13:
+  br label %label14
+
+  label14:
   ret void
 }
 

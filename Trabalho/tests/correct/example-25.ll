@@ -25,14 +25,14 @@ define void @main() {
 
   ; array_position
   %label12 = load i32*, i32** %label1
-  %label13 = getelementptr inbounds i32, i32* %label12, i64 0
+  %label13 = getelementptr inbounds i32, i32* %label12, i32 0
   store i32 1, i32* %label13
 
   ; assignment
 
   ; array_position
   %label14 = load i32*, i32** %label1
-  %label15 = getelementptr inbounds i32, i32* %label14, i64 1
+  %label15 = getelementptr inbounds i32, i32* %label14, i32 1
   store i32 0, i32* %label15
 
   ; assignment
@@ -45,14 +45,14 @@ define void @main() {
 
   ; array_position
   %label19 = load i32*, i32** %label2
-  %label20 = getelementptr inbounds i32, i32* %label19, i64 0
+  %label20 = getelementptr inbounds i32, i32* %label19, i32 0
   store i32 97, i32* %label20
 
   ; assignment
 
   ; array_position
   %label21 = load i32*, i32** %label2
-  %label22 = getelementptr inbounds i32, i32* %label21, i64 1
+  %label22 = getelementptr inbounds i32, i32* %label21, i32 1
   store i32 98, i32* %label22
 
   ; assignment
@@ -65,14 +65,14 @@ define void @main() {
 
   ; array_position
   %label26 = load i32*, i32** %label3
-  %label27 = getelementptr inbounds i32, i32* %label26, i64 0
+  %label27 = getelementptr inbounds i32, i32* %label26, i32 0
   store i32 1, i32* %label27
 
   ; assignment
 
   ; array_position
   %label28 = load i32*, i32** %label3
-  %label29 = getelementptr inbounds i32, i32* %label28, i64 1
+  %label29 = getelementptr inbounds i32, i32* %label28, i32 1
   store i32 2, i32* %label29
 
   ; assignment
@@ -85,7 +85,7 @@ define void @main() {
 
   ; array_position
   %label33 = load float*, float** %label4
-  %label34 = getelementptr inbounds float, float* %label33, i64 0
+  %label34 = getelementptr inbounds float, float* %label33, i32 0
   %label35 = fptrunc double 1.000000 to float
   store float %label35, float* %label34
 
@@ -93,37 +93,41 @@ define void @main() {
 
   ; array_position
   %label36 = load float*, float** %label4
-  %label37 = getelementptr inbounds float, float* %label36, i64 1
+  %label37 = getelementptr inbounds float, float* %label36, i32 1
   %label38 = fptrunc double 1.500000 to float
   store float %label38, float* %label37
 
   ; assignment
 
-  ; array_position
+  ; expression_array_position
   %label39 = load i32*, i32** %label1
-  %label40 = getelementptr inbounds i32, i32* %label39, i64 0
-  store i32 %label40, i32* %label5
+  %label40 = getelementptr inbounds i32, i32* %label39, i32 0
+  %label41 = load i32, i32* %label40
+  store i32 %label41, i32* %label5
 
   ; assignment
 
-  ; array_position
-  %label41 = load i32*, i32** %label2
-  %label42 = getelementptr inbounds i32, i32* %label41, i64 1
-  store i32 %label42, i32* %label6
+  ; expression_array_position
+  %label42 = load i32*, i32** %label2
+  %label43 = getelementptr inbounds i32, i32* %label42, i32 1
+  %label44 = load i32, i32* %label43
+  store i32 %label44, i32* %label6
 
   ; assignment
 
-  ; array_position
-  %label43 = load i32*, i32** %label3
-  %label44 = getelementptr inbounds i32, i32* %label43, i64 0
-  store i32 %label44, i32* %label7
+  ; expression_array_position
+  %label45 = load i32*, i32** %label3
+  %label46 = getelementptr inbounds i32, i32* %label45, i32 0
+  %label47 = load i32, i32* %label46
+  store i32 %label47, i32* %label7
 
   ; assignment
 
-  ; array_position
-  %label45 = load float*, float** %label4
-  %label46 = getelementptr inbounds float, float* %label45, i64 1
-  store float %label46, float* %label8
+  ; expression_array_position
+  %label48 = load float*, float** %label4
+  %label49 = getelementptr inbounds float, float* %label48, i32 1
+  %label50 = load float, float* %label49
+  store float %label50, float* %label8
   ret void
 }
 

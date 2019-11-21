@@ -25,7 +25,7 @@ define void @main() {
 
   ; array_position
   %label9 = load i32**, i32*** %label2
-  %label10 = getelementptr inbounds i32*, i32** %label9, i64 0
+  %label10 = getelementptr inbounds i32*, i32** %label9, i32 0
   %label11 = load i32*, i32** %label1
   store i32* %label11, i32** %label10
   ret void

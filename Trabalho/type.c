@@ -313,11 +313,12 @@ void type_expression(Node* expression) {
     case EXPRESSION_NOT:
       type_not_expression(expression);
       break;
-    case ARRAY_POSITION:
+    case EXPRESSION_ARRAY_POSITION:
+    case ARRAY_POSITION: // can i remove this? yes?
       type_array_position(expression);
       break;
     case EXPRESSION_VARIABLE:
-    case VARIABLE: // can i remove this?
+    case VARIABLE: // can i remove this? yes?
       type_variable_expression(expression);
       break;
     case FUNCTION_CALL:

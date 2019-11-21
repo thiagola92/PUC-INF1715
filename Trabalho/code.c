@@ -492,6 +492,8 @@ void code_return_value(int* id, Node* return_command) {
 void code_print(int* id, Node* print) {
   char* identifier;
 
+  printf("\n  ; pritn\n");
+
   code_expression(id, print->content.n[0]);
 
   switch(print->content.n[0]->type->tag) {
@@ -627,8 +629,11 @@ void code_expression(int* id, Node* expression) {
     case EXPRESSION_NOT:
       code_expression_not(id, expression);
       break;
-    case ARRAY_POSITION:
+    case EXPRESSION_ARRAY_POSITION:
       code_expression_array_position(id, expression);
+      break;
+    case ARRAY_POSITION:
+      code_array_position(id, expression);
       break;
     case EXPRESSION_VARIABLE:
       code_expression_variable(id, expression);
@@ -948,7 +953,7 @@ void code_expression_not(int* id, Node* not) {
   printf("  %s = zext i1 %s to i32\n", not->id, xor_id);
 }
 
-void code_expression_array_position(int* id, Node* array_position) {
+void code_array_position(int* id, Node* array_position) {
   char* getelementptr_id;
 
   printf("\n  ; array_position\n");
@@ -962,9 +967,36 @@ void code_expression_array_position(int* id, Node* array_position) {
   code_variable_type(array_position->type);
   printf(", ");
   code_variable_type(array_position->type);
-  printf("* %s, i64 %s\n", array_position->content.n[0]->id, array_position->content.n[1]->id);
+  printf("* %s, i32 %s\n", array_position->content.n[0]->id, array_position->content.n[1]->id);
 
   array_position->id = getelementptr_id;
+}
+
+void code_expression_array_position(int* id, Node* array_position) {
+  char* getelementptr_id;
+  char* load_id;
+
+  printf("\n  ; expression_array_position\n");
+
+  code_expression(id, array_position->content.n[0]);
+  code_expression(id, array_position->content.n[1]);
+
+  getelementptr_id = format_string("%%label%d", next_id(id));
+  load_id = format_string("%%label%d", next_id(id));
+
+  printf("  %s = getelementptr inbounds ", getelementptr_id);
+  code_variable_type(array_position->type);
+  printf(", ");
+  code_variable_type(array_position->type);
+  printf("* %s, i32 %s\n", array_position->content.n[0]->id, array_position->content.n[1]->id);
+
+  printf("  %s = load ", load_id);
+  code_variable_type(array_position->type);
+  printf(", ");
+  code_variable_type(array_position->type);
+  printf("* %s\n", getelementptr_id);
+
+  array_position->id = load_id;
 }
 
 void code_expression_variable(int* id, Node* variable) {
