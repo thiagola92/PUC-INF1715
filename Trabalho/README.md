@@ -4,8 +4,7 @@ Matricula: 1721629
 ## Observações
 
 * Faltando:
-  * array position (x[i])
-  * new array (new int[x])
+  * Limpar código e melhorar implementações
 
 ## Arquivos
 
