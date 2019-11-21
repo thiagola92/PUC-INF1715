@@ -243,7 +243,7 @@ expression_reference:  expression_variable { $$ = $1; }
                       ;
 
 expression_variable: expression_reference TOKEN_OPEN_BRACKETS expression TOKEN_CLOSE_BRACKETS { $$ = create_node(ARRAY_POSITION, 2, $1, $3); }
-          | identifier { $$ = create_node(VARIABLE, 1, $1); }
+          | identifier { $$ = create_node(EXPRESSION_VARIABLE, 1, $1); }
           ;
 
 expression_scope:  TOKEN_OPEN_PARENTHESES expression TOKEN_CLOSE_PARENTHESES  { $$ = $2; }

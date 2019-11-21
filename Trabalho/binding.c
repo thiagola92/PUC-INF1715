@@ -42,6 +42,7 @@ void check_node(Scope* scope, Node* node) {
   switch(node->tag) {
     case VARIABLE:
     case FUNCTION_CALL:
+    case EXPRESSION_VARIABLE:
       binding(scope, node);
       break;
     case RETURN:

@@ -8,7 +8,11 @@ declare i8* @malloc(i64)
 define void @main() {
   %label1 = alloca i32
   %label2 = alloca i32
+
+  ; assignment
   store i32 1, i32* %label1
+
+  ; assignment
   store i32 0, i32* %label2
   %label3 = load i32, i32* %label1
   %label4 = icmp eq i32 %label3, 1

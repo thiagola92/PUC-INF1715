@@ -13,6 +13,8 @@ define void @first(i32) {
 
 define void @main() {
   %label1 = alloca i32
+
+  ; assignment
   %label2 = add i32 1, 1
   store i32 %label2, i32* %label1
   %label3 = load i32, i32* %label1

@@ -11,6 +11,8 @@ define i32 @fn() {
 }
 
 define void @main() {
+
+  ; assignment
   %label1 = call i32 @fn()
   %label2 = add i32 98, %label1
   store i32 %label2, i32* @c

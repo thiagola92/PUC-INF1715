@@ -316,7 +316,8 @@ void type_expression(Node* expression) {
     case ARRAY_POSITION:
       type_array_position(expression);
       break;
-    case VARIABLE:
+    case EXPRESSION_VARIABLE:
+    case VARIABLE: // can i remove this?
       type_variable_expression(expression);
       break;
     case FUNCTION_CALL:

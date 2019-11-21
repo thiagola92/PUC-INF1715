@@ -7,6 +7,8 @@ declare i8* @malloc(i64)
 
 define void @main() {
   %label1 = alloca i32
+
+  ; assignment
   %label2 = sitofp i32 97 to float
   %label3 = fptrunc double 1.000000 to float
   %label4 = fcmp olt float %label2, %label3

@@ -9,6 +9,8 @@ define void @main() {
   %label1 = alloca i32
   %label2 = alloca i32
   %label3 = alloca i32
+
+  ; assignment
   br label %label4
 
   label4:
@@ -36,6 +38,8 @@ define void @main() {
   %label16 = phi i1 [ true, %label11 ], [ %label15, %label12 ]
   %label17 = zext i1 %label16 to i32
   store i32 %label17, i32* %label1
+
+  ; assignment
   br label %label18
 
   label18:
@@ -63,6 +67,8 @@ define void @main() {
   %label30 = phi i1 [ true, %label25 ], [ %label29, %label26 ]
   %label31 = zext i1 %label30 to i32
   store i32 %label31, i32* %label2
+
+  ; assignment
   br label %label32
 
   label32:
@@ -90,6 +96,8 @@ define void @main() {
   %label44 = phi i1 [ true, %label39 ], [ %label43, %label40 ]
   %label45 = zext i1 %label44 to i32
   store i32 %label45, i32* %label1
+
+  ; assignment
   br label %label46
 
   label46:

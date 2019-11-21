@@ -9,9 +9,15 @@ define void @main() {
   %label1 = alloca i32
   %label2 = alloca float
   %label3 = alloca i32
+
+  ; assignment
   store i32 3, i32* %label1
+
+  ; assignment
   %label4 = fptrunc double 4.500000 to float
   store float %label4, float* %label2
+
+  ; assignment
   store i32 97, i32* %label3
   %label5 = sitofp i32 3 to float
   %label6 = fptrunc double 4.500000 to float

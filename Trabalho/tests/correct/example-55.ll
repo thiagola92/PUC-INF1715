@@ -7,6 +7,8 @@ declare i8* @malloc(i64)
 
 define void @nome() {
   %label1 = alloca i32*
+
+  ; assignment
   %label2 = alloca [4 x i32]
   %label3 = getelementptr inbounds [4 x i32], [4 x i32]* %label2, i64 0, i64 0
   store i32 99, i32* %label3

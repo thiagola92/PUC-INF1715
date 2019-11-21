@@ -11,6 +11,8 @@ define void @nome(i32, i32) {
   %label4 = alloca i32
   store i32 %1, i32* %label4
   %label5 = alloca i32
+
+  ; assignment
   %label6 = load i32, i32* %label3
   %label7 = load i32, i32* %label4
   br label %label8
@@ -27,6 +29,8 @@ define void @nome(i32, i32) {
   %label13 = phi i1 [ true, %label8 ], [ %label12, %label9 ]
   %label14 = zext i1 %label13 to i32
   store i32 %label14, i32* %label5
+
+  ; assignment
   %label15 = load i32, i32* %label3
   %label16 = load i32, i32* %label4
   br label %label17
