@@ -7,8 +7,6 @@ declare i8* @malloc(i64)
 
 define void @main() {
   %label1 = alloca i32**
-
-  ; assignment
   %label2 = mul i64 4, 2
   %label3 = call i8* @malloc(i64 %label2)
   %label4 = bitcast i8* %label3 to i32**

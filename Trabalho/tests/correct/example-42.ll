@@ -12,11 +12,7 @@ define i32 @fn() {
 define void @main() {
   %label1 = alloca i32
   %label2 = alloca i32
-
-  ; assignment
   store i32 98, i32* %label1
-
-  ; assignment
   %label3 = load i32, i32* %label1
   %label4 = add i32 97, %label3
   %label5 = call i32 @fn()

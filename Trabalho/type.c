@@ -202,6 +202,9 @@ void type_command(Node* command) {
     case FUNCTION_CALL:
       type_function_call(command);
       break;
+    case BLOCK:
+      type_block(command);
+      break;
     default:
       throw_type_error("invalid command");
   }

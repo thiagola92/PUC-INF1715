@@ -37,23 +37,15 @@ define void @main() {
   %label2 = alloca i32
   %label3 = alloca i32
   %label4 = alloca float
-
-  ; assignment
   %label5 = call i32 @first()
   store i32 %label5, i32* %label1
-
-  ; assignment
   %label6 = load i32, i32* %label1
   %label7 = call i32 @second(i32 %label6)
   store i32 %label7, i32* %label2
-
-  ; assignment
   %label8 = load i32, i32* %label1
   %label9 = load i32, i32* %label2
   %label10 = call i32 @third(i32 %label8, i32 %label9)
   store i32 %label10, i32* %label3
-
-  ; assignment
   %label11 = load i32, i32* %label1
   %label12 = load i32, i32* %label2
   %label13 = call float @fourth(i32 %label11, i32 %label12)

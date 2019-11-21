@@ -11,8 +11,6 @@ define void @nome(i32, i32) {
   %label4 = alloca i32
   store i32 %1, i32* %label4
   %label5 = alloca i32
-
-  ; assignment
   %label6 = load i32, i32* %label3
   %label7 = load i32, i32* %label4
   %label8 = load i32, i32* %label3

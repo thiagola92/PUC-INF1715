@@ -6,17 +6,9 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-
-  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 1)
-
-  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
-
-  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 2)
-
-  ; pritn
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
   ret void
 }

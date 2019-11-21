@@ -347,6 +347,9 @@ void code_command(int* id, Node* command) {
     case FUNCTION_CALL:
       code_function_call(id, command);
       break;
+    case BLOCK:
+      code_block(id, command);
+      break;
     default:
       throw_code_error("invalid command");
   }
@@ -456,8 +459,6 @@ void code_while(int* id, Node* while_command) {
 }
 
 void code_assignment(int* id, Node* assignment) {
-  printf("\n  ; assignment\n");
-
   code_expression(id, assignment->content.n[0]);
   code_expression(id, assignment->content.n[1]);
 
@@ -491,8 +492,6 @@ void code_return_value(int* id, Node* return_command) {
 
 void code_print(int* id, Node* print) {
   char* identifier;
-
-  printf("\n  ; pritn\n");
 
   code_expression(id, print->content.n[0]);
 
@@ -956,8 +955,6 @@ void code_expression_not(int* id, Node* not) {
 void code_array_position(int* id, Node* array_position) {
   char* getelementptr_id;
 
-  printf("\n  ; array_position\n");
-
   code_expression(id, array_position->content.n[0]);
   code_expression(id, array_position->content.n[1]);
 
@@ -975,8 +972,6 @@ void code_array_position(int* id, Node* array_position) {
 void code_expression_array_position(int* id, Node* array_position) {
   char* getelementptr_id;
   char* load_id;
-
-  printf("\n  ; expression_array_position\n");
 
   code_expression(id, array_position->content.n[0]);
   code_expression(id, array_position->content.n[1]);

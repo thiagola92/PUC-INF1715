@@ -7,8 +7,6 @@ declare i8* @malloc(i64)
 
 define void @main() {
   %label1 = alloca i32
-
-  ; assignment
   store i32 32, i32* %label1
   ret void
 }

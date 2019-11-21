@@ -12,102 +12,58 @@ define void @main() {
   %label4 = alloca float
   %label5 = alloca i32*
   %label6 = alloca i32*
-
-  ; assignment
   store i32 1, i32* %label1
-
-  ; assignment
   store i32 0, i32* %label1
-
-  ; assignment
   store i32 115, i32* %label2
-
-  ; assignment
   store i32 1, i32* %label3
-
-  ; assignment
   %label7 = add i32 1, 1
   store i32 %label7, i32* %label3
-
-  ; assignment
   %label8 = add i32 1, 99999
   store i32 %label8, i32* %label3
-
-  ; assignment
   %label9 = add i32 0, 1
   store i32 %label9, i32* %label3
-
-  ; assignment
   %label10 = add i32 0, 0
   store i32 %label10, i32* %label3
-
-  ; assignment
   %label11 = fptrunc double 1.000000 to float
   store float %label11, float* %label4
-
-  ; assignment
   %label12 = fptrunc double 1.000000 to float
   %label13 = fptrunc double 1.000000 to float
   %label14 = fadd float %label12, %label13
   store float %label14, float* %label4
-
-  ; assignment
   %label15 = fptrunc double 1.000000 to float
   %label16 = fptrunc double 99999.000000 to float
   %label17 = fadd float %label15, %label16
   store float %label17, float* %label4
-
-  ; assignment
   %label18 = fptrunc double 0.000000 to float
   %label19 = fptrunc double 1.000000 to float
   %label20 = fadd float %label18, %label19
   store float %label20, float* %label4
-
-  ; assignment
   %label21 = fptrunc double 0.000000 to float
   %label22 = fptrunc double 0.000000 to float
   %label23 = fadd float %label21, %label22
   store float %label23, float* %label4
-
-  ; assignment
   %label24 = fptrunc double 1.500000 to float
   %label25 = fptrunc double 1.500000 to float
   %label26 = fadd float %label24, %label25
   store float %label26, float* %label4
-
-  ; assignment
   %label27 = fptrunc double 1.000000 to float
   %label28 = fptrunc double 0.500000 to float
   %label29 = fadd float %label27, %label28
   store float %label29, float* %label4
-
-  ; assignment
   %label30 = fptrunc double 0.000000 to float
   %label31 = fptrunc double 1.000000 to float
   %label32 = fadd float %label30, %label31
   store float %label32, float* %label4
-
-  ; assignment
   %label33 = mul i64 4, 2
   %label34 = call i8* @malloc(i64 %label33)
   %label35 = bitcast i8* %label34 to i32*
   store i32* %label35, i32** %label5
-
-  ; assignment
-
-  ; array_position
   %label36 = load i32*, i32** %label5
   %label37 = getelementptr inbounds i32, i32* %label36, i32 0
   store i32 1, i32* %label37
-
-  ; assignment
-
-  ; array_position
   %label38 = load i32*, i32** %label5
   %label39 = getelementptr inbounds i32, i32* %label38, i32 1
   store i32 0, i32* %label39
-
-  ; assignment
   %label40 = alloca [12 x i32]
   %label41 = getelementptr inbounds [12 x i32], [12 x i32]* %label40, i64 0, i64 0
   store i32 104, i32* %label41
@@ -135,8 +91,6 @@ define void @main() {
   store i32 0, i32* %label52
   %label53 = getelementptr inbounds [12 x i32], [12 x i32]* %label40, i32 0, i32 0
   store i32* %label53, i32** %label6
-
-  ; assignment
   %label54 = alloca [14 x i32]
   %label55 = getelementptr inbounds [14 x i32], [14 x i32]* %label54, i64 0, i64 0
   store i32 34, i32* %label55

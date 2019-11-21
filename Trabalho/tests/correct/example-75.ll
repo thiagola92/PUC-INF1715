@@ -7,23 +7,13 @@ declare i8* @malloc(i64)
 
 define void @main() {
   %label1 = alloca i32*
-
-  ; assignment
   %label2 = mul i64 4, 3
   %label3 = call i8* @malloc(i64 %label2)
   %label4 = bitcast i8* %label3 to i32*
   store i32* %label4, i32** %label1
-
-  ; assignment
-
-  ; array_position
   %label5 = load i32*, i32** %label1
   %label6 = getelementptr inbounds i32, i32* %label5, i32 0
   store i32 1, i32* %label6
-
-  ; pritn
-
-  ; expression_array_position
   %label7 = load i32*, i32** %label1
   %label8 = getelementptr inbounds i32, i32* %label7, i32 0
   %label9 = load i32, i32* %label8
