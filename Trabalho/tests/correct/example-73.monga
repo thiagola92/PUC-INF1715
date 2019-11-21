@@ -1,0 +1,30 @@
+main() {
+	a : int;
+	b : float;
+	c : char;
+
+	a = 3;
+	b = 4.5;
+	c = 'a';
+
+	@3+4.5;
+	@'\n';
+	@a+b;
+	@'\n';
+	@3+4.5 as int;
+	@'\n';
+	@a+b as int;
+	@'\n';
+	@3+4.5 as int as float;
+	@'\n';
+	@a+b as int as float;
+	@'\n';
+	@3+-4.5 as int as float;
+	@'\n';
+	@a+-b as int as float;
+	@'\n';
+	@a+b+c as int;
+	@'\n';
+	@(a+b+c) as int;
+	@'\n';
+}

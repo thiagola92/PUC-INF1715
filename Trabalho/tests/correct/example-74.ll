@@ -5,14 +5,12 @@ declare i8* @malloc(i64)
 @.print.int = constant [3 x i8] c"%d\00"
 @.print.float = constant [3 x i8] c"%f\00"
 
-@a = global i32 0
 define void @main() {
-  %label1 = alloca i32
-  ret void
-}
-
-define void @fn() {
-  %label1 = alloca i32
+  %label1 = alloca i32*
+  %label2 = mul i64 4, 3
+  %label3 = call i8* @malloc(i64 %label2)
+  %label4 = bitcast i8* %label3 to i32*
+  store i32* %label4, i32** %label1
   ret void
 }
 

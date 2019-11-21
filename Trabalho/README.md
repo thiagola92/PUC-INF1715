@@ -4,7 +4,6 @@ Matricula: 1721629
 ## Observações
 
 * Faltando:
-  * cast (x as y)
   * array position (x[i])
   * new array (new int[x])
 

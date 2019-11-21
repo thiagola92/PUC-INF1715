@@ -1,4 +1,5 @@
 declare i32 @printf(i8*, ...)
+declare i8* @malloc(i64)
 
 @.print.char = constant [3 x i8] c"%c\00"
 @.print.int = constant [3 x i8] c"%d\00"
@@ -6,16 +7,19 @@ declare i32 @printf(i8*, ...)
 
 define void @main() {
   %label1 = alloca i32*
-  store i32* (null), i32** %label1
-  %label2 = icmp eq i32 (null), 97
-  %label3 = zext i1 %label2 to i32
-  %label4 = icmp eq i32 %label3, 1
-  br i1 %label4, label %label5, label %label6
+  %label2 = mul i64 4, 1
+  %label3 = call i8* @malloc(i64 %label2)
+  %label4 = bitcast i8* %label3 to i32*
+  store i32* %label4, i32** %label1
+  %label5 = icmp eq i32 (null), 97
+  %label6 = zext i1 %label5 to i32
+  %label7 = icmp eq i32 %label6, 1
+  br i1 %label7, label %label8, label %label9
 
-  label5:
-  br label %label6
+  label8:
+  br label %label9
 
-  label6:
+  label9:
   ret void
 }
 

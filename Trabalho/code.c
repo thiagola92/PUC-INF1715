@@ -9,7 +9,8 @@ void throw_code_error(const char* error) {
 }
 
 void start_coding(Node* program) {
-  printf("declare i32 @printf(i8*, ...)\n\n");
+  printf("declare i32 @printf(i8*, ...)\n");
+  printf("declare i8* @malloc(i64)\n\n");
   
   printf("@.print.char = constant [3 x i8] c\"%%c\\00\"\n");
   printf("@.print.int = constant [3 x i8] c\"%%d\\00\"\n");
@@ -624,6 +625,7 @@ void code_expression(int* id, Node* expression) {
       code_expression_not(id, expression);
       break;
     case ARRAY_POSITION:
+      code_expression_array_position(id, expression);
       break;
     case VARIABLE:
       code_expression_variable(id, expression);
@@ -632,6 +634,7 @@ void code_expression(int* id, Node* expression) {
       code_function_call(id, expression);
       break;
     case NEW_ARRAY:
+      code_expression_new_array(id, expression);
       break;
     case TYPE_ARRAY:
       break;
@@ -939,6 +942,12 @@ void code_expression_not(int* id, Node* not) {
   printf("  %s = zext i1 %s to i32\n", not->id, xor_id);
 }
 
+void code_expression_array_position(int* id, Node* array_position) {
+  array_position->id = format_string("%%label%d", next_id(id));
+
+  // printf("  %s = getelementptr inbounds ");
+}
+
 void code_expression_variable(int* id, Node* variable) {
   variable->id = format_string("%%label%d", next_id(id));
 
@@ -947,6 +956,23 @@ void code_expression_variable(int* id, Node* variable) {
   printf(", ");
   code_variable_type(variable->definition->content.n[1]);
   printf("* %s\n", variable->definition->id);
+}
+
+void code_expression_new_array(int* id, Node* new_array) {
+  char* mult_id;
+  char* malloc_id;
+
+  code_expression(id, new_array->content.n[1]);
+
+  mult_id = format_string("%%label%d", next_id(id));
+  malloc_id = format_string("%%label%d", next_id(id));
+  new_array->id = format_string("%%label%d", next_id(id));
+
+  printf("  %s = mul i64 4, %s\n", mult_id, new_array->content.n[1]->id);
+  printf("  %s = call i8* @malloc(i64 %s)\n", malloc_id, mult_id);
+  printf("  %s = bitcast i8* %s to ", new_array->id, malloc_id);
+  code_variable_type(new_array->content.n[0]);
+  printf("*\n");
 }
 
 void code_expression_float(int* id, Node* float_expression) {

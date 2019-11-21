@@ -16,7 +16,7 @@ Isto gera um arquivo `file.ll` no formato do LLVM.
 Do código LLVM você gera o bytecode que consegue ser interpretador pelo interpretador de LLVM.  
 
 ```
-$ llvm-as file.ll
+$ llvm-as-6.0 file.ll
 ```
 
 Isto gera o arquivo `file.bc`.  
