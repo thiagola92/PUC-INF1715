@@ -2,4 +2,5 @@ main() {
 	a : [int];
 
 	a = new int[3];
+	a[0] = 1;
 }

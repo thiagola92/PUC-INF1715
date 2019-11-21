@@ -456,6 +456,7 @@ void code_while(int* id, Node* while_command) {
 }
 
 void code_assignment(int* id, Node* assignment) {
+  // code_expression(id, assignment->content.n[0]);
   code_expression(id, assignment->content.n[1]);
 
   printf("  store ");
@@ -943,9 +944,23 @@ void code_expression_not(int* id, Node* not) {
 }
 
 void code_expression_array_position(int* id, Node* array_position) {
-  array_position->id = format_string("%%label%d", next_id(id));
+  // char* load_id = format_string("%%label%d", next_id(id));
+  // char* getelementptr_id = format_string("%%label%d", next_id(id));
 
-  // printf("  %s = getelementptr inbounds ");
+  // printf("  %s = load ", load_id);
+  // code_variable_type(array_position->type);
+  // printf(", ");
+  // code_variable_type(array_position->definition->type);
+  // printf("* %s\n", array_position->content.n[0]->id);
+
+  // printf("  %s = getelementptr inbounds ", getelementptr_id);
+  // code_variable_type(array_position->definition->type->type);
+  // printf(", ");
+  // code_variable_type(array_position->definition->type);
+  // printf("%s, i64 %s", load_id, array_position->content.n[1]->id);
+  // printf("\n");
+
+  // array_position->id = getelementptr_id;
 }
 
 void code_expression_variable(int* id, Node* variable) {
@@ -961,18 +976,21 @@ void code_expression_variable(int* id, Node* variable) {
 void code_expression_new_array(int* id, Node* new_array) {
   char* mult_id;
   char* malloc_id;
+  char* bitcast_id;
 
   code_expression(id, new_array->content.n[1]);
 
   mult_id = format_string("%%label%d", next_id(id));
   malloc_id = format_string("%%label%d", next_id(id));
-  new_array->id = format_string("%%label%d", next_id(id));
+  bitcast_id = format_string("%%label%d", next_id(id));
 
   printf("  %s = mul i64 4, %s\n", mult_id, new_array->content.n[1]->id);
   printf("  %s = call i8* @malloc(i64 %s)\n", malloc_id, mult_id);
-  printf("  %s = bitcast i8* %s to ", new_array->id, malloc_id);
+  printf("  %s = bitcast i8* %s to ", bitcast_id, malloc_id);
   code_variable_type(new_array->content.n[0]);
   printf("*\n");
+
+  new_array->id = bitcast_id;
 }
 
 void code_expression_float(int* id, Node* float_expression) {
