@@ -4,7 +4,8 @@ Matricula: 1721629
 ## Observações
 
 * Faltando:
-  * Limpar código e melhorar implementações
+  * && e || usar "curto-circuito"
+  * Converter string para malloc
 
 ## Arquivos
 
