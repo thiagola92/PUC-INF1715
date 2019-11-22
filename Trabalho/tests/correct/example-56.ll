@@ -28,7 +28,7 @@ define void @nome() {
   %label9 = getelementptr inbounds i32, i32* %label8, i32 3
 
   ; assignment
-  store i32 92, i32* %label9
+  store i32 0, i32* %label9
   ret void
 }
 

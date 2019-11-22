@@ -29,11 +29,28 @@ define void @main() {
   %label10 = getelementptr inbounds i32, i32* %label9, i32 2
 
   ; assignment
-  store i32 92, i32* %label10
+  store i32 0, i32* %label10
 
   ; print
   %label11 = load i32*, i32** %label1
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.string, i32 0, i32 0), i32* %label11)
+  %label15 = alloca i32
+  store i32 0, i32* %label15
+  br label %label12
+
+  label12:
+  %label16 = load i32, i32* %label15
+  %label17 = getelementptr inbounds i32, i32* %label11, i32 %label16
+  %label18 = load i32, i32* %label17
+  %label19 = icmp eq i32 %label18, 0
+  br i1 %label19, label %label14, label %label13
+
+  label13:
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.string, i32 0, i32 0), i32* %label17)
+  %label20 = add i32 1, %label16
+  store i32 %label20, i32* %label15
+  br label %label12
+
+  label14:
   ret void
 }
 

@@ -116,6 +116,9 @@ char* convert_string(const char* input) {
     }
     
     switch(input[pos_input + 1]) {
+      case '0':
+        output[pos_output] = '\0';
+        break;
       case 'a':
         output[pos_output] = '\a';
         break;

@@ -36,7 +36,24 @@ define void @main() {
 
   ; print
   %label1 = call i32* @nome()
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.string, i32 0, i32 0), i32* %label1)
+  %label5 = alloca i32
+  store i32 0, i32* %label5
+  br label %label2
+
+  label2:
+  %label6 = load i32, i32* %label5
+  %label7 = getelementptr inbounds i32, i32* %label1, i32 %label6
+  %label8 = load i32, i32* %label7
+  %label9 = icmp eq i32 %label8, 0
+  br i1 %label9, label %label4, label %label3
+
+  label3:
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.string, i32 0, i32 0), i32* %label7)
+  %label10 = add i32 1, %label6
+  store i32 %label10, i32* %label5
+  br label %label2
+
+  label4:
   ret void
 }
 

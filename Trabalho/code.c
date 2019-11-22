@@ -516,7 +516,8 @@ void code_print(int* id, Node* print) {
       break;
     case TYPE_ARRAY:
       if(print->content.n[0]->type->type->tag == TYPE_CHARACTER)
-        code_print_value("@.print.string", "i32*", print->content.n[0]->id);
+        // code_print_value("@.print.string", "i32*", print->content.n[0]->id);
+        code_print_string(id, print);
       break;
     default:
       throw_code_error("invalid print");
@@ -525,6 +526,50 @@ void code_print(int* id, Node* print) {
 
 void code_print_value(char* template, char* type, char* id) {
   printf("  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* %s, i32 0, i32 0), %s %s)\n", template, type, id);
+}
+
+void code_print_string(int* id, Node* print) {
+  char* load_id;
+  char* alloca_id;
+  char* getelementptr_id;
+  char* load_id_2;
+  char* icmp_id;
+  char* add_id;
+
+  char* start_label;
+  char* repeat_label;
+  char* end_label;
+
+  start_label = format_string("%%label%d", next_id(id));
+  repeat_label = format_string("%%label%d", next_id(id));
+  end_label = format_string("%%label%d", next_id(id));
+
+  alloca_id = format_string("%%label%d", next_id(id));
+  printf("  %s = alloca i32\n", alloca_id);
+  printf("  store i32 0, i32* %s\n", alloca_id);
+  printf("  br label %s\n", start_label);
+  
+  printf("\n  %s:\n", label_name(start_label));
+  load_id = format_string("%%label%d", next_id(id));
+  getelementptr_id = format_string("%%label%d", next_id(id));
+  printf("  %s = load i32, i32* %s\n", load_id, alloca_id);
+  printf("  %s = getelementptr inbounds i32, i32* %s, i32 %s\n", getelementptr_id, print->content.n[0]->id, load_id);
+
+  load_id_2 = format_string("%%label%d", next_id(id));
+  icmp_id = format_string("%%label%d", next_id(id));
+  printf("  %s = load i32, i32* %s\n", load_id_2, getelementptr_id);
+  printf("  %s = icmp eq i32 %s, 0\n", icmp_id, load_id_2);
+  printf("  br i1 %s, label %s, label %s\n", icmp_id, end_label, repeat_label);
+
+  printf("\n  %s:\n", label_name(repeat_label));
+  printf("  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.string, i32 0, i32 0), i32* %s)\n", getelementptr_id);
+
+  add_id = format_string("%%label%d", next_id(id));
+  printf("  %s = add i32 1, %s\n", add_id, load_id);
+  printf("  store i32 %s, i32* %s\n", add_id, alloca_id);
+  printf("  br label %s\n", start_label);
+
+  printf("\n  %s:\n", label_name(end_label));
 }
 
 void code_function_call(int* id, Node* function_call) {
