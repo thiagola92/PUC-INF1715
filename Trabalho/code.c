@@ -15,6 +15,7 @@ void start_coding(Node* program) {
   printf("@.print.char = constant [3 x i8] c\"%%c\\00\"\n");
   printf("@.print.int = constant [3 x i8] c\"%%d\\00\"\n");
   printf("@.print.float = constant [3 x i8] c\"%%f\\00\"\n\n");
+  printf("@.print.string = constant [3 x i8] c\"%%s\\00\"\n\n");
 
   switch(program->tag) {
     case EMPTY:
@@ -462,6 +463,7 @@ void code_assignment(int* id, Node* assignment) {
   code_expression(id, assignment->content.n[0]);
   code_expression(id, assignment->content.n[1]);
 
+  printf("\n  ; assignment\n");
   printf("  store ");
   code_variable_type(assignment->content.n[1]->type);
   printf(" %s, ", assignment->content.n[1]->id);
@@ -493,6 +495,8 @@ void code_return_value(int* id, Node* return_command) {
 void code_print(int* id, Node* print) {
   char* identifier;
 
+  printf("\n  ; print\n");
+
   code_expression(id, print->content.n[0]);
 
   switch(print->content.n[0]->type->tag) {
@@ -511,8 +515,8 @@ void code_print(int* id, Node* print) {
       code_print_value("@.print.float", "double", identifier);
       break;
     case TYPE_ARRAY:
-      // if(print->content.n[0]->type->type->tag == TYPE_CHARACTER)
-      //   code_print_value("@.print.int", "i8*", print->content.n[0]->id);
+      if(print->content.n[0]->type->type->tag == TYPE_CHARACTER)
+        code_print_value("@.print.string", "i32*", print->content.n[0]->id);
       break;
     default:
       throw_code_error("invalid print");
@@ -1031,24 +1035,39 @@ void code_expression_float(int* id, Node* float_expression) {
 }
 
 void code_expression_string(int* id, Node* string) {
-  char* identifier = format_string("%%label%d", next_id(id));
-  char* identifier_char = NULL;
+  char* alloca_id;
+  char* mult_id;
+  char* malloc_id;
+  char* bitcast_id;
+
   int length = strlen(string->content.s) + 1;
 
-  printf("  %s = alloca [%d x i32]\n", identifier, length);
+  printf("\n  ; string\n");
 
+  alloca_id = format_string("%%label%d", next_id(id));
+  mult_id = format_string("%%label%d", next_id(id));
+  malloc_id = format_string("%%label%d", next_id(id));
+  bitcast_id = format_string("%%label%d", next_id(id));
+
+  printf("  %s = alloca i32*\n", alloca_id);
+  printf("  %s = mul i64 4, %d\n", mult_id, length);
+  printf("  %s = call i8* @malloc(i64 %s)\n", malloc_id, mult_id);
+  printf("  %s = bitcast i8* %s to i32*\n", bitcast_id, malloc_id);
+  printf("  store i32* %s, i32** %s\n", bitcast_id, alloca_id);
+
+  string->id = bitcast_id;
+
+  printf("\n  ; char\n");
   for(int i = 0; i < length; i++) {
-    identifier_char = format_string("%%label%d", next_id(id));
+    char* load_id = format_string("%%label%d", next_id(id));
+    char* getelementptr_id = format_string("%%label%d", next_id(id));
+
     int character = (int)string->content.s[i];
 
-    printf("  %s = getelementptr inbounds [%d x i32], [%d x i32]* %s, i64 0, i64 %d\n", identifier_char, length, length, identifier, i);
-    printf("  store i32 %d, i32* %s\n", character, identifier_char);
+    printf("  %s = load i32*, i32** %s\n", load_id, alloca_id);
+    printf("  %s = getelementptr inbounds i32, i32* %s, i32 %d\n", getelementptr_id, load_id, i);
+    printf("  store i32 %d, i32* %s\n", character, getelementptr_id);
   }
-
-  identifier_char = format_string("%%label%d", next_id(id));
-  printf("  %s = getelementptr inbounds [%d x i32], [%d x i32]* %s, i32 0, i32 0\n", identifier_char, length, length, identifier);
-
-  string->id = identifier_char;
 }
 
 /************************* UTILITY *************************/

@@ -1,3 +1,7 @@
 nome() : [char] {
 	return "coe";
 }
+
+main() {
+	@nome();
+}

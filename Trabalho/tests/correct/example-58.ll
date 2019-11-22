@@ -5,18 +5,39 @@ declare i8* @malloc(i64)
 @.print.int = constant [3 x i8] c"%d\00"
 @.print.float = constant [3 x i8] c"%f\00"
 
+@.print.string = constant [3 x i8] c"%s\00"
+
 define i32* @nome() {
-  %label1 = alloca [4 x i32]
-  %label2 = getelementptr inbounds [4 x i32], [4 x i32]* %label1, i64 0, i64 0
-  store i32 99, i32* %label2
-  %label3 = getelementptr inbounds [4 x i32], [4 x i32]* %label1, i64 0, i64 1
-  store i32 111, i32* %label3
-  %label4 = getelementptr inbounds [4 x i32], [4 x i32]* %label1, i64 0, i64 2
-  store i32 101, i32* %label4
-  %label5 = getelementptr inbounds [4 x i32], [4 x i32]* %label1, i64 0, i64 3
-  store i32 0, i32* %label5
-  %label6 = getelementptr inbounds [4 x i32], [4 x i32]* %label1, i32 0, i32 0
-  ret i32* %label6
+
+  ; string
+  %label1 = alloca i32*
+  %label2 = mul i64 4, 4
+  %label3 = call i8* @malloc(i64 %label2)
+  %label4 = bitcast i8* %label3 to i32*
+  store i32* %label4, i32** %label1
+
+  ; char
+  %label5 = load i32*, i32** %label1
+  %label6 = getelementptr inbounds i32, i32* %label5, i32 0
+  store i32 99, i32* %label6
+  %label7 = load i32*, i32** %label1
+  %label8 = getelementptr inbounds i32, i32* %label7, i32 1
+  store i32 111, i32* %label8
+  %label9 = load i32*, i32** %label1
+  %label10 = getelementptr inbounds i32, i32* %label9, i32 2
+  store i32 101, i32* %label10
+  %label11 = load i32*, i32** %label1
+  %label12 = getelementptr inbounds i32, i32* %label11, i32 3
+  store i32 0, i32* %label12
+  ret i32* %label4
+}
+
+define void @main() {
+
+  ; print
+  %label1 = call i32* @nome()
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.string, i32 0, i32 0), i32* %label1)
+  ret void
 }
 
 

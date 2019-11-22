@@ -3,22 +3,25 @@ source_filename = "c.c"
 target datalayout = "e-m:e-i64:64-f80:128-n8:16:32:64-S128"
 target triple = "x86_64-pc-linux-gnu"
 
-@.str = private unnamed_addr constant [3 x i8] c"%d\00", align 1
+@.str = private unnamed_addr constant [3 x i8] c"%s\00", align 1
 
 ; Function Attrs: noinline nounwind optnone uwtable
-define void @test3() #0 {
-  %1 = alloca i32*
+define i32 @main() #0 {
+  %1 = alloca i8*, align 8
   %2 = call noalias i8* @malloc(i64 12) #3
-  %3 = bitcast i8* %2 to i32*
-  store i32* %3, i32** %1
-  %4 = load i32*, i32** %1
-  %5 = getelementptr inbounds i32, i32* %4, i64 0
-  store i32 10, i32* %5
-  %6 = load i32*, i32** %1
-  %7 = getelementptr inbounds i32, i32* %6, i64 0
-  %8 = load i32, i32* %7
-  %9 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i32 0, i32 0), i32 %8)
-  ret void
+  store i8* %2, i8** %1, align 8
+  %3 = load i8*, i8** %1, align 8
+  %4 = getelementptr inbounds i8, i8* %3, i64 0
+  store i8 111, i8* %4, align 1
+  %5 = load i8*, i8** %1, align 8
+  %6 = getelementptr inbounds i8, i8* %5, i64 1
+  store i8 105, i8* %6, align 1
+  %7 = load i8*, i8** %1, align 8
+  %8 = getelementptr inbounds i8, i8* %7, i64 2
+  store i8 0, i8* %8, align 1
+  %9 = load i8*, i8** %1, align 8
+  %10 = call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.str, i32 0, i32 0), i8* %9)
+  ret i32 0
 }
 
 ; Function Attrs: nounwind
