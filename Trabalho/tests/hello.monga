@@ -1,0 +1,54 @@
+declaring_and_setting_variables() {
+    foo : bool;
+    bar : char;
+    fob : int;
+    bao : float;
+
+    foo = true;
+    bar = 'a';
+    fob = 1;
+    bao = 1.0;
+
+    @"Printing example:\n";
+    @foo;
+    @"\n";
+    @bar;
+    @"\n";
+    @fob;
+    @"\n";
+    @bao;
+
+}
+
+main() {
+    @"Welcome to my monga compiler\n";
+    @"\n";
+    @"Monga have 4 types of variables\n";
+    @"bool\n";
+    @"char\n";
+    @"int\n";
+    @"float\n";
+    @"\n";
+    @"Declaring variables:\n";
+    @"foo : bool\n";
+    @"bar : char\n";
+    @"fob : int\n";
+    @"bao : float\n";
+    @"\n";
+    @"Setting their values\n";
+    @"foo = true;\n";
+    @"bar = 'a';\n";
+    @"fob = 1;\n";
+    @"bao = 1.0;\n";
+    @"\n";
+    @"* You can't declare and set the variable at the same type\n";
+    @"\n";
+    @"Printing on the screen\n";
+    @"@foobar;\n";
+    @"'foobar' can be a variable or an expression\n";
+    @"\n";
+
+    declaring_and_setting_variables();
+
+    @"\nThank you for using me\n";
+}
