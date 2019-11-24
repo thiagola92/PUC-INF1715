@@ -5,7 +5,6 @@ Matricula: 1721629
 
 * Faltando:
   * && e || usar "curto-circuito"
-  * Converter string para malloc
 
 ## Arquivos
 
