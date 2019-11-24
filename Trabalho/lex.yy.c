@@ -2081,7 +2081,7 @@ char* convert_string(const char* input) {
     pos_output++;
   }
 
-  output[pos_input] = '\0';
+  output[pos_output] = '\0';
   return output;
 }
 

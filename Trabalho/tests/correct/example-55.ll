@@ -5,19 +5,16 @@ declare i8* @malloc(i64)
 @.print.int = constant [3 x i8] c"%d\00"
 @.print.float = constant [3 x i8] c"%f\00"
 
-@.print.string = constant [3 x i8] c"%s\00"
-
 define void @nome() {
   %label1 = alloca i32*
 
-  ; string
+  ;4
+
   %label2 = alloca i32*
   %label3 = mul i64 4, 4
   %label4 = call i8* @malloc(i64 %label3)
   %label5 = bitcast i8* %label4 to i32*
   store i32* %label5, i32** %label2
-
-  ; char
   %label6 = load i32*, i32** %label2
   %label7 = getelementptr inbounds i32, i32* %label6, i32 0
   store i32 99, i32* %label7
@@ -30,8 +27,6 @@ define void @nome() {
   %label12 = load i32*, i32** %label2
   %label13 = getelementptr inbounds i32, i32* %label12, i32 3
   store i32 0, i32* %label13
-
-  ; assignment
   store i32* %label5, i32** %label1
   ret void
 }

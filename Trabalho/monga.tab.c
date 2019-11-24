@@ -1,4 +1,4 @@
-/* A Bison parser, made by GNU Bison 3.4.1.  */
+/* A Bison parser, made by GNU Bison 3.3.2.  */
 
 /* Bison implementation for Yacc-like parsers in C
 
@@ -48,7 +48,7 @@
 #define YYBISON 1
 
 /* Bison version.  */
-#define YYBISON_VERSION "3.4.1"
+#define YYBISON_VERSION "3.3.2"
 
 /* Skeleton name.  */
 #define YYSKELETON_NAME "yacc.c"
@@ -66,7 +66,7 @@
 
 
 /* First part of user prologue.  */
-#line 1 "monga.y"
+#line 1 "monga.y" /* yacc.c:337  */
 
   // Nome: Thiago Lages de Alencar
   // Matricula: 1721629
@@ -75,8 +75,7 @@
   
   Node* __root__;
 
-#line 79 "monga.tab.c"
-
+#line 79 "monga.tab.c" /* yacc.c:337  */
 # ifndef YY_NULLPTR
 #  if defined __cplusplus
 #   if 201103L <= __cplusplus
@@ -97,8 +96,8 @@
 # define YYERROR_VERBOSE 0
 #endif
 
-/* Use api.header.include to #include this header
-   instead of duplicating it here.  */
+/* In a future release of Bison, this section will be replaced
+   by #include "monga.tab.h".  */
 #ifndef YY_YY_MONGA_TAB_H_INCLUDED
 # define YY_YY_MONGA_TAB_H_INCLUDED
 /* Debug traces.  */
@@ -160,9 +159,10 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
+
 union YYSTYPE
 {
-#line 12 "monga.y"
+#line 12 "monga.y" /* yacc.c:352  */
 
   int i;
   float f;
@@ -170,9 +170,9 @@ union YYSTYPE
   
   Node* n;
 
-#line 174 "monga.tab.c"
-
+#line 174 "monga.tab.c" /* yacc.c:352  */
 };
+
 typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
@@ -286,8 +286,6 @@ typedef short yytype_int16;
 # define YY_INITIAL_VALUE(Value) /* Nothing. */
 #endif
 
-
-#define YY_ASSERT(E) ((void) (0 && (E)))
 
 #if ! defined yyoverflow || YYERROR_VERBOSE
 
@@ -1239,8 +1237,6 @@ yynewstate:
 | yynewstate -- set current state (the top of the stack) to yystate.  |
 `--------------------------------------------------------------------*/
 yysetstate:
-  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
-  YY_ASSERT (0 <= yystate && yystate < YYNSTATES);
   *yyssp = (yytype_int16) yystate;
 
   if (yyss + yystacksize - 1 <= yyssp)
@@ -1302,6 +1298,8 @@ yysetstate:
         YYABORT;
     }
 #endif /* !defined yyoverflow && !defined YYSTACK_RELOCATE */
+
+  YYDPRINTF ((stderr, "Entering state %d\n", yystate));
 
   if (yystate == YYFINAL)
     YYACCEPT;
@@ -1370,6 +1368,7 @@ yybackup:
   YY_IGNORE_MAYBE_UNINITIALIZED_BEGIN
   *++yyvsp = yylval;
   YY_IGNORE_MAYBE_UNINITIALIZED_END
+
   goto yynewstate;
 
 
@@ -1404,507 +1403,506 @@ yyreduce:
   YY_REDUCE_PRINT (yyn);
   switch (yyn)
     {
-  case 2:
-#line 116 "monga.y"
+        case 2:
+#line 116 "monga.y" /* yacc.c:1652  */
     { __root__ = create_node(EMPTY, 0); (yyval.n) = __root__; }
-#line 1411 "monga.tab.c"
+#line 1410 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 3:
-#line 117 "monga.y"
+#line 117 "monga.y" /* yacc.c:1652  */
     { __root__ = (yyvsp[0].n); (yyval.n) = __root__; }
-#line 1417 "monga.tab.c"
+#line 1416 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 4:
-#line 120 "monga.y"
+#line 120 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = append_node(DEFINE_LIST, (yyvsp[-1].n), (yyvsp[0].n)); }
-#line 1423 "monga.tab.c"
+#line 1422 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 5:
-#line 121 "monga.y"
+#line 121 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1429 "monga.tab.c"
+#line 1428 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 6:
-#line 124 "monga.y"
+#line 124 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1435 "monga.tab.c"
+#line 1434 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 7:
-#line 125 "monga.y"
+#line 125 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1441 "monga.tab.c"
+#line 1440 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 8:
-#line 128 "monga.y"
+#line 128 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(DEFINE_VARIABLE, 2, (yyvsp[-3].n), (yyvsp[-1].n)); }
-#line 1447 "monga.tab.c"
+#line 1446 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 9:
-#line 131 "monga.y"
+#line 131 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node_string(IDENTIFIER, (yyvsp[0].s)); }
-#line 1453 "monga.tab.c"
+#line 1452 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 10:
-#line 134 "monga.y"
+#line 134 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(TYPE_BOOLEAN, 0); }
-#line 1459 "monga.tab.c"
+#line 1458 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 11:
-#line 135 "monga.y"
+#line 135 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(TYPE_CHARACTER, 0); }
-#line 1465 "monga.tab.c"
+#line 1464 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 12:
-#line 136 "monga.y"
+#line 136 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(TYPE_INTEGER, 0); }
-#line 1471 "monga.tab.c"
+#line 1470 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 13:
-#line 137 "monga.y"
+#line 137 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(TYPE_FLOAT, 0); }
-#line 1477 "monga.tab.c"
+#line 1476 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 14:
-#line 138 "monga.y"
+#line 138 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(TYPE_ARRAY, 1, (yyvsp[-1].n)); }
-#line 1483 "monga.tab.c"
+#line 1482 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 15:
-#line 141 "monga.y"
+#line 141 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(DEFINE_FUNCTION, 4, (yyvsp[-6].n), (yyvsp[-4].n), (yyvsp[-1].n), (yyvsp[0].n)); }
-#line 1489 "monga.tab.c"
+#line 1488 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 16:
-#line 142 "monga.y"
+#line 142 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(DEFINE_FUNCTION, 3, (yyvsp[-4].n), (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1495 "monga.tab.c"
+#line 1494 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 17:
-#line 143 "monga.y"
+#line 143 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(DEFINE_FUNCTION, 3, (yyvsp[-5].n), (yyvsp[-1].n), (yyvsp[0].n)); }
-#line 1501 "monga.tab.c"
+#line 1500 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 18:
-#line 144 "monga.y"
+#line 144 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(DEFINE_FUNCTION, 2, (yyvsp[-3].n), (yyvsp[0].n)); }
-#line 1507 "monga.tab.c"
+#line 1506 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 19:
-#line 147 "monga.y"
+#line 147 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = append_node(PARAMETER_LIST, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1513 "monga.tab.c"
+#line 1512 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 20:
-#line 148 "monga.y"
+#line 148 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1519 "monga.tab.c"
+#line 1518 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 21:
-#line 151 "monga.y"
+#line 151 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(PARAMETER, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1525 "monga.tab.c"
+#line 1524 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 22:
-#line 154 "monga.y"
+#line 154 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(BLOCK, 2, (yyvsp[-2].n), (yyvsp[-1].n)); }
-#line 1531 "monga.tab.c"
+#line 1530 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 23:
-#line 155 "monga.y"
+#line 155 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(BLOCK, 1, (yyvsp[-1].n)); }
-#line 1537 "monga.tab.c"
+#line 1536 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 24:
-#line 156 "monga.y"
+#line 156 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(BLOCK, 1, (yyvsp[-1].n)); }
-#line 1543 "monga.tab.c"
+#line 1542 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 25:
-#line 157 "monga.y"
+#line 157 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(BLOCK, 0); }
-#line 1549 "monga.tab.c"
+#line 1548 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 26:
-#line 160 "monga.y"
+#line 160 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = append_node(VARIABLE_LIST, (yyvsp[-1].n), (yyvsp[0].n)); }
-#line 1555 "monga.tab.c"
+#line 1554 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 27:
-#line 161 "monga.y"
+#line 161 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1561 "monga.tab.c"
+#line 1560 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 28:
-#line 164 "monga.y"
+#line 164 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = append_node(COMMAND_LIST, (yyvsp[-1].n), (yyvsp[0].n)); }
-#line 1567 "monga.tab.c"
+#line 1566 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 29:
-#line 165 "monga.y"
+#line 165 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1573 "monga.tab.c"
+#line 1572 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 30:
-#line 168 "monga.y"
+#line 168 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(IF, 2, (yyvsp[-1].n), (yyvsp[0].n)); }
-#line 1579 "monga.tab.c"
+#line 1578 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 31:
-#line 169 "monga.y"
+#line 169 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(IF, 3, (yyvsp[-3].n), (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1585 "monga.tab.c"
+#line 1584 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 32:
-#line 170 "monga.y"
+#line 170 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(WHILE, 2, (yyvsp[-1].n), (yyvsp[0].n)); }
-#line 1591 "monga.tab.c"
+#line 1590 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 33:
-#line 171 "monga.y"
+#line 171 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(ASSIGNMENT, 2, (yyvsp[-3].n), (yyvsp[-1].n)); }
-#line 1597 "monga.tab.c"
+#line 1596 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 34:
-#line 172 "monga.y"
+#line 172 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(RETURN, 1, (yyvsp[-1].n)); }
-#line 1603 "monga.tab.c"
+#line 1602 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 35:
-#line 173 "monga.y"
+#line 173 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(RETURN, 0); }
-#line 1609 "monga.tab.c"
+#line 1608 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 36:
-#line 174 "monga.y"
+#line 174 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(PRINT, 1, (yyvsp[-1].n)); }
-#line 1615 "monga.tab.c"
+#line 1614 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 37:
-#line 175 "monga.y"
+#line 175 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[-1].n); }
-#line 1621 "monga.tab.c"
+#line 1620 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 38:
-#line 176 "monga.y"
+#line 176 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1627 "monga.tab.c"
+#line 1626 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 39:
-#line 179 "monga.y"
+#line 179 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(ARRAY_POSITION, 2, (yyvsp[-3].n), (yyvsp[-1].n)); }
-#line 1633 "monga.tab.c"
+#line 1632 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 40:
-#line 180 "monga.y"
+#line 180 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(VARIABLE, 1, (yyvsp[0].n)); }
-#line 1639 "monga.tab.c"
+#line 1638 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 41:
-#line 183 "monga.y"
+#line 183 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(FUNCTION_CALL, 2, (yyvsp[-3].n), (yyvsp[-1].n)); }
-#line 1645 "monga.tab.c"
+#line 1644 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 42:
-#line 184 "monga.y"
+#line 184 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(FUNCTION_CALL, 1, (yyvsp[-2].n)); }
-#line 1651 "monga.tab.c"
+#line 1650 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 43:
-#line 187 "monga.y"
+#line 187 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(NEW_ARRAY, 2, (yyvsp[-3].n), (yyvsp[-1].n)); }
-#line 1657 "monga.tab.c"
+#line 1656 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 44:
-#line 190 "monga.y"
+#line 190 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = append_node(EXPRESSION_LIST, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1663 "monga.tab.c"
+#line 1662 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 45:
-#line 191 "monga.y"
+#line 191 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1669 "monga.tab.c"
+#line 1668 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 46:
-#line 194 "monga.y"
+#line 194 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1675 "monga.tab.c"
+#line 1674 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 47:
-#line 197 "monga.y"
+#line 197 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_OR, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1681 "monga.tab.c"
+#line 1680 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 48:
-#line 198 "monga.y"
+#line 198 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1687 "monga.tab.c"
+#line 1686 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 49:
-#line 201 "monga.y"
+#line 201 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_AND, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1693 "monga.tab.c"
+#line 1692 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 50:
-#line 202 "monga.y"
+#line 202 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1699 "monga.tab.c"
+#line 1698 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 51:
-#line 205 "monga.y"
+#line 205 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_EQUAL, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1705 "monga.tab.c"
+#line 1704 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 52:
-#line 206 "monga.y"
+#line 206 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_NOT_EQUAL, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1711 "monga.tab.c"
+#line 1710 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 53:
-#line 207 "monga.y"
+#line 207 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1717 "monga.tab.c"
+#line 1716 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 54:
-#line 210 "monga.y"
+#line 210 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_GREATER, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1723 "monga.tab.c"
+#line 1722 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 55:
-#line 211 "monga.y"
+#line 211 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_GREATER_EQUAL, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1729 "monga.tab.c"
+#line 1728 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 56:
-#line 212 "monga.y"
+#line 212 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_LESS, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1735 "monga.tab.c"
+#line 1734 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 57:
-#line 213 "monga.y"
+#line 213 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_LESS_EQUAL, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1741 "monga.tab.c"
+#line 1740 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 58:
-#line 214 "monga.y"
+#line 214 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1747 "monga.tab.c"
+#line 1746 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 59:
-#line 217 "monga.y"
+#line 217 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_SUB, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1753 "monga.tab.c"
+#line 1752 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 60:
-#line 218 "monga.y"
+#line 218 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_ADD, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1759 "monga.tab.c"
+#line 1758 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 61:
-#line 219 "monga.y"
+#line 219 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1765 "monga.tab.c"
+#line 1764 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 62:
-#line 222 "monga.y"
+#line 222 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_DIV, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1771 "monga.tab.c"
+#line 1770 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 63:
-#line 223 "monga.y"
+#line 223 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_MULT, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1777 "monga.tab.c"
+#line 1776 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 64:
-#line 224 "monga.y"
+#line 224 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1783 "monga.tab.c"
+#line 1782 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 65:
-#line 227 "monga.y"
+#line 227 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_CAST, 2, (yyvsp[-2].n), (yyvsp[0].n)); }
-#line 1789 "monga.tab.c"
+#line 1788 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 66:
-#line 228 "monga.y"
+#line 228 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1795 "monga.tab.c"
+#line 1794 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 67:
-#line 231 "monga.y"
+#line 231 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_NEGATIVE, 1, (yyvsp[0].n)); }
-#line 1801 "monga.tab.c"
+#line 1800 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 68:
-#line 232 "monga.y"
+#line 232 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1807 "monga.tab.c"
+#line 1806 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 69:
-#line 235 "monga.y"
+#line 235 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_NOT, 1, (yyvsp[0].n)); }
-#line 1813 "monga.tab.c"
+#line 1812 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 70:
-#line 236 "monga.y"
+#line 236 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1819 "monga.tab.c"
+#line 1818 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 71:
-#line 239 "monga.y"
+#line 239 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1825 "monga.tab.c"
+#line 1824 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 72:
-#line 240 "monga.y"
+#line 240 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1831 "monga.tab.c"
+#line 1830 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 73:
-#line 241 "monga.y"
+#line 241 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1837 "monga.tab.c"
+#line 1836 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 74:
-#line 242 "monga.y"
+#line 242 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1843 "monga.tab.c"
+#line 1842 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 75:
-#line 245 "monga.y"
+#line 245 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_ARRAY_POSITION, 2, (yyvsp[-3].n), (yyvsp[-1].n)); }
-#line 1849 "monga.tab.c"
+#line 1848 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 76:
-#line 246 "monga.y"
+#line 246 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node(EXPRESSION_VARIABLE, 1, (yyvsp[0].n)); }
-#line 1855 "monga.tab.c"
+#line 1854 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 77:
-#line 249 "monga.y"
+#line 249 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[-1].n); }
-#line 1861 "monga.tab.c"
+#line 1860 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 78:
-#line 250 "monga.y"
+#line 250 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = (yyvsp[0].n); }
-#line 1867 "monga.tab.c"
+#line 1866 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 79:
-#line 253 "monga.y"
+#line 253 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node_boolean(1); }
-#line 1873 "monga.tab.c"
+#line 1872 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 80:
-#line 254 "monga.y"
+#line 254 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node_boolean(0); }
-#line 1879 "monga.tab.c"
+#line 1878 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 81:
-#line 255 "monga.y"
+#line 255 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node_character((yyvsp[0].i)); }
-#line 1885 "monga.tab.c"
+#line 1884 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 82:
-#line 256 "monga.y"
+#line 256 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node_integer((yyvsp[0].i)); }
-#line 1891 "monga.tab.c"
+#line 1890 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 83:
-#line 257 "monga.y"
+#line 257 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node_float((yyvsp[0].f)); }
-#line 1897 "monga.tab.c"
+#line 1896 "monga.tab.c" /* yacc.c:1652  */
     break;
 
   case 84:
-#line 258 "monga.y"
+#line 258 "monga.y" /* yacc.c:1652  */
     { (yyval.n) = create_node_string(DATA_STRING, (yyvsp[0].s)); }
-#line 1903 "monga.tab.c"
+#line 1902 "monga.tab.c" /* yacc.c:1652  */
     break;
 
 
-#line 1907 "monga.tab.c"
-
+#line 1906 "monga.tab.c" /* yacc.c:1652  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -2135,6 +2133,6 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 261 "monga.y"
+#line 261 "monga.y" /* yacc.c:1918  */
 
 

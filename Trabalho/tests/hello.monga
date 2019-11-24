@@ -45,7 +45,8 @@ main() {
     @"\n";
     @"Printing on the screen\n";
     @"@foobar;\n";
-    @"'foobar' can be a variable or an expression\n";
+    @"\n";
+    @"* 'foobar' can be a variable or an expression\n";
     @"\n";
 
     declaring_and_setting_variables();

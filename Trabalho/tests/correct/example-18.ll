@@ -5,8 +5,6 @@ declare i8* @malloc(i64)
 @.print.int = constant [3 x i8] c"%d\00"
 @.print.float = constant [3 x i8] c"%f\00"
 
-@.print.string = constant [3 x i8] c"%s\00"
-
 define void @main() {
   %label1 = alloca i32
   %label2 = alloca i32
@@ -41,8 +39,6 @@ define void @main() {
   label23:
   %label26 = phi i1 [ false, %label21 ], [ %label25, %label22 ]
   %label27 = zext i1 %label26 to i32
-
-  ; assignment
   store i32 %label27, i32* %label1
   %label28 = icmp eq i32 1, 2
   %label29 = zext i1 %label28 to i32
@@ -61,8 +57,6 @@ define void @main() {
   label34:
   %label37 = phi i1 [ false, %label32 ], [ %label36, %label33 ]
   %label38 = zext i1 %label37 to i32
-
-  ; assignment
   store i32 %label38, i32* %label2
   %label39 = icmp ne i32 1, 1
   %label40 = zext i1 %label39 to i32
@@ -81,8 +75,6 @@ define void @main() {
   label45:
   %label48 = phi i1 [ false, %label43 ], [ %label47, %label44 ]
   %label49 = zext i1 %label48 to i32
-
-  ; assignment
   store i32 %label49, i32* %label3
   %label50 = icmp ne i32 1, 2
   %label51 = zext i1 %label50 to i32
@@ -101,8 +93,6 @@ define void @main() {
   label56:
   %label59 = phi i1 [ false, %label54 ], [ %label58, %label55 ]
   %label60 = zext i1 %label59 to i32
-
-  ; assignment
   store i32 %label60, i32* %label4
   %label61 = icmp slt i32 1, 1
   %label62 = zext i1 %label61 to i32
@@ -121,8 +111,6 @@ define void @main() {
   label67:
   %label70 = phi i1 [ false, %label65 ], [ %label69, %label66 ]
   %label71 = zext i1 %label70 to i32
-
-  ; assignment
   store i32 %label71, i32* %label5
   %label72 = icmp slt i32 1, 2
   %label73 = zext i1 %label72 to i32
@@ -141,8 +129,6 @@ define void @main() {
   label78:
   %label81 = phi i1 [ false, %label76 ], [ %label80, %label77 ]
   %label82 = zext i1 %label81 to i32
-
-  ; assignment
   store i32 %label82, i32* %label6
   %label83 = icmp slt i32 1, 0
   %label84 = zext i1 %label83 to i32
@@ -161,8 +147,6 @@ define void @main() {
   label89:
   %label92 = phi i1 [ false, %label87 ], [ %label91, %label88 ]
   %label93 = zext i1 %label92 to i32
-
-  ; assignment
   store i32 %label93, i32* %label7
   %label94 = icmp sgt i32 1, 1
   %label95 = zext i1 %label94 to i32
@@ -181,8 +165,6 @@ define void @main() {
   label100:
   %label103 = phi i1 [ false, %label98 ], [ %label102, %label99 ]
   %label104 = zext i1 %label103 to i32
-
-  ; assignment
   store i32 %label104, i32* %label8
   %label105 = icmp sgt i32 1, 2
   %label106 = zext i1 %label105 to i32
@@ -201,8 +183,6 @@ define void @main() {
   label111:
   %label114 = phi i1 [ false, %label109 ], [ %label113, %label110 ]
   %label115 = zext i1 %label114 to i32
-
-  ; assignment
   store i32 %label115, i32* %label9
   %label116 = icmp sgt i32 1, 0
   %label117 = zext i1 %label116 to i32
@@ -221,8 +201,6 @@ define void @main() {
   label122:
   %label125 = phi i1 [ false, %label120 ], [ %label124, %label121 ]
   %label126 = zext i1 %label125 to i32
-
-  ; assignment
   store i32 %label126, i32* %label10
   %label127 = icmp sle i32 1, 1
   %label128 = zext i1 %label127 to i32
@@ -241,8 +219,6 @@ define void @main() {
   label133:
   %label136 = phi i1 [ false, %label131 ], [ %label135, %label132 ]
   %label137 = zext i1 %label136 to i32
-
-  ; assignment
   store i32 %label137, i32* %label11
   %label138 = icmp sle i32 1, 2
   %label139 = zext i1 %label138 to i32
@@ -261,8 +237,6 @@ define void @main() {
   label144:
   %label147 = phi i1 [ false, %label142 ], [ %label146, %label143 ]
   %label148 = zext i1 %label147 to i32
-
-  ; assignment
   store i32 %label148, i32* %label12
   %label149 = icmp sle i32 1, 0
   %label150 = zext i1 %label149 to i32
@@ -281,8 +255,6 @@ define void @main() {
   label155:
   %label158 = phi i1 [ false, %label153 ], [ %label157, %label154 ]
   %label159 = zext i1 %label158 to i32
-
-  ; assignment
   store i32 %label159, i32* %label13
   %label160 = icmp sge i32 1, 1
   %label161 = zext i1 %label160 to i32
@@ -301,8 +273,6 @@ define void @main() {
   label166:
   %label169 = phi i1 [ false, %label164 ], [ %label168, %label165 ]
   %label170 = zext i1 %label169 to i32
-
-  ; assignment
   store i32 %label170, i32* %label14
   %label171 = icmp sge i32 1, 2
   %label172 = zext i1 %label171 to i32
@@ -321,8 +291,6 @@ define void @main() {
   label177:
   %label180 = phi i1 [ false, %label175 ], [ %label179, %label176 ]
   %label181 = zext i1 %label180 to i32
-
-  ; assignment
   store i32 %label181, i32* %label15
   %label182 = icmp sge i32 1, 0
   %label183 = zext i1 %label182 to i32
@@ -341,8 +309,6 @@ define void @main() {
   label188:
   %label191 = phi i1 [ false, %label186 ], [ %label190, %label187 ]
   %label192 = zext i1 %label191 to i32
-
-  ; assignment
   store i32 %label192, i32* %label16
   ret void
 }

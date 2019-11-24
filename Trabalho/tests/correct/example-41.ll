@@ -5,8 +5,6 @@ declare i8* @malloc(i64)
 @.print.int = constant [3 x i8] c"%d\00"
 @.print.float = constant [3 x i8] c"%f\00"
 
-@.print.string = constant [3 x i8] c"%s\00"
-
 @c = global i32 0
 define i32 @fn() {
   ret i32 97
@@ -15,8 +13,6 @@ define i32 @fn() {
 define void @main() {
   %label1 = call i32 @fn()
   %label2 = add i32 98, %label1
-
-  ; assignment
   store i32 %label2, i32* @c
   ret void
 }

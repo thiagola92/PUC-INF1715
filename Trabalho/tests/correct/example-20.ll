@@ -5,8 +5,6 @@ declare i8* @malloc(i64)
 @.print.int = constant [3 x i8] c"%d\00"
 @.print.float = constant [3 x i8] c"%f\00"
 
-@.print.string = constant [3 x i8] c"%s\00"
-
 define void @main() {
   %label1 = alloca i32
   %label2 = alloca i32
@@ -37,8 +35,6 @@ define void @main() {
   label13:
   %label16 = phi i1 [ true, %label11 ], [ %label15, %label12 ]
   %label17 = zext i1 %label16 to i32
-
-  ; assignment
   store i32 %label17, i32* %label1
   br label %label18
 
@@ -66,8 +62,6 @@ define void @main() {
   label27:
   %label30 = phi i1 [ true, %label25 ], [ %label29, %label26 ]
   %label31 = zext i1 %label30 to i32
-
-  ; assignment
   store i32 %label31, i32* %label2
   br label %label32
 
@@ -95,8 +89,6 @@ define void @main() {
   label41:
   %label44 = phi i1 [ true, %label39 ], [ %label43, %label40 ]
   %label45 = zext i1 %label44 to i32
-
-  ; assignment
   store i32 %label45, i32* %label1
   br label %label46
 
@@ -124,8 +116,6 @@ define void @main() {
   label55:
   %label58 = phi i1 [ true, %label53 ], [ %label57, %label54 ]
   %label59 = zext i1 %label58 to i32
-
-  ; assignment
   store i32 %label59, i32* %label2
   ret void
 }

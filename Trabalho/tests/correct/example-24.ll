@@ -5,8 +5,6 @@ declare i8* @malloc(i64)
 @.print.int = constant [3 x i8] c"%d\00"
 @.print.float = constant [3 x i8] c"%f\00"
 
-@.print.string = constant [3 x i8] c"%s\00"
-
 define i32 @first() {
   ret i32 1
 }
@@ -40,25 +38,17 @@ define void @main() {
   %label3 = alloca i32
   %label4 = alloca float
   %label5 = call i32 @first()
-
-  ; assignment
   store i32 %label5, i32* %label1
   %label6 = load i32, i32* %label1
   %label7 = call i32 @second(i32 %label6)
-
-  ; assignment
   store i32 %label7, i32* %label2
   %label8 = load i32, i32* %label1
   %label9 = load i32, i32* %label2
   %label10 = call i32 @third(i32 %label8, i32 %label9)
-
-  ; assignment
   store i32 %label10, i32* %label3
   %label11 = load i32, i32* %label1
   %label12 = load i32, i32* %label2
   %label13 = call float @fourth(i32 %label11, i32 %label12)
-
-  ; assignment
   store float %label13, float* %label4
   ret void
 }

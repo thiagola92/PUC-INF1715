@@ -15,7 +15,6 @@ void start_coding(Node* program) {
   printf("@.print.char = constant [3 x i8] c\"%%c\\00\"\n");
   printf("@.print.int = constant [3 x i8] c\"%%d\\00\"\n");
   printf("@.print.float = constant [3 x i8] c\"%%f\\00\"\n\n");
-  printf("@.print.string = constant [3 x i8] c\"%%s\\00\"\n\n");
 
   switch(program->tag) {
     case EMPTY:
@@ -463,7 +462,6 @@ void code_assignment(int* id, Node* assignment) {
   code_expression(id, assignment->content.n[0]);
   code_expression(id, assignment->content.n[1]);
 
-  printf("\n  ; assignment\n");
   printf("  store ");
   code_variable_type(assignment->content.n[1]->type);
   printf(" %s, ", assignment->content.n[1]->id);
@@ -495,8 +493,6 @@ void code_return_value(int* id, Node* return_command) {
 void code_print(int* id, Node* print) {
   char* identifier;
 
-  printf("\n  ; print\n");
-
   code_expression(id, print->content.n[0]);
 
   switch(print->content.n[0]->type->tag) {
@@ -516,7 +512,6 @@ void code_print(int* id, Node* print) {
       break;
     case TYPE_ARRAY:
       if(print->content.n[0]->type->type->tag == TYPE_CHARACTER)
-        // code_print_value("@.print.string", "i32*", print->content.n[0]->id);
         code_print_string(id, print);
       break;
     default:
@@ -562,7 +557,7 @@ void code_print_string(int* id, Node* print) {
   printf("  br i1 %s, label %s, label %s\n", icmp_id, end_label, repeat_label);
 
   printf("\n  %s:\n", label_name(repeat_label));
-  printf("  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.string, i32 0, i32 0), i32* %s)\n", getelementptr_id);
+  printf("  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 %s)\n", load_id_2);
 
   add_id = format_string("%%label%d", next_id(id));
   printf("  %s = add i32 1, %s\n", add_id, load_id);
@@ -1086,8 +1081,7 @@ void code_expression_string(int* id, Node* string) {
   char* bitcast_id;
 
   int length = strlen(string->content.s) + 1;
-
-  printf("\n  ; string\n");
+  printf("\n  ;%d\n\n", length);
 
   alloca_id = format_string("%%label%d", next_id(id));
   mult_id = format_string("%%label%d", next_id(id));
@@ -1102,7 +1096,6 @@ void code_expression_string(int* id, Node* string) {
 
   string->id = bitcast_id;
 
-  printf("\n  ; char\n");
   for(int i = 0; i < length; i++) {
     char* load_id = format_string("%%label%d", next_id(id));
     char* getelementptr_id = format_string("%%label%d", next_id(id));
