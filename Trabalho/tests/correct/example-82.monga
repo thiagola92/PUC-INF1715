@@ -1,3 +1,5 @@
+# Eu escrevi por diversão esse código mas ele me ajudou a perceber q eu estava botando o \0 da string no lugar errado
+
 declaring_and_setting_variables() {
     foo : bool;
     bar : char;

@@ -74,6 +74,27 @@ $ ./compiler tests/correct/example-01.monga;
 $ bash script.sh;
 ```
 
+## Sintático
+Eu evitei criar caminhos que levassem a vazio achando que isto facilitaria minha vida nas etapas seguintes. Consequência disto foi criar mais que uma regra para certas situações.  
+
+* `IF exp bloco [ ELSE bloco ]`  
+  * Cria duas possibilidades:
+    * `IF exp bloco`  
+    * `IF exp bloco ELSE bloco`  
+* `ID '(' parametros ')' [':' tipo] bloco`
+  * Como parametros podem também ser opcional  
+    * `ID() bloco`
+    * `ID() : tipo bloco`
+    * `ID(parametros) bloco`
+    * `ID(parametros) : tipo bloco`
+* `{ { def-variavel } { comando } }`
+  * `{ }`
+  * `{ { def-variavel } }`
+  * `{ { comando } }`
+  * `{ { def-variavel } { comando } }`
+
+Por isto durante tipagem ou geração de código eu acabo criando funções para lidarem com cada uma dos casos.  
+
 ## Ordem de Prioridade
 
 | Expressão                                 | Símbolo |
@@ -156,3 +177,15 @@ converte **char** para **int**
 `new int[x]`  
 **x** precisa ser **int**  
 
+## Geração de Código
+
+| tipo      | armazenado  |
+| ----      | ----------  |
+| **bool**  | `i32`       |
+| **char**  | `i32`       |
+| **int**   | `i32`       |
+| **float** | `float`     |
+
+Escolhi representar bool, char e int com `i32` pois evitaria conversões durante algumas etapas.  
+
+Consequência disto foi não conseguir utilizar printar strings utilizando uma chamada apenas do `printf`.  
