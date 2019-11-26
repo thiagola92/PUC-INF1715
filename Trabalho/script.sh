@@ -56,4 +56,4 @@ for file_input in tests/wrong/*\.monga; do
   fi
 done
 
-#rm lex.yy.c monga.tab.c monga.tab.h compiler;
+rm lex.yy.c monga.tab.c monga.tab.h compiler;
