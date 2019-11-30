@@ -18,19 +18,19 @@ define void @main() {
   %label8 = getelementptr inbounds i32, i32* %label7, i32 0
   %label9 = load i32, i32* %label8
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label9)
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
   %label10 = load i32*, i32** %label1
   %label11 = getelementptr inbounds i32, i32* %label10, i32 0
   %label12 = load i32, i32* %label11
   %label13 = sub i32 %label12, 1
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label13)
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
   %label14 = load i32*, i32** %label1
   %label15 = sub i32 1, 1
   %label16 = getelementptr inbounds i32, i32* %label14, i32 %label15
   %label17 = load i32, i32* %label16
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label17)
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
   %label18 = load i32*, i32** %label1
   %label19 = load i32*, i32** %label1
   %label20 = getelementptr inbounds i32, i32* %label19, i32 0
@@ -39,7 +39,7 @@ define void @main() {
   %label23 = getelementptr inbounds i32, i32* %label18, i32 %label22
   %label24 = load i32, i32* %label23
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label24)
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
   %label25 = load i32*, i32** %label1
   %label26 = load i32*, i32** %label1
   %label27 = getelementptr inbounds i32, i32* %label26, i32 0
@@ -60,7 +60,7 @@ define void @main() {
   %label41 = getelementptr inbounds i32, i32* %label37, i32 %label40
   %label42 = load i32, i32* %label41
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label42)
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 10)
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
   ret void
 }
 

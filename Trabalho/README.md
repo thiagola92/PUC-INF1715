@@ -185,7 +185,3 @@ converte **char** para **int**
 | **char**  | `i32`       |
 | **int**   | `i32`       |
 | **float** | `float`     |
-
-Escolhi representar bool, char e int com `i32` pois evitaria conversões durante algumas etapas.  
-
-Consequência disto foi não conseguir utilizar printar strings utilizando uma chamada apenas do `printf`.  

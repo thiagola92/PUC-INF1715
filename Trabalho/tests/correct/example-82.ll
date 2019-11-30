@@ -133,7 +133,7 @@ define void @declaring_and_setting_variables() {
 
   label68:
   %label75 = load i32, i32* %label2
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.char, i32 0, i32 0), i32 %label75)
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label75)
 
   ;2
 

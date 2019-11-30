@@ -497,11 +497,7 @@ void code_print(int* id, Node* print) {
 
   switch(print->content.n[0]->type->tag) {
     case TYPE_BOOLEAN:
-      code_print_value("@.print.int", "i32", print->content.n[0]->id);
-      break;
     case TYPE_CHARACTER:
-      code_print_value("@.print.char", "i32", print->content.n[0]->id);
-      break;
     case TYPE_INTEGER:
       code_print_value("@.print.int", "i32", print->content.n[0]->id);
       break;
@@ -691,13 +687,9 @@ void code_expression(int* id, Node* expression) {
       code_expression_new_array(id, expression);
       break;
     case TYPE_ARRAY:
-      break;
     case TYPE_BOOLEAN:
-      break;
     case TYPE_CHARACTER:
-      break;
     case TYPE_INTEGER:
-      break;
     case TYPE_FLOAT:
       break;
     case DATA_BOOLEAN:
@@ -741,6 +733,7 @@ void code_expression_or(int* id, Node* or) {
   comparison_identifier = format_string("%%label%d", next_id(id));
 
   printf("  %s:\n", label_name(second_expression_label));
+  // code_expression(id, or->content.n[1]);
   printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[1]->id);
   printf("  br label %s\n\n", end_label);
 
@@ -777,6 +770,7 @@ void code_expression_and(int* id, Node* and) {
   comparison_identifier = format_string("%%label%d", next_id(id));
 
   printf("  %s:\n", label_name(second_expression_label));
+  // code_expression(id, and->content.n[1]);
   printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, and->content.n[1]->id);
   printf("  br label %s\n\n", end_label);
 
