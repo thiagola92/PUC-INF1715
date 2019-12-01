@@ -72,6 +72,7 @@ void code_function_call_parameter(int* id, Node* parameter);
 
 void code_expression(int* id, Node* expression);
 
+void code_expression_condition(int* id, Node* node, char* true_label, char* false_label);
 void code_expression_or(int* id, Node* or);
 void code_expression_and(int* id, Node* and);
 
