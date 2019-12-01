@@ -1,5 +1,142 @@
 main() {
     a : bool;
 
+    a = true || true;
+    @a;
+    @"\n";
+
+    a = false || false;
+    @a;
+    @"\n";
+
+    a = true || false;
+    @a;
+    @"\n";
+
+    a = false || true;
+    @a;
+    @"\n";
+
+    @"\n########################################\n";
+
+    a = true && true;
+    @a;
+    @"\n";
+
+    a = false && false;
+    @a;
+    @"\n";
+
+    a = true && false;
+    @a;
+    @"\n";
+
+    a = false && true;
+    @a;
+    @"\n";
+
+    @"\n########################################\n";
+
+    a = true || true || true;
+    @a;
+    @"\n";
+
+    a = false || false || true;
+    @a;
+    @"\n";
+
+    a = true || false || true;
+    @a;
+    @"\n";
+
+    a = false || true || true;
+    @a;
+    @"\n";
+
+    @"\n########################################\n";
+
+    a = true && true && true;
+    @a;
+    @"\n";
+
+    a = false && false && true;
+    @a;
+    @"\n";
+
+    a = true && false && true;
+    @a;
+    @"\n";
+
+    a = false && true && true;
+    @a;
+    @"\n";
+
+    @"\n########################################\n";
+
+    # 1
+    # 0
+    # 1
+    # 1
+
+    a = true || true && true;
+    @a;
+    @"\n";
+
     a = false || false && true;
+    @a;
+    @"\n";
+
+    a = true || false && true;
+    @a;
+    @"\n";
+
+    a = false || true && true;
+    @a;
+    @"\n";
+
+    @"\n########################################\n";
+
+    # 1
+    # 1
+    # 1
+    # 1
+
+    a = true && true || true;
+    @a;
+    @"\n";
+
+    a = false && false || true;
+    @a;
+    @"\n";
+
+    a = true && false || true;
+    @a;
+    @"\n";
+
+    a = false && true || true;
+    @a;
+    @"\n";
+
+    @"\n########################################\n";
+
+    # 1
+    # 0
+    # 1
+    # 0
+
+    a = true && (true || true);
+    @a;
+    @"\n";
+
+    a = false && (false || true);
+    @a;
+    @"\n";
+
+    a = true && (false || true);
+    @a;
+    @"\n";
+
+    a = false && (true || true);
+    @a;
+    @"\n";
 }

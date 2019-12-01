@@ -11,36 +11,42 @@ define void @nome(i32, i32) {
   %label4 = alloca i32
   store i32 %1, i32* %label4
   %label5 = alloca i32
-  %label6 = load i32, i32* %label3
-  %label7 = load i32, i32* %label4
-  %label8 = load i32, i32* %label3
-  br label %label9
-
-  label9:
-  %label12 = icmp ne i32 %label7, 0
-  br i1 %label12, label %label10, label %label11
+  %label12 = load i32, i32* %label3
+  %label6 = icmp ne i32 %label12, 0
+  br i1 %label6, label %label8, label %label10
 
   label10:
-  %label13 = icmp ne i32 %label8, 0
-  br label %label11
-
-  label11:
-  %label14 = phi i1 [ false, %label9 ], [ %label13, %label10 ]
-  %label15 = zext i1 %label14 to i32
-  br label %label16
-
-  label16:
-  %label19 = icmp ne i32 %label6, 0
-  br i1 %label19, label %label18, label %label17
+  %label19 = load i32, i32* %label4
+  %label13 = icmp ne i32 %label19, 0
+  br i1 %label13, label %label17, label %label16
 
   label17:
-  %label20 = icmp ne i32 %label15, 0
-  br label %label18
+  %label20 = load i32, i32* %label3
+  %label14 = icmp ne i32 %label20, 0
+  br i1 %label14, label %label15, label %label16
 
-  label18:
-  %label21 = phi i1 [ true, %label16 ], [ %label20, %label17 ]
-  %label22 = zext i1 %label21 to i32
-  store i32 %label22, i32* %label5
+  label15:
+  br label %label21
+
+  label16:
+  br label %label21
+
+  label21:
+  %label22 = phi i1 [ true, %label15 ], [ false, %label16 ]
+  %label18 = zext i1 %label22 to i32
+  %label7 = icmp ne i32 %label18, 0
+  br i1 %label7, label %label8, label %label9
+
+  label8:
+  br label %label23
+
+  label9:
+  br label %label23
+
+  label23:
+  %label24 = phi i1 [ true, %label8 ], [ false, %label9 ]
+  %label11 = zext i1 %label24 to i32
+  store i32 %label11, i32* %label5
   ret void
 }
 

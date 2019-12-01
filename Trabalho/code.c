@@ -708,83 +708,74 @@ void code_expression(int* id, Node* expression) {
   }
 }
 
-// If node is true, go to true label
-// If node is false, go to false label
-void code_expression_condition(int* id, Node* node, char* true_label, char* false_label) {
-  char* comparison_identifier;
+void code_expression_condition(int* id, char* identifier, char* label_1, char* label_2) {
+  char* label_3;
+  char* phi_identifier;
 
-  comparison_identifier = format_string("%%label%d", next_id(id));
+  label_3 = format_string("%%label%d", next_id(id));
+  phi_identifier = format_string("%%label%d", next_id(id));
 
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, node->id); // i32 != 0
-  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, true_label, false_label);
+  printf("  %s:\n", label_name(label_1));
+  printf("  br label %s\n\n", label_3);
+
+  printf("  %s:\n", label_name(label_2));
+  printf("  br label %s\n\n", label_3);
+
+  printf("  %s:\n", label_name(label_3));
+  printf("  %s = phi i1 [ true, %s ], [ false, %s ]\n", phi_identifier, label_1, label_2);
+  printf("  %s = zext i1 %s to i32\n", identifier, phi_identifier);
 }
 
 void code_expression_or(int* id, Node* or) {
   char* comparison_identifier;
-  char* phi_identifier;
-
-  char* start_label;
-  char* second_expression_label;
-  char* end_label;
-
-  code_expression(id, or->content.n[0]);
-  code_expression(id, or->content.n[1]);
-
-  start_label = format_string("%%label%d", next_id(id));
-  second_expression_label = format_string("%%label%d", next_id(id));
-  end_label = format_string("%%label%d", next_id(id));
-
-  printf("  br label %s\n\n", start_label);
-
-  printf("  %s:\n", label_name(start_label));
-  code_expression_condition(id, or->content.n[0], end_label, second_expression_label);
+  char* comparison_identifier_2;
+  char* label_1;
+  char* label_2;
+  char* label_3;
 
   comparison_identifier = format_string("%%label%d", next_id(id));
-
-  printf("  %s:\n", label_name(second_expression_label));
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[1]->id);
-  printf("  br label %s\n\n", end_label);
-
-  phi_identifier = format_string("%%label%d", next_id(id));
+  comparison_identifier_2 = format_string("%%label%d", next_id(id));
+  label_1 = format_string("%%label%d", next_id(id));
+  label_2 = format_string("%%label%d", next_id(id));
+  label_3 = format_string("%%label%d", next_id(id));
   or->id = format_string("%%label%d", next_id(id));
 
-  printf("  %s:\n", label_name(end_label));
-  printf("  %s = phi i1 [ true, %s ], [ %s, %s ]\n", phi_identifier, start_label, comparison_identifier, second_expression_label);
-  printf("  %s = zext i1 %s to i32\n", or->id, phi_identifier);
+  code_expression(id, or->content.n[0]);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[0]->id); // i32 != 0
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, label_1, label_3);
+  
+  printf("  %s:\n", label_name(label_3));
+  code_expression(id, or->content.n[1]);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier_2, or->content.n[1]->id);
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier_2, label_1, label_2);
+
+  code_expression_condition(id, or->id, label_1, label_2);
 }
 
-void code_expression_and(int* id, Node* and) {
+void code_expression_and(int* id, Node* or) {
   char* comparison_identifier;
-  char* phi_identifier;
-
-  char* start_label;
-  char* second_expression_label;
-  char* end_label;
-
-  code_expression(id, and->content.n[0]);
-  code_expression(id, and->content.n[1]);
-
-  start_label = format_string("%%label%d", next_id(id));
-  second_expression_label = format_string("%%label%d", next_id(id));
-  end_label = format_string("%%label%d", next_id(id));
-
-  printf("  br label %s\n\n", start_label);
-
-  printf("  %s:\n", label_name(start_label));
-  code_expression_condition(id, and->content.n[0], second_expression_label, end_label);
+  char* comparison_identifier_2;
+  char* label_1;
+  char* label_2;
+  char* label_3;
 
   comparison_identifier = format_string("%%label%d", next_id(id));
+  comparison_identifier_2 = format_string("%%label%d", next_id(id));
+  label_1 = format_string("%%label%d", next_id(id));
+  label_2 = format_string("%%label%d", next_id(id));
+  label_3 = format_string("%%label%d", next_id(id));
+  or->id = format_string("%%label%d", next_id(id));
 
-  printf("  %s:\n", label_name(second_expression_label));
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, and->content.n[1]->id);
-  printf("  br label %s\n\n", end_label);
+  code_expression(id, or->content.n[0]);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[0]->id); // i32 != 0
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, label_3, label_2);
+  
+  printf("  %s:\n", label_name(label_3));
+  code_expression(id, or->content.n[1]);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier_2, or->content.n[1]->id);
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier_2, label_1, label_2);
 
-  phi_identifier = format_string("%%label%d", next_id(id));
-  and->id = format_string("%%label%d", next_id(id));
-
-  printf("  %s:\n", label_name(end_label));
-  printf("  %s = phi i1 [ false, %s ], [ %s, %s ]\n", phi_identifier, start_label, comparison_identifier, second_expression_label);
-  printf("  %s = zext i1 %s to i32\n", and->id, phi_identifier);
+  code_expression_condition(id, or->id, label_1, label_2);
 }
 
 void code_expression_compare(int* id, Node* compare, char* operator) {
