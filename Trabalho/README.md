@@ -3,9 +3,6 @@ Matricula: 1721629
 
 ## Observações
 
-* Faltando:
-  * && e || usar "curto-circuito"
-
 ## Arquivos
 
 * binding.c
@@ -111,6 +108,19 @@ Por isto durante tipagem ou geração de código eu acabo criando funções para
 | and                                       | `&&` |
 | or                                        | <code>&#124;&#124;</code> |
 
+## Costura
+
+| Nó                    | Ação                                          |
+| --------------------- | ------------------------                      |
+| Definição de variável | Insere símbolo no escopo                      |
+| Parâmetro             | Insere símbolo no escopo                      |
+| Definição de função   | Insere símbolo no escopo <br>Cria novo escopo |
+| Bloco                 | Cria novo escopo                              |
+| Variável              | Linka com o símbolo definição da variável     |
+| Variável de expressão | Linka com o símbolo definição da variável     |
+| Chamada de função     | Linka com o símbolo definição da função       |
+| Retorno               | Linka com o símbolo definição da função       |
+
 ## Tipagem
 
 `if(x)`  
@@ -179,9 +189,46 @@ converte **char** para **int**
 
 ## Geração de Código
 
-| tipo      | armazenado  |
-| ----      | ----------  |
-| **bool**  | `i32`       |
-| **char**  | `i32`       |
-| **int**   | `i32`       |
-| **float** | `float`     |
+### Tipos
+
+| tipo      | armazenado  | valor inicial   |
+| ----      | ----------  | --------------- |
+| **bool**  | `i32`       | `0`             |
+| **char**  | `i32`       | `0`             |
+| **int**   | `i32`       | `0`             |
+| **float** | `float`     | `0.000000e+00`  |
+| **array** | `*`         | `null`          |
+
+### Print String
+Como estou armazenando os characteres dentro de `i32`, o ponteiro para array de chars vai ser um `i32*`. Por causa disto não posso utilizar `printf("%s", text);`, pois printf esperea receber um `i8*`.  
+
+Para conseguir pelo menos printar um "hello world", fiz um loop percorrendo ponteiro `i32`.  
+
+# Node
+
+```C
+typedef struct Node {
+  TAG tag;
+
+  int number_of_childs;
+
+  union content {
+    int i;
+    float f;
+    const char* s;
+
+    struct Node** n;
+  } content;
+  
+  struct Node* definition;  // binding
+  struct Node* type;        // typing
+  char* id;                 // coding
+} Node;
+```
+
+**tag**: Identifica aquele nó da árvore.   
+**number_of_childs**: Possui a quantidade de filhos que a árvore possui. Um `if x then y` possui 2 filhos, enquanto um `if x then y else z` possui 3 filhos.  
+**content**: O conteúdo daquele nó, ele pode carregar um valor constante (int/float/char*) ou ponteiro para outros filhos.  
+**definition**: Referência para o nó definição da variável/função  
+**type**: Apontam para um nó com o tipo da exp/variável/função... (TYPE_BOOLEAN, TYPE_CHARACTER, TYPE_INTEGER, TYPE_FLOAT ou TYPE_ARRAY)  
+**id**: Identificador utilizado durante a geração de código para recuperar em qual "registrador" foi armazenado a informações daquele nó.  
