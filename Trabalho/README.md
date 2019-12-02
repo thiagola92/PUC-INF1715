@@ -92,7 +92,7 @@ Eu evitei criar caminhos que levassem a vazio achando que isto facilitaria minha
 
 Por isto durante tipagem ou geração de código eu acabo criando funções para lidarem com cada uma dos casos.  
 
-## Ordem de Prioridade
+### Ordem de Prioridade
 
 | Expressão                                 | Símbolo |
 | :---:                                     | :---: |
