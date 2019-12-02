@@ -23,7 +23,7 @@ for file_input in tests/correct/*\.monga; do
   status=$?
 
   if [ $status -eq "0" ]; then
-    echo "no compiling error, executing llc-6.0"
+    echo "no compiling error, compiling to bytecode"
     # llc-6.0 $file_ll
     llvm-as-6.0 $file_ll
     # lli-6.0 $file_bc
@@ -47,7 +47,7 @@ for file_input in tests/wrong/*\.monga; do
   status=$?
 
   if [ $status -eq "0" ]; then
-    echo "no compiling error, executing llc-6.0"
+    echo "no compiling error, compiling to bytecode"
     # llc-6.0 $file_ll
     llvm-as-6.0 $file_ll
     # lli-6.0 $file_bc
