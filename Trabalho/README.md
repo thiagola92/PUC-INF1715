@@ -1,8 +1,6 @@
 Nome: Thiago Lages de Alencar  
 Matricula: 1721629  
 
-## Observações
-
 ## Arquivos
 
 * binding.c
@@ -70,6 +68,8 @@ $ ./compiler tests/correct/example-01.monga;
 ```
 $ bash script.sh;
 ```
+
+# Informações
 
 ## Sintático
 Eu evitei criar caminhos que levassem a vazio achando que isto facilitaria minha vida nas etapas seguintes. Consequência disto foi criar mais que uma regra para certas situações.  
@@ -206,6 +206,8 @@ Para conseguir pelo menos printar um "hello world", fiz um loop percorrendo pont
 
 # Node
 
+Foi feito um nó genérico.  
+
 ```C
 typedef struct Node {
   TAG tag;
@@ -226,9 +228,15 @@ typedef struct Node {
 } Node;
 ```
 
-**tag**: Identifica aquele nó da árvore.   
-**number_of_childs**: Possui a quantidade de filhos que a árvore possui. Um `if x then y` possui 2 filhos, enquanto um `if x then y else z` possui 3 filhos.  
-**content**: O conteúdo daquele nó, ele pode carregar um valor constante (int/float/char*) ou ponteiro para outros filhos.  
-**definition**: Referência para o nó definição da variável/função  
-**type**: Apontam para um nó com o tipo da exp/variável/função... (TYPE_BOOLEAN, TYPE_CHARACTER, TYPE_INTEGER, TYPE_FLOAT ou TYPE_ARRAY)  
-**id**: Identificador utilizado durante a geração de código para recuperar em qual "registrador" foi armazenado a informações daquele nó.  
+* **tag**
+  * Identifica aquele nó da árvore.   
+* **number_of_childs**
+  * Possui a quantidade de filhos que a árvore possui. Um `if x then y` possui 2 filhos, enquanto um `if x then y else z` possui 3 filhos.  
+* **content**
+  * O conteúdo daquele nó, ele pode carregar um valor constante (int/float/char*) ou ponteiro para outros filhos.  
+* **definition**
+  * Referência para o nó definição da variável/função  
+* **type**
+  * Apontam para um nó com o tipo da exp/variável/função... (TYPE_BOOLEAN, TYPE_CHARACTER, TYPE_INTEGER, TYPE_FLOAT ou TYPE_ARRAY)  
+* **id**
+  * Identificador utilizado durante a geração de código para recuperar em qual "registrador" foi armazenado a informações daquele nó.  
