@@ -10,26 +10,26 @@ define void @first() {
 }
 
 define void @second(i32) {
-  %label2 = alloca i32
-  store i32 %0, i32* %label2
+  %label_1 = alloca i32
+  store i32 %0, i32* %label_1
   ret void
 }
 
 define void @third(i32, i32) {
-  %label3 = alloca i32
-  store i32 %0, i32* %label3
-  %label4 = alloca i32
-  store i32 %1, i32* %label4
+  %label_2 = alloca i32
+  store i32 %0, i32* %label_2
+  %label_3 = alloca i32
+  store i32 %1, i32* %label_3
   ret void
 }
 
 define void @fourth(i32, i32, i32) {
-  %label4 = alloca i32
-  store i32 %0, i32* %label4
-  %label5 = alloca i32
-  store i32 %1, i32* %label5
-  %label6 = alloca i32
-  store i32 %2, i32* %label6
+  %label_3 = alloca i32
+  store i32 %0, i32* %label_3
+  %label_4 = alloca i32
+  store i32 %1, i32* %label_4
+  %label_5 = alloca i32
+  store i32 %2, i32* %label_5
   ret void
 }
 

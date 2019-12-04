@@ -6,24 +6,24 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca float*
-  %label2 = mul i64 4, 1
-  %label3 = call i8* @malloc(i64 %label2)
-  %label4 = bitcast i8* %label3 to float*
-  store float* %label4, float** %label1
-  %label5 = load float*, float** %label1
-  %label6 = getelementptr inbounds float, float* %label5, i32 0
-  %label7 = load float, float* %label6
-  %label8 = sitofp i32 97 to float
-  %label9 = fcmp oeq float %label7, %label8
-  %label10 = zext i1 %label9 to i32
-  %label11 = icmp eq i32 %label10, 1
-  br i1 %label11, label %label12, label %label13
+  %label_0 = alloca float*
+  %label_1 = mul i64 4, 1
+  %label_2 = call i8* @malloc(i64 %label_1)
+  %label_3 = bitcast i8* %label_2 to float*
+  store float* %label_3, float** %label_0
+  %label_6 = load float*, float** %label_0
+  %label_7 = getelementptr inbounds float, float* %label_6, i32 0
+  %label_8 = load float, float* %label_7
+  %label_9 = sitofp i32 97 to float
+  %label_10 = fcmp oeq float %label_8, %label_9
+  %label_11 = zext i1 %label_10 to i32
+  %label_12 = icmp eq i32 %label_11, 1
+  br i1 %label_12, label %label_4, label %label_5
 
-  label12:
-  br label %label13
+  label_4:
+  br label %label_5
 
-  label13:
+  label_5:
   ret void
 }
 

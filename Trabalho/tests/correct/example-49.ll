@@ -6,11 +6,11 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca i32
-  %label2 = fptrunc double 1.000000 to float
-  %label3 = fsub float 0.000000e+00, %label2
-  %label4 = fptosi float %label3 to i32
-  store i32 %label4, i32* %label1
+  %label_0 = alloca i32
+  %label_1 = fptrunc double 1.000000 to float
+  %label_2 = fsub float 0.000000e+00, %label_1
+  %label_3 = fptosi float %label_2 to i32
+  store i32 %label_3, i32* %label_0
   ret void
 }
 

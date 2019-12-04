@@ -10,7 +10,7 @@ define i32 @nome() {
 }
 
 define void @main() {
-  %label1 = call i32 @nome()
+  %label_0 = call i32 @nome()
   ret void
 }
 

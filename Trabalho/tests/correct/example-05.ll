@@ -10,10 +10,10 @@ define i32 @first() {
 }
 
 define i32 @second(i32) {
-  %label2 = alloca i32
-  store i32 %0, i32* %label2
-  %label3 = load i32, i32* %label2
-  ret i32 %label3
+  %label_1 = alloca i32
+  store i32 %0, i32* %label_1
+  %label_2 = load i32, i32* %label_1
+  ret i32 %label_2
 }
 
 

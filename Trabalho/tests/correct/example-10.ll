@@ -10,121 +10,121 @@ define void @first() {
 }
 
 define void @main() {
-  %label1 = icmp eq i32 1, 1
-  br i1 %label1, label %label2, label %label3
+  %label_2 = icmp eq i32 1, 1
+  br i1 %label_2, label %label_0, label %label_1
 
-  label2:
-  %label4 = alloca i32
+  label_0:
+  %label_3 = alloca i32
   call void @first()
-  br label %label3
+  br label %label_1
 
-  label3:
-  %label5 = icmp eq i32 0, 1
-  br i1 %label5, label %label6, label %label8
+  label_1:
+  %label_7 = icmp eq i32 0, 1
+  br i1 %label_7, label %label_4, label %label_5
 
-  label6:
-  %label9 = alloca i32
+  label_4:
+  %label_8 = alloca i32
   call void @first()
-  br label %label8
+  br label %label_6
 
-  label7:
-  %label10 = alloca i32
+  label_5:
+  %label_9 = alloca i32
   call void @first()
-  br label %label8
+  br label %label_6
 
-  label8:
-  %label11 = icmp eq i32 1, 1
-  br i1 %label11, label %label12, label %label13
+  label_6:
+  %label_12 = icmp eq i32 1, 1
+  br i1 %label_12, label %label_10, label %label_11
 
-  label12:
-  %label14 = alloca i32
-  %label15 = icmp eq i32 1, 1
-  br i1 %label15, label %label16, label %label17
+  label_10:
+  %label_13 = alloca i32
+  %label_16 = icmp eq i32 1, 1
+  br i1 %label_16, label %label_14, label %label_15
 
-  label16:
-  %label18 = alloca i32
+  label_14:
+  %label_17 = alloca i32
   call void @first()
-  br label %label17
+  br label %label_15
 
-  label17:
+  label_15:
   call void @first()
-  br label %label13
+  br label %label_11
 
-  label13:
-  %label19 = icmp eq i32 1, 1
-  br i1 %label19, label %label20, label %label21
+  label_11:
+  %label_20 = icmp eq i32 1, 1
+  br i1 %label_20, label %label_18, label %label_19
 
-  label20:
-  %label22 = alloca i32
-  %label23 = icmp eq i32 0, 1
-  br i1 %label23, label %label24, label %label26
+  label_18:
+  %label_21 = alloca i32
+  %label_25 = icmp eq i32 0, 1
+  br i1 %label_25, label %label_22, label %label_23
 
-  label24:
-  %label27 = alloca i32
+  label_22:
+  %label_26 = alloca i32
   call void @first()
-  br label %label26
+  br label %label_24
 
-  label25:
-  %label28 = alloca i32
+  label_23:
+  %label_27 = alloca i32
   call void @first()
-  br label %label26
+  br label %label_24
 
-  label26:
+  label_24:
   call void @first()
-  br label %label21
+  br label %label_19
 
-  label21:
-  %label29 = icmp eq i32 0, 1
-  br i1 %label29, label %label30, label %label32
+  label_19:
+  %label_31 = icmp eq i32 0, 1
+  br i1 %label_31, label %label_28, label %label_29
 
-  label30:
-  %label33 = alloca i32
+  label_28:
+  %label_32 = alloca i32
   call void @first()
-  br label %label32
+  br label %label_30
 
-  label31:
-  %label34 = alloca i32
-  %label35 = icmp eq i32 1, 1
-  br i1 %label35, label %label36, label %label37
+  label_29:
+  %label_33 = alloca i32
+  %label_36 = icmp eq i32 1, 1
+  br i1 %label_36, label %label_34, label %label_35
 
-  label36:
-  %label38 = alloca i32
+  label_34:
+  %label_37 = alloca i32
   call void @first()
-  br label %label37
+  br label %label_35
 
-  label37:
+  label_35:
   call void @first()
-  br label %label32
+  br label %label_30
 
-  label32:
-  %label39 = icmp eq i32 0, 1
-  br i1 %label39, label %label40, label %label42
+  label_30:
+  %label_41 = icmp eq i32 0, 1
+  br i1 %label_41, label %label_38, label %label_39
 
-  label40:
-  %label43 = alloca i32
+  label_38:
+  %label_42 = alloca i32
   call void @first()
-  br label %label42
+  br label %label_40
 
-  label41:
-  %label44 = alloca i32
-  %label45 = icmp eq i32 0, 1
-  br i1 %label45, label %label46, label %label48
+  label_39:
+  %label_43 = alloca i32
+  %label_47 = icmp eq i32 0, 1
+  br i1 %label_47, label %label_44, label %label_45
 
-  label46:
-  %label49 = alloca i32
+  label_44:
+  %label_48 = alloca i32
   call void @first()
-  br label %label48
+  br label %label_46
 
-  label47:
-  %label50 = alloca i32
+  label_45:
+  %label_49 = alloca i32
   call void @first()
-  br label %label48
+  br label %label_46
 
-  label48:
+  label_46:
   call void @first()
-  br label %label42
+  br label %label_40
 
-  label42:
+  label_40:
   ret void
 }
 

@@ -1,0 +1,8 @@
+main() {
+    if(false) {
+        @"hi\n";
+    } else {
+        @"hi2\n";
+    }
+    @"bye\n";
+}

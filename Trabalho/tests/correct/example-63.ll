@@ -6,47 +6,47 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @nome(i32, i32) {
-  %label3 = alloca i32
-  store i32 %0, i32* %label3
-  %label4 = alloca i32
-  store i32 %1, i32* %label4
-  %label5 = alloca i32
-  %label12 = load i32, i32* %label3
-  %label6 = icmp ne i32 %label12, 0
-  br i1 %label6, label %label8, label %label10
+  %label_2 = alloca i32
+  store i32 %0, i32* %label_2
+  %label_3 = alloca i32
+  store i32 %1, i32* %label_3
+  %label_4 = alloca i32
+  %label_11 = load i32, i32* %label_2
+  %label_5 = icmp ne i32 %label_11, 0
+  br i1 %label_5, label %label_7, label %label_9
 
-  label10:
-  %label19 = load i32, i32* %label4
-  %label13 = icmp ne i32 %label19, 0
-  br i1 %label13, label %label17, label %label16
+  label_9:
+  %label_18 = load i32, i32* %label_3
+  %label_12 = icmp ne i32 %label_18, 0
+  br i1 %label_12, label %label_16, label %label_15
 
-  label17:
-  %label20 = load i32, i32* %label3
-  %label14 = icmp ne i32 %label20, 0
-  br i1 %label14, label %label15, label %label16
+  label_16:
+  %label_19 = load i32, i32* %label_2
+  %label_13 = icmp ne i32 %label_19, 0
+  br i1 %label_13, label %label_14, label %label_15
 
-  label15:
-  br label %label21
+  label_14:
+  br label %label_20
 
-  label16:
-  br label %label21
+  label_15:
+  br label %label_20
 
-  label21:
-  %label22 = phi i1 [ true, %label15 ], [ false, %label16 ]
-  %label18 = zext i1 %label22 to i32
-  %label7 = icmp ne i32 %label18, 0
-  br i1 %label7, label %label8, label %label9
+  label_20:
+  %label_21 = phi i1 [ true, %label_14 ], [ false, %label_15 ]
+  %label_17 = zext i1 %label_21 to i32
+  %label_6 = icmp ne i32 %label_17, 0
+  br i1 %label_6, label %label_7, label %label_8
 
-  label8:
-  br label %label23
+  label_7:
+  br label %label_22
 
-  label9:
-  br label %label23
+  label_8:
+  br label %label_22
 
-  label23:
-  %label24 = phi i1 [ true, %label8 ], [ false, %label9 ]
-  %label11 = zext i1 %label24 to i32
-  store i32 %label11, i32* %label5
+  label_22:
+  %label_23 = phi i1 [ true, %label_7 ], [ false, %label_8 ]
+  %label_10 = zext i1 %label_23 to i32
+  store i32 %label_10, i32* %label_4
   ret void
 }
 

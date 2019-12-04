@@ -6,92 +6,92 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca i32
-  %label2 = alloca float
-  %label3 = alloca i32
-  store i32 3, i32* %label1
-  %label4 = fptrunc double 4.500000 to float
-  store float %label4, float* %label2
-  store i32 97, i32* %label3
-  %label5 = sitofp i32 3 to float
-  %label6 = fptrunc double 4.500000 to float
-  %label7 = fadd float %label5, %label6
-  %label8 = fpext float %label7 to double
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label8)
+  %label_0 = alloca i32
+  %label_1 = alloca float
+  %label_2 = alloca i32
+  store i32 3, i32* %label_0
+  %label_3 = fptrunc double 4.500000 to float
+  store float %label_3, float* %label_1
+  store i32 97, i32* %label_2
+  %label_4 = sitofp i32 3 to float
+  %label_5 = fptrunc double 4.500000 to float
+  %label_6 = fadd float %label_4, %label_5
+  %label_7 = fpext float %label_6 to double
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label_7)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label9 = load i32, i32* %label1
-  %label10 = sitofp i32 %label9 to float
-  %label11 = load float, float* %label2
-  %label12 = fadd float %label10, %label11
-  %label13 = fpext float %label12 to double
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label13)
+  %label_8 = load i32, i32* %label_0
+  %label_9 = sitofp i32 %label_8 to float
+  %label_10 = load float, float* %label_1
+  %label_11 = fadd float %label_9, %label_10
+  %label_12 = fpext float %label_11 to double
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label_12)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label14 = fptrunc double 4.500000 to float
-  %label15 = fptosi float %label14 to i32
-  %label16 = add i32 3, %label15
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label16)
+  %label_13 = fptrunc double 4.500000 to float
+  %label_14 = fptosi float %label_13 to i32
+  %label_15 = add i32 3, %label_14
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_15)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label17 = load i32, i32* %label1
-  %label18 = load float, float* %label2
-  %label19 = fptosi float %label18 to i32
-  %label20 = add i32 %label17, %label19
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label20)
+  %label_16 = load i32, i32* %label_0
+  %label_17 = load float, float* %label_1
+  %label_18 = fptosi float %label_17 to i32
+  %label_19 = add i32 %label_16, %label_18
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_19)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label21 = sitofp i32 3 to float
-  %label22 = fptrunc double 4.500000 to float
-  %label23 = fptosi float %label22 to i32
-  %label24 = sitofp i32 %label23 to float
-  %label25 = fadd float %label21, %label24
-  %label26 = fpext float %label25 to double
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label26)
+  %label_20 = sitofp i32 3 to float
+  %label_21 = fptrunc double 4.500000 to float
+  %label_22 = fptosi float %label_21 to i32
+  %label_23 = sitofp i32 %label_22 to float
+  %label_24 = fadd float %label_20, %label_23
+  %label_25 = fpext float %label_24 to double
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label_25)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label27 = load i32, i32* %label1
-  %label28 = sitofp i32 %label27 to float
-  %label29 = load float, float* %label2
-  %label30 = fptosi float %label29 to i32
-  %label31 = sitofp i32 %label30 to float
-  %label32 = fadd float %label28, %label31
-  %label33 = fpext float %label32 to double
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label33)
+  %label_26 = load i32, i32* %label_0
+  %label_27 = sitofp i32 %label_26 to float
+  %label_28 = load float, float* %label_1
+  %label_29 = fptosi float %label_28 to i32
+  %label_30 = sitofp i32 %label_29 to float
+  %label_31 = fadd float %label_27, %label_30
+  %label_32 = fpext float %label_31 to double
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label_32)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label34 = sitofp i32 3 to float
-  %label35 = fptrunc double 4.500000 to float
-  %label36 = fsub float 0.000000e+00, %label35
-  %label37 = fptosi float %label36 to i32
-  %label38 = sitofp i32 %label37 to float
-  %label39 = fadd float %label34, %label38
-  %label40 = fpext float %label39 to double
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label40)
+  %label_33 = sitofp i32 3 to float
+  %label_34 = fptrunc double 4.500000 to float
+  %label_35 = fsub float 0.000000e+00, %label_34
+  %label_36 = fptosi float %label_35 to i32
+  %label_37 = sitofp i32 %label_36 to float
+  %label_38 = fadd float %label_33, %label_37
+  %label_39 = fpext float %label_38 to double
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label_39)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label41 = load i32, i32* %label1
-  %label42 = sitofp i32 %label41 to float
-  %label43 = load float, float* %label2
-  %label44 = fsub float 0.000000e+00, %label43
-  %label45 = fptosi float %label44 to i32
-  %label46 = sitofp i32 %label45 to float
-  %label47 = fadd float %label42, %label46
-  %label48 = fpext float %label47 to double
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label48)
+  %label_40 = load i32, i32* %label_0
+  %label_41 = sitofp i32 %label_40 to float
+  %label_42 = load float, float* %label_1
+  %label_43 = fsub float 0.000000e+00, %label_42
+  %label_44 = fptosi float %label_43 to i32
+  %label_45 = sitofp i32 %label_44 to float
+  %label_46 = fadd float %label_41, %label_45
+  %label_47 = fpext float %label_46 to double
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label_47)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label49 = load i32, i32* %label1
-  %label50 = sitofp i32 %label49 to float
-  %label51 = load float, float* %label2
-  %label52 = fadd float %label50, %label51
-  %label53 = load i32, i32* %label3
-  %label54 = sitofp i32 %label53 to float
-  %label55 = fadd float %label52, %label54
-  %label56 = fpext float %label55 to double
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label56)
+  %label_48 = load i32, i32* %label_0
+  %label_49 = sitofp i32 %label_48 to float
+  %label_50 = load float, float* %label_1
+  %label_51 = fadd float %label_49, %label_50
+  %label_52 = load i32, i32* %label_2
+  %label_53 = sitofp i32 %label_52 to float
+  %label_54 = fadd float %label_51, %label_53
+  %label_55 = fpext float %label_54 to double
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.float, i32 0, i32 0), double %label_55)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
-  %label57 = load i32, i32* %label1
-  %label58 = sitofp i32 %label57 to float
-  %label59 = load float, float* %label2
-  %label60 = fadd float %label58, %label59
-  %label61 = load i32, i32* %label3
-  %label62 = sitofp i32 %label61 to float
-  %label63 = fadd float %label60, %label62
-  %label64 = fptosi float %label63 to i32
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label64)
+  %label_56 = load i32, i32* %label_0
+  %label_57 = sitofp i32 %label_56 to float
+  %label_58 = load float, float* %label_1
+  %label_59 = fadd float %label_57, %label_58
+  %label_60 = load i32, i32* %label_2
+  %label_61 = sitofp i32 %label_60 to float
+  %label_62 = fadd float %label_59, %label_61
+  %label_63 = fptosi float %label_62 to i32
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_63)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
   ret void
 }

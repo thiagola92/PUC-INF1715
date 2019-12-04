@@ -6,29 +6,29 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define i32 @nome(i32, i32) {
-  %label3 = alloca i32
-  store i32 %0, i32* %label3
-  %label4 = alloca i32
-  store i32 %1, i32* %label4
-  %label11 = load i32, i32* %label3
-  %label5 = icmp ne i32 %label11, 0
-  br i1 %label5, label %label7, label %label9
+  %label_2 = alloca i32
+  store i32 %0, i32* %label_2
+  %label_3 = alloca i32
+  store i32 %1, i32* %label_3
+  %label_10 = load i32, i32* %label_2
+  %label_4 = icmp ne i32 %label_10, 0
+  br i1 %label_4, label %label_6, label %label_8
 
-  label9:
-  %label12 = load i32, i32* %label4
-  %label6 = icmp ne i32 %label12, 0
-  br i1 %label6, label %label7, label %label8
+  label_8:
+  %label_11 = load i32, i32* %label_3
+  %label_5 = icmp ne i32 %label_11, 0
+  br i1 %label_5, label %label_6, label %label_7
 
-  label7:
-  br label %label13
+  label_6:
+  br label %label_12
 
-  label8:
-  br label %label13
+  label_7:
+  br label %label_12
 
-  label13:
-  %label14 = phi i1 [ true, %label7 ], [ false, %label8 ]
-  %label10 = zext i1 %label14 to i32
-  ret i32 %label10
+  label_12:
+  %label_13 = phi i1 [ true, %label_6 ], [ false, %label_7 ]
+  %label_9 = zext i1 %label_13 to i32
+  ret i32 %label_9
 }
 
 

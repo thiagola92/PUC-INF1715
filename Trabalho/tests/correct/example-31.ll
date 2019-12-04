@@ -6,65 +6,65 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = icmp ne i32 1, 0
-  %label2 = xor i1 %label1, true
-  %label3 = zext i1 %label2 to i32
-  %label4 = icmp eq i32 %label3, 1
-  br i1 %label4, label %label5, label %label6
+  %label_2 = icmp ne i32 1, 0
+  %label_3 = xor i1 %label_2, true
+  %label_4 = zext i1 %label_3 to i32
+  %label_5 = icmp eq i32 %label_4, 1
+  br i1 %label_5, label %label_0, label %label_1
 
-  label5:
-  br label %label6
+  label_0:
+  br label %label_1
 
-  label6:
-  %label7 = icmp ne i32 0, 0
-  %label8 = xor i1 %label7, true
-  %label9 = zext i1 %label8 to i32
-  %label10 = icmp eq i32 %label9, 1
-  br i1 %label10, label %label11, label %label12
+  label_1:
+  %label_8 = icmp ne i32 0, 0
+  %label_9 = xor i1 %label_8, true
+  %label_10 = zext i1 %label_9 to i32
+  %label_11 = icmp eq i32 %label_10, 1
+  br i1 %label_11, label %label_6, label %label_7
 
-  label11:
-  br label %label12
+  label_6:
+  br label %label_7
 
-  label12:
-  %label13 = icmp ne i32 0, 0
-  %label14 = xor i1 %label13, true
-  %label15 = zext i1 %label14 to i32
-  %label16 = icmp eq i32 %label15, 1
-  %label17 = zext i1 %label16 to i32
-  %label18 = icmp eq i32 %label17, 1
-  br i1 %label18, label %label19, label %label20
+  label_7:
+  %label_14 = icmp ne i32 0, 0
+  %label_15 = xor i1 %label_14, true
+  %label_16 = zext i1 %label_15 to i32
+  %label_17 = icmp eq i32 %label_16, 1
+  %label_18 = zext i1 %label_17 to i32
+  %label_19 = icmp eq i32 %label_18, 1
+  br i1 %label_19, label %label_12, label %label_13
 
-  label19:
-  br label %label20
+  label_12:
+  br label %label_13
 
-  label20:
-  %label21 = icmp ne i32 1, 0
-  %label22 = xor i1 %label21, true
-  %label23 = zext i1 %label22 to i32
-  %label24 = icmp eq i32 %label23, 0
-  %label25 = zext i1 %label24 to i32
-  %label26 = icmp eq i32 %label25, 1
-  br i1 %label26, label %label27, label %label28
+  label_13:
+  %label_22 = icmp ne i32 1, 0
+  %label_23 = xor i1 %label_22, true
+  %label_24 = zext i1 %label_23 to i32
+  %label_25 = icmp eq i32 %label_24, 0
+  %label_26 = zext i1 %label_25 to i32
+  %label_27 = icmp eq i32 %label_26, 1
+  br i1 %label_27, label %label_20, label %label_21
 
-  label27:
-  br label %label28
+  label_20:
+  br label %label_21
 
-  label28:
-  %label29 = icmp ne i32 1, 0
-  %label30 = xor i1 %label29, true
-  %label31 = zext i1 %label30 to i32
-  %label32 = icmp ne i32 0, 0
-  %label33 = xor i1 %label32, true
-  %label34 = zext i1 %label33 to i32
-  %label35 = icmp eq i32 %label31, %label34
-  %label36 = zext i1 %label35 to i32
-  %label37 = icmp eq i32 %label36, 1
-  br i1 %label37, label %label38, label %label39
+  label_21:
+  %label_30 = icmp ne i32 1, 0
+  %label_31 = xor i1 %label_30, true
+  %label_32 = zext i1 %label_31 to i32
+  %label_33 = icmp ne i32 0, 0
+  %label_34 = xor i1 %label_33, true
+  %label_35 = zext i1 %label_34 to i32
+  %label_36 = icmp eq i32 %label_32, %label_35
+  %label_37 = zext i1 %label_36 to i32
+  %label_38 = icmp eq i32 %label_37, 1
+  br i1 %label_38, label %label_28, label %label_29
 
-  label38:
-  br label %label39
+  label_28:
+  br label %label_29
 
-  label39:
+  label_29:
   ret void
 }
 

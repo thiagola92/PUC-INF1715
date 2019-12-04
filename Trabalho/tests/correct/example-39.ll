@@ -6,38 +6,38 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca i32
-  store i32 97, i32* %label1
-  %label2 = load i32, i32* %label1
-  %label3 = load i32, i32* %label1
-  %label4 = icmp eq i32 %label2, %label3
-  %label5 = zext i1 %label4 to i32
-  %label6 = icmp eq i32 %label5, 1
-  br i1 %label6, label %label7, label %label8
+  %label_0 = alloca i32
+  store i32 97, i32* %label_0
+  %label_3 = load i32, i32* %label_0
+  %label_4 = load i32, i32* %label_0
+  %label_5 = icmp eq i32 %label_3, %label_4
+  %label_6 = zext i1 %label_5 to i32
+  %label_7 = icmp eq i32 %label_6, 1
+  br i1 %label_7, label %label_1, label %label_2
 
-  label7:
-  br label %label8
+  label_1:
+  br label %label_2
 
-  label8:
-  %label9 = icmp eq i32 97, 97
-  %label10 = zext i1 %label9 to i32
-  %label11 = icmp eq i32 %label10, 1
-  br i1 %label11, label %label12, label %label13
+  label_2:
+  %label_10 = icmp eq i32 97, 97
+  %label_11 = zext i1 %label_10 to i32
+  %label_12 = icmp eq i32 %label_11, 1
+  br i1 %label_12, label %label_8, label %label_9
 
-  label12:
-  br label %label13
+  label_8:
+  br label %label_9
 
-  label13:
-  %label14 = load i32, i32* %label1
-  %label15 = icmp eq i32 97, %label14
-  %label16 = zext i1 %label15 to i32
-  %label17 = icmp eq i32 %label16, 1
-  br i1 %label17, label %label18, label %label19
+  label_9:
+  %label_15 = load i32, i32* %label_0
+  %label_16 = icmp eq i32 97, %label_15
+  %label_17 = zext i1 %label_16 to i32
+  %label_18 = icmp eq i32 %label_17, 1
+  br i1 %label_18, label %label_13, label %label_14
 
-  label18:
-  br label %label19
+  label_13:
+  br label %label_14
 
-  label19:
+  label_14:
   ret void
 }
 

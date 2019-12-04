@@ -10,50 +10,50 @@ define void @first() {
 }
 
 define void @main() {
-  br label %label1
+  br label %label_0
 
-  label1:
-  %label2 = icmp eq i32 1, 1
-  br i1 %label2, label %label3, label %label4
+  label_0:
+  %label_3 = icmp eq i32 1, 1
+  br i1 %label_3, label %label_1, label %label_2
 
-  label3:
-  br label %label1
+  label_1:
+  br label %label_0
 
-  label4:
-  br label %label5
+  label_2:
+  br label %label_4
 
-  label5:
-  %label6 = icmp eq i32 1, 1
-  br i1 %label6, label %label7, label %label8
+  label_4:
+  %label_7 = icmp eq i32 1, 1
+  br i1 %label_7, label %label_5, label %label_6
 
-  label7:
-  %label9 = alloca i32
-  br label %label5
+  label_5:
+  %label_8 = alloca i32
+  br label %label_4
 
-  label8:
-  br label %label10
+  label_6:
+  br label %label_9
 
-  label10:
-  %label11 = icmp eq i32 1, 1
-  br i1 %label11, label %label12, label %label13
+  label_9:
+  %label_12 = icmp eq i32 1, 1
+  br i1 %label_12, label %label_10, label %label_11
 
-  label12:
+  label_10:
   call void @first()
-  br label %label10
+  br label %label_9
 
-  label13:
-  br label %label14
+  label_11:
+  br label %label_13
 
-  label14:
-  %label15 = icmp eq i32 1, 1
-  br i1 %label15, label %label16, label %label17
+  label_13:
+  %label_16 = icmp eq i32 1, 1
+  br i1 %label_16, label %label_14, label %label_15
 
-  label16:
-  %label18 = alloca i32
+  label_14:
+  %label_17 = alloca i32
   call void @first()
-  br label %label14
+  br label %label_13
 
-  label17:
+  label_15:
   ret void
 }
 

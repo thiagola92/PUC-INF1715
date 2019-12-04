@@ -6,20 +6,20 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca i32*
-  %label2 = alloca i32**
-  %label3 = mul i64 4, 1
-  %label4 = call i8* @malloc(i64 %label3)
-  %label5 = bitcast i8* %label4 to i32*
-  store i32* %label5, i32** %label1
-  %label6 = mul i64 4, 1
-  %label7 = call i8* @malloc(i64 %label6)
-  %label8 = bitcast i8* %label7 to i32**
-  store i32** %label8, i32*** %label2
-  %label9 = load i32**, i32*** %label2
-  %label10 = getelementptr inbounds i32*, i32** %label9, i32 0
-  %label11 = load i32*, i32** %label1
-  store i32* %label11, i32** %label10
+  %label_0 = alloca i32*
+  %label_1 = alloca i32**
+  %label_2 = mul i64 4, 1
+  %label_3 = call i8* @malloc(i64 %label_2)
+  %label_4 = bitcast i8* %label_3 to i32*
+  store i32* %label_4, i32** %label_0
+  %label_5 = mul i64 4, 1
+  %label_6 = call i8* @malloc(i64 %label_5)
+  %label_7 = bitcast i8* %label_6 to i32**
+  store i32** %label_7, i32*** %label_1
+  %label_8 = load i32**, i32*** %label_1
+  %label_9 = getelementptr inbounds i32*, i32** %label_8, i32 0
+  %label_10 = load i32*, i32** %label_0
+  store i32* %label_10, i32** %label_9
   ret void
 }
 

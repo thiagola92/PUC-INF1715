@@ -6,160 +6,160 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca i32
-  %label2 = alloca i32
-  %label3 = alloca i32
-  %label4 = alloca float
-  %label5 = alloca i32*
-  %label6 = alloca i32*
-  store i32 1, i32* %label1
-  store i32 0, i32* %label1
-  store i32 115, i32* %label2
-  store i32 1, i32* %label3
-  %label7 = add i32 1, 1
-  store i32 %label7, i32* %label3
-  %label8 = add i32 1, 99999
-  store i32 %label8, i32* %label3
-  %label9 = add i32 0, 1
-  store i32 %label9, i32* %label3
-  %label10 = add i32 0, 0
-  store i32 %label10, i32* %label3
-  %label11 = fptrunc double 1.000000 to float
-  store float %label11, float* %label4
-  %label12 = fptrunc double 1.000000 to float
-  %label13 = fptrunc double 1.000000 to float
-  %label14 = fadd float %label12, %label13
-  store float %label14, float* %label4
-  %label15 = fptrunc double 1.000000 to float
-  %label16 = fptrunc double 99999.000000 to float
-  %label17 = fadd float %label15, %label16
-  store float %label17, float* %label4
-  %label18 = fptrunc double 0.000000 to float
-  %label19 = fptrunc double 1.000000 to float
-  %label20 = fadd float %label18, %label19
-  store float %label20, float* %label4
-  %label21 = fptrunc double 0.000000 to float
-  %label22 = fptrunc double 0.000000 to float
-  %label23 = fadd float %label21, %label22
-  store float %label23, float* %label4
-  %label24 = fptrunc double 1.500000 to float
-  %label25 = fptrunc double 1.500000 to float
-  %label26 = fadd float %label24, %label25
-  store float %label26, float* %label4
-  %label27 = fptrunc double 1.000000 to float
-  %label28 = fptrunc double 0.500000 to float
-  %label29 = fadd float %label27, %label28
-  store float %label29, float* %label4
-  %label30 = fptrunc double 0.000000 to float
-  %label31 = fptrunc double 1.000000 to float
-  %label32 = fadd float %label30, %label31
-  store float %label32, float* %label4
-  %label33 = mul i64 4, 2
-  %label34 = call i8* @malloc(i64 %label33)
-  %label35 = bitcast i8* %label34 to i32*
-  store i32* %label35, i32** %label5
-  %label36 = load i32*, i32** %label5
-  %label37 = getelementptr inbounds i32, i32* %label36, i32 0
-  store i32 1, i32* %label37
-  %label38 = load i32*, i32** %label5
-  %label39 = getelementptr inbounds i32, i32* %label38, i32 1
-  store i32 0, i32* %label39
+  %label_0 = alloca i32
+  %label_1 = alloca i32
+  %label_2 = alloca i32
+  %label_3 = alloca float
+  %label_4 = alloca i32*
+  %label_5 = alloca i32*
+  store i32 1, i32* %label_0
+  store i32 0, i32* %label_0
+  store i32 115, i32* %label_1
+  store i32 1, i32* %label_2
+  %label_6 = add i32 1, 1
+  store i32 %label_6, i32* %label_2
+  %label_7 = add i32 1, 99999
+  store i32 %label_7, i32* %label_2
+  %label_8 = add i32 0, 1
+  store i32 %label_8, i32* %label_2
+  %label_9 = add i32 0, 0
+  store i32 %label_9, i32* %label_2
+  %label_10 = fptrunc double 1.000000 to float
+  store float %label_10, float* %label_3
+  %label_11 = fptrunc double 1.000000 to float
+  %label_12 = fptrunc double 1.000000 to float
+  %label_13 = fadd float %label_11, %label_12
+  store float %label_13, float* %label_3
+  %label_14 = fptrunc double 1.000000 to float
+  %label_15 = fptrunc double 99999.000000 to float
+  %label_16 = fadd float %label_14, %label_15
+  store float %label_16, float* %label_3
+  %label_17 = fptrunc double 0.000000 to float
+  %label_18 = fptrunc double 1.000000 to float
+  %label_19 = fadd float %label_17, %label_18
+  store float %label_19, float* %label_3
+  %label_20 = fptrunc double 0.000000 to float
+  %label_21 = fptrunc double 0.000000 to float
+  %label_22 = fadd float %label_20, %label_21
+  store float %label_22, float* %label_3
+  %label_23 = fptrunc double 1.500000 to float
+  %label_24 = fptrunc double 1.500000 to float
+  %label_25 = fadd float %label_23, %label_24
+  store float %label_25, float* %label_3
+  %label_26 = fptrunc double 1.000000 to float
+  %label_27 = fptrunc double 0.500000 to float
+  %label_28 = fadd float %label_26, %label_27
+  store float %label_28, float* %label_3
+  %label_29 = fptrunc double 0.000000 to float
+  %label_30 = fptrunc double 1.000000 to float
+  %label_31 = fadd float %label_29, %label_30
+  store float %label_31, float* %label_3
+  %label_32 = mul i64 4, 2
+  %label_33 = call i8* @malloc(i64 %label_32)
+  %label_34 = bitcast i8* %label_33 to i32*
+  store i32* %label_34, i32** %label_4
+  %label_35 = load i32*, i32** %label_4
+  %label_36 = getelementptr inbounds i32, i32* %label_35, i32 0
+  store i32 1, i32* %label_36
+  %label_37 = load i32*, i32** %label_4
+  %label_38 = getelementptr inbounds i32, i32* %label_37, i32 1
+  store i32 0, i32* %label_38
 
   ;12
 
-  %label40 = alloca i32*
-  %label41 = mul i64 4, 12
-  %label42 = call i8* @malloc(i64 %label41)
-  %label43 = bitcast i8* %label42 to i32*
-  store i32* %label43, i32** %label40
-  %label44 = load i32*, i32** %label40
-  %label45 = getelementptr inbounds i32, i32* %label44, i32 0
-  store i32 104, i32* %label45
-  %label46 = load i32*, i32** %label40
-  %label47 = getelementptr inbounds i32, i32* %label46, i32 1
-  store i32 101, i32* %label47
-  %label48 = load i32*, i32** %label40
-  %label49 = getelementptr inbounds i32, i32* %label48, i32 2
-  store i32 108, i32* %label49
-  %label50 = load i32*, i32** %label40
-  %label51 = getelementptr inbounds i32, i32* %label50, i32 3
-  store i32 108, i32* %label51
-  %label52 = load i32*, i32** %label40
-  %label53 = getelementptr inbounds i32, i32* %label52, i32 4
-  store i32 111, i32* %label53
-  %label54 = load i32*, i32** %label40
-  %label55 = getelementptr inbounds i32, i32* %label54, i32 5
-  store i32 32, i32* %label55
-  %label56 = load i32*, i32** %label40
-  %label57 = getelementptr inbounds i32, i32* %label56, i32 6
-  store i32 119, i32* %label57
-  %label58 = load i32*, i32** %label40
-  %label59 = getelementptr inbounds i32, i32* %label58, i32 7
-  store i32 111, i32* %label59
-  %label60 = load i32*, i32** %label40
-  %label61 = getelementptr inbounds i32, i32* %label60, i32 8
-  store i32 114, i32* %label61
-  %label62 = load i32*, i32** %label40
-  %label63 = getelementptr inbounds i32, i32* %label62, i32 9
-  store i32 108, i32* %label63
-  %label64 = load i32*, i32** %label40
-  %label65 = getelementptr inbounds i32, i32* %label64, i32 10
-  store i32 100, i32* %label65
-  %label66 = load i32*, i32** %label40
-  %label67 = getelementptr inbounds i32, i32* %label66, i32 11
-  store i32 0, i32* %label67
-  store i32* %label43, i32** %label6
+  %label_39 = alloca i32*
+  %label_40 = mul i64 4, 12
+  %label_41 = call i8* @malloc(i64 %label_40)
+  %label_42 = bitcast i8* %label_41 to i32*
+  store i32* %label_42, i32** %label_39
+  %label_43 = load i32*, i32** %label_39
+  %label_44 = getelementptr inbounds i32, i32* %label_43, i32 0
+  store i32 104, i32* %label_44
+  %label_45 = load i32*, i32** %label_39
+  %label_46 = getelementptr inbounds i32, i32* %label_45, i32 1
+  store i32 101, i32* %label_46
+  %label_47 = load i32*, i32** %label_39
+  %label_48 = getelementptr inbounds i32, i32* %label_47, i32 2
+  store i32 108, i32* %label_48
+  %label_49 = load i32*, i32** %label_39
+  %label_50 = getelementptr inbounds i32, i32* %label_49, i32 3
+  store i32 108, i32* %label_50
+  %label_51 = load i32*, i32** %label_39
+  %label_52 = getelementptr inbounds i32, i32* %label_51, i32 4
+  store i32 111, i32* %label_52
+  %label_53 = load i32*, i32** %label_39
+  %label_54 = getelementptr inbounds i32, i32* %label_53, i32 5
+  store i32 32, i32* %label_54
+  %label_55 = load i32*, i32** %label_39
+  %label_56 = getelementptr inbounds i32, i32* %label_55, i32 6
+  store i32 119, i32* %label_56
+  %label_57 = load i32*, i32** %label_39
+  %label_58 = getelementptr inbounds i32, i32* %label_57, i32 7
+  store i32 111, i32* %label_58
+  %label_59 = load i32*, i32** %label_39
+  %label_60 = getelementptr inbounds i32, i32* %label_59, i32 8
+  store i32 114, i32* %label_60
+  %label_61 = load i32*, i32** %label_39
+  %label_62 = getelementptr inbounds i32, i32* %label_61, i32 9
+  store i32 108, i32* %label_62
+  %label_63 = load i32*, i32** %label_39
+  %label_64 = getelementptr inbounds i32, i32* %label_63, i32 10
+  store i32 100, i32* %label_64
+  %label_65 = load i32*, i32** %label_39
+  %label_66 = getelementptr inbounds i32, i32* %label_65, i32 11
+  store i32 0, i32* %label_66
+  store i32* %label_42, i32** %label_5
 
   ;14
 
-  %label68 = alloca i32*
-  %label69 = mul i64 4, 14
-  %label70 = call i8* @malloc(i64 %label69)
-  %label71 = bitcast i8* %label70 to i32*
-  store i32* %label71, i32** %label68
-  %label72 = load i32*, i32** %label68
-  %label73 = getelementptr inbounds i32, i32* %label72, i32 0
-  store i32 34, i32* %label73
-  %label74 = load i32*, i32** %label68
-  %label75 = getelementptr inbounds i32, i32* %label74, i32 1
-  store i32 104, i32* %label75
-  %label76 = load i32*, i32** %label68
-  %label77 = getelementptr inbounds i32, i32* %label76, i32 2
-  store i32 101, i32* %label77
-  %label78 = load i32*, i32** %label68
-  %label79 = getelementptr inbounds i32, i32* %label78, i32 3
-  store i32 108, i32* %label79
-  %label80 = load i32*, i32** %label68
-  %label81 = getelementptr inbounds i32, i32* %label80, i32 4
-  store i32 108, i32* %label81
-  %label82 = load i32*, i32** %label68
-  %label83 = getelementptr inbounds i32, i32* %label82, i32 5
-  store i32 111, i32* %label83
-  %label84 = load i32*, i32** %label68
-  %label85 = getelementptr inbounds i32, i32* %label84, i32 6
-  store i32 10, i32* %label85
-  %label86 = load i32*, i32** %label68
-  %label87 = getelementptr inbounds i32, i32* %label86, i32 7
-  store i32 119, i32* %label87
-  %label88 = load i32*, i32** %label68
-  %label89 = getelementptr inbounds i32, i32* %label88, i32 8
-  store i32 111, i32* %label89
-  %label90 = load i32*, i32** %label68
-  %label91 = getelementptr inbounds i32, i32* %label90, i32 9
-  store i32 114, i32* %label91
-  %label92 = load i32*, i32** %label68
-  %label93 = getelementptr inbounds i32, i32* %label92, i32 10
-  store i32 108, i32* %label93
-  %label94 = load i32*, i32** %label68
-  %label95 = getelementptr inbounds i32, i32* %label94, i32 11
-  store i32 100, i32* %label95
-  %label96 = load i32*, i32** %label68
-  %label97 = getelementptr inbounds i32, i32* %label96, i32 12
-  store i32 34, i32* %label97
-  %label98 = load i32*, i32** %label68
-  %label99 = getelementptr inbounds i32, i32* %label98, i32 13
-  store i32 0, i32* %label99
-  store i32* %label71, i32** %label6
+  %label_67 = alloca i32*
+  %label_68 = mul i64 4, 14
+  %label_69 = call i8* @malloc(i64 %label_68)
+  %label_70 = bitcast i8* %label_69 to i32*
+  store i32* %label_70, i32** %label_67
+  %label_71 = load i32*, i32** %label_67
+  %label_72 = getelementptr inbounds i32, i32* %label_71, i32 0
+  store i32 34, i32* %label_72
+  %label_73 = load i32*, i32** %label_67
+  %label_74 = getelementptr inbounds i32, i32* %label_73, i32 1
+  store i32 104, i32* %label_74
+  %label_75 = load i32*, i32** %label_67
+  %label_76 = getelementptr inbounds i32, i32* %label_75, i32 2
+  store i32 101, i32* %label_76
+  %label_77 = load i32*, i32** %label_67
+  %label_78 = getelementptr inbounds i32, i32* %label_77, i32 3
+  store i32 108, i32* %label_78
+  %label_79 = load i32*, i32** %label_67
+  %label_80 = getelementptr inbounds i32, i32* %label_79, i32 4
+  store i32 108, i32* %label_80
+  %label_81 = load i32*, i32** %label_67
+  %label_82 = getelementptr inbounds i32, i32* %label_81, i32 5
+  store i32 111, i32* %label_82
+  %label_83 = load i32*, i32** %label_67
+  %label_84 = getelementptr inbounds i32, i32* %label_83, i32 6
+  store i32 10, i32* %label_84
+  %label_85 = load i32*, i32** %label_67
+  %label_86 = getelementptr inbounds i32, i32* %label_85, i32 7
+  store i32 119, i32* %label_86
+  %label_87 = load i32*, i32** %label_67
+  %label_88 = getelementptr inbounds i32, i32* %label_87, i32 8
+  store i32 111, i32* %label_88
+  %label_89 = load i32*, i32** %label_67
+  %label_90 = getelementptr inbounds i32, i32* %label_89, i32 9
+  store i32 114, i32* %label_90
+  %label_91 = load i32*, i32** %label_67
+  %label_92 = getelementptr inbounds i32, i32* %label_91, i32 10
+  store i32 108, i32* %label_92
+  %label_93 = load i32*, i32** %label_67
+  %label_94 = getelementptr inbounds i32, i32* %label_93, i32 11
+  store i32 100, i32* %label_94
+  %label_95 = load i32*, i32** %label_67
+  %label_96 = getelementptr inbounds i32, i32* %label_95, i32 12
+  store i32 34, i32* %label_96
+  %label_97 = load i32*, i32** %label_67
+  %label_98 = getelementptr inbounds i32, i32* %label_97, i32 13
+  store i32 0, i32* %label_98
+  store i32* %label_70, i32** %label_5
   ret void
 }
 

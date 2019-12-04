@@ -6,26 +6,26 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define i32 @func() {
-  %label1 = icmp eq i32 1, 2
-  %label2 = zext i1 %label1 to i32
-  %label3 = icmp eq i32 %label2, 1
-  br i1 %label3, label %label4, label %label6
+  %label_3 = icmp eq i32 1, 2
+  %label_4 = zext i1 %label_3 to i32
+  %label_5 = icmp eq i32 %label_4, 1
+  br i1 %label_5, label %label_0, label %label_1
 
-  label4:
+  label_0:
   ret i32 1
-  br label %label6
+  br label %label_2
 
-  label5:
+  label_1:
   ret i32 3
-  br label %label6
+  br label %label_2
 
-  label6:
+  label_2:
   ret i32 2
 }
 
 define void @main() {
-  %label1 = call i32 @func()
-  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label1)
+  %label_0 = call i32 @func()
+  call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_0)
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 10)
   ret void
 }

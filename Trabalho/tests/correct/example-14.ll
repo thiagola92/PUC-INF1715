@@ -6,77 +6,77 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca float
-  %label2 = alloca float
-  %label3 = alloca float
-  %label4 = fptrunc double 10.500000 to float
-  store float %label4, float* %label1
-  %label5 = fptrunc double 20.500000 to float
-  store float %label5, float* %label2
-  %label6 = load float, float* %label2
-  %label7 = load float, float* %label1
-  %label8 = fadd float %label6, %label7
-  store float %label8, float* %label3
-  %label9 = fptrunc double 10.500000 to float
-  %label10 = fptrunc double 10.500000 to float
-  %label11 = fadd float %label9, %label10
-  store float %label11, float* %label3
-  %label12 = fptrunc double 10.500000 to float
-  %label13 = load float, float* %label1
-  %label14 = fadd float %label12, %label13
-  store float %label14, float* %label3
-  %label15 = load float, float* %label1
-  %label16 = fptrunc double 10.500000 to float
-  %label17 = fadd float %label15, %label16
-  store float %label17, float* %label3
-  %label18 = load float, float* %label2
-  %label19 = load float, float* %label1
-  %label20 = fsub float %label18, %label19
-  store float %label20, float* %label3
-  %label21 = fptrunc double 10.500000 to float
-  %label22 = fptrunc double 10.500000 to float
-  %label23 = fsub float %label21, %label22
-  store float %label23, float* %label3
-  %label24 = fptrunc double 10.500000 to float
-  %label25 = load float, float* %label1
-  %label26 = fsub float %label24, %label25
-  store float %label26, float* %label3
-  %label27 = load float, float* %label1
-  %label28 = fptrunc double 10.500000 to float
-  %label29 = fsub float %label27, %label28
-  store float %label29, float* %label3
-  %label30 = load float, float* %label2
-  %label31 = load float, float* %label1
-  %label32 = fmul float %label30, %label31
-  store float %label32, float* %label3
-  %label33 = fptrunc double 10.500000 to float
-  %label34 = fptrunc double 10.500000 to float
-  %label35 = fmul float %label33, %label34
-  store float %label35, float* %label3
-  %label36 = fptrunc double 10.500000 to float
-  %label37 = load float, float* %label1
-  %label38 = fmul float %label36, %label37
-  store float %label38, float* %label3
-  %label39 = load float, float* %label1
-  %label40 = fptrunc double 10.500000 to float
-  %label41 = fmul float %label39, %label40
-  store float %label41, float* %label3
-  %label42 = load float, float* %label2
-  %label43 = load float, float* %label2
-  %label44 = fdiv float %label42, %label43
-  store float %label44, float* %label3
-  %label45 = fptrunc double 10.500000 to float
-  %label46 = fptrunc double 10.500000 to float
-  %label47 = fdiv float %label45, %label46
-  store float %label47, float* %label3
-  %label48 = fptrunc double 10.500000 to float
-  %label49 = load float, float* %label1
-  %label50 = fdiv float %label48, %label49
-  store float %label50, float* %label3
-  %label51 = load float, float* %label1
-  %label52 = fptrunc double 10.500000 to float
-  %label53 = fdiv float %label51, %label52
-  store float %label53, float* %label3
+  %label_0 = alloca float
+  %label_1 = alloca float
+  %label_2 = alloca float
+  %label_3 = fptrunc double 10.500000 to float
+  store float %label_3, float* %label_0
+  %label_4 = fptrunc double 20.500000 to float
+  store float %label_4, float* %label_1
+  %label_5 = load float, float* %label_1
+  %label_6 = load float, float* %label_0
+  %label_7 = fadd float %label_5, %label_6
+  store float %label_7, float* %label_2
+  %label_8 = fptrunc double 10.500000 to float
+  %label_9 = fptrunc double 10.500000 to float
+  %label_10 = fadd float %label_8, %label_9
+  store float %label_10, float* %label_2
+  %label_11 = fptrunc double 10.500000 to float
+  %label_12 = load float, float* %label_0
+  %label_13 = fadd float %label_11, %label_12
+  store float %label_13, float* %label_2
+  %label_14 = load float, float* %label_0
+  %label_15 = fptrunc double 10.500000 to float
+  %label_16 = fadd float %label_14, %label_15
+  store float %label_16, float* %label_2
+  %label_17 = load float, float* %label_1
+  %label_18 = load float, float* %label_0
+  %label_19 = fsub float %label_17, %label_18
+  store float %label_19, float* %label_2
+  %label_20 = fptrunc double 10.500000 to float
+  %label_21 = fptrunc double 10.500000 to float
+  %label_22 = fsub float %label_20, %label_21
+  store float %label_22, float* %label_2
+  %label_23 = fptrunc double 10.500000 to float
+  %label_24 = load float, float* %label_0
+  %label_25 = fsub float %label_23, %label_24
+  store float %label_25, float* %label_2
+  %label_26 = load float, float* %label_0
+  %label_27 = fptrunc double 10.500000 to float
+  %label_28 = fsub float %label_26, %label_27
+  store float %label_28, float* %label_2
+  %label_29 = load float, float* %label_1
+  %label_30 = load float, float* %label_0
+  %label_31 = fmul float %label_29, %label_30
+  store float %label_31, float* %label_2
+  %label_32 = fptrunc double 10.500000 to float
+  %label_33 = fptrunc double 10.500000 to float
+  %label_34 = fmul float %label_32, %label_33
+  store float %label_34, float* %label_2
+  %label_35 = fptrunc double 10.500000 to float
+  %label_36 = load float, float* %label_0
+  %label_37 = fmul float %label_35, %label_36
+  store float %label_37, float* %label_2
+  %label_38 = load float, float* %label_0
+  %label_39 = fptrunc double 10.500000 to float
+  %label_40 = fmul float %label_38, %label_39
+  store float %label_40, float* %label_2
+  %label_41 = load float, float* %label_1
+  %label_42 = load float, float* %label_1
+  %label_43 = fdiv float %label_41, %label_42
+  store float %label_43, float* %label_2
+  %label_44 = fptrunc double 10.500000 to float
+  %label_45 = fptrunc double 10.500000 to float
+  %label_46 = fdiv float %label_44, %label_45
+  store float %label_46, float* %label_2
+  %label_47 = fptrunc double 10.500000 to float
+  %label_48 = load float, float* %label_0
+  %label_49 = fdiv float %label_47, %label_48
+  store float %label_49, float* %label_2
+  %label_50 = load float, float* %label_0
+  %label_51 = fptrunc double 10.500000 to float
+  %label_52 = fdiv float %label_50, %label_51
+  store float %label_52, float* %label_2
   ret void
 }
 

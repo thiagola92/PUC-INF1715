@@ -10,14 +10,14 @@ define i32 @fn() {
 }
 
 define void @main() {
-  %label1 = alloca i32
-  %label2 = alloca i32
-  store i32 98, i32* %label1
-  %label3 = load i32, i32* %label1
-  %label4 = add i32 97, %label3
-  %label5 = call i32 @fn()
-  %label6 = add i32 %label4, %label5
-  store i32 %label6, i32* %label2
+  %label_0 = alloca i32
+  %label_1 = alloca i32
+  store i32 98, i32* %label_0
+  %label_2 = load i32, i32* %label_0
+  %label_3 = add i32 97, %label_2
+  %label_4 = call i32 @fn()
+  %label_5 = add i32 %label_3, %label_4
+  store i32 %label_5, i32* %label_1
   ret void
 }
 

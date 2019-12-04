@@ -10,43 +10,46 @@ define void @first() {
 }
 
 define void @second(i32) {
-  %label2 = alloca i32
-  store i32 %0, i32* %label2
+  %label_1 = alloca i32
+  store i32 %0, i32* %label_1
   ret void
 }
 
 define void @third(i32, i32) {
-  %label3 = alloca i32
-  store i32 %0, i32* %label3
-  %label4 = alloca i32
-  store i32 %1, i32* %label4
+  %label_2 = alloca i32
+  store i32 %0, i32* %label_2
+  %label_3 = alloca i32
+  store i32 %1, i32* %label_3
   ret void
 }
 
 define void @fourth(i32, i32, i32) {
-  %label4 = alloca i32
-  store i32 %0, i32* %label4
-  %label5 = alloca i32
-  store i32 %1, i32* %label5
-  %label6 = alloca i32
-  store i32 %2, i32* %label6
+  %label_3 = alloca i32
+  store i32 %0, i32* %label_3
+  %label_4 = alloca i32
+  store i32 %1, i32* %label_4
+  %label_5 = alloca i32
+  store i32 %2, i32* %label_5
   ret void
 }
 
 define void @main() {
-  %label1 = alloca i32
-  %label2 = alloca i32
-  %label3 = alloca i32
+  %label_0 = alloca i32
+  %label_1 = alloca i32
+  %label_2 = alloca i32
   call void @first()
-  %label4 = load i32, i32* %label1
-  call void @second(i32 %label4)
-  %label5 = load i32, i32* %label1
-  %label6 = load i32, i32* %label2
-  call void @third(i32 %label5, i32 %label6)
-  %label7 = load i32, i32* %label1
-  %label8 = load i32, i32* %label2
-  %label9 = load i32, i32* %label3
-  call void @fourth(i32 %label7, i32 %label8, i32 %label9)
+  %label_3 = load i32, i32* %label_0
+  call void @second(
+i32 %label_3)
+  %label_4 = load i32, i32* %label_0
+  %label_5 = load i32, i32* %label_1
+  call void @third(
+i32 %label_4, i32 %label_5)
+  %label_6 = load i32, i32* %label_0
+  %label_7 = load i32, i32* %label_1
+  %label_8 = load i32, i32* %label_2
+  call void @fourth(
+i32 %label_6, i32 %label_7, i32 %label_8)
   ret void
 }
 

@@ -6,37 +6,37 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @first() {
-  %label1 = alloca i32
+  %label_0 = alloca i32
   ret void
 }
 
 define void @second() {
-  %label1 = alloca i32
-  %label2 = alloca i32
+  %label_0 = alloca i32
+  %label_1 = alloca i32
   ret void
 }
 
 define void @third() {
-  %label1 = alloca i32
-  %label2 = alloca i32
-  %label3 = alloca i32
+  %label_0 = alloca i32
+  %label_1 = alloca i32
+  %label_2 = alloca i32
   ret void
 }
 
 define void @fourth() {
-  %label1 = alloca i32
-  %label2 = alloca i32
-  %label3 = alloca i32
-  %label4 = alloca i32
+  %label_0 = alloca i32
+  %label_1 = alloca i32
+  %label_2 = alloca i32
+  %label_3 = alloca i32
   ret void
 }
 
 define void @fifth() {
-  %label1 = alloca i32
-  %label2 = alloca i32
-  %label3 = alloca i32
-  %label4 = alloca i32
-  %label5 = alloca i32
+  %label_0 = alloca i32
+  %label_1 = alloca i32
+  %label_2 = alloca i32
+  %label_3 = alloca i32
+  %label_4 = alloca i32
   ret void
 }
 

@@ -6,15 +6,15 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = icmp eq i32 97, 97
-  %label2 = zext i1 %label1 to i32
-  %label3 = icmp eq i32 %label2, 1
-  br i1 %label3, label %label4, label %label5
+  %label_2 = icmp eq i32 97, 97
+  %label_3 = zext i1 %label_2 to i32
+  %label_4 = icmp eq i32 %label_3, 1
+  br i1 %label_4, label %label_0, label %label_1
 
-  label4:
-  br label %label5
+  label_0:
+  br label %label_1
 
-  label5:
+  label_1:
   ret void
 }
 

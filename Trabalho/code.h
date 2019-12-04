@@ -11,17 +11,19 @@ void throw_code_error(const char* error);
 
 void start_coding(Node* program);
 
-void code_define_global_list(Node* define_list);
-void code_define_global_variable(Node* define_variable);
-void code_variable_type(Node* variable_type);
-void code_initial_value(Node* variable_type);
+void code_global_list(Node* global_list);
+void code_globals(Node* global);
+void code_global_var(Node* global_var);
 
-void code_define_global_function(Node* define_function);
-void code_define_global_function_4(Node* define_function);
-void code_define_global_function_3(Node* define_function);
-void code_define_global_function_3_with_parameters(Node* define_function);
-void code_define_global_function_3_with_type(Node* define_function);
-void code_define_global_function_2(Node* define_function);
+void code_var_type(Node* var_type);
+void code_initial_value(Node* var_type);
+
+void code_global_function(Node* function);
+void code_global_function_4(Node* function);
+void code_global_function_3(Node* function);
+void code_global_function_3_with_parameters(Node* function);
+void code_global_function_3_with_type(Node* function);
+void code_global_function_2(Node* function);
 
 void code_parameters(int* id, Node* parameters);
 void code_parameter_list(int* id, Node* parameter_list);
@@ -47,7 +49,7 @@ void code_if(int* id, Node* if_command);
 void code_if_no_else(int* id, Node* if_command);
 void code_if_else(int* id, Node* if_else);
 
-void code_condition_compare(Node* condition, char* condition_identifier);
+void code_condition_compare(int* id, Node* condition);
 
 void code_while(int* id, Node* while_command);
 
@@ -57,11 +59,16 @@ void code_return(int* id, Node* return_command);
 void code_return_value(int* id, Node* return_command);
 
 void code_print(int* id, Node* print);
-void code_print_value(char* template, char* type, char* id);
+void code_print_int(Node* print);
+void code_print_float(int* id, Node* print);
 void code_print_string(int* id, Node* print);
 
 void code_function_call(int* id, Node* function_call);
+void code_function_call_2(int* id, Node* function_call);
+void code_function_call_1(int* id, Node* function_call);
 void code_function_call_return(int* id, Node* function_call);
+void code_function_call_return_void(Node* function_call);
+void code_function_call_return_value(int* id, Node* function_call);
 
 void code_expressions(int* id, Node* expressions);
 void code_expression_list(int* id, Node* expression_list);

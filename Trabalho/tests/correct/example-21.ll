@@ -6,30 +6,30 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = alloca i32
-  %label2 = alloca i32
-  %label3 = mul i32 2, 3
-  %label4 = add i32 1, %label3
-  store i32 %label4, i32* %label1
-  %label5 = mul i32 2, 3
-  %label6 = add i32 %label5, 1
-  store i32 %label6, i32* %label2
-  %label7 = mul i32 2, 3
-  %label8 = add i32 1, %label7
-  %label9 = add i32 %label8, 4
-  store i32 %label9, i32* %label1
-  %label10 = add i32 1, 4
-  %label11 = mul i32 2, 3
-  %label12 = add i32 %label10, %label11
-  store i32 %label12, i32* %label2
-  %label13 = mul i32 2, 3
-  %label14 = add i32 %label13, 1
-  %label15 = add i32 %label14, 4
-  store i32 %label15, i32* %label1
-  %label16 = mul i32 4, 2
-  %label17 = mul i32 %label16, 3
-  %label18 = add i32 1, %label17
-  store i32 %label18, i32* %label2
+  %label_0 = alloca i32
+  %label_1 = alloca i32
+  %label_2 = mul i32 2, 3
+  %label_3 = add i32 1, %label_2
+  store i32 %label_3, i32* %label_0
+  %label_4 = mul i32 2, 3
+  %label_5 = add i32 %label_4, 1
+  store i32 %label_5, i32* %label_1
+  %label_6 = mul i32 2, 3
+  %label_7 = add i32 1, %label_6
+  %label_8 = add i32 %label_7, 4
+  store i32 %label_8, i32* %label_0
+  %label_9 = add i32 1, 4
+  %label_10 = mul i32 2, 3
+  %label_11 = add i32 %label_9, %label_10
+  store i32 %label_11, i32* %label_1
+  %label_12 = mul i32 2, 3
+  %label_13 = add i32 %label_12, 1
+  %label_14 = add i32 %label_13, 4
+  store i32 %label_14, i32* %label_0
+  %label_15 = mul i32 4, 2
+  %label_16 = mul i32 %label_15, 3
+  %label_17 = add i32 1, %label_16
+  store i32 %label_17, i32* %label_1
   ret void
 }
 

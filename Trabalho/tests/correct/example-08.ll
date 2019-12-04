@@ -6,91 +6,91 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
-  %label1 = icmp eq i32 1, 1
-  br i1 %label1, label %label2, label %label3
+  %label_2 = icmp eq i32 1, 1
+  br i1 %label_2, label %label_0, label %label_1
 
-  label2:
-  br label %label3
+  label_0:
+  br label %label_1
 
-  label3:
-  %label4 = icmp eq i32 0, 1
-  br i1 %label4, label %label5, label %label7
+  label_1:
+  %label_6 = icmp eq i32 0, 1
+  br i1 %label_6, label %label_3, label %label_4
 
-  label5:
-  br label %label7
+  label_3:
+  br label %label_5
 
-  label6:
-  br label %label7
+  label_4:
+  br label %label_5
 
-  label7:
-  %label8 = icmp eq i32 1, 1
-  br i1 %label8, label %label9, label %label10
+  label_5:
+  %label_9 = icmp eq i32 1, 1
+  br i1 %label_9, label %label_7, label %label_8
 
-  label9:
-  %label11 = icmp eq i32 1, 1
-  br i1 %label11, label %label12, label %label13
+  label_7:
+  %label_12 = icmp eq i32 1, 1
+  br i1 %label_12, label %label_10, label %label_11
 
-  label12:
-  br label %label13
+  label_10:
+  br label %label_11
 
-  label13:
-  br label %label10
+  label_11:
+  br label %label_8
 
-  label10:
-  %label14 = icmp eq i32 1, 1
-  br i1 %label14, label %label15, label %label16
+  label_8:
+  %label_15 = icmp eq i32 1, 1
+  br i1 %label_15, label %label_13, label %label_14
 
-  label15:
-  %label17 = icmp eq i32 0, 1
-  br i1 %label17, label %label18, label %label20
+  label_13:
+  %label_19 = icmp eq i32 0, 1
+  br i1 %label_19, label %label_16, label %label_17
 
-  label18:
-  br label %label20
+  label_16:
+  br label %label_18
 
-  label19:
-  br label %label20
+  label_17:
+  br label %label_18
 
-  label20:
-  br label %label16
+  label_18:
+  br label %label_14
 
-  label16:
-  %label21 = icmp eq i32 0, 1
-  br i1 %label21, label %label22, label %label24
+  label_14:
+  %label_23 = icmp eq i32 0, 1
+  br i1 %label_23, label %label_20, label %label_21
 
-  label22:
-  br label %label24
+  label_20:
+  br label %label_22
 
-  label23:
-  %label25 = icmp eq i32 1, 1
-  br i1 %label25, label %label26, label %label27
+  label_21:
+  %label_26 = icmp eq i32 1, 1
+  br i1 %label_26, label %label_24, label %label_25
 
-  label26:
-  br label %label27
+  label_24:
+  br label %label_25
 
-  label27:
-  br label %label24
+  label_25:
+  br label %label_22
 
-  label24:
-  %label28 = icmp eq i32 0, 1
-  br i1 %label28, label %label29, label %label31
+  label_22:
+  %label_30 = icmp eq i32 0, 1
+  br i1 %label_30, label %label_27, label %label_28
 
-  label29:
-  br label %label31
+  label_27:
+  br label %label_29
 
-  label30:
-  %label32 = icmp eq i32 0, 1
-  br i1 %label32, label %label33, label %label35
+  label_28:
+  %label_34 = icmp eq i32 0, 1
+  br i1 %label_34, label %label_31, label %label_32
 
-  label33:
-  br label %label35
+  label_31:
+  br label %label_33
 
-  label34:
-  br label %label35
+  label_32:
+  br label %label_33
 
-  label35:
-  br label %label31
+  label_33:
+  br label %label_29
 
-  label31:
+  label_29:
   ret void
 }
 
