@@ -16,8 +16,7 @@ define void @main() {
   %label_1 = add i32 1, 1
   store i32 %label_1, i32* %label_0
   %label_2 = load i32, i32* %label_0
-  call void @first(
-i32 %label_2)
+  call void @first(i32 %label_2)
   ret void
 }
 

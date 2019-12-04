@@ -15,9 +15,6 @@ define void @declaring_and_setting_variables() {
   store i32 1, i32* %label_2
   %label_4 = fptrunc double 1.000000 to float
   store float %label_4, float* %label_3
-
-  ;19
-
   %label_5 = alloca i32*
   %label_6 = mul i64 4, 19
   %label_7 = call i8* @malloc(i64 %label_6)
@@ -100,9 +97,6 @@ define void @declaring_and_setting_variables() {
   label_49:
   %label_56 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_56)
-
-  ;2
-
   %label_57 = alloca i32*
   %label_58 = mul i64 4, 2
   %label_59 = call i8* @malloc(i64 %label_58)
@@ -134,9 +128,6 @@ define void @declaring_and_setting_variables() {
   label_67:
   %label_74 = load i32, i32* %label_1
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_74)
-
-  ;2
-
   %label_75 = alloca i32*
   %label_76 = mul i64 4, 2
   %label_77 = call i8* @malloc(i64 %label_76)
@@ -168,9 +159,6 @@ define void @declaring_and_setting_variables() {
   label_85:
   %label_92 = load i32, i32* %label_2
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_92)
-
-  ;2
-
   %label_93 = alloca i32*
   %label_94 = mul i64 4, 2
   %label_95 = call i8* @malloc(i64 %label_94)
@@ -207,9 +195,6 @@ define void @declaring_and_setting_variables() {
 }
 
 define void @main() {
-
-  ;30
-
   %label_0 = alloca i32*
   %label_1 = mul i64 4, 30
   %label_2 = call i8* @malloc(i64 %label_1)
@@ -323,9 +308,6 @@ define void @main() {
   br label %label_64
 
   label_66:
-
-  ;2
-
   %label_73 = alloca i32*
   %label_74 = mul i64 4, 2
   %label_75 = call i8* @malloc(i64 %label_74)
@@ -355,9 +337,6 @@ define void @main() {
   br label %label_81
 
   label_83:
-
-  ;33
-
   %label_90 = alloca i32*
   %label_91 = mul i64 4, 33
   %label_92 = call i8* @malloc(i64 %label_91)
@@ -480,9 +459,6 @@ define void @main() {
   br label %label_160
 
   label_162:
-
-  ;6
-
   %label_169 = alloca i32*
   %label_170 = mul i64 4, 6
   %label_171 = call i8* @malloc(i64 %label_170)
@@ -524,9 +500,6 @@ define void @main() {
   br label %label_185
 
   label_187:
-
-  ;6
-
   %label_194 = alloca i32*
   %label_195 = mul i64 4, 6
   %label_196 = call i8* @malloc(i64 %label_195)
@@ -568,9 +541,6 @@ define void @main() {
   br label %label_210
 
   label_212:
-
-  ;5
-
   %label_219 = alloca i32*
   %label_220 = mul i64 4, 5
   %label_221 = call i8* @malloc(i64 %label_220)
@@ -609,9 +579,6 @@ define void @main() {
   br label %label_233
 
   label_235:
-
-  ;7
-
   %label_242 = alloca i32*
   %label_243 = mul i64 4, 7
   %label_244 = call i8* @malloc(i64 %label_243)
@@ -656,9 +623,6 @@ define void @main() {
   br label %label_260
 
   label_262:
-
-  ;2
-
   %label_269 = alloca i32*
   %label_270 = mul i64 4, 2
   %label_271 = call i8* @malloc(i64 %label_270)
@@ -688,9 +652,6 @@ define void @main() {
   br label %label_277
 
   label_279:
-
-  ;22
-
   %label_286 = alloca i32*
   %label_287 = mul i64 4, 22
   %label_288 = call i8* @malloc(i64 %label_287)
@@ -780,9 +741,6 @@ define void @main() {
   br label %label_334
 
   label_336:
-
-  ;12
-
   %label_343 = alloca i32*
   %label_344 = mul i64 4, 12
   %label_345 = call i8* @malloc(i64 %label_344)
@@ -842,9 +800,6 @@ define void @main() {
   br label %label_371
 
   label_373:
-
-  ;12
-
   %label_380 = alloca i32*
   %label_381 = mul i64 4, 12
   %label_382 = call i8* @malloc(i64 %label_381)
@@ -904,9 +859,6 @@ define void @main() {
   br label %label_408
 
   label_410:
-
-  ;11
-
   %label_417 = alloca i32*
   %label_418 = mul i64 4, 11
   %label_419 = call i8* @malloc(i64 %label_418)
@@ -963,9 +915,6 @@ define void @main() {
   br label %label_443
 
   label_445:
-
-  ;13
-
   %label_452 = alloca i32*
   %label_453 = mul i64 4, 13
   %label_454 = call i8* @malloc(i64 %label_453)
@@ -1028,9 +977,6 @@ define void @main() {
   br label %label_482
 
   label_484:
-
-  ;2
-
   %label_491 = alloca i32*
   %label_492 = mul i64 4, 2
   %label_493 = call i8* @malloc(i64 %label_492)
@@ -1060,9 +1006,6 @@ define void @main() {
   br label %label_499
 
   label_501:
-
-  ;22
-
   %label_508 = alloca i32*
   %label_509 = mul i64 4, 22
   %label_510 = call i8* @malloc(i64 %label_509)
@@ -1152,9 +1095,6 @@ define void @main() {
   br label %label_556
 
   label_558:
-
-  ;13
-
   %label_565 = alloca i32*
   %label_566 = mul i64 4, 13
   %label_567 = call i8* @malloc(i64 %label_566)
@@ -1217,9 +1157,6 @@ define void @main() {
   br label %label_595
 
   label_597:
-
-  ;12
-
   %label_604 = alloca i32*
   %label_605 = mul i64 4, 12
   %label_606 = call i8* @malloc(i64 %label_605)
@@ -1279,9 +1216,6 @@ define void @main() {
   br label %label_632
 
   label_634:
-
-  ;10
-
   %label_641 = alloca i32*
   %label_642 = mul i64 4, 10
   %label_643 = call i8* @malloc(i64 %label_642)
@@ -1335,9 +1269,6 @@ define void @main() {
   br label %label_665
 
   label_667:
-
-  ;12
-
   %label_674 = alloca i32*
   %label_675 = mul i64 4, 12
   %label_676 = call i8* @malloc(i64 %label_675)
@@ -1397,9 +1328,6 @@ define void @main() {
   br label %label_702
 
   label_704:
-
-  ;2
-
   %label_711 = alloca i32*
   %label_712 = mul i64 4, 2
   %label_713 = call i8* @malloc(i64 %label_712)
@@ -1429,9 +1357,6 @@ define void @main() {
   br label %label_719
 
   label_721:
-
-  ;59
-
   %label_728 = alloca i32*
   %label_729 = mul i64 4, 59
   %label_730 = call i8* @malloc(i64 %label_729)
@@ -1632,9 +1557,6 @@ define void @main() {
   br label %label_850
 
   label_852:
-
-  ;2
-
   %label_859 = alloca i32*
   %label_860 = mul i64 4, 2
   %label_861 = call i8* @malloc(i64 %label_860)
@@ -1664,9 +1586,6 @@ define void @main() {
   br label %label_867
 
   label_869:
-
-  ;24
-
   %label_876 = alloca i32*
   %label_877 = mul i64 4, 24
   %label_878 = call i8* @malloc(i64 %label_877)
@@ -1762,9 +1681,6 @@ define void @main() {
   br label %label_928
 
   label_930:
-
-  ;10
-
   %label_937 = alloca i32*
   %label_938 = mul i64 4, 10
   %label_939 = call i8* @malloc(i64 %label_938)
@@ -1818,9 +1734,6 @@ define void @main() {
   br label %label_961
 
   label_963:
-
-  ;2
-
   %label_970 = alloca i32*
   %label_971 = mul i64 4, 2
   %label_972 = call i8* @malloc(i64 %label_971)
@@ -1850,9 +1763,6 @@ define void @main() {
   br label %label_978
 
   label_980:
-
-  ;47
-
   %label_987 = alloca i32*
   %label_988 = mul i64 4, 47
   %label_989 = call i8* @malloc(i64 %label_988)
@@ -2017,9 +1927,6 @@ define void @main() {
   br label %label_1085
 
   label_1087:
-
-  ;2
-
   %label_1094 = alloca i32*
   %label_1095 = mul i64 4, 2
   %label_1096 = call i8* @malloc(i64 %label_1095)
@@ -2050,9 +1957,6 @@ define void @main() {
 
   label_1104:
   call void @declaring_and_setting_variables()
-
-  ;25
-
   %label_1111 = alloca i32*
   %label_1112 = mul i64 4, 25
   %label_1113 = call i8* @malloc(i64 %label_1112)

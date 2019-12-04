@@ -26,9 +26,6 @@ define void @main() {
   store i32 %label_6, i32* %label_0
   %label_9 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_9)
-
-  ;2
-
   %label_10 = alloca i32*
   %label_11 = mul i64 4, 2
   %label_12 = call i8* @malloc(i64 %label_11)
@@ -77,9 +74,6 @@ define void @main() {
   store i32 %label_32, i32* %label_0
   %label_35 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_35)
-
-  ;2
-
   %label_36 = alloca i32*
   %label_37 = mul i64 4, 2
   %label_38 = call i8* @malloc(i64 %label_37)
@@ -128,9 +122,6 @@ define void @main() {
   store i32 %label_58, i32* %label_0
   %label_61 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_61)
-
-  ;2
-
   %label_62 = alloca i32*
   %label_63 = mul i64 4, 2
   %label_64 = call i8* @malloc(i64 %label_63)
@@ -179,9 +170,6 @@ define void @main() {
   store i32 %label_84, i32* %label_0
   %label_87 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_87)
-
-  ;2
-
   %label_88 = alloca i32*
   %label_89 = mul i64 4, 2
   %label_90 = call i8* @malloc(i64 %label_89)
@@ -211,9 +199,6 @@ define void @main() {
   br label %label_96
 
   label_98:
-
-  ;43
-
   %label_105 = alloca i32*
   %label_106 = mul i64 4, 43
   %label_107 = call i8* @malloc(i64 %label_106)
@@ -385,9 +370,6 @@ define void @main() {
   store i32 %label_209, i32* %label_0
   %label_212 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_212)
-
-  ;2
-
   %label_213 = alloca i32*
   %label_214 = mul i64 4, 2
   %label_215 = call i8* @malloc(i64 %label_214)
@@ -436,9 +418,6 @@ define void @main() {
   store i32 %label_235, i32* %label_0
   %label_238 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_238)
-
-  ;2
-
   %label_239 = alloca i32*
   %label_240 = mul i64 4, 2
   %label_241 = call i8* @malloc(i64 %label_240)
@@ -487,9 +466,6 @@ define void @main() {
   store i32 %label_261, i32* %label_0
   %label_264 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_264)
-
-  ;2
-
   %label_265 = alloca i32*
   %label_266 = mul i64 4, 2
   %label_267 = call i8* @malloc(i64 %label_266)
@@ -538,9 +514,6 @@ define void @main() {
   store i32 %label_287, i32* %label_0
   %label_290 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_290)
-
-  ;2
-
   %label_291 = alloca i32*
   %label_292 = mul i64 4, 2
   %label_293 = call i8* @malloc(i64 %label_292)
@@ -570,9 +543,6 @@ define void @main() {
   br label %label_299
 
   label_301:
-
-  ;43
-
   %label_308 = alloca i32*
   %label_309 = mul i64 4, 43
   %label_310 = call i8* @malloc(i64 %label_309)
@@ -760,9 +730,6 @@ define void @main() {
   store i32 %label_412, i32* %label_0
   %label_423 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_423)
-
-  ;2
-
   %label_424 = alloca i32*
   %label_425 = mul i64 4, 2
   %label_426 = call i8* @malloc(i64 %label_425)
@@ -827,9 +794,6 @@ define void @main() {
   store i32 %label_446, i32* %label_0
   %label_457 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_457)
-
-  ;2
-
   %label_458 = alloca i32*
   %label_459 = mul i64 4, 2
   %label_460 = call i8* @malloc(i64 %label_459)
@@ -894,9 +858,6 @@ define void @main() {
   store i32 %label_480, i32* %label_0
   %label_491 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_491)
-
-  ;2
-
   %label_492 = alloca i32*
   %label_493 = mul i64 4, 2
   %label_494 = call i8* @malloc(i64 %label_493)
@@ -961,9 +922,6 @@ define void @main() {
   store i32 %label_514, i32* %label_0
   %label_525 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_525)
-
-  ;2
-
   %label_526 = alloca i32*
   %label_527 = mul i64 4, 2
   %label_528 = call i8* @malloc(i64 %label_527)
@@ -993,9 +951,6 @@ define void @main() {
   br label %label_534
 
   label_536:
-
-  ;43
-
   %label_543 = alloca i32*
   %label_544 = mul i64 4, 43
   %label_545 = call i8* @malloc(i64 %label_544)
@@ -1183,9 +1138,6 @@ define void @main() {
   store i32 %label_647, i32* %label_0
   %label_658 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_658)
-
-  ;2
-
   %label_659 = alloca i32*
   %label_660 = mul i64 4, 2
   %label_661 = call i8* @malloc(i64 %label_660)
@@ -1250,9 +1202,6 @@ define void @main() {
   store i32 %label_681, i32* %label_0
   %label_692 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_692)
-
-  ;2
-
   %label_693 = alloca i32*
   %label_694 = mul i64 4, 2
   %label_695 = call i8* @malloc(i64 %label_694)
@@ -1317,9 +1266,6 @@ define void @main() {
   store i32 %label_715, i32* %label_0
   %label_726 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_726)
-
-  ;2
-
   %label_727 = alloca i32*
   %label_728 = mul i64 4, 2
   %label_729 = call i8* @malloc(i64 %label_728)
@@ -1384,9 +1330,6 @@ define void @main() {
   store i32 %label_749, i32* %label_0
   %label_760 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_760)
-
-  ;2
-
   %label_761 = alloca i32*
   %label_762 = mul i64 4, 2
   %label_763 = call i8* @malloc(i64 %label_762)
@@ -1416,9 +1359,6 @@ define void @main() {
   br label %label_769
 
   label_771:
-
-  ;43
-
   %label_778 = alloca i32*
   %label_779 = mul i64 4, 43
   %label_780 = call i8* @malloc(i64 %label_779)
@@ -1606,9 +1546,6 @@ define void @main() {
   store i32 %label_882, i32* %label_0
   %label_893 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_893)
-
-  ;2
-
   %label_894 = alloca i32*
   %label_895 = mul i64 4, 2
   %label_896 = call i8* @malloc(i64 %label_895)
@@ -1673,9 +1610,6 @@ define void @main() {
   store i32 %label_916, i32* %label_0
   %label_927 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_927)
-
-  ;2
-
   %label_928 = alloca i32*
   %label_929 = mul i64 4, 2
   %label_930 = call i8* @malloc(i64 %label_929)
@@ -1740,9 +1674,6 @@ define void @main() {
   store i32 %label_950, i32* %label_0
   %label_961 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_961)
-
-  ;2
-
   %label_962 = alloca i32*
   %label_963 = mul i64 4, 2
   %label_964 = call i8* @malloc(i64 %label_963)
@@ -1807,9 +1738,6 @@ define void @main() {
   store i32 %label_984, i32* %label_0
   %label_995 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_995)
-
-  ;2
-
   %label_996 = alloca i32*
   %label_997 = mul i64 4, 2
   %label_998 = call i8* @malloc(i64 %label_997)
@@ -1839,9 +1767,6 @@ define void @main() {
   br label %label_1004
 
   label_1006:
-
-  ;43
-
   %label_1013 = alloca i32*
   %label_1014 = mul i64 4, 43
   %label_1015 = call i8* @malloc(i64 %label_1014)
@@ -2029,9 +1954,6 @@ define void @main() {
   store i32 %label_1117, i32* %label_0
   %label_1128 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1128)
-
-  ;2
-
   %label_1129 = alloca i32*
   %label_1130 = mul i64 4, 2
   %label_1131 = call i8* @malloc(i64 %label_1130)
@@ -2096,9 +2018,6 @@ define void @main() {
   store i32 %label_1151, i32* %label_0
   %label_1162 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1162)
-
-  ;2
-
   %label_1163 = alloca i32*
   %label_1164 = mul i64 4, 2
   %label_1165 = call i8* @malloc(i64 %label_1164)
@@ -2163,9 +2082,6 @@ define void @main() {
   store i32 %label_1185, i32* %label_0
   %label_1196 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1196)
-
-  ;2
-
   %label_1197 = alloca i32*
   %label_1198 = mul i64 4, 2
   %label_1199 = call i8* @malloc(i64 %label_1198)
@@ -2230,9 +2146,6 @@ define void @main() {
   store i32 %label_1219, i32* %label_0
   %label_1230 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1230)
-
-  ;2
-
   %label_1231 = alloca i32*
   %label_1232 = mul i64 4, 2
   %label_1233 = call i8* @malloc(i64 %label_1232)
@@ -2262,9 +2175,6 @@ define void @main() {
   br label %label_1239
 
   label_1241:
-
-  ;43
-
   %label_1248 = alloca i32*
   %label_1249 = mul i64 4, 43
   %label_1250 = call i8* @malloc(i64 %label_1249)
@@ -2452,9 +2362,6 @@ define void @main() {
   store i32 %label_1352, i32* %label_0
   %label_1363 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1363)
-
-  ;2
-
   %label_1364 = alloca i32*
   %label_1365 = mul i64 4, 2
   %label_1366 = call i8* @malloc(i64 %label_1365)
@@ -2519,9 +2426,6 @@ define void @main() {
   store i32 %label_1386, i32* %label_0
   %label_1397 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1397)
-
-  ;2
-
   %label_1398 = alloca i32*
   %label_1399 = mul i64 4, 2
   %label_1400 = call i8* @malloc(i64 %label_1399)
@@ -2586,9 +2490,6 @@ define void @main() {
   store i32 %label_1420, i32* %label_0
   %label_1431 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1431)
-
-  ;2
-
   %label_1432 = alloca i32*
   %label_1433 = mul i64 4, 2
   %label_1434 = call i8* @malloc(i64 %label_1433)
@@ -2653,9 +2554,6 @@ define void @main() {
   store i32 %label_1454, i32* %label_0
   %label_1465 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1465)
-
-  ;2
-
   %label_1466 = alloca i32*
   %label_1467 = mul i64 4, 2
   %label_1468 = call i8* @malloc(i64 %label_1467)

@@ -7,9 +7,6 @@ declare i8* @malloc(i64)
 
 define void @nome() {
   %label_0 = alloca i32*
-
-  ;4
-
   %label_1 = alloca i32*
   %label_2 = mul i64 4, 4
   %label_3 = call i8* @malloc(i64 %label_2)

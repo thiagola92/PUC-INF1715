@@ -10,9 +10,6 @@ define void @main() {
   br i1 %label_3, label %label_0, label %label_1
 
   label_0:
-
-  ;4
-
   %label_4 = alloca i32*
   %label_5 = mul i64 4, 4
   %label_6 = call i8* @malloc(i64 %label_5)
@@ -51,9 +48,6 @@ define void @main() {
   br label %label_2
 
   label_1:
-
-  ;5
-
   %label_25 = alloca i32*
   %label_26 = mul i64 4, 5
   %label_27 = call i8* @malloc(i64 %label_26)
@@ -95,9 +89,6 @@ define void @main() {
   br label %label_2
 
   label_2:
-
-  ;5
-
   %label_48 = alloca i32*
   %label_49 = mul i64 4, 5
   %label_50 = call i8* @malloc(i64 %label_49)

@@ -656,7 +656,7 @@ void code_function_call(int* id, Node* function_call) {
 void code_function_call_2(int* id, Node* function_call) {
   code_expressions(id, function_call->content.n[1]);
   code_function_call_return(id, function_call);
-  printf("(\n");
+  printf("(");
   code_function_call_parameters(id, function_call->content.n[1]);
   printf(")\n");
 }
@@ -1171,7 +1171,6 @@ void code_expression_string(int* id, Node* string) {
   char* bitcast_id;
 
   int length = strlen(string->content.s) + 1;
-  printf("\n  ;%d\n\n", length);
 
   alloca_id = format_string("%%label_%d", next_id(id));
   mult_id = format_string("%%label_%d", next_id(id));
