@@ -199,10 +199,24 @@ converte **char** para **int**
 | **float** | `float`     | `0.000000e+00`  |
 | **array** | `*`         | `null`          |
 
+### String
+Strings em expressões são construidas da mesma maneira que um array de char é construido.  
+
+`"ola"` é construido da mesma maneira que  
+```
+temp : [char];
+temp = new array[4];
+
+temp[0] = 'o';
+temp[1] = 'l';
+temp[2] = 'a';
+temp[3] = '\0';
+```
+
 ### Print String
 Como estou armazenando os characteres dentro de `i32`, o ponteiro para array de chars vai ser um `i32*`. Por causa disto não posso utilizar `printf("%s", text);`, pois printf esperea receber um `i8*`.  
 
-Para conseguir pelo menos printar um "hello world", fiz um loop percorrendo ponteiro `i32`.  
+Para conseguir pelo menos printar um "hello world", fiz um loop percorrendo ponteiro `i32` até encontrar o `\0`.  
 
 # Node
 

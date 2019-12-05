@@ -1,0 +1,15 @@
+test() {
+  exemplo : [char];
+  exemplo = new char[4];
+
+  exemplo[0] = 'o';
+  exemplo[1] = 'l';
+  exemplo[2] = 'a';
+  exemplo[3] = '\0';
+}
+
+main() {
+  exemplo : [char];
+  
+  exemplo = "ola";
+}
