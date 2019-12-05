@@ -11,6 +11,8 @@ define void @main() {
   %label_2 = call i8* @malloc(i64 %label_1)
   %label_3 = bitcast i8* %label_2 to float*
   store float* %label_3, float** %label_0
+
+  ; if
   %label_6 = load float*, float** %label_0
   %label_7 = getelementptr inbounds float, float* %label_6, i32 0
   %label_8 = load float, float* %label_7

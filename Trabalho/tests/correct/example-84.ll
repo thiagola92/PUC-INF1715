@@ -6,10 +6,14 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
+
+  ; if else
   %label_3 = icmp eq i32 0, 1
   br i1 %label_3, label %label_0, label %label_1
 
   label_0:
+
+  ; string
   %label_4 = alloca i32*
   %label_5 = mul i64 4, 4
   %label_6 = call i8* @malloc(i64 %label_5)
@@ -27,6 +31,8 @@ define void @main() {
   %label_14 = load i32*, i32** %label_4
   %label_15 = getelementptr inbounds i32, i32* %label_14, i32 3
   store i32 0, i32* %label_15
+
+  ; print string
   %label_19 = alloca i32
   store i32 0, i32* %label_19
   br label %label_16
@@ -48,6 +54,8 @@ define void @main() {
   br label %label_2
 
   label_1:
+
+  ; string
   %label_25 = alloca i32*
   %label_26 = mul i64 4, 5
   %label_27 = call i8* @malloc(i64 %label_26)
@@ -68,6 +76,8 @@ define void @main() {
   %label_37 = load i32*, i32** %label_25
   %label_38 = getelementptr inbounds i32, i32* %label_37, i32 4
   store i32 0, i32* %label_38
+
+  ; print string
   %label_42 = alloca i32
   store i32 0, i32* %label_42
   br label %label_39
@@ -89,6 +99,8 @@ define void @main() {
   br label %label_2
 
   label_2:
+
+  ; string
   %label_48 = alloca i32*
   %label_49 = mul i64 4, 5
   %label_50 = call i8* @malloc(i64 %label_49)
@@ -109,6 +121,8 @@ define void @main() {
   %label_60 = load i32*, i32** %label_48
   %label_61 = getelementptr inbounds i32, i32* %label_60, i32 4
   store i32 0, i32* %label_61
+
+  ; print string
   %label_65 = alloca i32
   store i32 0, i32* %label_65
   br label %label_62

@@ -9,10 +9,14 @@ define void @main() {
   %label_0 = alloca i32
   %label_1 = alloca i32
   %label_2 = alloca i32
+
+  ; or
   %label_3 = icmp ne i32 1, 0
   br i1 %label_3, label %label_4, label %label_6
 
   label_6:
+
+  ; and
   %label_9 = icmp ne i32 0, 0
   br i1 %label_9, label %label_12, label %label_11
 
@@ -42,6 +46,10 @@ define void @main() {
   %label_18 = phi i1 [ true, %label_4 ], [ false, %label_5 ]
   %label_8 = zext i1 %label_18 to i32
   store i32 %label_8, i32* %label_0
+
+  ; or
+
+  ; and
   %label_23 = icmp ne i32 1, 0
   br i1 %label_23, label %label_26, label %label_25
 
@@ -75,10 +83,14 @@ define void @main() {
   %label_34 = phi i1 [ true, %label_20 ], [ false, %label_21 ]
   %label_32 = zext i1 %label_34 to i32
   store i32 %label_32, i32* %label_1
+
+  ; or
   %label_35 = icmp ne i32 1, 0
   br i1 %label_35, label %label_36, label %label_38
 
   label_38:
+
+  ; and
   %label_41 = icmp ne i32 0, 0
   br i1 %label_41, label %label_44, label %label_43
 
@@ -108,6 +120,10 @@ define void @main() {
   %label_50 = phi i1 [ true, %label_36 ], [ false, %label_37 ]
   %label_40 = zext i1 %label_50 to i32
   store i32 %label_40, i32* %label_0
+
+  ; or
+
+  ; and
   %label_55 = icmp ne i32 1, 0
   br i1 %label_55, label %label_58, label %label_57
 

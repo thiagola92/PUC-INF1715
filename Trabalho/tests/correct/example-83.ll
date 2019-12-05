@@ -7,6 +7,8 @@ declare i8* @malloc(i64)
 
 define void @main() {
   %label_0 = alloca i32
+
+  ; or
   %label_1 = icmp ne i32 1, 0
   br i1 %label_1, label %label_2, label %label_4
 
@@ -26,6 +28,8 @@ define void @main() {
   store i32 %label_6, i32* %label_0
   %label_9 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_9)
+
+  ; string
   %label_10 = alloca i32*
   %label_11 = mul i64 4, 2
   %label_12 = call i8* @malloc(i64 %label_11)
@@ -37,6 +41,8 @@ define void @main() {
   %label_16 = load i32*, i32** %label_10
   %label_17 = getelementptr inbounds i32, i32* %label_16, i32 1
   store i32 0, i32* %label_17
+
+  ; print string
   %label_21 = alloca i32
   store i32 0, i32* %label_21
   br label %label_18
@@ -55,6 +61,8 @@ define void @main() {
   br label %label_18
 
   label_20:
+
+  ; or
   %label_27 = icmp ne i32 0, 0
   br i1 %label_27, label %label_28, label %label_30
 
@@ -74,6 +82,8 @@ define void @main() {
   store i32 %label_32, i32* %label_0
   %label_35 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_35)
+
+  ; string
   %label_36 = alloca i32*
   %label_37 = mul i64 4, 2
   %label_38 = call i8* @malloc(i64 %label_37)
@@ -85,6 +95,8 @@ define void @main() {
   %label_42 = load i32*, i32** %label_36
   %label_43 = getelementptr inbounds i32, i32* %label_42, i32 1
   store i32 0, i32* %label_43
+
+  ; print string
   %label_47 = alloca i32
   store i32 0, i32* %label_47
   br label %label_44
@@ -103,6 +115,8 @@ define void @main() {
   br label %label_44
 
   label_46:
+
+  ; or
   %label_53 = icmp ne i32 1, 0
   br i1 %label_53, label %label_54, label %label_56
 
@@ -122,6 +136,8 @@ define void @main() {
   store i32 %label_58, i32* %label_0
   %label_61 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_61)
+
+  ; string
   %label_62 = alloca i32*
   %label_63 = mul i64 4, 2
   %label_64 = call i8* @malloc(i64 %label_63)
@@ -133,6 +149,8 @@ define void @main() {
   %label_68 = load i32*, i32** %label_62
   %label_69 = getelementptr inbounds i32, i32* %label_68, i32 1
   store i32 0, i32* %label_69
+
+  ; print string
   %label_73 = alloca i32
   store i32 0, i32* %label_73
   br label %label_70
@@ -151,6 +169,8 @@ define void @main() {
   br label %label_70
 
   label_72:
+
+  ; or
   %label_79 = icmp ne i32 0, 0
   br i1 %label_79, label %label_80, label %label_82
 
@@ -170,6 +190,8 @@ define void @main() {
   store i32 %label_84, i32* %label_0
   %label_87 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_87)
+
+  ; string
   %label_88 = alloca i32*
   %label_89 = mul i64 4, 2
   %label_90 = call i8* @malloc(i64 %label_89)
@@ -181,6 +203,8 @@ define void @main() {
   %label_94 = load i32*, i32** %label_88
   %label_95 = getelementptr inbounds i32, i32* %label_94, i32 1
   store i32 0, i32* %label_95
+
+  ; print string
   %label_99 = alloca i32
   store i32 0, i32* %label_99
   br label %label_96
@@ -199,6 +223,8 @@ define void @main() {
   br label %label_96
 
   label_98:
+
+  ; string
   %label_105 = alloca i32*
   %label_106 = mul i64 4, 43
   %label_107 = call i8* @malloc(i64 %label_106)
@@ -333,6 +359,8 @@ define void @main() {
   %label_193 = load i32*, i32** %label_105
   %label_194 = getelementptr inbounds i32, i32* %label_193, i32 42
   store i32 0, i32* %label_194
+
+  ; print string
   %label_198 = alloca i32
   store i32 0, i32* %label_198
   br label %label_195
@@ -351,6 +379,8 @@ define void @main() {
   br label %label_195
 
   label_197:
+
+  ; and
   %label_204 = icmp ne i32 1, 0
   br i1 %label_204, label %label_207, label %label_206
 
@@ -370,6 +400,8 @@ define void @main() {
   store i32 %label_209, i32* %label_0
   %label_212 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_212)
+
+  ; string
   %label_213 = alloca i32*
   %label_214 = mul i64 4, 2
   %label_215 = call i8* @malloc(i64 %label_214)
@@ -381,6 +413,8 @@ define void @main() {
   %label_219 = load i32*, i32** %label_213
   %label_220 = getelementptr inbounds i32, i32* %label_219, i32 1
   store i32 0, i32* %label_220
+
+  ; print string
   %label_224 = alloca i32
   store i32 0, i32* %label_224
   br label %label_221
@@ -399,6 +433,8 @@ define void @main() {
   br label %label_221
 
   label_223:
+
+  ; and
   %label_230 = icmp ne i32 0, 0
   br i1 %label_230, label %label_233, label %label_232
 
@@ -418,6 +454,8 @@ define void @main() {
   store i32 %label_235, i32* %label_0
   %label_238 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_238)
+
+  ; string
   %label_239 = alloca i32*
   %label_240 = mul i64 4, 2
   %label_241 = call i8* @malloc(i64 %label_240)
@@ -429,6 +467,8 @@ define void @main() {
   %label_245 = load i32*, i32** %label_239
   %label_246 = getelementptr inbounds i32, i32* %label_245, i32 1
   store i32 0, i32* %label_246
+
+  ; print string
   %label_250 = alloca i32
   store i32 0, i32* %label_250
   br label %label_247
@@ -447,6 +487,8 @@ define void @main() {
   br label %label_247
 
   label_249:
+
+  ; and
   %label_256 = icmp ne i32 1, 0
   br i1 %label_256, label %label_259, label %label_258
 
@@ -466,6 +508,8 @@ define void @main() {
   store i32 %label_261, i32* %label_0
   %label_264 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_264)
+
+  ; string
   %label_265 = alloca i32*
   %label_266 = mul i64 4, 2
   %label_267 = call i8* @malloc(i64 %label_266)
@@ -477,6 +521,8 @@ define void @main() {
   %label_271 = load i32*, i32** %label_265
   %label_272 = getelementptr inbounds i32, i32* %label_271, i32 1
   store i32 0, i32* %label_272
+
+  ; print string
   %label_276 = alloca i32
   store i32 0, i32* %label_276
   br label %label_273
@@ -495,6 +541,8 @@ define void @main() {
   br label %label_273
 
   label_275:
+
+  ; and
   %label_282 = icmp ne i32 0, 0
   br i1 %label_282, label %label_285, label %label_284
 
@@ -514,6 +562,8 @@ define void @main() {
   store i32 %label_287, i32* %label_0
   %label_290 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_290)
+
+  ; string
   %label_291 = alloca i32*
   %label_292 = mul i64 4, 2
   %label_293 = call i8* @malloc(i64 %label_292)
@@ -525,6 +575,8 @@ define void @main() {
   %label_297 = load i32*, i32** %label_291
   %label_298 = getelementptr inbounds i32, i32* %label_297, i32 1
   store i32 0, i32* %label_298
+
+  ; print string
   %label_302 = alloca i32
   store i32 0, i32* %label_302
   br label %label_299
@@ -543,6 +595,8 @@ define void @main() {
   br label %label_299
 
   label_301:
+
+  ; string
   %label_308 = alloca i32*
   %label_309 = mul i64 4, 43
   %label_310 = call i8* @malloc(i64 %label_309)
@@ -677,6 +731,8 @@ define void @main() {
   %label_396 = load i32*, i32** %label_308
   %label_397 = getelementptr inbounds i32, i32* %label_396, i32 42
   store i32 0, i32* %label_397
+
+  ; print string
   %label_401 = alloca i32
   store i32 0, i32* %label_401
   br label %label_398
@@ -695,6 +751,10 @@ define void @main() {
   br label %label_398
 
   label_400:
+
+  ; or
+
+  ; or
   %label_411 = icmp ne i32 1, 0
   br i1 %label_411, label %label_412, label %label_414
 
@@ -730,6 +790,8 @@ define void @main() {
   store i32 %label_420, i32* %label_0
   %label_423 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_423)
+
+  ; string
   %label_424 = alloca i32*
   %label_425 = mul i64 4, 2
   %label_426 = call i8* @malloc(i64 %label_425)
@@ -741,6 +803,8 @@ define void @main() {
   %label_430 = load i32*, i32** %label_424
   %label_431 = getelementptr inbounds i32, i32* %label_430, i32 1
   store i32 0, i32* %label_431
+
+  ; print string
   %label_435 = alloca i32
   store i32 0, i32* %label_435
   br label %label_432
@@ -759,6 +823,10 @@ define void @main() {
   br label %label_432
 
   label_434:
+
+  ; or
+
+  ; or
   %label_445 = icmp ne i32 0, 0
   br i1 %label_445, label %label_446, label %label_448
 
@@ -794,6 +862,8 @@ define void @main() {
   store i32 %label_454, i32* %label_0
   %label_457 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_457)
+
+  ; string
   %label_458 = alloca i32*
   %label_459 = mul i64 4, 2
   %label_460 = call i8* @malloc(i64 %label_459)
@@ -805,6 +875,8 @@ define void @main() {
   %label_464 = load i32*, i32** %label_458
   %label_465 = getelementptr inbounds i32, i32* %label_464, i32 1
   store i32 0, i32* %label_465
+
+  ; print string
   %label_469 = alloca i32
   store i32 0, i32* %label_469
   br label %label_466
@@ -823,6 +895,10 @@ define void @main() {
   br label %label_466
 
   label_468:
+
+  ; or
+
+  ; or
   %label_479 = icmp ne i32 1, 0
   br i1 %label_479, label %label_480, label %label_482
 
@@ -858,6 +934,8 @@ define void @main() {
   store i32 %label_488, i32* %label_0
   %label_491 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_491)
+
+  ; string
   %label_492 = alloca i32*
   %label_493 = mul i64 4, 2
   %label_494 = call i8* @malloc(i64 %label_493)
@@ -869,6 +947,8 @@ define void @main() {
   %label_498 = load i32*, i32** %label_492
   %label_499 = getelementptr inbounds i32, i32* %label_498, i32 1
   store i32 0, i32* %label_499
+
+  ; print string
   %label_503 = alloca i32
   store i32 0, i32* %label_503
   br label %label_500
@@ -887,6 +967,10 @@ define void @main() {
   br label %label_500
 
   label_502:
+
+  ; or
+
+  ; or
   %label_513 = icmp ne i32 0, 0
   br i1 %label_513, label %label_514, label %label_516
 
@@ -922,6 +1006,8 @@ define void @main() {
   store i32 %label_522, i32* %label_0
   %label_525 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_525)
+
+  ; string
   %label_526 = alloca i32*
   %label_527 = mul i64 4, 2
   %label_528 = call i8* @malloc(i64 %label_527)
@@ -933,6 +1019,8 @@ define void @main() {
   %label_532 = load i32*, i32** %label_526
   %label_533 = getelementptr inbounds i32, i32* %label_532, i32 1
   store i32 0, i32* %label_533
+
+  ; print string
   %label_537 = alloca i32
   store i32 0, i32* %label_537
   br label %label_534
@@ -951,6 +1039,8 @@ define void @main() {
   br label %label_534
 
   label_536:
+
+  ; string
   %label_543 = alloca i32*
   %label_544 = mul i64 4, 43
   %label_545 = call i8* @malloc(i64 %label_544)
@@ -1085,6 +1175,8 @@ define void @main() {
   %label_631 = load i32*, i32** %label_543
   %label_632 = getelementptr inbounds i32, i32* %label_631, i32 42
   store i32 0, i32* %label_632
+
+  ; print string
   %label_636 = alloca i32
   store i32 0, i32* %label_636
   br label %label_633
@@ -1103,6 +1195,10 @@ define void @main() {
   br label %label_633
 
   label_635:
+
+  ; and
+
+  ; and
   %label_646 = icmp ne i32 1, 0
   br i1 %label_646, label %label_649, label %label_648
 
@@ -1138,6 +1234,8 @@ define void @main() {
   store i32 %label_655, i32* %label_0
   %label_658 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_658)
+
+  ; string
   %label_659 = alloca i32*
   %label_660 = mul i64 4, 2
   %label_661 = call i8* @malloc(i64 %label_660)
@@ -1149,6 +1247,8 @@ define void @main() {
   %label_665 = load i32*, i32** %label_659
   %label_666 = getelementptr inbounds i32, i32* %label_665, i32 1
   store i32 0, i32* %label_666
+
+  ; print string
   %label_670 = alloca i32
   store i32 0, i32* %label_670
   br label %label_667
@@ -1167,6 +1267,10 @@ define void @main() {
   br label %label_667
 
   label_669:
+
+  ; and
+
+  ; and
   %label_680 = icmp ne i32 0, 0
   br i1 %label_680, label %label_683, label %label_682
 
@@ -1202,6 +1306,8 @@ define void @main() {
   store i32 %label_689, i32* %label_0
   %label_692 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_692)
+
+  ; string
   %label_693 = alloca i32*
   %label_694 = mul i64 4, 2
   %label_695 = call i8* @malloc(i64 %label_694)
@@ -1213,6 +1319,8 @@ define void @main() {
   %label_699 = load i32*, i32** %label_693
   %label_700 = getelementptr inbounds i32, i32* %label_699, i32 1
   store i32 0, i32* %label_700
+
+  ; print string
   %label_704 = alloca i32
   store i32 0, i32* %label_704
   br label %label_701
@@ -1231,6 +1339,10 @@ define void @main() {
   br label %label_701
 
   label_703:
+
+  ; and
+
+  ; and
   %label_714 = icmp ne i32 1, 0
   br i1 %label_714, label %label_717, label %label_716
 
@@ -1266,6 +1378,8 @@ define void @main() {
   store i32 %label_723, i32* %label_0
   %label_726 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_726)
+
+  ; string
   %label_727 = alloca i32*
   %label_728 = mul i64 4, 2
   %label_729 = call i8* @malloc(i64 %label_728)
@@ -1277,6 +1391,8 @@ define void @main() {
   %label_733 = load i32*, i32** %label_727
   %label_734 = getelementptr inbounds i32, i32* %label_733, i32 1
   store i32 0, i32* %label_734
+
+  ; print string
   %label_738 = alloca i32
   store i32 0, i32* %label_738
   br label %label_735
@@ -1295,6 +1411,10 @@ define void @main() {
   br label %label_735
 
   label_737:
+
+  ; and
+
+  ; and
   %label_748 = icmp ne i32 0, 0
   br i1 %label_748, label %label_751, label %label_750
 
@@ -1330,6 +1450,8 @@ define void @main() {
   store i32 %label_757, i32* %label_0
   %label_760 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_760)
+
+  ; string
   %label_761 = alloca i32*
   %label_762 = mul i64 4, 2
   %label_763 = call i8* @malloc(i64 %label_762)
@@ -1341,6 +1463,8 @@ define void @main() {
   %label_767 = load i32*, i32** %label_761
   %label_768 = getelementptr inbounds i32, i32* %label_767, i32 1
   store i32 0, i32* %label_768
+
+  ; print string
   %label_772 = alloca i32
   store i32 0, i32* %label_772
   br label %label_769
@@ -1359,6 +1483,8 @@ define void @main() {
   br label %label_769
 
   label_771:
+
+  ; string
   %label_778 = alloca i32*
   %label_779 = mul i64 4, 43
   %label_780 = call i8* @malloc(i64 %label_779)
@@ -1493,6 +1619,8 @@ define void @main() {
   %label_866 = load i32*, i32** %label_778
   %label_867 = getelementptr inbounds i32, i32* %label_866, i32 42
   store i32 0, i32* %label_867
+
+  ; print string
   %label_871 = alloca i32
   store i32 0, i32* %label_871
   br label %label_868
@@ -1511,10 +1639,14 @@ define void @main() {
   br label %label_868
 
   label_870:
+
+  ; or
   %label_877 = icmp ne i32 1, 0
   br i1 %label_877, label %label_878, label %label_880
 
   label_880:
+
+  ; and
   %label_883 = icmp ne i32 1, 0
   br i1 %label_883, label %label_886, label %label_885
 
@@ -1546,6 +1678,8 @@ define void @main() {
   store i32 %label_882, i32* %label_0
   %label_893 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_893)
+
+  ; string
   %label_894 = alloca i32*
   %label_895 = mul i64 4, 2
   %label_896 = call i8* @malloc(i64 %label_895)
@@ -1557,6 +1691,8 @@ define void @main() {
   %label_900 = load i32*, i32** %label_894
   %label_901 = getelementptr inbounds i32, i32* %label_900, i32 1
   store i32 0, i32* %label_901
+
+  ; print string
   %label_905 = alloca i32
   store i32 0, i32* %label_905
   br label %label_902
@@ -1575,10 +1711,14 @@ define void @main() {
   br label %label_902
 
   label_904:
+
+  ; or
   %label_911 = icmp ne i32 0, 0
   br i1 %label_911, label %label_912, label %label_914
 
   label_914:
+
+  ; and
   %label_917 = icmp ne i32 0, 0
   br i1 %label_917, label %label_920, label %label_919
 
@@ -1610,6 +1750,8 @@ define void @main() {
   store i32 %label_916, i32* %label_0
   %label_927 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_927)
+
+  ; string
   %label_928 = alloca i32*
   %label_929 = mul i64 4, 2
   %label_930 = call i8* @malloc(i64 %label_929)
@@ -1621,6 +1763,8 @@ define void @main() {
   %label_934 = load i32*, i32** %label_928
   %label_935 = getelementptr inbounds i32, i32* %label_934, i32 1
   store i32 0, i32* %label_935
+
+  ; print string
   %label_939 = alloca i32
   store i32 0, i32* %label_939
   br label %label_936
@@ -1639,10 +1783,14 @@ define void @main() {
   br label %label_936
 
   label_938:
+
+  ; or
   %label_945 = icmp ne i32 1, 0
   br i1 %label_945, label %label_946, label %label_948
 
   label_948:
+
+  ; and
   %label_951 = icmp ne i32 0, 0
   br i1 %label_951, label %label_954, label %label_953
 
@@ -1674,6 +1822,8 @@ define void @main() {
   store i32 %label_950, i32* %label_0
   %label_961 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_961)
+
+  ; string
   %label_962 = alloca i32*
   %label_963 = mul i64 4, 2
   %label_964 = call i8* @malloc(i64 %label_963)
@@ -1685,6 +1835,8 @@ define void @main() {
   %label_968 = load i32*, i32** %label_962
   %label_969 = getelementptr inbounds i32, i32* %label_968, i32 1
   store i32 0, i32* %label_969
+
+  ; print string
   %label_973 = alloca i32
   store i32 0, i32* %label_973
   br label %label_970
@@ -1703,10 +1855,14 @@ define void @main() {
   br label %label_970
 
   label_972:
+
+  ; or
   %label_979 = icmp ne i32 0, 0
   br i1 %label_979, label %label_980, label %label_982
 
   label_982:
+
+  ; and
   %label_985 = icmp ne i32 1, 0
   br i1 %label_985, label %label_988, label %label_987
 
@@ -1738,6 +1894,8 @@ define void @main() {
   store i32 %label_984, i32* %label_0
   %label_995 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_995)
+
+  ; string
   %label_996 = alloca i32*
   %label_997 = mul i64 4, 2
   %label_998 = call i8* @malloc(i64 %label_997)
@@ -1749,6 +1907,8 @@ define void @main() {
   %label_1002 = load i32*, i32** %label_996
   %label_1003 = getelementptr inbounds i32, i32* %label_1002, i32 1
   store i32 0, i32* %label_1003
+
+  ; print string
   %label_1007 = alloca i32
   store i32 0, i32* %label_1007
   br label %label_1004
@@ -1767,6 +1927,8 @@ define void @main() {
   br label %label_1004
 
   label_1006:
+
+  ; string
   %label_1013 = alloca i32*
   %label_1014 = mul i64 4, 43
   %label_1015 = call i8* @malloc(i64 %label_1014)
@@ -1901,6 +2063,8 @@ define void @main() {
   %label_1101 = load i32*, i32** %label_1013
   %label_1102 = getelementptr inbounds i32, i32* %label_1101, i32 42
   store i32 0, i32* %label_1102
+
+  ; print string
   %label_1106 = alloca i32
   store i32 0, i32* %label_1106
   br label %label_1103
@@ -1919,6 +2083,10 @@ define void @main() {
   br label %label_1103
 
   label_1105:
+
+  ; or
+
+  ; and
   %label_1116 = icmp ne i32 1, 0
   br i1 %label_1116, label %label_1119, label %label_1118
 
@@ -1954,6 +2122,8 @@ define void @main() {
   store i32 %label_1125, i32* %label_0
   %label_1128 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1128)
+
+  ; string
   %label_1129 = alloca i32*
   %label_1130 = mul i64 4, 2
   %label_1131 = call i8* @malloc(i64 %label_1130)
@@ -1965,6 +2135,8 @@ define void @main() {
   %label_1135 = load i32*, i32** %label_1129
   %label_1136 = getelementptr inbounds i32, i32* %label_1135, i32 1
   store i32 0, i32* %label_1136
+
+  ; print string
   %label_1140 = alloca i32
   store i32 0, i32* %label_1140
   br label %label_1137
@@ -1983,6 +2155,10 @@ define void @main() {
   br label %label_1137
 
   label_1139:
+
+  ; or
+
+  ; and
   %label_1150 = icmp ne i32 0, 0
   br i1 %label_1150, label %label_1153, label %label_1152
 
@@ -2018,6 +2194,8 @@ define void @main() {
   store i32 %label_1159, i32* %label_0
   %label_1162 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1162)
+
+  ; string
   %label_1163 = alloca i32*
   %label_1164 = mul i64 4, 2
   %label_1165 = call i8* @malloc(i64 %label_1164)
@@ -2029,6 +2207,8 @@ define void @main() {
   %label_1169 = load i32*, i32** %label_1163
   %label_1170 = getelementptr inbounds i32, i32* %label_1169, i32 1
   store i32 0, i32* %label_1170
+
+  ; print string
   %label_1174 = alloca i32
   store i32 0, i32* %label_1174
   br label %label_1171
@@ -2047,6 +2227,10 @@ define void @main() {
   br label %label_1171
 
   label_1173:
+
+  ; or
+
+  ; and
   %label_1184 = icmp ne i32 1, 0
   br i1 %label_1184, label %label_1187, label %label_1186
 
@@ -2082,6 +2266,8 @@ define void @main() {
   store i32 %label_1193, i32* %label_0
   %label_1196 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1196)
+
+  ; string
   %label_1197 = alloca i32*
   %label_1198 = mul i64 4, 2
   %label_1199 = call i8* @malloc(i64 %label_1198)
@@ -2093,6 +2279,8 @@ define void @main() {
   %label_1203 = load i32*, i32** %label_1197
   %label_1204 = getelementptr inbounds i32, i32* %label_1203, i32 1
   store i32 0, i32* %label_1204
+
+  ; print string
   %label_1208 = alloca i32
   store i32 0, i32* %label_1208
   br label %label_1205
@@ -2111,6 +2299,10 @@ define void @main() {
   br label %label_1205
 
   label_1207:
+
+  ; or
+
+  ; and
   %label_1218 = icmp ne i32 0, 0
   br i1 %label_1218, label %label_1221, label %label_1220
 
@@ -2146,6 +2338,8 @@ define void @main() {
   store i32 %label_1227, i32* %label_0
   %label_1230 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1230)
+
+  ; string
   %label_1231 = alloca i32*
   %label_1232 = mul i64 4, 2
   %label_1233 = call i8* @malloc(i64 %label_1232)
@@ -2157,6 +2351,8 @@ define void @main() {
   %label_1237 = load i32*, i32** %label_1231
   %label_1238 = getelementptr inbounds i32, i32* %label_1237, i32 1
   store i32 0, i32* %label_1238
+
+  ; print string
   %label_1242 = alloca i32
   store i32 0, i32* %label_1242
   br label %label_1239
@@ -2175,6 +2371,8 @@ define void @main() {
   br label %label_1239
 
   label_1241:
+
+  ; string
   %label_1248 = alloca i32*
   %label_1249 = mul i64 4, 43
   %label_1250 = call i8* @malloc(i64 %label_1249)
@@ -2309,6 +2507,8 @@ define void @main() {
   %label_1336 = load i32*, i32** %label_1248
   %label_1337 = getelementptr inbounds i32, i32* %label_1336, i32 42
   store i32 0, i32* %label_1337
+
+  ; print string
   %label_1341 = alloca i32
   store i32 0, i32* %label_1341
   br label %label_1338
@@ -2327,10 +2527,14 @@ define void @main() {
   br label %label_1338
 
   label_1340:
+
+  ; and
   %label_1347 = icmp ne i32 1, 0
   br i1 %label_1347, label %label_1350, label %label_1349
 
   label_1350:
+
+  ; or
   %label_1353 = icmp ne i32 1, 0
   br i1 %label_1353, label %label_1354, label %label_1356
 
@@ -2362,6 +2566,8 @@ define void @main() {
   store i32 %label_1352, i32* %label_0
   %label_1363 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1363)
+
+  ; string
   %label_1364 = alloca i32*
   %label_1365 = mul i64 4, 2
   %label_1366 = call i8* @malloc(i64 %label_1365)
@@ -2373,6 +2579,8 @@ define void @main() {
   %label_1370 = load i32*, i32** %label_1364
   %label_1371 = getelementptr inbounds i32, i32* %label_1370, i32 1
   store i32 0, i32* %label_1371
+
+  ; print string
   %label_1375 = alloca i32
   store i32 0, i32* %label_1375
   br label %label_1372
@@ -2391,10 +2599,14 @@ define void @main() {
   br label %label_1372
 
   label_1374:
+
+  ; and
   %label_1381 = icmp ne i32 0, 0
   br i1 %label_1381, label %label_1384, label %label_1383
 
   label_1384:
+
+  ; or
   %label_1387 = icmp ne i32 0, 0
   br i1 %label_1387, label %label_1388, label %label_1390
 
@@ -2426,6 +2638,8 @@ define void @main() {
   store i32 %label_1386, i32* %label_0
   %label_1397 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1397)
+
+  ; string
   %label_1398 = alloca i32*
   %label_1399 = mul i64 4, 2
   %label_1400 = call i8* @malloc(i64 %label_1399)
@@ -2437,6 +2651,8 @@ define void @main() {
   %label_1404 = load i32*, i32** %label_1398
   %label_1405 = getelementptr inbounds i32, i32* %label_1404, i32 1
   store i32 0, i32* %label_1405
+
+  ; print string
   %label_1409 = alloca i32
   store i32 0, i32* %label_1409
   br label %label_1406
@@ -2455,10 +2671,14 @@ define void @main() {
   br label %label_1406
 
   label_1408:
+
+  ; and
   %label_1415 = icmp ne i32 1, 0
   br i1 %label_1415, label %label_1418, label %label_1417
 
   label_1418:
+
+  ; or
   %label_1421 = icmp ne i32 0, 0
   br i1 %label_1421, label %label_1422, label %label_1424
 
@@ -2490,6 +2710,8 @@ define void @main() {
   store i32 %label_1420, i32* %label_0
   %label_1431 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1431)
+
+  ; string
   %label_1432 = alloca i32*
   %label_1433 = mul i64 4, 2
   %label_1434 = call i8* @malloc(i64 %label_1433)
@@ -2501,6 +2723,8 @@ define void @main() {
   %label_1438 = load i32*, i32** %label_1432
   %label_1439 = getelementptr inbounds i32, i32* %label_1438, i32 1
   store i32 0, i32* %label_1439
+
+  ; print string
   %label_1443 = alloca i32
   store i32 0, i32* %label_1443
   br label %label_1440
@@ -2519,10 +2743,14 @@ define void @main() {
   br label %label_1440
 
   label_1442:
+
+  ; and
   %label_1449 = icmp ne i32 0, 0
   br i1 %label_1449, label %label_1452, label %label_1451
 
   label_1452:
+
+  ; or
   %label_1455 = icmp ne i32 1, 0
   br i1 %label_1455, label %label_1456, label %label_1458
 
@@ -2554,6 +2782,8 @@ define void @main() {
   store i32 %label_1454, i32* %label_0
   %label_1465 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1465)
+
+  ; string
   %label_1466 = alloca i32*
   %label_1467 = mul i64 4, 2
   %label_1468 = call i8* @malloc(i64 %label_1467)
@@ -2565,6 +2795,8 @@ define void @main() {
   %label_1472 = load i32*, i32** %label_1466
   %label_1473 = getelementptr inbounds i32, i32* %label_1472, i32 1
   store i32 0, i32* %label_1473
+
+  ; print string
   %label_1477 = alloca i32
   store i32 0, i32* %label_1477
   br label %label_1474

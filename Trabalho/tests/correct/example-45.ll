@@ -6,6 +6,8 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
+
+  ; if
   %label_3 = icmp eq i32 97, 97
   %label_4 = zext i1 %label_3 to i32
   %label_5 = icmp eq i32 %label_4, 1

@@ -416,6 +416,8 @@ void code_if_no_else(int* id, Node* if_command) {
   char* true_label;
   char* end_label;
 
+  printf("\n  ; if\n");
+
   true_label = format_string("%%label_%d", next_id(id));
   end_label = format_string("%%label_%d", next_id(id));
 
@@ -447,6 +449,8 @@ void code_if_else(int* id, Node* if_else) {
   char* true_label;
   char* false_label;
   char* end_label;
+
+  printf("\n  ; if else\n");
 
   true_label = format_string("%%label_%d", next_id(id));
   false_label = format_string("%%label_%d", next_id(id));
@@ -508,6 +512,8 @@ void code_while(int* id, Node* while_command) {
   char* start_label;
   char* true_label;
   char* end_label;
+
+  printf("\n  ; while\n");
 
   start_label = format_string("%%label_%d", next_id(id));
   true_label = format_string("%%label_%d", next_id(id));
@@ -606,6 +612,8 @@ void code_print_string(int* id, Node* print) {
   char* start_label;
   char* repeat_label;
   char* end_label;
+
+  printf("\n  ; print string\n");
 
   start_label = format_string("%%label_%d", next_id(id));
   repeat_label = format_string("%%label_%d", next_id(id));
@@ -854,6 +862,8 @@ void code_expression_or(int* id, Node* or) {
   char* label_false;
   char* label_next;
 
+  printf("\n  ; or\n");
+
   comparison_id = format_string("%%label_%d", next_id(id));
   label_true = format_string("%%label_%d", next_id(id));
   label_false = format_string("%%label_%d", next_id(id));
@@ -890,6 +900,8 @@ void code_expression_and(int* id, Node* and) {
   char* label_true;
   char* label_false;
   char* label_next;
+
+  printf("\n  ; and\n");
 
   comparison_id = format_string("%%label_%d", next_id(id));
   label_true = format_string("%%label_%d", next_id(id));
@@ -1205,13 +1217,14 @@ void code_expression_string(int* id, Node* string) {
   char* mult_id;
   char* malloc_id;
 
+  printf("\n  ; string\n");
+
   int length = strlen(string->content.s) + 1;
 
   alloca_id = format_string("%%label_%d", next_id(id));
   mult_id = format_string("%%label_%d", next_id(id));
   malloc_id = format_string("%%label_%d", next_id(id));
   string->id = format_string("%%label_%d", next_id(id));
-
   printf("  %s = alloca i32*\n", alloca_id);
   printf("  %s = mul i64 4, %d\n", mult_id, length);
   printf("  %s = call i8* @malloc(i64 %s)\n", malloc_id, mult_id);

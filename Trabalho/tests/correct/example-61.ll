@@ -10,6 +10,8 @@ define i32 @nome(i32, i32) {
   store i32 %0, i32* %label_2
   %label_3 = alloca i32
   store i32 %1, i32* %label_3
+
+  ; or
   %label_8 = load i32, i32* %label_2
   %label_4 = icmp ne i32 %label_8, 0
   br i1 %label_4, label %label_5, label %label_7

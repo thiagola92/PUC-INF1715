@@ -6,6 +6,8 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
+
+  ; if
   %label_2 = icmp eq i32 1, 1
   %label_3 = zext i1 %label_2 to i32
   %label_4 = icmp eq i32 %label_3, 1
@@ -15,6 +17,8 @@ define void @main() {
   br label %label_1
 
   label_1:
+
+  ; if
   %label_7 = icmp ne i32 2, 2
   %label_8 = zext i1 %label_7 to i32
   %label_9 = icmp eq i32 %label_8, 1
@@ -24,6 +28,8 @@ define void @main() {
   br label %label_6
 
   label_6:
+
+  ; if
   %label_12 = add i32 1, 1
   %label_13 = icmp eq i32 %label_12, 1
   %label_14 = zext i1 %label_13 to i32
@@ -34,6 +40,8 @@ define void @main() {
   br label %label_11
 
   label_11:
+
+  ; if
   %label_18 = icmp eq i32 1, 1
   br i1 %label_18, label %label_16, label %label_17
 
@@ -41,6 +49,8 @@ define void @main() {
   br label %label_17
 
   label_17:
+
+  ; if
   %label_21 = icmp slt i32 1, 1
   %label_22 = zext i1 %label_21 to i32
   %label_23 = icmp eq i32 %label_22, 1
@@ -50,6 +60,8 @@ define void @main() {
   br label %label_20
 
   label_20:
+
+  ; if
   %label_26 = add i32 1, 1
   %label_27 = icmp slt i32 1, %label_26
   %label_28 = zext i1 %label_27 to i32

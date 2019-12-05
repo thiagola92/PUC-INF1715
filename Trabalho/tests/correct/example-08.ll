@@ -6,6 +6,8 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define void @main() {
+
+  ; if
   %label_2 = icmp eq i32 1, 1
   br i1 %label_2, label %label_0, label %label_1
 
@@ -13,6 +15,8 @@ define void @main() {
   br label %label_1
 
   label_1:
+
+  ; if else
   %label_6 = icmp eq i32 0, 1
   br i1 %label_6, label %label_3, label %label_4
 
@@ -23,10 +27,14 @@ define void @main() {
   br label %label_5
 
   label_5:
+
+  ; if
   %label_9 = icmp eq i32 1, 1
   br i1 %label_9, label %label_7, label %label_8
 
   label_7:
+
+  ; if
   %label_12 = icmp eq i32 1, 1
   br i1 %label_12, label %label_10, label %label_11
 
@@ -37,10 +45,14 @@ define void @main() {
   br label %label_8
 
   label_8:
+
+  ; if
   %label_15 = icmp eq i32 1, 1
   br i1 %label_15, label %label_13, label %label_14
 
   label_13:
+
+  ; if else
   %label_19 = icmp eq i32 0, 1
   br i1 %label_19, label %label_16, label %label_17
 
@@ -54,6 +66,8 @@ define void @main() {
   br label %label_14
 
   label_14:
+
+  ; if else
   %label_23 = icmp eq i32 0, 1
   br i1 %label_23, label %label_20, label %label_21
 
@@ -61,6 +75,8 @@ define void @main() {
   br label %label_22
 
   label_21:
+
+  ; if
   %label_26 = icmp eq i32 1, 1
   br i1 %label_26, label %label_24, label %label_25
 
@@ -71,6 +87,8 @@ define void @main() {
   br label %label_22
 
   label_22:
+
+  ; if else
   %label_30 = icmp eq i32 0, 1
   br i1 %label_30, label %label_27, label %label_28
 
@@ -78,6 +96,8 @@ define void @main() {
   br label %label_29
 
   label_28:
+
+  ; if else
   %label_34 = icmp eq i32 0, 1
   br i1 %label_34, label %label_31, label %label_32
 

@@ -8,6 +8,8 @@ declare i8* @malloc(i64)
 define void @main() {
   %label_0 = alloca i32
   store i32 97, i32* %label_0
+
+  ; if
   %label_3 = load i32, i32* %label_0
   %label_4 = load i32, i32* %label_0
   %label_5 = icmp eq i32 %label_3, %label_4
@@ -19,6 +21,8 @@ define void @main() {
   br label %label_2
 
   label_2:
+
+  ; if
   %label_10 = icmp eq i32 97, 97
   %label_11 = zext i1 %label_10 to i32
   %label_12 = icmp eq i32 %label_11, 1
@@ -28,6 +32,8 @@ define void @main() {
   br label %label_9
 
   label_9:
+
+  ; if
   %label_15 = load i32, i32* %label_0
   %label_16 = icmp eq i32 97, %label_15
   %label_17 = zext i1 %label_16 to i32

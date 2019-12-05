@@ -10,6 +10,8 @@ define void @first() {
 }
 
 define void @main() {
+
+  ; while
   br label %label_0
 
   label_0:
@@ -20,6 +22,8 @@ define void @main() {
   br label %label_0
 
   label_2:
+
+  ; while
   br label %label_4
 
   label_4:
@@ -31,6 +35,8 @@ define void @main() {
   br label %label_4
 
   label_6:
+
+  ; while
   br label %label_9
 
   label_9:
@@ -42,6 +48,8 @@ define void @main() {
   br label %label_9
 
   label_11:
+
+  ; while
   br label %label_13
 
   label_13:

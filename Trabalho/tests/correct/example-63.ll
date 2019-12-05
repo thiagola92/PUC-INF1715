@@ -11,11 +11,15 @@ define void @nome(i32, i32) {
   %label_3 = alloca i32
   store i32 %1, i32* %label_3
   %label_4 = alloca i32
+
+  ; or
   %label_9 = load i32, i32* %label_2
   %label_5 = icmp ne i32 %label_9, 0
   br i1 %label_5, label %label_6, label %label_8
 
   label_8:
+
+  ; and
   %label_16 = load i32, i32* %label_3
   %label_12 = icmp ne i32 %label_16, 0
   br i1 %label_12, label %label_15, label %label_14

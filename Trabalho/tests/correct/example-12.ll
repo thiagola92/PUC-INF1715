@@ -64,6 +64,8 @@ define void @main() {
   %label_37 = load i32*, i32** %label_4
   %label_38 = getelementptr inbounds i32, i32* %label_37, i32 1
   store i32 0, i32* %label_38
+
+  ; string
   %label_39 = alloca i32*
   %label_40 = mul i64 4, 12
   %label_41 = call i8* @malloc(i64 %label_40)
@@ -106,6 +108,8 @@ define void @main() {
   %label_66 = getelementptr inbounds i32, i32* %label_65, i32 11
   store i32 0, i32* %label_66
   store i32* %label_42, i32** %label_5
+
+  ; string
   %label_67 = alloca i32*
   %label_68 = mul i64 4, 14
   %label_69 = call i8* @malloc(i64 %label_68)

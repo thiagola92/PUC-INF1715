@@ -10,6 +10,8 @@ define void @first() {
 }
 
 define void @main() {
+
+  ; if
   %label_2 = icmp eq i32 1, 1
   br i1 %label_2, label %label_0, label %label_1
 
@@ -19,6 +21,8 @@ define void @main() {
   br label %label_1
 
   label_1:
+
+  ; if else
   %label_7 = icmp eq i32 0, 1
   br i1 %label_7, label %label_4, label %label_5
 
@@ -33,11 +37,15 @@ define void @main() {
   br label %label_6
 
   label_6:
+
+  ; if
   %label_12 = icmp eq i32 1, 1
   br i1 %label_12, label %label_10, label %label_11
 
   label_10:
   %label_13 = alloca i32
+
+  ; if
   %label_16 = icmp eq i32 1, 1
   br i1 %label_16, label %label_14, label %label_15
 
@@ -51,11 +59,15 @@ define void @main() {
   br label %label_11
 
   label_11:
+
+  ; if
   %label_20 = icmp eq i32 1, 1
   br i1 %label_20, label %label_18, label %label_19
 
   label_18:
   %label_21 = alloca i32
+
+  ; if else
   %label_25 = icmp eq i32 0, 1
   br i1 %label_25, label %label_22, label %label_23
 
@@ -74,6 +86,8 @@ define void @main() {
   br label %label_19
 
   label_19:
+
+  ; if else
   %label_31 = icmp eq i32 0, 1
   br i1 %label_31, label %label_28, label %label_29
 
@@ -84,6 +98,8 @@ define void @main() {
 
   label_29:
   %label_33 = alloca i32
+
+  ; if
   %label_36 = icmp eq i32 1, 1
   br i1 %label_36, label %label_34, label %label_35
 
@@ -97,6 +113,8 @@ define void @main() {
   br label %label_30
 
   label_30:
+
+  ; if else
   %label_41 = icmp eq i32 0, 1
   br i1 %label_41, label %label_38, label %label_39
 
@@ -107,6 +125,8 @@ define void @main() {
 
   label_39:
   %label_43 = alloca i32
+
+  ; if else
   %label_47 = icmp eq i32 0, 1
   br i1 %label_47, label %label_44, label %label_45
 

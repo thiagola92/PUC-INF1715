@@ -11,6 +11,8 @@ define void @nome(i32, i32) {
   %label_3 = alloca i32
   store i32 %1, i32* %label_3
   %label_4 = alloca i32
+
+  ; or
   %label_9 = load i32, i32* %label_2
   %label_5 = icmp ne i32 %label_9, 0
   br i1 %label_5, label %label_6, label %label_8
@@ -30,6 +32,8 @@ define void @nome(i32, i32) {
   %label_14 = phi i1 [ true, %label_6 ], [ false, %label_7 ]
   %label_11 = zext i1 %label_14 to i32
   store i32 %label_11, i32* %label_4
+
+  ; and
   %label_19 = load i32, i32* %label_2
   %label_15 = icmp ne i32 %label_19, 0
   br i1 %label_15, label %label_18, label %label_17

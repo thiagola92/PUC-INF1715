@@ -15,6 +15,8 @@ define void @declaring_and_setting_variables() {
   store i32 1, i32* %label_2
   %label_4 = fptrunc double 1.000000 to float
   store float %label_4, float* %label_3
+
+  ; string
   %label_5 = alloca i32*
   %label_6 = mul i64 4, 19
   %label_7 = call i8* @malloc(i64 %label_6)
@@ -77,6 +79,8 @@ define void @declaring_and_setting_variables() {
   %label_45 = load i32*, i32** %label_5
   %label_46 = getelementptr inbounds i32, i32* %label_45, i32 18
   store i32 0, i32* %label_46
+
+  ; print string
   %label_50 = alloca i32
   store i32 0, i32* %label_50
   br label %label_47
@@ -97,6 +101,8 @@ define void @declaring_and_setting_variables() {
   label_49:
   %label_56 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_56)
+
+  ; string
   %label_57 = alloca i32*
   %label_58 = mul i64 4, 2
   %label_59 = call i8* @malloc(i64 %label_58)
@@ -108,6 +114,8 @@ define void @declaring_and_setting_variables() {
   %label_63 = load i32*, i32** %label_57
   %label_64 = getelementptr inbounds i32, i32* %label_63, i32 1
   store i32 0, i32* %label_64
+
+  ; print string
   %label_68 = alloca i32
   store i32 0, i32* %label_68
   br label %label_65
@@ -128,6 +136,8 @@ define void @declaring_and_setting_variables() {
   label_67:
   %label_74 = load i32, i32* %label_1
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_74)
+
+  ; string
   %label_75 = alloca i32*
   %label_76 = mul i64 4, 2
   %label_77 = call i8* @malloc(i64 %label_76)
@@ -139,6 +149,8 @@ define void @declaring_and_setting_variables() {
   %label_81 = load i32*, i32** %label_75
   %label_82 = getelementptr inbounds i32, i32* %label_81, i32 1
   store i32 0, i32* %label_82
+
+  ; print string
   %label_86 = alloca i32
   store i32 0, i32* %label_86
   br label %label_83
@@ -159,6 +171,8 @@ define void @declaring_and_setting_variables() {
   label_85:
   %label_92 = load i32, i32* %label_2
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_92)
+
+  ; string
   %label_93 = alloca i32*
   %label_94 = mul i64 4, 2
   %label_95 = call i8* @malloc(i64 %label_94)
@@ -170,6 +184,8 @@ define void @declaring_and_setting_variables() {
   %label_99 = load i32*, i32** %label_93
   %label_100 = getelementptr inbounds i32, i32* %label_99, i32 1
   store i32 0, i32* %label_100
+
+  ; print string
   %label_104 = alloca i32
   store i32 0, i32* %label_104
   br label %label_101
@@ -195,6 +211,8 @@ define void @declaring_and_setting_variables() {
 }
 
 define void @main() {
+
+  ; string
   %label_0 = alloca i32*
   %label_1 = mul i64 4, 30
   %label_2 = call i8* @malloc(i64 %label_1)
@@ -290,6 +308,8 @@ define void @main() {
   %label_62 = load i32*, i32** %label_0
   %label_63 = getelementptr inbounds i32, i32* %label_62, i32 29
   store i32 0, i32* %label_63
+
+  ; print string
   %label_67 = alloca i32
   store i32 0, i32* %label_67
   br label %label_64
@@ -308,6 +328,8 @@ define void @main() {
   br label %label_64
 
   label_66:
+
+  ; string
   %label_73 = alloca i32*
   %label_74 = mul i64 4, 2
   %label_75 = call i8* @malloc(i64 %label_74)
@@ -319,6 +341,8 @@ define void @main() {
   %label_79 = load i32*, i32** %label_73
   %label_80 = getelementptr inbounds i32, i32* %label_79, i32 1
   store i32 0, i32* %label_80
+
+  ; print string
   %label_84 = alloca i32
   store i32 0, i32* %label_84
   br label %label_81
@@ -337,6 +361,8 @@ define void @main() {
   br label %label_81
 
   label_83:
+
+  ; string
   %label_90 = alloca i32*
   %label_91 = mul i64 4, 33
   %label_92 = call i8* @malloc(i64 %label_91)
@@ -441,6 +467,8 @@ define void @main() {
   %label_158 = load i32*, i32** %label_90
   %label_159 = getelementptr inbounds i32, i32* %label_158, i32 32
   store i32 0, i32* %label_159
+
+  ; print string
   %label_163 = alloca i32
   store i32 0, i32* %label_163
   br label %label_160
@@ -459,6 +487,8 @@ define void @main() {
   br label %label_160
 
   label_162:
+
+  ; string
   %label_169 = alloca i32*
   %label_170 = mul i64 4, 6
   %label_171 = call i8* @malloc(i64 %label_170)
@@ -482,6 +512,8 @@ define void @main() {
   %label_183 = load i32*, i32** %label_169
   %label_184 = getelementptr inbounds i32, i32* %label_183, i32 5
   store i32 0, i32* %label_184
+
+  ; print string
   %label_188 = alloca i32
   store i32 0, i32* %label_188
   br label %label_185
@@ -500,6 +532,8 @@ define void @main() {
   br label %label_185
 
   label_187:
+
+  ; string
   %label_194 = alloca i32*
   %label_195 = mul i64 4, 6
   %label_196 = call i8* @malloc(i64 %label_195)
@@ -523,6 +557,8 @@ define void @main() {
   %label_208 = load i32*, i32** %label_194
   %label_209 = getelementptr inbounds i32, i32* %label_208, i32 5
   store i32 0, i32* %label_209
+
+  ; print string
   %label_213 = alloca i32
   store i32 0, i32* %label_213
   br label %label_210
@@ -541,6 +577,8 @@ define void @main() {
   br label %label_210
 
   label_212:
+
+  ; string
   %label_219 = alloca i32*
   %label_220 = mul i64 4, 5
   %label_221 = call i8* @malloc(i64 %label_220)
@@ -561,6 +599,8 @@ define void @main() {
   %label_231 = load i32*, i32** %label_219
   %label_232 = getelementptr inbounds i32, i32* %label_231, i32 4
   store i32 0, i32* %label_232
+
+  ; print string
   %label_236 = alloca i32
   store i32 0, i32* %label_236
   br label %label_233
@@ -579,6 +619,8 @@ define void @main() {
   br label %label_233
 
   label_235:
+
+  ; string
   %label_242 = alloca i32*
   %label_243 = mul i64 4, 7
   %label_244 = call i8* @malloc(i64 %label_243)
@@ -605,6 +647,8 @@ define void @main() {
   %label_258 = load i32*, i32** %label_242
   %label_259 = getelementptr inbounds i32, i32* %label_258, i32 6
   store i32 0, i32* %label_259
+
+  ; print string
   %label_263 = alloca i32
   store i32 0, i32* %label_263
   br label %label_260
@@ -623,6 +667,8 @@ define void @main() {
   br label %label_260
 
   label_262:
+
+  ; string
   %label_269 = alloca i32*
   %label_270 = mul i64 4, 2
   %label_271 = call i8* @malloc(i64 %label_270)
@@ -634,6 +680,8 @@ define void @main() {
   %label_275 = load i32*, i32** %label_269
   %label_276 = getelementptr inbounds i32, i32* %label_275, i32 1
   store i32 0, i32* %label_276
+
+  ; print string
   %label_280 = alloca i32
   store i32 0, i32* %label_280
   br label %label_277
@@ -652,6 +700,8 @@ define void @main() {
   br label %label_277
 
   label_279:
+
+  ; string
   %label_286 = alloca i32*
   %label_287 = mul i64 4, 22
   %label_288 = call i8* @malloc(i64 %label_287)
@@ -723,6 +773,8 @@ define void @main() {
   %label_332 = load i32*, i32** %label_286
   %label_333 = getelementptr inbounds i32, i32* %label_332, i32 21
   store i32 0, i32* %label_333
+
+  ; print string
   %label_337 = alloca i32
   store i32 0, i32* %label_337
   br label %label_334
@@ -741,6 +793,8 @@ define void @main() {
   br label %label_334
 
   label_336:
+
+  ; string
   %label_343 = alloca i32*
   %label_344 = mul i64 4, 12
   %label_345 = call i8* @malloc(i64 %label_344)
@@ -782,6 +836,8 @@ define void @main() {
   %label_369 = load i32*, i32** %label_343
   %label_370 = getelementptr inbounds i32, i32* %label_369, i32 11
   store i32 0, i32* %label_370
+
+  ; print string
   %label_374 = alloca i32
   store i32 0, i32* %label_374
   br label %label_371
@@ -800,6 +856,8 @@ define void @main() {
   br label %label_371
 
   label_373:
+
+  ; string
   %label_380 = alloca i32*
   %label_381 = mul i64 4, 12
   %label_382 = call i8* @malloc(i64 %label_381)
@@ -841,6 +899,8 @@ define void @main() {
   %label_406 = load i32*, i32** %label_380
   %label_407 = getelementptr inbounds i32, i32* %label_406, i32 11
   store i32 0, i32* %label_407
+
+  ; print string
   %label_411 = alloca i32
   store i32 0, i32* %label_411
   br label %label_408
@@ -859,6 +919,8 @@ define void @main() {
   br label %label_408
 
   label_410:
+
+  ; string
   %label_417 = alloca i32*
   %label_418 = mul i64 4, 11
   %label_419 = call i8* @malloc(i64 %label_418)
@@ -897,6 +959,8 @@ define void @main() {
   %label_441 = load i32*, i32** %label_417
   %label_442 = getelementptr inbounds i32, i32* %label_441, i32 10
   store i32 0, i32* %label_442
+
+  ; print string
   %label_446 = alloca i32
   store i32 0, i32* %label_446
   br label %label_443
@@ -915,6 +979,8 @@ define void @main() {
   br label %label_443
 
   label_445:
+
+  ; string
   %label_452 = alloca i32*
   %label_453 = mul i64 4, 13
   %label_454 = call i8* @malloc(i64 %label_453)
@@ -959,6 +1025,8 @@ define void @main() {
   %label_480 = load i32*, i32** %label_452
   %label_481 = getelementptr inbounds i32, i32* %label_480, i32 12
   store i32 0, i32* %label_481
+
+  ; print string
   %label_485 = alloca i32
   store i32 0, i32* %label_485
   br label %label_482
@@ -977,6 +1045,8 @@ define void @main() {
   br label %label_482
 
   label_484:
+
+  ; string
   %label_491 = alloca i32*
   %label_492 = mul i64 4, 2
   %label_493 = call i8* @malloc(i64 %label_492)
@@ -988,6 +1058,8 @@ define void @main() {
   %label_497 = load i32*, i32** %label_491
   %label_498 = getelementptr inbounds i32, i32* %label_497, i32 1
   store i32 0, i32* %label_498
+
+  ; print string
   %label_502 = alloca i32
   store i32 0, i32* %label_502
   br label %label_499
@@ -1006,6 +1078,8 @@ define void @main() {
   br label %label_499
 
   label_501:
+
+  ; string
   %label_508 = alloca i32*
   %label_509 = mul i64 4, 22
   %label_510 = call i8* @malloc(i64 %label_509)
@@ -1077,6 +1151,8 @@ define void @main() {
   %label_554 = load i32*, i32** %label_508
   %label_555 = getelementptr inbounds i32, i32* %label_554, i32 21
   store i32 0, i32* %label_555
+
+  ; print string
   %label_559 = alloca i32
   store i32 0, i32* %label_559
   br label %label_556
@@ -1095,6 +1171,8 @@ define void @main() {
   br label %label_556
 
   label_558:
+
+  ; string
   %label_565 = alloca i32*
   %label_566 = mul i64 4, 13
   %label_567 = call i8* @malloc(i64 %label_566)
@@ -1139,6 +1217,8 @@ define void @main() {
   %label_593 = load i32*, i32** %label_565
   %label_594 = getelementptr inbounds i32, i32* %label_593, i32 12
   store i32 0, i32* %label_594
+
+  ; print string
   %label_598 = alloca i32
   store i32 0, i32* %label_598
   br label %label_595
@@ -1157,6 +1237,8 @@ define void @main() {
   br label %label_595
 
   label_597:
+
+  ; string
   %label_604 = alloca i32*
   %label_605 = mul i64 4, 12
   %label_606 = call i8* @malloc(i64 %label_605)
@@ -1198,6 +1280,8 @@ define void @main() {
   %label_630 = load i32*, i32** %label_604
   %label_631 = getelementptr inbounds i32, i32* %label_630, i32 11
   store i32 0, i32* %label_631
+
+  ; print string
   %label_635 = alloca i32
   store i32 0, i32* %label_635
   br label %label_632
@@ -1216,6 +1300,8 @@ define void @main() {
   br label %label_632
 
   label_634:
+
+  ; string
   %label_641 = alloca i32*
   %label_642 = mul i64 4, 10
   %label_643 = call i8* @malloc(i64 %label_642)
@@ -1251,6 +1337,8 @@ define void @main() {
   %label_663 = load i32*, i32** %label_641
   %label_664 = getelementptr inbounds i32, i32* %label_663, i32 9
   store i32 0, i32* %label_664
+
+  ; print string
   %label_668 = alloca i32
   store i32 0, i32* %label_668
   br label %label_665
@@ -1269,6 +1357,8 @@ define void @main() {
   br label %label_665
 
   label_667:
+
+  ; string
   %label_674 = alloca i32*
   %label_675 = mul i64 4, 12
   %label_676 = call i8* @malloc(i64 %label_675)
@@ -1310,6 +1400,8 @@ define void @main() {
   %label_700 = load i32*, i32** %label_674
   %label_701 = getelementptr inbounds i32, i32* %label_700, i32 11
   store i32 0, i32* %label_701
+
+  ; print string
   %label_705 = alloca i32
   store i32 0, i32* %label_705
   br label %label_702
@@ -1328,6 +1420,8 @@ define void @main() {
   br label %label_702
 
   label_704:
+
+  ; string
   %label_711 = alloca i32*
   %label_712 = mul i64 4, 2
   %label_713 = call i8* @malloc(i64 %label_712)
@@ -1339,6 +1433,8 @@ define void @main() {
   %label_717 = load i32*, i32** %label_711
   %label_718 = getelementptr inbounds i32, i32* %label_717, i32 1
   store i32 0, i32* %label_718
+
+  ; print string
   %label_722 = alloca i32
   store i32 0, i32* %label_722
   br label %label_719
@@ -1357,6 +1453,8 @@ define void @main() {
   br label %label_719
 
   label_721:
+
+  ; string
   %label_728 = alloca i32*
   %label_729 = mul i64 4, 59
   %label_730 = call i8* @malloc(i64 %label_729)
@@ -1539,6 +1637,8 @@ define void @main() {
   %label_848 = load i32*, i32** %label_728
   %label_849 = getelementptr inbounds i32, i32* %label_848, i32 58
   store i32 0, i32* %label_849
+
+  ; print string
   %label_853 = alloca i32
   store i32 0, i32* %label_853
   br label %label_850
@@ -1557,6 +1657,8 @@ define void @main() {
   br label %label_850
 
   label_852:
+
+  ; string
   %label_859 = alloca i32*
   %label_860 = mul i64 4, 2
   %label_861 = call i8* @malloc(i64 %label_860)
@@ -1568,6 +1670,8 @@ define void @main() {
   %label_865 = load i32*, i32** %label_859
   %label_866 = getelementptr inbounds i32, i32* %label_865, i32 1
   store i32 0, i32* %label_866
+
+  ; print string
   %label_870 = alloca i32
   store i32 0, i32* %label_870
   br label %label_867
@@ -1586,6 +1690,8 @@ define void @main() {
   br label %label_867
 
   label_869:
+
+  ; string
   %label_876 = alloca i32*
   %label_877 = mul i64 4, 24
   %label_878 = call i8* @malloc(i64 %label_877)
@@ -1663,6 +1769,8 @@ define void @main() {
   %label_926 = load i32*, i32** %label_876
   %label_927 = getelementptr inbounds i32, i32* %label_926, i32 23
   store i32 0, i32* %label_927
+
+  ; print string
   %label_931 = alloca i32
   store i32 0, i32* %label_931
   br label %label_928
@@ -1681,6 +1789,8 @@ define void @main() {
   br label %label_928
 
   label_930:
+
+  ; string
   %label_937 = alloca i32*
   %label_938 = mul i64 4, 10
   %label_939 = call i8* @malloc(i64 %label_938)
@@ -1716,6 +1826,8 @@ define void @main() {
   %label_959 = load i32*, i32** %label_937
   %label_960 = getelementptr inbounds i32, i32* %label_959, i32 9
   store i32 0, i32* %label_960
+
+  ; print string
   %label_964 = alloca i32
   store i32 0, i32* %label_964
   br label %label_961
@@ -1734,6 +1846,8 @@ define void @main() {
   br label %label_961
 
   label_963:
+
+  ; string
   %label_970 = alloca i32*
   %label_971 = mul i64 4, 2
   %label_972 = call i8* @malloc(i64 %label_971)
@@ -1745,6 +1859,8 @@ define void @main() {
   %label_976 = load i32*, i32** %label_970
   %label_977 = getelementptr inbounds i32, i32* %label_976, i32 1
   store i32 0, i32* %label_977
+
+  ; print string
   %label_981 = alloca i32
   store i32 0, i32* %label_981
   br label %label_978
@@ -1763,6 +1879,8 @@ define void @main() {
   br label %label_978
 
   label_980:
+
+  ; string
   %label_987 = alloca i32*
   %label_988 = mul i64 4, 47
   %label_989 = call i8* @malloc(i64 %label_988)
@@ -1909,6 +2027,8 @@ define void @main() {
   %label_1083 = load i32*, i32** %label_987
   %label_1084 = getelementptr inbounds i32, i32* %label_1083, i32 46
   store i32 0, i32* %label_1084
+
+  ; print string
   %label_1088 = alloca i32
   store i32 0, i32* %label_1088
   br label %label_1085
@@ -1927,6 +2047,8 @@ define void @main() {
   br label %label_1085
 
   label_1087:
+
+  ; string
   %label_1094 = alloca i32*
   %label_1095 = mul i64 4, 2
   %label_1096 = call i8* @malloc(i64 %label_1095)
@@ -1938,6 +2060,8 @@ define void @main() {
   %label_1100 = load i32*, i32** %label_1094
   %label_1101 = getelementptr inbounds i32, i32* %label_1100, i32 1
   store i32 0, i32* %label_1101
+
+  ; print string
   %label_1105 = alloca i32
   store i32 0, i32* %label_1105
   br label %label_1102
@@ -1957,6 +2081,8 @@ define void @main() {
 
   label_1104:
   call void @declaring_and_setting_variables()
+
+  ; string
   %label_1111 = alloca i32*
   %label_1112 = mul i64 4, 25
   %label_1113 = call i8* @malloc(i64 %label_1112)
@@ -2037,6 +2163,8 @@ define void @main() {
   %label_1163 = load i32*, i32** %label_1111
   %label_1164 = getelementptr inbounds i32, i32* %label_1163, i32 24
   store i32 0, i32* %label_1164
+
+  ; print string
   %label_1168 = alloca i32
   store i32 0, i32* %label_1168
   br label %label_1165

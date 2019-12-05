@@ -21,6 +21,8 @@ define void @main() {
   %label_9 = getelementptr inbounds i32, i32* %label_8, i32 2
   store i32 0, i32* %label_9
   %label_10 = load i32*, i32** %label_0
+
+  ; print string
   %label_14 = alloca i32
   store i32 0, i32* %label_14
   br label %label_11

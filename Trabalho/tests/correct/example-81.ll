@@ -66,6 +66,8 @@ define void @main() {
   %label_39 = getelementptr inbounds i32, i32* %label_38, i32 17
   store i32 0, i32* %label_39
   %label_40 = load i32*, i32** %label_0
+
+  ; print string
   %label_44 = alloca i32
   store i32 0, i32* %label_44
   br label %label_41

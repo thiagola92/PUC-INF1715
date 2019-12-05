@@ -6,6 +6,8 @@ declare i8* @malloc(i64)
 @.print.float = constant [3 x i8] c"%f\00"
 
 define i32* @nome() {
+
+  ; string
   %label_0 = alloca i32*
   %label_1 = mul i64 4, 4
   %label_2 = call i8* @malloc(i64 %label_1)
@@ -28,6 +30,8 @@ define i32* @nome() {
 
 define void @main() {
   %label_0 = call i32* @nome()
+
+  ; print string
   %label_4 = alloca i32
   store i32 0, i32* %label_4
   br label %label_1
