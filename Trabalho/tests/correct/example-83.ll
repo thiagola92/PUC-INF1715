@@ -8,20 +8,20 @@ declare i8* @malloc(i64)
 define void @main() {
   %label_0 = alloca i32
   %label_1 = icmp ne i32 1, 0
-  br i1 %label_1, label %label_3, label %label_5
+  br i1 %label_1, label %label_2, label %label_4
 
-  label_5:
-  %label_2 = icmp ne i32 1, 0
-  br i1 %label_2, label %label_3, label %label_4
+  label_4:
+  %label_5 = icmp ne i32 1, 0
+  br i1 %label_5, label %label_2, label %label_3
+
+  label_2:
+  br label %label_7
 
   label_3:
   br label %label_7
 
-  label_4:
-  br label %label_7
-
   label_7:
-  %label_8 = phi i1 [ true, %label_3 ], [ false, %label_4 ]
+  %label_8 = phi i1 [ true, %label_2 ], [ false, %label_3 ]
   %label_6 = zext i1 %label_8 to i32
   store i32 %label_6, i32* %label_0
   %label_9 = load i32, i32* %label_0
@@ -56,20 +56,20 @@ define void @main() {
 
   label_20:
   %label_27 = icmp ne i32 0, 0
-  br i1 %label_27, label %label_29, label %label_31
+  br i1 %label_27, label %label_28, label %label_30
 
-  label_31:
-  %label_28 = icmp ne i32 0, 0
-  br i1 %label_28, label %label_29, label %label_30
+  label_30:
+  %label_31 = icmp ne i32 0, 0
+  br i1 %label_31, label %label_28, label %label_29
+
+  label_28:
+  br label %label_33
 
   label_29:
   br label %label_33
 
-  label_30:
-  br label %label_33
-
   label_33:
-  %label_34 = phi i1 [ true, %label_29 ], [ false, %label_30 ]
+  %label_34 = phi i1 [ true, %label_28 ], [ false, %label_29 ]
   %label_32 = zext i1 %label_34 to i32
   store i32 %label_32, i32* %label_0
   %label_35 = load i32, i32* %label_0
@@ -104,20 +104,20 @@ define void @main() {
 
   label_46:
   %label_53 = icmp ne i32 1, 0
-  br i1 %label_53, label %label_55, label %label_57
+  br i1 %label_53, label %label_54, label %label_56
 
-  label_57:
-  %label_54 = icmp ne i32 0, 0
-  br i1 %label_54, label %label_55, label %label_56
+  label_56:
+  %label_57 = icmp ne i32 0, 0
+  br i1 %label_57, label %label_54, label %label_55
+
+  label_54:
+  br label %label_59
 
   label_55:
   br label %label_59
 
-  label_56:
-  br label %label_59
-
   label_59:
-  %label_60 = phi i1 [ true, %label_55 ], [ false, %label_56 ]
+  %label_60 = phi i1 [ true, %label_54 ], [ false, %label_55 ]
   %label_58 = zext i1 %label_60 to i32
   store i32 %label_58, i32* %label_0
   %label_61 = load i32, i32* %label_0
@@ -152,20 +152,20 @@ define void @main() {
 
   label_72:
   %label_79 = icmp ne i32 0, 0
-  br i1 %label_79, label %label_81, label %label_83
+  br i1 %label_79, label %label_80, label %label_82
 
-  label_83:
-  %label_80 = icmp ne i32 1, 0
-  br i1 %label_80, label %label_81, label %label_82
+  label_82:
+  %label_83 = icmp ne i32 1, 0
+  br i1 %label_83, label %label_80, label %label_81
+
+  label_80:
+  br label %label_85
 
   label_81:
   br label %label_85
 
-  label_82:
-  br label %label_85
-
   label_85:
-  %label_86 = phi i1 [ true, %label_81 ], [ false, %label_82 ]
+  %label_86 = phi i1 [ true, %label_80 ], [ false, %label_81 ]
   %label_84 = zext i1 %label_86 to i32
   store i32 %label_84, i32* %label_0
   %label_87 = load i32, i32* %label_0
@@ -352,20 +352,20 @@ define void @main() {
 
   label_197:
   %label_204 = icmp ne i32 1, 0
-  br i1 %label_204, label %label_208, label %label_207
+  br i1 %label_204, label %label_207, label %label_206
 
-  label_208:
-  %label_205 = icmp ne i32 1, 0
-  br i1 %label_205, label %label_206, label %label_207
+  label_207:
+  %label_208 = icmp ne i32 1, 0
+  br i1 %label_208, label %label_205, label %label_206
+
+  label_205:
+  br label %label_210
 
   label_206:
   br label %label_210
 
-  label_207:
-  br label %label_210
-
   label_210:
-  %label_211 = phi i1 [ true, %label_206 ], [ false, %label_207 ]
+  %label_211 = phi i1 [ true, %label_205 ], [ false, %label_206 ]
   %label_209 = zext i1 %label_211 to i32
   store i32 %label_209, i32* %label_0
   %label_212 = load i32, i32* %label_0
@@ -400,20 +400,20 @@ define void @main() {
 
   label_223:
   %label_230 = icmp ne i32 0, 0
-  br i1 %label_230, label %label_234, label %label_233
+  br i1 %label_230, label %label_233, label %label_232
 
-  label_234:
-  %label_231 = icmp ne i32 0, 0
-  br i1 %label_231, label %label_232, label %label_233
+  label_233:
+  %label_234 = icmp ne i32 0, 0
+  br i1 %label_234, label %label_231, label %label_232
+
+  label_231:
+  br label %label_236
 
   label_232:
   br label %label_236
 
-  label_233:
-  br label %label_236
-
   label_236:
-  %label_237 = phi i1 [ true, %label_232 ], [ false, %label_233 ]
+  %label_237 = phi i1 [ true, %label_231 ], [ false, %label_232 ]
   %label_235 = zext i1 %label_237 to i32
   store i32 %label_235, i32* %label_0
   %label_238 = load i32, i32* %label_0
@@ -448,20 +448,20 @@ define void @main() {
 
   label_249:
   %label_256 = icmp ne i32 1, 0
-  br i1 %label_256, label %label_260, label %label_259
+  br i1 %label_256, label %label_259, label %label_258
 
-  label_260:
-  %label_257 = icmp ne i32 0, 0
-  br i1 %label_257, label %label_258, label %label_259
+  label_259:
+  %label_260 = icmp ne i32 0, 0
+  br i1 %label_260, label %label_257, label %label_258
+
+  label_257:
+  br label %label_262
 
   label_258:
   br label %label_262
 
-  label_259:
-  br label %label_262
-
   label_262:
-  %label_263 = phi i1 [ true, %label_258 ], [ false, %label_259 ]
+  %label_263 = phi i1 [ true, %label_257 ], [ false, %label_258 ]
   %label_261 = zext i1 %label_263 to i32
   store i32 %label_261, i32* %label_0
   %label_264 = load i32, i32* %label_0
@@ -496,20 +496,20 @@ define void @main() {
 
   label_275:
   %label_282 = icmp ne i32 0, 0
-  br i1 %label_282, label %label_286, label %label_285
+  br i1 %label_282, label %label_285, label %label_284
 
-  label_286:
-  %label_283 = icmp ne i32 1, 0
-  br i1 %label_283, label %label_284, label %label_285
+  label_285:
+  %label_286 = icmp ne i32 1, 0
+  br i1 %label_286, label %label_283, label %label_284
+
+  label_283:
+  br label %label_288
 
   label_284:
   br label %label_288
 
-  label_285:
-  br label %label_288
-
   label_288:
-  %label_289 = phi i1 [ true, %label_284 ], [ false, %label_285 ]
+  %label_289 = phi i1 [ true, %label_283 ], [ false, %label_284 ]
   %label_287 = zext i1 %label_289 to i32
   store i32 %label_287, i32* %label_0
   %label_290 = load i32, i32* %label_0
@@ -695,39 +695,39 @@ define void @main() {
   br label %label_398
 
   label_400:
-  %label_413 = icmp ne i32 1, 0
-  br i1 %label_413, label %label_415, label %label_417
+  %label_411 = icmp ne i32 1, 0
+  br i1 %label_411, label %label_412, label %label_414
+
+  label_414:
+  %label_415 = icmp ne i32 1, 0
+  br i1 %label_415, label %label_412, label %label_413
+
+  label_412:
+  br label %label_417
+
+  label_413:
+  br label %label_417
 
   label_417:
-  %label_414 = icmp ne i32 1, 0
-  br i1 %label_414, label %label_415, label %label_416
+  %label_418 = phi i1 [ true, %label_412 ], [ false, %label_413 ]
+  %label_416 = zext i1 %label_418 to i32
+  %label_407 = icmp ne i32 %label_416, 0
+  br i1 %label_407, label %label_408, label %label_410
 
-  label_415:
-  br label %label_419
+  label_410:
+  %label_419 = icmp ne i32 1, 0
+  br i1 %label_419, label %label_408, label %label_409
 
-  label_416:
-  br label %label_419
-
-  label_419:
-  %label_420 = phi i1 [ true, %label_415 ], [ false, %label_416 ]
-  %label_418 = zext i1 %label_420 to i32
-  %label_407 = icmp ne i32 %label_418, 0
-  br i1 %label_407, label %label_409, label %label_411
-
-  label_411:
-  %label_408 = icmp ne i32 1, 0
-  br i1 %label_408, label %label_409, label %label_410
+  label_408:
+  br label %label_421
 
   label_409:
   br label %label_421
 
-  label_410:
-  br label %label_421
-
   label_421:
-  %label_422 = phi i1 [ true, %label_409 ], [ false, %label_410 ]
-  %label_412 = zext i1 %label_422 to i32
-  store i32 %label_412, i32* %label_0
+  %label_422 = phi i1 [ true, %label_408 ], [ false, %label_409 ]
+  %label_420 = zext i1 %label_422 to i32
+  store i32 %label_420, i32* %label_0
   %label_423 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_423)
   %label_424 = alloca i32*
@@ -759,39 +759,39 @@ define void @main() {
   br label %label_432
 
   label_434:
-  %label_447 = icmp ne i32 0, 0
-  br i1 %label_447, label %label_449, label %label_451
+  %label_445 = icmp ne i32 0, 0
+  br i1 %label_445, label %label_446, label %label_448
+
+  label_448:
+  %label_449 = icmp ne i32 0, 0
+  br i1 %label_449, label %label_446, label %label_447
+
+  label_446:
+  br label %label_451
+
+  label_447:
+  br label %label_451
 
   label_451:
-  %label_448 = icmp ne i32 0, 0
-  br i1 %label_448, label %label_449, label %label_450
+  %label_452 = phi i1 [ true, %label_446 ], [ false, %label_447 ]
+  %label_450 = zext i1 %label_452 to i32
+  %label_441 = icmp ne i32 %label_450, 0
+  br i1 %label_441, label %label_442, label %label_444
 
-  label_449:
-  br label %label_453
+  label_444:
+  %label_453 = icmp ne i32 1, 0
+  br i1 %label_453, label %label_442, label %label_443
 
-  label_450:
-  br label %label_453
-
-  label_453:
-  %label_454 = phi i1 [ true, %label_449 ], [ false, %label_450 ]
-  %label_452 = zext i1 %label_454 to i32
-  %label_441 = icmp ne i32 %label_452, 0
-  br i1 %label_441, label %label_443, label %label_445
-
-  label_445:
-  %label_442 = icmp ne i32 1, 0
-  br i1 %label_442, label %label_443, label %label_444
+  label_442:
+  br label %label_455
 
   label_443:
   br label %label_455
 
-  label_444:
-  br label %label_455
-
   label_455:
-  %label_456 = phi i1 [ true, %label_443 ], [ false, %label_444 ]
-  %label_446 = zext i1 %label_456 to i32
-  store i32 %label_446, i32* %label_0
+  %label_456 = phi i1 [ true, %label_442 ], [ false, %label_443 ]
+  %label_454 = zext i1 %label_456 to i32
+  store i32 %label_454, i32* %label_0
   %label_457 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_457)
   %label_458 = alloca i32*
@@ -823,39 +823,39 @@ define void @main() {
   br label %label_466
 
   label_468:
-  %label_481 = icmp ne i32 1, 0
-  br i1 %label_481, label %label_483, label %label_485
+  %label_479 = icmp ne i32 1, 0
+  br i1 %label_479, label %label_480, label %label_482
+
+  label_482:
+  %label_483 = icmp ne i32 0, 0
+  br i1 %label_483, label %label_480, label %label_481
+
+  label_480:
+  br label %label_485
+
+  label_481:
+  br label %label_485
 
   label_485:
-  %label_482 = icmp ne i32 0, 0
-  br i1 %label_482, label %label_483, label %label_484
+  %label_486 = phi i1 [ true, %label_480 ], [ false, %label_481 ]
+  %label_484 = zext i1 %label_486 to i32
+  %label_475 = icmp ne i32 %label_484, 0
+  br i1 %label_475, label %label_476, label %label_478
 
-  label_483:
-  br label %label_487
+  label_478:
+  %label_487 = icmp ne i32 1, 0
+  br i1 %label_487, label %label_476, label %label_477
 
-  label_484:
-  br label %label_487
-
-  label_487:
-  %label_488 = phi i1 [ true, %label_483 ], [ false, %label_484 ]
-  %label_486 = zext i1 %label_488 to i32
-  %label_475 = icmp ne i32 %label_486, 0
-  br i1 %label_475, label %label_477, label %label_479
-
-  label_479:
-  %label_476 = icmp ne i32 1, 0
-  br i1 %label_476, label %label_477, label %label_478
+  label_476:
+  br label %label_489
 
   label_477:
   br label %label_489
 
-  label_478:
-  br label %label_489
-
   label_489:
-  %label_490 = phi i1 [ true, %label_477 ], [ false, %label_478 ]
-  %label_480 = zext i1 %label_490 to i32
-  store i32 %label_480, i32* %label_0
+  %label_490 = phi i1 [ true, %label_476 ], [ false, %label_477 ]
+  %label_488 = zext i1 %label_490 to i32
+  store i32 %label_488, i32* %label_0
   %label_491 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_491)
   %label_492 = alloca i32*
@@ -887,39 +887,39 @@ define void @main() {
   br label %label_500
 
   label_502:
-  %label_515 = icmp ne i32 0, 0
-  br i1 %label_515, label %label_517, label %label_519
+  %label_513 = icmp ne i32 0, 0
+  br i1 %label_513, label %label_514, label %label_516
+
+  label_516:
+  %label_517 = icmp ne i32 1, 0
+  br i1 %label_517, label %label_514, label %label_515
+
+  label_514:
+  br label %label_519
+
+  label_515:
+  br label %label_519
 
   label_519:
-  %label_516 = icmp ne i32 1, 0
-  br i1 %label_516, label %label_517, label %label_518
+  %label_520 = phi i1 [ true, %label_514 ], [ false, %label_515 ]
+  %label_518 = zext i1 %label_520 to i32
+  %label_509 = icmp ne i32 %label_518, 0
+  br i1 %label_509, label %label_510, label %label_512
 
-  label_517:
-  br label %label_521
+  label_512:
+  %label_521 = icmp ne i32 1, 0
+  br i1 %label_521, label %label_510, label %label_511
 
-  label_518:
-  br label %label_521
-
-  label_521:
-  %label_522 = phi i1 [ true, %label_517 ], [ false, %label_518 ]
-  %label_520 = zext i1 %label_522 to i32
-  %label_509 = icmp ne i32 %label_520, 0
-  br i1 %label_509, label %label_511, label %label_513
-
-  label_513:
-  %label_510 = icmp ne i32 1, 0
-  br i1 %label_510, label %label_511, label %label_512
+  label_510:
+  br label %label_523
 
   label_511:
   br label %label_523
 
-  label_512:
-  br label %label_523
-
   label_523:
-  %label_524 = phi i1 [ true, %label_511 ], [ false, %label_512 ]
-  %label_514 = zext i1 %label_524 to i32
-  store i32 %label_514, i32* %label_0
+  %label_524 = phi i1 [ true, %label_510 ], [ false, %label_511 ]
+  %label_522 = zext i1 %label_524 to i32
+  store i32 %label_522, i32* %label_0
   %label_525 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_525)
   %label_526 = alloca i32*
@@ -1103,39 +1103,39 @@ define void @main() {
   br label %label_633
 
   label_635:
-  %label_648 = icmp ne i32 1, 0
-  br i1 %label_648, label %label_652, label %label_651
+  %label_646 = icmp ne i32 1, 0
+  br i1 %label_646, label %label_649, label %label_648
+
+  label_649:
+  %label_650 = icmp ne i32 1, 0
+  br i1 %label_650, label %label_647, label %label_648
+
+  label_647:
+  br label %label_652
+
+  label_648:
+  br label %label_652
 
   label_652:
-  %label_649 = icmp ne i32 1, 0
-  br i1 %label_649, label %label_650, label %label_651
+  %label_653 = phi i1 [ true, %label_647 ], [ false, %label_648 ]
+  %label_651 = zext i1 %label_653 to i32
+  %label_642 = icmp ne i32 %label_651, 0
+  br i1 %label_642, label %label_645, label %label_644
 
-  label_650:
-  br label %label_654
+  label_645:
+  %label_654 = icmp ne i32 1, 0
+  br i1 %label_654, label %label_643, label %label_644
 
-  label_651:
-  br label %label_654
-
-  label_654:
-  %label_655 = phi i1 [ true, %label_650 ], [ false, %label_651 ]
-  %label_653 = zext i1 %label_655 to i32
-  %label_642 = icmp ne i32 %label_653, 0
-  br i1 %label_642, label %label_646, label %label_645
-
-  label_646:
-  %label_643 = icmp ne i32 1, 0
-  br i1 %label_643, label %label_644, label %label_645
+  label_643:
+  br label %label_656
 
   label_644:
   br label %label_656
 
-  label_645:
-  br label %label_656
-
   label_656:
-  %label_657 = phi i1 [ true, %label_644 ], [ false, %label_645 ]
-  %label_647 = zext i1 %label_657 to i32
-  store i32 %label_647, i32* %label_0
+  %label_657 = phi i1 [ true, %label_643 ], [ false, %label_644 ]
+  %label_655 = zext i1 %label_657 to i32
+  store i32 %label_655, i32* %label_0
   %label_658 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_658)
   %label_659 = alloca i32*
@@ -1167,39 +1167,39 @@ define void @main() {
   br label %label_667
 
   label_669:
-  %label_682 = icmp ne i32 0, 0
-  br i1 %label_682, label %label_686, label %label_685
+  %label_680 = icmp ne i32 0, 0
+  br i1 %label_680, label %label_683, label %label_682
+
+  label_683:
+  %label_684 = icmp ne i32 0, 0
+  br i1 %label_684, label %label_681, label %label_682
+
+  label_681:
+  br label %label_686
+
+  label_682:
+  br label %label_686
 
   label_686:
-  %label_683 = icmp ne i32 0, 0
-  br i1 %label_683, label %label_684, label %label_685
+  %label_687 = phi i1 [ true, %label_681 ], [ false, %label_682 ]
+  %label_685 = zext i1 %label_687 to i32
+  %label_676 = icmp ne i32 %label_685, 0
+  br i1 %label_676, label %label_679, label %label_678
 
-  label_684:
-  br label %label_688
+  label_679:
+  %label_688 = icmp ne i32 1, 0
+  br i1 %label_688, label %label_677, label %label_678
 
-  label_685:
-  br label %label_688
-
-  label_688:
-  %label_689 = phi i1 [ true, %label_684 ], [ false, %label_685 ]
-  %label_687 = zext i1 %label_689 to i32
-  %label_676 = icmp ne i32 %label_687, 0
-  br i1 %label_676, label %label_680, label %label_679
-
-  label_680:
-  %label_677 = icmp ne i32 1, 0
-  br i1 %label_677, label %label_678, label %label_679
+  label_677:
+  br label %label_690
 
   label_678:
   br label %label_690
 
-  label_679:
-  br label %label_690
-
   label_690:
-  %label_691 = phi i1 [ true, %label_678 ], [ false, %label_679 ]
-  %label_681 = zext i1 %label_691 to i32
-  store i32 %label_681, i32* %label_0
+  %label_691 = phi i1 [ true, %label_677 ], [ false, %label_678 ]
+  %label_689 = zext i1 %label_691 to i32
+  store i32 %label_689, i32* %label_0
   %label_692 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_692)
   %label_693 = alloca i32*
@@ -1231,39 +1231,39 @@ define void @main() {
   br label %label_701
 
   label_703:
-  %label_716 = icmp ne i32 1, 0
-  br i1 %label_716, label %label_720, label %label_719
+  %label_714 = icmp ne i32 1, 0
+  br i1 %label_714, label %label_717, label %label_716
+
+  label_717:
+  %label_718 = icmp ne i32 0, 0
+  br i1 %label_718, label %label_715, label %label_716
+
+  label_715:
+  br label %label_720
+
+  label_716:
+  br label %label_720
 
   label_720:
-  %label_717 = icmp ne i32 0, 0
-  br i1 %label_717, label %label_718, label %label_719
+  %label_721 = phi i1 [ true, %label_715 ], [ false, %label_716 ]
+  %label_719 = zext i1 %label_721 to i32
+  %label_710 = icmp ne i32 %label_719, 0
+  br i1 %label_710, label %label_713, label %label_712
 
-  label_718:
-  br label %label_722
+  label_713:
+  %label_722 = icmp ne i32 1, 0
+  br i1 %label_722, label %label_711, label %label_712
 
-  label_719:
-  br label %label_722
-
-  label_722:
-  %label_723 = phi i1 [ true, %label_718 ], [ false, %label_719 ]
-  %label_721 = zext i1 %label_723 to i32
-  %label_710 = icmp ne i32 %label_721, 0
-  br i1 %label_710, label %label_714, label %label_713
-
-  label_714:
-  %label_711 = icmp ne i32 1, 0
-  br i1 %label_711, label %label_712, label %label_713
+  label_711:
+  br label %label_724
 
   label_712:
   br label %label_724
 
-  label_713:
-  br label %label_724
-
   label_724:
-  %label_725 = phi i1 [ true, %label_712 ], [ false, %label_713 ]
-  %label_715 = zext i1 %label_725 to i32
-  store i32 %label_715, i32* %label_0
+  %label_725 = phi i1 [ true, %label_711 ], [ false, %label_712 ]
+  %label_723 = zext i1 %label_725 to i32
+  store i32 %label_723, i32* %label_0
   %label_726 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_726)
   %label_727 = alloca i32*
@@ -1295,39 +1295,39 @@ define void @main() {
   br label %label_735
 
   label_737:
-  %label_750 = icmp ne i32 0, 0
-  br i1 %label_750, label %label_754, label %label_753
+  %label_748 = icmp ne i32 0, 0
+  br i1 %label_748, label %label_751, label %label_750
+
+  label_751:
+  %label_752 = icmp ne i32 1, 0
+  br i1 %label_752, label %label_749, label %label_750
+
+  label_749:
+  br label %label_754
+
+  label_750:
+  br label %label_754
 
   label_754:
-  %label_751 = icmp ne i32 1, 0
-  br i1 %label_751, label %label_752, label %label_753
+  %label_755 = phi i1 [ true, %label_749 ], [ false, %label_750 ]
+  %label_753 = zext i1 %label_755 to i32
+  %label_744 = icmp ne i32 %label_753, 0
+  br i1 %label_744, label %label_747, label %label_746
 
-  label_752:
-  br label %label_756
+  label_747:
+  %label_756 = icmp ne i32 1, 0
+  br i1 %label_756, label %label_745, label %label_746
 
-  label_753:
-  br label %label_756
-
-  label_756:
-  %label_757 = phi i1 [ true, %label_752 ], [ false, %label_753 ]
-  %label_755 = zext i1 %label_757 to i32
-  %label_744 = icmp ne i32 %label_755, 0
-  br i1 %label_744, label %label_748, label %label_747
-
-  label_748:
-  %label_745 = icmp ne i32 1, 0
-  br i1 %label_745, label %label_746, label %label_747
+  label_745:
+  br label %label_758
 
   label_746:
   br label %label_758
 
-  label_747:
-  br label %label_758
-
   label_758:
-  %label_759 = phi i1 [ true, %label_746 ], [ false, %label_747 ]
-  %label_749 = zext i1 %label_759 to i32
-  store i32 %label_749, i32* %label_0
+  %label_759 = phi i1 [ true, %label_745 ], [ false, %label_746 ]
+  %label_757 = zext i1 %label_759 to i32
+  store i32 %label_757, i32* %label_0
   %label_760 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_760)
   %label_761 = alloca i32*
@@ -1512,36 +1512,36 @@ define void @main() {
 
   label_870:
   %label_877 = icmp ne i32 1, 0
-  br i1 %label_877, label %label_879, label %label_881
+  br i1 %label_877, label %label_878, label %label_880
 
-  label_881:
+  label_880:
   %label_883 = icmp ne i32 1, 0
-  br i1 %label_883, label %label_887, label %label_886
+  br i1 %label_883, label %label_886, label %label_885
 
-  label_887:
-  %label_884 = icmp ne i32 1, 0
-  br i1 %label_884, label %label_885, label %label_886
+  label_886:
+  %label_887 = icmp ne i32 1, 0
+  br i1 %label_887, label %label_884, label %label_885
+
+  label_884:
+  br label %label_889
 
   label_885:
   br label %label_889
 
-  label_886:
-  br label %label_889
-
   label_889:
-  %label_890 = phi i1 [ true, %label_885 ], [ false, %label_886 ]
+  %label_890 = phi i1 [ true, %label_884 ], [ false, %label_885 ]
   %label_888 = zext i1 %label_890 to i32
-  %label_878 = icmp ne i32 %label_888, 0
-  br i1 %label_878, label %label_879, label %label_880
+  %label_881 = icmp ne i32 %label_888, 0
+  br i1 %label_881, label %label_878, label %label_879
+
+  label_878:
+  br label %label_891
 
   label_879:
   br label %label_891
 
-  label_880:
-  br label %label_891
-
   label_891:
-  %label_892 = phi i1 [ true, %label_879 ], [ false, %label_880 ]
+  %label_892 = phi i1 [ true, %label_878 ], [ false, %label_879 ]
   %label_882 = zext i1 %label_892 to i32
   store i32 %label_882, i32* %label_0
   %label_893 = load i32, i32* %label_0
@@ -1576,36 +1576,36 @@ define void @main() {
 
   label_904:
   %label_911 = icmp ne i32 0, 0
-  br i1 %label_911, label %label_913, label %label_915
+  br i1 %label_911, label %label_912, label %label_914
 
-  label_915:
+  label_914:
   %label_917 = icmp ne i32 0, 0
-  br i1 %label_917, label %label_921, label %label_920
+  br i1 %label_917, label %label_920, label %label_919
 
-  label_921:
-  %label_918 = icmp ne i32 1, 0
-  br i1 %label_918, label %label_919, label %label_920
+  label_920:
+  %label_921 = icmp ne i32 1, 0
+  br i1 %label_921, label %label_918, label %label_919
+
+  label_918:
+  br label %label_923
 
   label_919:
   br label %label_923
 
-  label_920:
-  br label %label_923
-
   label_923:
-  %label_924 = phi i1 [ true, %label_919 ], [ false, %label_920 ]
+  %label_924 = phi i1 [ true, %label_918 ], [ false, %label_919 ]
   %label_922 = zext i1 %label_924 to i32
-  %label_912 = icmp ne i32 %label_922, 0
-  br i1 %label_912, label %label_913, label %label_914
+  %label_915 = icmp ne i32 %label_922, 0
+  br i1 %label_915, label %label_912, label %label_913
+
+  label_912:
+  br label %label_925
 
   label_913:
   br label %label_925
 
-  label_914:
-  br label %label_925
-
   label_925:
-  %label_926 = phi i1 [ true, %label_913 ], [ false, %label_914 ]
+  %label_926 = phi i1 [ true, %label_912 ], [ false, %label_913 ]
   %label_916 = zext i1 %label_926 to i32
   store i32 %label_916, i32* %label_0
   %label_927 = load i32, i32* %label_0
@@ -1640,36 +1640,36 @@ define void @main() {
 
   label_938:
   %label_945 = icmp ne i32 1, 0
-  br i1 %label_945, label %label_947, label %label_949
+  br i1 %label_945, label %label_946, label %label_948
 
-  label_949:
+  label_948:
   %label_951 = icmp ne i32 0, 0
-  br i1 %label_951, label %label_955, label %label_954
+  br i1 %label_951, label %label_954, label %label_953
 
-  label_955:
-  %label_952 = icmp ne i32 1, 0
-  br i1 %label_952, label %label_953, label %label_954
+  label_954:
+  %label_955 = icmp ne i32 1, 0
+  br i1 %label_955, label %label_952, label %label_953
+
+  label_952:
+  br label %label_957
 
   label_953:
   br label %label_957
 
-  label_954:
-  br label %label_957
-
   label_957:
-  %label_958 = phi i1 [ true, %label_953 ], [ false, %label_954 ]
+  %label_958 = phi i1 [ true, %label_952 ], [ false, %label_953 ]
   %label_956 = zext i1 %label_958 to i32
-  %label_946 = icmp ne i32 %label_956, 0
-  br i1 %label_946, label %label_947, label %label_948
+  %label_949 = icmp ne i32 %label_956, 0
+  br i1 %label_949, label %label_946, label %label_947
+
+  label_946:
+  br label %label_959
 
   label_947:
   br label %label_959
 
-  label_948:
-  br label %label_959
-
   label_959:
-  %label_960 = phi i1 [ true, %label_947 ], [ false, %label_948 ]
+  %label_960 = phi i1 [ true, %label_946 ], [ false, %label_947 ]
   %label_950 = zext i1 %label_960 to i32
   store i32 %label_950, i32* %label_0
   %label_961 = load i32, i32* %label_0
@@ -1704,36 +1704,36 @@ define void @main() {
 
   label_972:
   %label_979 = icmp ne i32 0, 0
-  br i1 %label_979, label %label_981, label %label_983
+  br i1 %label_979, label %label_980, label %label_982
 
-  label_983:
+  label_982:
   %label_985 = icmp ne i32 1, 0
-  br i1 %label_985, label %label_989, label %label_988
+  br i1 %label_985, label %label_988, label %label_987
 
-  label_989:
-  %label_986 = icmp ne i32 1, 0
-  br i1 %label_986, label %label_987, label %label_988
+  label_988:
+  %label_989 = icmp ne i32 1, 0
+  br i1 %label_989, label %label_986, label %label_987
+
+  label_986:
+  br label %label_991
 
   label_987:
   br label %label_991
 
-  label_988:
-  br label %label_991
-
   label_991:
-  %label_992 = phi i1 [ true, %label_987 ], [ false, %label_988 ]
+  %label_992 = phi i1 [ true, %label_986 ], [ false, %label_987 ]
   %label_990 = zext i1 %label_992 to i32
-  %label_980 = icmp ne i32 %label_990, 0
-  br i1 %label_980, label %label_981, label %label_982
+  %label_983 = icmp ne i32 %label_990, 0
+  br i1 %label_983, label %label_980, label %label_981
+
+  label_980:
+  br label %label_993
 
   label_981:
   br label %label_993
 
-  label_982:
-  br label %label_993
-
   label_993:
-  %label_994 = phi i1 [ true, %label_981 ], [ false, %label_982 ]
+  %label_994 = phi i1 [ true, %label_980 ], [ false, %label_981 ]
   %label_984 = zext i1 %label_994 to i32
   store i32 %label_984, i32* %label_0
   %label_995 = load i32, i32* %label_0
@@ -1919,39 +1919,39 @@ define void @main() {
   br label %label_1103
 
   label_1105:
-  %label_1118 = icmp ne i32 1, 0
-  br i1 %label_1118, label %label_1122, label %label_1121
+  %label_1116 = icmp ne i32 1, 0
+  br i1 %label_1116, label %label_1119, label %label_1118
+
+  label_1119:
+  %label_1120 = icmp ne i32 1, 0
+  br i1 %label_1120, label %label_1117, label %label_1118
+
+  label_1117:
+  br label %label_1122
+
+  label_1118:
+  br label %label_1122
 
   label_1122:
-  %label_1119 = icmp ne i32 1, 0
-  br i1 %label_1119, label %label_1120, label %label_1121
+  %label_1123 = phi i1 [ true, %label_1117 ], [ false, %label_1118 ]
+  %label_1121 = zext i1 %label_1123 to i32
+  %label_1112 = icmp ne i32 %label_1121, 0
+  br i1 %label_1112, label %label_1113, label %label_1115
 
-  label_1120:
-  br label %label_1124
+  label_1115:
+  %label_1124 = icmp ne i32 1, 0
+  br i1 %label_1124, label %label_1113, label %label_1114
 
-  label_1121:
-  br label %label_1124
-
-  label_1124:
-  %label_1125 = phi i1 [ true, %label_1120 ], [ false, %label_1121 ]
-  %label_1123 = zext i1 %label_1125 to i32
-  %label_1112 = icmp ne i32 %label_1123, 0
-  br i1 %label_1112, label %label_1114, label %label_1116
-
-  label_1116:
-  %label_1113 = icmp ne i32 1, 0
-  br i1 %label_1113, label %label_1114, label %label_1115
+  label_1113:
+  br label %label_1126
 
   label_1114:
   br label %label_1126
 
-  label_1115:
-  br label %label_1126
-
   label_1126:
-  %label_1127 = phi i1 [ true, %label_1114 ], [ false, %label_1115 ]
-  %label_1117 = zext i1 %label_1127 to i32
-  store i32 %label_1117, i32* %label_0
+  %label_1127 = phi i1 [ true, %label_1113 ], [ false, %label_1114 ]
+  %label_1125 = zext i1 %label_1127 to i32
+  store i32 %label_1125, i32* %label_0
   %label_1128 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1128)
   %label_1129 = alloca i32*
@@ -1983,39 +1983,39 @@ define void @main() {
   br label %label_1137
 
   label_1139:
-  %label_1152 = icmp ne i32 0, 0
-  br i1 %label_1152, label %label_1156, label %label_1155
+  %label_1150 = icmp ne i32 0, 0
+  br i1 %label_1150, label %label_1153, label %label_1152
+
+  label_1153:
+  %label_1154 = icmp ne i32 0, 0
+  br i1 %label_1154, label %label_1151, label %label_1152
+
+  label_1151:
+  br label %label_1156
+
+  label_1152:
+  br label %label_1156
 
   label_1156:
-  %label_1153 = icmp ne i32 0, 0
-  br i1 %label_1153, label %label_1154, label %label_1155
+  %label_1157 = phi i1 [ true, %label_1151 ], [ false, %label_1152 ]
+  %label_1155 = zext i1 %label_1157 to i32
+  %label_1146 = icmp ne i32 %label_1155, 0
+  br i1 %label_1146, label %label_1147, label %label_1149
 
-  label_1154:
-  br label %label_1158
+  label_1149:
+  %label_1158 = icmp ne i32 1, 0
+  br i1 %label_1158, label %label_1147, label %label_1148
 
-  label_1155:
-  br label %label_1158
-
-  label_1158:
-  %label_1159 = phi i1 [ true, %label_1154 ], [ false, %label_1155 ]
-  %label_1157 = zext i1 %label_1159 to i32
-  %label_1146 = icmp ne i32 %label_1157, 0
-  br i1 %label_1146, label %label_1148, label %label_1150
-
-  label_1150:
-  %label_1147 = icmp ne i32 1, 0
-  br i1 %label_1147, label %label_1148, label %label_1149
+  label_1147:
+  br label %label_1160
 
   label_1148:
   br label %label_1160
 
-  label_1149:
-  br label %label_1160
-
   label_1160:
-  %label_1161 = phi i1 [ true, %label_1148 ], [ false, %label_1149 ]
-  %label_1151 = zext i1 %label_1161 to i32
-  store i32 %label_1151, i32* %label_0
+  %label_1161 = phi i1 [ true, %label_1147 ], [ false, %label_1148 ]
+  %label_1159 = zext i1 %label_1161 to i32
+  store i32 %label_1159, i32* %label_0
   %label_1162 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1162)
   %label_1163 = alloca i32*
@@ -2047,39 +2047,39 @@ define void @main() {
   br label %label_1171
 
   label_1173:
-  %label_1186 = icmp ne i32 1, 0
-  br i1 %label_1186, label %label_1190, label %label_1189
+  %label_1184 = icmp ne i32 1, 0
+  br i1 %label_1184, label %label_1187, label %label_1186
+
+  label_1187:
+  %label_1188 = icmp ne i32 0, 0
+  br i1 %label_1188, label %label_1185, label %label_1186
+
+  label_1185:
+  br label %label_1190
+
+  label_1186:
+  br label %label_1190
 
   label_1190:
-  %label_1187 = icmp ne i32 0, 0
-  br i1 %label_1187, label %label_1188, label %label_1189
+  %label_1191 = phi i1 [ true, %label_1185 ], [ false, %label_1186 ]
+  %label_1189 = zext i1 %label_1191 to i32
+  %label_1180 = icmp ne i32 %label_1189, 0
+  br i1 %label_1180, label %label_1181, label %label_1183
 
-  label_1188:
-  br label %label_1192
+  label_1183:
+  %label_1192 = icmp ne i32 1, 0
+  br i1 %label_1192, label %label_1181, label %label_1182
 
-  label_1189:
-  br label %label_1192
-
-  label_1192:
-  %label_1193 = phi i1 [ true, %label_1188 ], [ false, %label_1189 ]
-  %label_1191 = zext i1 %label_1193 to i32
-  %label_1180 = icmp ne i32 %label_1191, 0
-  br i1 %label_1180, label %label_1182, label %label_1184
-
-  label_1184:
-  %label_1181 = icmp ne i32 1, 0
-  br i1 %label_1181, label %label_1182, label %label_1183
+  label_1181:
+  br label %label_1194
 
   label_1182:
   br label %label_1194
 
-  label_1183:
-  br label %label_1194
-
   label_1194:
-  %label_1195 = phi i1 [ true, %label_1182 ], [ false, %label_1183 ]
-  %label_1185 = zext i1 %label_1195 to i32
-  store i32 %label_1185, i32* %label_0
+  %label_1195 = phi i1 [ true, %label_1181 ], [ false, %label_1182 ]
+  %label_1193 = zext i1 %label_1195 to i32
+  store i32 %label_1193, i32* %label_0
   %label_1196 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1196)
   %label_1197 = alloca i32*
@@ -2111,39 +2111,39 @@ define void @main() {
   br label %label_1205
 
   label_1207:
-  %label_1220 = icmp ne i32 0, 0
-  br i1 %label_1220, label %label_1224, label %label_1223
+  %label_1218 = icmp ne i32 0, 0
+  br i1 %label_1218, label %label_1221, label %label_1220
+
+  label_1221:
+  %label_1222 = icmp ne i32 1, 0
+  br i1 %label_1222, label %label_1219, label %label_1220
+
+  label_1219:
+  br label %label_1224
+
+  label_1220:
+  br label %label_1224
 
   label_1224:
-  %label_1221 = icmp ne i32 1, 0
-  br i1 %label_1221, label %label_1222, label %label_1223
+  %label_1225 = phi i1 [ true, %label_1219 ], [ false, %label_1220 ]
+  %label_1223 = zext i1 %label_1225 to i32
+  %label_1214 = icmp ne i32 %label_1223, 0
+  br i1 %label_1214, label %label_1215, label %label_1217
 
-  label_1222:
-  br label %label_1226
+  label_1217:
+  %label_1226 = icmp ne i32 1, 0
+  br i1 %label_1226, label %label_1215, label %label_1216
 
-  label_1223:
-  br label %label_1226
-
-  label_1226:
-  %label_1227 = phi i1 [ true, %label_1222 ], [ false, %label_1223 ]
-  %label_1225 = zext i1 %label_1227 to i32
-  %label_1214 = icmp ne i32 %label_1225, 0
-  br i1 %label_1214, label %label_1216, label %label_1218
-
-  label_1218:
-  %label_1215 = icmp ne i32 1, 0
-  br i1 %label_1215, label %label_1216, label %label_1217
+  label_1215:
+  br label %label_1228
 
   label_1216:
   br label %label_1228
 
-  label_1217:
-  br label %label_1228
-
   label_1228:
-  %label_1229 = phi i1 [ true, %label_1216 ], [ false, %label_1217 ]
-  %label_1219 = zext i1 %label_1229 to i32
-  store i32 %label_1219, i32* %label_0
+  %label_1229 = phi i1 [ true, %label_1215 ], [ false, %label_1216 ]
+  %label_1227 = zext i1 %label_1229 to i32
+  store i32 %label_1227, i32* %label_0
   %label_1230 = load i32, i32* %label_0
   call i32 (i8*, ...) @printf(i8* getelementptr inbounds ([3 x i8], [3 x i8]* @.print.int, i32 0, i32 0), i32 %label_1230)
   %label_1231 = alloca i32*
@@ -2328,36 +2328,36 @@ define void @main() {
 
   label_1340:
   %label_1347 = icmp ne i32 1, 0
-  br i1 %label_1347, label %label_1351, label %label_1350
+  br i1 %label_1347, label %label_1350, label %label_1349
 
-  label_1351:
+  label_1350:
   %label_1353 = icmp ne i32 1, 0
-  br i1 %label_1353, label %label_1355, label %label_1357
+  br i1 %label_1353, label %label_1354, label %label_1356
 
-  label_1357:
-  %label_1354 = icmp ne i32 1, 0
-  br i1 %label_1354, label %label_1355, label %label_1356
+  label_1356:
+  %label_1357 = icmp ne i32 1, 0
+  br i1 %label_1357, label %label_1354, label %label_1355
+
+  label_1354:
+  br label %label_1359
 
   label_1355:
   br label %label_1359
 
-  label_1356:
-  br label %label_1359
-
   label_1359:
-  %label_1360 = phi i1 [ true, %label_1355 ], [ false, %label_1356 ]
+  %label_1360 = phi i1 [ true, %label_1354 ], [ false, %label_1355 ]
   %label_1358 = zext i1 %label_1360 to i32
-  %label_1348 = icmp ne i32 %label_1358, 0
-  br i1 %label_1348, label %label_1349, label %label_1350
+  %label_1351 = icmp ne i32 %label_1358, 0
+  br i1 %label_1351, label %label_1348, label %label_1349
+
+  label_1348:
+  br label %label_1361
 
   label_1349:
   br label %label_1361
 
-  label_1350:
-  br label %label_1361
-
   label_1361:
-  %label_1362 = phi i1 [ true, %label_1349 ], [ false, %label_1350 ]
+  %label_1362 = phi i1 [ true, %label_1348 ], [ false, %label_1349 ]
   %label_1352 = zext i1 %label_1362 to i32
   store i32 %label_1352, i32* %label_0
   %label_1363 = load i32, i32* %label_0
@@ -2392,36 +2392,36 @@ define void @main() {
 
   label_1374:
   %label_1381 = icmp ne i32 0, 0
-  br i1 %label_1381, label %label_1385, label %label_1384
+  br i1 %label_1381, label %label_1384, label %label_1383
 
-  label_1385:
+  label_1384:
   %label_1387 = icmp ne i32 0, 0
-  br i1 %label_1387, label %label_1389, label %label_1391
+  br i1 %label_1387, label %label_1388, label %label_1390
 
-  label_1391:
-  %label_1388 = icmp ne i32 1, 0
-  br i1 %label_1388, label %label_1389, label %label_1390
+  label_1390:
+  %label_1391 = icmp ne i32 1, 0
+  br i1 %label_1391, label %label_1388, label %label_1389
+
+  label_1388:
+  br label %label_1393
 
   label_1389:
   br label %label_1393
 
-  label_1390:
-  br label %label_1393
-
   label_1393:
-  %label_1394 = phi i1 [ true, %label_1389 ], [ false, %label_1390 ]
+  %label_1394 = phi i1 [ true, %label_1388 ], [ false, %label_1389 ]
   %label_1392 = zext i1 %label_1394 to i32
-  %label_1382 = icmp ne i32 %label_1392, 0
-  br i1 %label_1382, label %label_1383, label %label_1384
+  %label_1385 = icmp ne i32 %label_1392, 0
+  br i1 %label_1385, label %label_1382, label %label_1383
+
+  label_1382:
+  br label %label_1395
 
   label_1383:
   br label %label_1395
 
-  label_1384:
-  br label %label_1395
-
   label_1395:
-  %label_1396 = phi i1 [ true, %label_1383 ], [ false, %label_1384 ]
+  %label_1396 = phi i1 [ true, %label_1382 ], [ false, %label_1383 ]
   %label_1386 = zext i1 %label_1396 to i32
   store i32 %label_1386, i32* %label_0
   %label_1397 = load i32, i32* %label_0
@@ -2456,36 +2456,36 @@ define void @main() {
 
   label_1408:
   %label_1415 = icmp ne i32 1, 0
-  br i1 %label_1415, label %label_1419, label %label_1418
+  br i1 %label_1415, label %label_1418, label %label_1417
 
-  label_1419:
+  label_1418:
   %label_1421 = icmp ne i32 0, 0
-  br i1 %label_1421, label %label_1423, label %label_1425
+  br i1 %label_1421, label %label_1422, label %label_1424
 
-  label_1425:
-  %label_1422 = icmp ne i32 1, 0
-  br i1 %label_1422, label %label_1423, label %label_1424
+  label_1424:
+  %label_1425 = icmp ne i32 1, 0
+  br i1 %label_1425, label %label_1422, label %label_1423
+
+  label_1422:
+  br label %label_1427
 
   label_1423:
   br label %label_1427
 
-  label_1424:
-  br label %label_1427
-
   label_1427:
-  %label_1428 = phi i1 [ true, %label_1423 ], [ false, %label_1424 ]
+  %label_1428 = phi i1 [ true, %label_1422 ], [ false, %label_1423 ]
   %label_1426 = zext i1 %label_1428 to i32
-  %label_1416 = icmp ne i32 %label_1426, 0
-  br i1 %label_1416, label %label_1417, label %label_1418
+  %label_1419 = icmp ne i32 %label_1426, 0
+  br i1 %label_1419, label %label_1416, label %label_1417
+
+  label_1416:
+  br label %label_1429
 
   label_1417:
   br label %label_1429
 
-  label_1418:
-  br label %label_1429
-
   label_1429:
-  %label_1430 = phi i1 [ true, %label_1417 ], [ false, %label_1418 ]
+  %label_1430 = phi i1 [ true, %label_1416 ], [ false, %label_1417 ]
   %label_1420 = zext i1 %label_1430 to i32
   store i32 %label_1420, i32* %label_0
   %label_1431 = load i32, i32* %label_0
@@ -2520,36 +2520,36 @@ define void @main() {
 
   label_1442:
   %label_1449 = icmp ne i32 0, 0
-  br i1 %label_1449, label %label_1453, label %label_1452
+  br i1 %label_1449, label %label_1452, label %label_1451
 
-  label_1453:
+  label_1452:
   %label_1455 = icmp ne i32 1, 0
-  br i1 %label_1455, label %label_1457, label %label_1459
+  br i1 %label_1455, label %label_1456, label %label_1458
 
-  label_1459:
-  %label_1456 = icmp ne i32 1, 0
-  br i1 %label_1456, label %label_1457, label %label_1458
+  label_1458:
+  %label_1459 = icmp ne i32 1, 0
+  br i1 %label_1459, label %label_1456, label %label_1457
+
+  label_1456:
+  br label %label_1461
 
   label_1457:
   br label %label_1461
 
-  label_1458:
-  br label %label_1461
-
   label_1461:
-  %label_1462 = phi i1 [ true, %label_1457 ], [ false, %label_1458 ]
+  %label_1462 = phi i1 [ true, %label_1456 ], [ false, %label_1457 ]
   %label_1460 = zext i1 %label_1462 to i32
-  %label_1450 = icmp ne i32 %label_1460, 0
-  br i1 %label_1450, label %label_1451, label %label_1452
+  %label_1453 = icmp ne i32 %label_1460, 0
+  br i1 %label_1453, label %label_1450, label %label_1451
+
+  label_1450:
+  br label %label_1463
 
   label_1451:
   br label %label_1463
 
-  label_1452:
-  br label %label_1463
-
   label_1463:
-  %label_1464 = phi i1 [ true, %label_1451 ], [ false, %label_1452 ]
+  %label_1464 = phi i1 [ true, %label_1450 ], [ false, %label_1451 ]
   %label_1454 = zext i1 %label_1464 to i32
   store i32 %label_1454, i32* %label_0
   %label_1465 = load i32, i32* %label_0

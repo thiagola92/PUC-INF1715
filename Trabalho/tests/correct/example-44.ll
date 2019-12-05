@@ -14,11 +14,11 @@ define void @main() {
   %label_6 = load float*, float** %label_0
   %label_7 = getelementptr inbounds float, float* %label_6, i32 0
   %label_8 = load float, float* %label_7
-  %label_9 = sitofp i32 97 to float
-  %label_10 = fcmp oeq float %label_8, %label_9
-  %label_11 = zext i1 %label_10 to i32
-  %label_12 = icmp eq i32 %label_11, 1
-  br i1 %label_12, label %label_4, label %label_5
+  %label_10 = sitofp i32 97 to float
+  %label_11 = fcmp oeq float %label_8, %label_10
+  %label_12 = zext i1 %label_11 to i32
+  %label_13 = icmp eq i32 %label_12, 1
+  br i1 %label_13, label %label_4, label %label_5
 
   label_4:
   br label %label_5

@@ -7,8 +7,8 @@ declare i8* @malloc(i64)
 
 define void @main() {
   %label_0 = alloca i32
-  %label_1 = sub nsw i32 0, 1
-  store i32 %label_1, i32* %label_0
+  %label_2 = sub nsw i32 0, 1
+  store i32 %label_2, i32* %label_0
   ret void
 }
 

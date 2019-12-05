@@ -51,6 +51,7 @@ void code_globals(Node* global) {
   }
 }
 
+// [var_id] = global [var_type] [init_value]
 void code_global_var(Node* global_var) {
   char* var_name = get_node_name(global_var->content.n[0]);
 
@@ -716,6 +717,7 @@ void code_function_call_parameter_list(int* id, Node* parameter_list) {
   }
 }
 
+// [var_type] [param_id]
 void code_function_call_parameter(int* id, Node* parameter) {
   code_var_type(parameter->type);
   printf(" %s", parameter->id);
@@ -808,100 +810,119 @@ void code_expression(int* id, Node* expression) {
   }
 }
 
-void code_expression_condition(int* id, char* identifier, char* label_1, char* label_2) {
-  char* label_3;
+// [label_true]:
+// br label [label_result]
+//
+// [label_false]:
+// br label [label_result]
+//
+// [label_result]:
+// [phi_id] = phi i1 [true, label_true], [false , label_false]
+// [id] = zext i1 [phi_id] to i32
+void code_expression_condition(int* id, char* identifier, char* label_true, char* label_false) {
+  char* label_result;
   char* phi_identifier;
 
-  label_3 = format_string("%%label_%d", next_id(id));
+  label_result = format_string("%%label_%d", next_id(id));
   phi_identifier = format_string("%%label_%d", next_id(id));
 
-  printf("  %s:\n", label_name(label_1));
-  printf("  br label %s\n\n", label_3);
+  printf("  %s:\n", label_name(label_true));
+  printf("  br label %s\n\n", label_result);
 
-  printf("  %s:\n", label_name(label_2));
-  printf("  br label %s\n\n", label_3);
+  printf("  %s:\n", label_name(label_false));
+  printf("  br label %s\n\n", label_result);
 
-  printf("  %s:\n", label_name(label_3));
-  printf("  %s = phi i1 [ true, %s ], [ false, %s ]\n", phi_identifier, label_1, label_2);
+  printf("  %s:\n", label_name(label_result));
+  printf("  %s = phi i1 [ true, %s ], [ false, %s ]\n", phi_identifier, label_true, label_false);
   printf("  %s = zext i1 %s to i32\n", identifier, phi_identifier);
 }
 
+// [left_exp]
+// [comp_id] = icmp ne i32 [left_id], 0
+// br i1 [comp_id], label [label_true], label [label_next]
+//
+// [label_next]:
+// [right_exp]
+// [comp_id_2] = icmp ne i32 [right_id], 0
+// br i1 [comp_id_2], label [label_true], [label_false]
+//
+// [condition]
 void code_expression_or(int* id, Node* or) {
-  char* comparison_identifier;
-  char* comparison_identifier_2;
-  char* label_1;
-  char* label_2;
-  char* label_3;
+  char* comparison_id;
+  char* comparison_id_2;
+  char* label_true;
+  char* label_false;
+  char* label_next;
 
-  comparison_identifier = format_string("%%label_%d", next_id(id));
-  comparison_identifier_2 = format_string("%%label_%d", next_id(id));
-  label_1 = format_string("%%label_%d", next_id(id));
-  label_2 = format_string("%%label_%d", next_id(id));
-  label_3 = format_string("%%label_%d", next_id(id));
-  or->id = format_string("%%label_%d", next_id(id));
+  comparison_id = format_string("%%label_%d", next_id(id));
+  label_true = format_string("%%label_%d", next_id(id));
+  label_false = format_string("%%label_%d", next_id(id));
+  label_next = format_string("%%label_%d", next_id(id));
 
   code_expression(id, or->content.n[0]);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[0]->id); // i32 != 0
-  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, label_1, label_3);
-  
-  printf("  %s:\n", label_name(label_3));
-  code_expression(id, or->content.n[1]);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier_2, or->content.n[1]->id);
-  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier_2, label_1, label_2);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_id, or->content.n[0]->id); // i32 != 0
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_id, label_true, label_next);
 
-  code_expression_condition(id, or->id, label_1, label_2);
-}
-
-void code_expression_and(int* id, Node* or) {
-  char* comparison_identifier;
-  char* comparison_identifier_2;
-  char* label_1;
-  char* label_2;
-  char* label_3;
-
-  comparison_identifier = format_string("%%label_%d", next_id(id));
-  comparison_identifier_2 = format_string("%%label_%d", next_id(id));
-  label_1 = format_string("%%label_%d", next_id(id));
-  label_2 = format_string("%%label_%d", next_id(id));
-  label_3 = format_string("%%label_%d", next_id(id));
+  comparison_id_2 = format_string("%%label_%d", next_id(id));
   or->id = format_string("%%label_%d", next_id(id));
-
-  code_expression(id, or->content.n[0]);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier, or->content.n[0]->id); // i32 != 0
-  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier, label_3, label_2);
   
-  printf("  %s:\n", label_name(label_3));
+  printf("  %s:\n", label_name(label_next));
   code_expression(id, or->content.n[1]);
-  printf("  %s = icmp ne i32 %s, 0\n", comparison_identifier_2, or->content.n[1]->id);
-  printf("  br i1 %s, label %s, label %s\n\n", comparison_identifier_2, label_1, label_2);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_id_2, or->content.n[1]->id);
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_id_2, label_true, label_false);
 
-  code_expression_condition(id, or->id, label_1, label_2);
+  code_expression_condition(id, or->id, label_true, label_false);
 }
 
+// [left_exp]
+// [comp_id] = icmp ne i32 [left_id], 0
+// br i1 [comp_id], label [label_next], label [label_false]
+//
+// [label_next]:
+// [right_exp]
+// [comp_id_2] = icmp ne i32 [right_id], 0
+// br i1 [comp_id_2], label [label_true], [label_false]
+//
+// [condition]
+void code_expression_and(int* id, Node* and) {
+  char* comparison_id;
+  char* comparison_id_2;
+  char* label_true;
+  char* label_false;
+  char* label_next;
+
+  comparison_id = format_string("%%label_%d", next_id(id));
+  label_true = format_string("%%label_%d", next_id(id));
+  label_false = format_string("%%label_%d", next_id(id));
+  label_next = format_string("%%label_%d", next_id(id));
+
+  code_expression(id, and->content.n[0]);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_id, and->content.n[0]->id); // i32 != 0
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_id, label_next, label_false);
+
+  comparison_id_2 = format_string("%%label_%d", next_id(id));
+  and->id = format_string("%%label_%d", next_id(id));
+  
+  printf("  %s:\n", label_name(label_next));
+  code_expression(id, and->content.n[1]);
+  printf("  %s = icmp ne i32 %s, 0\n", comparison_id_2, and->content.n[1]->id);
+  printf("  br i1 %s, label %s, label %s\n\n", comparison_id_2, label_true, label_false);
+
+  code_expression_condition(id, and->id, label_true, label_false);
+}
+
+// [left_exp]
+// [right_exp]
+// [comp_id] = [comp_type] [op] [var_type] [left_id], [right_id]
+// [comp_id_2] = zext i1 [comp_id] to i32
 void code_expression_compare(int* id, Node* compare, char* operator) {
+  char* result_id;
+
   code_expression(id, compare->content.n[0]);
   code_expression(id, compare->content.n[1]);
 
   compare->id = format_string("%%label_%d", next_id(id));
-
-  switch(compare->content.n[0]->type->tag) {
-    case TYPE_BOOLEAN:
-    case TYPE_CHARACTER:
-    case TYPE_INTEGER:
-    case TYPE_ARRAY:
-      code_expression_compare_values(id, compare, "icmp", operator);
-      break;
-    case TYPE_FLOAT:
-      code_expression_compare_values(id, compare, "fcmp", operator);
-      break;
-    default:
-      throw_code_error("invalid expression compare");
-      break;
-  }
-}
-
-void code_expression_compare_values(int* id, Node* compare, char* compare_operator, char* operator) {
-  char* result_identifier = format_string("%%label_%d", next_id(id));
+  result_id = format_string("%%label_%d", next_id(id));
 
   printf("  %s = ", compare->id);
   code_expression_compare_type(compare->content.n[0]->type);
@@ -909,11 +930,12 @@ void code_expression_compare_values(int* id, Node* compare, char* compare_operat
   code_var_type(compare->content.n[0]->type);
   printf(" %s, %s\n", compare->content.n[0]->id, compare->content.n[1]->id);
 
-  printf("  %s = zext i1 %s to i32\n", result_identifier, compare->id);
+  printf("  %s = zext i1 %s to i32\n", result_id, compare->id);
 
-  compare->id = result_identifier;
+  compare->id = result_id;
 }
 
+// [icmp/fcmp]
 void code_expression_compare_type(Node* type) {
   switch(type->tag) {
     case TYPE_BOOLEAN:
@@ -931,6 +953,7 @@ void code_expression_compare_type(Node* type) {
   }
 }
 
+// [eq/ne/sgt/sge/slt/sle/oeq/one/ogt/oge/olt/ole]
 void code_expression_compare_operator(Node* compare, char* operator) {
   if(compare->content.n[0]->type->tag == TYPE_FLOAT) {
     printf("o%s ", operator);
@@ -953,12 +976,8 @@ void code_expression_compare_operator(Node* compare, char* operator) {
   }
 }
 
+// [sub/add/sdiv/mul/fsub/fadd/fdiv/fmul]
 void code_expression_calcule(int* id, Node* calcule, char* operator) {
-  code_expression(id, calcule->content.n[0]);
-  code_expression(id, calcule->content.n[1]);
-
-  calcule->id = format_string("%%label_%d", next_id(id));
-
   switch(calcule->type->tag) {
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
@@ -976,27 +995,25 @@ void code_expression_calcule(int* id, Node* calcule, char* operator) {
   }
 }
 
+// [left_exp]
+// [right_exp]
+// [calc_id] = [op] [var_type] [left_id], [right_id]
 void code_expression_calcule_values(int* id, Node* calcule, char* operator) {
+  code_expression(id, calcule->content.n[0]);
+  code_expression(id, calcule->content.n[1]);
+
+  calcule->id = format_string("%%label_%d", next_id(id));
+
   printf("  %s = %s ", calcule->id, operator);
   code_var_type(calcule->content.n[0]->type);
   printf(" %s, %s\n", calcule->content.n[0]->id, calcule->content.n[1]->id);
 }
 
 void code_expression_cast(int* id, Node* cast) {
-  Node* expression = cast->content.n[0];
-  Node* new_type = cast->content.n[1];
-
   TAG from_type;
   TAG to_type;
 
-  code_expression(id, expression);
-
-  if(expression->type->tag == new_type->type->tag) {
-    cast->id = expression->id;
-    return;
-  }
-
-  switch(expression->type->tag) {
+  switch(cast->content.n[0]->type->tag) {
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
     case TYPE_INTEGER:
@@ -1009,7 +1026,7 @@ void code_expression_cast(int* id, Node* cast) {
       throw_code_error("invalid expression cast from");
   }
 
-  switch(new_type->type->tag) {
+  switch(cast->content.n[1]->type->tag) {
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
     case TYPE_INTEGER:
@@ -1025,7 +1042,13 @@ void code_expression_cast(int* id, Node* cast) {
   code_expression_cast_from_to(id, cast, from_type, to_type);
 }
 
+// [exp]
+// [cast_id] = [sitofp/fptosi] [i32/float] [exp_id] [float/i32]
 void code_expression_cast_from_to(int* id, Node* cast, TAG from_type, TAG to_type) {
+  code_expression(id, cast->content.n[0]);
+
+  cast->id = format_string("%%label_%d", next_id(id));
+
   if(from_type == to_type) {
     cast->id = cast->content.n[0]->id;
     return;
@@ -1033,11 +1056,9 @@ void code_expression_cast_from_to(int* id, Node* cast, TAG from_type, TAG to_typ
 
   switch(from_type) {
     case TYPE_INTEGER:
-      cast->id = format_string("%%label_%d", next_id(id));
       printf("  %s = sitofp i32 %s to float\n", cast->id, cast->content.n[0]->id);
       break;
     case TYPE_FLOAT:
-      cast->id = format_string("%%label_%d", next_id(id));
       printf("  %s = fptosi float %s to i32\n", cast->id, cast->content.n[0]->id);
       break;
     default:
@@ -1045,17 +1066,21 @@ void code_expression_cast_from_to(int* id, Node* cast, TAG from_type, TAG to_typ
   }
 }
 
+// [exp]
+// [neg_id] = [sub nsw i32 0/fsub float 0.000000e+00], [exp_id]
 void code_expression_negative(int* id, Node* negative) {
   code_expression(id, negative->content.n[0]);
+
+  negative->id = format_string("%%label_%d", next_id(id));
 
   switch(negative->type->tag) {
     case TYPE_BOOLEAN:
     case TYPE_CHARACTER:
     case TYPE_INTEGER:
-      code_expression_negative_type(id, negative, "sub nsw i32 0");
+      printf("  %s = sub nsw i32 0, %s\n", negative->id, negative->content.n[0]->id);
       break;
     case TYPE_FLOAT:
-      code_expression_negative_type(id, negative, "fsub float 0.000000e+00");
+      printf("  %s = fsub float 0.000000e+00, %s\n", negative->id, negative->content.n[0]->id);
       break;
     case TYPE_ARRAY:
       throw_code_error("invalid expression negative array");
@@ -1065,12 +1090,10 @@ void code_expression_negative(int* id, Node* negative) {
   }
 }
 
-void code_expression_negative_type(int* id, Node* negative, char* operation) {
-  negative->id = format_string("%%label_%d", next_id(id));
-
-  printf("  %s = %s, %s\n", negative->id, operation, negative->content.n[0]->id);
-}
-
+// [exp]
+// [comp_id] = icmp ne i32 [exp_id]
+// [xor_id] = xor i1 [comp_id], true
+// [not_id] = zext i1 [xor_id] to i32
 void code_expression_not(int* id, Node* not) {
   char* compare_id;
   char* xor_id;
@@ -1086,32 +1109,34 @@ void code_expression_not(int* id, Node* not) {
   printf("  %s = zext i1 %s to i32\n", not->id, xor_id);
 }
 
+// [left_exp]
+// [right_exp]
+// [array_id] = getelementptr inbounds [var_type], [var_type]* [left_id], i32 [right_id]
 void code_array_position(int* id, Node* array_position) {
-  char* getelementptr_id;
 
   code_expression(id, array_position->content.n[0]);
   code_expression(id, array_position->content.n[1]);
 
-  getelementptr_id = format_string("%%label_%d", next_id(id));
+  array_position->id  = format_string("%%label_%d", next_id(id));
 
-  printf("  %s = getelementptr inbounds ", getelementptr_id);
+  printf("  %s = getelementptr inbounds ", array_position->id);
   code_var_type(array_position->type);
   printf(", ");
   code_var_type(array_position->type);
   printf("* %s, i32 %s\n", array_position->content.n[0]->id, array_position->content.n[1]->id);
-
-  array_position->id = getelementptr_id;
 }
 
+// [left_exp]
+// [right_exp]
+// [ptr_id] = getelementptr inbounds [var_type], [var_type]* [left_id], i32 [right_id]
+// [array_id] = load [var_type], [var_type]* [ptr_id]
 void code_expression_array_position(int* id, Node* array_position) {
   char* getelementptr_id;
-  char* load_id;
 
   code_expression(id, array_position->content.n[0]);
   code_expression(id, array_position->content.n[1]);
 
   getelementptr_id = format_string("%%label_%d", next_id(id));
-  load_id = format_string("%%label_%d", next_id(id));
 
   printf("  %s = getelementptr inbounds ", getelementptr_id);
   code_var_type(array_position->type);
@@ -1119,15 +1144,16 @@ void code_expression_array_position(int* id, Node* array_position) {
   code_var_type(array_position->type);
   printf("* %s, i32 %s\n", array_position->content.n[0]->id, array_position->content.n[1]->id);
 
-  printf("  %s = load ", load_id);
+  array_position->id = format_string("%%label_%d", next_id(id));
+
+  printf("  %s = load ", array_position->id);
   code_var_type(array_position->type);
   printf(", ");
   code_var_type(array_position->type);
   printf("* %s\n", getelementptr_id);
-
-  array_position->id = load_id;
 }
 
+// [exp_var_id] = load [var_type], [var_type]* [var_id]
 void code_expression_variable(int* id, Node* variable) {
   variable->id = format_string("%%label_%d", next_id(id));
 
@@ -1138,24 +1164,25 @@ void code_expression_variable(int* id, Node* variable) {
   printf("* %s\n", variable->definition->id);
 }
 
+// [exp]
+// [mult_id] = mul i64 4, [exp]
+// [malloc_id] = call i8* @malloc(i64 [mult_id])
+// [array_id] = bitcast i8* [malloc_id] to [var_type]*
 void code_expression_new_array(int* id, Node* new_array) {
   char* mult_id;
   char* malloc_id;
-  char* bitcast_id;
 
   code_expression(id, new_array->content.n[1]);
 
   mult_id = format_string("%%label_%d", next_id(id));
   malloc_id = format_string("%%label_%d", next_id(id));
-  bitcast_id = format_string("%%label_%d", next_id(id));
+  new_array->id = format_string("%%label_%d", next_id(id));
 
   printf("  %s = mul i64 4, %s\n", mult_id, new_array->content.n[1]->id);
   printf("  %s = call i8* @malloc(i64 %s)\n", malloc_id, mult_id);
-  printf("  %s = bitcast i8* %s to ", bitcast_id, malloc_id);
+  printf("  %s = bitcast i8* %s to ", new_array->id, malloc_id);
   code_var_type(new_array->content.n[0]);
   printf("*\n");
-
-  new_array->id = bitcast_id;
 }
 
 void code_expression_float(int* id, Node* float_expression) {
@@ -1164,26 +1191,32 @@ void code_expression_float(int* id, Node* float_expression) {
   printf("  %s = fptrunc double %f to float\n", float_expression->id, float_expression->content.f);
 }
 
+// [alloca_id] = alloca i32*
+// [mult_id] = i64 4, [length]
+// [malloc_id] = call i8* @malloc(i64 [mult_id])
+// [string_id] = bitcast i8* [malloc_id] to i32*
+// store i32* [string_id], i32** [alloca_id]
+//
+// [load_id] = load i32*, i32** [alloca_id]
+// [ptr_id] = getelementptr inbounds i32, i32* [load_id], i32 [counter]
+// store i32 [character], i32* [ptr_id]
 void code_expression_string(int* id, Node* string) {
   char* alloca_id;
   char* mult_id;
   char* malloc_id;
-  char* bitcast_id;
 
   int length = strlen(string->content.s) + 1;
 
   alloca_id = format_string("%%label_%d", next_id(id));
   mult_id = format_string("%%label_%d", next_id(id));
   malloc_id = format_string("%%label_%d", next_id(id));
-  bitcast_id = format_string("%%label_%d", next_id(id));
+  string->id = format_string("%%label_%d", next_id(id));
 
   printf("  %s = alloca i32*\n", alloca_id);
   printf("  %s = mul i64 4, %d\n", mult_id, length);
   printf("  %s = call i8* @malloc(i64 %s)\n", malloc_id, mult_id);
-  printf("  %s = bitcast i8* %s to i32*\n", bitcast_id, malloc_id);
-  printf("  store i32* %s, i32** %s\n", bitcast_id, alloca_id);
-
-  string->id = bitcast_id;
+  printf("  %s = bitcast i8* %s to i32*\n", string->id, malloc_id);
+  printf("  store i32* %s, i32** %s\n", string->id, alloca_id);
 
   for(int i = 0; i < length; i++) {
     char* load_id = format_string("%%label_%d", next_id(id));

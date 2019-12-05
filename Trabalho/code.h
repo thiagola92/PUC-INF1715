@@ -84,7 +84,6 @@ void code_expression_or(int* id, Node* or);
 void code_expression_and(int* id, Node* and);
 
 void code_expression_compare(int* id, Node* compare, char* operator);
-void code_expression_compare_values(int* id, Node* compare, char* compare_operator, char* operator);
 void code_expression_compare_type(Node* type);
 void code_expression_compare_operator(Node* compare, char* operator);
 
@@ -95,7 +94,6 @@ void code_expression_cast(int* id, Node* cast);
 void code_expression_cast_from_to(int* id, Node* cast, TAG from_type, TAG to_type);
 
 void code_expression_negative(int* id, Node* negative);
-void code_expression_negative_type(int* id, Node* negative, char* operation);
 
 void code_expression_not(int* id, Node* not);
 
