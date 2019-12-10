@@ -59,6 +59,17 @@ Compilando para código LLVM:
 $ ./compiler tests/correct/example-01.monga;
 ```
 
+[LLVM assembler](https://llvm.org/docs/CommandGuide/llvm-as.html)  
+```
+$ llvm-as-6.0 tests/correct/example-01.ll;
+```
+
+[LLVM interpreter](https://llvm.org/docs/CommandGuide/lli.html)  
+```
+$ lli-6.0 tests/correct/example-01.bc;
+```
+
+
 ## Script de Teste
 * Cria o compilador  
 * Compilar todos os testes da pasta *tests* para LLVM (`file.ll`)  
