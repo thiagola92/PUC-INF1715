@@ -8,6 +8,7 @@ declare i8* @malloc(i64)
 @c = global i32 0
 define i32 @fn() {
   ret i32 97
+  ret i32 0
 }
 
 define void @main() {

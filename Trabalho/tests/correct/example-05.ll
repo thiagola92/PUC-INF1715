@@ -7,6 +7,7 @@ declare i8* @malloc(i64)
 
 define i32 @first() {
   ret i32 1
+  ret i32 0
 }
 
 define i32 @second(i32) {
@@ -14,6 +15,7 @@ define i32 @second(i32) {
   store i32 %0, i32* %label_1
   %label_2 = load i32, i32* %label_1
   ret i32 %label_2
+  ret i32 0
 }
 
 

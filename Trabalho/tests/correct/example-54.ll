@@ -13,6 +13,7 @@ define i32 @nome(i32) {
   store i32 %label_3, i32* %label_2
   %label_4 = load i32, i32* %label_2
   ret i32 %label_4
+  ret i32 0
 }
 
 

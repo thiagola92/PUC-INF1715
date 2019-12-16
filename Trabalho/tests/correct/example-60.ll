@@ -29,6 +29,7 @@ define i32 @nome() {
   %label_11 = phi i1 [ true, %label_3 ], [ false, %label_4 ]
   %label_8 = zext i1 %label_11 to i32
   ret i32 %label_8
+  ret i32 0
 }
 
 

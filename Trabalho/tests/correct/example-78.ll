@@ -23,6 +23,7 @@ define i32 @func() {
 
   label_2:
   ret i32 2
+  ret i32 0
 }
 
 define void @main() {

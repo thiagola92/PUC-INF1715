@@ -135,7 +135,12 @@ void code_global_function_4(Node* function) {
   code_parameters_declarations(id, function->content.n[1]);
   code_block(id, function->content.n[3]);
 
-  printf("}\n\n");
+  printf("  ret ");
+  code_var_type(function->content.n[2]);
+  printf(" ");
+  code_initial_value(function->content.n[2]);
+
+  printf("\n}\n\n");
 }
 
 void code_global_function_3(Node* function) {
@@ -181,7 +186,12 @@ void code_global_function_3_with_type(Node* function) {
 
   code_block(id, function->content.n[2]);
 
-  printf("}\n\n");
+  printf("  ret ");
+  code_var_type(function->content.n[1]);
+  printf(" ");
+  code_initial_value(function->content.n[1]);
+
+  printf("\n}\n\n");
 }
 
 // define void [name]() {

@@ -9,6 +9,7 @@ define i32* @nome() {
   %label_0 = alloca i32*
   %label_1 = load i32*, i32** %label_0
   ret i32* %label_1
+  ret i32* null
 }
 
 

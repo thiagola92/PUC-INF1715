@@ -26,6 +26,7 @@ define i32* @nome() {
   %label_11 = getelementptr inbounds i32, i32* %label_10, i32 3
   store i32 0, i32* %label_11
   ret i32* %label_3
+  ret i32* null
 }
 
 define void @main() {

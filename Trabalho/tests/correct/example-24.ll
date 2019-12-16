@@ -7,12 +7,14 @@ declare i8* @malloc(i64)
 
 define i32 @first() {
   ret i32 1
+  ret i32 0
 }
 
 define i32 @second(i32) {
   %label_1 = alloca i32
   store i32 %0, i32* %label_1
   ret i32 1
+  ret i32 0
 }
 
 define i32 @third(i32, i32) {
@@ -21,6 +23,7 @@ define i32 @third(i32, i32) {
   %label_3 = alloca i32
   store i32 %1, i32* %label_3
   ret i32 97
+  ret i32 0
 }
 
 define float @fourth(i32, i32) {
@@ -30,6 +33,7 @@ define float @fourth(i32, i32) {
   store i32 %1, i32* %label_3
   %label_4 = fptrunc double 1.000000 to float
   ret float %label_4
+  ret float 0.000000e+00
 }
 
 define void @main() {

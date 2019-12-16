@@ -7,6 +7,7 @@ declare i8* @malloc(i64)
 
 define i32 @nome() {
   ret i32 97
+  ret i32 0
 }
 
 define void @main() {
