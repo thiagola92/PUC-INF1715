@@ -1,6 +1,20 @@
 Nome: Thiago Lages de Alencar  
 Matricula: 1721629  
 
+## Mudança
+
+Todas as funções possuem um return no final do bloco principal, retornando o valor padrão.  
+Este código costumava dar erro pois não possuia return no bloco principal.  
+```
+foo(a : bool) : int {
+  if(a == true) {
+    return 1;
+  } else {
+    return 0;
+  }
+}
+```
+
 ## Arquivos
 
 * binding.c
